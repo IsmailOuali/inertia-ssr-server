@@ -7,18 +7,31 @@
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
+    "@heroicons/react": "^2.1.5",
     "@inertiajs/inertia": "^0.11.1",
     "@inertiajs/react": "^1.2.0",
     "@mui/x-data-grid": "^7.10.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@tanstack/react-query": "^5.45.0",
+    "@fullcalendar/core": "^6.1.14",
+    "@fullcalendar/react": "^6.1.14",
+    "@fullcalendar/daygrid": "^6.1.14",
+    "@fullcalendar/timegrid": "^6.1.14",
+    "@fullcalendar/interaction": "^6.1.14",
+    "axios": "^1.6.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^11.18.2",
     "lucide-react": "^0.379.0",
+    "pretty": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.6.0",
     "react-icons": "^4.12.0",
+    "react-router-dom": "^6.22.0",
+    "recharts": "^2.12.0",
     "sonner": "^2.0.7",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "ziggy-js": "^1.8.1"
   }
 }
