@@ -9,6 +9,7 @@
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.1.5",
     "@inertiajs/inertia": "^0.11.1",
+    "@inertiajs/inertia-react": "^0.8.1",
     "@inertiajs/react": "^1.2.0",
     "@mui/x-data-grid": "^7.10.0",
     "@radix-ui/react-slot": "^1.1.0",
@@ -33,5 +34,8 @@
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "ziggy-js": "^1.8.1"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
