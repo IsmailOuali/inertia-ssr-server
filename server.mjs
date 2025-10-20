@@ -2,7 +2,9 @@ import express from "express";
 import path from "path";
 
 const app = express();
-const port = process.env.PORT || 8080; // Render/Railway uses PORT env var
+const port = process.env.PORT || 8080;
+
+// path to the compiled SSR renderer
 const ssrFile = path.resolve("./bootstrap/ssr/ssr.mjs");
 
 app.use(express.json());
