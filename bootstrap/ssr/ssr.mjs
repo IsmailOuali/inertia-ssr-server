@@ -21,7 +21,6 @@ import { Link as Link$1 } from "@inertiajs/inertia-react";
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { MagnifyingGlassIcon, FunnelIcon, XMarkIcon as XMarkIcon$1, XCircleIcon, CheckCircleIcon, EyeIcon, ChevronLeftIcon, ChevronRightIcon, TrashIcon, PlusIcon, PencilSquareIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
-import * as ZiggyJs from "ziggy-js";
 import ziggyPkg from "ziggy-js";
 const { route: route$4 } = ziggyPkg;
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa/index.js";
