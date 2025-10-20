@@ -40,6 +40,8 @@
     "@fullcalendar/list": "^6.1.11",
     "@fullcalendar/react": "^6.1.11",
     "@fullcalendar/timegrid": "^6.1.11",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "ziggy-js": "^1.8.1"
   },
   "engines": {
