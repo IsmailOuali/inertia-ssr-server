@@ -1,14 +1,15 @@
+var _a, _b;
 import { jsxs, jsx, Fragment } from "react/jsx-runtime";
 import * as React from "react";
 import React__default, { useState, useEffect, Fragment as Fragment$1, useRef, forwardRef, useImperativeHandle, useCallback, useMemo } from "react";
 import { usePage, Link, router, useForm, Head, createInertiaApp } from "@inertiajs/react";
-import { MdClose, MdDashboard, MdInventory2, MdExpandLess, MdExpandMore, MdPhone, MdGroup, MdNewspaper, MdDeliveryDining, MdPayment, MdConfirmationNumber, MdPerson, MdLogout, MdMenu, MdFilterList, MdOutlineCloudUpload, MdOutlineInsertDriveFile, MdOutlineCalendarToday, MdFileUpload, MdUpload, MdAdd, MdSearch, MdAccessTime, MdOutlineFileDownload, MdOutlineDeleteOutline, MdOutlineWatchLater, MdErrorOutline, MdCheckCircleOutline, MdLabel, MdPriorityHigh, MdArrowBack, MdAttachFile, MdEdit, MdTitle, MdCategory, MdDescription, MdSend, MdCheckCircle, MdCancel, MdSave, MdOutlineWavingHand, MdArrowUpward, MdArrowDownward, MdOutlineAutoGraph, MdSwapHorizontalCircle, MdRefresh, MdOutlineInbox, MdOutlineBusinessCenter, MdMessage, MdOutlineRefresh, MdSort, MdOutlineNewspaper, MdOutlineCalendarMonth, MdOutlineDownload, MdLeaderboard } from "react-icons/md/index.js";
-import { HiOutlineSparkles, HiOutlineOfficeBuilding, HiOutlineIdentification, HiOutlineTag, HiOutlineUser, HiOutlineLocationMarker, HiOutlineCalendar, HiOutlinePaperClip, HiOutlineDocumentText, HiOutlineSave, HiOutlineDocument, HiOutlineGlobe, HiOutlineClock, HiOutlineArrowLeft, HiOutlineEye as HiOutlineEye$1, HiOutlineCheck, HiOutlineX } from "react-icons/hi/index.js";
+import { MdClose, MdDashboard, MdInventory2, MdExpandLess, MdExpandMore, MdPhone, MdGroup, MdNewspaper, MdDeliveryDining, MdPayment, MdConfirmationNumber, MdPerson, MdLogout, MdMenu, MdFilterList, MdOutlineCloudUpload, MdOutlineInsertDriveFile, MdOutlineCalendarToday, MdFileUpload, MdUpload, MdAdd, MdSearch, MdAccessTime, MdOutlineFileDownload, MdOutlineDeleteOutline, MdOutlineWatchLater, MdErrorOutline, MdCheckCircleOutline, MdLabel, MdPriorityHigh, MdArrowBack, MdAttachFile, MdEdit, MdTitle, MdCategory, MdDescription, MdSend, MdCheckCircle, MdCancel, MdSave, MdOutlineWavingHand, MdArrowUpward, MdArrowDownward, MdOutlineAutoGraph, MdSwapHorizontalCircle, MdRefresh, MdOutlineInbox, MdOutlineBusinessCenter, MdMessage, MdOutlineRefresh, MdSort, MdOutlineNewspaper, MdOutlineCalendarMonth, MdOutlineDownload, MdLeaderboard } from "react-icons/md";
+import { HiOutlineSparkles, HiOutlineOfficeBuilding, HiOutlineIdentification, HiOutlineTag, HiOutlineUser, HiOutlineLocationMarker, HiOutlineCalendar, HiOutlinePaperClip, HiOutlineDocumentText, HiOutlineSave, HiOutlineDocument, HiOutlineGlobe, HiOutlineClock, HiOutlineArrowLeft, HiOutlineEye as HiOutlineEye$1, HiOutlineCheck, HiOutlineX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, FileText, AlertCircle, Building, Tag, MapPin, Calendar as Calendar$1, FileUp, Download, X, Save, User as User$1, Package, CheckCircle, Truck, Briefcase, UserIcon, ChevronDown, Settings, LogOut, Menu, Search, ArrowRight, Home as Home$1, Shield, Zap, Star, LockKeyhole, CheckCircle2, Loader2, LogIn, Mail, Lock, EyeOff, Eye, Sparkles, Clock, Check, HelpCircle, ChevronUp, ChevronLeft, ChevronRight, Award, Users, Send, MessageSquare, ArrowUpRight, FileCheck, FileClock, FileX, Plus, Phone, BanknoteIcon, Info, Copy, Smartphone, CreditCard, Scale, AlertTriangle, Globe, ShoppingCart, ShieldCheck, Server, List, RefreshCw, XCircle, Filter, BadgeDollarSign, Edit as Edit$2, Building2, Upload, Printer, Share2, PlusCircle, SlidersHorizontal, CalendarIcon, Receipt, ShieldAlert, ServerCrash, Hash, Trash2, Loader, ExternalLink, ArrowUp, Newspaper, MessageCircle } from "lucide-react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Inertia as Inertia$1 } from "@inertiajs/inertia";
-import { HiOutlineEye, HiOutlinePencilSquare, HiOutlineTrash, HiOutlineDocumentText as HiOutlineDocumentText$1, HiOutlinePlus, HiCheckCircle, HiOutlinePencil, HiOutlineHome, HiOutlineXMark, HiOutlineGlobeAmericas, HiOutlineLockClosed, HiOutlineArrowLeft as HiOutlineArrowLeft$1, HiOutlineUser as HiOutlineUser$1, HiOutlineMap, HiOutlineUserGroup, HiOutlineScale, HiOutlineHeart, HiOutlineStar, HiOutlineUserCircle, HiStar } from "react-icons/hi2/index.js";
+import { HiOutlineEye, HiOutlinePencilSquare, HiOutlineTrash, HiOutlineDocumentText as HiOutlineDocumentText$1, HiOutlinePlus, HiCheckCircle, HiOutlinePencil, HiOutlineHome, HiOutlineXMark, HiOutlineGlobeAmericas, HiOutlineLockClosed, HiOutlineArrowLeft as HiOutlineArrowLeft$1, HiOutlineUser as HiOutlineUser$1, HiOutlineMap, HiOutlineUserGroup, HiOutlineScale, HiOutlineHeart, HiOutlineStar, HiOutlineUserCircle, HiStar } from "react-icons/hi2";
 import toast from "react-hot-toast";
 import { XMarkIcon, CheckIcon, StarIcon } from "@heroicons/react/24/solid";
 import { Transition, Dialog, TransitionChild, DialogPanel } from "@headlessui/react";
@@ -21,10 +22,10 @@ import { Link as Link$1 } from "@inertiajs/inertia-react";
 import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-query";
 import { MagnifyingGlassIcon, FunnelIcon, XMarkIcon as XMarkIcon$1, XCircleIcon, CheckCircleIcon, EyeIcon, ChevronLeftIcon, ChevronRightIcon, TrashIcon, PlusIcon, PencilSquareIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
-import ziggyPkg from "ziggy-js";
-const { route: route$4 } = ziggyPkg;
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa/index.js";
-import { FiChevronUp } from "react-icons/fi/index.js";
+import * as ZiggyPkg from "ziggy-js";
+import { route as route$4 } from "ziggy-js";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import { FiChevronUp } from "react-icons/fi";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { formatDate as formatDate$6 } from "@fullcalendar/core";
 import FullCalendar from "@fullcalendar/react";
@@ -34,7 +35,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import { ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { useNavigate, useParams } from "react-router-dom";
-import { DiReact } from "react-icons/di/index.js";
+import { DiReact } from "react-icons/di";
 import createServer from "@inertiajs/react/server";
 import { renderToString } from "react-dom/server";
 import pretty from "pretty";
@@ -312,7 +313,7 @@ function CreateAnnonce({
   users,
   auth
 }) {
-  var _a;
+  var _a2;
   const { data, setData, errors, processing, post } = useForm({
     title: "",
     nameSociete: "",
@@ -345,8 +346,8 @@ function CreateAnnonce({
     });
   };
   const handleFileChange = (e) => {
-    var _a2;
-    const file = ((_a2 = e.target.files) == null ? void 0 : _a2[0]) || null;
+    var _a3;
+    const file = ((_a3 = e.target.files) == null ? void 0 : _a3[0]) || null;
     setData("file", file);
     setSelectedFileName((file == null ? void 0 : file.name) || null);
   };
@@ -525,7 +526,7 @@ function CreateAnnonce({
                           type: "text",
                           placeholder: "Rechercher un utilisateur",
                           className: "w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-200 focus:border-indigo-500 transition-all shadow-sm",
-                          value: userSearch || ((_a = users.find((u) => u.id === data.user_id)) == null ? void 0 : _a.name) || "",
+                          value: userSearch || ((_a2 = users.find((u) => u.id === data.user_id)) == null ? void 0 : _a2.name) || "",
                           onFocus: () => setShowUserDropdown(true),
                           onChange: (e) => {
                             setUserSearch(e.target.value);
@@ -1360,10 +1361,10 @@ const DataTable = ({
         flex: column.flex || 1,
         minWidth: column.minWidth || 140,
         renderCell: (params) => {
-          var _a, _b;
+          var _a2, _b2;
           return /* @__PURE__ */ jsxs("div", { className: "flex flex-col", children: [
-            /* @__PURE__ */ jsx("span", { className: "font-medium text-gray-900 text-sm", children: ((_a = params.row.user) == null ? void 0 : _a.name) ?? "" }),
-            ((_b = params.row.user) == null ? void 0 : _b.email) && /* @__PURE__ */ jsx("span", { className: "text-xs text-gray-500 mt-1", children: params.row.user.email })
+            /* @__PURE__ */ jsx("span", { className: "font-medium text-gray-900 text-sm", children: ((_a2 = params.row.user) == null ? void 0 : _a2.name) ?? "" }),
+            ((_b2 = params.row.user) == null ? void 0 : _b2.email) && /* @__PURE__ */ jsx("span", { className: "text-xs text-gray-500 mt-1", children: params.row.user.email })
           ] });
         }
       };
@@ -1384,8 +1385,8 @@ const DataTable = ({
       columns: includeActionColumn ? [...processedColumns, actionColumn] : [...processedColumns],
       getRowHeight: () => "auto",
       getRowClassName: (params) => {
-        var _a;
-        return ((_a = params.row.user) == null ? void 0 : _a.is_favorite) ? "bg-yellow-50" : "";
+        var _a2;
+        return ((_a2 = params.row.user) == null ? void 0 : _a2.is_favorite) ? "bg-yellow-50" : "";
       },
       initialState: {
         pagination: {
@@ -1450,12 +1451,12 @@ function Index$4({ annonces, auth }) {
       minWidth: 250,
       flex: 1,
       renderCell: (params) => {
-        var _a, _b, _c;
+        var _a2, _b2, _c;
         return /* @__PURE__ */ jsx("div", { className: "text-[#00377f]/90", children: /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2", children: [
           /* @__PURE__ */ jsxs("div", { children: [
-            ((_a = params.row.user) == null ? void 0 : _a.name) ?? "—",
+            ((_a2 = params.row.user) == null ? void 0 : _a2.name) ?? "—",
             " (",
-            ((_b = params.row.user) == null ? void 0 : _b.email) ?? "—",
+            ((_b2 = params.row.user) == null ? void 0 : _b2.email) ?? "—",
             ")"
           ] }),
           ((_c = params.row.user) == null ? void 0 : _c.is_favorite) && /* @__PURE__ */ jsxs(
@@ -1535,8 +1536,8 @@ function Index$4({ annonces, auth }) {
   const [searchTerm, setSearchTerm] = useState("");
   const formattedAnnonces = annonces.data ?? [];
   const filteredRows = formattedAnnonces.filter((annonce) => {
-    var _a, _b, _c, _d, _e, _f, _g, _h, _i, _j;
-    const userName = ((_b = (_a = annonce.user) == null ? void 0 : _a.name) == null ? void 0 : _b.toLowerCase()) || "";
+    var _a2, _b2, _c, _d, _e, _f, _g, _h, _i, _j;
+    const userName = ((_b2 = (_a2 = annonce.user) == null ? void 0 : _a2.name) == null ? void 0 : _b2.toLowerCase()) || "";
     const userEmail = ((_d = (_c = annonce.user) == null ? void 0 : _c.email) == null ? void 0 : _d.toLowerCase()) || "";
     return annonce.id.toString().includes(searchTerm) || ((_e = annonce.nameSociete) == null ? void 0 : _e.toLowerCase().includes(searchTerm.toLowerCase())) || ((_f = annonce.title) == null ? void 0 : _f.toLowerCase().includes(searchTerm.toLowerCase())) || ((_g = annonce.ville) == null ? void 0 : _g.toLowerCase().includes(searchTerm.toLowerCase())) || ((_h = annonce.status) == null ? void 0 : _h.toLowerCase().includes(searchTerm.toLowerCase())) || ((_i = annonce.category) == null ? void 0 : _i.toLowerCase().includes(searchTerm.toLowerCase())) || ((_j = annonce.RC) == null ? void 0 : _j.toLowerCase().includes(searchTerm.toLowerCase())) || userName.includes(searchTerm.toLowerCase()) || userEmail.includes(searchTerm.toLowerCase());
   });
@@ -2048,8 +2049,8 @@ function JournauxIndex({ journaux = [], stats = { total: 0, today: 0, week: 0 } 
                           onDragLeave: handleDragLeave,
                           onDrop: handleDrop,
                           onClick: () => {
-                            var _a;
-                            return (_a = fileInputRef.current) == null ? void 0 : _a.click();
+                            var _a2;
+                            return (_a2 = fileInputRef.current) == null ? void 0 : _a2.click();
                           },
                           children: [
                             /* @__PURE__ */ jsx(
@@ -2462,14 +2463,14 @@ const Index$3 = ({
     toast$1.success(`Filtrage ${days ? `des ${days} derniers jours` : "de toutes les annonces"} appliqué`);
   };
   const handleMarkAsSent = async (id) => {
-    var _a;
+    var _a2;
     setIsProcessing(id);
     try {
       const response = await fetch(`/admin/annonce-a-livrer/${id}/mark-as-sent`, {
         method: "POST",
         headers: {
           "X-Requested-With": "XMLHttpRequest",
-          "X-CSRF-TOKEN": ((_a = document.querySelector('meta[name="csrf-token"]')) == null ? void 0 : _a.content) || "",
+          "X-CSRF-TOKEN": ((_a2 = document.querySelector('meta[name="csrf-token"]')) == null ? void 0 : _a2.content) || "",
           "Content-Type": "application/json"
         }
       });
@@ -2560,10 +2561,10 @@ const Index$3 = ({
             /* @__PURE__ */ jsx("th", { className: "px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider", children: "Action" })
           ] }) }),
           /* @__PURE__ */ jsx("tbody", { className: "bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700", children: filteredAnnonces.map((annonce) => {
-            var _a, _b, _c, _d, _e;
+            var _a2, _b2, _c, _d, _e;
             return /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors", children: [
               /* @__PURE__ */ jsx("td", { className: "px-6 py-4 whitespace-nowrap", children: /* @__PURE__ */ jsxs("div", { className: "flex items-center", children: [
-                /* @__PURE__ */ jsx("div", { className: "w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold mr-3", children: ((_b = (_a = annonce.user) == null ? void 0 : _a.name) == null ? void 0 : _b.charAt(0)) || "?" }),
+                /* @__PURE__ */ jsx("div", { className: "w-10 h-10 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold mr-3", children: ((_b2 = (_a2 = annonce.user) == null ? void 0 : _a2.name) == null ? void 0 : _b2.charAt(0)) || "?" }),
                 /* @__PURE__ */ jsx("div", { className: "text-sm font-medium text-gray-900 dark:text-gray-100", children: ((_c = annonce.user) == null ? void 0 : _c.name) || "N/A" })
               ] }) }),
               /* @__PURE__ */ jsx("td", { className: "px-6 py-4", children: /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-900 dark:text-gray-100 max-w-xs truncate", children: ((_d = annonce.user) == null ? void 0 : _d.address) || "N/A" }) }),
@@ -2826,7 +2827,7 @@ function TicketsIndex({
     }
   };
   const filteredTickets = tickets.data ? tickets.data.filter((ticket) => {
-    var _a;
+    var _a2;
     const frontendStatus = mapStatus(ticket.status);
     if (activeTab !== "all" && frontendStatus !== activeTab) {
       return false;
@@ -2836,7 +2837,7 @@ function TicketsIndex({
     }
     if (selectedFilter === "priority_high" && ticket.priority !== "high") {
       return false;
-    } else if (selectedFilter === "unassigned" && !((_a = ticket.user) == null ? void 0 : _a.id)) {
+    } else if (selectedFilter === "unassigned" && !((_a2 = ticket.user) == null ? void 0 : _a2.id)) {
       return false;
     } else if (selectedFilter === "recent") {
       const yesterday = /* @__PURE__ */ new Date();
@@ -4877,7 +4878,7 @@ function AppelsOffresIndex({
   totalBudget,
   auth
 }) {
-  var _a, _b, _c, _d;
+  var _a2, _b2, _c, _d;
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -4939,8 +4940,8 @@ function AppelsOffresIndex({
   const [selectedAppel, setSelectedAppel] = useState(null);
   const [isDetailModalOpen, setIsDetailModalOpen] = useState(false);
   const filteredData = pendingAppelsOffres.filter((item) => {
-    var _a2, _b2, _c2, _d2;
-    const matchesSearch = item.id.toString().includes(searchTerm) || item.titre.toLowerCase().includes(searchTerm.toLowerCase()) || item.objet.toLowerCase().includes(searchTerm.toLowerCase()) || item.ICE.toLowerCase().includes(searchTerm.toLowerCase()) || item.ville.toLowerCase().includes(searchTerm.toLowerCase()) || (((_b2 = (_a2 = item.user) == null ? void 0 : _a2.name) == null ? void 0 : _b2.toLowerCase().includes(searchTerm.toLowerCase())) ?? false) || (((_d2 = (_c2 = item.user) == null ? void 0 : _c2.email) == null ? void 0 : _d2.toLowerCase().includes(searchTerm.toLowerCase())) ?? false);
+    var _a3, _b3, _c2, _d2;
+    const matchesSearch = item.id.toString().includes(searchTerm) || item.titre.toLowerCase().includes(searchTerm.toLowerCase()) || item.objet.toLowerCase().includes(searchTerm.toLowerCase()) || item.ICE.toLowerCase().includes(searchTerm.toLowerCase()) || item.ville.toLowerCase().includes(searchTerm.toLowerCase()) || (((_b3 = (_a3 = item.user) == null ? void 0 : _a3.name) == null ? void 0 : _b3.toLowerCase().includes(searchTerm.toLowerCase())) ?? false) || (((_d2 = (_c2 = item.user) == null ? void 0 : _c2.email) == null ? void 0 : _d2.toLowerCase().includes(searchTerm.toLowerCase())) ?? false);
     const matchesStatus = !statusFilter || item.status === statusFilter;
     return matchesSearch && matchesStatus;
   }).sort((a, b) => {
@@ -5258,7 +5259,7 @@ function AppelsOffresIndex({
                   /* @__PURE__ */ jsx("th", { className: "w-32 px-3 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider", children: "Actions" })
                 ] }) }),
                 /* @__PURE__ */ jsx("tbody", { className: "bg-white divide-y divide-gray-200", children: paginatedData.length > 0 ? paginatedData.map((item) => {
-                  var _a2, _b2, _c2, _d2;
+                  var _a3, _b3, _c2, _d2;
                   return /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50 transition-colors", children: [
                     /* @__PURE__ */ jsx("td", { className: "w-12 px-3 py-4 text-center", children: /* @__PURE__ */ jsx(
                       "input",
@@ -5276,8 +5277,8 @@ function AppelsOffresIndex({
                         "div",
                         {
                           className: "font-medium text-gray-900 truncate text-sm",
-                          title: ((_a2 = item.user) == null ? void 0 : _a2.name) ?? "N/A",
-                          children: ((_b2 = item.user) == null ? void 0 : _b2.name) ?? "N/A"
+                          title: ((_a3 = item.user) == null ? void 0 : _a3.name) ?? "N/A",
+                          children: ((_b3 = item.user) == null ? void 0 : _b3.name) ?? "N/A"
                         }
                       ),
                       /* @__PURE__ */ jsxs("div", { className: "text-xs text-gray-500 truncate", title: ((_c2 = item.user) == null ? void 0 : _c2.email) ?? "N/A", children: [
@@ -5306,7 +5307,7 @@ function AppelsOffresIndex({
                 ] }) }) }) }) })
               ] }) }),
               /* @__PURE__ */ jsx("div", { className: "lg:hidden", children: paginatedData.length > 0 ? /* @__PURE__ */ jsx("div", { className: "divide-y divide-gray-200", children: paginatedData.map((item) => {
-                var _a2, _b2;
+                var _a3, _b3;
                 return /* @__PURE__ */ jsxs("div", { className: "p-6 hover:bg-gray-50 transition-colors", children: [
                   /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between mb-4", children: [
                     /* @__PURE__ */ jsxs("div", { className: "flex items-start gap-3 flex-1", children: [
@@ -5336,8 +5337,8 @@ function AppelsOffresIndex({
                   /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 gap-4 ml-8", children: [
                     /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 p-3 rounded-lg", children: [
                       /* @__PURE__ */ jsx("div", { className: "text-xs font-medium text-gray-500 uppercase tracking-wider mb-1", children: "Utilisateur" }),
-                      /* @__PURE__ */ jsx("div", { className: "font-medium text-gray-900", children: ((_a2 = item.user) == null ? void 0 : _a2.name) ?? "N/A" }),
-                      /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-500", children: ((_b2 = item.user) == null ? void 0 : _b2.email) ?? "N/A" })
+                      /* @__PURE__ */ jsx("div", { className: "font-medium text-gray-900", children: ((_a3 = item.user) == null ? void 0 : _a3.name) ?? "N/A" }),
+                      /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-500", children: ((_b3 = item.user) == null ? void 0 : _b3.email) ?? "N/A" })
                     ] }),
                     /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-2 gap-4", children: [
                       /* @__PURE__ */ jsxs("div", { children: [
@@ -5544,9 +5545,9 @@ function AppelsOffresIndex({
                   /* @__PURE__ */ jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-3", children: /* @__PURE__ */ jsxs("div", { className: "bg-gray-50 p-4 rounded-lg", children: [
                     /* @__PURE__ */ jsx("h4", { className: "text-sm font-medium text-gray-500 mb-1", children: "Utilisateur" }),
                     /* @__PURE__ */ jsxs("p", { className: "text-[#00377f] font-medium", children: [
-                      (_a = selectedAppel.user) == null ? void 0 : _a.name,
+                      (_a2 = selectedAppel.user) == null ? void 0 : _a2.name,
                       " (",
-                      (_b = selectedAppel.user) == null ? void 0 : _b.email,
+                      (_b2 = selectedAppel.user) == null ? void 0 : _b2.email,
                       ")"
                     ] }),
                     "Telephone: ",
@@ -5660,8 +5661,8 @@ function CreateAppelOffre({
     });
   };
   const handleFileChange = (e) => {
-    var _a;
-    const file = ((_a = e.target.files) == null ? void 0 : _a[0]) || null;
+    var _a2;
+    const file = ((_a2 = e.target.files) == null ? void 0 : _a2[0]) || null;
     setData("file", file);
     setSelectedFileName((file == null ? void 0 : file.name) || null);
   };
@@ -6231,7 +6232,7 @@ function EditAppelOffre({
   sectors = [],
   users = []
 }) {
-  var _a;
+  var _a2;
   const citiesArray = cities || [];
   const sectorsArray = sectors || [];
   const usersArray = users || [];
@@ -6734,7 +6735,7 @@ function EditAppelOffre({
                   ] }),
                   /* @__PURE__ */ jsxs("div", { children: [
                     /* @__PURE__ */ jsx("h4", { className: "text-sm font-medium text-gray-500 mb-2", children: "Utilisateur assigné" }),
-                    /* @__PURE__ */ jsx("p", { className: "text-gray-800", children: ((_a = users.find((user) => user.id === appelOffre.user_id)) == null ? void 0 : _a.name) || "Non assigné" })
+                    /* @__PURE__ */ jsx("p", { className: "text-gray-800", children: ((_a2 = users.find((user) => user.id === appelOffre.user_id)) == null ? void 0 : _a2.name) || "Non assigné" })
                   ] })
                 ] }),
                 /* @__PURE__ */ jsxs("div", { className: "mt-8", children: [
@@ -7006,10 +7007,10 @@ function PaymentIndex({
       minWidth: 180,
       flex: 1,
       renderCell: (params) => {
-        var _a, _b;
+        var _a2, _b2;
         return /* @__PURE__ */ jsxs("div", { children: [
-          /* @__PURE__ */ jsx("div", { className: "font-medium text-[#00377f]", children: ((_a = params.row.user) == null ? void 0 : _a.name) ?? "—" }),
-          /* @__PURE__ */ jsx("div", { className: "text-xs text-[#00377f]/60", children: ((_b = params.row.user) == null ? void 0 : _b.email) ?? "—" })
+          /* @__PURE__ */ jsx("div", { className: "font-medium text-[#00377f]", children: ((_a2 = params.row.user) == null ? void 0 : _a2.name) ?? "—" }),
+          /* @__PURE__ */ jsx("div", { className: "text-xs text-[#00377f]/60", children: ((_b2 = params.row.user) == null ? void 0 : _b2.email) ?? "—" })
         ] });
       }
     },
@@ -7175,14 +7176,14 @@ const TextInput = forwardRef(function TextInput2({
   const localRef = useRef(null);
   useImperativeHandle(ref, () => ({
     focus: () => {
-      var _a;
-      return (_a = localRef.current) == null ? void 0 : _a.focus();
+      var _a2;
+      return (_a2 = localRef.current) == null ? void 0 : _a2.focus();
     }
   }));
   useEffect(() => {
-    var _a;
+    var _a2;
     if (isFocused) {
-      (_a = localRef.current) == null ? void 0 : _a.focus();
+      (_a2 = localRef.current) == null ? void 0 : _a2.focus();
     }
   }, [isFocused]);
   return /* @__PURE__ */ jsx(
@@ -7240,31 +7241,27 @@ if (typeof window !== "undefined" && typeof window.Ziggy !== "undefined") {
   Object.assign(Ziggy$1.routes, window.Ziggy.routes);
 }
 const isBrowser = typeof window !== "undefined";
-const currentOrigin = isBrowser ? window.location.origin : "";
-const Ziggy = {
-  ...Ziggy$1,
-  url: currentOrigin || "https://test.wepresseco.com"
-};
-function route$3(name, params, absolute = true, config = Ziggy) {
+const Ziggy = isBrowser && window.Ziggy ? window.Ziggy : { ...Ziggy$1 };
+const fn = ZiggyPkg.route || ((_a = ZiggyPkg.default) == null ? void 0 : _a.route) || ZiggyPkg.default || ZiggyPkg;
+const route$3 = (name, params, absolute = true, config = Ziggy) => {
   try {
-    return route$4(name, params, absolute, config);
-  } catch (err) {
-    console.error("Ziggy route error:", err);
+    return fn(name, params, absolute, config);
+  } catch (e) {
+    console.warn("⚠️ Ziggy route() failed:", e);
     return "#";
   }
-}
-const defaultExport = route$3;
+};
 const safeRoute$2 = (name, params) => {
   if (typeof name !== "string") return "#";
   try {
-    const url = defaultExport(name, params);
+    const url = route$3(name, params);
     return typeof url === "string" ? url : "#";
   } catch {
     return "#";
   }
 };
 function Header({ auth }) {
-  var _a, _b, _c, _d;
+  var _a2, _b2, _c, _d;
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
@@ -7362,7 +7359,7 @@ function Header({ auth }) {
       children: [
         /* @__PURE__ */ jsx(Link, { href: safeRoute$2("home"), className: "flex items-center", children: /* @__PURE__ */ jsx("img", { src: "/Logo.webp", alt: "Logo", width: 160, height: 100, className: "w-28 sm:w-36 object-contain rounded-full" }) }),
         /* @__PURE__ */ jsx("nav", { className: "hidden lg:flex", children: /* @__PURE__ */ jsx("ul", { className: "flex items-center gap-3 xl:gap-6 text-sm font-medium", children: navLinks.map((link, index) => {
-          var _a2;
+          var _a3;
           return /* @__PURE__ */ jsx("li", { children: link.dropdown ? /* @__PURE__ */ jsxs("div", { className: "relative group", children: [
             /* @__PURE__ */ jsxs(
               "button",
@@ -7375,7 +7372,7 @@ function Header({ auth }) {
                 ]
               }
             ),
-            /* @__PURE__ */ jsx("div", { className: "absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg py-1 z-50 border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200", children: (_a2 = link.items) == null ? void 0 : _a2.map((item, idx) => /* @__PURE__ */ jsx(
+            /* @__PURE__ */ jsx("div", { className: "absolute left-0 mt-2 w-40 bg-white rounded-lg shadow-lg py-1 z-50 border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200", children: (_a3 = link.items) == null ? void 0 : _a3.map((item, idx) => /* @__PURE__ */ jsx(
               Link,
               {
                 href: item.href,
@@ -7426,7 +7423,7 @@ function Header({ auth }) {
                 /* @__PURE__ */ jsx("div", { className: "bg-red-600 text-white rounded-full p-1.5", children: /* @__PURE__ */ jsx(User$1, { size: 16 }) }),
                 /* @__PURE__ */ jsxs("span", { className: "text-sm font-medium", children: [
                   "Bonjour, ",
-                  (_b = (_a = auth.user) == null ? void 0 : _a.name) == null ? void 0 : _b.split(" ")[0]
+                  (_b2 = (_a2 = auth.user) == null ? void 0 : _a2.name) == null ? void 0 : _b2.split(" ")[0]
                 ] }),
                 /* @__PURE__ */ jsx(
                   ChevronDown,
@@ -7573,13 +7570,13 @@ function Header({ auth }) {
                     )
                   ] }),
                   /* @__PURE__ */ jsx("nav", { className: "flex-1", children: /* @__PURE__ */ jsx("ul", { className: "flex flex-col gap-5 text-base font-medium", children: navLinks.map((link, index) => {
-                    var _a2;
+                    var _a3;
                     return /* @__PURE__ */ jsx("li", { children: link.dropdown ? /* @__PURE__ */ jsxs("div", { className: "mb-2", children: [
                       /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between py-2.5 text-gray-700 border-b border-gray-100", children: [
                         /* @__PURE__ */ jsx("span", { className: "font-medium", children: link.text }),
                         /* @__PURE__ */ jsx(ChevronDown, { size: 16, className: "text-gray-400" })
                       ] }),
-                      /* @__PURE__ */ jsx("ul", { className: "pl-4 mt-2", children: (_a2 = link.items) == null ? void 0 : _a2.map((item, idx) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(
+                      /* @__PURE__ */ jsx("ul", { className: "pl-4 mt-2", children: (_a3 = link.items) == null ? void 0 : _a3.map((item, idx) => /* @__PURE__ */ jsx("li", { children: /* @__PURE__ */ jsx(
                         Link,
                         {
                           href: item.href,
@@ -8243,7 +8240,7 @@ function TurnstileWidget({ siteKey, onVerify }) {
     }
   );
 }
-const loginUrl = defaultExport("login");
+const loginUrl = route$3("login");
 console.log(loginUrl);
 function Login$1({
   status,
@@ -9147,7 +9144,7 @@ function ResetPassword({
     return "Fort";
   };
   const submit = async (e) => {
-    var _a;
+    var _a2;
     e.preventDefault();
     setProcessing(true);
     setErrors({});
@@ -9156,7 +9153,7 @@ function ResetPassword({
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-CSRF-TOKEN": ((_a = document.querySelector('meta[name="csrf-token"]')) == null ? void 0 : _a.content) || ""
+          "X-CSRF-TOKEN": ((_a2 = document.querySelector('meta[name="csrf-token"]')) == null ? void 0 : _a2.content) || ""
         },
         body: JSON.stringify(data)
       });
@@ -11554,8 +11551,8 @@ function Dashboard$1({ appelsOffres = [], annonces = [], tickets = [], auth }) {
             /* @__PURE__ */ jsx("div", { className: "px-4 sm:px-6 py-3 sm:py-4", children: (annonces == null ? void 0 : annonces.length) ? /* @__PURE__ */ jsxs("div", { className: "relative", children: [
               /* @__PURE__ */ jsx("div", { className: "absolute left-4 sm:left-6 top-0 bottom-0 w-0.5 sm:w-1 bg-gradient-to-b from-red-600 to-red-200 rounded-full" }),
               /* @__PURE__ */ jsx("div", { className: "space-y-4 sm:space-y-6 pt-2 pb-4", children: annonces.slice(0, 5).map((annonce, index) => {
-                var _a;
-                const annonceStatus = (_a = annonce.status) == null ? void 0 : _a.toLowerCase();
+                var _a2;
+                const annonceStatus = (_a2 = annonce.status) == null ? void 0 : _a2.toLowerCase();
                 const getStatusColor = (status) => {
                   switch (status) {
                     case "approved":
@@ -11664,8 +11661,8 @@ function Dashboard$1({ appelsOffres = [], annonces = [], tickets = [], auth }) {
               ] })
             ] }),
             /* @__PURE__ */ jsx("div", { className: "p-4 sm:p-6 grid grid-cols-1 gap-3 sm:gap-4", children: filteredAppelsOffres.length > 0 ? filteredAppelsOffres.slice(0, 5).map((appelOffre, index) => {
-              var _a;
-              const aoStatus = ((_a = appelOffre.status) == null ? void 0 : _a.toLowerCase()) || "inconnu";
+              var _a2;
+              const aoStatus = ((_a2 = appelOffre.status) == null ? void 0 : _a2.toLowerCase()) || "inconnu";
               return /* @__PURE__ */ jsx(
                 "div",
                 {
@@ -11772,8 +11769,8 @@ function Dashboard$1({ appelsOffres = [], annonces = [], tickets = [], auth }) {
               ] }) })
             ] }),
             /* @__PURE__ */ jsx("div", { className: "p-4 sm:p-6 space-y-3 sm:space-y-4", children: tickets.length > 0 ? tickets.slice(0, 3).map((ticket, index) => {
-              var _a;
-              const ticketStatus = ((_a = ticket.status) == null ? void 0 : _a.toLowerCase()) || "open";
+              var _a2;
+              const ticketStatus = ((_a2 = ticket.status) == null ? void 0 : _a2.toLowerCase()) || "open";
               return /* @__PURE__ */ jsx(
                 "div",
                 {
@@ -12190,7 +12187,7 @@ function WePressContactPage({ auth, seo }) {
     return Object.keys(newErrors).length === 0;
   };
   const handleSubmit = async (e) => {
-    var _a;
+    var _a2;
     e.preventDefault();
     if (!validateForm()) {
       return;
@@ -12203,7 +12200,7 @@ function WePressContactPage({ auth, seo }) {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
-          "X-CSRF-TOKEN": ((_a = document.querySelector('meta[name="csrf-token"]')) == null ? void 0 : _a.getAttribute("content")) || ""
+          "X-CSRF-TOKEN": ((_a2 = document.querySelector('meta[name="csrf-token"]')) == null ? void 0 : _a2.getAttribute("content")) || ""
         },
         body: JSON.stringify(formData)
       });
@@ -13359,7 +13356,7 @@ function Create$1({ categories = {}, auth }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormSubmitted(true);
-    post(defaultExport("client.ticket.store").toString(), {
+    post(route$3("client.ticket.store").toString(), {
       onSuccess: (page) => {
       },
       onError: (errors2) => {
@@ -13370,8 +13367,8 @@ function Create$1({ categories = {}, auth }) {
     });
   };
   const handleFileChange = (e) => {
-    var _a;
-    const file = ((_a = e.target.files) == null ? void 0 : _a[0]) || null;
+    var _a2;
+    const file = ((_a2 = e.target.files) == null ? void 0 : _a2[0]) || null;
     setData("attachment", file);
   };
   const handleDragEnter = useCallback((e) => {
@@ -13416,7 +13413,7 @@ function Create$1({ categories = {}, auth }) {
       /* @__PURE__ */ jsxs(
         Link,
         {
-          href: defaultExport("client.ticket.index").toString(),
+          href: route$3("client.ticket.index").toString(),
           className: "flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white border border-gray-200 rounded-lg shadow-sm text-sm sm:text-base font-medium text-[#1a2a4b] hover:bg-gray-100 w-fit",
           children: [
             /* @__PURE__ */ jsx(MdArrowBack, { className: "h-4 w-4 sm:h-5 sm:w-5 text-[#1a2a4b]" }),
@@ -13673,7 +13670,7 @@ function Create$1({ categories = {}, auth }) {
                 /* @__PURE__ */ jsx(
                   Link,
                   {
-                    href: defaultExport("client.ticket.index").toString(),
+                    href: route$3("client.ticket.index").toString(),
                     className: "px-4 py-2 sm:py-3 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 text-sm sm:text-base",
                     children: "Annuler"
                   }
@@ -16324,8 +16321,8 @@ function PublierAnnoncePage({
   };
   const [cities, setCities] = useState([]);
   const handleFileChange = (e) => {
-    var _a;
-    const file = ((_a = e.target.files) == null ? void 0 : _a[0]) || null;
+    var _a2;
+    const file = ((_a2 = e.target.files) == null ? void 0 : _a2[0]) || null;
     setData("pdf", file);
   };
   useEffect(() => {
@@ -16764,7 +16761,7 @@ const getCategoryColor = (category) => {
   }
 };
 function SingleAnnonce({ annonce, relatedAnnonces, auth, seo }) {
-  var _a;
+  var _a2;
   const [canonicalUrl, setCanonicalUrl] = useState("");
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -16832,7 +16829,7 @@ function SingleAnnonce({ annonce, relatedAnnonces, auth, seo }) {
                   /* @__PURE__ */ jsx(User$1, { className: "h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 text-[#0F172A]" }),
                   /* @__PURE__ */ jsx("span", { className: "font-medium mr-1", children: "Publié par:" }),
                   " ",
-                  /* @__PURE__ */ jsx("span", { className: "truncate", children: annonce.is_anonyme ? "Anonyme" : ((_a = annonce.user) == null ? void 0 : _a.name) || "Utilisateur inconnu" })
+                  /* @__PURE__ */ jsx("span", { className: "truncate", children: annonce.is_anonyme ? "Anonyme" : ((_a2 = annonce.user) == null ? void 0 : _a2.name) || "Utilisateur inconnu" })
                 ] }),
                 /* @__PURE__ */ jsxs("div", { className: "flex items-center text-gray-600 text-xs sm:text-sm", children: [
                   /* @__PURE__ */ jsx(MapPin, { className: "h-3.5 w-3.5 sm:h-4 sm:w-4 mr-1.5 sm:mr-2 text-[#0F172A]" }),
@@ -16992,7 +16989,7 @@ const __vite_glob_0_47 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   default: SingleAnnonce
 }, Symbol.toStringTag, { value: "Module" }));
 function AppelsOffresPage({ appelsOffres, auth, seo }) {
-  var _a;
+  var _a2;
   const [canonicalUrl, setCanonicalUrl] = useState("");
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -17002,10 +16999,10 @@ function AppelsOffresPage({ appelsOffres, auth, seo }) {
   const [search, setSearch] = useState("");
   const [selectedType, setSelectedType] = useState("");
   const [selectedSecteur, setSelectedSecteur] = useState("");
-  const filteredAppelsOffres = ((_a = appelsOffres == null ? void 0 : appelsOffres.data) == null ? void 0 : _a.filter(
+  const filteredAppelsOffres = ((_a2 = appelsOffres == null ? void 0 : appelsOffres.data) == null ? void 0 : _a2.filter(
     (appelOffre) => {
-      var _a2, _b, _c;
-      return (((_a2 = appelOffre == null ? void 0 : appelOffre.titre) == null ? void 0 : _a2.toLowerCase().includes(search.toLowerCase())) || ((_b = appelOffre == null ? void 0 : appelOffre.date) == null ? void 0 : _b.includes(search)) || ((_c = appelOffre == null ? void 0 : appelOffre.ville) == null ? void 0 : _c.toLowerCase().includes(search.toLowerCase()))) && (selectedType ? (appelOffre == null ? void 0 : appelOffre.type) === selectedType : true) && (selectedSecteur ? (appelOffre == null ? void 0 : appelOffre.secteur) === selectedSecteur : true);
+      var _a3, _b2, _c;
+      return (((_a3 = appelOffre == null ? void 0 : appelOffre.titre) == null ? void 0 : _a3.toLowerCase().includes(search.toLowerCase())) || ((_b2 = appelOffre == null ? void 0 : appelOffre.date) == null ? void 0 : _b2.includes(search)) || ((_c = appelOffre == null ? void 0 : appelOffre.ville) == null ? void 0 : _c.toLowerCase().includes(search.toLowerCase()))) && (selectedType ? (appelOffre == null ? void 0 : appelOffre.type) === selectedType : true) && (selectedSecteur ? (appelOffre == null ? void 0 : appelOffre.secteur) === selectedSecteur : true);
     }
   )) || [];
   const getTypeBadge = (type) => {
@@ -17061,9 +17058,9 @@ function AppelsOffresPage({ appelsOffres, auth, seo }) {
     );
   };
   const renderPaginationButtons = () => {
-    var _a2, _b;
-    const current_page = ((_a2 = appelsOffres == null ? void 0 : appelsOffres.meta) == null ? void 0 : _a2.current_page) || 1;
-    const last_page = ((_b = appelsOffres == null ? void 0 : appelsOffres.meta) == null ? void 0 : _b.last_page) || 1;
+    var _a3, _b2;
+    const current_page = ((_a3 = appelsOffres == null ? void 0 : appelsOffres.meta) == null ? void 0 : _a3.current_page) || 1;
+    const last_page = ((_b2 = appelsOffres == null ? void 0 : appelsOffres.meta) == null ? void 0 : _b2.last_page) || 1;
     const buttons = [];
     buttons.push(
       /* @__PURE__ */ jsx(
@@ -17453,8 +17450,8 @@ function AppelOffrePage({
     }
   }, [sectors]);
   const handleFileChange = (e) => {
-    var _a;
-    const file = ((_a = e.target.files) == null ? void 0 : _a[0]) || null;
+    var _a2;
+    const file = ((_a2 = e.target.files) == null ? void 0 : _a2[0]) || null;
     setData("pdf", file);
   };
   useEffect(() => {
@@ -18566,7 +18563,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
           /* @__PURE__ */ jsx("h2", { className: "text-xl sm:text-2xl md:text-3xl font-bold text-black mb-1 sm:mb-2", children: "Mes appels d'offres" }),
           /* @__PURE__ */ jsx("p", { className: "text-black/80 max-w-2xl text-xs sm:text-sm", children: "Gérez vos appels d'offres, suivez leur statut et téléchargez les documents associés." })
         ] }),
-        /* @__PURE__ */ jsx(Link, { href: defaultExport("client.appel-offre.create").toString(), className: "block shrink-0", children: /* @__PURE__ */ jsxs(Button, { className: "bg-red-600 hover:bg-red-700 text-white py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto justify-center", children: [
+        /* @__PURE__ */ jsx(Link, { href: route$3("client.appel-offre.create").toString(), className: "block shrink-0", children: /* @__PURE__ */ jsxs(Button, { className: "bg-red-600 hover:bg-red-700 text-white py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto justify-center", children: [
           /* @__PURE__ */ jsx("span", { children: "Publier un appel d'offre" }),
           /* @__PURE__ */ jsx(ArrowUpRight, { className: "w-3.5 h-3.5 sm:w-4 sm:h-4" })
         ] }) })
@@ -18744,7 +18741,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                         /* @__PURE__ */ jsx(
                           Link,
                           {
-                            href: defaultExport("client.appel-offre.show", { slug: appelOffre.slug }).toString(),
+                            href: route$3("client.appel-offre.show", { slug: appelOffre.slug }).toString(),
                             className: `p-1 sm:p-1.5 bg-blue-50 text-blue-700 rounded-lg transition-colors ${appelOffre.status === "APPROVED" ? "hover:bg-blue-100" : "opacity-50 cursor-not-allowed pointer-events-none"}`,
                             title: "Voir l'appel d'offre",
                             tabIndex: appelOffre.status === "APPROVED" ? 0 : -1,
@@ -18765,7 +18762,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                         /* @__PURE__ */ jsx(
                           Link,
                           {
-                            href: appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? defaultExport("client.appel-offre.show", { slug: appelOffre.slug }).toString() : "#",
+                            href: appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? route$3("client.appel-offre.show", { slug: appelOffre.slug }).toString() : "#",
                             className: `p-1 sm:p-1.5 rounded-lg transition-colors ${appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? "bg-amber-50 text-amber-700 hover:bg-amber-100" : "bg-gray-100 text-gray-400 cursor-not-allowed"}`,
                             title: appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? "Modifier l'appel d'offre" : "Modification impossible",
                             onClick: (e) => appelOffre.status !== "PENDING" && appelOffre.status !== "BROUILLON" && e.preventDefault(),
@@ -18799,7 +18796,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                   /* @__PURE__ */ jsx(
                     Link,
                     {
-                      href: defaultExport("client.appel-offre.show", { slug: appelOffre.slug }).toString(),
+                      href: route$3("client.appel-offre.show", { slug: appelOffre.slug }).toString(),
                       className: "text-[#1a2a4b] font-medium hover:text-blue-700 transition-colors line-clamp-1 text-sm flex-1 mr-2",
                       children: appelOffre.titre
                     }
@@ -18843,7 +18840,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                   /* @__PURE__ */ jsx(
                     Link,
                     {
-                      href: defaultExport("client.appel-offre.show", { slug: appelOffre.slug }).toString(),
+                      href: route$3("client.appel-offre.show", { slug: appelOffre.slug }).toString(),
                       className: `p-1 bg-blue-50 text-blue-700 rounded-lg transition-colors ${appelOffre.status === "APPROVED" ? "hover:bg-blue-100" : "opacity-50 cursor-not-allowed pointer-events-none"}`,
                       title: "Voir l'appel d'offre",
                       tabIndex: appelOffre.status === "APPROVED" ? 0 : -1,
@@ -18858,7 +18855,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                   /* @__PURE__ */ jsx(
                     Link,
                     {
-                      href: appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? defaultExport("client.appel-offre.edit", { slug: appelOffre.slug }).toString() : "#",
+                      href: appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? route$3("client.appel-offre.edit", { slug: appelOffre.slug }).toString() : "#",
                       className: `p-1 rounded-lg transition-colors ${appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? "bg-amber-50 text-amber-700 hover:bg-amber-100" : "bg-gray-100 text-gray-400 cursor-not-allowed"}`,
                       title: appelOffre.status === "PENDING" || appelOffre.status === "BROUILLON" ? "Modifier l'appel d'offre" : "Modification impossible",
                       onClick: (e) => appelOffre.status !== "PENDING" && appelOffre.status !== "BROUILLON" && e.preventDefault(),
@@ -18868,7 +18865,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                   /* @__PURE__ */ jsx(
                     Link,
                     {
-                      href: appelOffre.status === "BROUILLON" ? defaultExport("client.appel-offre.create", { slug: appelOffre.slug }).toString() : "#",
+                      href: appelOffre.status === "BROUILLON" ? route$3("client.appel-offre.create", { slug: appelOffre.slug }).toString() : "#",
                       onClick: (e) => {
                         if (appelOffre.status !== "BROUILLON") e.preventDefault();
                       },
@@ -18947,7 +18944,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                   ]
                 }
               ),
-              /* @__PURE__ */ jsx(Link, { href: defaultExport("client.appel-offre.create").toString(), className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#1a2a4b] hover:bg-[#08203f] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm w-full justify-center", children: [
+              /* @__PURE__ */ jsx(Link, { href: route$3("client.appel-offre.create").toString(), className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#1a2a4b] hover:bg-[#08203f] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm w-full justify-center", children: [
                 /* @__PURE__ */ jsx("span", { children: "Créer un nouvel appel d'offre" }),
                 /* @__PURE__ */ jsx(ChevronRight, { className: "h-3.5 w-3.5 sm:h-4 sm:w-4" })
               ] }) })
@@ -19337,7 +19334,7 @@ const route$1 = (name, params = {}) => {
   return `/${name}${params ? `/${params}` : ""}`;
 };
 function SingleAppelOffre({ appelOffre, relatedAppelsOffres, auth }) {
-  var _a, _b, _c;
+  var _a2, _b2, _c;
   const [canonicalUrl, setCanonicalUrl] = useState("");
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -19352,7 +19349,7 @@ function SingleAppelOffre({ appelOffre, relatedAppelsOffres, auth }) {
         "meta",
         {
           name: "description",
-          content: ((_a = appelOffre.objet) == null ? void 0 : _a.substring(0, 150)) + (((_b = appelOffre.objet) == null ? void 0 : _b.length) > 150 ? "…" : "")
+          content: ((_a2 = appelOffre.objet) == null ? void 0 : _a2.substring(0, 150)) + (((_b2 = appelOffre.objet) == null ? void 0 : _b2.length) > 150 ? "…" : "")
         }
       ),
       /* @__PURE__ */ jsx("meta", { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" }),
@@ -20134,8 +20131,8 @@ const EditProfile = () => {
     }
   };
   const handleIconClick = () => {
-    var _a;
-    (_a = fileInputRef.current) == null ? void 0 : _a.click();
+    var _a2;
+    (_a2 = fileInputRef.current) == null ? void 0 : _a2.click();
   };
   const [firstName, setFirstName] = React__default.useState("Frans");
   const [lastName, setLastName] = React__default.useState("AHW");
@@ -20393,8 +20390,8 @@ const EditProfile = () => {
           {
             className: "btn btn-disabled text-error text-xs xl:text-sm",
             onClick: () => {
-              var _a;
-              return (_a = modalDelete.current) == null ? void 0 : _a.showModal();
+              var _a2;
+              return (_a2 = modalDelete.current) == null ? void 0 : _a2.showModal();
             },
             children: [
               /* @__PURE__ */ jsx(HiOutlineTrash, { className: "text-lg" }),
@@ -20822,15 +20819,15 @@ function ResponsiveTable({
   onMarkAsPaid,
   isLoading = false
 }) {
-  var _a, _b, _c, _d;
+  var _a2, _b2, _c, _d;
   const [searchTerm, setSearchTerm] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("");
   const [selectedAnnonce, setSelectedAnnonce] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const categories = Array.from(new Set(data.map((item) => item.category)));
   const filteredData = data.filter((item) => {
-    var _a2, _b2, _c2, _d2;
-    const matchesSearch = item.id.toString().includes(searchTerm) || item.title.toLowerCase().includes(searchTerm.toLowerCase()) || item.nameSociete.toLowerCase().includes(searchTerm.toLowerCase()) || (((_b2 = (_a2 = item.user) == null ? void 0 : _a2.name) == null ? void 0 : _b2.toLowerCase().includes(searchTerm.toLowerCase())) ?? false) || (((_d2 = (_c2 = item.user) == null ? void 0 : _c2.email) == null ? void 0 : _d2.toLowerCase().includes(searchTerm.toLowerCase())) ?? false);
+    var _a3, _b3, _c2, _d2;
+    const matchesSearch = item.id.toString().includes(searchTerm) || item.title.toLowerCase().includes(searchTerm.toLowerCase()) || item.nameSociete.toLowerCase().includes(searchTerm.toLowerCase()) || (((_b3 = (_a3 = item.user) == null ? void 0 : _a3.name) == null ? void 0 : _b3.toLowerCase().includes(searchTerm.toLowerCase())) ?? false) || (((_d2 = (_c2 = item.user) == null ? void 0 : _c2.email) == null ? void 0 : _d2.toLowerCase().includes(searchTerm.toLowerCase())) ?? false);
     const matchesCategory = !categoryFilter || item.category === categoryFilter;
     return matchesSearch && matchesCategory;
   });
@@ -21007,10 +21004,10 @@ function ResponsiveTable({
           /* @__PURE__ */ jsx("th", { className: "w-40 px-3 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider", children: "Actions" })
         ] }) }),
         /* @__PURE__ */ jsx("tbody", { className: "bg-white divide-y divide-gray-200", children: filteredData.length > 0 ? filteredData.map((annonce) => {
-          var _a2, _b2, _c2, _d2, _e, _f, _g, _h;
-          return /* @__PURE__ */ jsxs("tr", { className: `hover:bg-gray-50 transition-colors ${((_a2 = annonce.user) == null ? void 0 : _a2.is_favorite) ? "bg-gradient-to-r from-amber-50/30 to-yellow-50/30 hover:from-amber-50/50 hover:to-yellow-50/50" : ""}`, children: [
+          var _a3, _b3, _c2, _d2, _e, _f, _g, _h;
+          return /* @__PURE__ */ jsxs("tr", { className: `hover:bg-gray-50 transition-colors ${((_a3 = annonce.user) == null ? void 0 : _a3.is_favorite) ? "bg-gradient-to-r from-amber-50/30 to-yellow-50/30 hover:from-amber-50/50 hover:to-yellow-50/50" : ""}`, children: [
             /* @__PURE__ */ jsx("td", { className: "w-48 px-3 py-4", children: /* @__PURE__ */ jsxs("div", { className: "min-w-0 relative", children: [
-              ((_b2 = annonce.user) == null ? void 0 : _b2.is_favorite) && /* @__PURE__ */ jsx("div", { className: "absolute -top-1 -left-1", children: /* @__PURE__ */ jsx(FavoriteIndicator2, {}) }),
+              ((_b3 = annonce.user) == null ? void 0 : _b3.is_favorite) && /* @__PURE__ */ jsx("div", { className: "absolute -top-1 -left-1", children: /* @__PURE__ */ jsx(FavoriteIndicator2, {}) }),
               /* @__PURE__ */ jsx("div", { className: "font-medium text-gray-900 truncate text-sm", title: annonce.title, children: annonce.payment_reference || "" }),
               /* @__PURE__ */ jsx("div", { className: "text-xs text-gray-500 truncate", title: annonce.nameSociete, children: annonce.nameSociete })
             ] }) }),
@@ -21061,9 +21058,9 @@ function ResponsiveTable({
         ] }) }) }) })
       ] }) }),
       /* @__PURE__ */ jsx("div", { className: "lg:hidden", children: filteredData.length > 0 ? /* @__PURE__ */ jsx("div", { className: "divide-y divide-gray-200", children: filteredData.map((annonce) => {
-        var _a2, _b2, _c2, _d2, _e, _f;
-        return /* @__PURE__ */ jsxs("div", { className: `p-6 hover:bg-gray-50 transition-colors relative ${((_a2 = annonce.user) == null ? void 0 : _a2.is_favorite) ? "bg-gradient-to-r from-amber-50/30 to-yellow-50/30 hover:from-amber-50/50 hover:to-yellow-50/50" : ""}`, children: [
-          ((_b2 = annonce.user) == null ? void 0 : _b2.is_favorite) && /* @__PURE__ */ jsx("div", { className: "absolute top-4 right-4", children: /* @__PURE__ */ jsx(FavoriteBadge2, { size: "sm" }) }),
+        var _a3, _b3, _c2, _d2, _e, _f;
+        return /* @__PURE__ */ jsxs("div", { className: `p-6 hover:bg-gray-50 transition-colors relative ${((_a3 = annonce.user) == null ? void 0 : _a3.is_favorite) ? "bg-gradient-to-r from-amber-50/30 to-yellow-50/30 hover:from-amber-50/50 hover:to-yellow-50/50" : ""}`, children: [
+          ((_b3 = annonce.user) == null ? void 0 : _b3.is_favorite) && /* @__PURE__ */ jsx("div", { className: "absolute top-4 right-4", children: /* @__PURE__ */ jsx(FavoriteBadge2, { size: "sm" }) }),
           /* @__PURE__ */ jsxs("div", { className: "flex items-start justify-between mb-4 pr-20", children: [
             /* @__PURE__ */ jsxs("div", { className: "flex-1", children: [
               /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 mb-2", children: [
@@ -21151,7 +21148,7 @@ function ResponsiveTable({
                   "Détails de l'annonce ",
                   selectedAnnonce.payment_reference
                 ] }),
-                ((_a = selectedAnnonce.user) == null ? void 0 : _a.is_favorite) && /* @__PURE__ */ jsx(FavoriteBadge2, { size: "md" })
+                ((_a2 = selectedAnnonce.user) == null ? void 0 : _a2.is_favorite) && /* @__PURE__ */ jsx(FavoriteBadge2, { size: "md" })
               ] }),
               /* @__PURE__ */ jsx(
                 "button",
@@ -21170,7 +21167,7 @@ function ResponsiveTable({
               /* @__PURE__ */ jsxs(
                 "div",
                 {
-                  className: `p-6 rounded-xl transition-all duration-300 ${((_b = selectedAnnonce.user) == null ? void 0 : _b.is_favorite) ? "bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-2 border-amber-200" : "bg-gradient-to-br from-gray-50 to-slate-50 border border-gray-200"}`,
+                  className: `p-6 rounded-xl transition-all duration-300 ${((_b2 = selectedAnnonce.user) == null ? void 0 : _b2.is_favorite) ? "bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-2 border-amber-200" : "bg-gradient-to-br from-gray-50 to-slate-50 border border-gray-200"}`,
                   children: [
                     /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between mb-4", children: [
                       /* @__PURE__ */ jsxs("h4", { className: "text-lg font-semibold text-gray-800 flex items-center gap-2", children: [
@@ -21327,15 +21324,15 @@ function AppelsOffresTable({
   onMarkAsPaid,
   isLoading = false
 }) {
-  var _a, _b, _c, _d, _e, _f, _g;
+  var _a2, _b2, _c, _d, _e, _f, _g;
   const [searchTerm, setSearchTerm] = useState("");
   const [secteurFilter, setSecteurFilter] = useState("");
   const [selectedAppelOffre, setSelectedAppelOffre] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const secteurs = Array.from(new Set(data.map((item) => item.secteur)));
   const filteredData = data.filter((item) => {
-    var _a2, _b2, _c2, _d2;
-    const matchesSearch = item.id.toString().includes(searchTerm) || (((_a2 = item.titre) == null ? void 0 : _a2.toLowerCase()) ?? "").includes(searchTerm.toLowerCase()) || (((_b2 = item.ICE) == null ? void 0 : _b2.toLowerCase()) ?? "").includes(searchTerm.toLowerCase()) || (((_c2 = item.ville) == null ? void 0 : _c2.toLowerCase()) ?? "").includes(searchTerm.toLowerCase()) || (((_d2 = item.secteur) == null ? void 0 : _d2.toLowerCase()) ?? "").includes(searchTerm.toLowerCase());
+    var _a3, _b3, _c2, _d2;
+    const matchesSearch = item.id.toString().includes(searchTerm) || (((_a3 = item.titre) == null ? void 0 : _a3.toLowerCase()) ?? "").includes(searchTerm.toLowerCase()) || (((_b3 = item.ICE) == null ? void 0 : _b3.toLowerCase()) ?? "").includes(searchTerm.toLowerCase()) || (((_c2 = item.ville) == null ? void 0 : _c2.toLowerCase()) ?? "").includes(searchTerm.toLowerCase()) || (((_d2 = item.secteur) == null ? void 0 : _d2.toLowerCase()) ?? "").includes(searchTerm.toLowerCase());
     const matchesSecteur = !secteurFilter || item.secteur === secteurFilter;
     return matchesSearch && matchesSecteur;
   });
@@ -21488,10 +21485,10 @@ function AppelsOffresTable({
           /* @__PURE__ */ jsx("th", { className: "w-40 px-3 py-4 text-right text-xs font-medium text-gray-500 uppercase tracking-wider", children: "Actions" })
         ] }) }),
         /* @__PURE__ */ jsx("tbody", { className: "bg-white divide-y divide-gray-200", children: filteredData.length > 0 ? filteredData.map((appelOffre) => {
-          var _a2;
+          var _a3;
           return /* @__PURE__ */ jsxs("tr", { className: "hover:bg-gray-50 transition-colors", children: [
             /* @__PURE__ */ jsx("td", { className: "w-48 px-3 py-4", children: /* @__PURE__ */ jsx("div", { className: "min-w-0", children: /* @__PURE__ */ jsx("div", { className: "font-medium text-gray-900 truncate text-sm", title: appelOffre.titre, children: appelOffre.titre }) }) }),
-            /* @__PURE__ */ jsx("td", { className: "w-20 px-3 py-4 text-center", children: ((_a2 = appelOffre.user) == null ? void 0 : _a2.is_favorite) ? /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-1 px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold", children: [
+            /* @__PURE__ */ jsx("td", { className: "w-20 px-3 py-4 text-center", children: ((_a3 = appelOffre.user) == null ? void 0 : _a3.is_favorite) ? /* @__PURE__ */ jsxs("span", { className: "inline-flex items-center gap-1 px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold", children: [
               /* @__PURE__ */ jsx(StarIcon, { className: "w-4 h-4 text-yellow-500" }),
               " VIP"
             ] }) : /* @__PURE__ */ jsx("span", { className: "inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-100 text-gray-400 text-xs font-normal", children: /* @__PURE__ */ jsx(StarIcon, { className: "w-4 h-4 text-gray-300" }) }) }),
@@ -21612,14 +21609,14 @@ function AppelsOffresTable({
             /* @__PURE__ */ jsxs(
               "div",
               {
-                className: `p-6 rounded-xl transition-all duration-300 ${((_a = selectedAppelOffre.user) == null ? void 0 : _a.is_favorite) ? "bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-2 border-amber-200" : "bg-gradient-to-br from-gray-50 to-slate-50 border border-gray-200"}`,
+                className: `p-6 rounded-xl transition-all duration-300 ${((_a2 = selectedAppelOffre.user) == null ? void 0 : _a2.is_favorite) ? "bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 border-2 border-amber-200" : "bg-gradient-to-br from-gray-50 to-slate-50 border border-gray-200"}`,
                 children: [
                   /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between mb-4", children: [
                     /* @__PURE__ */ jsxs("h4", { className: "text-lg font-semibold text-gray-800 flex items-center gap-2", children: [
                       /* @__PURE__ */ jsx("div", { className: "w-2 h-2 rounded-full bg-blue-500" }),
                       "Informations Utilisateur"
                     ] }),
-                    ((_b = selectedAppelOffre.user) == null ? void 0 : _b.is_favorite) && /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-400 px-3 py-1.5 rounded-full", children: [
+                    ((_b2 = selectedAppelOffre.user) == null ? void 0 : _b2.is_favorite) && /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-2 bg-gradient-to-r from-amber-400 to-yellow-400 px-3 py-1.5 rounded-full", children: [
                       /* @__PURE__ */ jsx(XMarkIcon, { className: "w-4 h-4 text-white" }),
                       /* @__PURE__ */ jsx("span", { className: "text-sm font-bold text-white", children: "VIP" })
                     ] })
@@ -22040,11 +22037,11 @@ const __vite_glob_0_64 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   default: Home
 }, Symbol.toStringTag, { value: "Module" }));
 function SeoHead({ override } = {}) {
-  var _a;
+  var _a2;
   const { props } = usePage();
   const seoDefaults = props.seoDefaults ?? {};
   const pageSeo = props.seo ?? {};
-  const rawLoc = props.currentUrl ?? ((_a = props.ziggy) == null ? void 0 : _a.location);
+  const rawLoc = props.currentUrl ?? ((_a2 = props.ziggy) == null ? void 0 : _a2.location);
   const appEnv = props.appEnv ?? "production";
   const currentUrl = typeof rawLoc === "string" ? rawLoc : rawLoc && typeof rawLoc === "object" && "href" in rawLoc ? rawLoc.href : void 0;
   const seo = { ...seoDefaults, ...pageSeo, ...override ?? {} };
@@ -23898,8 +23895,8 @@ const Profile = () => {
           {
             className: "btn dark:btn-neutral text-error dark:text-error text-xs xl:text-sm",
             onClick: () => {
-              var _a;
-              return (_a = modalDelete.current) == null ? void 0 : _a.showModal();
+              var _a2;
+              return (_a2 = modalDelete.current) == null ? void 0 : _a2.showModal();
             },
             children: [
               /* @__PURE__ */ jsx(HiOutlineTrash, { className: "text-lg" }),
@@ -24027,8 +24024,8 @@ function DeleteUserForm({
       preserveScroll: true,
       onSuccess: () => closeModal(),
       onError: () => {
-        var _a;
-        return (_a = passwordInput.current) == null ? void 0 : _a.focus();
+        var _a2;
+        return (_a2 = passwordInput.current) == null ? void 0 : _a2.focus();
       },
       onFinish: () => reset()
     });
@@ -24177,14 +24174,14 @@ function UpdatePasswordForm({
       preserveScroll: true,
       onSuccess: () => reset(),
       onError: (errors2) => {
-        var _a, _b;
+        var _a2, _b2;
         if (errors2.password) {
           reset("password", "password_confirmation");
-          (_a = passwordInput.current) == null ? void 0 : _a.focus();
+          (_a2 = passwordInput.current) == null ? void 0 : _a2.focus();
         }
         if (errors2.current_password) {
           reset("current_password");
-          (_b = currentPasswordInput.current) == null ? void 0 : _b.focus();
+          (_b2 = currentPasswordInput.current) == null ? void 0 : _b2.focus();
         }
       }
     });
@@ -24741,8 +24738,8 @@ function SitemapPage({ auth }) {
     const endIndex = startIndex + annoncesPagination.itemsPerPage;
     const filtered = searchQuery ? annonces.filter(
       (item) => {
-        var _a, _b, _c;
-        return item.title.toLowerCase().includes(searchQuery.toLowerCase()) || ((_a = item.nameSociete) == null ? void 0 : _a.toLowerCase().includes(searchQuery.toLowerCase())) || ((_b = item.ville) == null ? void 0 : _b.toLowerCase().includes(searchQuery.toLowerCase())) || ((_c = item.category) == null ? void 0 : _c.toLowerCase().includes(searchQuery.toLowerCase()));
+        var _a2, _b2, _c;
+        return item.title.toLowerCase().includes(searchQuery.toLowerCase()) || ((_a2 = item.nameSociete) == null ? void 0 : _a2.toLowerCase().includes(searchQuery.toLowerCase())) || ((_b2 = item.ville) == null ? void 0 : _b2.toLowerCase().includes(searchQuery.toLowerCase())) || ((_c = item.category) == null ? void 0 : _c.toLowerCase().includes(searchQuery.toLowerCase()));
       }
     ) : annonces;
     return filtered.slice(startIndex, endIndex);
@@ -25951,10 +25948,10 @@ function FavoriteUsers({ users }) {
       flex: 1,
       headerClassName: "table-header",
       renderCell: (params) => {
-        var _a;
+        var _a2;
         return /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1 whitespace-normal break-words", children: [
           /* @__PURE__ */ jsx(HiOutlineMap, { className: "text-gray-500 dark:text-gray-400 flex-shrink-0" }),
-          /* @__PURE__ */ jsx("span", { className: "text-gray-700 dark:text-gray-300", children: ((_a = params.row.city) == null ? void 0 : _a.trim()) ? params.row.city : "N/A" })
+          /* @__PURE__ */ jsx("span", { className: "text-gray-700 dark:text-gray-300", children: ((_a2 = params.row.city) == null ? void 0 : _a2.trim()) ? params.row.city : "N/A" })
         ] });
       }
     },
@@ -26167,10 +26164,10 @@ function Index$1({ users }) {
       flex: 1,
       headerClassName: "table-header",
       renderCell: (params) => {
-        var _a;
+        var _a2;
         return /* @__PURE__ */ jsxs("div", { className: "flex items-center gap-1 whitespace-normal break-words", children: [
           /* @__PURE__ */ jsx(HiOutlineMap, { className: "text-gray-500 dark:text-gray-400 flex-shrink-0" }),
-          /* @__PURE__ */ jsx("span", { className: "text-gray-700 dark:text-gray-300", children: ((_a = params.row.city) == null ? void 0 : _a.trim()) ? params.row.city : "N/A" })
+          /* @__PURE__ */ jsx("span", { className: "text-gray-700 dark:text-gray-300", children: ((_a2 = params.row.city) == null ? void 0 : _a2.trim()) ? params.row.city : "N/A" })
         ] });
       }
     },
@@ -26982,9 +26979,9 @@ function Welcome({
   phpVersion
 }) {
   const handleImageError = () => {
-    var _a, _b, _c, _d;
-    (_a = document.getElementById("screenshot-container")) == null ? void 0 : _a.classList.add("!hidden");
-    (_b = document.getElementById("docs-card")) == null ? void 0 : _b.classList.add("!row-span-1");
+    var _a2, _b2, _c, _d;
+    (_a2 = document.getElementById("screenshot-container")) == null ? void 0 : _a2.classList.add("!hidden");
+    (_b2 = document.getElementById("docs-card")) == null ? void 0 : _b2.classList.add("!row-span-1");
     (_c = document.getElementById("docs-card-content")) == null ? void 0 : _c.classList.add("!flex-row");
     (_d = document.getElementById("background")) == null ? void 0 : _d.classList.add("!hidden");
   };
@@ -27367,26 +27364,23 @@ const __vite_glob_0_87 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   default: Welcome
 }, Symbol.toStringTag, { value: "Module" }));
-const routeFn = ZiggyJs.route ?? ZiggyJs.default ?? ZiggyJs;
+const ZiggyJs = ZiggyPkg;
+globalThis.ZiggyJs = ZiggyJs;
+const routeFn = ZiggyJs.route ?? ((_b = ZiggyJs.default) == null ? void 0 : _b.route) ?? ZiggyJs.default ?? ZiggyJs;
 try {
   const envUrl = process.env.APP_URL;
-  if (envUrl && typeof envUrl === "string") {
+  if (envUrl) {
     const u = new URL(envUrl);
     Ziggy$1.url = `${u.protocol}//${u.host}`;
-    if (u.port) Ziggy$1.port = Number(u.port);
-    else delete Ziggy$1.port;
   }
-} catch (e) {
+} catch {
 }
-global.route = (name, params, absolute) => routeFn(name, params, absolute, Ziggy$1);
-function formatHtml(html) {
-  if (process.env.NODE_ENV === "production") return html;
-  return pretty(html, { ocd: true });
-}
+globalThis.route = (name, params, absolute) => routeFn(name, params, absolute, Ziggy$1);
+const formatHtml = (html) => process.env.NODE_ENV === "production" ? html : pretty(html, { ocd: true });
 createServer(
   (page) => createInertiaApp({
     page,
-    render: (element) => formatHtml(renderToString(element)),
+    render: (el) => formatHtml(renderToString(el)),
     resolve: (name) => {
       const pages = /* @__PURE__ */ Object.assign({ "./Pages/Annonce/ApprovedAnnonces.tsx": __vite_glob_0_0, "./Pages/Annonce/Create.tsx": __vite_glob_0_1, "./Pages/Annonce/Edit.tsx": __vite_glob_0_2, "./Pages/Annonce/Index.tsx": __vite_glob_0_3, "./Pages/Annonce/Journal/Index.tsx": __vite_glob_0_4, "./Pages/Annonce/Livrer.tsx": __vite_glob_0_5, "./Pages/Annonce/Show.tsx": __vite_glob_0_6, "./Pages/Annonce/Ticket/Index.tsx": __vite_glob_0_7, "./Pages/Annonce/Ticket/Show.tsx": __vite_glob_0_8, "./Pages/Annonce/Ticket/createTicket.tsx": __vite_glob_0_9, "./Pages/Annonce/Ticket/edit.tsx": __vite_glob_0_10, "./Pages/Annonce/UserAnnonces.tsx": __vite_glob_0_11, "./Pages/Annonce/appel/Index.tsx": __vite_glob_0_12, "./Pages/Annonce/appel/appels-offres/Page.tsx": __vite_glob_0_13, "./Pages/Annonce/appel/create/Page.tsx": __vite_glob_0_14, "./Pages/Annonce/appel/edit/Page.tsx": __vite_glob_0_15, "./Pages/Annonce/appel/show/Page.tsx": __vite_glob_0_16, "./Pages/Annonce/paiement/Index.tsx": __vite_glob_0_17, "./Pages/Auth/ConfirmPassword.tsx": __vite_glob_0_18, "./Pages/Auth/EmailConfirmed.tsx": __vite_glob_0_19, "./Pages/Auth/ForgotPassword.tsx": __vite_glob_0_20, "./Pages/Auth/Login.tsx": __vite_glob_0_21, "./Pages/Auth/Register.tsx": __vite_glob_0_22, "./Pages/Auth/ResetPassword.tsx": __vite_glob_0_23, "./Pages/Auth/VerifyEmail.tsx": __vite_glob_0_24, "./Pages/Calendar.tsx": __vite_glob_0_25, "./Pages/Charts.tsx": __vite_glob_0_26, "./Pages/Client/Acceuil.tsx": __vite_glob_0_27, "./Pages/Client/AcceuilBackup.tsx": __vite_glob_0_28, "./Pages/Client/Apropos.tsx": __vite_glob_0_29, "./Pages/Client/Index.tsx": __vite_glob_0_30, "./Pages/Client/Info/Contact.tsx": __vite_glob_0_31, "./Pages/Client/Info/bank-info.tsx": __vite_glob_0_32, "./Pages/Client/Info/privacy-policy.tsx": __vite_glob_0_33, "./Pages/Client/Links/CGU.tsx": __vite_glob_0_34, "./Pages/Client/Links/Condtion-de-vente.tsx": __vite_glob_0_35, "./Pages/Client/Links/Mention-legale.tsx": __vite_glob_0_36, "./Pages/Client/Ticket/Create/create.tsx": __vite_glob_0_37, "./Pages/Client/Ticket/Show.tsx": __vite_glob_0_38, "./Pages/Client/Ticket/index.tsx": __vite_glob_0_39, "./Pages/Client/annonces/PaiementConfirmation.tsx": __vite_glob_0_40, "./Pages/Client/annonces/PurchaseNotComplete.tsx": __vite_glob_0_41, "./Pages/Client/annonces/mes-annonces/page.tsx": __vite_glob_0_42, "./Pages/Client/annonces/modifier/page.tsx": __vite_glob_0_43, "./Pages/Client/annonces/page.tsx": __vite_glob_0_44, "./Pages/Client/annonces/paiement/page.tsx": __vite_glob_0_45, "./Pages/Client/annonces/publier/Page.tsx": __vite_glob_0_46, "./Pages/Client/annonces/single-annonce/Page.tsx": __vite_glob_0_47, "./Pages/Client/appel-offre/Index.tsx": __vite_glob_0_48, "./Pages/Client/appel-offre/create/Page.tsx": __vite_glob_0_49, "./Pages/Client/appel-offre/edit/Page.tsx": __vite_glob_0_50, "./Pages/Client/appel-offre/mes/Page.tsx": __vite_glob_0_51, "./Pages/Client/appel-offre/paiement/Confirmation.tsx": __vite_glob_0_52, "./Pages/Client/appel-offre/paiement/Page.tsx": __vite_glob_0_53, "./Pages/Client/appel-offre/show/Page.tsx": __vite_glob_0_54, "./Pages/Client/contact.tsx": __vite_glob_0_55, "./Pages/Client/journaux/Index.tsx": __vite_glob_0_56, "./Pages/Client/payment/Historique.tsx": __vite_glob_0_57, "./Pages/Dashboard.tsx": __vite_glob_0_58, "./Pages/EditProfile.tsx": __vite_glob_0_59, "./Pages/Error.tsx": __vite_glob_0_60, "./Pages/Errors/Error403.tsx": __vite_glob_0_61, "./Pages/Errors/Error404.tsx": __vite_glob_0_62, "./Pages/Errors/Error500.tsx": __vite_glob_0_63, "./Pages/Home.tsx": __vite_glob_0_64, "./Pages/Login.tsx": __vite_glob_0_65, "./Pages/Logs.tsx": __vite_glob_0_66, "./Pages/Notes.tsx": __vite_glob_0_67, "./Pages/Orders.tsx": __vite_glob_0_68, "./Pages/Paiement/Confirmation.tsx": __vite_glob_0_69, "./Pages/Posts.tsx": __vite_glob_0_70, "./Pages/Product.tsx": __vite_glob_0_71, "./Pages/Products.tsx": __vite_glob_0_72, "./Pages/Profile.tsx": __vite_glob_0_73, "./Pages/Profile/Edit.tsx": __vite_glob_0_74, "./Pages/Profile/Partials/DeleteUserForm.tsx": __vite_glob_0_75, "./Pages/Profile/Partials/UpdatePasswordForm.tsx": __vite_glob_0_76, "./Pages/Profile/Partials/UpdateProfileInformationForm.tsx": __vite_glob_0_77, "./Pages/Sitemap/Index.tsx": __vite_glob_0_78, "./Pages/User.tsx": __vite_glob_0_79, "./Pages/User/Create.tsx": __vite_glob_0_80, "./Pages/User/Edit.tsx": __vite_glob_0_81, "./Pages/User/Favorite.tsx": __vite_glob_0_82, "./Pages/User/Index.tsx": __vite_glob_0_83, "./Pages/Users.tsx": __vite_glob_0_84, "./Pages/Verification/Index.tsx": __vite_glob_0_85, "./Pages/Verification/Result.tsx": __vite_glob_0_86, "./Pages/Welcome.tsx": __vite_glob_0_87 });
       return pages[`./Pages/${name}.tsx`];
