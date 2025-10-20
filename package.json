@@ -34,10 +34,12 @@
     "recharts": "^2.12.0",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
-    "@fullcalendar/core": "^6.1.15",
-    "@fullcalendar/react": "^6.1.15",
-    "@fullcalendar/daygrid": "^6.1.15",
-    "@fullcalendar/timegrid": "^6.1.15",
+    "@fullcalendar/core": "^6.1.11",
+    "@fullcalendar/daygrid": "^6.1.11",
+    "@fullcalendar/interaction": "^6.1.11",
+    "@fullcalendar/list": "^6.1.11",
+    "@fullcalendar/react": "^6.1.11",
+    "@fullcalendar/timegrid": "^6.1.11",
     "ziggy-js": "^1.8.1"
   },
   "engines": {
