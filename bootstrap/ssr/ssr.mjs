@@ -22,8 +22,8 @@ import { QueryClient, QueryClientProvider, useQuery } from "@tanstack/react-quer
 import { MagnifyingGlassIcon, FunnelIcon, XMarkIcon as XMarkIcon$1, XCircleIcon, CheckCircleIcon, EyeIcon, ChevronLeftIcon, ChevronRightIcon, TrashIcon, PlusIcon, PencilSquareIcon, CurrencyDollarIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import * as ZiggyJs from "ziggy-js";
-import { route as route$4 } from "ziggy-js";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa/index.js";
+import ziggyPkg from "ziggy-js";
+const { route: route$4 } = ziggyPkg;import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa/index.js";
 import { FiChevronUp } from "react-icons/fi/index.js";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { formatDate as formatDate$6 } from "@fullcalendar/core";
