@@ -4,6 +4,20 @@ import { fileURLToPath } from "url";
 import path from "path";
 import express from "express";
 
+try {
+  const pkg = await import('deepmerge');
+  const fixed = {
+    default: pkg.default || pkg,
+    isPlainObject:
+      pkg.isPlainObject ||
+      ((obj) => Object.prototype.toString.call(obj) === '[object Object]'),
+  };
+  global.deepmerge = fixed.default;
+  global.isPlainObject = fixed.isPlainObject;
+  console.log('🔁 Patched deepmerge for MUI SSR');
+} catch (e) {
+  console.warn('⚠️ deepmerge patch skipped', e);
+}
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
