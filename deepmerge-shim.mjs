@@ -1,10 +1,22 @@
 // ✅ deepmerge-shim.mjs
-import realDeepmerge from "deepmerge";
+// Fix for MUI SSR "isPlainObject is not a function" crash
 
-export const isPlainObject = (obj) =>
-  obj !== null &&
-  typeof obj === "object" &&
-  Object.prototype.toString.call(obj) === "[object Object]";
+import * as deepmergeNS from "deepmerge";
+const realDeepmerge = deepmergeNS.default ?? deepmergeNS;
 
-// Patch default export with helper
-export default Object.assign(realDeepmerge, { isPlainObject });
+// Proper isPlainObject implementation
+function isPlainObject(obj) {
+  return (
+    obj !== null &&
+    typeof obj === "object" &&
+    Object.prototype.toString.call(obj) === "[object Object]"
+  );
+}
+
+// Create a merged export that includes both forms
+const merged = Object.assign(realDeepmerge, { isPlainObject });
+
+// ✅ Export both default and named forms (to satisfy any import style)
+export default merged;
+export const isPlainObjectExport = isPlainObject;
+export * from "deepmerge";
