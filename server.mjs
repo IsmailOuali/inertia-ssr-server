@@ -1,31 +1,35 @@
-// 👇 MUST be the first line
-import { createRequire } from 'module'
-
-
-const require = createRequire(import.meta.url)
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
-
-// ⚡ Redirect all 'deepmerge' imports to our shim
-const Module = require('module')
-const originalResolveFilename = Module._resolveFilename
-Module._resolveFilename = function (request, parent, isMain, options) {
-  if (request === 'deepmerge') {
-    return path.resolve(__dirname, 'deepmerge-shim.mjs')
-  }
-  return originalResolveFilename.call(this, request, parent, isMain, options)
-}
-
-import express from "express";
+// 👇 MUST be the first lines — before *any* other import
+import { createRequire } from "module";
 import path from "path";
 import { fileURLToPath } from "url";
+
+const require = createRequire(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+// ⚡ Patch deepmerge import globally (MUI fix)
+const Module = require("module");
+const originalResolveFilename = Module._resolveFilename;
+Module._resolveFilename = function (request, parent, isMain, options) {
+  if (request === "deepmerge") {
+    return path.resolve(__dirname, "deepmerge-shim.mjs");
+  }
+  return originalResolveFilename.call(this, request, parent, isMain, options);
+};
+
+// ✅ Standard SSR server
+import express from "express";
 
 const SSR_FILE = path.join(__dirname, "ssr.mjs");
 
 let render;
 (async () => {
-  const mod = await import(SSR_FILE);
-  render = mod.default;
-  console.log("✅ Inertia SSR loaded!");
+  try {
+    const mod = await import(SSR_FILE);
+    render = mod.default;
+    console.log("✅ Inertia SSR loaded!");
+  } catch (err) {
+    console.error("❌ Failed to load SSR module:", err);
+  }
 })();
 
 const app = express();
