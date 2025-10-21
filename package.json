@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node bootstrap/ssr/ssr.mjs"
+    "start": "node server.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
