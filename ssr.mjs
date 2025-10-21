@@ -4,51 +4,61 @@ import * as React from "react";
 import React__default, { useState, useEffect, createElement, Fragment as Fragment$1, useRef, forwardRef, useImperativeHandle, Component as Component$1, createRef as createRef$1, PureComponent as PureComponent$1, useCallback, useMemo } from "react";
 import { usePage, Link, router, useForm, Head, createInertiaApp } from "@inertiajs/react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft, FileText, AlertCircle, Building, Tag, MapPin, Calendar as Calendar$2, FileUp, Download, X, Save, User as User$1, Package, CheckCircle, Truck, Briefcase, UserIcon, ChevronDown, Settings, LogOut, Menu, Search, ArrowRight, Home as Home$1, Shield, Zap, Star, LockKeyhole, CheckCircle2, Loader2, LogIn, Mail, Lock, EyeOff, Eye, Sparkles, Clock, Check, HelpCircle, ChevronUp, ChevronLeft, ChevronRight, Award, Users, Send, MessageSquare, ArrowUpRight, FileCheck, FileClock, FileX, Plus, Phone, BanknoteIcon, Info, Copy, Smartphone, CreditCard, Scale, AlertTriangle, Globe, ShoppingCart, ShieldCheck, Server, List, RefreshCw, XCircle, Filter, BadgeDollarSign, Edit as Edit$2, Building2, Upload, Printer, Share2, PlusCircle, SlidersHorizontal, CalendarIcon, Receipt, ShieldAlert, ServerCrash, Hash, Trash2, Loader, ExternalLink, ArrowUp, Newspaper, MessageCircle } from "lucide-react";
+import { ArrowLeft, FileText, AlertCircle, Building, Tag, MapPin, Calendar as Calendar$2, FileUp, Download, X, Save, User as User$1, Package, CheckCircle, Truck, Briefcase, UserIcon, ChevronDown, Settings, LogOut, Menu as Menu$1, Search, ArrowRight, Home as Home$1, Shield, Zap, Star, LockKeyhole, CheckCircle2, Loader2, LogIn, Mail, Lock, EyeOff, Eye, Sparkles, Clock, Check, HelpCircle, ChevronUp, ChevronLeft, ChevronRight, Award, Users, Send, MessageSquare, ArrowUpRight, FileCheck, FileClock, FileX, Plus, Phone, BanknoteIcon, Info, Copy, Smartphone, CreditCard, Scale, AlertTriangle, Globe, ShoppingCart, ShieldCheck, Server, List as List$1, RefreshCw, XCircle, Filter, BadgeDollarSign, Edit as Edit$2, Building2, Upload, Printer, Share2, PlusCircle, SlidersHorizontal, CalendarIcon, Receipt, ShieldAlert, ServerCrash, Hash, Trash2, Loader, ExternalLink, ArrowUp, Newspaper, MessageCircle } from "lucide-react";
 import { Inertia as Inertia$1 } from "@inertiajs/inertia";
 import toast from "react-hot-toast";
 import { XMarkIcon, CheckIcon, StarIcon } from "@heroicons/react/24/solid";
 import _extends$1 from "@babel/runtime/helpers/esm/extends";
 import PropTypes from "prop-types";
-import { unstable_generateUtilityClasses, unstable_generateUtilityClass, unstable_composeClasses, unstable_useEnhancedEffect, unstable_useForkRef, unstable_ownerDocument, unstable_capitalize, unstable_useId, HTMLElementType, unstable_useEventCallback, refType, unstable_debounce, unstable_ownerWindow, chainPropTypes } from "@mui/utils";
+import { unstable_generateUtilityClasses, unstable_generateUtilityClass, unstable_composeClasses, unstable_useEnhancedEffect, unstable_useForkRef, unstable_ownerDocument, unstable_capitalize, unstable_useId, unstable_ownerWindow, unstable_debounce, unstable_useEventCallback, elementAcceptingRef, exactProp, unstable_getReactElementRef, unstable_setRef, HTMLElementType, refType as refType$1, chainPropTypes as chainPropTypes$1, usePreviousProps, unstable_useControlled, unstable_getScrollbarSize, unstable_createChainedFunction } from "@mui/utils";
 import _objectWithoutPropertiesLoose$1 from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
 import _toPropertyKey$1 from "@babel/runtime/helpers/esm/toPropertyKey";
 import { createSelector as createSelector$1, defaultMemoize } from "reselect";
-import { styled as styled$1, useTheme, alpha, lighten, darken, useThemeProps } from "@mui/material/styles/index.js";
-import InputBase from "@mui/material/InputBase/index.js";
-import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete/index.js";
+import require$$0 from "@babel/runtime/helpers/interopRequireDefault";
+import require$$1 from "@babel/runtime/helpers/extends";
+import require$$2 from "@babel/runtime/helpers/objectWithoutPropertiesLoose";
+import styled$2, { ThemeContext, GlobalStyles as GlobalStyles$2, internal_processStyles, keyframes, css } from "@mui/styled-engine";
+import deepmerge, { isPlainObject } from "@mui/utils/deepmerge";
+import capitalize from "@mui/utils/capitalize";
+import getDisplayName from "@mui/utils/getDisplayName";
+import _formatMuiErrorMessage from "@mui/utils/formatMuiErrorMessage";
+import generateUtilityClass from "@mui/utils/generateUtilityClass";
+import clamp$1 from "@mui/utils/clamp";
 import clsx, { clsx as clsx$1 } from "clsx";
-import MenuList from "@mui/material/MenuList/index.js";
-import ClickAwayListener from "@mui/material/ClickAwayListener/index.js";
-import Grow from "@mui/material/Grow/index.js";
-import Paper from "@mui/material/Paper/index.js";
-import Popper from "@mui/material/Popper/index.js";
-import MenuItem from "@mui/material/MenuItem/index.js";
+import elementTypeAcceptingRef from "@mui/utils/elementTypeAcceptingRef";
+import refType from "@mui/utils/refType";
+import composeClasses from "@mui/utils/composeClasses";
+import isHostComponent from "@mui/utils/isHostComponent";
+import useForkRef from "@mui/utils/useForkRef";
+import useEnhancedEffect from "@mui/utils/useEnhancedEffect";
+import generateUtilityClasses from "@mui/utils/generateUtilityClasses";
+import resolveProps from "@mui/utils/resolveProps";
+import integerPropType from "@mui/utils/integerPropType";
+import chainPropTypes from "@mui/utils/chainPropTypes";
+import HTMLElementType$1 from "@mui/utils/HTMLElementType";
+import { createPopper } from "@popperjs/core";
+import useSlotProps from "@mui/utils/useSlotProps";
 import * as ReactDOM from "react-dom";
 import { flushSync as flushSync$1, createPortal as createPortal$1 } from "react-dom";
-import Badge$1 from "@mui/material/Badge/index.js";
-import { styled } from "@mui/system";
-import Divider from "@mui/material/Divider/index.js";
-import ListItemIcon from "@mui/material/ListItemIcon/index.js";
-import ListItemText from "@mui/material/ListItemText/index.js";
-import MUICheckbox from "@mui/material/Checkbox/index.js";
-import TextField from "@mui/material/TextField/index.js";
-import MUIFormControl from "@mui/material/FormControl/index.js";
-import MUISelect from "@mui/material/Select/index.js";
-import MUISwitch, { switchClasses } from "@mui/material/Switch/index.js";
-import MUIButton from "@mui/material/Button/index.js";
-import IconButton from "@mui/material/IconButton/index.js";
-import MUIInputAdornment from "@mui/material/InputAdornment/index.js";
-import MUITooltip from "@mui/material/Tooltip/index.js";
-import MUIInputLabel from "@mui/material/InputLabel/index.js";
-import MUIChip from "@mui/material/Chip/index.js";
-import { createSvgIcon } from "@mui/material/utils/index.js";
-import FormControlLabel from "@mui/material/FormControlLabel/index.js";
-import FocusTrap from "@mui/material/Unstable_TrapFocus/index.js";
-import TablePagination, { tablePaginationClasses } from "@mui/material/TablePagination/index.js";
-import CircularProgress from "@mui/material/CircularProgress/index.js";
-import Skeleton from "@mui/material/Skeleton/index.js";
-import { Transition, Dialog, TransitionChild, DialogPanel } from "@headlessui/react";
+import unsupportedProp from "@mui/utils/unsupportedProp";
+import useEventCallback from "@mui/utils/useEventCallback";
+import useIsFocusVisible from "@mui/utils/useIsFocusVisible";
+import { Transition, TransitionGroup } from "react-transition-group";
+import useTimeout$1, { Timeout as Timeout$1 } from "@mui/utils/useTimeout";
+import getReactElementRef from "@mui/utils/getReactElementRef";
+import elementAcceptingRef$1 from "@mui/utils/elementAcceptingRef";
+import { isFragment } from "react-is";
+import ownerDocument from "@mui/utils/ownerDocument";
+import getScrollbarSize from "@mui/utils/getScrollbarSize";
+import usePreviousProps$1 from "@mui/utils/usePreviousProps";
+import appendOwnerState from "@mui/utils/appendOwnerState";
+import useId from "@mui/utils/useId";
+import useControlled from "@mui/utils/useControlled";
+import debounce from "@mui/utils/debounce";
+import ownerWindow from "@mui/utils/ownerWindow";
+import extractEventHandlers from "@mui/utils/extractEventHandlers";
+import isMuiElement from "@mui/utils/isMuiElement";
+import { Transition as Transition$1, Dialog, TransitionChild, DialogPanel } from "@headlessui/react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva } from "class-variance-authority";
 import { twMerge } from "tailwind-merge";
@@ -63,7 +73,7 @@ import * as preact from "preact";
 import { createElement as createElement$1, Component, Fragment as Fragment$2, isValidElement, render, createRef } from "preact";
 import { createPortal } from "preact/compat";
 import interactionPlugin from "@fullcalendar/interaction";
-import { ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import { ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip as Tooltip$1, Legend } from "recharts";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { useNavigate, useParams } from "react-router-dom";
 import createServer from "@inertiajs/react/server";
@@ -77,7 +87,7 @@ var DefaultContext = {
   attr: void 0
 };
 var IconContext = React__default.createContext && /* @__PURE__ */ React__default.createContext(DefaultContext);
-var _excluded$Q = ["attr", "size", "title"];
+var _excluded$1M = ["attr", "size", "title"];
 function _objectWithoutProperties(source, excluded) {
   if (source == null) return {};
   var target = _objectWithoutPropertiesLoose(source, excluded);
@@ -178,7 +188,7 @@ function IconBase(props) {
       attr,
       size,
       title
-    } = props, svgProps = _objectWithoutProperties(props, _excluded$Q);
+    } = props, svgProps = _objectWithoutProperties(props, _excluded$1M);
     var computedSize = size || conf.size || "1em";
     var className;
     if (conf.className) className = conf.className;
@@ -1673,7 +1683,7 @@ function fastObjectShallowCompare(a, b) {
       return false;
     }
   }
-  for (const _ in b) {
+  for (const _2 in b) {
     bLength += 1;
   }
   return aLength === bLength;
@@ -1721,6 +1731,1732 @@ const useGridSelector = (apiRef, selector, equals = defaultCompare) => {
   });
   return state;
 };
+const _excluded$1L = ["values", "unit", "step"];
+const sortBreakpointsValues = (values2) => {
+  const breakpointsAsArray = Object.keys(values2).map((key) => ({
+    key,
+    val: values2[key]
+  })) || [];
+  breakpointsAsArray.sort((breakpoint1, breakpoint2) => breakpoint1.val - breakpoint2.val);
+  return breakpointsAsArray.reduce((acc, obj) => {
+    return _extends$1({}, acc, {
+      [obj.key]: obj.val
+    });
+  }, {});
+};
+function createBreakpoints(breakpoints) {
+  const {
+    // The breakpoint **start** at this value.
+    // For instance with the first breakpoint xs: [xs, sm).
+    values: values2 = {
+      xs: 0,
+      // phone
+      sm: 600,
+      // tablet
+      md: 900,
+      // small laptop
+      lg: 1200,
+      // desktop
+      xl: 1536
+      // large screen
+    },
+    unit = "px",
+    step = 5
+  } = breakpoints, other = _objectWithoutPropertiesLoose$1(breakpoints, _excluded$1L);
+  const sortedValues = sortBreakpointsValues(values2);
+  const keys = Object.keys(sortedValues);
+  function up(key) {
+    const value = typeof values2[key] === "number" ? values2[key] : key;
+    return `@media (min-width:${value}${unit})`;
+  }
+  function down(key) {
+    const value = typeof values2[key] === "number" ? values2[key] : key;
+    return `@media (max-width:${value - step / 100}${unit})`;
+  }
+  function between(start, end) {
+    const endIndex = keys.indexOf(end);
+    return `@media (min-width:${typeof values2[start] === "number" ? values2[start] : start}${unit}) and (max-width:${(endIndex !== -1 && typeof values2[keys[endIndex]] === "number" ? values2[keys[endIndex]] : end) - step / 100}${unit})`;
+  }
+  function only(key) {
+    if (keys.indexOf(key) + 1 < keys.length) {
+      return between(key, keys[keys.indexOf(key) + 1]);
+    }
+    return up(key);
+  }
+  function not(key) {
+    const keyIndex = keys.indexOf(key);
+    if (keyIndex === 0) {
+      return up(keys[1]);
+    }
+    if (keyIndex === keys.length - 1) {
+      return down(keys[keyIndex]);
+    }
+    return between(key, keys[keys.indexOf(key) + 1]).replace("@media", "@media not all and");
+  }
+  return _extends$1({
+    keys,
+    values: sortedValues,
+    up,
+    down,
+    between,
+    only,
+    not,
+    unit
+  }, other);
+}
+const shape = {
+  borderRadius: 4
+};
+const responsivePropType = process.env.NODE_ENV !== "production" ? PropTypes.oneOfType([PropTypes.number, PropTypes.string, PropTypes.object, PropTypes.array]) : {};
+function merge(acc, item) {
+  if (!item) {
+    return acc;
+  }
+  return deepmerge(acc, item, {
+    clone: false
+    // No need to clone deep, it's way faster.
+  });
+}
+const values = {
+  xs: 0,
+  // phone
+  sm: 600,
+  // tablet
+  md: 900,
+  // small laptop
+  lg: 1200,
+  // desktop
+  xl: 1536
+  // large screen
+};
+const defaultBreakpoints = {
+  // Sorted ASC by size. That's important.
+  // It can't be configured as it's used statically for propTypes.
+  keys: ["xs", "sm", "md", "lg", "xl"],
+  up: (key) => `@media (min-width:${values[key]}px)`
+};
+function handleBreakpoints(props, propValue, styleFromPropValue) {
+  const theme = props.theme || {};
+  if (Array.isArray(propValue)) {
+    const themeBreakpoints = theme.breakpoints || defaultBreakpoints;
+    return propValue.reduce((acc, item, index2) => {
+      acc[themeBreakpoints.up(themeBreakpoints.keys[index2])] = styleFromPropValue(propValue[index2]);
+      return acc;
+    }, {});
+  }
+  if (typeof propValue === "object") {
+    const themeBreakpoints = theme.breakpoints || defaultBreakpoints;
+    return Object.keys(propValue).reduce((acc, breakpoint) => {
+      if (Object.keys(themeBreakpoints.values || values).indexOf(breakpoint) !== -1) {
+        const mediaKey = themeBreakpoints.up(breakpoint);
+        acc[mediaKey] = styleFromPropValue(propValue[breakpoint], breakpoint);
+      } else {
+        const cssKey = breakpoint;
+        acc[cssKey] = propValue[cssKey];
+      }
+      return acc;
+    }, {});
+  }
+  const output = styleFromPropValue(propValue);
+  return output;
+}
+function createEmptyBreakpointObject(breakpointsInput = {}) {
+  var _breakpointsInput$key;
+  const breakpointsInOrder = (_breakpointsInput$key = breakpointsInput.keys) == null ? void 0 : _breakpointsInput$key.reduce((acc, key) => {
+    const breakpointStyleKey = breakpointsInput.up(key);
+    acc[breakpointStyleKey] = {};
+    return acc;
+  }, {});
+  return breakpointsInOrder || {};
+}
+function removeUnusedBreakpoints(breakpointKeys, style2) {
+  return breakpointKeys.reduce((acc, key) => {
+    const breakpointOutput = acc[key];
+    const isBreakpointUnused = !breakpointOutput || Object.keys(breakpointOutput).length === 0;
+    if (isBreakpointUnused) {
+      delete acc[key];
+    }
+    return acc;
+  }, style2);
+}
+function mergeBreakpointsInOrder(breakpointsInput, ...styles2) {
+  const emptyBreakpoints = createEmptyBreakpointObject(breakpointsInput);
+  const mergedOutput = [emptyBreakpoints, ...styles2].reduce((prev, next) => deepmerge(prev, next), {});
+  return removeUnusedBreakpoints(Object.keys(emptyBreakpoints), mergedOutput);
+}
+function computeBreakpointsBase(breakpointValues, themeBreakpoints) {
+  if (typeof breakpointValues !== "object") {
+    return {};
+  }
+  const base = {};
+  const breakpointsKeys = Object.keys(themeBreakpoints);
+  if (Array.isArray(breakpointValues)) {
+    breakpointsKeys.forEach((breakpoint, i2) => {
+      if (i2 < breakpointValues.length) {
+        base[breakpoint] = true;
+      }
+    });
+  } else {
+    breakpointsKeys.forEach((breakpoint) => {
+      if (breakpointValues[breakpoint] != null) {
+        base[breakpoint] = true;
+      }
+    });
+  }
+  return base;
+}
+function resolveBreakpointValues({
+  values: breakpointValues,
+  breakpoints: themeBreakpoints,
+  base: customBase
+}) {
+  const base = customBase || computeBreakpointsBase(breakpointValues, themeBreakpoints);
+  const keys = Object.keys(base);
+  if (keys.length === 0) {
+    return breakpointValues;
+  }
+  let previous;
+  return keys.reduce((acc, breakpoint, i2) => {
+    if (Array.isArray(breakpointValues)) {
+      acc[breakpoint] = breakpointValues[i2] != null ? breakpointValues[i2] : breakpointValues[previous];
+      previous = i2;
+    } else if (typeof breakpointValues === "object") {
+      acc[breakpoint] = breakpointValues[breakpoint] != null ? breakpointValues[breakpoint] : breakpointValues[previous];
+      previous = breakpoint;
+    } else {
+      acc[breakpoint] = breakpointValues;
+    }
+    return acc;
+  }, {});
+}
+function getPath(obj, path, checkVars = true) {
+  if (!path || typeof path !== "string") {
+    return null;
+  }
+  if (obj && obj.vars && checkVars) {
+    const val = `vars.${path}`.split(".").reduce((acc, item) => acc && acc[item] ? acc[item] : null, obj);
+    if (val != null) {
+      return val;
+    }
+  }
+  return path.split(".").reduce((acc, item) => {
+    if (acc && acc[item] != null) {
+      return acc[item];
+    }
+    return null;
+  }, obj);
+}
+function getStyleValue$1(themeMapping, transform, propValueFinal, userValue = propValueFinal) {
+  let value;
+  if (typeof themeMapping === "function") {
+    value = themeMapping(propValueFinal);
+  } else if (Array.isArray(themeMapping)) {
+    value = themeMapping[propValueFinal] || userValue;
+  } else {
+    value = getPath(themeMapping, propValueFinal) || userValue;
+  }
+  if (transform) {
+    value = transform(value, userValue, themeMapping);
+  }
+  return value;
+}
+function style$2(options) {
+  const {
+    prop,
+    cssProperty = options.prop,
+    themeKey,
+    transform
+  } = options;
+  const fn2 = (props) => {
+    if (props[prop] == null) {
+      return null;
+    }
+    const propValue = props[prop];
+    const theme = props.theme;
+    const themeMapping = getPath(theme, themeKey) || {};
+    const styleFromPropValue = (propValueFinal) => {
+      let value = getStyleValue$1(themeMapping, transform, propValueFinal);
+      if (propValueFinal === value && typeof propValueFinal === "string") {
+        value = getStyleValue$1(themeMapping, transform, `${prop}${propValueFinal === "default" ? "" : capitalize(propValueFinal)}`, propValueFinal);
+      }
+      if (cssProperty === false) {
+        return value;
+      }
+      return {
+        [cssProperty]: value
+      };
+    };
+    return handleBreakpoints(props, propValue, styleFromPropValue);
+  };
+  fn2.propTypes = process.env.NODE_ENV !== "production" ? {
+    [prop]: responsivePropType
+  } : {};
+  fn2.filterProps = [prop];
+  return fn2;
+}
+function memoize$1(fn2) {
+  const cache = {};
+  return (arg) => {
+    if (cache[arg] === void 0) {
+      cache[arg] = fn2(arg);
+    }
+    return cache[arg];
+  };
+}
+const properties = {
+  m: "margin",
+  p: "padding"
+};
+const directions = {
+  t: "Top",
+  r: "Right",
+  b: "Bottom",
+  l: "Left",
+  x: ["Left", "Right"],
+  y: ["Top", "Bottom"]
+};
+const aliases = {
+  marginX: "mx",
+  marginY: "my",
+  paddingX: "px",
+  paddingY: "py"
+};
+const getCssProperties = memoize$1((prop) => {
+  if (prop.length > 2) {
+    if (aliases[prop]) {
+      prop = aliases[prop];
+    } else {
+      return [prop];
+    }
+  }
+  const [a, b] = prop.split("");
+  const property = properties[a];
+  const direction = directions[b] || "";
+  return Array.isArray(direction) ? direction.map((dir) => property + dir) : [property + direction];
+});
+const marginKeys = ["m", "mt", "mr", "mb", "ml", "mx", "my", "margin", "marginTop", "marginRight", "marginBottom", "marginLeft", "marginX", "marginY", "marginInline", "marginInlineStart", "marginInlineEnd", "marginBlock", "marginBlockStart", "marginBlockEnd"];
+const paddingKeys = ["p", "pt", "pr", "pb", "pl", "px", "py", "padding", "paddingTop", "paddingRight", "paddingBottom", "paddingLeft", "paddingX", "paddingY", "paddingInline", "paddingInlineStart", "paddingInlineEnd", "paddingBlock", "paddingBlockStart", "paddingBlockEnd"];
+const spacingKeys = [...marginKeys, ...paddingKeys];
+function createUnaryUnit(theme, themeKey, defaultValue, propName) {
+  var _getPath;
+  const themeSpacing = (_getPath = getPath(theme, themeKey, false)) != null ? _getPath : defaultValue;
+  if (typeof themeSpacing === "number") {
+    return (abs) => {
+      if (typeof abs === "string") {
+        return abs;
+      }
+      if (process.env.NODE_ENV !== "production") {
+        if (typeof abs !== "number") {
+          console.error(`MUI: Expected ${propName} argument to be a number or a string, got ${abs}.`);
+        }
+      }
+      return themeSpacing * abs;
+    };
+  }
+  if (Array.isArray(themeSpacing)) {
+    return (abs) => {
+      if (typeof abs === "string") {
+        return abs;
+      }
+      if (process.env.NODE_ENV !== "production") {
+        if (!Number.isInteger(abs)) {
+          console.error([`MUI: The \`theme.${themeKey}\` array type cannot be combined with non integer values.You should either use an integer value that can be used as index, or define the \`theme.${themeKey}\` as a number.`].join("\n"));
+        } else if (abs > themeSpacing.length - 1) {
+          console.error([`MUI: The value provided (${abs}) overflows.`, `The supported values are: ${JSON.stringify(themeSpacing)}.`, `${abs} > ${themeSpacing.length - 1}, you need to add the missing values.`].join("\n"));
+        }
+      }
+      return themeSpacing[abs];
+    };
+  }
+  if (typeof themeSpacing === "function") {
+    return themeSpacing;
+  }
+  if (process.env.NODE_ENV !== "production") {
+    console.error([`MUI: The \`theme.${themeKey}\` value (${themeSpacing}) is invalid.`, "It should be a number, an array or a function."].join("\n"));
+  }
+  return () => void 0;
+}
+function createUnarySpacing(theme) {
+  return createUnaryUnit(theme, "spacing", 8, "spacing");
+}
+function getValue(transformer, propValue) {
+  if (typeof propValue === "string" || propValue == null) {
+    return propValue;
+  }
+  const abs = Math.abs(propValue);
+  const transformed = transformer(abs);
+  if (propValue >= 0) {
+    return transformed;
+  }
+  if (typeof transformed === "number") {
+    return -transformed;
+  }
+  return `-${transformed}`;
+}
+function getStyleFromPropValue(cssProperties, transformer) {
+  return (propValue) => cssProperties.reduce((acc, cssProperty) => {
+    acc[cssProperty] = getValue(transformer, propValue);
+    return acc;
+  }, {});
+}
+function resolveCssProperty(props, keys, prop, transformer) {
+  if (keys.indexOf(prop) === -1) {
+    return null;
+  }
+  const cssProperties = getCssProperties(prop);
+  const styleFromPropValue = getStyleFromPropValue(cssProperties, transformer);
+  const propValue = props[prop];
+  return handleBreakpoints(props, propValue, styleFromPropValue);
+}
+function style$1(props, keys) {
+  const transformer = createUnarySpacing(props.theme);
+  return Object.keys(props).map((prop) => resolveCssProperty(props, keys, prop, transformer)).reduce(merge, {});
+}
+function margin(props) {
+  return style$1(props, marginKeys);
+}
+margin.propTypes = process.env.NODE_ENV !== "production" ? marginKeys.reduce((obj, key) => {
+  obj[key] = responsivePropType;
+  return obj;
+}, {}) : {};
+margin.filterProps = marginKeys;
+function padding(props) {
+  return style$1(props, paddingKeys);
+}
+padding.propTypes = process.env.NODE_ENV !== "production" ? paddingKeys.reduce((obj, key) => {
+  obj[key] = responsivePropType;
+  return obj;
+}, {}) : {};
+padding.filterProps = paddingKeys;
+process.env.NODE_ENV !== "production" ? spacingKeys.reduce((obj, key) => {
+  obj[key] = responsivePropType;
+  return obj;
+}, {}) : {};
+function createSpacing(spacingInput = 8) {
+  if (spacingInput.mui) {
+    return spacingInput;
+  }
+  const transform = createUnarySpacing({
+    spacing: spacingInput
+  });
+  const spacing = (...argsInput) => {
+    if (process.env.NODE_ENV !== "production") {
+      if (!(argsInput.length <= 4)) {
+        console.error(`MUI: Too many arguments provided, expected between 0 and 4, got ${argsInput.length}`);
+      }
+    }
+    const args = argsInput.length === 0 ? [1] : argsInput;
+    return args.map((argument) => {
+      const output = transform(argument);
+      return typeof output === "number" ? `${output}px` : output;
+    }).join(" ");
+  };
+  spacing.mui = true;
+  return spacing;
+}
+function compose(...styles2) {
+  const handlers = styles2.reduce((acc, style2) => {
+    style2.filterProps.forEach((prop) => {
+      acc[prop] = style2;
+    });
+    return acc;
+  }, {});
+  const fn2 = (props) => {
+    return Object.keys(props).reduce((acc, prop) => {
+      if (handlers[prop]) {
+        return merge(acc, handlers[prop](props));
+      }
+      return acc;
+    }, {});
+  };
+  fn2.propTypes = process.env.NODE_ENV !== "production" ? styles2.reduce((acc, style2) => Object.assign(acc, style2.propTypes), {}) : {};
+  fn2.filterProps = styles2.reduce((acc, style2) => acc.concat(style2.filterProps), []);
+  return fn2;
+}
+function borderTransform(value) {
+  if (typeof value !== "number") {
+    return value;
+  }
+  return `${value}px solid`;
+}
+function createBorderStyle(prop, transform) {
+  return style$2({
+    prop,
+    themeKey: "borders",
+    transform
+  });
+}
+const border = createBorderStyle("border", borderTransform);
+const borderTop = createBorderStyle("borderTop", borderTransform);
+const borderRight = createBorderStyle("borderRight", borderTransform);
+const borderBottom = createBorderStyle("borderBottom", borderTransform);
+const borderLeft = createBorderStyle("borderLeft", borderTransform);
+const borderColor = createBorderStyle("borderColor");
+const borderTopColor = createBorderStyle("borderTopColor");
+const borderRightColor = createBorderStyle("borderRightColor");
+const borderBottomColor = createBorderStyle("borderBottomColor");
+const borderLeftColor = createBorderStyle("borderLeftColor");
+const outline = createBorderStyle("outline", borderTransform);
+const outlineColor = createBorderStyle("outlineColor");
+const borderRadius = (props) => {
+  if (props.borderRadius !== void 0 && props.borderRadius !== null) {
+    const transformer = createUnaryUnit(props.theme, "shape.borderRadius", 4, "borderRadius");
+    const styleFromPropValue = (propValue) => ({
+      borderRadius: getValue(transformer, propValue)
+    });
+    return handleBreakpoints(props, props.borderRadius, styleFromPropValue);
+  }
+  return null;
+};
+borderRadius.propTypes = process.env.NODE_ENV !== "production" ? {
+  borderRadius: responsivePropType
+} : {};
+borderRadius.filterProps = ["borderRadius"];
+compose(border, borderTop, borderRight, borderBottom, borderLeft, borderColor, borderTopColor, borderRightColor, borderBottomColor, borderLeftColor, borderRadius, outline, outlineColor);
+const gap = (props) => {
+  if (props.gap !== void 0 && props.gap !== null) {
+    const transformer = createUnaryUnit(props.theme, "spacing", 8, "gap");
+    const styleFromPropValue = (propValue) => ({
+      gap: getValue(transformer, propValue)
+    });
+    return handleBreakpoints(props, props.gap, styleFromPropValue);
+  }
+  return null;
+};
+gap.propTypes = process.env.NODE_ENV !== "production" ? {
+  gap: responsivePropType
+} : {};
+gap.filterProps = ["gap"];
+const columnGap = (props) => {
+  if (props.columnGap !== void 0 && props.columnGap !== null) {
+    const transformer = createUnaryUnit(props.theme, "spacing", 8, "columnGap");
+    const styleFromPropValue = (propValue) => ({
+      columnGap: getValue(transformer, propValue)
+    });
+    return handleBreakpoints(props, props.columnGap, styleFromPropValue);
+  }
+  return null;
+};
+columnGap.propTypes = process.env.NODE_ENV !== "production" ? {
+  columnGap: responsivePropType
+} : {};
+columnGap.filterProps = ["columnGap"];
+const rowGap = (props) => {
+  if (props.rowGap !== void 0 && props.rowGap !== null) {
+    const transformer = createUnaryUnit(props.theme, "spacing", 8, "rowGap");
+    const styleFromPropValue = (propValue) => ({
+      rowGap: getValue(transformer, propValue)
+    });
+    return handleBreakpoints(props, props.rowGap, styleFromPropValue);
+  }
+  return null;
+};
+rowGap.propTypes = process.env.NODE_ENV !== "production" ? {
+  rowGap: responsivePropType
+} : {};
+rowGap.filterProps = ["rowGap"];
+const gridColumn = style$2({
+  prop: "gridColumn"
+});
+const gridRow = style$2({
+  prop: "gridRow"
+});
+const gridAutoFlow = style$2({
+  prop: "gridAutoFlow"
+});
+const gridAutoColumns = style$2({
+  prop: "gridAutoColumns"
+});
+const gridAutoRows = style$2({
+  prop: "gridAutoRows"
+});
+const gridTemplateColumns = style$2({
+  prop: "gridTemplateColumns"
+});
+const gridTemplateRows = style$2({
+  prop: "gridTemplateRows"
+});
+const gridTemplateAreas = style$2({
+  prop: "gridTemplateAreas"
+});
+const gridArea = style$2({
+  prop: "gridArea"
+});
+compose(gap, columnGap, rowGap, gridColumn, gridRow, gridAutoFlow, gridAutoColumns, gridAutoRows, gridTemplateColumns, gridTemplateRows, gridTemplateAreas, gridArea);
+function paletteTransform(value, userValue) {
+  if (userValue === "grey") {
+    return userValue;
+  }
+  return value;
+}
+const color = style$2({
+  prop: "color",
+  themeKey: "palette",
+  transform: paletteTransform
+});
+const bgcolor = style$2({
+  prop: "bgcolor",
+  cssProperty: "backgroundColor",
+  themeKey: "palette",
+  transform: paletteTransform
+});
+const backgroundColor = style$2({
+  prop: "backgroundColor",
+  themeKey: "palette",
+  transform: paletteTransform
+});
+compose(color, bgcolor, backgroundColor);
+function sizingTransform(value) {
+  return value <= 1 && value !== 0 ? `${value * 100}%` : value;
+}
+const width = style$2({
+  prop: "width",
+  transform: sizingTransform
+});
+const maxWidth = (props) => {
+  if (props.maxWidth !== void 0 && props.maxWidth !== null) {
+    const styleFromPropValue = (propValue) => {
+      var _props$theme, _props$theme2;
+      const breakpoint = ((_props$theme = props.theme) == null || (_props$theme = _props$theme.breakpoints) == null || (_props$theme = _props$theme.values) == null ? void 0 : _props$theme[propValue]) || values[propValue];
+      if (!breakpoint) {
+        return {
+          maxWidth: sizingTransform(propValue)
+        };
+      }
+      if (((_props$theme2 = props.theme) == null || (_props$theme2 = _props$theme2.breakpoints) == null ? void 0 : _props$theme2.unit) !== "px") {
+        return {
+          maxWidth: `${breakpoint}${props.theme.breakpoints.unit}`
+        };
+      }
+      return {
+        maxWidth: breakpoint
+      };
+    };
+    return handleBreakpoints(props, props.maxWidth, styleFromPropValue);
+  }
+  return null;
+};
+maxWidth.filterProps = ["maxWidth"];
+const minWidth = style$2({
+  prop: "minWidth",
+  transform: sizingTransform
+});
+const height = style$2({
+  prop: "height",
+  transform: sizingTransform
+});
+const maxHeight = style$2({
+  prop: "maxHeight",
+  transform: sizingTransform
+});
+const minHeight = style$2({
+  prop: "minHeight",
+  transform: sizingTransform
+});
+style$2({
+  prop: "size",
+  cssProperty: "width",
+  transform: sizingTransform
+});
+style$2({
+  prop: "size",
+  cssProperty: "height",
+  transform: sizingTransform
+});
+const boxSizing = style$2({
+  prop: "boxSizing"
+});
+compose(width, maxWidth, minWidth, height, maxHeight, minHeight, boxSizing);
+const defaultSxConfig = {
+  // borders
+  border: {
+    themeKey: "borders",
+    transform: borderTransform
+  },
+  borderTop: {
+    themeKey: "borders",
+    transform: borderTransform
+  },
+  borderRight: {
+    themeKey: "borders",
+    transform: borderTransform
+  },
+  borderBottom: {
+    themeKey: "borders",
+    transform: borderTransform
+  },
+  borderLeft: {
+    themeKey: "borders",
+    transform: borderTransform
+  },
+  borderColor: {
+    themeKey: "palette"
+  },
+  borderTopColor: {
+    themeKey: "palette"
+  },
+  borderRightColor: {
+    themeKey: "palette"
+  },
+  borderBottomColor: {
+    themeKey: "palette"
+  },
+  borderLeftColor: {
+    themeKey: "palette"
+  },
+  outline: {
+    themeKey: "borders",
+    transform: borderTransform
+  },
+  outlineColor: {
+    themeKey: "palette"
+  },
+  borderRadius: {
+    themeKey: "shape.borderRadius",
+    style: borderRadius
+  },
+  // palette
+  color: {
+    themeKey: "palette",
+    transform: paletteTransform
+  },
+  bgcolor: {
+    themeKey: "palette",
+    cssProperty: "backgroundColor",
+    transform: paletteTransform
+  },
+  backgroundColor: {
+    themeKey: "palette",
+    transform: paletteTransform
+  },
+  // spacing
+  p: {
+    style: padding
+  },
+  pt: {
+    style: padding
+  },
+  pr: {
+    style: padding
+  },
+  pb: {
+    style: padding
+  },
+  pl: {
+    style: padding
+  },
+  px: {
+    style: padding
+  },
+  py: {
+    style: padding
+  },
+  padding: {
+    style: padding
+  },
+  paddingTop: {
+    style: padding
+  },
+  paddingRight: {
+    style: padding
+  },
+  paddingBottom: {
+    style: padding
+  },
+  paddingLeft: {
+    style: padding
+  },
+  paddingX: {
+    style: padding
+  },
+  paddingY: {
+    style: padding
+  },
+  paddingInline: {
+    style: padding
+  },
+  paddingInlineStart: {
+    style: padding
+  },
+  paddingInlineEnd: {
+    style: padding
+  },
+  paddingBlock: {
+    style: padding
+  },
+  paddingBlockStart: {
+    style: padding
+  },
+  paddingBlockEnd: {
+    style: padding
+  },
+  m: {
+    style: margin
+  },
+  mt: {
+    style: margin
+  },
+  mr: {
+    style: margin
+  },
+  mb: {
+    style: margin
+  },
+  ml: {
+    style: margin
+  },
+  mx: {
+    style: margin
+  },
+  my: {
+    style: margin
+  },
+  margin: {
+    style: margin
+  },
+  marginTop: {
+    style: margin
+  },
+  marginRight: {
+    style: margin
+  },
+  marginBottom: {
+    style: margin
+  },
+  marginLeft: {
+    style: margin
+  },
+  marginX: {
+    style: margin
+  },
+  marginY: {
+    style: margin
+  },
+  marginInline: {
+    style: margin
+  },
+  marginInlineStart: {
+    style: margin
+  },
+  marginInlineEnd: {
+    style: margin
+  },
+  marginBlock: {
+    style: margin
+  },
+  marginBlockStart: {
+    style: margin
+  },
+  marginBlockEnd: {
+    style: margin
+  },
+  // display
+  displayPrint: {
+    cssProperty: false,
+    transform: (value) => ({
+      "@media print": {
+        display: value
+      }
+    })
+  },
+  display: {},
+  overflow: {},
+  textOverflow: {},
+  visibility: {},
+  whiteSpace: {},
+  // flexbox
+  flexBasis: {},
+  flexDirection: {},
+  flexWrap: {},
+  justifyContent: {},
+  alignItems: {},
+  alignContent: {},
+  order: {},
+  flex: {},
+  flexGrow: {},
+  flexShrink: {},
+  alignSelf: {},
+  justifyItems: {},
+  justifySelf: {},
+  // grid
+  gap: {
+    style: gap
+  },
+  rowGap: {
+    style: rowGap
+  },
+  columnGap: {
+    style: columnGap
+  },
+  gridColumn: {},
+  gridRow: {},
+  gridAutoFlow: {},
+  gridAutoColumns: {},
+  gridAutoRows: {},
+  gridTemplateColumns: {},
+  gridTemplateRows: {},
+  gridTemplateAreas: {},
+  gridArea: {},
+  // positions
+  position: {},
+  zIndex: {
+    themeKey: "zIndex"
+  },
+  top: {},
+  right: {},
+  bottom: {},
+  left: {},
+  // shadows
+  boxShadow: {
+    themeKey: "shadows"
+  },
+  // sizing
+  width: {
+    transform: sizingTransform
+  },
+  maxWidth: {
+    style: maxWidth
+  },
+  minWidth: {
+    transform: sizingTransform
+  },
+  height: {
+    transform: sizingTransform
+  },
+  maxHeight: {
+    transform: sizingTransform
+  },
+  minHeight: {
+    transform: sizingTransform
+  },
+  boxSizing: {},
+  // typography
+  fontFamily: {
+    themeKey: "typography"
+  },
+  fontSize: {
+    themeKey: "typography"
+  },
+  fontStyle: {
+    themeKey: "typography"
+  },
+  fontWeight: {
+    themeKey: "typography"
+  },
+  letterSpacing: {},
+  textTransform: {},
+  lineHeight: {},
+  textAlign: {},
+  typography: {
+    cssProperty: false,
+    themeKey: "typography"
+  }
+};
+function objectsHaveSameKeys(...objects) {
+  const allKeys = objects.reduce((keys, object) => keys.concat(Object.keys(object)), []);
+  const union = new Set(allKeys);
+  return objects.every((object) => union.size === Object.keys(object).length);
+}
+function callIfFn(maybeFn, arg) {
+  return typeof maybeFn === "function" ? maybeFn(arg) : maybeFn;
+}
+function unstable_createStyleFunctionSx() {
+  function getThemeValue(prop, val, theme, config) {
+    const props = {
+      [prop]: val,
+      theme
+    };
+    const options = config[prop];
+    if (!options) {
+      return {
+        [prop]: val
+      };
+    }
+    const {
+      cssProperty = prop,
+      themeKey,
+      transform,
+      style: style2
+    } = options;
+    if (val == null) {
+      return null;
+    }
+    if (themeKey === "typography" && val === "inherit") {
+      return {
+        [prop]: val
+      };
+    }
+    const themeMapping = getPath(theme, themeKey) || {};
+    if (style2) {
+      return style2(props);
+    }
+    const styleFromPropValue = (propValueFinal) => {
+      let value = getStyleValue$1(themeMapping, transform, propValueFinal);
+      if (propValueFinal === value && typeof propValueFinal === "string") {
+        value = getStyleValue$1(themeMapping, transform, `${prop}${propValueFinal === "default" ? "" : capitalize(propValueFinal)}`, propValueFinal);
+      }
+      if (cssProperty === false) {
+        return value;
+      }
+      return {
+        [cssProperty]: value
+      };
+    };
+    return handleBreakpoints(props, val, styleFromPropValue);
+  }
+  function styleFunctionSx2(props) {
+    var _theme$unstable_sxCon;
+    const {
+      sx,
+      theme = {}
+    } = props || {};
+    if (!sx) {
+      return null;
+    }
+    const config = (_theme$unstable_sxCon = theme.unstable_sxConfig) != null ? _theme$unstable_sxCon : defaultSxConfig;
+    function traverse(sxInput) {
+      let sxObject = sxInput;
+      if (typeof sxInput === "function") {
+        sxObject = sxInput(theme);
+      } else if (typeof sxInput !== "object") {
+        return sxInput;
+      }
+      if (!sxObject) {
+        return null;
+      }
+      const emptyBreakpoints = createEmptyBreakpointObject(theme.breakpoints);
+      const breakpointsKeys = Object.keys(emptyBreakpoints);
+      let css2 = emptyBreakpoints;
+      Object.keys(sxObject).forEach((styleKey) => {
+        const value = callIfFn(sxObject[styleKey], theme);
+        if (value !== null && value !== void 0) {
+          if (typeof value === "object") {
+            if (config[styleKey]) {
+              css2 = merge(css2, getThemeValue(styleKey, value, theme, config));
+            } else {
+              const breakpointsValues = handleBreakpoints({
+                theme
+              }, value, (x) => ({
+                [styleKey]: x
+              }));
+              if (objectsHaveSameKeys(breakpointsValues, value)) {
+                css2[styleKey] = styleFunctionSx2({
+                  sx: value,
+                  theme
+                });
+              } else {
+                css2 = merge(css2, breakpointsValues);
+              }
+            }
+          } else {
+            css2 = merge(css2, getThemeValue(styleKey, value, theme, config));
+          }
+        }
+      });
+      return removeUnusedBreakpoints(breakpointsKeys, css2);
+    }
+    return Array.isArray(sx) ? sx.map(traverse) : traverse(sx);
+  }
+  return styleFunctionSx2;
+}
+const styleFunctionSx$1 = unstable_createStyleFunctionSx();
+styleFunctionSx$1.filterProps = ["sx"];
+function applyStyles(key, styles2) {
+  const theme = this;
+  if (theme.vars && typeof theme.getColorSchemeSelector === "function") {
+    const selector = theme.getColorSchemeSelector(key).replace(/(\[[^\]]+\])/, "*:where($1)");
+    return {
+      [selector]: styles2
+    };
+  }
+  if (theme.palette.mode === key) {
+    return styles2;
+  }
+  return {};
+}
+const _excluded$1K = ["breakpoints", "palette", "spacing", "shape"];
+function createTheme$2(options = {}, ...args) {
+  const {
+    breakpoints: breakpointsInput = {},
+    palette: paletteInput = {},
+    spacing: spacingInput,
+    shape: shapeInput = {}
+  } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$1K);
+  const breakpoints = createBreakpoints(breakpointsInput);
+  const spacing = createSpacing(spacingInput);
+  let muiTheme = deepmerge({
+    breakpoints,
+    direction: "ltr",
+    components: {},
+    // Inject component definitions.
+    palette: _extends$1({
+      mode: "light"
+    }, paletteInput),
+    spacing,
+    shape: _extends$1({}, shape, shapeInput)
+  }, other);
+  muiTheme.applyStyles = applyStyles;
+  muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
+  muiTheme.unstable_sxConfig = _extends$1({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
+  muiTheme.unstable_sx = function sx(props) {
+    return styleFunctionSx$1({
+      sx: props,
+      theme: this
+    });
+  };
+  return muiTheme;
+}
+const createTheme$1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: createTheme$2,
+  private_createBreakpoints: createBreakpoints,
+  unstable_applyStyles: applyStyles
+}, Symbol.toStringTag, { value: "Module" }));
+function isObjectEmpty(obj) {
+  return Object.keys(obj).length === 0;
+}
+function useTheme$3(defaultTheme2 = null) {
+  const contextTheme = React.useContext(ThemeContext);
+  return !contextTheme || isObjectEmpty(contextTheme) ? defaultTheme2 : contextTheme;
+}
+const systemDefaultTheme$1 = createTheme$2();
+function useTheme$2(defaultTheme2 = systemDefaultTheme$1) {
+  return useTheme$3(defaultTheme2);
+}
+function GlobalStyles$1({
+  styles: styles2,
+  themeId,
+  defaultTheme: defaultTheme2 = {}
+}) {
+  const upperTheme = useTheme$2(defaultTheme2);
+  const globalStyles = typeof styles2 === "function" ? styles2(themeId ? upperTheme[themeId] || upperTheme : upperTheme) : styles2;
+  return /* @__PURE__ */ jsx(GlobalStyles$2, {
+    styles: globalStyles
+  });
+}
+process.env.NODE_ENV !== "production" ? GlobalStyles$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  defaultTheme: PropTypes.object,
+  /**
+   * @ignore
+   */
+  styles: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.number, PropTypes.object, PropTypes.string, PropTypes.bool]),
+  /**
+   * @ignore
+   */
+  themeId: PropTypes.string
+} : void 0;
+const _excluded$1J = ["sx"];
+const splitProps = (props) => {
+  var _props$theme$unstable, _props$theme;
+  const result = {
+    systemProps: {},
+    otherProps: {}
+  };
+  const config = (_props$theme$unstable = props == null || (_props$theme = props.theme) == null ? void 0 : _props$theme.unstable_sxConfig) != null ? _props$theme$unstable : defaultSxConfig;
+  Object.keys(props).forEach((prop) => {
+    if (config[prop]) {
+      result.systemProps[prop] = props[prop];
+    } else {
+      result.otherProps[prop] = props[prop];
+    }
+  });
+  return result;
+};
+function extendSxProp(props) {
+  const {
+    sx: inSx
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1J);
+  const {
+    systemProps,
+    otherProps
+  } = splitProps(other);
+  let finalSx;
+  if (Array.isArray(inSx)) {
+    finalSx = [systemProps, ...inSx];
+  } else if (typeof inSx === "function") {
+    finalSx = (...args) => {
+      const result = inSx(...args);
+      if (!isPlainObject(result)) {
+        return systemProps;
+      }
+      return _extends$1({}, systemProps, result);
+    };
+  } else {
+    finalSx = _extends$1({}, systemProps, inSx);
+  }
+  return _extends$1({}, otherProps, {
+    sx: finalSx
+  });
+}
+const styleFunctionSx = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: styleFunctionSx$1,
+  extendSxProp,
+  unstable_createStyleFunctionSx,
+  unstable_defaultSxConfig: defaultSxConfig
+}, Symbol.toStringTag, { value: "Module" }));
+const _excluded$1I = ["ownerState"], _excluded2$c = ["variants"], _excluded3$4 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+function isEmpty$2(obj) {
+  return Object.keys(obj).length === 0;
+}
+function isStringTag(tag) {
+  return typeof tag === "string" && // 96 is one less than the char code
+  // for "a" so this is checking that
+  // it's a lowercase character
+  tag.charCodeAt(0) > 96;
+}
+function shouldForwardProp(prop) {
+  return prop !== "ownerState" && prop !== "theme" && prop !== "sx" && prop !== "as";
+}
+const systemDefaultTheme = createTheme$2();
+const lowercaseFirstLetter = (string) => {
+  if (!string) {
+    return string;
+  }
+  return string.charAt(0).toLowerCase() + string.slice(1);
+};
+function resolveTheme({
+  defaultTheme: defaultTheme2,
+  theme,
+  themeId
+}) {
+  return isEmpty$2(theme) ? defaultTheme2 : theme[themeId] || theme;
+}
+function defaultOverridesResolver(slot) {
+  if (!slot) {
+    return null;
+  }
+  return (props, styles2) => styles2[slot];
+}
+function processStyleArg(callableStyle, _ref) {
+  let {
+    ownerState
+  } = _ref, props = _objectWithoutPropertiesLoose$1(_ref, _excluded$1I);
+  const resolvedStylesArg = typeof callableStyle === "function" ? callableStyle(_extends$1({
+    ownerState
+  }, props)) : callableStyle;
+  if (Array.isArray(resolvedStylesArg)) {
+    return resolvedStylesArg.flatMap((resolvedStyle) => processStyleArg(resolvedStyle, _extends$1({
+      ownerState
+    }, props)));
+  }
+  if (!!resolvedStylesArg && typeof resolvedStylesArg === "object" && Array.isArray(resolvedStylesArg.variants)) {
+    const {
+      variants = []
+    } = resolvedStylesArg, otherStyles = _objectWithoutPropertiesLoose$1(resolvedStylesArg, _excluded2$c);
+    let result = otherStyles;
+    variants.forEach((variant) => {
+      let isMatch = true;
+      if (typeof variant.props === "function") {
+        isMatch = variant.props(_extends$1({
+          ownerState
+        }, props, ownerState));
+      } else {
+        Object.keys(variant.props).forEach((key) => {
+          if ((ownerState == null ? void 0 : ownerState[key]) !== variant.props[key] && props[key] !== variant.props[key]) {
+            isMatch = false;
+          }
+        });
+      }
+      if (isMatch) {
+        if (!Array.isArray(result)) {
+          result = [result];
+        }
+        result.push(typeof variant.style === "function" ? variant.style(_extends$1({
+          ownerState
+        }, props, ownerState)) : variant.style);
+      }
+    });
+    return result;
+  }
+  return resolvedStylesArg;
+}
+function createStyled$2(input = {}) {
+  const {
+    themeId,
+    defaultTheme: defaultTheme2 = systemDefaultTheme,
+    rootShouldForwardProp: rootShouldForwardProp2 = shouldForwardProp,
+    slotShouldForwardProp: slotShouldForwardProp2 = shouldForwardProp
+  } = input;
+  const systemSx = (props) => {
+    return styleFunctionSx$1(_extends$1({}, props, {
+      theme: resolveTheme(_extends$1({}, props, {
+        defaultTheme: defaultTheme2,
+        themeId
+      }))
+    }));
+  };
+  systemSx.__mui_systemSx = true;
+  return (tag, inputOptions = {}) => {
+    internal_processStyles(tag, (styles2) => styles2.filter((style2) => !(style2 != null && style2.__mui_systemSx)));
+    const {
+      name: componentName,
+      slot: componentSlot,
+      skipVariantsResolver: inputSkipVariantsResolver,
+      skipSx: inputSkipSx,
+      // TODO v6: remove `lowercaseFirstLetter()` in the next major release
+      // For more details: https://github.com/mui/material-ui/pull/37908
+      overridesResolver: overridesResolver2 = defaultOverridesResolver(lowercaseFirstLetter(componentSlot))
+    } = inputOptions, options = _objectWithoutPropertiesLoose$1(inputOptions, _excluded3$4);
+    const skipVariantsResolver = inputSkipVariantsResolver !== void 0 ? inputSkipVariantsResolver : (
+      // TODO v6: remove `Root` in the next major release
+      // For more details: https://github.com/mui/material-ui/pull/37908
+      componentSlot && componentSlot !== "Root" && componentSlot !== "root" || false
+    );
+    const skipSx = inputSkipSx || false;
+    let label;
+    if (process.env.NODE_ENV !== "production") {
+      if (componentName) {
+        label = `${componentName}-${lowercaseFirstLetter(componentSlot || "Root")}`;
+      }
+    }
+    let shouldForwardPropOption = shouldForwardProp;
+    if (componentSlot === "Root" || componentSlot === "root") {
+      shouldForwardPropOption = rootShouldForwardProp2;
+    } else if (componentSlot) {
+      shouldForwardPropOption = slotShouldForwardProp2;
+    } else if (isStringTag(tag)) {
+      shouldForwardPropOption = void 0;
+    }
+    const defaultStyledResolver = styled$2(tag, _extends$1({
+      shouldForwardProp: shouldForwardPropOption,
+      label
+    }, options));
+    const transformStyleArg = (stylesArg) => {
+      if (typeof stylesArg === "function" && stylesArg.__emotion_real !== stylesArg || isPlainObject(stylesArg)) {
+        return (props) => processStyleArg(stylesArg, _extends$1({}, props, {
+          theme: resolveTheme({
+            theme: props.theme,
+            defaultTheme: defaultTheme2,
+            themeId
+          })
+        }));
+      }
+      return stylesArg;
+    };
+    const muiStyledResolver = (styleArg, ...expressions) => {
+      let transformedStyleArg = transformStyleArg(styleArg);
+      const expressionsWithDefaultTheme = expressions ? expressions.map(transformStyleArg) : [];
+      if (componentName && overridesResolver2) {
+        expressionsWithDefaultTheme.push((props) => {
+          const theme = resolveTheme(_extends$1({}, props, {
+            defaultTheme: defaultTheme2,
+            themeId
+          }));
+          if (!theme.components || !theme.components[componentName] || !theme.components[componentName].styleOverrides) {
+            return null;
+          }
+          const styleOverrides = theme.components[componentName].styleOverrides;
+          const resolvedStyleOverrides = {};
+          Object.entries(styleOverrides).forEach(([slotKey, slotStyle]) => {
+            resolvedStyleOverrides[slotKey] = processStyleArg(slotStyle, _extends$1({}, props, {
+              theme
+            }));
+          });
+          return overridesResolver2(props, resolvedStyleOverrides);
+        });
+      }
+      if (componentName && !skipVariantsResolver) {
+        expressionsWithDefaultTheme.push((props) => {
+          var _theme$components;
+          const theme = resolveTheme(_extends$1({}, props, {
+            defaultTheme: defaultTheme2,
+            themeId
+          }));
+          const themeVariants = theme == null || (_theme$components = theme.components) == null || (_theme$components = _theme$components[componentName]) == null ? void 0 : _theme$components.variants;
+          return processStyleArg({
+            variants: themeVariants
+          }, _extends$1({}, props, {
+            theme
+          }));
+        });
+      }
+      if (!skipSx) {
+        expressionsWithDefaultTheme.push(systemSx);
+      }
+      const numOfCustomFnsApplied = expressionsWithDefaultTheme.length - expressions.length;
+      if (Array.isArray(styleArg) && numOfCustomFnsApplied > 0) {
+        const placeholders = new Array(numOfCustomFnsApplied).fill("");
+        transformedStyleArg = [...styleArg, ...placeholders];
+        transformedStyleArg.raw = [...styleArg.raw, ...placeholders];
+      }
+      const Component2 = defaultStyledResolver(transformedStyleArg, ...expressionsWithDefaultTheme);
+      if (process.env.NODE_ENV !== "production") {
+        let displayName;
+        if (componentName) {
+          displayName = `${componentName}${capitalize(componentSlot || "")}`;
+        }
+        if (displayName === void 0) {
+          displayName = `Styled(${getDisplayName(tag)})`;
+        }
+        Component2.displayName = displayName;
+      }
+      if (tag.muiName) {
+        Component2.muiName = tag.muiName;
+      }
+      return Component2;
+    };
+    if (defaultStyledResolver.withConfig) {
+      muiStyledResolver.withConfig = defaultStyledResolver.withConfig;
+    }
+    return muiStyledResolver;
+  };
+}
+const styled$1 = createStyled$2();
+function getThemeProps$1(params) {
+  const {
+    theme,
+    name,
+    props
+  } = params;
+  if (!theme || !theme.components || !theme.components[name] || !theme.components[name].defaultProps) {
+    return props;
+  }
+  return resolveProps(theme.components[name].defaultProps, props);
+}
+function useThemeProps$1({
+  props,
+  name,
+  defaultTheme: defaultTheme2,
+  themeId
+}) {
+  let theme = useTheme$2(defaultTheme2);
+  if (themeId) {
+    theme = theme[themeId] || theme;
+  }
+  const mergedProps = getThemeProps$1({
+    theme,
+    name,
+    props
+  });
+  return mergedProps;
+}
+function clampWrapper(value, min = 0, max = 1) {
+  if (process.env.NODE_ENV !== "production") {
+    if (value < min || value > max) {
+      console.error(`MUI: The value provided ${value} is out of range [${min}, ${max}].`);
+    }
+  }
+  return clamp$1(value, min, max);
+}
+function hexToRgb(color2) {
+  color2 = color2.slice(1);
+  const re = new RegExp(`.{1,${color2.length >= 6 ? 2 : 1}}`, "g");
+  let colors = color2.match(re);
+  if (colors && colors[0].length === 1) {
+    colors = colors.map((n2) => n2 + n2);
+  }
+  return colors ? `rgb${colors.length === 4 ? "a" : ""}(${colors.map((n2, index2) => {
+    return index2 < 3 ? parseInt(n2, 16) : Math.round(parseInt(n2, 16) / 255 * 1e3) / 1e3;
+  }).join(", ")})` : "";
+}
+function decomposeColor(color2) {
+  if (color2.type) {
+    return color2;
+  }
+  if (color2.charAt(0) === "#") {
+    return decomposeColor(hexToRgb(color2));
+  }
+  const marker = color2.indexOf("(");
+  const type = color2.substring(0, marker);
+  if (["rgb", "rgba", "hsl", "hsla", "color"].indexOf(type) === -1) {
+    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: Unsupported \`${color2}\` color.
+The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` : _formatMuiErrorMessage(9, color2));
+  }
+  let values2 = color2.substring(marker + 1, color2.length - 1);
+  let colorSpace;
+  if (type === "color") {
+    values2 = values2.split(" ");
+    colorSpace = values2.shift();
+    if (values2.length === 4 && values2[3].charAt(0) === "/") {
+      values2[3] = values2[3].slice(1);
+    }
+    if (["srgb", "display-p3", "a98-rgb", "prophoto-rgb", "rec-2020"].indexOf(colorSpace) === -1) {
+      throw new Error(process.env.NODE_ENV !== "production" ? `MUI: unsupported \`${colorSpace}\` color space.
+The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rgb, rec-2020.` : _formatMuiErrorMessage(10, colorSpace));
+    }
+  } else {
+    values2 = values2.split(",");
+  }
+  values2 = values2.map((value) => parseFloat(value));
+  return {
+    type,
+    values: values2,
+    colorSpace
+  };
+}
+function recomposeColor(color2) {
+  const {
+    type,
+    colorSpace
+  } = color2;
+  let {
+    values: values2
+  } = color2;
+  if (type.indexOf("rgb") !== -1) {
+    values2 = values2.map((n2, i2) => i2 < 3 ? parseInt(n2, 10) : n2);
+  } else if (type.indexOf("hsl") !== -1) {
+    values2[1] = `${values2[1]}%`;
+    values2[2] = `${values2[2]}%`;
+  }
+  if (type.indexOf("color") !== -1) {
+    values2 = `${colorSpace} ${values2.join(" ")}`;
+  } else {
+    values2 = `${values2.join(", ")}`;
+  }
+  return `${type}(${values2})`;
+}
+function alpha(color2, value) {
+  color2 = decomposeColor(color2);
+  value = clampWrapper(value);
+  if (color2.type === "rgb" || color2.type === "hsl") {
+    color2.type += "a";
+  }
+  if (color2.type === "color") {
+    color2.values[3] = `/${value}`;
+  } else {
+    color2.values[3] = value;
+  }
+  return recomposeColor(color2);
+}
+function darken(color2, coefficient) {
+  color2 = decomposeColor(color2);
+  coefficient = clampWrapper(coefficient);
+  if (color2.type.indexOf("hsl") !== -1) {
+    color2.values[2] *= 1 - coefficient;
+  } else if (color2.type.indexOf("rgb") !== -1 || color2.type.indexOf("color") !== -1) {
+    for (let i2 = 0; i2 < 3; i2 += 1) {
+      color2.values[i2] *= 1 - coefficient;
+    }
+  }
+  return recomposeColor(color2);
+}
+function lighten(color2, coefficient) {
+  color2 = decomposeColor(color2);
+  coefficient = clampWrapper(coefficient);
+  if (color2.type.indexOf("hsl") !== -1) {
+    color2.values[2] += (100 - color2.values[2]) * coefficient;
+  } else if (color2.type.indexOf("rgb") !== -1) {
+    for (let i2 = 0; i2 < 3; i2 += 1) {
+      color2.values[i2] += (255 - color2.values[i2]) * coefficient;
+    }
+  } else if (color2.type.indexOf("color") !== -1) {
+    for (let i2 = 0; i2 < 3; i2 += 1) {
+      color2.values[i2] += (1 - color2.values[i2]) * coefficient;
+    }
+  }
+  return recomposeColor(color2);
+}
+const RtlContext = /* @__PURE__ */ React.createContext();
+process.env.NODE_ENV !== "production" ? {
+  children: PropTypes.node,
+  value: PropTypes.bool
+} : void 0;
+const useRtl = () => {
+  const value = React.useContext(RtlContext);
+  return value != null ? value : false;
+};
+const PropsContext = /* @__PURE__ */ React.createContext(void 0);
+process.env.NODE_ENV !== "production" ? {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  children: PropTypes.node,
+  /**
+   * @ignore
+   */
+  value: PropTypes.object
+} : void 0;
+function getThemeProps(params) {
+  const {
+    theme,
+    name,
+    props
+  } = params;
+  if (!theme || !theme.components || !theme.components[name]) {
+    return props;
+  }
+  const config = theme.components[name];
+  if (config.defaultProps) {
+    return resolveProps(config.defaultProps, props);
+  }
+  if (!config.styleOverrides && !config.variants) {
+    return resolveProps(config, props);
+  }
+  return props;
+}
+function useDefaultProps$1({
+  props,
+  name
+}) {
+  const ctx = React.useContext(PropsContext);
+  return getThemeProps({
+    props,
+    name,
+    theme: {
+      components: ctx
+    }
+  });
+}
+const _excluded$1H = ["component", "direction", "spacing", "divider", "children", "className", "useFlexGap"];
+const defaultTheme$1 = createTheme$2();
+const defaultCreateStyledComponent = styled$1("div", {
+  name: "MuiStack",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+});
+function useThemePropsDefault(props) {
+  return useThemeProps$1({
+    props,
+    name: "MuiStack",
+    defaultTheme: defaultTheme$1
+  });
+}
+function joinChildren(children, separator) {
+  const childrenArray = React.Children.toArray(children).filter(Boolean);
+  return childrenArray.reduce((output, child, index2) => {
+    output.push(child);
+    if (index2 < childrenArray.length - 1) {
+      output.push(/* @__PURE__ */ React.cloneElement(separator, {
+        key: `separator-${index2}`
+      }));
+    }
+    return output;
+  }, []);
+}
+const getSideFromDirection = (direction) => {
+  return {
+    row: "Left",
+    "row-reverse": "Right",
+    column: "Top",
+    "column-reverse": "Bottom"
+  }[direction];
+};
+const style = ({
+  ownerState,
+  theme
+}) => {
+  let styles2 = _extends$1({
+    display: "flex",
+    flexDirection: "column"
+  }, handleBreakpoints({
+    theme
+  }, resolveBreakpointValues({
+    values: ownerState.direction,
+    breakpoints: theme.breakpoints.values
+  }), (propValue) => ({
+    flexDirection: propValue
+  })));
+  if (ownerState.spacing) {
+    const transformer = createUnarySpacing(theme);
+    const base = Object.keys(theme.breakpoints.values).reduce((acc, breakpoint) => {
+      if (typeof ownerState.spacing === "object" && ownerState.spacing[breakpoint] != null || typeof ownerState.direction === "object" && ownerState.direction[breakpoint] != null) {
+        acc[breakpoint] = true;
+      }
+      return acc;
+    }, {});
+    const directionValues = resolveBreakpointValues({
+      values: ownerState.direction,
+      base
+    });
+    const spacingValues = resolveBreakpointValues({
+      values: ownerState.spacing,
+      base
+    });
+    if (typeof directionValues === "object") {
+      Object.keys(directionValues).forEach((breakpoint, index2, breakpoints) => {
+        const directionValue = directionValues[breakpoint];
+        if (!directionValue) {
+          const previousDirectionValue = index2 > 0 ? directionValues[breakpoints[index2 - 1]] : "column";
+          directionValues[breakpoint] = previousDirectionValue;
+        }
+      });
+    }
+    const styleFromPropValue = (propValue, breakpoint) => {
+      if (ownerState.useFlexGap) {
+        return {
+          gap: getValue(transformer, propValue)
+        };
+      }
+      return {
+        // The useFlexGap={false} implement relies on each child to give up control of the margin.
+        // We need to reset the margin to avoid double spacing.
+        "& > :not(style):not(style)": {
+          margin: 0
+        },
+        "& > :not(style) ~ :not(style)": {
+          [`margin${getSideFromDirection(breakpoint ? directionValues[breakpoint] : ownerState.direction)}`]: getValue(transformer, propValue)
+        }
+      };
+    };
+    styles2 = deepmerge(styles2, handleBreakpoints({
+      theme
+    }, spacingValues, styleFromPropValue));
+  }
+  styles2 = mergeBreakpointsInOrder(theme.breakpoints, styles2);
+  return styles2;
+};
+function createStack(options = {}) {
+  const {
+    // This will allow adding custom styled fn (for example for custom sx style function)
+    createStyledComponent = defaultCreateStyledComponent,
+    useThemeProps: useThemeProps2 = useThemePropsDefault,
+    componentName = "MuiStack"
+  } = options;
+  const useUtilityClasses2 = () => {
+    const slots = {
+      root: ["root"]
+    };
+    return composeClasses(slots, (slot) => generateUtilityClass(componentName, slot), {});
+  };
+  const StackRoot = createStyledComponent(style);
+  const Stack2 = /* @__PURE__ */ React.forwardRef(function Grid(inProps, ref) {
+    const themeProps = useThemeProps2(inProps);
+    const props = extendSxProp(themeProps);
+    const {
+      component = "div",
+      direction = "column",
+      spacing = 0,
+      divider,
+      children,
+      className,
+      useFlexGap = false
+    } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1H);
+    const ownerState = {
+      direction,
+      spacing,
+      useFlexGap
+    };
+    const classes = useUtilityClasses2();
+    return /* @__PURE__ */ jsx(StackRoot, _extends$1({
+      as: component,
+      ownerState,
+      ref,
+      className: clsx(classes.root, className)
+    }, other, {
+      children: divider ? joinChildren(children, divider) : children
+    }));
+  });
+  process.env.NODE_ENV !== "production" ? Stack2.propTypes = {
+    children: PropTypes.node,
+    direction: PropTypes.oneOfType([PropTypes.oneOf(["column-reverse", "column", "row-reverse", "row"]), PropTypes.arrayOf(PropTypes.oneOf(["column-reverse", "column", "row-reverse", "row"])), PropTypes.object]),
+    divider: PropTypes.node,
+    spacing: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])), PropTypes.number, PropTypes.object, PropTypes.string]),
+    sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+  } : void 0;
+  return Stack2;
+}
 function getDataGridUtilityClass(slot) {
   return unstable_generateUtilityClass("MuiDataGrid", slot);
 }
@@ -1900,7 +3636,7 @@ const useGridAriaAttributes = () => {
     "aria-multiselectable": !rootProps.disableMultipleRowSelection
   };
 };
-const useUtilityClasses$A = (ownerState) => {
+const useUtilityClasses$1f = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -1909,10 +3645,10 @@ const useUtilityClasses$A = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridMainContainerRoot = styled("div", {
+const GridMainContainerRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "Main",
-  overridesResolver: (props, styles) => styles.main
+  overridesResolver: (props, styles2) => styles2.main
 })(() => ({
   position: "relative",
   flexGrow: 1,
@@ -1923,7 +3659,7 @@ const GridMainContainerRoot = styled("div", {
 const GridMainContainer = /* @__PURE__ */ React.forwardRef((props, ref) => {
   var _rootProps$experiment;
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$A(rootProps);
+  const classes = useUtilityClasses$1f(rootProps);
   const getAriaAttributes = (_rootProps$experiment = rootProps.experimentalFeatures) != null && _rootProps$experiment.ariaV7 ? useGridAriaAttributes : null;
   const ariaAttributes = typeof getAriaAttributes === "function" ? getAriaAttributes() : null;
   return /* @__PURE__ */ jsx(GridMainContainerRoot, _extends$1({
@@ -2358,11 +4094,11 @@ function getMinimalContentHeight(apiRef, rowHeight) {
   const densityFactor = gridDensityFactorSelector(apiRef);
   return `var(--DataGrid-overlayHeight, ${2 * Math.floor(rowHeight * densityFactor)}px)`;
 }
-const GridOverlayWrapperRoot = styled("div", {
+const GridOverlayWrapperRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "OverlayWrapper",
   shouldForwardProp: (prop) => prop !== "overlayType",
-  overridesResolver: (props, styles) => styles.overlayWrapper
+  overridesResolver: (props, styles2) => styles2.overlayWrapper
 })(({
   overlayType
 }) => ({
@@ -2377,13 +4113,13 @@ const GridOverlayWrapperRoot = styled("div", {
   zIndex: overlayType === "loadingOverlay" ? 5 : 4
   // Should be above pinned columns and detail panel
 }));
-const GridOverlayWrapperInner = styled("div", {
+const GridOverlayWrapperInner = styled$1("div", {
   name: "MuiDataGrid",
   slot: "OverlayWrapperInner",
   shouldForwardProp: (prop) => prop !== "overlayType",
-  overridesResolver: (props, styles) => styles.overlayWrapperInner
+  overridesResolver: (props, styles2) => styles2.overlayWrapperInner
 })({});
-const useUtilityClasses$z = (ownerState) => {
+const useUtilityClasses$1e = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -2408,11 +4144,11 @@ function GridOverlayWrapper(props) {
   unstable_useEnhancedEffect(() => {
     return apiRef.current.subscribeEvent("viewportInnerSizeChange", handleViewportSizeChange);
   }, [apiRef, handleViewportSizeChange]);
-  let height = (_viewportInnerSize$he = viewportInnerSize == null ? void 0 : viewportInnerSize.height) != null ? _viewportInnerSize$he : 0;
-  if (rootProps.autoHeight && height === 0) {
-    height = getMinimalContentHeight(apiRef, rootProps.rowHeight);
+  let height2 = (_viewportInnerSize$he = viewportInnerSize == null ? void 0 : viewportInnerSize.height) != null ? _viewportInnerSize$he : 0;
+  if (rootProps.autoHeight && height2 === 0) {
+    height2 = getMinimalContentHeight(apiRef, rootProps.rowHeight);
   }
-  const classes = useUtilityClasses$z(_extends$1({}, props, {
+  const classes = useUtilityClasses$1e(_extends$1({}, props, {
     classes: rootProps.classes
   }));
   if (!viewportInnerSize) {
@@ -2424,7 +4160,7 @@ function GridOverlayWrapper(props) {
     children: /* @__PURE__ */ jsx(GridOverlayWrapperInner, _extends$1({
       className: clsx(classes.inner),
       style: {
-        height,
+        height: height2,
         width: (_viewportInnerSize$wi = viewportInnerSize == null ? void 0 : viewportInnerSize.width) != null ? _viewportInnerSize$wi : 0
       }
     }, props))
@@ -2733,7 +4469,7 @@ function useGridParamsApi(apiRef, props) {
   };
   useGridApiMethod(apiRef, paramsApi, "public");
 }
-const _excluded$P = ["changeReason", "unstable_updateValueOnRender"], _excluded2$6 = ["align", "children", "editCellState", "colIndex", "column", "cellMode", "field", "formattedValue", "hasFocus", "height", "isEditable", "isSelected", "rowId", "tabIndex", "style", "value", "width", "className", "showRightBorder", "extendRowFullWidth", "row", "colSpan", "disableDragEvents", "isNotVisible", "onClick", "onDoubleClick", "onMouseDown", "onMouseUp", "onMouseOver", "onKeyDown", "onKeyUp", "onDragEnter", "onDragOver"], _excluded3$1 = ["column", "rowId", "editCellState", "align", "children", "colIndex", "height", "width", "className", "showRightBorder", "extendRowFullWidth", "row", "colSpan", "disableDragEvents", "isNotVisible", "onClick", "onDoubleClick", "onMouseDown", "onMouseUp", "onMouseOver", "onKeyDown", "onKeyUp", "onDragEnter", "onDragOver", "style"], _excluded4 = ["changeReason", "unstable_updateValueOnRender"];
+const _excluded$1G = ["changeReason", "unstable_updateValueOnRender"], _excluded2$b = ["align", "children", "editCellState", "colIndex", "column", "cellMode", "field", "formattedValue", "hasFocus", "height", "isEditable", "isSelected", "rowId", "tabIndex", "style", "value", "width", "className", "showRightBorder", "extendRowFullWidth", "row", "colSpan", "disableDragEvents", "isNotVisible", "onClick", "onDoubleClick", "onMouseDown", "onMouseUp", "onMouseOver", "onKeyDown", "onKeyUp", "onDragEnter", "onDragOver"], _excluded3$3 = ["column", "rowId", "editCellState", "align", "children", "colIndex", "height", "width", "className", "showRightBorder", "extendRowFullWidth", "row", "colSpan", "disableDragEvents", "isNotVisible", "onClick", "onDoubleClick", "onMouseDown", "onMouseUp", "onMouseOver", "onKeyDown", "onKeyUp", "onDragEnter", "onDragOver", "style"], _excluded4$1 = ["changeReason", "unstable_updateValueOnRender"];
 const EMPTY_CELL_PARAMS = {
   id: -1,
   field: "__unset__",
@@ -2758,7 +4494,7 @@ const EMPTY_CELL_PARAMS = {
   isEditable: false,
   api: {}
 };
-const useUtilityClasses$y = (ownerState) => {
+const useUtilityClasses$1d = (ownerState) => {
   const {
     align,
     showRightBorder,
@@ -2834,7 +4570,7 @@ const GridCellWrapper = /* @__PURE__ */ React.forwardRef((props, ref) => {
   }
   if (editCellState != null && column.renderEditCell) {
     const updatedRow = apiRef.current.getRowWithUpdatedValues(rowId, column.field);
-    const editCellStateRest = _objectWithoutPropertiesLoose$1(editCellState, _excluded$P);
+    const editCellStateRest = _objectWithoutPropertiesLoose$1(editCellState, _excluded$1G);
     const params = _extends$1({}, cellParamsWithAPI, {
       row: updatedRow
     }, editCellStateRest);
@@ -2872,14 +4608,14 @@ const GridCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
     field,
     formattedValue,
     hasFocus,
-    height,
+    height: height2,
     isEditable,
     isSelected,
     rowId,
     tabIndex,
     style: styleProp,
     value,
-    width,
+    width: width2,
     className,
     showRightBorder,
     colSpan,
@@ -2894,7 +4630,7 @@ const GridCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
     onKeyUp,
     onDragEnter,
     onDragOver
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded2$6);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded2$b);
   const valueToRender = formattedValue == null ? value : formattedValue;
   const cellRef = React.useRef(null);
   const handleRef = unstable_useForkRef(ref, cellRef);
@@ -2908,7 +4644,7 @@ const GridCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
     classes: rootProps.classes,
     isSelected
   };
-  const classes = useUtilityClasses$y(ownerState);
+  const classes = useUtilityClasses$1d(ownerState);
   const publishMouseUp = React.useCallback((eventName) => (event) => {
     const params = apiRef.current.getCellParams(rowId, field || "");
     apiRef.current.publishEvent(eventName, params, event);
@@ -2933,7 +4669,7 @@ const GridCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
       propHandler(event);
     }
   }, [apiRef, field, rowId]);
-  const style = React.useMemo(() => {
+  const style2 = React.useMemo(() => {
     if (isNotVisible) {
       return {
         padding: 0,
@@ -2943,13 +4679,13 @@ const GridCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
       };
     }
     const cellStyle = _extends$1({
-      minWidth: width,
-      maxWidth: width,
-      minHeight: height,
-      maxHeight: height === "auto" ? "none" : height
+      minWidth: width2,
+      maxWidth: width2,
+      minHeight: height2,
+      maxHeight: height2 === "auto" ? "none" : height2
     }, styleProp);
     return cellStyle;
-  }, [width, height, isNotVisible, styleProp]);
+  }, [width2, height2, isNotVisible, styleProp]);
   React.useEffect(() => {
     if (!hasFocus || cellMode === GridCellModes.Edit) {
       return;
@@ -3016,7 +4752,7 @@ const GridCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
       "data-colindex": colIndex,
       "aria-colindex": colIndex + 1,
       "aria-colspan": colSpan,
-      style,
+      style: style2,
       tabIndex,
       onClick: publish("cellClick", onClick),
       onDoubleClick: publish("cellDoubleClick", onDoubleClick),
@@ -3095,8 +4831,8 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
     editCellState,
     align,
     colIndex,
-    height,
-    width,
+    height: height2,
+    width: width2,
     className,
     showRightBorder,
     colSpan,
@@ -3112,7 +4848,7 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
     onDragEnter,
     onDragOver,
     style: styleProp
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded3$1);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded3$3);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const field = column.field;
@@ -3169,7 +4905,7 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
     isSelected,
     isSelectionMode
   };
-  const classes = useUtilityClasses$y(ownerState);
+  const classes = useUtilityClasses$1d(ownerState);
   const publishMouseUp = React.useCallback((eventName) => (event) => {
     const params = apiRef.current.getCellParams(rowId, field || "");
     apiRef.current.publishEvent(eventName, params, event);
@@ -3194,7 +4930,7 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
       propHandler(event);
     }
   }, [apiRef, field, rowId]);
-  const style = React.useMemo(() => {
+  const style2 = React.useMemo(() => {
     if (isNotVisible) {
       return _extends$1({
         padding: 0,
@@ -3204,13 +4940,13 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
       }, styleProp);
     }
     const cellStyle = _extends$1({
-      minWidth: width,
-      maxWidth: width,
-      minHeight: height,
-      maxHeight: height === "auto" ? "none" : height
+      minWidth: width2,
+      maxWidth: width2,
+      minHeight: height2,
+      maxHeight: height2 === "auto" ? "none" : height2
     }, styleProp);
     return cellStyle;
-  }, [width, height, isNotVisible, styleProp]);
+  }, [width2, height2, isNotVisible, styleProp]);
   React.useEffect(() => {
     if (!hasFocus || cellMode === GridCellModes.Edit) {
       return;
@@ -3257,7 +4993,7 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
   }
   if (editCellState != null && column.renderEditCell) {
     const updatedRow = apiRef.current.getRowWithUpdatedValues(rowId, column.field);
-    const editCellStateRest = _objectWithoutPropertiesLoose$1(editCellState, _excluded4);
+    const editCellStateRest = _objectWithoutPropertiesLoose$1(editCellState, _excluded4$1);
     const params = _extends$1({}, cellParamsWithAPI, {
       row: updatedRow
     }, editCellStateRest);
@@ -3294,7 +5030,7 @@ const GridCellV7 = /* @__PURE__ */ React.forwardRef((props, ref) => {
       "data-colindex": colIndex,
       "aria-colindex": colIndex + 1,
       "aria-colspan": colSpan,
-      style,
+      style: style2,
       tabIndex,
       onClick: publish("cellClick", onClick),
       onDoubleClick: publish("cellDoubleClick", onDoubleClick),
@@ -3340,8 +5076,8 @@ process.env.NODE_ENV !== "production" ? GridCellV7.propTypes = {
   width: PropTypes.number.isRequired
 } : void 0;
 const MemoizedGridCellV7 = fastMemo(GridCellV7);
-const _excluded$O = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "hasFocus", "tabIndex"];
-const useUtilityClasses$x = (ownerState) => {
+const _excluded$1F = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "hasFocus", "tabIndex"];
+const useUtilityClasses$1c = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -3353,13 +5089,13 @@ const useUtilityClasses$x = (ownerState) => {
 function GridBooleanCellRaw(props) {
   const {
     value
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$O);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1F);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const ownerState = {
     classes: rootProps.classes
   };
-  const classes = useUtilityClasses$x(ownerState);
+  const classes = useUtilityClasses$1c(ownerState);
   const Icon = React.useMemo(() => value ? rootProps.slots.booleanCellTrueIcon : rootProps.slots.booleanCellFalseIcon, [rootProps.slots.booleanCellFalseIcon, rootProps.slots.booleanCellTrueIcon, value]);
   return /* @__PURE__ */ jsx(Icon, _extends$1({
     fontSize: "small",
@@ -3440,8 +5176,8 @@ const renderBooleanCell = (params) => {
   }
   return /* @__PURE__ */ jsx(GridBooleanCell, _extends$1({}, params));
 };
-const _excluded$N = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "className", "hasFocus", "isValidating", "isProcessingProps", "error", "onValueChange"];
-const useUtilityClasses$w = (ownerState) => {
+const _excluded$1E = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "className", "hasFocus", "isValidating", "isProcessingProps", "error", "onValueChange"];
+const useUtilityClasses$1b = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -3459,7 +5195,7 @@ function GridEditBooleanCell(props) {
     className,
     hasFocus,
     onValueChange
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$N);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1E);
   const apiRef = useGridApiContext();
   const inputRef = React.useRef(null);
   const id = unstable_useId();
@@ -3468,7 +5204,7 @@ function GridEditBooleanCell(props) {
   const ownerState = {
     classes: rootProps.classes
   };
-  const classes = useUtilityClasses$w(ownerState);
+  const classes = useUtilityClasses$1b(ownerState);
   const handleChange = React.useCallback(async (event) => {
     const newValue = event.target.checked;
     if (onValueChange) {
@@ -3568,11 +5304,2116 @@ process.env.NODE_ENV !== "production" ? GridEditBooleanCell.propTypes = {
   value: PropTypes.any
 } : void 0;
 const renderEditBooleanCell = (params) => /* @__PURE__ */ jsx(GridEditBooleanCell, _extends$1({}, params));
-const _excluded$M = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "hasFocus", "inputProps", "isValidating", "isProcessingProps", "onValueChange"];
-const StyledInputBase = styled$1(InputBase)({
+const _excluded$1D = ["onChange", "maxRows", "minRows", "style", "value"];
+function getStyleValue(value) {
+  return parseInt(value, 10) || 0;
+}
+const styles$2 = {
+  shadow: {
+    // Visibility needed to hide the extra text area on iPads
+    visibility: "hidden",
+    // Remove from the content flow
+    position: "absolute",
+    // Ignore the scrollbar width
+    overflow: "hidden",
+    height: 0,
+    top: 0,
+    left: 0,
+    // Create a new layer, increase the isolation of the computed values
+    transform: "translateZ(0)"
+  }
+};
+function isEmpty$1(obj) {
+  return obj === void 0 || obj === null || Object.keys(obj).length === 0 || obj.outerHeightStyle === 0 && !obj.overflowing;
+}
+const TextareaAutosize = /* @__PURE__ */ React.forwardRef(function TextareaAutosize2(props, forwardedRef) {
+  const {
+    onChange,
+    maxRows,
+    minRows = 1,
+    style: style2,
+    value
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1D);
+  const {
+    current: isControlled
+  } = React.useRef(value != null);
+  const inputRef = React.useRef(null);
+  const handleRef = unstable_useForkRef(forwardedRef, inputRef);
+  const heightRef = React.useRef(null);
+  const shadowRef = React.useRef(null);
+  const calculateTextareaStyles = React.useCallback(() => {
+    const input = inputRef.current;
+    const containerWindow = unstable_ownerWindow(input);
+    const computedStyle = containerWindow.getComputedStyle(input);
+    if (computedStyle.width === "0px") {
+      return {
+        outerHeightStyle: 0,
+        overflowing: false
+      };
+    }
+    const inputShallow = shadowRef.current;
+    inputShallow.style.width = computedStyle.width;
+    inputShallow.value = input.value || props.placeholder || "x";
+    if (inputShallow.value.slice(-1) === "\n") {
+      inputShallow.value += " ";
+    }
+    const boxSizing2 = computedStyle.boxSizing;
+    const padding2 = getStyleValue(computedStyle.paddingBottom) + getStyleValue(computedStyle.paddingTop);
+    const border2 = getStyleValue(computedStyle.borderBottomWidth) + getStyleValue(computedStyle.borderTopWidth);
+    const innerHeight = inputShallow.scrollHeight;
+    inputShallow.value = "x";
+    const singleRowHeight = inputShallow.scrollHeight;
+    let outerHeight = innerHeight;
+    if (minRows) {
+      outerHeight = Math.max(Number(minRows) * singleRowHeight, outerHeight);
+    }
+    if (maxRows) {
+      outerHeight = Math.min(Number(maxRows) * singleRowHeight, outerHeight);
+    }
+    outerHeight = Math.max(outerHeight, singleRowHeight);
+    const outerHeightStyle = outerHeight + (boxSizing2 === "border-box" ? padding2 + border2 : 0);
+    const overflowing = Math.abs(outerHeight - innerHeight) <= 1;
+    return {
+      outerHeightStyle,
+      overflowing
+    };
+  }, [maxRows, minRows, props.placeholder]);
+  const syncHeight = React.useCallback(() => {
+    const textareaStyles = calculateTextareaStyles();
+    if (isEmpty$1(textareaStyles)) {
+      return;
+    }
+    const outerHeightStyle = textareaStyles.outerHeightStyle;
+    const input = inputRef.current;
+    if (heightRef.current !== outerHeightStyle) {
+      heightRef.current = outerHeightStyle;
+      input.style.height = `${outerHeightStyle}px`;
+    }
+    input.style.overflow = textareaStyles.overflowing ? "hidden" : "";
+  }, [calculateTextareaStyles]);
+  unstable_useEnhancedEffect(() => {
+    const handleResize = () => {
+      syncHeight();
+    };
+    let rAF;
+    const rAFHandleResize = () => {
+      cancelAnimationFrame(rAF);
+      rAF = requestAnimationFrame(() => {
+        handleResize();
+      });
+    };
+    const debounceHandleResize = unstable_debounce(handleResize);
+    const input = inputRef.current;
+    const containerWindow = unstable_ownerWindow(input);
+    containerWindow.addEventListener("resize", debounceHandleResize);
+    let resizeObserver;
+    if (typeof ResizeObserver !== "undefined") {
+      resizeObserver = new ResizeObserver(process.env.NODE_ENV === "test" ? rAFHandleResize : handleResize);
+      resizeObserver.observe(input);
+    }
+    return () => {
+      debounceHandleResize.clear();
+      cancelAnimationFrame(rAF);
+      containerWindow.removeEventListener("resize", debounceHandleResize);
+      if (resizeObserver) {
+        resizeObserver.disconnect();
+      }
+    };
+  }, [calculateTextareaStyles, syncHeight]);
+  unstable_useEnhancedEffect(() => {
+    syncHeight();
+  });
+  const handleChange = (event) => {
+    if (!isControlled) {
+      syncHeight();
+    }
+    if (onChange) {
+      onChange(event);
+    }
+  };
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [/* @__PURE__ */ jsx("textarea", _extends$1({
+      value,
+      onChange: handleChange,
+      ref: handleRef,
+      rows: minRows,
+      style: style2
+    }, other)), /* @__PURE__ */ jsx("textarea", {
+      "aria-hidden": true,
+      className: props.className,
+      readOnly: true,
+      ref: shadowRef,
+      tabIndex: -1,
+      style: _extends$1({}, styles$2.shadow, style2, {
+        paddingTop: 0,
+        paddingBottom: 0
+      })
+    })]
+  });
+});
+process.env.NODE_ENV !== "production" ? TextareaAutosize.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * Maximum number of rows to display.
+   */
+  maxRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Minimum number of rows to display.
+   * @default 1
+   */
+  minRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * @ignore
+   */
+  onChange: PropTypes.func,
+  /**
+   * @ignore
+   */
+  placeholder: PropTypes.string,
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * @ignore
+   */
+  value: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.string), PropTypes.number, PropTypes.string])
+} : void 0;
+function formControlState({
+  props,
+  states,
+  muiFormControl
+}) {
+  return states.reduce((acc, state) => {
+    acc[state] = props[state];
+    if (muiFormControl) {
+      if (typeof props[state] === "undefined") {
+        acc[state] = muiFormControl[state];
+      }
+    }
+    return acc;
+  }, {});
+}
+const FormControlContext = /* @__PURE__ */ React.createContext(void 0);
+if (process.env.NODE_ENV !== "production") {
+  FormControlContext.displayName = "FormControlContext";
+}
+function useFormControl() {
+  return React.useContext(FormControlContext);
+}
+function getDefaultExportFromCjs(x) {
+  return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
+}
+function getAugmentedNamespace(n2) {
+  if (Object.prototype.hasOwnProperty.call(n2, "__esModule")) return n2;
+  var f = n2.default;
+  if (typeof f == "function") {
+    var a = function a2() {
+      if (this instanceof a2) {
+        return Reflect.construct(f, arguments, this.constructor);
+      }
+      return f.apply(this, arguments);
+    };
+    a.prototype = f.prototype;
+  } else a = {};
+  Object.defineProperty(a, "__esModule", { value: true });
+  Object.keys(n2).forEach(function(k) {
+    var d = Object.getOwnPropertyDescriptor(n2, k);
+    Object.defineProperty(a, k, d.get ? d : {
+      enumerable: true,
+      get: function() {
+        return n2[k];
+      }
+    });
+  });
+  return a;
+}
+var createStyled$1 = {};
+const require$$7 = /* @__PURE__ */ getAugmentedNamespace(createTheme$1);
+const require$$8 = /* @__PURE__ */ getAugmentedNamespace(styleFunctionSx);
+var hasRequiredCreateStyled;
+function requireCreateStyled() {
+  if (hasRequiredCreateStyled) return createStyled$1;
+  hasRequiredCreateStyled = 1;
+  var _interopRequireDefault = require$$0;
+  Object.defineProperty(createStyled$1, "__esModule", {
+    value: true
+  });
+  createStyled$1.default = createStyled2;
+  createStyled$1.shouldForwardProp = shouldForwardProp2;
+  createStyled$1.systemDefaultTheme = void 0;
+  var _extends2 = _interopRequireDefault(require$$1);
+  var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require$$2);
+  var _styledEngine = _interopRequireWildcard(styled$2);
+  var _deepmerge = deepmerge;
+  var _capitalize = _interopRequireDefault(capitalize);
+  var _getDisplayName = _interopRequireDefault(getDisplayName);
+  var _createTheme = _interopRequireDefault(require$$7);
+  var _styleFunctionSx = _interopRequireDefault(require$$8);
+  const _excluded5 = ["ownerState"], _excluded22 = ["variants"], _excluded32 = ["name", "slot", "skipVariantsResolver", "skipSx", "overridesResolver"];
+  function _getRequireWildcardCache(e2) {
+    if ("function" != typeof WeakMap) return null;
+    var r = /* @__PURE__ */ new WeakMap(), t = /* @__PURE__ */ new WeakMap();
+    return (_getRequireWildcardCache = function(e3) {
+      return e3 ? t : r;
+    })(e2);
+  }
+  function _interopRequireWildcard(e2, r) {
+    if (e2 && e2.__esModule) return e2;
+    if (null === e2 || "object" != typeof e2 && "function" != typeof e2) return { default: e2 };
+    var t = _getRequireWildcardCache(r);
+    if (t && t.has(e2)) return t.get(e2);
+    var n2 = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var u2 in e2) if ("default" !== u2 && Object.prototype.hasOwnProperty.call(e2, u2)) {
+      var i2 = a ? Object.getOwnPropertyDescriptor(e2, u2) : null;
+      i2 && (i2.get || i2.set) ? Object.defineProperty(n2, u2, i2) : n2[u2] = e2[u2];
+    }
+    return n2.default = e2, t && t.set(e2, n2), n2;
+  }
+  function isEmpty2(obj) {
+    return Object.keys(obj).length === 0;
+  }
+  function isStringTag2(tag) {
+    return typeof tag === "string" && // 96 is one less than the char code
+    // for "a" so this is checking that
+    // it's a lowercase character
+    tag.charCodeAt(0) > 96;
+  }
+  function shouldForwardProp2(prop) {
+    return prop !== "ownerState" && prop !== "theme" && prop !== "sx" && prop !== "as";
+  }
+  const systemDefaultTheme2 = createStyled$1.systemDefaultTheme = (0, _createTheme.default)();
+  const lowercaseFirstLetter2 = (string) => {
+    if (!string) {
+      return string;
+    }
+    return string.charAt(0).toLowerCase() + string.slice(1);
+  };
+  function resolveTheme2({
+    defaultTheme: defaultTheme2,
+    theme,
+    themeId
+  }) {
+    return isEmpty2(theme) ? defaultTheme2 : theme[themeId] || theme;
+  }
+  function defaultOverridesResolver2(slot) {
+    if (!slot) {
+      return null;
+    }
+    return (props, styles2) => styles2[slot];
+  }
+  function processStyleArg2(callableStyle, _ref) {
+    let {
+      ownerState
+    } = _ref, props = (0, _objectWithoutPropertiesLoose2.default)(_ref, _excluded5);
+    const resolvedStylesArg = typeof callableStyle === "function" ? callableStyle((0, _extends2.default)({
+      ownerState
+    }, props)) : callableStyle;
+    if (Array.isArray(resolvedStylesArg)) {
+      return resolvedStylesArg.flatMap((resolvedStyle) => processStyleArg2(resolvedStyle, (0, _extends2.default)({
+        ownerState
+      }, props)));
+    }
+    if (!!resolvedStylesArg && typeof resolvedStylesArg === "object" && Array.isArray(resolvedStylesArg.variants)) {
+      const {
+        variants = []
+      } = resolvedStylesArg, otherStyles = (0, _objectWithoutPropertiesLoose2.default)(resolvedStylesArg, _excluded22);
+      let result = otherStyles;
+      variants.forEach((variant) => {
+        let isMatch = true;
+        if (typeof variant.props === "function") {
+          isMatch = variant.props((0, _extends2.default)({
+            ownerState
+          }, props, ownerState));
+        } else {
+          Object.keys(variant.props).forEach((key) => {
+            if ((ownerState == null ? void 0 : ownerState[key]) !== variant.props[key] && props[key] !== variant.props[key]) {
+              isMatch = false;
+            }
+          });
+        }
+        if (isMatch) {
+          if (!Array.isArray(result)) {
+            result = [result];
+          }
+          result.push(typeof variant.style === "function" ? variant.style((0, _extends2.default)({
+            ownerState
+          }, props, ownerState)) : variant.style);
+        }
+      });
+      return result;
+    }
+    return resolvedStylesArg;
+  }
+  function createStyled2(input = {}) {
+    const {
+      themeId,
+      defaultTheme: defaultTheme2 = systemDefaultTheme2,
+      rootShouldForwardProp: rootShouldForwardProp2 = shouldForwardProp2,
+      slotShouldForwardProp: slotShouldForwardProp2 = shouldForwardProp2
+    } = input;
+    const systemSx = (props) => {
+      return (0, _styleFunctionSx.default)((0, _extends2.default)({}, props, {
+        theme: resolveTheme2((0, _extends2.default)({}, props, {
+          defaultTheme: defaultTheme2,
+          themeId
+        }))
+      }));
+    };
+    systemSx.__mui_systemSx = true;
+    return (tag, inputOptions = {}) => {
+      (0, _styledEngine.internal_processStyles)(tag, (styles2) => styles2.filter((style2) => !(style2 != null && style2.__mui_systemSx)));
+      const {
+        name: componentName,
+        slot: componentSlot,
+        skipVariantsResolver: inputSkipVariantsResolver,
+        skipSx: inputSkipSx,
+        // TODO v6: remove `lowercaseFirstLetter()` in the next major release
+        // For more details: https://github.com/mui/material-ui/pull/37908
+        overridesResolver: overridesResolver2 = defaultOverridesResolver2(lowercaseFirstLetter2(componentSlot))
+      } = inputOptions, options = (0, _objectWithoutPropertiesLoose2.default)(inputOptions, _excluded32);
+      const skipVariantsResolver = inputSkipVariantsResolver !== void 0 ? inputSkipVariantsResolver : (
+        // TODO v6: remove `Root` in the next major release
+        // For more details: https://github.com/mui/material-ui/pull/37908
+        componentSlot && componentSlot !== "Root" && componentSlot !== "root" || false
+      );
+      const skipSx = inputSkipSx || false;
+      let label;
+      if (process.env.NODE_ENV !== "production") {
+        if (componentName) {
+          label = `${componentName}-${lowercaseFirstLetter2(componentSlot || "Root")}`;
+        }
+      }
+      let shouldForwardPropOption = shouldForwardProp2;
+      if (componentSlot === "Root" || componentSlot === "root") {
+        shouldForwardPropOption = rootShouldForwardProp2;
+      } else if (componentSlot) {
+        shouldForwardPropOption = slotShouldForwardProp2;
+      } else if (isStringTag2(tag)) {
+        shouldForwardPropOption = void 0;
+      }
+      const defaultStyledResolver = (0, _styledEngine.default)(tag, (0, _extends2.default)({
+        shouldForwardProp: shouldForwardPropOption,
+        label
+      }, options));
+      const transformStyleArg = (stylesArg) => {
+        if (typeof stylesArg === "function" && stylesArg.__emotion_real !== stylesArg || (0, _deepmerge.isPlainObject)(stylesArg)) {
+          return (props) => processStyleArg2(stylesArg, (0, _extends2.default)({}, props, {
+            theme: resolveTheme2({
+              theme: props.theme,
+              defaultTheme: defaultTheme2,
+              themeId
+            })
+          }));
+        }
+        return stylesArg;
+      };
+      const muiStyledResolver = (styleArg, ...expressions) => {
+        let transformedStyleArg = transformStyleArg(styleArg);
+        const expressionsWithDefaultTheme = expressions ? expressions.map(transformStyleArg) : [];
+        if (componentName && overridesResolver2) {
+          expressionsWithDefaultTheme.push((props) => {
+            const theme = resolveTheme2((0, _extends2.default)({}, props, {
+              defaultTheme: defaultTheme2,
+              themeId
+            }));
+            if (!theme.components || !theme.components[componentName] || !theme.components[componentName].styleOverrides) {
+              return null;
+            }
+            const styleOverrides = theme.components[componentName].styleOverrides;
+            const resolvedStyleOverrides = {};
+            Object.entries(styleOverrides).forEach(([slotKey, slotStyle]) => {
+              resolvedStyleOverrides[slotKey] = processStyleArg2(slotStyle, (0, _extends2.default)({}, props, {
+                theme
+              }));
+            });
+            return overridesResolver2(props, resolvedStyleOverrides);
+          });
+        }
+        if (componentName && !skipVariantsResolver) {
+          expressionsWithDefaultTheme.push((props) => {
+            var _theme$components;
+            const theme = resolveTheme2((0, _extends2.default)({}, props, {
+              defaultTheme: defaultTheme2,
+              themeId
+            }));
+            const themeVariants = theme == null || (_theme$components = theme.components) == null || (_theme$components = _theme$components[componentName]) == null ? void 0 : _theme$components.variants;
+            return processStyleArg2({
+              variants: themeVariants
+            }, (0, _extends2.default)({}, props, {
+              theme
+            }));
+          });
+        }
+        if (!skipSx) {
+          expressionsWithDefaultTheme.push(systemSx);
+        }
+        const numOfCustomFnsApplied = expressionsWithDefaultTheme.length - expressions.length;
+        if (Array.isArray(styleArg) && numOfCustomFnsApplied > 0) {
+          const placeholders = new Array(numOfCustomFnsApplied).fill("");
+          transformedStyleArg = [...styleArg, ...placeholders];
+          transformedStyleArg.raw = [...styleArg.raw, ...placeholders];
+        }
+        const Component2 = defaultStyledResolver(transformedStyleArg, ...expressionsWithDefaultTheme);
+        if (process.env.NODE_ENV !== "production") {
+          let displayName;
+          if (componentName) {
+            displayName = `${componentName}${(0, _capitalize.default)(componentSlot || "")}`;
+          }
+          if (displayName === void 0) {
+            displayName = `Styled(${(0, _getDisplayName.default)(tag)})`;
+          }
+          Component2.displayName = displayName;
+        }
+        if (tag.muiName) {
+          Component2.muiName = tag.muiName;
+        }
+        return Component2;
+      };
+      if (defaultStyledResolver.withConfig) {
+        muiStyledResolver.withConfig = defaultStyledResolver.withConfig;
+      }
+      return muiStyledResolver;
+    };
+  }
+  return createStyled$1;
+}
+var createStyledExports = /* @__PURE__ */ requireCreateStyled();
+const createStyled = /* @__PURE__ */ getDefaultExportFromCjs(createStyledExports);
+function createMixins(breakpoints, mixins) {
+  return _extends$1({
+    toolbar: {
+      minHeight: 56,
+      [breakpoints.up("xs")]: {
+        "@media (orientation: landscape)": {
+          minHeight: 48
+        }
+      },
+      [breakpoints.up("sm")]: {
+        minHeight: 64
+      }
+    }
+  }, mixins);
+}
+var colorManipulator = {};
+var hasRequiredColorManipulator;
+function requireColorManipulator() {
+  if (hasRequiredColorManipulator) return colorManipulator;
+  hasRequiredColorManipulator = 1;
+  var _interopRequireDefault = require$$0;
+  Object.defineProperty(colorManipulator, "__esModule", {
+    value: true
+  });
+  colorManipulator.alpha = alpha2;
+  colorManipulator.blend = blend;
+  colorManipulator.colorChannel = void 0;
+  colorManipulator.darken = darken2;
+  colorManipulator.decomposeColor = decomposeColor2;
+  colorManipulator.emphasize = emphasize;
+  colorManipulator.getContrastRatio = getContrastRatio;
+  colorManipulator.getLuminance = getLuminance;
+  colorManipulator.hexToRgb = hexToRgb2;
+  colorManipulator.hslToRgb = hslToRgb;
+  colorManipulator.lighten = lighten2;
+  colorManipulator.private_safeAlpha = private_safeAlpha;
+  colorManipulator.private_safeColorChannel = void 0;
+  colorManipulator.private_safeDarken = private_safeDarken;
+  colorManipulator.private_safeEmphasize = private_safeEmphasize;
+  colorManipulator.private_safeLighten = private_safeLighten;
+  colorManipulator.recomposeColor = recomposeColor2;
+  colorManipulator.rgbToHex = rgbToHex;
+  var _formatMuiErrorMessage2 = _interopRequireDefault(_formatMuiErrorMessage);
+  var _clamp = _interopRequireDefault(clamp$1);
+  function clampWrapper2(value, min = 0, max = 1) {
+    if (process.env.NODE_ENV !== "production") {
+      if (value < min || value > max) {
+        console.error(`MUI: The value provided ${value} is out of range [${min}, ${max}].`);
+      }
+    }
+    return (0, _clamp.default)(value, min, max);
+  }
+  function hexToRgb2(color2) {
+    color2 = color2.slice(1);
+    const re = new RegExp(`.{1,${color2.length >= 6 ? 2 : 1}}`, "g");
+    let colors = color2.match(re);
+    if (colors && colors[0].length === 1) {
+      colors = colors.map((n2) => n2 + n2);
+    }
+    return colors ? `rgb${colors.length === 4 ? "a" : ""}(${colors.map((n2, index2) => {
+      return index2 < 3 ? parseInt(n2, 16) : Math.round(parseInt(n2, 16) / 255 * 1e3) / 1e3;
+    }).join(", ")})` : "";
+  }
+  function intToHex(int) {
+    const hex = int.toString(16);
+    return hex.length === 1 ? `0${hex}` : hex;
+  }
+  function decomposeColor2(color2) {
+    if (color2.type) {
+      return color2;
+    }
+    if (color2.charAt(0) === "#") {
+      return decomposeColor2(hexToRgb2(color2));
+    }
+    const marker = color2.indexOf("(");
+    const type = color2.substring(0, marker);
+    if (["rgb", "rgba", "hsl", "hsla", "color"].indexOf(type) === -1) {
+      throw new Error(process.env.NODE_ENV !== "production" ? `MUI: Unsupported \`${color2}\` color.
+The following formats are supported: #nnn, #nnnnnn, rgb(), rgba(), hsl(), hsla(), color().` : (0, _formatMuiErrorMessage2.default)(9, color2));
+    }
+    let values2 = color2.substring(marker + 1, color2.length - 1);
+    let colorSpace;
+    if (type === "color") {
+      values2 = values2.split(" ");
+      colorSpace = values2.shift();
+      if (values2.length === 4 && values2[3].charAt(0) === "/") {
+        values2[3] = values2[3].slice(1);
+      }
+      if (["srgb", "display-p3", "a98-rgb", "prophoto-rgb", "rec-2020"].indexOf(colorSpace) === -1) {
+        throw new Error(process.env.NODE_ENV !== "production" ? `MUI: unsupported \`${colorSpace}\` color space.
+The following color spaces are supported: srgb, display-p3, a98-rgb, prophoto-rgb, rec-2020.` : (0, _formatMuiErrorMessage2.default)(10, colorSpace));
+      }
+    } else {
+      values2 = values2.split(",");
+    }
+    values2 = values2.map((value) => parseFloat(value));
+    return {
+      type,
+      values: values2,
+      colorSpace
+    };
+  }
+  const colorChannel = (color2) => {
+    const decomposedColor = decomposeColor2(color2);
+    return decomposedColor.values.slice(0, 3).map((val, idx) => decomposedColor.type.indexOf("hsl") !== -1 && idx !== 0 ? `${val}%` : val).join(" ");
+  };
+  colorManipulator.colorChannel = colorChannel;
+  const private_safeColorChannel = (color2, warning) => {
+    try {
+      return colorChannel(color2);
+    } catch (error) {
+      if (warning && process.env.NODE_ENV !== "production") {
+        console.warn(warning);
+      }
+      return color2;
+    }
+  };
+  colorManipulator.private_safeColorChannel = private_safeColorChannel;
+  function recomposeColor2(color2) {
+    const {
+      type,
+      colorSpace
+    } = color2;
+    let {
+      values: values2
+    } = color2;
+    if (type.indexOf("rgb") !== -1) {
+      values2 = values2.map((n2, i2) => i2 < 3 ? parseInt(n2, 10) : n2);
+    } else if (type.indexOf("hsl") !== -1) {
+      values2[1] = `${values2[1]}%`;
+      values2[2] = `${values2[2]}%`;
+    }
+    if (type.indexOf("color") !== -1) {
+      values2 = `${colorSpace} ${values2.join(" ")}`;
+    } else {
+      values2 = `${values2.join(", ")}`;
+    }
+    return `${type}(${values2})`;
+  }
+  function rgbToHex(color2) {
+    if (color2.indexOf("#") === 0) {
+      return color2;
+    }
+    const {
+      values: values2
+    } = decomposeColor2(color2);
+    return `#${values2.map((n2, i2) => intToHex(i2 === 3 ? Math.round(255 * n2) : n2)).join("")}`;
+  }
+  function hslToRgb(color2) {
+    color2 = decomposeColor2(color2);
+    const {
+      values: values2
+    } = color2;
+    const h = values2[0];
+    const s2 = values2[1] / 100;
+    const l = values2[2] / 100;
+    const a = s2 * Math.min(l, 1 - l);
+    const f = (n2, k = (n2 + h / 30) % 12) => l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    let type = "rgb";
+    const rgb = [Math.round(f(0) * 255), Math.round(f(8) * 255), Math.round(f(4) * 255)];
+    if (color2.type === "hsla") {
+      type += "a";
+      rgb.push(values2[3]);
+    }
+    return recomposeColor2({
+      type,
+      values: rgb
+    });
+  }
+  function getLuminance(color2) {
+    color2 = decomposeColor2(color2);
+    let rgb = color2.type === "hsl" || color2.type === "hsla" ? decomposeColor2(hslToRgb(color2)).values : color2.values;
+    rgb = rgb.map((val) => {
+      if (color2.type !== "color") {
+        val /= 255;
+      }
+      return val <= 0.03928 ? val / 12.92 : ((val + 0.055) / 1.055) ** 2.4;
+    });
+    return Number((0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]).toFixed(3));
+  }
+  function getContrastRatio(foreground, background) {
+    const lumA = getLuminance(foreground);
+    const lumB = getLuminance(background);
+    return (Math.max(lumA, lumB) + 0.05) / (Math.min(lumA, lumB) + 0.05);
+  }
+  function alpha2(color2, value) {
+    color2 = decomposeColor2(color2);
+    value = clampWrapper2(value);
+    if (color2.type === "rgb" || color2.type === "hsl") {
+      color2.type += "a";
+    }
+    if (color2.type === "color") {
+      color2.values[3] = `/${value}`;
+    } else {
+      color2.values[3] = value;
+    }
+    return recomposeColor2(color2);
+  }
+  function private_safeAlpha(color2, value, warning) {
+    try {
+      return alpha2(color2, value);
+    } catch (error) {
+      if (warning && process.env.NODE_ENV !== "production") {
+        console.warn(warning);
+      }
+      return color2;
+    }
+  }
+  function darken2(color2, coefficient) {
+    color2 = decomposeColor2(color2);
+    coefficient = clampWrapper2(coefficient);
+    if (color2.type.indexOf("hsl") !== -1) {
+      color2.values[2] *= 1 - coefficient;
+    } else if (color2.type.indexOf("rgb") !== -1 || color2.type.indexOf("color") !== -1) {
+      for (let i2 = 0; i2 < 3; i2 += 1) {
+        color2.values[i2] *= 1 - coefficient;
+      }
+    }
+    return recomposeColor2(color2);
+  }
+  function private_safeDarken(color2, coefficient, warning) {
+    try {
+      return darken2(color2, coefficient);
+    } catch (error) {
+      if (warning && process.env.NODE_ENV !== "production") {
+        console.warn(warning);
+      }
+      return color2;
+    }
+  }
+  function lighten2(color2, coefficient) {
+    color2 = decomposeColor2(color2);
+    coefficient = clampWrapper2(coefficient);
+    if (color2.type.indexOf("hsl") !== -1) {
+      color2.values[2] += (100 - color2.values[2]) * coefficient;
+    } else if (color2.type.indexOf("rgb") !== -1) {
+      for (let i2 = 0; i2 < 3; i2 += 1) {
+        color2.values[i2] += (255 - color2.values[i2]) * coefficient;
+      }
+    } else if (color2.type.indexOf("color") !== -1) {
+      for (let i2 = 0; i2 < 3; i2 += 1) {
+        color2.values[i2] += (1 - color2.values[i2]) * coefficient;
+      }
+    }
+    return recomposeColor2(color2);
+  }
+  function private_safeLighten(color2, coefficient, warning) {
+    try {
+      return lighten2(color2, coefficient);
+    } catch (error) {
+      if (warning && process.env.NODE_ENV !== "production") {
+        console.warn(warning);
+      }
+      return color2;
+    }
+  }
+  function emphasize(color2, coefficient = 0.15) {
+    return getLuminance(color2) > 0.5 ? darken2(color2, coefficient) : lighten2(color2, coefficient);
+  }
+  function private_safeEmphasize(color2, coefficient, warning) {
+    try {
+      return emphasize(color2, coefficient);
+    } catch (error) {
+      if (warning && process.env.NODE_ENV !== "production") {
+        console.warn(warning);
+      }
+      return color2;
+    }
+  }
+  function blend(background, overlay, opacity, gamma = 1) {
+    const blendChannel = (b, o2) => Math.round((b ** (1 / gamma) * (1 - opacity) + o2 ** (1 / gamma) * opacity) ** gamma);
+    const backgroundColor2 = decomposeColor2(background);
+    const overlayColor = decomposeColor2(overlay);
+    const rgb = [blendChannel(backgroundColor2.values[0], overlayColor.values[0]), blendChannel(backgroundColor2.values[1], overlayColor.values[1]), blendChannel(backgroundColor2.values[2], overlayColor.values[2])];
+    return recomposeColor2({
+      type: "rgb",
+      values: rgb
+    });
+  }
+  return colorManipulator;
+}
+var colorManipulatorExports = /* @__PURE__ */ requireColorManipulator();
+const common = {
+  black: "#000",
+  white: "#fff"
+};
+const grey = {
+  50: "#fafafa",
+  100: "#f5f5f5",
+  200: "#eeeeee",
+  300: "#e0e0e0",
+  400: "#bdbdbd",
+  500: "#9e9e9e",
+  600: "#757575",
+  700: "#616161",
+  800: "#424242",
+  900: "#212121",
+  A100: "#f5f5f5",
+  A200: "#eeeeee",
+  A400: "#bdbdbd",
+  A700: "#616161"
+};
+const purple = {
+  50: "#f3e5f5",
+  200: "#ce93d8",
+  300: "#ba68c8",
+  400: "#ab47bc",
+  500: "#9c27b0",
+  700: "#7b1fa2"
+};
+const red = {
+  300: "#e57373",
+  400: "#ef5350",
+  500: "#f44336",
+  700: "#d32f2f",
+  800: "#c62828"
+};
+const orange = {
+  300: "#ffb74d",
+  400: "#ffa726",
+  500: "#ff9800",
+  700: "#f57c00",
+  900: "#e65100"
+};
+const blue = {
+  50: "#e3f2fd",
+  200: "#90caf9",
+  400: "#42a5f5",
+  700: "#1976d2",
+  800: "#1565c0"
+};
+const lightBlue = {
+  300: "#4fc3f7",
+  400: "#29b6f6",
+  500: "#03a9f4",
+  700: "#0288d1",
+  900: "#01579b"
+};
+const green = {
+  300: "#81c784",
+  400: "#66bb6a",
+  500: "#4caf50",
+  700: "#388e3c",
+  800: "#2e7d32",
+  900: "#1b5e20"
+};
+const _excluded$1C = ["mode", "contrastThreshold", "tonalOffset"];
+const light = {
+  // The colors used to style the text.
+  text: {
+    // The most important text.
+    primary: "rgba(0, 0, 0, 0.87)",
+    // Secondary text.
+    secondary: "rgba(0, 0, 0, 0.6)",
+    // Disabled text have even lower visual prominence.
+    disabled: "rgba(0, 0, 0, 0.38)"
+  },
+  // The color used to divide different elements.
+  divider: "rgba(0, 0, 0, 0.12)",
+  // The background colors used to style the surfaces.
+  // Consistency between these values is important.
+  background: {
+    paper: common.white,
+    default: common.white
+  },
+  // The colors used to style the action elements.
+  action: {
+    // The color of an active action like an icon button.
+    active: "rgba(0, 0, 0, 0.54)",
+    // The color of an hovered action.
+    hover: "rgba(0, 0, 0, 0.04)",
+    hoverOpacity: 0.04,
+    // The color of a selected action.
+    selected: "rgba(0, 0, 0, 0.08)",
+    selectedOpacity: 0.08,
+    // The color of a disabled action.
+    disabled: "rgba(0, 0, 0, 0.26)",
+    // The background color of a disabled action.
+    disabledBackground: "rgba(0, 0, 0, 0.12)",
+    disabledOpacity: 0.38,
+    focus: "rgba(0, 0, 0, 0.12)",
+    focusOpacity: 0.12,
+    activatedOpacity: 0.12
+  }
+};
+const dark = {
+  text: {
+    primary: common.white,
+    secondary: "rgba(255, 255, 255, 0.7)",
+    disabled: "rgba(255, 255, 255, 0.5)",
+    icon: "rgba(255, 255, 255, 0.5)"
+  },
+  divider: "rgba(255, 255, 255, 0.12)",
+  background: {
+    paper: "#121212",
+    default: "#121212"
+  },
+  action: {
+    active: common.white,
+    hover: "rgba(255, 255, 255, 0.08)",
+    hoverOpacity: 0.08,
+    selected: "rgba(255, 255, 255, 0.16)",
+    selectedOpacity: 0.16,
+    disabled: "rgba(255, 255, 255, 0.3)",
+    disabledBackground: "rgba(255, 255, 255, 0.12)",
+    disabledOpacity: 0.38,
+    focus: "rgba(255, 255, 255, 0.12)",
+    focusOpacity: 0.12,
+    activatedOpacity: 0.24
+  }
+};
+function addLightOrDark(intent, direction, shade, tonalOffset) {
+  const tonalOffsetLight = tonalOffset.light || tonalOffset;
+  const tonalOffsetDark = tonalOffset.dark || tonalOffset * 1.5;
+  if (!intent[direction]) {
+    if (intent.hasOwnProperty(shade)) {
+      intent[direction] = intent[shade];
+    } else if (direction === "light") {
+      intent.light = colorManipulatorExports.lighten(intent.main, tonalOffsetLight);
+    } else if (direction === "dark") {
+      intent.dark = colorManipulatorExports.darken(intent.main, tonalOffsetDark);
+    }
+  }
+}
+function getDefaultPrimary(mode = "light") {
+  if (mode === "dark") {
+    return {
+      main: blue[200],
+      light: blue[50],
+      dark: blue[400]
+    };
+  }
+  return {
+    main: blue[700],
+    light: blue[400],
+    dark: blue[800]
+  };
+}
+function getDefaultSecondary(mode = "light") {
+  if (mode === "dark") {
+    return {
+      main: purple[200],
+      light: purple[50],
+      dark: purple[400]
+    };
+  }
+  return {
+    main: purple[500],
+    light: purple[300],
+    dark: purple[700]
+  };
+}
+function getDefaultError(mode = "light") {
+  if (mode === "dark") {
+    return {
+      main: red[500],
+      light: red[300],
+      dark: red[700]
+    };
+  }
+  return {
+    main: red[700],
+    light: red[400],
+    dark: red[800]
+  };
+}
+function getDefaultInfo(mode = "light") {
+  if (mode === "dark") {
+    return {
+      main: lightBlue[400],
+      light: lightBlue[300],
+      dark: lightBlue[700]
+    };
+  }
+  return {
+    main: lightBlue[700],
+    light: lightBlue[500],
+    dark: lightBlue[900]
+  };
+}
+function getDefaultSuccess(mode = "light") {
+  if (mode === "dark") {
+    return {
+      main: green[400],
+      light: green[300],
+      dark: green[700]
+    };
+  }
+  return {
+    main: green[800],
+    light: green[500],
+    dark: green[900]
+  };
+}
+function getDefaultWarning(mode = "light") {
+  if (mode === "dark") {
+    return {
+      main: orange[400],
+      light: orange[300],
+      dark: orange[700]
+    };
+  }
+  return {
+    main: "#ed6c02",
+    // closest to orange[800] that pass 3:1.
+    light: orange[500],
+    dark: orange[900]
+  };
+}
+function createPalette(palette) {
+  const {
+    mode = "light",
+    contrastThreshold = 3,
+    tonalOffset = 0.2
+  } = palette, other = _objectWithoutPropertiesLoose$1(palette, _excluded$1C);
+  const primary = palette.primary || getDefaultPrimary(mode);
+  const secondary = palette.secondary || getDefaultSecondary(mode);
+  const error = palette.error || getDefaultError(mode);
+  const info = palette.info || getDefaultInfo(mode);
+  const success = palette.success || getDefaultSuccess(mode);
+  const warning = palette.warning || getDefaultWarning(mode);
+  function getContrastText(background) {
+    const contrastText = colorManipulatorExports.getContrastRatio(background, dark.text.primary) >= contrastThreshold ? dark.text.primary : light.text.primary;
+    if (process.env.NODE_ENV !== "production") {
+      const contrast = colorManipulatorExports.getContrastRatio(background, contrastText);
+      if (contrast < 3) {
+        console.error([`MUI: The contrast ratio of ${contrast}:1 for ${contrastText} on ${background}`, "falls below the WCAG recommended absolute minimum contrast ratio of 3:1.", "https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast"].join("\n"));
+      }
+    }
+    return contrastText;
+  }
+  const augmentColor = ({
+    color: color2,
+    name,
+    mainShade = 500,
+    lightShade = 300,
+    darkShade = 700
+  }) => {
+    color2 = _extends$1({}, color2);
+    if (!color2.main && color2[mainShade]) {
+      color2.main = color2[mainShade];
+    }
+    if (!color2.hasOwnProperty("main")) {
+      throw new Error(process.env.NODE_ENV !== "production" ? `MUI: The color${name ? ` (${name})` : ""} provided to augmentColor(color) is invalid.
+The color object needs to have a \`main\` property or a \`${mainShade}\` property.` : _formatMuiErrorMessage(11, name ? ` (${name})` : "", mainShade));
+    }
+    if (typeof color2.main !== "string") {
+      throw new Error(process.env.NODE_ENV !== "production" ? `MUI: The color${name ? ` (${name})` : ""} provided to augmentColor(color) is invalid.
+\`color.main\` should be a string, but \`${JSON.stringify(color2.main)}\` was provided instead.
+
+Did you intend to use one of the following approaches?
+
+import { green } from "@mui/material/colors";
+
+const theme1 = createTheme({ palette: {
+  primary: green,
+} });
+
+const theme2 = createTheme({ palette: {
+  primary: { main: green[500] },
+} });` : _formatMuiErrorMessage(12, name ? ` (${name})` : "", JSON.stringify(color2.main)));
+    }
+    addLightOrDark(color2, "light", lightShade, tonalOffset);
+    addLightOrDark(color2, "dark", darkShade, tonalOffset);
+    if (!color2.contrastText) {
+      color2.contrastText = getContrastText(color2.main);
+    }
+    return color2;
+  };
+  const modes = {
+    dark,
+    light
+  };
+  if (process.env.NODE_ENV !== "production") {
+    if (!modes[mode]) {
+      console.error(`MUI: The palette mode \`${mode}\` is not supported.`);
+    }
+  }
+  const paletteOutput = deepmerge(_extends$1({
+    // A collection of common colors.
+    common: _extends$1({}, common),
+    // prevent mutable object.
+    // The palette mode, can be light or dark.
+    mode,
+    // The colors used to represent primary interface elements for a user.
+    primary: augmentColor({
+      color: primary,
+      name: "primary"
+    }),
+    // The colors used to represent secondary interface elements for a user.
+    secondary: augmentColor({
+      color: secondary,
+      name: "secondary",
+      mainShade: "A400",
+      lightShade: "A200",
+      darkShade: "A700"
+    }),
+    // The colors used to represent interface elements that the user should be made aware of.
+    error: augmentColor({
+      color: error,
+      name: "error"
+    }),
+    // The colors used to represent potentially dangerous actions or important messages.
+    warning: augmentColor({
+      color: warning,
+      name: "warning"
+    }),
+    // The colors used to present information to the user that is neutral and not necessarily important.
+    info: augmentColor({
+      color: info,
+      name: "info"
+    }),
+    // The colors used to indicate the successful completion of an action that user triggered.
+    success: augmentColor({
+      color: success,
+      name: "success"
+    }),
+    // The grey colors.
+    grey,
+    // Used by `getContrastText()` to maximize the contrast between
+    // the background and the text.
+    contrastThreshold,
+    // Takes a background color and returns the text color that maximizes the contrast.
+    getContrastText,
+    // Generate a rich color object.
+    augmentColor,
+    // Used by the functions below to shift a color's luminance by approximately
+    // two indexes within its tonal palette.
+    // E.g., shift from Red 500 to Red 300 or Red 700.
+    tonalOffset
+  }, modes[mode]), other);
+  return paletteOutput;
+}
+const _excluded$1B = ["fontFamily", "fontSize", "fontWeightLight", "fontWeightRegular", "fontWeightMedium", "fontWeightBold", "htmlFontSize", "allVariants", "pxToRem"];
+function round$1(value) {
+  return Math.round(value * 1e5) / 1e5;
+}
+const caseAllCaps = {
+  textTransform: "uppercase"
+};
+const defaultFontFamily = '"Roboto", "Helvetica", "Arial", sans-serif';
+function createTypography(palette, typography) {
+  const _ref = typeof typography === "function" ? typography(palette) : typography, {
+    fontFamily = defaultFontFamily,
+    // The default font size of the Material Specification.
+    fontSize = 14,
+    // px
+    fontWeightLight = 300,
+    fontWeightRegular = 400,
+    fontWeightMedium = 500,
+    fontWeightBold = 700,
+    // Tell MUI what's the font-size on the html element.
+    // 16px is the default font-size used by browsers.
+    htmlFontSize = 16,
+    // Apply the CSS properties to all the variants.
+    allVariants,
+    pxToRem: pxToRem2
+  } = _ref, other = _objectWithoutPropertiesLoose$1(_ref, _excluded$1B);
+  if (process.env.NODE_ENV !== "production") {
+    if (typeof fontSize !== "number") {
+      console.error("MUI: `fontSize` is required to be a number.");
+    }
+    if (typeof htmlFontSize !== "number") {
+      console.error("MUI: `htmlFontSize` is required to be a number.");
+    }
+  }
+  const coef = fontSize / 14;
+  const pxToRem = pxToRem2 || ((size) => `${size / htmlFontSize * coef}rem`);
+  const buildVariant = (fontWeight, size, lineHeight, letterSpacing, casing) => _extends$1({
+    fontFamily,
+    fontWeight,
+    fontSize: pxToRem(size),
+    // Unitless following https://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights/
+    lineHeight
+  }, fontFamily === defaultFontFamily ? {
+    letterSpacing: `${round$1(letterSpacing / size)}em`
+  } : {}, casing, allVariants);
+  const variants = {
+    h1: buildVariant(fontWeightLight, 96, 1.167, -1.5),
+    h2: buildVariant(fontWeightLight, 60, 1.2, -0.5),
+    h3: buildVariant(fontWeightRegular, 48, 1.167, 0),
+    h4: buildVariant(fontWeightRegular, 34, 1.235, 0.25),
+    h5: buildVariant(fontWeightRegular, 24, 1.334, 0),
+    h6: buildVariant(fontWeightMedium, 20, 1.6, 0.15),
+    subtitle1: buildVariant(fontWeightRegular, 16, 1.75, 0.15),
+    subtitle2: buildVariant(fontWeightMedium, 14, 1.57, 0.1),
+    body1: buildVariant(fontWeightRegular, 16, 1.5, 0.15),
+    body2: buildVariant(fontWeightRegular, 14, 1.43, 0.15),
+    button: buildVariant(fontWeightMedium, 14, 1.75, 0.4, caseAllCaps),
+    caption: buildVariant(fontWeightRegular, 12, 1.66, 0.4),
+    overline: buildVariant(fontWeightRegular, 12, 2.66, 1, caseAllCaps),
+    // TODO v6: Remove handling of 'inherit' variant from the theme as it is already handled in Material UI's Typography component. Also, remember to remove the associated types.
+    inherit: {
+      fontFamily: "inherit",
+      fontWeight: "inherit",
+      fontSize: "inherit",
+      lineHeight: "inherit",
+      letterSpacing: "inherit"
+    }
+  };
+  return deepmerge(_extends$1({
+    htmlFontSize,
+    pxToRem,
+    fontFamily,
+    fontSize,
+    fontWeightLight,
+    fontWeightRegular,
+    fontWeightMedium,
+    fontWeightBold
+  }, variants), other, {
+    clone: false
+    // No need to clone deep
+  });
+}
+const shadowKeyUmbraOpacity = 0.2;
+const shadowKeyPenumbraOpacity = 0.14;
+const shadowAmbientShadowOpacity = 0.12;
+function createShadow(...px) {
+  return [`${px[0]}px ${px[1]}px ${px[2]}px ${px[3]}px rgba(0,0,0,${shadowKeyUmbraOpacity})`, `${px[4]}px ${px[5]}px ${px[6]}px ${px[7]}px rgba(0,0,0,${shadowKeyPenumbraOpacity})`, `${px[8]}px ${px[9]}px ${px[10]}px ${px[11]}px rgba(0,0,0,${shadowAmbientShadowOpacity})`].join(",");
+}
+const shadows = ["none", createShadow(0, 2, 1, -1, 0, 1, 1, 0, 0, 1, 3, 0), createShadow(0, 3, 1, -2, 0, 2, 2, 0, 0, 1, 5, 0), createShadow(0, 3, 3, -2, 0, 3, 4, 0, 0, 1, 8, 0), createShadow(0, 2, 4, -1, 0, 4, 5, 0, 0, 1, 10, 0), createShadow(0, 3, 5, -1, 0, 5, 8, 0, 0, 1, 14, 0), createShadow(0, 3, 5, -1, 0, 6, 10, 0, 0, 1, 18, 0), createShadow(0, 4, 5, -2, 0, 7, 10, 1, 0, 2, 16, 1), createShadow(0, 5, 5, -3, 0, 8, 10, 1, 0, 3, 14, 2), createShadow(0, 5, 6, -3, 0, 9, 12, 1, 0, 3, 16, 2), createShadow(0, 6, 6, -3, 0, 10, 14, 1, 0, 4, 18, 3), createShadow(0, 6, 7, -4, 0, 11, 15, 1, 0, 4, 20, 3), createShadow(0, 7, 8, -4, 0, 12, 17, 2, 0, 5, 22, 4), createShadow(0, 7, 8, -4, 0, 13, 19, 2, 0, 5, 24, 4), createShadow(0, 7, 9, -4, 0, 14, 21, 2, 0, 5, 26, 4), createShadow(0, 8, 9, -5, 0, 15, 22, 2, 0, 6, 28, 5), createShadow(0, 8, 10, -5, 0, 16, 24, 2, 0, 6, 30, 5), createShadow(0, 8, 11, -5, 0, 17, 26, 2, 0, 6, 32, 5), createShadow(0, 9, 11, -5, 0, 18, 28, 2, 0, 7, 34, 6), createShadow(0, 9, 12, -6, 0, 19, 29, 2, 0, 7, 36, 6), createShadow(0, 10, 13, -6, 0, 20, 31, 3, 0, 8, 38, 7), createShadow(0, 10, 13, -6, 0, 21, 33, 3, 0, 8, 40, 7), createShadow(0, 10, 14, -6, 0, 22, 35, 3, 0, 8, 42, 7), createShadow(0, 11, 14, -7, 0, 23, 36, 3, 0, 9, 44, 8), createShadow(0, 11, 15, -7, 0, 24, 38, 3, 0, 9, 46, 8)];
+const _excluded$1A = ["duration", "easing", "delay"];
+const easing = {
+  // This is the most common easing curve.
+  easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
+  // Objects enter the screen at full velocity from off-screen and
+  // slowly decelerate to a resting point.
+  easeOut: "cubic-bezier(0.0, 0, 0.2, 1)",
+  // Objects leave the screen at full velocity. They do not decelerate when off-screen.
+  easeIn: "cubic-bezier(0.4, 0, 1, 1)",
+  // The sharp curve is used by objects that may return to the screen at any time.
+  sharp: "cubic-bezier(0.4, 0, 0.6, 1)"
+};
+const duration = {
+  shortest: 150,
+  shorter: 200,
+  short: 250,
+  // most basic recommended timing
+  standard: 300,
+  // this is to be used in complex animations
+  complex: 375,
+  // recommended when something is entering screen
+  enteringScreen: 225,
+  // recommended when something is leaving screen
+  leavingScreen: 195
+};
+function formatMs(milliseconds) {
+  return `${Math.round(milliseconds)}ms`;
+}
+function getAutoHeightDuration(height2) {
+  if (!height2) {
+    return 0;
+  }
+  const constant = height2 / 36;
+  return Math.round((4 + 15 * constant ** 0.25 + constant / 5) * 10);
+}
+function createTransitions(inputTransitions) {
+  const mergedEasing = _extends$1({}, easing, inputTransitions.easing);
+  const mergedDuration = _extends$1({}, duration, inputTransitions.duration);
+  const create = (props = ["all"], options = {}) => {
+    const {
+      duration: durationOption = mergedDuration.standard,
+      easing: easingOption = mergedEasing.easeInOut,
+      delay = 0
+    } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$1A);
+    if (process.env.NODE_ENV !== "production") {
+      const isString = (value) => typeof value === "string";
+      const isNumber2 = (value) => !isNaN(parseFloat(value));
+      if (!isString(props) && !Array.isArray(props)) {
+        console.error('MUI: Argument "props" must be a string or Array.');
+      }
+      if (!isNumber2(durationOption) && !isString(durationOption)) {
+        console.error(`MUI: Argument "duration" must be a number or a string but found ${durationOption}.`);
+      }
+      if (!isString(easingOption)) {
+        console.error('MUI: Argument "easing" must be a string.');
+      }
+      if (!isNumber2(delay) && !isString(delay)) {
+        console.error('MUI: Argument "delay" must be a number or a string.');
+      }
+      if (typeof options !== "object") {
+        console.error(["MUI: Secong argument of transition.create must be an object.", "Arguments should be either `create('prop1', options)` or `create(['prop1', 'prop2'], options)`"].join("\n"));
+      }
+      if (Object.keys(other).length !== 0) {
+        console.error(`MUI: Unrecognized argument(s) [${Object.keys(other).join(",")}].`);
+      }
+    }
+    return (Array.isArray(props) ? props : [props]).map((animatedProp) => `${animatedProp} ${typeof durationOption === "string" ? durationOption : formatMs(durationOption)} ${easingOption} ${typeof delay === "string" ? delay : formatMs(delay)}`).join(",");
+  };
+  return _extends$1({
+    getAutoHeightDuration,
+    create
+  }, inputTransitions, {
+    easing: mergedEasing,
+    duration: mergedDuration
+  });
+}
+const zIndex = {
+  mobileStepper: 1e3,
+  fab: 1050,
+  speedDial: 1050,
+  appBar: 1100,
+  drawer: 1200,
+  modal: 1300,
+  snackbar: 1400,
+  tooltip: 1500
+};
+const _excluded$1z = ["breakpoints", "mixins", "spacing", "palette", "transitions", "typography", "shape"];
+function createTheme(options = {}, ...args) {
+  const {
+    mixins: mixinsInput = {},
+    palette: paletteInput = {},
+    transitions: transitionsInput = {},
+    typography: typographyInput = {}
+  } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$1z);
+  if (options.vars) {
+    throw new Error(process.env.NODE_ENV !== "production" ? `MUI: \`vars\` is a private field used for CSS variables support.
+Please use another name.` : _formatMuiErrorMessage(18));
+  }
+  const palette = createPalette(paletteInput);
+  const systemTheme = createTheme$2(options);
+  let muiTheme = deepmerge(systemTheme, {
+    mixins: createMixins(systemTheme.breakpoints, mixinsInput),
+    palette,
+    // Don't use [...shadows] until you've verified its transpiled code is not invoking the iterator protocol.
+    shadows: shadows.slice(),
+    typography: createTypography(palette, typographyInput),
+    transitions: createTransitions(transitionsInput),
+    zIndex: _extends$1({}, zIndex)
+  });
+  muiTheme = deepmerge(muiTheme, other);
+  muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
+  if (process.env.NODE_ENV !== "production") {
+    const stateClasses = ["active", "checked", "completed", "disabled", "error", "expanded", "focused", "focusVisible", "required", "selected"];
+    const traverse = (node, component) => {
+      let key;
+      for (key in node) {
+        const child = node[key];
+        if (stateClasses.indexOf(key) !== -1 && Object.keys(child).length > 0) {
+          if (process.env.NODE_ENV !== "production") {
+            const stateClass = generateUtilityClass("", key);
+            console.error([`MUI: The \`${component}\` component increases the CSS specificity of the \`${key}\` internal state.`, "You can not override it like this: ", JSON.stringify(node, null, 2), "", `Instead, you need to use the '&.${stateClass}' syntax:`, JSON.stringify({
+              root: {
+                [`&.${stateClass}`]: child
+              }
+            }, null, 2), "", "https://mui.com/r/state-classes-guide"].join("\n"));
+          }
+          node[key] = {};
+        }
+      }
+    };
+    Object.keys(muiTheme.components).forEach((component) => {
+      const styleOverrides = muiTheme.components[component].styleOverrides;
+      if (styleOverrides && component.indexOf("Mui") === 0) {
+        traverse(styleOverrides, component);
+      }
+    });
+  }
+  muiTheme.unstable_sxConfig = _extends$1({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
+  muiTheme.unstable_sx = function sx(props) {
+    return styleFunctionSx$1({
+      sx: props,
+      theme: this
+    });
+  };
+  return muiTheme;
+}
+const defaultTheme = createTheme();
+const THEME_ID = "$$material";
+function slotShouldForwardProp(prop) {
+  return prop !== "ownerState" && prop !== "theme" && prop !== "sx" && prop !== "as";
+}
+const rootShouldForwardProp = (prop) => slotShouldForwardProp(prop) && prop !== "classes";
+const styled = createStyled({
+  themeId: THEME_ID,
+  defaultTheme,
+  rootShouldForwardProp
+});
+process.env.NODE_ENV !== "production" ? {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  children: PropTypes.node,
+  /**
+   * @ignore
+   */
+  value: PropTypes.object.isRequired
+} : void 0;
+function useDefaultProps(params) {
+  return useDefaultProps$1(params);
+}
+function GlobalStyles(props) {
+  return /* @__PURE__ */ jsx(GlobalStyles$1, _extends$1({}, props, {
+    defaultTheme,
+    themeId: THEME_ID
+  }));
+}
+process.env.NODE_ENV !== "production" ? GlobalStyles.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The styles you want to apply globally.
+   */
+  styles: PropTypes.oneOfType([PropTypes.array, PropTypes.func, PropTypes.number, PropTypes.object, PropTypes.string, PropTypes.bool])
+} : void 0;
+function hasValue(value) {
+  return value != null && !(Array.isArray(value) && value.length === 0);
+}
+function isFilled(obj, SSR = false) {
+  return obj && (hasValue(obj.value) && obj.value !== "" || SSR && hasValue(obj.defaultValue) && obj.defaultValue !== "");
+}
+function isAdornedStart(obj) {
+  return obj.startAdornment;
+}
+function getInputBaseUtilityClass(slot) {
+  return generateUtilityClass("MuiInputBase", slot);
+}
+const inputBaseClasses = generateUtilityClasses("MuiInputBase", ["root", "formControl", "focused", "disabled", "adornedStart", "adornedEnd", "error", "sizeSmall", "multiline", "colorSecondary", "fullWidth", "hiddenLabel", "readOnly", "input", "inputSizeSmall", "inputMultiline", "inputTypeSearch", "inputAdornedStart", "inputAdornedEnd", "inputHiddenLabel"]);
+const _excluded$1y = ["aria-describedby", "autoComplete", "autoFocus", "className", "color", "components", "componentsProps", "defaultValue", "disabled", "disableInjectingGlobalStyles", "endAdornment", "error", "fullWidth", "id", "inputComponent", "inputProps", "inputRef", "margin", "maxRows", "minRows", "multiline", "name", "onBlur", "onChange", "onClick", "onFocus", "onKeyDown", "onKeyUp", "placeholder", "readOnly", "renderSuffix", "rows", "size", "slotProps", "slots", "startAdornment", "type", "value"];
+const rootOverridesResolver = (props, styles2) => {
+  const {
+    ownerState
+  } = props;
+  return [styles2.root, ownerState.formControl && styles2.formControl, ownerState.startAdornment && styles2.adornedStart, ownerState.endAdornment && styles2.adornedEnd, ownerState.error && styles2.error, ownerState.size === "small" && styles2.sizeSmall, ownerState.multiline && styles2.multiline, ownerState.color && styles2[`color${capitalize(ownerState.color)}`], ownerState.fullWidth && styles2.fullWidth, ownerState.hiddenLabel && styles2.hiddenLabel];
+};
+const inputOverridesResolver = (props, styles2) => {
+  const {
+    ownerState
+  } = props;
+  return [styles2.input, ownerState.size === "small" && styles2.inputSizeSmall, ownerState.multiline && styles2.inputMultiline, ownerState.type === "search" && styles2.inputTypeSearch, ownerState.startAdornment && styles2.inputAdornedStart, ownerState.endAdornment && styles2.inputAdornedEnd, ownerState.hiddenLabel && styles2.inputHiddenLabel];
+};
+const useUtilityClasses$1a = (ownerState) => {
+  const {
+    classes,
+    color: color2,
+    disabled,
+    error,
+    endAdornment,
+    focused,
+    formControl,
+    fullWidth,
+    hiddenLabel,
+    multiline,
+    readOnly,
+    size,
+    startAdornment,
+    type
+  } = ownerState;
+  const slots = {
+    root: ["root", `color${capitalize(color2)}`, disabled && "disabled", error && "error", fullWidth && "fullWidth", focused && "focused", formControl && "formControl", size && size !== "medium" && `size${capitalize(size)}`, multiline && "multiline", startAdornment && "adornedStart", endAdornment && "adornedEnd", hiddenLabel && "hiddenLabel", readOnly && "readOnly"],
+    input: ["input", disabled && "disabled", type === "search" && "inputTypeSearch", multiline && "inputMultiline", size === "small" && "inputSizeSmall", hiddenLabel && "inputHiddenLabel", startAdornment && "inputAdornedStart", endAdornment && "inputAdornedEnd", readOnly && "readOnly"]
+  };
+  return composeClasses(slots, getInputBaseUtilityClass, classes);
+};
+const InputBaseRoot = styled("div", {
+  name: "MuiInputBase",
+  slot: "Root",
+  overridesResolver: rootOverridesResolver
+})(({
+  theme,
+  ownerState
+}) => _extends$1({}, theme.typography.body1, {
+  color: (theme.vars || theme).palette.text.primary,
+  lineHeight: "1.4375em",
+  // 23px
+  boxSizing: "border-box",
+  // Prevent padding issue with fullWidth.
+  position: "relative",
+  cursor: "text",
+  display: "inline-flex",
+  alignItems: "center",
+  [`&.${inputBaseClasses.disabled}`]: {
+    color: (theme.vars || theme).palette.text.disabled,
+    cursor: "default"
+  }
+}, ownerState.multiline && _extends$1({
+  padding: "4px 0 5px"
+}, ownerState.size === "small" && {
+  paddingTop: 1
+}), ownerState.fullWidth && {
+  width: "100%"
+}));
+const InputBaseComponent = styled("input", {
+  name: "MuiInputBase",
+  slot: "Input",
+  overridesResolver: inputOverridesResolver
+})(({
+  theme,
+  ownerState
+}) => {
+  const light2 = theme.palette.mode === "light";
+  const placeholder = _extends$1({
+    color: "currentColor"
+  }, theme.vars ? {
+    opacity: theme.vars.opacity.inputPlaceholder
+  } : {
+    opacity: light2 ? 0.42 : 0.5
+  }, {
+    transition: theme.transitions.create("opacity", {
+      duration: theme.transitions.duration.shorter
+    })
+  });
+  const placeholderHidden = {
+    opacity: "0 !important"
+  };
+  const placeholderVisible = theme.vars ? {
+    opacity: theme.vars.opacity.inputPlaceholder
+  } : {
+    opacity: light2 ? 0.42 : 0.5
+  };
+  return _extends$1({
+    font: "inherit",
+    letterSpacing: "inherit",
+    color: "currentColor",
+    padding: "4px 0 5px",
+    border: 0,
+    boxSizing: "content-box",
+    background: "none",
+    height: "1.4375em",
+    // Reset 23pxthe native input line-height
+    margin: 0,
+    // Reset for Safari
+    WebkitTapHighlightColor: "transparent",
+    display: "block",
+    // Make the flex item shrink with Firefox
+    minWidth: 0,
+    width: "100%",
+    // Fix IE11 width issue
+    animationName: "mui-auto-fill-cancel",
+    animationDuration: "10ms",
+    "&::-webkit-input-placeholder": placeholder,
+    "&::-moz-placeholder": placeholder,
+    // Firefox 19+
+    "&:-ms-input-placeholder": placeholder,
+    // IE11
+    "&::-ms-input-placeholder": placeholder,
+    // Edge
+    "&:focus": {
+      outline: 0
+    },
+    // Reset Firefox invalid required input style
+    "&:invalid": {
+      boxShadow: "none"
+    },
+    "&::-webkit-search-decoration": {
+      // Remove the padding when type=search.
+      WebkitAppearance: "none"
+    },
+    // Show and hide the placeholder logic
+    [`label[data-shrink=false] + .${inputBaseClasses.formControl} &`]: {
+      "&::-webkit-input-placeholder": placeholderHidden,
+      "&::-moz-placeholder": placeholderHidden,
+      // Firefox 19+
+      "&:-ms-input-placeholder": placeholderHidden,
+      // IE11
+      "&::-ms-input-placeholder": placeholderHidden,
+      // Edge
+      "&:focus::-webkit-input-placeholder": placeholderVisible,
+      "&:focus::-moz-placeholder": placeholderVisible,
+      // Firefox 19+
+      "&:focus:-ms-input-placeholder": placeholderVisible,
+      // IE11
+      "&:focus::-ms-input-placeholder": placeholderVisible
+      // Edge
+    },
+    [`&.${inputBaseClasses.disabled}`]: {
+      opacity: 1,
+      // Reset iOS opacity
+      WebkitTextFillColor: (theme.vars || theme).palette.text.disabled
+      // Fix opacity Safari bug
+    },
+    "&:-webkit-autofill": {
+      animationDuration: "5000s",
+      animationName: "mui-auto-fill"
+    }
+  }, ownerState.size === "small" && {
+    paddingTop: 1
+  }, ownerState.multiline && {
+    height: "auto",
+    resize: "none",
+    padding: 0,
+    paddingTop: 0
+  }, ownerState.type === "search" && {
+    // Improve type search style.
+    MozAppearance: "textfield"
+  });
+});
+const inputGlobalStyles = /* @__PURE__ */ jsx(GlobalStyles, {
+  styles: {
+    "@keyframes mui-auto-fill": {
+      from: {
+        display: "block"
+      }
+    },
+    "@keyframes mui-auto-fill-cancel": {
+      from: {
+        display: "block"
+      }
+    }
+  }
+});
+const InputBase = /* @__PURE__ */ React.forwardRef(function InputBase2(inProps, ref) {
+  var _slotProps$input;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiInputBase"
+  });
+  const {
+    "aria-describedby": ariaDescribedby,
+    autoComplete,
+    autoFocus,
+    className,
+    components = {},
+    componentsProps = {},
+    defaultValue,
+    disabled,
+    disableInjectingGlobalStyles,
+    endAdornment,
+    fullWidth = false,
+    id,
+    inputComponent = "input",
+    inputProps: inputPropsProp = {},
+    inputRef: inputRefProp,
+    maxRows,
+    minRows,
+    multiline = false,
+    name,
+    onBlur,
+    onChange,
+    onClick,
+    onFocus,
+    onKeyDown,
+    onKeyUp,
+    placeholder,
+    readOnly,
+    renderSuffix,
+    rows,
+    slotProps = {},
+    slots = {},
+    startAdornment,
+    type = "text",
+    value: valueProp
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1y);
+  const value = inputPropsProp.value != null ? inputPropsProp.value : valueProp;
+  const {
+    current: isControlled
+  } = React.useRef(value != null);
+  const inputRef = React.useRef();
+  const handleInputRefWarning = React.useCallback((instance) => {
+    if (process.env.NODE_ENV !== "production") {
+      if (instance && instance.nodeName !== "INPUT" && !instance.focus) {
+        console.error(["MUI: You have provided a `inputComponent` to the input component", "that does not correctly handle the `ref` prop.", "Make sure the `ref` prop is called with a HTMLInputElement."].join("\n"));
+      }
+    }
+  }, []);
+  const handleInputRef = useForkRef(inputRef, inputRefProp, inputPropsProp.ref, handleInputRefWarning);
+  const [focused, setFocused] = React.useState(false);
+  const muiFormControl = useFormControl();
+  if (process.env.NODE_ENV !== "production") {
+    React.useEffect(() => {
+      if (muiFormControl) {
+        return muiFormControl.registerEffect();
+      }
+      return void 0;
+    }, [muiFormControl]);
+  }
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["color", "disabled", "error", "hiddenLabel", "size", "required", "filled"]
+  });
+  fcs.focused = muiFormControl ? muiFormControl.focused : focused;
+  React.useEffect(() => {
+    if (!muiFormControl && disabled && focused) {
+      setFocused(false);
+      if (onBlur) {
+        onBlur();
+      }
+    }
+  }, [muiFormControl, disabled, focused, onBlur]);
+  const onFilled = muiFormControl && muiFormControl.onFilled;
+  const onEmpty = muiFormControl && muiFormControl.onEmpty;
+  const checkDirty = React.useCallback((obj) => {
+    if (isFilled(obj)) {
+      if (onFilled) {
+        onFilled();
+      }
+    } else if (onEmpty) {
+      onEmpty();
+    }
+  }, [onFilled, onEmpty]);
+  useEnhancedEffect(() => {
+    if (isControlled) {
+      checkDirty({
+        value
+      });
+    }
+  }, [value, checkDirty, isControlled]);
+  const handleFocus = (event) => {
+    if (fcs.disabled) {
+      event.stopPropagation();
+      return;
+    }
+    if (onFocus) {
+      onFocus(event);
+    }
+    if (inputPropsProp.onFocus) {
+      inputPropsProp.onFocus(event);
+    }
+    if (muiFormControl && muiFormControl.onFocus) {
+      muiFormControl.onFocus(event);
+    } else {
+      setFocused(true);
+    }
+  };
+  const handleBlur = (event) => {
+    if (onBlur) {
+      onBlur(event);
+    }
+    if (inputPropsProp.onBlur) {
+      inputPropsProp.onBlur(event);
+    }
+    if (muiFormControl && muiFormControl.onBlur) {
+      muiFormControl.onBlur(event);
+    } else {
+      setFocused(false);
+    }
+  };
+  const handleChange = (event, ...args) => {
+    if (!isControlled) {
+      const element = event.target || inputRef.current;
+      if (element == null) {
+        throw new Error(process.env.NODE_ENV !== "production" ? `MUI: Expected valid input target. Did you use a custom \`inputComponent\` and forget to forward refs? See https://mui.com/r/input-component-ref-interface for more info.` : _formatMuiErrorMessage(1));
+      }
+      checkDirty({
+        value: element.value
+      });
+    }
+    if (inputPropsProp.onChange) {
+      inputPropsProp.onChange(event, ...args);
+    }
+    if (onChange) {
+      onChange(event, ...args);
+    }
+  };
+  React.useEffect(() => {
+    checkDirty(inputRef.current);
+  }, []);
+  const handleClick = (event) => {
+    if (inputRef.current && event.currentTarget === event.target) {
+      inputRef.current.focus();
+    }
+    if (onClick) {
+      onClick(event);
+    }
+  };
+  let InputComponent = inputComponent;
+  let inputProps = inputPropsProp;
+  if (multiline && InputComponent === "input") {
+    if (rows) {
+      if (process.env.NODE_ENV !== "production") {
+        if (minRows || maxRows) {
+          console.warn("MUI: You can not use the `minRows` or `maxRows` props when the input `rows` prop is set.");
+        }
+      }
+      inputProps = _extends$1({
+        type: void 0,
+        minRows: rows,
+        maxRows: rows
+      }, inputProps);
+    } else {
+      inputProps = _extends$1({
+        type: void 0,
+        maxRows,
+        minRows
+      }, inputProps);
+    }
+    InputComponent = TextareaAutosize;
+  }
+  const handleAutoFill = (event) => {
+    checkDirty(event.animationName === "mui-auto-fill-cancel" ? inputRef.current : {
+      value: "x"
+    });
+  };
+  React.useEffect(() => {
+    if (muiFormControl) {
+      muiFormControl.setAdornedStart(Boolean(startAdornment));
+    }
+  }, [muiFormControl, startAdornment]);
+  const ownerState = _extends$1({}, props, {
+    color: fcs.color || "primary",
+    disabled: fcs.disabled,
+    endAdornment,
+    error: fcs.error,
+    focused: fcs.focused,
+    formControl: muiFormControl,
+    fullWidth,
+    hiddenLabel: fcs.hiddenLabel,
+    multiline,
+    size: fcs.size,
+    startAdornment,
+    type
+  });
+  const classes = useUtilityClasses$1a(ownerState);
+  const Root = slots.root || components.Root || InputBaseRoot;
+  const rootProps = slotProps.root || componentsProps.root || {};
+  const Input3 = slots.input || components.Input || InputBaseComponent;
+  inputProps = _extends$1({}, inputProps, (_slotProps$input = slotProps.input) != null ? _slotProps$input : componentsProps.input);
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [!disableInjectingGlobalStyles && inputGlobalStyles, /* @__PURE__ */ jsxs(Root, _extends$1({}, rootProps, !isHostComponent(Root) && {
+      ownerState: _extends$1({}, ownerState, rootProps.ownerState)
+    }, {
+      ref,
+      onClick: handleClick
+    }, other, {
+      className: clsx(classes.root, rootProps.className, className, readOnly && "MuiInputBase-readOnly"),
+      children: [startAdornment, /* @__PURE__ */ jsx(FormControlContext.Provider, {
+        value: null,
+        children: /* @__PURE__ */ jsx(Input3, _extends$1({
+          ownerState,
+          "aria-invalid": fcs.error,
+          "aria-describedby": ariaDescribedby,
+          autoComplete,
+          autoFocus,
+          defaultValue,
+          disabled: fcs.disabled,
+          id,
+          onAnimationStart: handleAutoFill,
+          name,
+          placeholder,
+          readOnly,
+          required: fcs.required,
+          rows,
+          value,
+          onKeyDown,
+          onKeyUp,
+          type
+        }, inputProps, !isHostComponent(Input3) && {
+          as: InputComponent,
+          ownerState: _extends$1({}, ownerState, inputProps.ownerState)
+        }, {
+          ref: handleInputRef,
+          className: clsx(classes.input, inputProps.className, readOnly && "MuiInputBase-readOnly"),
+          onBlur: handleBlur,
+          onChange: handleChange,
+          onFocus: handleFocus
+        }))
+      }), endAdornment, renderSuffix ? renderSuffix(_extends$1({}, fcs, {
+        startAdornment
+      })) : null]
+    }))]
+  });
+});
+process.env.NODE_ENV !== "production" ? InputBase.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+  /**
+   * This prop helps users to fill forms faster, especially on mobile devices.
+   * The name can be confusing, as it's more like an autofill.
+   * You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
+   */
+  autoComplete: PropTypes.string,
+  /**
+   * If `true`, the `input` element is focused during the first mount.
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Input: PropTypes.elementType,
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    input: PropTypes.object,
+    root: PropTypes.object
+  }),
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, the component is disabled.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, GlobalStyles for the auto-fill keyframes will not be injected/removed on mount/unmount. Make sure to inject them at the top of your application.
+   * This option is intended to help with boosting the initial rendering performance if you are loading a big amount of Input components at once.
+   * @default false
+   */
+  disableInjectingGlobalStyles: PropTypes.bool,
+  /**
+   * End `InputAdornment` for this component.
+   */
+  endAdornment: PropTypes.node,
+  /**
+   * If `true`, the `input` will indicate an error.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the `input` will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * The component used for the `input` element.
+   * Either a string to use a HTML element or a component.
+   * @default 'input'
+   */
+  inputComponent: elementTypeAcceptingRef,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @default {}
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   * The prop defaults to the value (`'none'`) inherited from the parent FormControl component.
+   */
+  margin: PropTypes.oneOf(["dense", "none"]),
+  /**
+   * Maximum number of rows to display when multiline option is set to true.
+   */
+  maxRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Minimum number of rows to display when multiline option is set to true.
+   */
+  minRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * If `true`, a [TextareaAutosize](/material-ui/react-textarea-autosize/) element is rendered.
+   * @default false
+   */
+  multiline: PropTypes.bool,
+  /**
+   * Name attribute of the `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * Callback fired when the `input` is blurred.
+   *
+   * Notice that the first argument (event) might be undefined.
+   */
+  onBlur: PropTypes.func,
+  /**
+   * Callback fired when the value is changed.
+   *
+   * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onClick: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
+  /**
+   * Callback fired when the `input` doesn't satisfy its constraints.
+   */
+  onInvalid: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyDown: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyUp: PropTypes.func,
+  /**
+   * The short hint displayed in the `input` before the user enters a value.
+   */
+  placeholder: PropTypes.string,
+  /**
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  renderSuffix: PropTypes.func,
+  /**
+   * If `true`, the `input` element is required.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  required: PropTypes.bool,
+  /**
+   * Number of rows to display when multiline option is set to true.
+   */
+  rows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * The size of the component.
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    input: PropTypes.object,
+    root: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `components` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    input: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * Start `InputAdornment` for this component.
+   */
+  startAdornment: PropTypes.node,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+   * @default 'text'
+   */
+  type: PropTypes.string,
+  /**
+   * The value of the `input` element, required for a controlled component.
+   */
+  value: PropTypes.any
+} : void 0;
+function getUnit(input) {
+  return String(input).match(/[\d.\-+]*\s*(.*)/)[1] || "";
+}
+function toUnitless(length) {
+  return parseFloat(length);
+}
+function useTheme$1() {
+  const theme = useTheme$2(defaultTheme);
+  if (process.env.NODE_ENV !== "production") {
+    React.useDebugValue(theme);
+  }
+  return theme[THEME_ID] || theme;
+}
+function useThemeProps({
+  props,
+  name
+}) {
+  return useThemeProps$1({
+    props,
+    name,
+    defaultTheme,
+    themeId: THEME_ID
+  });
+}
+const getOverlayAlpha = (elevation) => {
+  let alphaValue;
+  if (elevation < 1) {
+    alphaValue = 5.11916 * elevation ** 2;
+  } else {
+    alphaValue = 4.5 * Math.log(elevation + 1) + 2;
+  }
+  return (alphaValue / 100).toFixed(2);
+};
+const _excluded$1x = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "hasFocus", "inputProps", "isValidating", "isProcessingProps", "onValueChange"];
+const StyledInputBase = styled(InputBase)({
   fontSize: "inherit"
 });
-const useUtilityClasses$v = (ownerState) => {
+const useUtilityClasses$19 = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -3590,7 +7431,7 @@ function GridEditDateCell(props) {
     hasFocus,
     inputProps,
     onValueChange
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$M);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1x);
   const isDateTime = colDef.type === "dateTime";
   const apiRef = useGridApiContext();
   const inputRef = React.useRef();
@@ -3620,7 +7461,7 @@ function GridEditDateCell(props) {
   const ownerState = {
     classes: rootProps.classes
   };
-  const classes = useUtilityClasses$v(ownerState);
+  const classes = useUtilityClasses$19(ownerState);
   const parseValueToDate = React.useCallback((value) => {
     if (value === "") {
       return null;
@@ -3744,8 +7585,8 @@ process.env.NODE_ENV !== "production" ? GridEditDateCell.propTypes = {
   value: PropTypes.any
 } : void 0;
 const renderEditDateCell = (params) => /* @__PURE__ */ jsx(GridEditDateCell, _extends$1({}, params));
-const _excluded$L = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "hasFocus", "isValidating", "debounceMs", "isProcessingProps", "onValueChange"];
-const useUtilityClasses$u = (ownerState) => {
+const _excluded$1w = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "hasFocus", "isValidating", "debounceMs", "isProcessingProps", "onValueChange"];
+const useUtilityClasses$18 = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -3754,10 +7595,10 @@ const useUtilityClasses$u = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridEditInputCellRoot = styled$1(InputBase, {
+const GridEditInputCellRoot = styled(InputBase, {
   name: "MuiDataGrid",
   slot: "EditInputCell",
-  overridesResolver: (props, styles) => styles.editInputCell
+  overridesResolver: (props, styles2) => styles2.editInputCell
 })(({
   theme
 }) => _extends$1({}, theme.typography.body2, {
@@ -3778,11 +7619,11 @@ const GridEditInputCell = /* @__PURE__ */ React.forwardRef((props, ref) => {
     debounceMs = 200,
     isProcessingProps,
     onValueChange
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$L);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1w);
   const apiRef = useGridApiContext();
   const inputRef = React.useRef();
   const [valueState, setValueState] = React.useState(value);
-  const classes = useUtilityClasses$u(rootProps);
+  const classes = useUtilityClasses$18(rootProps);
   const handleChange = React.useCallback(async (event) => {
     const newValue = event.target.value;
     if (onValueChange) {
@@ -3921,7 +7762,7 @@ function getValueFromValueOptions(value, valueOptions, getOptionValue) {
   });
   return getOptionValue(result);
 }
-const _excluded$K = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "className", "hasFocus", "isValidating", "isProcessingProps", "error", "onValueChange", "initialOpen", "getOptionLabel", "getOptionValue"], _excluded2$5 = ["MenuProps"];
+const _excluded$1v = ["id", "value", "formattedValue", "api", "field", "row", "rowNode", "colDef", "cellMode", "isEditable", "tabIndex", "className", "hasFocus", "isValidating", "isProcessingProps", "error", "onValueChange", "initialOpen", "getOptionLabel", "getOptionValue"], _excluded2$a = ["MenuProps"];
 function isKeyboardEvent(event) {
   return !!event.key;
 }
@@ -3940,7 +7781,7 @@ function GridEditSingleSelectCell(props) {
     initialOpen = rootProps.editMode === GridEditModes.Cell,
     getOptionLabel: getOptionLabelProp,
     getOptionValue: getOptionValueProp
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$K);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1v);
   const apiRef = useGridApiContext();
   const ref = React.useRef();
   const inputRef = React.useRef();
@@ -3949,7 +7790,7 @@ function GridEditSingleSelectCell(props) {
   const isSelectNative = (_baseSelectProps$nati = baseSelectProps.native) != null ? _baseSelectProps$nati : false;
   const _ref = ((_rootProps$slotProps2 = rootProps.slotProps) == null ? void 0 : _rootProps$slotProps2.baseSelect) || {}, {
     MenuProps
-  } = _ref, otherBaseSelectProps = _objectWithoutPropertiesLoose$1(_ref, _excluded2$5);
+  } = _ref, otherBaseSelectProps = _objectWithoutPropertiesLoose$1(_ref, _excluded2$a);
   unstable_useEnhancedEffect(() => {
     if (hasFocus) {
       var _inputRef$current;
@@ -4118,8 +7959,1507 @@ process.env.NODE_ENV !== "production" ? GridEditSingleSelectCell.propTypes = {
   value: PropTypes.any
 } : void 0;
 const renderEditSingleSelectCell = (params) => /* @__PURE__ */ jsx(GridEditSingleSelectCell, _extends$1({}, params));
-const _excluded$J = ["open", "target", "onClose", "children", "position", "className", "onExited"];
-const useUtilityClasses$t = (ownerState) => {
+const ListContext = /* @__PURE__ */ React.createContext({});
+if (process.env.NODE_ENV !== "production") {
+  ListContext.displayName = "ListContext";
+}
+function getListUtilityClass(slot) {
+  return generateUtilityClass("MuiList", slot);
+}
+generateUtilityClasses("MuiList", ["root", "padding", "dense", "subheader"]);
+const _excluded$1u = ["children", "className", "component", "dense", "disablePadding", "subheader"];
+const useUtilityClasses$17 = (ownerState) => {
+  const {
+    classes,
+    disablePadding,
+    dense,
+    subheader
+  } = ownerState;
+  const slots = {
+    root: ["root", !disablePadding && "padding", dense && "dense", subheader && "subheader"]
+  };
+  return composeClasses(slots, getListUtilityClass, classes);
+};
+const ListRoot = styled("ul", {
+  name: "MuiList",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, !ownerState.disablePadding && styles2.padding, ownerState.dense && styles2.dense, ownerState.subheader && styles2.subheader];
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  listStyle: "none",
+  margin: 0,
+  padding: 0,
+  position: "relative"
+}, !ownerState.disablePadding && {
+  paddingTop: 8,
+  paddingBottom: 8
+}, ownerState.subheader && {
+  paddingTop: 0
+}));
+const List = /* @__PURE__ */ React.forwardRef(function List2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiList"
+  });
+  const {
+    children,
+    className,
+    component = "ul",
+    dense = false,
+    disablePadding = false,
+    subheader
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1u);
+  const context = React.useMemo(() => ({
+    dense
+  }), [dense]);
+  const ownerState = _extends$1({}, props, {
+    component,
+    dense,
+    disablePadding
+  });
+  const classes = useUtilityClasses$17(ownerState);
+  return /* @__PURE__ */ jsx(ListContext.Provider, {
+    value: context,
+    children: /* @__PURE__ */ jsxs(ListRoot, _extends$1({
+      as: component,
+      className: clsx(classes.root, className),
+      ref,
+      ownerState
+    }, other, {
+      children: [subheader, children]
+    }))
+  });
+});
+process.env.NODE_ENV !== "production" ? List.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, compact vertical padding designed for keyboard and mouse input is used for
+   * the list and list items.
+   * The prop is available to descendant components as the `dense` context.
+   * @default false
+   */
+  dense: PropTypes.bool,
+  /**
+   * If `true`, vertical padding is removed from the list.
+   * @default false
+   */
+  disablePadding: PropTypes.bool,
+  /**
+   * The content of the subheader, normally `ListSubheader`.
+   */
+  subheader: PropTypes.node,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+const _excluded$1t = ["actions", "autoFocus", "autoFocusItem", "children", "className", "disabledItemsFocusable", "disableListWrap", "onKeyDown", "variant"];
+function nextItem(list, item, disableListWrap) {
+  if (list === item) {
+    return list.firstChild;
+  }
+  if (item && item.nextElementSibling) {
+    return item.nextElementSibling;
+  }
+  return disableListWrap ? null : list.firstChild;
+}
+function previousItem(list, item, disableListWrap) {
+  if (list === item) {
+    return disableListWrap ? list.firstChild : list.lastChild;
+  }
+  if (item && item.previousElementSibling) {
+    return item.previousElementSibling;
+  }
+  return disableListWrap ? null : list.lastChild;
+}
+function textCriteriaMatches(nextFocus, textCriteria) {
+  if (textCriteria === void 0) {
+    return true;
+  }
+  let text = nextFocus.innerText;
+  if (text === void 0) {
+    text = nextFocus.textContent;
+  }
+  text = text.trim().toLowerCase();
+  if (text.length === 0) {
+    return false;
+  }
+  if (textCriteria.repeating) {
+    return text[0] === textCriteria.keys[0];
+  }
+  return text.indexOf(textCriteria.keys.join("")) === 0;
+}
+function moveFocus(list, currentFocus, disableListWrap, disabledItemsFocusable, traversalFunction, textCriteria) {
+  let wrappedOnce = false;
+  let nextFocus = traversalFunction(list, currentFocus, currentFocus ? disableListWrap : false);
+  while (nextFocus) {
+    if (nextFocus === list.firstChild) {
+      if (wrappedOnce) {
+        return false;
+      }
+      wrappedOnce = true;
+    }
+    const nextFocusDisabled = disabledItemsFocusable ? false : nextFocus.disabled || nextFocus.getAttribute("aria-disabled") === "true";
+    if (!nextFocus.hasAttribute("tabindex") || !textCriteriaMatches(nextFocus, textCriteria) || nextFocusDisabled) {
+      nextFocus = traversalFunction(list, nextFocus, disableListWrap);
+    } else {
+      nextFocus.focus();
+      return true;
+    }
+  }
+  return false;
+}
+const MenuList = /* @__PURE__ */ React.forwardRef(function MenuList2(props, ref) {
+  const {
+    // private
+    // eslint-disable-next-line react/prop-types
+    actions,
+    autoFocus = false,
+    autoFocusItem = false,
+    children,
+    className,
+    disabledItemsFocusable = false,
+    disableListWrap = false,
+    onKeyDown,
+    variant = "selectedMenu"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1t);
+  const listRef = React.useRef(null);
+  const textCriteriaRef = React.useRef({
+    keys: [],
+    repeating: true,
+    previousKeyMatched: true,
+    lastTime: null
+  });
+  useEnhancedEffect(() => {
+    if (autoFocus) {
+      listRef.current.focus();
+    }
+  }, [autoFocus]);
+  React.useImperativeHandle(actions, () => ({
+    adjustStyleForScrollbar: (containerElement, {
+      direction
+    }) => {
+      const noExplicitWidth = !listRef.current.style.width;
+      if (containerElement.clientHeight < listRef.current.clientHeight && noExplicitWidth) {
+        const scrollbarSize = `${getScrollbarSize(ownerDocument(containerElement))}px`;
+        listRef.current.style[direction === "rtl" ? "paddingLeft" : "paddingRight"] = scrollbarSize;
+        listRef.current.style.width = `calc(100% + ${scrollbarSize})`;
+      }
+      return listRef.current;
+    }
+  }), []);
+  const handleKeyDown = (event) => {
+    const list = listRef.current;
+    const key = event.key;
+    const currentFocus = ownerDocument(list).activeElement;
+    if (key === "ArrowDown") {
+      event.preventDefault();
+      moveFocus(list, currentFocus, disableListWrap, disabledItemsFocusable, nextItem);
+    } else if (key === "ArrowUp") {
+      event.preventDefault();
+      moveFocus(list, currentFocus, disableListWrap, disabledItemsFocusable, previousItem);
+    } else if (key === "Home") {
+      event.preventDefault();
+      moveFocus(list, null, disableListWrap, disabledItemsFocusable, nextItem);
+    } else if (key === "End") {
+      event.preventDefault();
+      moveFocus(list, null, disableListWrap, disabledItemsFocusable, previousItem);
+    } else if (key.length === 1) {
+      const criteria = textCriteriaRef.current;
+      const lowerKey = key.toLowerCase();
+      const currTime = performance.now();
+      if (criteria.keys.length > 0) {
+        if (currTime - criteria.lastTime > 500) {
+          criteria.keys = [];
+          criteria.repeating = true;
+          criteria.previousKeyMatched = true;
+        } else if (criteria.repeating && lowerKey !== criteria.keys[0]) {
+          criteria.repeating = false;
+        }
+      }
+      criteria.lastTime = currTime;
+      criteria.keys.push(lowerKey);
+      const keepFocusOnCurrent = currentFocus && !criteria.repeating && textCriteriaMatches(currentFocus, criteria);
+      if (criteria.previousKeyMatched && (keepFocusOnCurrent || moveFocus(list, currentFocus, false, disabledItemsFocusable, nextItem, criteria))) {
+        event.preventDefault();
+      } else {
+        criteria.previousKeyMatched = false;
+      }
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+  const handleRef = useForkRef(listRef, ref);
+  let activeItemIndex = -1;
+  React.Children.forEach(children, (child, index2) => {
+    if (!/* @__PURE__ */ React.isValidElement(child)) {
+      if (activeItemIndex === index2) {
+        activeItemIndex += 1;
+        if (activeItemIndex >= children.length) {
+          activeItemIndex = -1;
+        }
+      }
+      return;
+    }
+    if (process.env.NODE_ENV !== "production") {
+      if (isFragment(child)) {
+        console.error(["MUI: The Menu component doesn't accept a Fragment as a child.", "Consider providing an array instead."].join("\n"));
+      }
+    }
+    if (!child.props.disabled) {
+      if (variant === "selectedMenu" && child.props.selected) {
+        activeItemIndex = index2;
+      } else if (activeItemIndex === -1) {
+        activeItemIndex = index2;
+      }
+    }
+    if (activeItemIndex === index2 && (child.props.disabled || child.props.muiSkipListHighlight || child.type.muiSkipListHighlight)) {
+      activeItemIndex += 1;
+      if (activeItemIndex >= children.length) {
+        activeItemIndex = -1;
+      }
+    }
+  });
+  const items = React.Children.map(children, (child, index2) => {
+    if (index2 === activeItemIndex) {
+      const newChildProps = {};
+      if (autoFocusItem) {
+        newChildProps.autoFocus = true;
+      }
+      if (child.props.tabIndex === void 0 && variant === "selectedMenu") {
+        newChildProps.tabIndex = 0;
+      }
+      return /* @__PURE__ */ React.cloneElement(child, newChildProps);
+    }
+    return child;
+  });
+  return /* @__PURE__ */ jsx(List, _extends$1({
+    role: "menu",
+    ref: handleRef,
+    className,
+    onKeyDown: handleKeyDown,
+    tabIndex: autoFocus ? 0 : -1
+  }, other, {
+    children: items
+  }));
+});
+process.env.NODE_ENV !== "production" ? MenuList.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, will focus the `[role="menu"]` container and move into tab order.
+   * @default false
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * If `true`, will focus the first menuitem if `variant="menu"` or selected item
+   * if `variant="selectedMenu"`.
+   * @default false
+   */
+  autoFocusItem: PropTypes.bool,
+  /**
+   * MenuList contents, normally `MenuItem`s.
+   */
+  children: PropTypes.node,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * If `true`, will allow focus on disabled items.
+   * @default false
+   */
+  disabledItemsFocusable: PropTypes.bool,
+  /**
+   * If `true`, the menu items will not wrap focus.
+   * @default false
+   */
+  disableListWrap: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  onKeyDown: PropTypes.func,
+  /**
+   * The variant to use. Use `menu` to prevent selected items from impacting the initial focus
+   * and the vertical alignment relative to the anchor element.
+   * @default 'selectedMenu'
+   */
+  variant: PropTypes.oneOf(["menu", "selectedMenu"])
+} : void 0;
+function mapEventPropToEvent(eventProp) {
+  return eventProp.substring(2).toLowerCase();
+}
+function clickedRootScrollbar(event, doc) {
+  return doc.documentElement.clientWidth < event.clientX || doc.documentElement.clientHeight < event.clientY;
+}
+function ClickAwayListener(props) {
+  const {
+    children,
+    disableReactTree = false,
+    mouseEvent = "onClick",
+    onClickAway,
+    touchEvent = "onTouchEnd"
+  } = props;
+  const movedRef = React.useRef(false);
+  const nodeRef = React.useRef(null);
+  const activatedRef = React.useRef(false);
+  const syntheticEventRef = React.useRef(false);
+  React.useEffect(() => {
+    setTimeout(() => {
+      activatedRef.current = true;
+    }, 0);
+    return () => {
+      activatedRef.current = false;
+    };
+  }, []);
+  const handleRef = unstable_useForkRef(getReactElementRef(children), nodeRef);
+  const handleClickAway = unstable_useEventCallback((event) => {
+    const insideReactTree = syntheticEventRef.current;
+    syntheticEventRef.current = false;
+    const doc = unstable_ownerDocument(nodeRef.current);
+    if (!activatedRef.current || !nodeRef.current || "clientX" in event && clickedRootScrollbar(event, doc)) {
+      return;
+    }
+    if (movedRef.current) {
+      movedRef.current = false;
+      return;
+    }
+    let insideDOM;
+    if (event.composedPath) {
+      insideDOM = event.composedPath().indexOf(nodeRef.current) > -1;
+    } else {
+      insideDOM = !doc.documentElement.contains(
+        // @ts-expect-error returns `false` as intended when not dispatched from a Node
+        event.target
+      ) || nodeRef.current.contains(
+        // @ts-expect-error returns `false` as intended when not dispatched from a Node
+        event.target
+      );
+    }
+    if (!insideDOM && (disableReactTree || !insideReactTree)) {
+      onClickAway(event);
+    }
+  });
+  const createHandleSynthetic = (handlerName) => (event) => {
+    syntheticEventRef.current = true;
+    const childrenPropsHandler = children.props[handlerName];
+    if (childrenPropsHandler) {
+      childrenPropsHandler(event);
+    }
+  };
+  const childrenProps = {
+    ref: handleRef
+  };
+  if (touchEvent !== false) {
+    childrenProps[touchEvent] = createHandleSynthetic(touchEvent);
+  }
+  React.useEffect(() => {
+    if (touchEvent !== false) {
+      const mappedTouchEvent = mapEventPropToEvent(touchEvent);
+      const doc = unstable_ownerDocument(nodeRef.current);
+      const handleTouchMove = () => {
+        movedRef.current = true;
+      };
+      doc.addEventListener(mappedTouchEvent, handleClickAway);
+      doc.addEventListener("touchmove", handleTouchMove);
+      return () => {
+        doc.removeEventListener(mappedTouchEvent, handleClickAway);
+        doc.removeEventListener("touchmove", handleTouchMove);
+      };
+    }
+    return void 0;
+  }, [handleClickAway, touchEvent]);
+  if (mouseEvent !== false) {
+    childrenProps[mouseEvent] = createHandleSynthetic(mouseEvent);
+  }
+  React.useEffect(() => {
+    if (mouseEvent !== false) {
+      const mappedMouseEvent = mapEventPropToEvent(mouseEvent);
+      const doc = unstable_ownerDocument(nodeRef.current);
+      doc.addEventListener(mappedMouseEvent, handleClickAway);
+      return () => {
+        doc.removeEventListener(mappedMouseEvent, handleClickAway);
+      };
+    }
+    return void 0;
+  }, [handleClickAway, mouseEvent]);
+  return /* @__PURE__ */ jsx(React.Fragment, {
+    children: /* @__PURE__ */ React.cloneElement(children, childrenProps)
+  });
+}
+process.env.NODE_ENV !== "production" ? ClickAwayListener.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The wrapped element.
+   */
+  children: elementAcceptingRef.isRequired,
+  /**
+   * If `true`, the React tree is ignored and only the DOM tree is considered.
+   * This prop changes how portaled elements are handled.
+   * @default false
+   */
+  disableReactTree: PropTypes.bool,
+  /**
+   * The mouse event to listen to. You can disable the listener by providing `false`.
+   * @default 'onClick'
+   */
+  mouseEvent: PropTypes.oneOf(["onClick", "onMouseDown", "onMouseUp", "onPointerDown", "onPointerUp", false]),
+  /**
+   * Callback fired when a "click away" event is detected.
+   */
+  onClickAway: PropTypes.func.isRequired,
+  /**
+   * The touch event to listen to. You can disable the listener by providing `false`.
+   * @default 'onTouchEnd'
+   */
+  touchEvent: PropTypes.oneOf(["onTouchEnd", "onTouchStart", false])
+} : void 0;
+if (process.env.NODE_ENV !== "production") {
+  ClickAwayListener["propTypes"] = exactProp(ClickAwayListener.propTypes);
+}
+const reflow = (node) => node.scrollTop;
+function getTransitionProps(props, options) {
+  var _style$transitionDura, _style$transitionTimi;
+  const {
+    timeout,
+    easing: easing2,
+    style: style2 = {}
+  } = props;
+  return {
+    duration: (_style$transitionDura = style2.transitionDuration) != null ? _style$transitionDura : typeof timeout === "number" ? timeout : timeout[options.mode] || 0,
+    easing: (_style$transitionTimi = style2.transitionTimingFunction) != null ? _style$transitionTimi : typeof easing2 === "object" ? easing2[options.mode] : easing2,
+    delay: style2.transitionDelay
+  };
+}
+const _excluded$1s = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
+function getScale(value) {
+  return `scale(${value}, ${value ** 2})`;
+}
+const styles$1 = {
+  entering: {
+    opacity: 1,
+    transform: getScale(1)
+  },
+  entered: {
+    opacity: 1,
+    transform: "none"
+  }
+};
+const isWebKit154 = typeof navigator !== "undefined" && /^((?!chrome|android).)*(safari|mobile)/i.test(navigator.userAgent) && /(os |version\/)15(.|_)4/i.test(navigator.userAgent);
+const Grow = /* @__PURE__ */ React.forwardRef(function Grow2(props, ref) {
+  const {
+    addEndListener,
+    appear = true,
+    children,
+    easing: easing2,
+    in: inProp,
+    onEnter,
+    onEntered,
+    onEntering,
+    onExit,
+    onExited,
+    onExiting,
+    style: style2,
+    timeout = "auto",
+    // eslint-disable-next-line react/prop-types
+    TransitionComponent = Transition
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1s);
+  const timer = useTimeout$1();
+  const autoTimeout = React.useRef();
+  const theme = useTheme$1();
+  const nodeRef = React.useRef(null);
+  const handleRef = useForkRef(nodeRef, getReactElementRef(children), ref);
+  const normalizedTransitionCallback = (callback) => (maybeIsAppearing) => {
+    if (callback) {
+      const node = nodeRef.current;
+      if (maybeIsAppearing === void 0) {
+        callback(node);
+      } else {
+        callback(node, maybeIsAppearing);
+      }
+    }
+  };
+  const handleEntering = normalizedTransitionCallback(onEntering);
+  const handleEnter = normalizedTransitionCallback((node, isAppearing) => {
+    reflow(node);
+    const {
+      duration: transitionDuration,
+      delay,
+      easing: transitionTimingFunction
+    } = getTransitionProps({
+      style: style2,
+      timeout,
+      easing: easing2
+    }, {
+      mode: "enter"
+    });
+    let duration2;
+    if (timeout === "auto") {
+      duration2 = theme.transitions.getAutoHeightDuration(node.clientHeight);
+      autoTimeout.current = duration2;
+    } else {
+      duration2 = transitionDuration;
+    }
+    node.style.transition = [theme.transitions.create("opacity", {
+      duration: duration2,
+      delay
+    }), theme.transitions.create("transform", {
+      duration: isWebKit154 ? duration2 : duration2 * 0.666,
+      delay,
+      easing: transitionTimingFunction
+    })].join(",");
+    if (onEnter) {
+      onEnter(node, isAppearing);
+    }
+  });
+  const handleEntered = normalizedTransitionCallback(onEntered);
+  const handleExiting = normalizedTransitionCallback(onExiting);
+  const handleExit = normalizedTransitionCallback((node) => {
+    const {
+      duration: transitionDuration,
+      delay,
+      easing: transitionTimingFunction
+    } = getTransitionProps({
+      style: style2,
+      timeout,
+      easing: easing2
+    }, {
+      mode: "exit"
+    });
+    let duration2;
+    if (timeout === "auto") {
+      duration2 = theme.transitions.getAutoHeightDuration(node.clientHeight);
+      autoTimeout.current = duration2;
+    } else {
+      duration2 = transitionDuration;
+    }
+    node.style.transition = [theme.transitions.create("opacity", {
+      duration: duration2,
+      delay
+    }), theme.transitions.create("transform", {
+      duration: isWebKit154 ? duration2 : duration2 * 0.666,
+      delay: isWebKit154 ? delay : delay || duration2 * 0.333,
+      easing: transitionTimingFunction
+    })].join(",");
+    node.style.opacity = 0;
+    node.style.transform = getScale(0.75);
+    if (onExit) {
+      onExit(node);
+    }
+  });
+  const handleExited = normalizedTransitionCallback(onExited);
+  const handleAddEndListener = (next) => {
+    if (timeout === "auto") {
+      timer.start(autoTimeout.current || 0, next);
+    }
+    if (addEndListener) {
+      addEndListener(nodeRef.current, next);
+    }
+  };
+  return /* @__PURE__ */ jsx(TransitionComponent, _extends$1({
+    appear,
+    in: inProp,
+    nodeRef,
+    onEnter: handleEnter,
+    onEntered: handleEntered,
+    onEntering: handleEntering,
+    onExit: handleExit,
+    onExited: handleExited,
+    onExiting: handleExiting,
+    addEndListener: handleAddEndListener,
+    timeout: timeout === "auto" ? null : timeout
+  }, other, {
+    children: (state, childProps) => {
+      return /* @__PURE__ */ React.cloneElement(children, _extends$1({
+        style: _extends$1({
+          opacity: 0,
+          transform: getScale(0.75),
+          visibility: state === "exited" && !inProp ? "hidden" : void 0
+        }, styles$1[state], style2, children.props.style),
+        ref: handleRef
+      }, childProps));
+    }
+  }));
+});
+process.env.NODE_ENV !== "production" ? Grow.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Add a custom transition end trigger. Called with the transitioning DOM
+   * node and a done callback. Allows for more fine grained transition end
+   * logic. Note: Timeouts are still used as a fallback if provided.
+   */
+  addEndListener: PropTypes.func,
+  /**
+   * Perform the enter transition when it first mounts if `in` is also `true`.
+   * Set this to `false` to disable this behavior.
+   * @default true
+   */
+  appear: PropTypes.bool,
+  /**
+   * A single child content element.
+   */
+  children: elementAcceptingRef$1.isRequired,
+  /**
+   * The transition timing function.
+   * You may specify a single easing or a object containing enter and exit values.
+   */
+  easing: PropTypes.oneOfType([PropTypes.shape({
+    enter: PropTypes.string,
+    exit: PropTypes.string
+  }), PropTypes.string]),
+  /**
+   * If `true`, the component will transition in.
+   */
+  in: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  onEnter: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onEntered: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onEntering: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onExit: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onExited: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onExiting: PropTypes.func,
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   *
+   * Set to 'auto' to automatically calculate transition time based on height.
+   * @default 'auto'
+   */
+  timeout: PropTypes.oneOfType([PropTypes.oneOf(["auto"]), PropTypes.number, PropTypes.shape({
+    appear: PropTypes.number,
+    enter: PropTypes.number,
+    exit: PropTypes.number
+  })])
+} : void 0;
+Grow.muiSupportAuto = true;
+function getPaperUtilityClass(slot) {
+  return generateUtilityClass("MuiPaper", slot);
+}
+generateUtilityClasses("MuiPaper", ["root", "rounded", "outlined", "elevation", "elevation0", "elevation1", "elevation2", "elevation3", "elevation4", "elevation5", "elevation6", "elevation7", "elevation8", "elevation9", "elevation10", "elevation11", "elevation12", "elevation13", "elevation14", "elevation15", "elevation16", "elevation17", "elevation18", "elevation19", "elevation20", "elevation21", "elevation22", "elevation23", "elevation24"]);
+const _excluded$1r = ["className", "component", "elevation", "square", "variant"];
+const useUtilityClasses$16 = (ownerState) => {
+  const {
+    square,
+    elevation,
+    variant,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, !square && "rounded", variant === "elevation" && `elevation${elevation}`]
+  };
+  return composeClasses(slots, getPaperUtilityClass, classes);
+};
+const PaperRoot = styled("div", {
+  name: "MuiPaper",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, styles2[ownerState.variant], !ownerState.square && styles2.rounded, ownerState.variant === "elevation" && styles2[`elevation${ownerState.elevation}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  var _theme$vars$overlays;
+  return _extends$1({
+    backgroundColor: (theme.vars || theme).palette.background.paper,
+    color: (theme.vars || theme).palette.text.primary,
+    transition: theme.transitions.create("box-shadow")
+  }, !ownerState.square && {
+    borderRadius: theme.shape.borderRadius
+  }, ownerState.variant === "outlined" && {
+    border: `1px solid ${(theme.vars || theme).palette.divider}`
+  }, ownerState.variant === "elevation" && _extends$1({
+    boxShadow: (theme.vars || theme).shadows[ownerState.elevation]
+  }, !theme.vars && theme.palette.mode === "dark" && {
+    backgroundImage: `linear-gradient(${colorManipulatorExports.alpha("#fff", getOverlayAlpha(ownerState.elevation))}, ${colorManipulatorExports.alpha("#fff", getOverlayAlpha(ownerState.elevation))})`
+  }, theme.vars && {
+    backgroundImage: (_theme$vars$overlays = theme.vars.overlays) == null ? void 0 : _theme$vars$overlays[ownerState.elevation]
+  }));
+});
+const Paper = /* @__PURE__ */ React.forwardRef(function Paper2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiPaper"
+  });
+  const {
+    className,
+    component = "div",
+    elevation = 1,
+    square = false,
+    variant = "elevation"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1r);
+  const ownerState = _extends$1({}, props, {
+    component,
+    elevation,
+    square,
+    variant
+  });
+  const classes = useUtilityClasses$16(ownerState);
+  if (process.env.NODE_ENV !== "production") {
+    const theme = useTheme$1();
+    if (theme.shadows[elevation] === void 0) {
+      console.error([`MUI: The elevation provided <Paper elevation={${elevation}}> is not available in the theme.`, `Please make sure that \`theme.shadows[${elevation}]\` is defined.`].join("\n"));
+    }
+  }
+  return /* @__PURE__ */ jsx(PaperRoot, _extends$1({
+    as: component,
+    ownerState,
+    className: clsx(classes.root, className),
+    ref
+  }, other));
+});
+process.env.NODE_ENV !== "production" ? Paper.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Shadow depth, corresponds to `dp` in the spec.
+   * It accepts values between 0 and 24 inclusive.
+   * @default 1
+   */
+  elevation: chainPropTypes(integerPropType, (props) => {
+    const {
+      elevation,
+      variant
+    } = props;
+    if (elevation > 0 && variant === "outlined") {
+      return new Error(`MUI: Combining \`elevation={${elevation}}\` with \`variant="${variant}"\` has no effect. Either use \`elevation={0}\` or use a different \`variant\`.`);
+    }
+    return null;
+  }),
+  /**
+   * If `true`, rounded corners are disabled.
+   * @default false
+   */
+  square: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   * @default 'elevation'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["elevation", "outlined"]), PropTypes.string])
+} : void 0;
+var useThemeWithoutDefault = {};
+var hasRequiredUseThemeWithoutDefault;
+function requireUseThemeWithoutDefault() {
+  if (hasRequiredUseThemeWithoutDefault) return useThemeWithoutDefault;
+  hasRequiredUseThemeWithoutDefault = 1;
+  Object.defineProperty(useThemeWithoutDefault, "__esModule", {
+    value: true
+  });
+  useThemeWithoutDefault.default = void 0;
+  var React2 = _interopRequireWildcard(React__default);
+  var _styledEngine = styled$2;
+  function _getRequireWildcardCache(e2) {
+    if ("function" != typeof WeakMap) return null;
+    var r = /* @__PURE__ */ new WeakMap(), t = /* @__PURE__ */ new WeakMap();
+    return (_getRequireWildcardCache = function(e3) {
+      return e3 ? t : r;
+    })(e2);
+  }
+  function _interopRequireWildcard(e2, r) {
+    if (e2 && e2.__esModule) return e2;
+    if (null === e2 || "object" != typeof e2 && "function" != typeof e2) return { default: e2 };
+    var t = _getRequireWildcardCache(r);
+    if (t && t.has(e2)) return t.get(e2);
+    var n2 = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for (var u2 in e2) if ("default" !== u2 && Object.prototype.hasOwnProperty.call(e2, u2)) {
+      var i2 = a ? Object.getOwnPropertyDescriptor(e2, u2) : null;
+      i2 && (i2.get || i2.set) ? Object.defineProperty(n2, u2, i2) : n2[u2] = e2[u2];
+    }
+    return n2.default = e2, t && t.set(e2, n2), n2;
+  }
+  function isObjectEmpty2(obj) {
+    return Object.keys(obj).length === 0;
+  }
+  function useTheme2(defaultTheme2 = null) {
+    const contextTheme = React2.useContext(_styledEngine.ThemeContext);
+    return !contextTheme || isObjectEmpty2(contextTheme) ? defaultTheme2 : contextTheme;
+  }
+  useThemeWithoutDefault.default = useTheme2;
+  return useThemeWithoutDefault;
+}
+var useThemeWithoutDefaultExports = /* @__PURE__ */ requireUseThemeWithoutDefault();
+const useTheme = /* @__PURE__ */ getDefaultExportFromCjs(useThemeWithoutDefaultExports);
+function getContainer$1(container) {
+  return typeof container === "function" ? container() : container;
+}
+const Portal = /* @__PURE__ */ React.forwardRef(function Portal2(props, forwardedRef) {
+  const {
+    children,
+    container,
+    disablePortal = false
+  } = props;
+  const [mountNode, setMountNode] = React.useState(null);
+  const handleRef = unstable_useForkRef(/* @__PURE__ */ React.isValidElement(children) ? unstable_getReactElementRef(children) : null, forwardedRef);
+  unstable_useEnhancedEffect(() => {
+    if (!disablePortal) {
+      setMountNode(getContainer$1(container) || document.body);
+    }
+  }, [container, disablePortal]);
+  unstable_useEnhancedEffect(() => {
+    if (mountNode && !disablePortal) {
+      unstable_setRef(forwardedRef, mountNode);
+      return () => {
+        unstable_setRef(forwardedRef, null);
+      };
+    }
+    return void 0;
+  }, [forwardedRef, mountNode, disablePortal]);
+  if (disablePortal) {
+    if (/* @__PURE__ */ React.isValidElement(children)) {
+      const newProps = {
+        ref: handleRef
+      };
+      return /* @__PURE__ */ React.cloneElement(children, newProps);
+    }
+    return /* @__PURE__ */ jsx(React.Fragment, {
+      children
+    });
+  }
+  return /* @__PURE__ */ jsx(React.Fragment, {
+    children: mountNode ? /* @__PURE__ */ ReactDOM.createPortal(children, mountNode) : mountNode
+  });
+});
+process.env.NODE_ENV !== "production" ? Portal.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The children to render into the `container`.
+   */
+  children: PropTypes.node,
+  /**
+   * An HTML element or function that returns one.
+   * The `container` will have the portal children appended to it.
+   *
+   * You can also provide a callback, which is called in a React layout effect.
+   * This lets you set the container from a ref, and also makes server-side rendering possible.
+   *
+   * By default, it uses the body of the top-level document object,
+   * so it's simply `document.body` most of the time.
+   */
+  container: PropTypes.oneOfType([HTMLElementType, PropTypes.func]),
+  /**
+   * The `children` will be under the DOM hierarchy of the parent component.
+   * @default false
+   */
+  disablePortal: PropTypes.bool
+} : void 0;
+if (process.env.NODE_ENV !== "production") {
+  Portal["propTypes"] = exactProp(Portal.propTypes);
+}
+function getPopperUtilityClass(slot) {
+  return generateUtilityClass("MuiPopper", slot);
+}
+generateUtilityClasses("MuiPopper", ["root"]);
+const _excluded$1q = ["anchorEl", "children", "direction", "disablePortal", "modifiers", "open", "placement", "popperOptions", "popperRef", "slotProps", "slots", "TransitionProps", "ownerState"], _excluded2$9 = ["anchorEl", "children", "container", "direction", "disablePortal", "keepMounted", "modifiers", "open", "placement", "popperOptions", "popperRef", "style", "transition", "slotProps", "slots"];
+function flipPlacement(placement, direction) {
+  if (direction === "ltr") {
+    return placement;
+  }
+  switch (placement) {
+    case "bottom-end":
+      return "bottom-start";
+    case "bottom-start":
+      return "bottom-end";
+    case "top-end":
+      return "top-start";
+    case "top-start":
+      return "top-end";
+    default:
+      return placement;
+  }
+}
+function resolveAnchorEl$1(anchorEl) {
+  return typeof anchorEl === "function" ? anchorEl() : anchorEl;
+}
+function isHTMLElement(element) {
+  return element.nodeType !== void 0;
+}
+function isVirtualElement(element) {
+  return !isHTMLElement(element);
+}
+const useUtilityClasses$15 = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root"]
+  };
+  return composeClasses(slots, getPopperUtilityClass, classes);
+};
+const defaultPopperOptions = {};
+const PopperTooltip = /* @__PURE__ */ React.forwardRef(function PopperTooltip2(props, forwardedRef) {
+  var _slots$root;
+  const {
+    anchorEl,
+    children,
+    direction,
+    disablePortal,
+    modifiers,
+    open,
+    placement: initialPlacement,
+    popperOptions,
+    popperRef: popperRefProp,
+    slotProps = {},
+    slots = {},
+    TransitionProps
+    // @ts-ignore internal logic
+    // prevent from spreading to DOM, it can come from the parent component e.g. Select.
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1q);
+  const tooltipRef = React.useRef(null);
+  const ownRef = unstable_useForkRef(tooltipRef, forwardedRef);
+  const popperRef = React.useRef(null);
+  const handlePopperRef = unstable_useForkRef(popperRef, popperRefProp);
+  const handlePopperRefRef = React.useRef(handlePopperRef);
+  unstable_useEnhancedEffect(() => {
+    handlePopperRefRef.current = handlePopperRef;
+  }, [handlePopperRef]);
+  React.useImperativeHandle(popperRefProp, () => popperRef.current, []);
+  const rtlPlacement = flipPlacement(initialPlacement, direction);
+  const [placement, setPlacement] = React.useState(rtlPlacement);
+  const [resolvedAnchorElement, setResolvedAnchorElement] = React.useState(resolveAnchorEl$1(anchorEl));
+  React.useEffect(() => {
+    if (popperRef.current) {
+      popperRef.current.forceUpdate();
+    }
+  });
+  React.useEffect(() => {
+    if (anchorEl) {
+      setResolvedAnchorElement(resolveAnchorEl$1(anchorEl));
+    }
+  }, [anchorEl]);
+  unstable_useEnhancedEffect(() => {
+    if (!resolvedAnchorElement || !open) {
+      return void 0;
+    }
+    const handlePopperUpdate = (data) => {
+      setPlacement(data.placement);
+    };
+    if (process.env.NODE_ENV !== "production") {
+      if (resolvedAnchorElement && isHTMLElement(resolvedAnchorElement) && resolvedAnchorElement.nodeType === 1) {
+        const box = resolvedAnchorElement.getBoundingClientRect();
+        if (process.env.NODE_ENV !== "test" && box.top === 0 && box.left === 0 && box.right === 0 && box.bottom === 0) {
+          console.warn(["MUI: The `anchorEl` prop provided to the component is invalid.", "The anchor element should be part of the document layout.", "Make sure the element is present in the document or that it's not display none."].join("\n"));
+        }
+      }
+    }
+    let popperModifiers = [{
+      name: "preventOverflow",
+      options: {
+        altBoundary: disablePortal
+      }
+    }, {
+      name: "flip",
+      options: {
+        altBoundary: disablePortal
+      }
+    }, {
+      name: "onUpdate",
+      enabled: true,
+      phase: "afterWrite",
+      fn: ({
+        state
+      }) => {
+        handlePopperUpdate(state);
+      }
+    }];
+    if (modifiers != null) {
+      popperModifiers = popperModifiers.concat(modifiers);
+    }
+    if (popperOptions && popperOptions.modifiers != null) {
+      popperModifiers = popperModifiers.concat(popperOptions.modifiers);
+    }
+    const popper = createPopper(resolvedAnchorElement, tooltipRef.current, _extends$1({
+      placement: rtlPlacement
+    }, popperOptions, {
+      modifiers: popperModifiers
+    }));
+    handlePopperRefRef.current(popper);
+    return () => {
+      popper.destroy();
+      handlePopperRefRef.current(null);
+    };
+  }, [resolvedAnchorElement, disablePortal, modifiers, open, popperOptions, rtlPlacement]);
+  const childProps = {
+    placement
+  };
+  if (TransitionProps !== null) {
+    childProps.TransitionProps = TransitionProps;
+  }
+  const classes = useUtilityClasses$15(props);
+  const Root = (_slots$root = slots.root) != null ? _slots$root : "div";
+  const rootProps = useSlotProps({
+    elementType: Root,
+    externalSlotProps: slotProps.root,
+    externalForwardedProps: other,
+    additionalProps: {
+      role: "tooltip",
+      ref: ownRef
+    },
+    ownerState: props,
+    className: classes.root
+  });
+  return /* @__PURE__ */ jsx(Root, _extends$1({}, rootProps, {
+    children: typeof children === "function" ? children(childProps) : children
+  }));
+});
+const Popper$1 = /* @__PURE__ */ React.forwardRef(function Popper(props, forwardedRef) {
+  const {
+    anchorEl,
+    children,
+    container: containerProp,
+    direction = "ltr",
+    disablePortal = false,
+    keepMounted = false,
+    modifiers,
+    open,
+    placement = "bottom",
+    popperOptions = defaultPopperOptions,
+    popperRef,
+    style: style2,
+    transition = false,
+    slotProps = {},
+    slots = {}
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded2$9);
+  const [exited, setExited] = React.useState(true);
+  const handleEnter = () => {
+    setExited(false);
+  };
+  const handleExited = () => {
+    setExited(true);
+  };
+  if (!keepMounted && !open && (!transition || exited)) {
+    return null;
+  }
+  let container;
+  if (containerProp) {
+    container = containerProp;
+  } else if (anchorEl) {
+    const resolvedAnchorEl = resolveAnchorEl$1(anchorEl);
+    container = resolvedAnchorEl && isHTMLElement(resolvedAnchorEl) ? unstable_ownerDocument(resolvedAnchorEl).body : unstable_ownerDocument(null).body;
+  }
+  const display = !open && keepMounted && (!transition || exited) ? "none" : void 0;
+  const transitionProps = transition ? {
+    in: open,
+    onEnter: handleEnter,
+    onExited: handleExited
+  } : void 0;
+  return /* @__PURE__ */ jsx(Portal, {
+    disablePortal,
+    container,
+    children: /* @__PURE__ */ jsx(PopperTooltip, _extends$1({
+      anchorEl,
+      direction,
+      disablePortal,
+      modifiers,
+      ref: forwardedRef,
+      open: transition ? !exited : open,
+      placement,
+      popperOptions,
+      popperRef,
+      slotProps,
+      slots
+    }, other, {
+      style: _extends$1({
+        // Prevents scroll issue, waiting for Popper.js to add this style once initiated.
+        position: "fixed",
+        // Fix Popper.js display issue
+        top: 0,
+        left: 0,
+        display
+      }, style2),
+      TransitionProps: transitionProps,
+      children
+    }))
+  });
+});
+process.env.NODE_ENV !== "production" ? Popper$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
+   * or a function that returns either.
+   * It's used to set the position of the popper.
+   * The return value will passed as the reference object of the Popper instance.
+   */
+  anchorEl: chainPropTypes$1(PropTypes.oneOfType([HTMLElementType, PropTypes.object, PropTypes.func]), (props) => {
+    if (props.open) {
+      const resolvedAnchorEl = resolveAnchorEl$1(props.anchorEl);
+      if (resolvedAnchorEl && isHTMLElement(resolvedAnchorEl) && resolvedAnchorEl.nodeType === 1) {
+        const box = resolvedAnchorEl.getBoundingClientRect();
+        if (process.env.NODE_ENV !== "test" && box.top === 0 && box.left === 0 && box.right === 0 && box.bottom === 0) {
+          return new Error(["MUI: The `anchorEl` prop provided to the component is invalid.", "The anchor element should be part of the document layout.", "Make sure the element is present in the document or that it's not display none."].join("\n"));
+        }
+      } else if (!resolvedAnchorEl || typeof resolvedAnchorEl.getBoundingClientRect !== "function" || isVirtualElement(resolvedAnchorEl) && resolvedAnchorEl.contextElement != null && resolvedAnchorEl.contextElement.nodeType !== 1) {
+        return new Error(["MUI: The `anchorEl` prop provided to the component is invalid.", "It should be an HTML element instance or a virtualElement ", "(https://popper.js.org/docs/v2/virtual-elements/)."].join("\n"));
+      }
+    }
+    return null;
+  }),
+  /**
+   * Popper render function or node.
+   */
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /**
+   * An HTML element or function that returns one.
+   * The `container` will have the portal children appended to it.
+   *
+   * You can also provide a callback, which is called in a React layout effect.
+   * This lets you set the container from a ref, and also makes server-side rendering possible.
+   *
+   * By default, it uses the body of the top-level document object,
+   * so it's simply `document.body` most of the time.
+   */
+  container: PropTypes.oneOfType([HTMLElementType, PropTypes.func]),
+  /**
+   * Direction of the text.
+   * @default 'ltr'
+   */
+  direction: PropTypes.oneOf(["ltr", "rtl"]),
+  /**
+   * The `children` will be under the DOM hierarchy of the parent component.
+   * @default false
+   */
+  disablePortal: PropTypes.bool,
+  /**
+   * Always keep the children in the DOM.
+   * This prop can be useful in SEO situation or
+   * when you want to maximize the responsiveness of the Popper.
+   * @default false
+   */
+  keepMounted: PropTypes.bool,
+  /**
+   * Popper.js is based on a "plugin-like" architecture,
+   * most of its features are fully encapsulated "modifiers".
+   *
+   * A modifier is a function that is called each time Popper.js needs to
+   * compute the position of the popper.
+   * For this reason, modifiers should be very performant to avoid bottlenecks.
+   * To learn how to create a modifier, [read the modifiers documentation](https://popper.js.org/docs/v2/modifiers/).
+   */
+  modifiers: PropTypes.arrayOf(PropTypes.shape({
+    data: PropTypes.object,
+    effect: PropTypes.func,
+    enabled: PropTypes.bool,
+    fn: PropTypes.func,
+    name: PropTypes.any,
+    options: PropTypes.object,
+    phase: PropTypes.oneOf(["afterMain", "afterRead", "afterWrite", "beforeMain", "beforeRead", "beforeWrite", "main", "read", "write"]),
+    requires: PropTypes.arrayOf(PropTypes.string),
+    requiresIfExists: PropTypes.arrayOf(PropTypes.string)
+  })),
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool.isRequired,
+  /**
+   * Popper placement.
+   * @default 'bottom'
+   */
+  placement: PropTypes.oneOf(["auto-end", "auto-start", "auto", "bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
+  /**
+   * Options provided to the [`Popper.js`](https://popper.js.org/docs/v2/constructors/#options) instance.
+   * @default {}
+   */
+  popperOptions: PropTypes.shape({
+    modifiers: PropTypes.array,
+    onFirstUpdate: PropTypes.func,
+    placement: PropTypes.oneOf(["auto-end", "auto-start", "auto", "bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
+    strategy: PropTypes.oneOf(["absolute", "fixed"])
+  }),
+  /**
+   * A ref that points to the used popper instance.
+   */
+  popperRef: refType$1,
+  /**
+   * The props used for each slot inside the Popper.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside the Popper.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    root: PropTypes.elementType
+  }),
+  /**
+   * Help supporting a react-transition-group/Transition component.
+   * @default false
+   */
+  transition: PropTypes.bool
+} : void 0;
+const _excluded$1p = ["anchorEl", "component", "components", "componentsProps", "container", "disablePortal", "keepMounted", "modifiers", "open", "placement", "popperOptions", "popperRef", "transition", "slots", "slotProps"];
+const PopperRoot = styled(Popper$1, {
+  name: "MuiPopper",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})({});
+const Popper2 = /* @__PURE__ */ React.forwardRef(function Popper3(inProps, ref) {
+  var _slots$root;
+  const theme = useTheme();
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiPopper"
+  });
+  const {
+    anchorEl,
+    component,
+    components,
+    componentsProps,
+    container,
+    disablePortal,
+    keepMounted,
+    modifiers,
+    open,
+    placement,
+    popperOptions,
+    popperRef,
+    transition,
+    slots,
+    slotProps
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1p);
+  const RootComponent = (_slots$root = slots == null ? void 0 : slots.root) != null ? _slots$root : components == null ? void 0 : components.Root;
+  const otherProps = _extends$1({
+    anchorEl,
+    container,
+    disablePortal,
+    keepMounted,
+    modifiers,
+    open,
+    placement,
+    popperOptions,
+    popperRef,
+    transition
+  }, other);
+  return /* @__PURE__ */ jsx(PopperRoot, _extends$1({
+    as: component,
+    direction: theme == null ? void 0 : theme.direction,
+    slots: {
+      root: RootComponent
+    },
+    slotProps: slotProps != null ? slotProps : componentsProps
+  }, otherProps, {
+    ref
+  }));
+});
+process.env.NODE_ENV !== "production" ? Popper2.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * An HTML element, [virtualElement](https://popper.js.org/docs/v2/virtual-elements/),
+   * or a function that returns either.
+   * It's used to set the position of the popper.
+   * The return value will passed as the reference object of the Popper instance.
+   */
+  anchorEl: PropTypes.oneOfType([HTMLElementType$1, PropTypes.object, PropTypes.func]),
+  /**
+   * Popper render function or node.
+   */
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * The components used for each slot inside the Popper.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The props used for each slot inside the Popper.
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * An HTML element or function that returns one.
+   * The `container` will have the portal children appended to it.
+   *
+   * You can also provide a callback, which is called in a React layout effect.
+   * This lets you set the container from a ref, and also makes server-side rendering possible.
+   *
+   * By default, it uses the body of the top-level document object,
+   * so it's simply `document.body` most of the time.
+   */
+  container: PropTypes.oneOfType([HTMLElementType$1, PropTypes.func]),
+  /**
+   * The `children` will be under the DOM hierarchy of the parent component.
+   * @default false
+   */
+  disablePortal: PropTypes.bool,
+  /**
+   * Always keep the children in the DOM.
+   * This prop can be useful in SEO situation or
+   * when you want to maximize the responsiveness of the Popper.
+   * @default false
+   */
+  keepMounted: PropTypes.bool,
+  /**
+   * Popper.js is based on a "plugin-like" architecture,
+   * most of its features are fully encapsulated "modifiers".
+   *
+   * A modifier is a function that is called each time Popper.js needs to
+   * compute the position of the popper.
+   * For this reason, modifiers should be very performant to avoid bottlenecks.
+   * To learn how to create a modifier, [read the modifiers documentation](https://popper.js.org/docs/v2/modifiers/).
+   */
+  modifiers: PropTypes.arrayOf(PropTypes.shape({
+    data: PropTypes.object,
+    effect: PropTypes.func,
+    enabled: PropTypes.bool,
+    fn: PropTypes.func,
+    name: PropTypes.any,
+    options: PropTypes.object,
+    phase: PropTypes.oneOf(["afterMain", "afterRead", "afterWrite", "beforeMain", "beforeRead", "beforeWrite", "main", "read", "write"]),
+    requires: PropTypes.arrayOf(PropTypes.string),
+    requiresIfExists: PropTypes.arrayOf(PropTypes.string)
+  })),
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool.isRequired,
+  /**
+   * Popper placement.
+   * @default 'bottom'
+   */
+  placement: PropTypes.oneOf(["auto-end", "auto-start", "auto", "bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
+  /**
+   * Options provided to the [`Popper.js`](https://popper.js.org/docs/v2/constructors/#options) instance.
+   * @default {}
+   */
+  popperOptions: PropTypes.shape({
+    modifiers: PropTypes.array,
+    onFirstUpdate: PropTypes.func,
+    placement: PropTypes.oneOf(["auto-end", "auto-start", "auto", "bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
+    strategy: PropTypes.oneOf(["absolute", "fixed"])
+  }),
+  /**
+   * A ref that points to the used popper instance.
+   */
+  popperRef: refType,
+  /**
+   * The props used for each slot inside the Popper.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside the Popper.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    root: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Help supporting a react-transition-group/Transition component.
+   * @default false
+   */
+  transition: PropTypes.bool
+} : void 0;
+const _excluded$1o = ["open", "target", "onClose", "children", "position", "className", "onExited"];
+const useUtilityClasses$14 = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -4128,10 +9468,10 @@ const useUtilityClasses$t = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridMenuRoot = styled$1(Popper, {
+const GridMenuRoot = styled(Popper2, {
   name: "MuiDataGrid",
   slot: "Menu",
-  overridesResolver: (_, styles) => styles.menu
+  overridesResolver: (_2, styles2) => styles2.menu
 })(({
   theme
 }) => ({
@@ -4154,10 +9494,10 @@ function GridMenu(props) {
     position,
     className,
     onExited
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$J);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1o);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$t(rootProps);
+  const classes = useUtilityClasses$14(rootProps);
   const savedFocusRef = React.useRef(null);
   unstable_useEnhancedEffect(() => {
     if (open) {
@@ -4230,7 +9570,7 @@ process.env.NODE_ENV !== "production" ? GridMenu.propTypes = {
   position: PropTypes.oneOf(["bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
   target: HTMLElementType
 } : void 0;
-const _excluded$I = ["api", "colDef", "id", "hasFocus", "isEditable", "field", "value", "formattedValue", "row", "rowNode", "cellMode", "tabIndex", "position", "focusElementRef"];
+const _excluded$1n = ["api", "colDef", "id", "hasFocus", "isEditable", "field", "value", "formattedValue", "row", "rowNode", "cellMode", "tabIndex", "position", "focusElementRef"];
 const hasActions = (colDef) => typeof colDef.getActions === "function";
 function GridActionsCell(props) {
   var _rootProps$slotProps;
@@ -4241,7 +9581,7 @@ function GridActionsCell(props) {
     tabIndex,
     position = "bottom-end",
     focusElementRef
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$I);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1n);
   const [focusedButtonIndex, setFocusedButtonIndex] = React.useState(-1);
   const [open, setOpen] = React.useState(false);
   const apiRef = useGridApiContext();
@@ -4249,7 +9589,7 @@ function GridActionsCell(props) {
   const buttonRef = React.useRef(null);
   const ignoreCallToFocus = React.useRef(false);
   const touchRippleRefs = React.useRef({});
-  const theme = useTheme();
+  const theme = useTheme$1();
   const menuId = unstable_useId();
   const buttonId = unstable_useId();
   const rootProps = useGridRootProps();
@@ -4466,8 +9806,1915 @@ process.env.NODE_ENV !== "production" ? GridActionsCell.propTypes = {
   value: PropTypes.any
 } : void 0;
 const renderActionsCell = (params) => /* @__PURE__ */ jsx(GridActionsCell, _extends$1({}, params));
-const _excluded$H = ["field", "align", "width", "contentWidth"];
-const useUtilityClasses$s = (ownerState) => {
+function Ripple(props) {
+  const {
+    className,
+    classes,
+    pulsate = false,
+    rippleX,
+    rippleY,
+    rippleSize,
+    in: inProp,
+    onExited,
+    timeout
+  } = props;
+  const [leaving, setLeaving] = React.useState(false);
+  const rippleClassName = clsx(className, classes.ripple, classes.rippleVisible, pulsate && classes.ripplePulsate);
+  const rippleStyles = {
+    width: rippleSize,
+    height: rippleSize,
+    top: -(rippleSize / 2) + rippleY,
+    left: -(rippleSize / 2) + rippleX
+  };
+  const childClassName = clsx(classes.child, leaving && classes.childLeaving, pulsate && classes.childPulsate);
+  if (!inProp && !leaving) {
+    setLeaving(true);
+  }
+  React.useEffect(() => {
+    if (!inProp && onExited != null) {
+      const timeoutId = setTimeout(onExited, timeout);
+      return () => {
+        clearTimeout(timeoutId);
+      };
+    }
+    return void 0;
+  }, [onExited, inProp, timeout]);
+  return /* @__PURE__ */ jsx("span", {
+    className: rippleClassName,
+    style: rippleStyles,
+    children: /* @__PURE__ */ jsx("span", {
+      className: childClassName
+    })
+  });
+}
+process.env.NODE_ENV !== "production" ? Ripple.propTypes = {
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object.isRequired,
+  className: PropTypes.string,
+  /**
+   * @ignore - injected from TransitionGroup
+   */
+  in: PropTypes.bool,
+  /**
+   * @ignore - injected from TransitionGroup
+   */
+  onExited: PropTypes.func,
+  /**
+   * If `true`, the ripple pulsates, typically indicating the keyboard focus state of an element.
+   */
+  pulsate: PropTypes.bool,
+  /**
+   * Diameter of the ripple.
+   */
+  rippleSize: PropTypes.number,
+  /**
+   * Horizontal position of the ripple center.
+   */
+  rippleX: PropTypes.number,
+  /**
+   * Vertical position of the ripple center.
+   */
+  rippleY: PropTypes.number,
+  /**
+   * exit delay
+   */
+  timeout: PropTypes.number.isRequired
+} : void 0;
+const touchRippleClasses = generateUtilityClasses("MuiTouchRipple", ["root", "ripple", "rippleVisible", "ripplePulsate", "child", "childLeaving", "childPulsate"]);
+const _excluded$1m = ["center", "classes", "className"];
+let _$2 = (t) => t, _t$2, _t2$2, _t3$2, _t4$2;
+const DURATION = 550;
+const DELAY_RIPPLE = 80;
+const enterKeyframe = keyframes(_t$2 || (_t$2 = _$2`
+  0% {
+    transform: scale(0);
+    opacity: 0.1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+`));
+const exitKeyframe = keyframes(_t2$2 || (_t2$2 = _$2`
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+`));
+const pulsateKeyframe = keyframes(_t3$2 || (_t3$2 = _$2`
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.92);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+`));
+const TouchRippleRoot = styled("span", {
+  name: "MuiTouchRipple",
+  slot: "Root"
+})({
+  overflow: "hidden",
+  pointerEvents: "none",
+  position: "absolute",
+  zIndex: 0,
+  top: 0,
+  right: 0,
+  bottom: 0,
+  left: 0,
+  borderRadius: "inherit"
+});
+const TouchRippleRipple = styled(Ripple, {
+  name: "MuiTouchRipple",
+  slot: "Ripple"
+})(_t4$2 || (_t4$2 = _$2`
+  opacity: 0;
+  position: absolute;
+
+  &.${0} {
+    opacity: 0.3;
+    transform: scale(1);
+    animation-name: ${0};
+    animation-duration: ${0}ms;
+    animation-timing-function: ${0};
+  }
+
+  &.${0} {
+    animation-duration: ${0}ms;
+  }
+
+  & .${0} {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: currentColor;
+  }
+
+  & .${0} {
+    opacity: 0;
+    animation-name: ${0};
+    animation-duration: ${0}ms;
+    animation-timing-function: ${0};
+  }
+
+  & .${0} {
+    position: absolute;
+    /* @noflip */
+    left: 0px;
+    top: 0;
+    animation-name: ${0};
+    animation-duration: 2500ms;
+    animation-timing-function: ${0};
+    animation-iteration-count: infinite;
+    animation-delay: 200ms;
+  }
+`), touchRippleClasses.rippleVisible, enterKeyframe, DURATION, ({
+  theme
+}) => theme.transitions.easing.easeInOut, touchRippleClasses.ripplePulsate, ({
+  theme
+}) => theme.transitions.duration.shorter, touchRippleClasses.child, touchRippleClasses.childLeaving, exitKeyframe, DURATION, ({
+  theme
+}) => theme.transitions.easing.easeInOut, touchRippleClasses.childPulsate, pulsateKeyframe, ({
+  theme
+}) => theme.transitions.easing.easeInOut);
+const TouchRipple = /* @__PURE__ */ React.forwardRef(function TouchRipple2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiTouchRipple"
+  });
+  const {
+    center: centerProp = false,
+    classes = {},
+    className
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1m);
+  const [ripples, setRipples] = React.useState([]);
+  const nextKey = React.useRef(0);
+  const rippleCallback = React.useRef(null);
+  React.useEffect(() => {
+    if (rippleCallback.current) {
+      rippleCallback.current();
+      rippleCallback.current = null;
+    }
+  }, [ripples]);
+  const ignoringMouseDown = React.useRef(false);
+  const startTimer = useTimeout$1();
+  const startTimerCommit = React.useRef(null);
+  const container = React.useRef(null);
+  const startCommit = React.useCallback((params) => {
+    const {
+      pulsate: pulsate2,
+      rippleX,
+      rippleY,
+      rippleSize,
+      cb
+    } = params;
+    setRipples((oldRipples) => [...oldRipples, /* @__PURE__ */ jsx(TouchRippleRipple, {
+      classes: {
+        ripple: clsx(classes.ripple, touchRippleClasses.ripple),
+        rippleVisible: clsx(classes.rippleVisible, touchRippleClasses.rippleVisible),
+        ripplePulsate: clsx(classes.ripplePulsate, touchRippleClasses.ripplePulsate),
+        child: clsx(classes.child, touchRippleClasses.child),
+        childLeaving: clsx(classes.childLeaving, touchRippleClasses.childLeaving),
+        childPulsate: clsx(classes.childPulsate, touchRippleClasses.childPulsate)
+      },
+      timeout: DURATION,
+      pulsate: pulsate2,
+      rippleX,
+      rippleY,
+      rippleSize
+    }, nextKey.current)]);
+    nextKey.current += 1;
+    rippleCallback.current = cb;
+  }, [classes]);
+  const start = React.useCallback((event = {}, options = {}, cb = () => {
+  }) => {
+    const {
+      pulsate: pulsate2 = false,
+      center = centerProp || options.pulsate,
+      fakeElement = false
+      // For test purposes
+    } = options;
+    if ((event == null ? void 0 : event.type) === "mousedown" && ignoringMouseDown.current) {
+      ignoringMouseDown.current = false;
+      return;
+    }
+    if ((event == null ? void 0 : event.type) === "touchstart") {
+      ignoringMouseDown.current = true;
+    }
+    const element = fakeElement ? null : container.current;
+    const rect = element ? element.getBoundingClientRect() : {
+      width: 0,
+      height: 0,
+      left: 0,
+      top: 0
+    };
+    let rippleX;
+    let rippleY;
+    let rippleSize;
+    if (center || event === void 0 || event.clientX === 0 && event.clientY === 0 || !event.clientX && !event.touches) {
+      rippleX = Math.round(rect.width / 2);
+      rippleY = Math.round(rect.height / 2);
+    } else {
+      const {
+        clientX,
+        clientY
+      } = event.touches && event.touches.length > 0 ? event.touches[0] : event;
+      rippleX = Math.round(clientX - rect.left);
+      rippleY = Math.round(clientY - rect.top);
+    }
+    if (center) {
+      rippleSize = Math.sqrt((2 * rect.width ** 2 + rect.height ** 2) / 3);
+      if (rippleSize % 2 === 0) {
+        rippleSize += 1;
+      }
+    } else {
+      const sizeX = Math.max(Math.abs((element ? element.clientWidth : 0) - rippleX), rippleX) * 2 + 2;
+      const sizeY = Math.max(Math.abs((element ? element.clientHeight : 0) - rippleY), rippleY) * 2 + 2;
+      rippleSize = Math.sqrt(sizeX ** 2 + sizeY ** 2);
+    }
+    if (event != null && event.touches) {
+      if (startTimerCommit.current === null) {
+        startTimerCommit.current = () => {
+          startCommit({
+            pulsate: pulsate2,
+            rippleX,
+            rippleY,
+            rippleSize,
+            cb
+          });
+        };
+        startTimer.start(DELAY_RIPPLE, () => {
+          if (startTimerCommit.current) {
+            startTimerCommit.current();
+            startTimerCommit.current = null;
+          }
+        });
+      }
+    } else {
+      startCommit({
+        pulsate: pulsate2,
+        rippleX,
+        rippleY,
+        rippleSize,
+        cb
+      });
+    }
+  }, [centerProp, startCommit, startTimer]);
+  const pulsate = React.useCallback(() => {
+    start({}, {
+      pulsate: true
+    });
+  }, [start]);
+  const stop = React.useCallback((event, cb) => {
+    startTimer.clear();
+    if ((event == null ? void 0 : event.type) === "touchend" && startTimerCommit.current) {
+      startTimerCommit.current();
+      startTimerCommit.current = null;
+      startTimer.start(0, () => {
+        stop(event, cb);
+      });
+      return;
+    }
+    startTimerCommit.current = null;
+    setRipples((oldRipples) => {
+      if (oldRipples.length > 0) {
+        return oldRipples.slice(1);
+      }
+      return oldRipples;
+    });
+    rippleCallback.current = cb;
+  }, [startTimer]);
+  React.useImperativeHandle(ref, () => ({
+    pulsate,
+    start,
+    stop
+  }), [pulsate, start, stop]);
+  return /* @__PURE__ */ jsx(TouchRippleRoot, _extends$1({
+    className: clsx(touchRippleClasses.root, classes.root, className),
+    ref: container
+  }, other, {
+    children: /* @__PURE__ */ jsx(TransitionGroup, {
+      component: null,
+      exit: true,
+      children: ripples
+    })
+  }));
+});
+process.env.NODE_ENV !== "production" ? TouchRipple.propTypes = {
+  /**
+   * If `true`, the ripple starts at the center of the component
+   * rather than at the point of interaction.
+   */
+  center: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string
+} : void 0;
+function getButtonBaseUtilityClass(slot) {
+  return generateUtilityClass("MuiButtonBase", slot);
+}
+const buttonBaseClasses = generateUtilityClasses("MuiButtonBase", ["root", "disabled", "focusVisible"]);
+const _excluded$1l = ["action", "centerRipple", "children", "className", "component", "disabled", "disableRipple", "disableTouchRipple", "focusRipple", "focusVisibleClassName", "LinkComponent", "onBlur", "onClick", "onContextMenu", "onDragLeave", "onFocus", "onFocusVisible", "onKeyDown", "onKeyUp", "onMouseDown", "onMouseLeave", "onMouseUp", "onTouchEnd", "onTouchMove", "onTouchStart", "tabIndex", "TouchRippleProps", "touchRippleRef", "type"];
+const useUtilityClasses$13 = (ownerState) => {
+  const {
+    disabled,
+    focusVisible,
+    focusVisibleClassName,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", disabled && "disabled", focusVisible && "focusVisible"]
+  };
+  const composedClasses = composeClasses(slots, getButtonBaseUtilityClass, classes);
+  if (focusVisible && focusVisibleClassName) {
+    composedClasses.root += ` ${focusVisibleClassName}`;
+  }
+  return composedClasses;
+};
+const ButtonBaseRoot = styled("button", {
+  name: "MuiButtonBase",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  position: "relative",
+  boxSizing: "border-box",
+  WebkitTapHighlightColor: "transparent",
+  backgroundColor: "transparent",
+  // Reset default value
+  // We disable the focus ring for mouse, touch and keyboard users.
+  outline: 0,
+  border: 0,
+  margin: 0,
+  // Remove the margin in Safari
+  borderRadius: 0,
+  padding: 0,
+  // Remove the padding in Firefox
+  cursor: "pointer",
+  userSelect: "none",
+  verticalAlign: "middle",
+  MozAppearance: "none",
+  // Reset
+  WebkitAppearance: "none",
+  // Reset
+  textDecoration: "none",
+  // So we take precedent over the style of a native <a /> element.
+  color: "inherit",
+  "&::-moz-focus-inner": {
+    borderStyle: "none"
+    // Remove Firefox dotted outline.
+  },
+  [`&.${buttonBaseClasses.disabled}`]: {
+    pointerEvents: "none",
+    // Disable link interactions
+    cursor: "default"
+  },
+  "@media print": {
+    colorAdjust: "exact"
+  }
+});
+const ButtonBase = /* @__PURE__ */ React.forwardRef(function ButtonBase2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiButtonBase"
+  });
+  const {
+    action,
+    centerRipple = false,
+    children,
+    className,
+    component = "button",
+    disabled = false,
+    disableRipple = false,
+    disableTouchRipple = false,
+    focusRipple = false,
+    LinkComponent = "a",
+    onBlur,
+    onClick,
+    onContextMenu,
+    onDragLeave,
+    onFocus,
+    onFocusVisible,
+    onKeyDown,
+    onKeyUp,
+    onMouseDown,
+    onMouseLeave,
+    onMouseUp,
+    onTouchEnd,
+    onTouchMove,
+    onTouchStart,
+    tabIndex = 0,
+    TouchRippleProps,
+    touchRippleRef,
+    type
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1l);
+  const buttonRef = React.useRef(null);
+  const rippleRef = React.useRef(null);
+  const handleRippleRef = useForkRef(rippleRef, touchRippleRef);
+  const {
+    isFocusVisibleRef,
+    onFocus: handleFocusVisible,
+    onBlur: handleBlurVisible,
+    ref: focusVisibleRef
+  } = useIsFocusVisible();
+  const [focusVisible, setFocusVisible] = React.useState(false);
+  if (disabled && focusVisible) {
+    setFocusVisible(false);
+  }
+  React.useImperativeHandle(action, () => ({
+    focusVisible: () => {
+      setFocusVisible(true);
+      buttonRef.current.focus();
+    }
+  }), []);
+  const [mountedState, setMountedState] = React.useState(false);
+  React.useEffect(() => {
+    setMountedState(true);
+  }, []);
+  const enableTouchRipple = mountedState && !disableRipple && !disabled;
+  React.useEffect(() => {
+    if (focusVisible && focusRipple && !disableRipple && mountedState) {
+      rippleRef.current.pulsate();
+    }
+  }, [disableRipple, focusRipple, focusVisible, mountedState]);
+  function useRippleHandler(rippleAction, eventCallback, skipRippleAction = disableTouchRipple) {
+    return useEventCallback((event) => {
+      if (eventCallback) {
+        eventCallback(event);
+      }
+      const ignore = skipRippleAction;
+      if (!ignore && rippleRef.current) {
+        rippleRef.current[rippleAction](event);
+      }
+      return true;
+    });
+  }
+  const handleMouseDown = useRippleHandler("start", onMouseDown);
+  const handleContextMenu = useRippleHandler("stop", onContextMenu);
+  const handleDragLeave = useRippleHandler("stop", onDragLeave);
+  const handleMouseUp = useRippleHandler("stop", onMouseUp);
+  const handleMouseLeave = useRippleHandler("stop", (event) => {
+    if (focusVisible) {
+      event.preventDefault();
+    }
+    if (onMouseLeave) {
+      onMouseLeave(event);
+    }
+  });
+  const handleTouchStart = useRippleHandler("start", onTouchStart);
+  const handleTouchEnd = useRippleHandler("stop", onTouchEnd);
+  const handleTouchMove = useRippleHandler("stop", onTouchMove);
+  const handleBlur = useRippleHandler("stop", (event) => {
+    handleBlurVisible(event);
+    if (isFocusVisibleRef.current === false) {
+      setFocusVisible(false);
+    }
+    if (onBlur) {
+      onBlur(event);
+    }
+  }, false);
+  const handleFocus = useEventCallback((event) => {
+    if (!buttonRef.current) {
+      buttonRef.current = event.currentTarget;
+    }
+    handleFocusVisible(event);
+    if (isFocusVisibleRef.current === true) {
+      setFocusVisible(true);
+      if (onFocusVisible) {
+        onFocusVisible(event);
+      }
+    }
+    if (onFocus) {
+      onFocus(event);
+    }
+  });
+  const isNonNativeButton = () => {
+    const button = buttonRef.current;
+    return component && component !== "button" && !(button.tagName === "A" && button.href);
+  };
+  const keydownRef = React.useRef(false);
+  const handleKeyDown = useEventCallback((event) => {
+    if (focusRipple && !keydownRef.current && focusVisible && rippleRef.current && event.key === " ") {
+      keydownRef.current = true;
+      rippleRef.current.stop(event, () => {
+        rippleRef.current.start(event);
+      });
+    }
+    if (event.target === event.currentTarget && isNonNativeButton() && event.key === " ") {
+      event.preventDefault();
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+    if (event.target === event.currentTarget && isNonNativeButton() && event.key === "Enter" && !disabled) {
+      event.preventDefault();
+      if (onClick) {
+        onClick(event);
+      }
+    }
+  });
+  const handleKeyUp = useEventCallback((event) => {
+    if (focusRipple && event.key === " " && rippleRef.current && focusVisible && !event.defaultPrevented) {
+      keydownRef.current = false;
+      rippleRef.current.stop(event, () => {
+        rippleRef.current.pulsate(event);
+      });
+    }
+    if (onKeyUp) {
+      onKeyUp(event);
+    }
+    if (onClick && event.target === event.currentTarget && isNonNativeButton() && event.key === " " && !event.defaultPrevented) {
+      onClick(event);
+    }
+  });
+  let ComponentProp = component;
+  if (ComponentProp === "button" && (other.href || other.to)) {
+    ComponentProp = LinkComponent;
+  }
+  const buttonProps = {};
+  if (ComponentProp === "button") {
+    buttonProps.type = type === void 0 ? "button" : type;
+    buttonProps.disabled = disabled;
+  } else {
+    if (!other.href && !other.to) {
+      buttonProps.role = "button";
+    }
+    if (disabled) {
+      buttonProps["aria-disabled"] = disabled;
+    }
+  }
+  const handleRef = useForkRef(ref, focusVisibleRef, buttonRef);
+  if (process.env.NODE_ENV !== "production") {
+    React.useEffect(() => {
+      if (enableTouchRipple && !rippleRef.current) {
+        console.error(["MUI: The `component` prop provided to ButtonBase is invalid.", "Please make sure the children prop is rendered in this custom component."].join("\n"));
+      }
+    }, [enableTouchRipple]);
+  }
+  const ownerState = _extends$1({}, props, {
+    centerRipple,
+    component,
+    disabled,
+    disableRipple,
+    disableTouchRipple,
+    focusRipple,
+    tabIndex,
+    focusVisible
+  });
+  const classes = useUtilityClasses$13(ownerState);
+  return /* @__PURE__ */ jsxs(ButtonBaseRoot, _extends$1({
+    as: ComponentProp,
+    className: clsx(classes.root, className),
+    ownerState,
+    onBlur: handleBlur,
+    onClick,
+    onContextMenu: handleContextMenu,
+    onFocus: handleFocus,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    onMouseDown: handleMouseDown,
+    onMouseLeave: handleMouseLeave,
+    onMouseUp: handleMouseUp,
+    onDragLeave: handleDragLeave,
+    onTouchEnd: handleTouchEnd,
+    onTouchMove: handleTouchMove,
+    onTouchStart: handleTouchStart,
+    ref: handleRef,
+    tabIndex: disabled ? -1 : tabIndex,
+    type
+  }, buttonProps, other, {
+    children: [children, enableTouchRipple ? (
+      /* TouchRipple is only needed client-side, x2 boost on the server. */
+      /* @__PURE__ */ jsx(TouchRipple, _extends$1({
+        ref: handleRippleRef,
+        center: centerRipple
+      }, TouchRippleProps))
+    ) : null]
+  }));
+});
+process.env.NODE_ENV !== "production" ? ButtonBase.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * A ref for imperative actions.
+   * It currently only supports `focusVisible()` action.
+   */
+  action: refType,
+  /**
+   * If `true`, the ripples are centered.
+   * They won't start at the cursor interaction position.
+   * @default false
+   */
+  centerRipple: PropTypes.bool,
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: elementTypeAcceptingRef,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   *
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * If `true`, the touch ripple effect is disabled.
+   * @default false
+   */
+  disableTouchRipple: PropTypes.bool,
+  /**
+   * If `true`, the base button will have a keyboard focus ripple.
+   * @default false
+   */
+  focusRipple: PropTypes.bool,
+  /**
+   * This prop can help identify which element has keyboard focus.
+   * The class name will be applied when the element gains the focus through keyboard interaction.
+   * It's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
+   * The rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/HEAD/explainer.md).
+   * A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components
+   * if needed.
+   */
+  focusVisibleClassName: PropTypes.string,
+  /**
+   * @ignore
+   */
+  href: PropTypes.any,
+  /**
+   * The component used to render a link when the `href` prop is provided.
+   * @default 'a'
+   */
+  LinkComponent: PropTypes.elementType,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onClick: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onContextMenu: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onDragLeave: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
+  /**
+   * Callback fired when the component is focused with a keyboard.
+   * We trigger a `onFocus` callback too.
+   */
+  onFocusVisible: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyDown: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyUp: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onMouseDown: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onMouseLeave: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onMouseUp: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onTouchEnd: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onTouchMove: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onTouchStart: PropTypes.func,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * @default 0
+   */
+  tabIndex: PropTypes.number,
+  /**
+   * Props applied to the `TouchRipple` element.
+   */
+  TouchRippleProps: PropTypes.object,
+  /**
+   * A ref that points to the `TouchRipple` element.
+   */
+  touchRippleRef: PropTypes.oneOfType([PropTypes.func, PropTypes.shape({
+    current: PropTypes.shape({
+      pulsate: PropTypes.func.isRequired,
+      start: PropTypes.func.isRequired,
+      stop: PropTypes.func.isRequired
+    })
+  })]),
+  /**
+   * @ignore
+   */
+  type: PropTypes.oneOfType([PropTypes.oneOf(["button", "reset", "submit"]), PropTypes.string])
+} : void 0;
+function getDividerUtilityClass(slot) {
+  return generateUtilityClass("MuiDivider", slot);
+}
+const dividerClasses = generateUtilityClasses("MuiDivider", ["root", "absolute", "fullWidth", "inset", "middle", "flexItem", "light", "vertical", "withChildren", "withChildrenVertical", "textAlignRight", "textAlignLeft", "wrapper", "wrapperVertical"]);
+const _excluded$1k = ["absolute", "children", "className", "component", "flexItem", "light", "orientation", "role", "textAlign", "variant"];
+const useUtilityClasses$12 = (ownerState) => {
+  const {
+    absolute,
+    children,
+    classes,
+    flexItem,
+    light: light2,
+    orientation,
+    textAlign,
+    variant
+  } = ownerState;
+  const slots = {
+    root: ["root", absolute && "absolute", variant, light2 && "light", orientation === "vertical" && "vertical", flexItem && "flexItem", children && "withChildren", children && orientation === "vertical" && "withChildrenVertical", textAlign === "right" && orientation !== "vertical" && "textAlignRight", textAlign === "left" && orientation !== "vertical" && "textAlignLeft"],
+    wrapper: ["wrapper", orientation === "vertical" && "wrapperVertical"]
+  };
+  return composeClasses(slots, getDividerUtilityClass, classes);
+};
+const DividerRoot = styled("div", {
+  name: "MuiDivider",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.absolute && styles2.absolute, styles2[ownerState.variant], ownerState.light && styles2.light, ownerState.orientation === "vertical" && styles2.vertical, ownerState.flexItem && styles2.flexItem, ownerState.children && styles2.withChildren, ownerState.children && ownerState.orientation === "vertical" && styles2.withChildrenVertical, ownerState.textAlign === "right" && ownerState.orientation !== "vertical" && styles2.textAlignRight, ownerState.textAlign === "left" && ownerState.orientation !== "vertical" && styles2.textAlignLeft];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  margin: 0,
+  // Reset browser default style.
+  flexShrink: 0,
+  borderWidth: 0,
+  borderStyle: "solid",
+  borderColor: (theme.vars || theme).palette.divider,
+  borderBottomWidth: "thin"
+}, ownerState.absolute && {
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  width: "100%"
+}, ownerState.light && {
+  borderColor: theme.vars ? `rgba(${theme.vars.palette.dividerChannel} / 0.08)` : colorManipulatorExports.alpha(theme.palette.divider, 0.08)
+}, ownerState.variant === "inset" && {
+  marginLeft: 72
+}, ownerState.variant === "middle" && ownerState.orientation === "horizontal" && {
+  marginLeft: theme.spacing(2),
+  marginRight: theme.spacing(2)
+}, ownerState.variant === "middle" && ownerState.orientation === "vertical" && {
+  marginTop: theme.spacing(1),
+  marginBottom: theme.spacing(1)
+}, ownerState.orientation === "vertical" && {
+  height: "100%",
+  borderBottomWidth: 0,
+  borderRightWidth: "thin"
+}, ownerState.flexItem && {
+  alignSelf: "stretch",
+  height: "auto"
+}), ({
+  ownerState
+}) => _extends$1({}, ownerState.children && {
+  display: "flex",
+  whiteSpace: "nowrap",
+  textAlign: "center",
+  border: 0,
+  borderTopStyle: "solid",
+  borderLeftStyle: "solid",
+  "&::before, &::after": {
+    content: '""',
+    alignSelf: "center"
+  }
+}), ({
+  theme,
+  ownerState
+}) => _extends$1({}, ownerState.children && ownerState.orientation !== "vertical" && {
+  "&::before, &::after": {
+    width: "100%",
+    borderTop: `thin solid ${(theme.vars || theme).palette.divider}`,
+    borderTopStyle: "inherit"
+  }
+}), ({
+  theme,
+  ownerState
+}) => _extends$1({}, ownerState.children && ownerState.orientation === "vertical" && {
+  flexDirection: "column",
+  "&::before, &::after": {
+    height: "100%",
+    borderLeft: `thin solid ${(theme.vars || theme).palette.divider}`,
+    borderLeftStyle: "inherit"
+  }
+}), ({
+  ownerState
+}) => _extends$1({}, ownerState.textAlign === "right" && ownerState.orientation !== "vertical" && {
+  "&::before": {
+    width: "90%"
+  },
+  "&::after": {
+    width: "10%"
+  }
+}, ownerState.textAlign === "left" && ownerState.orientation !== "vertical" && {
+  "&::before": {
+    width: "10%"
+  },
+  "&::after": {
+    width: "90%"
+  }
+}));
+const DividerWrapper = styled("span", {
+  name: "MuiDivider",
+  slot: "Wrapper",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.wrapper, ownerState.orientation === "vertical" && styles2.wrapperVertical];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  display: "inline-block",
+  paddingLeft: `calc(${theme.spacing(1)} * 1.2)`,
+  paddingRight: `calc(${theme.spacing(1)} * 1.2)`
+}, ownerState.orientation === "vertical" && {
+  paddingTop: `calc(${theme.spacing(1)} * 1.2)`,
+  paddingBottom: `calc(${theme.spacing(1)} * 1.2)`
+}));
+const Divider = /* @__PURE__ */ React.forwardRef(function Divider2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiDivider"
+  });
+  const {
+    absolute = false,
+    children,
+    className,
+    component = children ? "div" : "hr",
+    flexItem = false,
+    light: light2 = false,
+    orientation = "horizontal",
+    role = component !== "hr" ? "separator" : void 0,
+    textAlign = "center",
+    variant = "fullWidth"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1k);
+  const ownerState = _extends$1({}, props, {
+    absolute,
+    component,
+    flexItem,
+    light: light2,
+    orientation,
+    role,
+    textAlign,
+    variant
+  });
+  const classes = useUtilityClasses$12(ownerState);
+  return /* @__PURE__ */ jsx(DividerRoot, _extends$1({
+    as: component,
+    className: clsx(classes.root, className),
+    role,
+    ref,
+    ownerState
+  }, other, {
+    children: children ? /* @__PURE__ */ jsx(DividerWrapper, {
+      className: classes.wrapper,
+      ownerState,
+      children
+    }) : null
+  }));
+});
+Divider.muiSkipListHighlight = true;
+process.env.NODE_ENV !== "production" ? Divider.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Absolutely position the element.
+   * @default false
+   */
+  absolute: PropTypes.bool,
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, a vertical divider will have the correct height when used in flex container.
+   * (By default, a vertical divider will have a calculated height of `0px` if it is the child of a flex container.)
+   * @default false
+   */
+  flexItem: PropTypes.bool,
+  /**
+   * If `true`, the divider will have a lighter color.
+   * @default false
+   * @deprecated Use <Divider sx={{ opacity: 0.6 }} /> (or any opacity or color) instead. [How to migrate](/material-ui/migration/migrating-from-deprecated-apis/)
+   */
+  light: PropTypes.bool,
+  /**
+   * The component orientation.
+   * @default 'horizontal'
+   */
+  orientation: PropTypes.oneOf(["horizontal", "vertical"]),
+  /**
+   * @ignore
+   */
+  role: PropTypes.string,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The text alignment.
+   * @default 'center'
+   */
+  textAlign: PropTypes.oneOf(["center", "left", "right"]),
+  /**
+   * The variant to use.
+   * @default 'fullWidth'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["fullWidth", "inset", "middle"]), PropTypes.string])
+} : void 0;
+function getListItemIconUtilityClass(slot) {
+  return generateUtilityClass("MuiListItemIcon", slot);
+}
+const listItemIconClasses = generateUtilityClasses("MuiListItemIcon", ["root", "alignItemsFlexStart"]);
+const _excluded$1j = ["className"];
+const useUtilityClasses$11 = (ownerState) => {
+  const {
+    alignItems,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", alignItems === "flex-start" && "alignItemsFlexStart"]
+  };
+  return composeClasses(slots, getListItemIconUtilityClass, classes);
+};
+const ListItemIconRoot = styled("div", {
+  name: "MuiListItemIcon",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.alignItems === "flex-start" && styles2.alignItemsFlexStart];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  minWidth: 56,
+  color: (theme.vars || theme).palette.action.active,
+  flexShrink: 0,
+  display: "inline-flex"
+}, ownerState.alignItems === "flex-start" && {
+  marginTop: 8
+}));
+const ListItemIcon = /* @__PURE__ */ React.forwardRef(function ListItemIcon2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiListItemIcon"
+  });
+  const {
+    className
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1j);
+  const context = React.useContext(ListContext);
+  const ownerState = _extends$1({}, props, {
+    alignItems: context.alignItems
+  });
+  const classes = useUtilityClasses$11(ownerState);
+  return /* @__PURE__ */ jsx(ListItemIconRoot, _extends$1({
+    className: clsx(classes.root, className),
+    ownerState,
+    ref
+  }, other));
+});
+process.env.NODE_ENV !== "production" ? ListItemIcon.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component, normally `Icon`, `SvgIcon`,
+   * or a `@mui/icons-material` SVG icon element.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+function getTypographyUtilityClass(slot) {
+  return generateUtilityClass("MuiTypography", slot);
+}
+generateUtilityClasses("MuiTypography", ["root", "h1", "h2", "h3", "h4", "h5", "h6", "subtitle1", "subtitle2", "body1", "body2", "inherit", "button", "caption", "overline", "alignLeft", "alignRight", "alignCenter", "alignJustify", "noWrap", "gutterBottom", "paragraph"]);
+const _excluded$1i = ["align", "className", "component", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"];
+const useUtilityClasses$10 = (ownerState) => {
+  const {
+    align,
+    gutterBottom,
+    noWrap,
+    paragraph,
+    variant,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, ownerState.align !== "inherit" && `align${capitalize(align)}`, gutterBottom && "gutterBottom", noWrap && "noWrap", paragraph && "paragraph"]
+  };
+  return composeClasses(slots, getTypographyUtilityClass, classes);
+};
+const TypographyRoot = styled("span", {
+  name: "MuiTypography",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.variant && styles2[ownerState.variant], ownerState.align !== "inherit" && styles2[`align${capitalize(ownerState.align)}`], ownerState.noWrap && styles2.noWrap, ownerState.gutterBottom && styles2.gutterBottom, ownerState.paragraph && styles2.paragraph];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  margin: 0
+}, ownerState.variant === "inherit" && {
+  // Some elements, like <button> on Chrome have default font that doesn't inherit, reset this.
+  font: "inherit"
+}, ownerState.variant !== "inherit" && theme.typography[ownerState.variant], ownerState.align !== "inherit" && {
+  textAlign: ownerState.align
+}, ownerState.noWrap && {
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  whiteSpace: "nowrap"
+}, ownerState.gutterBottom && {
+  marginBottom: "0.35em"
+}, ownerState.paragraph && {
+  marginBottom: 16
+}));
+const defaultVariantMapping = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  subtitle1: "h6",
+  subtitle2: "h6",
+  body1: "p",
+  body2: "p",
+  inherit: "p"
+};
+const colorTransformations = {
+  primary: "primary.main",
+  textPrimary: "text.primary",
+  secondary: "secondary.main",
+  textSecondary: "text.secondary",
+  error: "error.main"
+};
+const transformDeprecatedColors = (color2) => {
+  return colorTransformations[color2] || color2;
+};
+const Typography = /* @__PURE__ */ React.forwardRef(function Typography2(inProps, ref) {
+  const themeProps = useDefaultProps({
+    props: inProps,
+    name: "MuiTypography"
+  });
+  const color2 = transformDeprecatedColors(themeProps.color);
+  const props = extendSxProp(_extends$1({}, themeProps, {
+    color: color2
+  }));
+  const {
+    align = "inherit",
+    className,
+    component,
+    gutterBottom = false,
+    noWrap = false,
+    paragraph = false,
+    variant = "body1",
+    variantMapping = defaultVariantMapping
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1i);
+  const ownerState = _extends$1({}, props, {
+    align,
+    color: color2,
+    className,
+    component,
+    gutterBottom,
+    noWrap,
+    paragraph,
+    variant,
+    variantMapping
+  });
+  const Component2 = component || (paragraph ? "p" : variantMapping[variant] || defaultVariantMapping[variant]) || "span";
+  const classes = useUtilityClasses$10(ownerState);
+  return /* @__PURE__ */ jsx(TypographyRoot, _extends$1({
+    as: Component2,
+    ref,
+    ownerState,
+    className: clsx(classes.root, className)
+  }, other));
+});
+process.env.NODE_ENV !== "production" ? Typography.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Set the text-align on the component.
+   * @default 'inherit'
+   */
+  align: PropTypes.oneOf(["center", "inherit", "justify", "left", "right"]),
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the text will have a bottom margin.
+   * @default false
+   */
+  gutterBottom: PropTypes.bool,
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   * @default false
+   */
+  noWrap: PropTypes.bool,
+  /**
+   * If `true`, the element will be a paragraph element.
+   * @default false
+   */
+  paragraph: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Applies the theme typography styles.
+   * @default 'body1'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["body1", "body2", "button", "caption", "h1", "h2", "h3", "h4", "h5", "h6", "inherit", "overline", "subtitle1", "subtitle2"]), PropTypes.string]),
+  /**
+   * The component maps the variant prop to a range of different HTML element types.
+   * For instance, subtitle1 to `<h6>`.
+   * If you wish to change that mapping, you can provide your own.
+   * Alternatively, you can use the `component` prop.
+   * @default {
+   *   h1: 'h1',
+   *   h2: 'h2',
+   *   h3: 'h3',
+   *   h4: 'h4',
+   *   h5: 'h5',
+   *   h6: 'h6',
+   *   subtitle1: 'h6',
+   *   subtitle2: 'h6',
+   *   body1: 'p',
+   *   body2: 'p',
+   *   inherit: 'p',
+   * }
+   */
+  variantMapping: PropTypes.object
+} : void 0;
+function getListItemTextUtilityClass(slot) {
+  return generateUtilityClass("MuiListItemText", slot);
+}
+const listItemTextClasses = generateUtilityClasses("MuiListItemText", ["root", "multiline", "dense", "inset", "primary", "secondary"]);
+const _excluded$1h = ["children", "className", "disableTypography", "inset", "primary", "primaryTypographyProps", "secondary", "secondaryTypographyProps"];
+const useUtilityClasses$$ = (ownerState) => {
+  const {
+    classes,
+    inset,
+    primary,
+    secondary,
+    dense
+  } = ownerState;
+  const slots = {
+    root: ["root", inset && "inset", dense && "dense", primary && secondary && "multiline"],
+    primary: ["primary"],
+    secondary: ["secondary"]
+  };
+  return composeClasses(slots, getListItemTextUtilityClass, classes);
+};
+const ListItemTextRoot = styled("div", {
+  name: "MuiListItemText",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [{
+      [`& .${listItemTextClasses.primary}`]: styles2.primary
+    }, {
+      [`& .${listItemTextClasses.secondary}`]: styles2.secondary
+    }, styles2.root, ownerState.inset && styles2.inset, ownerState.primary && ownerState.secondary && styles2.multiline, ownerState.dense && styles2.dense];
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  flex: "1 1 auto",
+  minWidth: 0,
+  marginTop: 4,
+  marginBottom: 4
+}, ownerState.primary && ownerState.secondary && {
+  marginTop: 6,
+  marginBottom: 6
+}, ownerState.inset && {
+  paddingLeft: 56
+}));
+const ListItemText = /* @__PURE__ */ React.forwardRef(function ListItemText2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiListItemText"
+  });
+  const {
+    children,
+    className,
+    disableTypography = false,
+    inset = false,
+    primary: primaryProp,
+    primaryTypographyProps,
+    secondary: secondaryProp,
+    secondaryTypographyProps
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1h);
+  const {
+    dense
+  } = React.useContext(ListContext);
+  let primary = primaryProp != null ? primaryProp : children;
+  let secondary = secondaryProp;
+  const ownerState = _extends$1({}, props, {
+    disableTypography,
+    inset,
+    primary: !!primary,
+    secondary: !!secondary,
+    dense
+  });
+  const classes = useUtilityClasses$$(ownerState);
+  if (primary != null && primary.type !== Typography && !disableTypography) {
+    primary = /* @__PURE__ */ jsx(Typography, _extends$1({
+      variant: dense ? "body2" : "body1",
+      className: classes.primary,
+      component: primaryTypographyProps != null && primaryTypographyProps.variant ? void 0 : "span",
+      display: "block"
+    }, primaryTypographyProps, {
+      children: primary
+    }));
+  }
+  if (secondary != null && secondary.type !== Typography && !disableTypography) {
+    secondary = /* @__PURE__ */ jsx(Typography, _extends$1({
+      variant: "body2",
+      className: classes.secondary,
+      color: "text.secondary",
+      display: "block"
+    }, secondaryTypographyProps, {
+      children: secondary
+    }));
+  }
+  return /* @__PURE__ */ jsxs(ListItemTextRoot, _extends$1({
+    className: clsx(classes.root, className),
+    ownerState,
+    ref
+  }, other, {
+    children: [primary, secondary]
+  }));
+});
+process.env.NODE_ENV !== "production" ? ListItemText.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Alias for the `primary` prop.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * If `true`, the children won't be wrapped by a Typography component.
+   * This can be useful to render an alternative Typography variant by wrapping
+   * the `children` (or `primary`) text, and optional `secondary` text
+   * with the Typography component.
+   * @default false
+   */
+  disableTypography: PropTypes.bool,
+  /**
+   * If `true`, the children are indented.
+   * This should be used if there is no left avatar or left icon.
+   * @default false
+   */
+  inset: PropTypes.bool,
+  /**
+   * The main content element.
+   */
+  primary: PropTypes.node,
+  /**
+   * These props will be forwarded to the primary typography component
+   * (as long as disableTypography is not `true`).
+   */
+  primaryTypographyProps: PropTypes.object,
+  /**
+   * The secondary content element.
+   */
+  secondary: PropTypes.node,
+  /**
+   * These props will be forwarded to the secondary typography component
+   * (as long as disableTypography is not `true`).
+   */
+  secondaryTypographyProps: PropTypes.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+function getMenuItemUtilityClass(slot) {
+  return generateUtilityClass("MuiMenuItem", slot);
+}
+const menuItemClasses = generateUtilityClasses("MuiMenuItem", ["root", "focusVisible", "dense", "disabled", "divider", "gutters", "selected"]);
+const _excluded$1g = ["autoFocus", "component", "dense", "divider", "disableGutters", "focusVisibleClassName", "role", "tabIndex", "className"];
+const overridesResolver$1 = (props, styles2) => {
+  const {
+    ownerState
+  } = props;
+  return [styles2.root, ownerState.dense && styles2.dense, ownerState.divider && styles2.divider, !ownerState.disableGutters && styles2.gutters];
+};
+const useUtilityClasses$_ = (ownerState) => {
+  const {
+    disabled,
+    dense,
+    divider,
+    disableGutters,
+    selected,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", dense && "dense", disabled && "disabled", !disableGutters && "gutters", divider && "divider", selected && "selected"]
+  };
+  const composedClasses = composeClasses(slots, getMenuItemUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const MenuItemRoot = styled(ButtonBase, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiMenuItem",
+  slot: "Root",
+  overridesResolver: overridesResolver$1
+})(({
+  theme,
+  ownerState
+}) => _extends$1({}, theme.typography.body1, {
+  display: "flex",
+  justifyContent: "flex-start",
+  alignItems: "center",
+  position: "relative",
+  textDecoration: "none",
+  minHeight: 48,
+  paddingTop: 6,
+  paddingBottom: 6,
+  boxSizing: "border-box",
+  whiteSpace: "nowrap"
+}, !ownerState.disableGutters && {
+  paddingLeft: 16,
+  paddingRight: 16
+}, ownerState.divider && {
+  borderBottom: `1px solid ${(theme.vars || theme).palette.divider}`,
+  backgroundClip: "padding-box"
+}, {
+  "&:hover": {
+    textDecoration: "none",
+    backgroundColor: (theme.vars || theme).palette.action.hover,
+    // Reset on touch devices, it doesn't add specificity
+    "@media (hover: none)": {
+      backgroundColor: "transparent"
+    }
+  },
+  [`&.${menuItemClasses.selected}`]: {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / ${theme.vars.palette.action.selectedOpacity})` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+    [`&.${menuItemClasses.focusVisible}`]: {
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.focusOpacity}))` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.focusOpacity)
+    }
+  },
+  [`&.${menuItemClasses.selected}:hover`]: {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.hoverOpacity}))` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity),
+    // Reset on touch devices, it doesn't add specificity
+    "@media (hover: none)": {
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / ${theme.vars.palette.action.selectedOpacity})` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity)
+    }
+  },
+  [`&.${menuItemClasses.focusVisible}`]: {
+    backgroundColor: (theme.vars || theme).palette.action.focus
+  },
+  [`&.${menuItemClasses.disabled}`]: {
+    opacity: (theme.vars || theme).palette.action.disabledOpacity
+  },
+  [`& + .${dividerClasses.root}`]: {
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1)
+  },
+  [`& + .${dividerClasses.inset}`]: {
+    marginLeft: 52
+  },
+  [`& .${listItemTextClasses.root}`]: {
+    marginTop: 0,
+    marginBottom: 0
+  },
+  [`& .${listItemTextClasses.inset}`]: {
+    paddingLeft: 36
+  },
+  [`& .${listItemIconClasses.root}`]: {
+    minWidth: 36
+  }
+}, !ownerState.dense && {
+  [theme.breakpoints.up("sm")]: {
+    minHeight: "auto"
+  }
+}, ownerState.dense && _extends$1({
+  minHeight: 32,
+  // https://m2.material.io/components/menus#specs > Dense
+  paddingTop: 4,
+  paddingBottom: 4
+}, theme.typography.body2, {
+  [`& .${listItemIconClasses.root} svg`]: {
+    fontSize: "1.25rem"
+  }
+})));
+const MenuItem = /* @__PURE__ */ React.forwardRef(function MenuItem2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiMenuItem"
+  });
+  const {
+    autoFocus = false,
+    component = "li",
+    dense = false,
+    divider = false,
+    disableGutters = false,
+    focusVisibleClassName,
+    role = "menuitem",
+    tabIndex: tabIndexProp,
+    className
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1g);
+  const context = React.useContext(ListContext);
+  const childContext = React.useMemo(() => ({
+    dense: dense || context.dense || false,
+    disableGutters
+  }), [context.dense, dense, disableGutters]);
+  const menuItemRef = React.useRef(null);
+  useEnhancedEffect(() => {
+    if (autoFocus) {
+      if (menuItemRef.current) {
+        menuItemRef.current.focus();
+      } else if (process.env.NODE_ENV !== "production") {
+        console.error("MUI: Unable to set focus to a MenuItem whose component has not been rendered.");
+      }
+    }
+  }, [autoFocus]);
+  const ownerState = _extends$1({}, props, {
+    dense: childContext.dense,
+    divider,
+    disableGutters
+  });
+  const classes = useUtilityClasses$_(props);
+  const handleRef = useForkRef(menuItemRef, ref);
+  let tabIndex;
+  if (!props.disabled) {
+    tabIndex = tabIndexProp !== void 0 ? tabIndexProp : -1;
+  }
+  return /* @__PURE__ */ jsx(ListContext.Provider, {
+    value: childContext,
+    children: /* @__PURE__ */ jsx(MenuItemRoot, _extends$1({
+      ref: handleRef,
+      role,
+      tabIndex,
+      component,
+      focusVisibleClassName: clsx(classes.focusVisible, focusVisibleClassName),
+      className: clsx(classes.root, className)
+    }, other, {
+      ownerState,
+      classes
+    }))
+  });
+});
+process.env.NODE_ENV !== "production" ? MenuItem.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the list item is focused during the first mount.
+   * Focus will also be triggered if the value changes from false to true.
+   * @default false
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, compact vertical padding designed for keyboard and mouse input is used.
+   * The prop defaults to the value inherited from the parent Menu component.
+   * @default false
+   */
+  dense: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the left and right padding is removed.
+   * @default false
+   */
+  disableGutters: PropTypes.bool,
+  /**
+   * If `true`, a 1px light border is added to the bottom of the menu item.
+   * @default false
+   */
+  divider: PropTypes.bool,
+  /**
+   * This prop can help identify which element has keyboard focus.
+   * The class name will be applied when the element gains the focus through keyboard interaction.
+   * It's a polyfill for the [CSS :focus-visible selector](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
+   * The rationale for using this feature [is explained here](https://github.com/WICG/focus-visible/blob/HEAD/explainer.md).
+   * A [polyfill can be used](https://github.com/WICG/focus-visible) to apply a `focus-visible` class to other components
+   * if needed.
+   */
+  focusVisibleClassName: PropTypes.string,
+  /**
+   * @ignore
+   */
+  role: PropTypes.string,
+  /**
+   * If `true`, the component is selected.
+   * @default false
+   */
+  selected: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * @default 0
+   */
+  tabIndex: PropTypes.number
+} : void 0;
+function getSkeletonUtilityClass(slot) {
+  return generateUtilityClass("MuiSkeleton", slot);
+}
+generateUtilityClasses("MuiSkeleton", ["root", "text", "rectangular", "rounded", "circular", "pulse", "wave", "withChildren", "fitContent", "heightAuto"]);
+const _excluded$1f = ["animation", "className", "component", "height", "style", "variant", "width"];
+let _$1 = (t) => t, _t$1, _t2$1, _t3$1, _t4$1;
+const useUtilityClasses$Z = (ownerState) => {
+  const {
+    classes,
+    variant,
+    animation,
+    hasChildren,
+    width: width2,
+    height: height2
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, animation, hasChildren && "withChildren", hasChildren && !width2 && "fitContent", hasChildren && !height2 && "heightAuto"]
+  };
+  return composeClasses(slots, getSkeletonUtilityClass, classes);
+};
+const pulseKeyframe = keyframes(_t$1 || (_t$1 = _$1`
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+`));
+const waveKeyframe = keyframes(_t2$1 || (_t2$1 = _$1`
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    /* +0.5s of delay between each loop */
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+`));
+const SkeletonRoot = styled("span", {
+  name: "MuiSkeleton",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, styles2[ownerState.variant], ownerState.animation !== false && styles2[ownerState.animation], ownerState.hasChildren && styles2.withChildren, ownerState.hasChildren && !ownerState.width && styles2.fitContent, ownerState.hasChildren && !ownerState.height && styles2.heightAuto];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  const radiusUnit = getUnit(theme.shape.borderRadius) || "px";
+  const radiusValue = toUnitless(theme.shape.borderRadius);
+  return _extends$1({
+    display: "block",
+    // Create a "on paper" color with sufficient contrast retaining the color
+    backgroundColor: theme.vars ? theme.vars.palette.Skeleton.bg : alpha(theme.palette.text.primary, theme.palette.mode === "light" ? 0.11 : 0.13),
+    height: "1.2em"
+  }, ownerState.variant === "text" && {
+    marginTop: 0,
+    marginBottom: 0,
+    height: "auto",
+    transformOrigin: "0 55%",
+    transform: "scale(1, 0.60)",
+    borderRadius: `${radiusValue}${radiusUnit}/${Math.round(radiusValue / 0.6 * 10) / 10}${radiusUnit}`,
+    "&:empty:before": {
+      content: '"\\00a0"'
+    }
+  }, ownerState.variant === "circular" && {
+    borderRadius: "50%"
+  }, ownerState.variant === "rounded" && {
+    borderRadius: (theme.vars || theme).shape.borderRadius
+  }, ownerState.hasChildren && {
+    "& > *": {
+      visibility: "hidden"
+    }
+  }, ownerState.hasChildren && !ownerState.width && {
+    maxWidth: "fit-content"
+  }, ownerState.hasChildren && !ownerState.height && {
+    height: "auto"
+  });
+}, ({
+  ownerState
+}) => ownerState.animation === "pulse" && css(_t3$1 || (_t3$1 = _$1`
+      animation: ${0} 2s ease-in-out 0.5s infinite;
+    `), pulseKeyframe), ({
+  ownerState,
+  theme
+}) => ownerState.animation === "wave" && css(_t4$1 || (_t4$1 = _$1`
+      position: relative;
+      overflow: hidden;
+
+      /* Fix bug in Safari https://bugs.webkit.org/show_bug.cgi?id=68196 */
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+      &::after {
+        animation: ${0} 2s linear 0.5s infinite;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          ${0},
+          transparent
+        );
+        content: '';
+        position: absolute;
+        transform: translateX(-100%); /* Avoid flash during server-side hydration */
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+    `), waveKeyframe, (theme.vars || theme).palette.action.hover));
+const Skeleton = /* @__PURE__ */ React.forwardRef(function Skeleton2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiSkeleton"
+  });
+  const {
+    animation = "pulse",
+    className,
+    component = "span",
+    height: height2,
+    style: style2,
+    variant = "text",
+    width: width2
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1f);
+  const ownerState = _extends$1({}, props, {
+    animation,
+    component,
+    variant,
+    hasChildren: Boolean(other.children)
+  });
+  const classes = useUtilityClasses$Z(ownerState);
+  return /* @__PURE__ */ jsx(SkeletonRoot, _extends$1({
+    as: component,
+    ref,
+    className: clsx(classes.root, className),
+    ownerState
+  }, other, {
+    style: _extends$1({
+      width: width2,
+      height: height2
+    }, style2)
+  }));
+});
+process.env.NODE_ENV !== "production" ? Skeleton.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The animation.
+   * If `false` the animation effect is disabled.
+   * @default 'pulse'
+   */
+  animation: PropTypes.oneOf(["pulse", "wave", false]),
+  /**
+   * Optional children to infer width and height from.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Height of the skeleton.
+   * Useful when you don't want to adapt the skeleton to a text element but for instance a card.
+   */
+  height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The type of content that will be rendered.
+   * @default 'text'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["circular", "rectangular", "rounded", "text"]), PropTypes.string]),
+  /**
+   * Width of the skeleton.
+   * Useful when the skeleton is inside an inline element with no width of its own.
+   */
+  width: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
+} : void 0;
+const _excluded$1e = ["field", "align", "width", "contentWidth"];
+const useUtilityClasses$Y = (ownerState) => {
   const {
     align,
     classes
@@ -4480,19 +11727,19 @@ const useUtilityClasses$s = (ownerState) => {
 function GridSkeletonCell(props) {
   const {
     align,
-    width,
+    width: width2,
     contentWidth
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$H);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1e);
   const rootProps = useGridRootProps();
   const ownerState = {
     classes: rootProps.classes,
     align
   };
-  const classes = useUtilityClasses$s(ownerState);
+  const classes = useUtilityClasses$Y(ownerState);
   return /* @__PURE__ */ jsx("div", _extends$1({
     className: classes.root,
     style: {
-      width
+      width: width2
     }
   }, other, {
     children: /* @__PURE__ */ jsx(Skeleton, {
@@ -4535,197 +11782,197 @@ const columnHeaderStyles = {
     visibility: "visible"
   }
 };
-const GridRootStyles = styled$1("div", {
+const GridRootStyles = styled("div", {
   name: "MuiDataGrid",
   slot: "Root",
-  overridesResolver: (props, styles) => [
+  overridesResolver: (props, styles2) => [
     {
-      [`&.${gridClasses.autoHeight}`]: styles.autoHeight
+      [`&.${gridClasses.autoHeight}`]: styles2.autoHeight
     },
     {
-      [`&.${gridClasses.aggregationColumnHeader}`]: styles.aggregationColumnHeader
+      [`&.${gridClasses.aggregationColumnHeader}`]: styles2.aggregationColumnHeader
     },
     {
-      [`&.${gridClasses["aggregationColumnHeader--alignLeft"]}`]: styles["aggregationColumnHeader--alignLeft"]
+      [`&.${gridClasses["aggregationColumnHeader--alignLeft"]}`]: styles2["aggregationColumnHeader--alignLeft"]
     },
     {
-      [`&.${gridClasses["aggregationColumnHeader--alignCenter"]}`]: styles["aggregationColumnHeader--alignCenter"]
+      [`&.${gridClasses["aggregationColumnHeader--alignCenter"]}`]: styles2["aggregationColumnHeader--alignCenter"]
     },
     {
-      [`&.${gridClasses["aggregationColumnHeader--alignRight"]}`]: styles["aggregationColumnHeader--alignRight"]
+      [`&.${gridClasses["aggregationColumnHeader--alignRight"]}`]: styles2["aggregationColumnHeader--alignRight"]
     },
     {
-      [`&.${gridClasses.aggregationColumnHeaderLabel}`]: styles.aggregationColumnHeaderLabel
+      [`&.${gridClasses.aggregationColumnHeaderLabel}`]: styles2.aggregationColumnHeaderLabel
     },
     {
-      [`&.${gridClasses["root--disableUserSelection"]} .${gridClasses.cell}`]: styles["root--disableUserSelection"]
+      [`&.${gridClasses["root--disableUserSelection"]} .${gridClasses.cell}`]: styles2["root--disableUserSelection"]
     },
     {
-      [`&.${gridClasses.autosizing}`]: styles.autosizing
+      [`&.${gridClasses.autosizing}`]: styles2.autosizing
     },
     {
-      [`& .${gridClasses.editBooleanCell}`]: styles.editBooleanCell
+      [`& .${gridClasses.editBooleanCell}`]: styles2.editBooleanCell
     },
     {
-      [`& .${gridClasses["cell--editing"]}`]: styles["cell--editing"]
+      [`& .${gridClasses["cell--editing"]}`]: styles2["cell--editing"]
     },
     {
-      [`& .${gridClasses["cell--textCenter"]}`]: styles["cell--textCenter"]
+      [`& .${gridClasses["cell--textCenter"]}`]: styles2["cell--textCenter"]
     },
     {
-      [`& .${gridClasses["cell--textLeft"]}`]: styles["cell--textLeft"]
+      [`& .${gridClasses["cell--textLeft"]}`]: styles2["cell--textLeft"]
     },
     {
-      [`& .${gridClasses["cell--textRight"]}`]: styles["cell--textRight"]
+      [`& .${gridClasses["cell--textRight"]}`]: styles2["cell--textRight"]
     },
     // TODO v6: Remove
     {
-      [`& .${gridClasses["cell--withRenderer"]}`]: styles["cell--withRenderer"]
+      [`& .${gridClasses["cell--withRenderer"]}`]: styles2["cell--withRenderer"]
     },
     {
-      [`& .${gridClasses.cell}`]: styles.cell
+      [`& .${gridClasses.cell}`]: styles2.cell
     },
     {
-      [`& .${gridClasses["cell--rangeTop"]}`]: styles["cell--rangeTop"]
+      [`& .${gridClasses["cell--rangeTop"]}`]: styles2["cell--rangeTop"]
     },
     {
-      [`& .${gridClasses["cell--rangeBottom"]}`]: styles["cell--rangeBottom"]
+      [`& .${gridClasses["cell--rangeBottom"]}`]: styles2["cell--rangeBottom"]
     },
     {
-      [`& .${gridClasses["cell--rangeLeft"]}`]: styles["cell--rangeLeft"]
+      [`& .${gridClasses["cell--rangeLeft"]}`]: styles2["cell--rangeLeft"]
     },
     {
-      [`& .${gridClasses["cell--rangeRight"]}`]: styles["cell--rangeRight"]
+      [`& .${gridClasses["cell--rangeRight"]}`]: styles2["cell--rangeRight"]
     },
     {
-      [`& .${gridClasses["cell--withRightBorder"]}`]: styles["cell--withRightBorder"]
+      [`& .${gridClasses["cell--withRightBorder"]}`]: styles2["cell--withRightBorder"]
     },
     {
-      [`& .${gridClasses.cellContent}`]: styles.cellContent
+      [`& .${gridClasses.cellContent}`]: styles2.cellContent
     },
     {
-      [`& .${gridClasses.cellCheckbox}`]: styles.cellCheckbox
+      [`& .${gridClasses.cellCheckbox}`]: styles2.cellCheckbox
     },
     {
-      [`& .${gridClasses.cellSkeleton}`]: styles.cellSkeleton
+      [`& .${gridClasses.cellSkeleton}`]: styles2.cellSkeleton
     },
     {
-      [`& .${gridClasses.checkboxInput}`]: styles.checkboxInput
+      [`& .${gridClasses.checkboxInput}`]: styles2.checkboxInput
     },
     {
-      [`& .${gridClasses["columnHeader--alignCenter"]}`]: styles["columnHeader--alignCenter"]
+      [`& .${gridClasses["columnHeader--alignCenter"]}`]: styles2["columnHeader--alignCenter"]
     },
     {
-      [`& .${gridClasses["columnHeader--alignLeft"]}`]: styles["columnHeader--alignLeft"]
+      [`& .${gridClasses["columnHeader--alignLeft"]}`]: styles2["columnHeader--alignLeft"]
     },
     {
-      [`& .${gridClasses["columnHeader--alignRight"]}`]: styles["columnHeader--alignRight"]
+      [`& .${gridClasses["columnHeader--alignRight"]}`]: styles2["columnHeader--alignRight"]
     },
     {
-      [`& .${gridClasses["columnHeader--dragging"]}`]: styles["columnHeader--dragging"]
+      [`& .${gridClasses["columnHeader--dragging"]}`]: styles2["columnHeader--dragging"]
     },
     {
-      [`& .${gridClasses["columnHeader--moving"]}`]: styles["columnHeader--moving"]
+      [`& .${gridClasses["columnHeader--moving"]}`]: styles2["columnHeader--moving"]
     },
     {
-      [`& .${gridClasses["columnHeader--numeric"]}`]: styles["columnHeader--numeric"]
+      [`& .${gridClasses["columnHeader--numeric"]}`]: styles2["columnHeader--numeric"]
     },
     {
-      [`& .${gridClasses["columnHeader--sortable"]}`]: styles["columnHeader--sortable"]
+      [`& .${gridClasses["columnHeader--sortable"]}`]: styles2["columnHeader--sortable"]
     },
     {
-      [`& .${gridClasses["columnHeader--sorted"]}`]: styles["columnHeader--sorted"]
+      [`& .${gridClasses["columnHeader--sorted"]}`]: styles2["columnHeader--sorted"]
     },
     {
-      [`& .${gridClasses["columnHeader--withRightBorder"]}`]: styles["columnHeader--withRightBorder"]
+      [`& .${gridClasses["columnHeader--withRightBorder"]}`]: styles2["columnHeader--withRightBorder"]
     },
     {
-      [`& .${gridClasses.columnHeader}`]: styles.columnHeader
+      [`& .${gridClasses.columnHeader}`]: styles2.columnHeader
     },
     {
-      [`& .${gridClasses.headerFilterRow}`]: styles.headerFilterRow
+      [`& .${gridClasses.headerFilterRow}`]: styles2.headerFilterRow
     },
     {
-      [`& .${gridClasses.columnHeaderCheckbox}`]: styles.columnHeaderCheckbox
+      [`& .${gridClasses.columnHeaderCheckbox}`]: styles2.columnHeaderCheckbox
     },
     {
-      [`& .${gridClasses.columnHeaderDraggableContainer}`]: styles.columnHeaderDraggableContainer
+      [`& .${gridClasses.columnHeaderDraggableContainer}`]: styles2.columnHeaderDraggableContainer
     },
     {
-      [`& .${gridClasses.columnHeaderTitleContainer}`]: styles.columnHeaderTitleContainer
+      [`& .${gridClasses.columnHeaderTitleContainer}`]: styles2.columnHeaderTitleContainer
     },
     {
-      [`& .${gridClasses["columnSeparator--resizable"]}`]: styles["columnSeparator--resizable"]
+      [`& .${gridClasses["columnSeparator--resizable"]}`]: styles2["columnSeparator--resizable"]
     },
     {
-      [`& .${gridClasses["columnSeparator--resizing"]}`]: styles["columnSeparator--resizing"]
+      [`& .${gridClasses["columnSeparator--resizing"]}`]: styles2["columnSeparator--resizing"]
     },
     {
-      [`& .${gridClasses.columnSeparator}`]: styles.columnSeparator
+      [`& .${gridClasses.columnSeparator}`]: styles2.columnSeparator
     },
     {
-      [`& .${gridClasses.filterIcon}`]: styles.filterIcon
+      [`& .${gridClasses.filterIcon}`]: styles2.filterIcon
     },
     {
-      [`& .${gridClasses.iconSeparator}`]: styles.iconSeparator
+      [`& .${gridClasses.iconSeparator}`]: styles2.iconSeparator
     },
     {
-      [`& .${gridClasses.menuIcon}`]: styles.menuIcon
+      [`& .${gridClasses.menuIcon}`]: styles2.menuIcon
     },
     {
-      [`& .${gridClasses.menuIconButton}`]: styles.menuIconButton
+      [`& .${gridClasses.menuIconButton}`]: styles2.menuIconButton
     },
     {
-      [`& .${gridClasses.menuOpen}`]: styles.menuOpen
+      [`& .${gridClasses.menuOpen}`]: styles2.menuOpen
     },
     {
-      [`& .${gridClasses.menuList}`]: styles.menuList
+      [`& .${gridClasses.menuList}`]: styles2.menuList
     },
     {
-      [`& .${gridClasses["row--editable"]}`]: styles["row--editable"]
+      [`& .${gridClasses["row--editable"]}`]: styles2["row--editable"]
     },
     {
-      [`& .${gridClasses["row--editing"]}`]: styles["row--editing"]
+      [`& .${gridClasses["row--editing"]}`]: styles2["row--editing"]
     },
     {
-      [`& .${gridClasses["row--dragging"]}`]: styles["row--dragging"]
+      [`& .${gridClasses["row--dragging"]}`]: styles2["row--dragging"]
     },
     {
-      [`& .${gridClasses.row}`]: styles.row
+      [`& .${gridClasses.row}`]: styles2.row
     },
     {
-      [`& .${gridClasses.rowReorderCellPlaceholder}`]: styles.rowReorderCellPlaceholder
+      [`& .${gridClasses.rowReorderCellPlaceholder}`]: styles2.rowReorderCellPlaceholder
     },
     {
-      [`& .${gridClasses.rowReorderCell}`]: styles.rowReorderCell
+      [`& .${gridClasses.rowReorderCell}`]: styles2.rowReorderCell
     },
     {
-      [`& .${gridClasses["rowReorderCell--draggable"]}`]: styles["rowReorderCell--draggable"]
+      [`& .${gridClasses["rowReorderCell--draggable"]}`]: styles2["rowReorderCell--draggable"]
     },
     {
-      [`& .${gridClasses.sortIcon}`]: styles.sortIcon
+      [`& .${gridClasses.sortIcon}`]: styles2.sortIcon
     },
     {
-      [`& .${gridClasses.withBorderColor}`]: styles.withBorderColor
+      [`& .${gridClasses.withBorderColor}`]: styles2.withBorderColor
     },
     {
-      [`& .${gridClasses.treeDataGroupingCell}`]: styles.treeDataGroupingCell
+      [`& .${gridClasses.treeDataGroupingCell}`]: styles2.treeDataGroupingCell
     },
     {
-      [`& .${gridClasses.treeDataGroupingCellToggle}`]: styles.treeDataGroupingCellToggle
+      [`& .${gridClasses.treeDataGroupingCellToggle}`]: styles2.treeDataGroupingCellToggle
     },
     {
-      [`& .${gridClasses.detailPanelToggleCell}`]: styles.detailPanelToggleCell
+      [`& .${gridClasses.detailPanelToggleCell}`]: styles2.detailPanelToggleCell
     },
     {
-      [`& .${gridClasses["detailPanelToggleCell--expanded"]}`]: styles["detailPanelToggleCell--expanded"]
+      [`& .${gridClasses["detailPanelToggleCell--expanded"]}`]: styles2["detailPanelToggleCell--expanded"]
     },
-    styles.root
+    styles2.root
   ]
 })(({
   theme
 }) => {
-  const borderColor = getBorderColor(theme);
+  const borderColor2 = getBorderColor(theme);
   const radius = theme.shape.borderRadius;
   const gridStyle = _extends$1({
     "--unstable_DataGrid-radius": typeof radius === "number" ? `${radius}px` : radius,
@@ -4737,7 +11984,7 @@ const GridRootStyles = styled$1("div", {
     position: "relative",
     borderWidth: "1px",
     borderStyle: "solid",
-    borderColor,
+    borderColor: borderColor2,
     borderRadius: "var(--unstable_DataGrid-radius)",
     color: (theme.vars || theme).palette.text.primary
   }, theme.typography.body2, {
@@ -4837,7 +12084,7 @@ const GridRootStyles = styled$1("div", {
       boxSizing: "border-box"
     },
     [`& .${gridClasses.headerFilterRow}`]: {
-      borderTop: `1px solid ${borderColor}`
+      borderTop: `1px solid ${borderColor2}`
     },
     [`& .${gridClasses.sortIcon}, & .${gridClasses.filterIcon}`]: {
       fontSize: "inherit"
@@ -4869,7 +12116,7 @@ const GridRootStyles = styled$1("div", {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      color: borderColor
+      color: borderColor2
     },
     "@media (hover: hover)": {
       [`& .${gridClasses.columnHeaders}:hover`]: columnHeadersStyles,
@@ -4895,7 +12142,7 @@ const GridRootStyles = styled$1("div", {
         color: (theme.vars || theme).palette.text.primary,
         // Reset on touch devices, it doesn't add specificity
         "@media (hover: none)": {
-          color: borderColor
+          color: borderColor2
         }
       },
       [`&.${gridClasses["columnSeparator--resizing"]}`]: {
@@ -5026,7 +12273,7 @@ const GridRootStyles = styled$1("div", {
       alignItems: "stretch"
     },
     [`.${gridClasses.withBorderColor}`]: {
-      borderColor
+      borderColor: borderColor2
     },
     [`& .${gridClasses["cell--withRightBorder"]}`]: {
       borderRightWidth: "1px",
@@ -5091,8 +12338,8 @@ const GridRootStyles = styled$1("div", {
   });
   return gridStyle;
 });
-const _excluded$G = ["children", "className"];
-const useUtilityClasses$r = (ownerState) => {
+const _excluded$1d = ["children", "className"];
+const useUtilityClasses$X = (ownerState) => {
   const {
     autoHeight,
     density,
@@ -5109,7 +12356,7 @@ const GridRoot = /* @__PURE__ */ React.forwardRef(function GridRoot2(props, ref)
   const {
     children,
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$G);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1d);
   const apiRef = useGridPrivateApiContext();
   const densityValue = useGridSelector(apiRef, gridDensityValueSelector);
   const rootContainerRef = React.useRef(null);
@@ -5119,7 +12366,7 @@ const GridRoot = /* @__PURE__ */ React.forwardRef(function GridRoot2(props, ref)
   const ownerState = _extends$1({}, rootProps, {
     density: densityValue
   });
-  const classes = useUtilityClasses$r(ownerState);
+  const classes = useUtilityClasses$X(ownerState);
   apiRef.current.register("public", {
     rootElementRef: rootContainerRef
   });
@@ -5148,8 +12395,8 @@ process.env.NODE_ENV !== "production" ? GridRoot.propTypes = {
    */
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$F = ["className"];
-const useUtilityClasses$q = (ownerState) => {
+const _excluded$1c = ["className"];
+const useUtilityClasses$W = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -5158,10 +12405,10 @@ const useUtilityClasses$q = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridFooterContainerRoot = styled("div", {
+const GridFooterContainerRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "FooterContainer",
-  overridesResolver: (props, styles) => styles.footerContainer
+  overridesResolver: (props, styles2) => styles2.footerContainer
 })({
   display: "flex",
   justifyContent: "space-between",
@@ -5172,9 +12419,9 @@ const GridFooterContainerRoot = styled("div", {
 const GridFooterContainer = /* @__PURE__ */ React.forwardRef(function GridFooterContainer2(props, ref) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$F);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1c);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$q(rootProps);
+  const classes = useUtilityClasses$W(rootProps);
   return /* @__PURE__ */ jsx(GridFooterContainerRoot, _extends$1({
     ref,
     className: clsx(classes.root, className),
@@ -5188,8 +12435,8 @@ process.env.NODE_ENV !== "production" ? GridFooterContainer.propTypes = {
   // ----------------------------------------------------------------------
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$E = ["className"];
-const useUtilityClasses$p = (ownerState) => {
+const _excluded$1b = ["className"];
+const useUtilityClasses$V = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -5198,10 +12445,10 @@ const useUtilityClasses$p = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridOverlayRoot = styled("div", {
+const GridOverlayRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "Overlay",
-  overridesResolver: (_, styles) => styles.overlay
+  overridesResolver: (_2, styles2) => styles2.overlay
 })({
   width: "100%",
   height: "100%",
@@ -5214,9 +12461,9 @@ const GridOverlayRoot = styled("div", {
 const GridOverlay = /* @__PURE__ */ React.forwardRef(function GridOverlay2(props, ref) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$E);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1b);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$p(rootProps);
+  const classes = useUtilityClasses$V(rootProps);
   return /* @__PURE__ */ jsx(GridOverlayRoot, _extends$1({
     ref,
     className: clsx(classes.root, className),
@@ -5230,8 +12477,476 @@ process.env.NODE_ENV !== "production" ? GridOverlay.propTypes = {
   // ----------------------------------------------------------------------
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$D = ["className"];
-const useUtilityClasses$o = (ownerState) => {
+function useBadge(parameters) {
+  const {
+    badgeContent: badgeContentProp,
+    invisible: invisibleProp = false,
+    max: maxProp = 99,
+    showZero = false
+  } = parameters;
+  const prevProps = usePreviousProps({
+    badgeContent: badgeContentProp,
+    max: maxProp
+  });
+  let invisible = invisibleProp;
+  if (invisibleProp === false && badgeContentProp === 0 && !showZero) {
+    invisible = true;
+  }
+  const {
+    badgeContent,
+    max = maxProp
+  } = invisible ? prevProps : parameters;
+  const displayValue = badgeContent && Number(badgeContent) > max ? `${max}+` : badgeContent;
+  return {
+    badgeContent,
+    invisible,
+    max,
+    displayValue
+  };
+}
+function getBadgeUtilityClass(slot) {
+  return generateUtilityClass("MuiBadge", slot);
+}
+const badgeClasses = generateUtilityClasses("MuiBadge", [
+  "root",
+  "badge",
+  "dot",
+  "standard",
+  "anchorOriginTopRight",
+  "anchorOriginBottomRight",
+  "anchorOriginTopLeft",
+  "anchorOriginBottomLeft",
+  "invisible",
+  "colorError",
+  "colorInfo",
+  "colorPrimary",
+  "colorSecondary",
+  "colorSuccess",
+  "colorWarning",
+  "overlapRectangular",
+  "overlapCircular",
+  // TODO: v6 remove the overlap value from these class keys
+  "anchorOriginTopLeftCircular",
+  "anchorOriginTopLeftRectangular",
+  "anchorOriginTopRightCircular",
+  "anchorOriginTopRightRectangular",
+  "anchorOriginBottomLeftCircular",
+  "anchorOriginBottomLeftRectangular",
+  "anchorOriginBottomRightCircular",
+  "anchorOriginBottomRightRectangular"
+]);
+const _excluded$1a = ["anchorOrigin", "className", "classes", "component", "components", "componentsProps", "children", "overlap", "color", "invisible", "max", "badgeContent", "slots", "slotProps", "showZero", "variant"];
+const RADIUS_STANDARD = 10;
+const RADIUS_DOT = 4;
+const useUtilityClasses$U = (ownerState) => {
+  const {
+    color: color2,
+    anchorOrigin,
+    invisible,
+    overlap,
+    variant,
+    classes = {}
+  } = ownerState;
+  const slots = {
+    root: ["root"],
+    badge: ["badge", variant, invisible && "invisible", `anchorOrigin${capitalize(anchorOrigin.vertical)}${capitalize(anchorOrigin.horizontal)}`, `anchorOrigin${capitalize(anchorOrigin.vertical)}${capitalize(anchorOrigin.horizontal)}${capitalize(overlap)}`, `overlap${capitalize(overlap)}`, color2 !== "default" && `color${capitalize(color2)}`]
+  };
+  return composeClasses(slots, getBadgeUtilityClass, classes);
+};
+const BadgeRoot = styled("span", {
+  name: "MuiBadge",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})({
+  position: "relative",
+  display: "inline-flex",
+  // For correct alignment with the text.
+  verticalAlign: "middle",
+  flexShrink: 0
+});
+const BadgeBadge = styled("span", {
+  name: "MuiBadge",
+  slot: "Badge",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.badge, styles2[ownerState.variant], styles2[`anchorOrigin${capitalize(ownerState.anchorOrigin.vertical)}${capitalize(ownerState.anchorOrigin.horizontal)}${capitalize(ownerState.overlap)}`], ownerState.color !== "default" && styles2[`color${capitalize(ownerState.color)}`], ownerState.invisible && styles2.invisible];
+  }
+})(({
+  theme
+}) => {
+  var _theme$vars;
+  return {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    alignContent: "center",
+    alignItems: "center",
+    position: "absolute",
+    boxSizing: "border-box",
+    fontFamily: theme.typography.fontFamily,
+    fontWeight: theme.typography.fontWeightMedium,
+    fontSize: theme.typography.pxToRem(12),
+    minWidth: RADIUS_STANDARD * 2,
+    lineHeight: 1,
+    padding: "0 6px",
+    height: RADIUS_STANDARD * 2,
+    borderRadius: RADIUS_STANDARD,
+    zIndex: 1,
+    // Render the badge on top of potential ripples.
+    transition: theme.transitions.create("transform", {
+      easing: theme.transitions.easing.easeInOut,
+      duration: theme.transitions.duration.enteringScreen
+    }),
+    variants: [...Object.keys(((_theme$vars = theme.vars) != null ? _theme$vars : theme).palette).filter((key) => {
+      var _theme$vars2, _theme$vars3;
+      return ((_theme$vars2 = theme.vars) != null ? _theme$vars2 : theme).palette[key].main && ((_theme$vars3 = theme.vars) != null ? _theme$vars3 : theme).palette[key].contrastText;
+    }).map((color2) => ({
+      props: {
+        color: color2
+      },
+      style: {
+        backgroundColor: (theme.vars || theme).palette[color2].main,
+        color: (theme.vars || theme).palette[color2].contrastText
+      }
+    })), {
+      props: {
+        variant: "dot"
+      },
+      style: {
+        borderRadius: RADIUS_DOT,
+        height: RADIUS_DOT * 2,
+        minWidth: RADIUS_DOT * 2,
+        padding: 0
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "top" && ownerState.anchorOrigin.horizontal === "right" && ownerState.overlap === "rectangular",
+      style: {
+        top: 0,
+        right: 0,
+        transform: "scale(1) translate(50%, -50%)",
+        transformOrigin: "100% 0%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(50%, -50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "bottom" && ownerState.anchorOrigin.horizontal === "right" && ownerState.overlap === "rectangular",
+      style: {
+        bottom: 0,
+        right: 0,
+        transform: "scale(1) translate(50%, 50%)",
+        transformOrigin: "100% 100%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(50%, 50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "top" && ownerState.anchorOrigin.horizontal === "left" && ownerState.overlap === "rectangular",
+      style: {
+        top: 0,
+        left: 0,
+        transform: "scale(1) translate(-50%, -50%)",
+        transformOrigin: "0% 0%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(-50%, -50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "bottom" && ownerState.anchorOrigin.horizontal === "left" && ownerState.overlap === "rectangular",
+      style: {
+        bottom: 0,
+        left: 0,
+        transform: "scale(1) translate(-50%, 50%)",
+        transformOrigin: "0% 100%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(-50%, 50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "top" && ownerState.anchorOrigin.horizontal === "right" && ownerState.overlap === "circular",
+      style: {
+        top: "14%",
+        right: "14%",
+        transform: "scale(1) translate(50%, -50%)",
+        transformOrigin: "100% 0%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(50%, -50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "bottom" && ownerState.anchorOrigin.horizontal === "right" && ownerState.overlap === "circular",
+      style: {
+        bottom: "14%",
+        right: "14%",
+        transform: "scale(1) translate(50%, 50%)",
+        transformOrigin: "100% 100%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(50%, 50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "top" && ownerState.anchorOrigin.horizontal === "left" && ownerState.overlap === "circular",
+      style: {
+        top: "14%",
+        left: "14%",
+        transform: "scale(1) translate(-50%, -50%)",
+        transformOrigin: "0% 0%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(-50%, -50%)"
+        }
+      }
+    }, {
+      props: ({
+        ownerState
+      }) => ownerState.anchorOrigin.vertical === "bottom" && ownerState.anchorOrigin.horizontal === "left" && ownerState.overlap === "circular",
+      style: {
+        bottom: "14%",
+        left: "14%",
+        transform: "scale(1) translate(-50%, 50%)",
+        transformOrigin: "0% 100%",
+        [`&.${badgeClasses.invisible}`]: {
+          transform: "scale(0) translate(-50%, 50%)"
+        }
+      }
+    }, {
+      props: {
+        invisible: true
+      },
+      style: {
+        transition: theme.transitions.create("transform", {
+          easing: theme.transitions.easing.easeInOut,
+          duration: theme.transitions.duration.leavingScreen
+        })
+      }
+    }]
+  };
+});
+const Badge$1 = /* @__PURE__ */ React.forwardRef(function Badge(inProps, ref) {
+  var _ref, _slots$root, _ref2, _slots$badge, _slotProps$root, _slotProps$badge;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiBadge"
+  });
+  const {
+    anchorOrigin: anchorOriginProp = {
+      vertical: "top",
+      horizontal: "right"
+    },
+    className,
+    component,
+    components = {},
+    componentsProps = {},
+    children,
+    overlap: overlapProp = "rectangular",
+    color: colorProp = "default",
+    invisible: invisibleProp = false,
+    max: maxProp = 99,
+    badgeContent: badgeContentProp,
+    slots,
+    slotProps,
+    showZero = false,
+    variant: variantProp = "standard"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$1a);
+  const {
+    badgeContent,
+    invisible: invisibleFromHook,
+    max,
+    displayValue: displayValueFromHook
+  } = useBadge({
+    max: maxProp,
+    invisible: invisibleProp,
+    badgeContent: badgeContentProp,
+    showZero
+  });
+  const prevProps = usePreviousProps$1({
+    anchorOrigin: anchorOriginProp,
+    color: colorProp,
+    overlap: overlapProp,
+    variant: variantProp,
+    badgeContent: badgeContentProp
+  });
+  const invisible = invisibleFromHook || badgeContent == null && variantProp !== "dot";
+  const {
+    color: color2 = colorProp,
+    overlap = overlapProp,
+    anchorOrigin = anchorOriginProp,
+    variant = variantProp
+  } = invisible ? prevProps : props;
+  const displayValue = variant !== "dot" ? displayValueFromHook : void 0;
+  const ownerState = _extends$1({}, props, {
+    badgeContent,
+    invisible,
+    max,
+    displayValue,
+    showZero,
+    anchorOrigin,
+    color: color2,
+    overlap,
+    variant
+  });
+  const classes = useUtilityClasses$U(ownerState);
+  const RootSlot = (_ref = (_slots$root = slots == null ? void 0 : slots.root) != null ? _slots$root : components.Root) != null ? _ref : BadgeRoot;
+  const BadgeSlot = (_ref2 = (_slots$badge = slots == null ? void 0 : slots.badge) != null ? _slots$badge : components.Badge) != null ? _ref2 : BadgeBadge;
+  const rootSlotProps = (_slotProps$root = slotProps == null ? void 0 : slotProps.root) != null ? _slotProps$root : componentsProps.root;
+  const badgeSlotProps = (_slotProps$badge = slotProps == null ? void 0 : slotProps.badge) != null ? _slotProps$badge : componentsProps.badge;
+  const rootProps = useSlotProps({
+    elementType: RootSlot,
+    externalSlotProps: rootSlotProps,
+    externalForwardedProps: other,
+    additionalProps: {
+      ref,
+      as: component
+    },
+    ownerState,
+    className: clsx(rootSlotProps == null ? void 0 : rootSlotProps.className, classes.root, className)
+  });
+  const badgeProps = useSlotProps({
+    elementType: BadgeSlot,
+    externalSlotProps: badgeSlotProps,
+    ownerState,
+    className: clsx(classes.badge, badgeSlotProps == null ? void 0 : badgeSlotProps.className)
+  });
+  return /* @__PURE__ */ jsxs(RootSlot, _extends$1({}, rootProps, {
+    children: [children, /* @__PURE__ */ jsx(BadgeSlot, _extends$1({}, badgeProps, {
+      children: displayValue
+    }))]
+  }));
+});
+process.env.NODE_ENV !== "production" ? Badge$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The anchor of the badge.
+   * @default {
+   *   vertical: 'top',
+   *   horizontal: 'right',
+   * }
+   */
+  anchorOrigin: PropTypes.shape({
+    horizontal: PropTypes.oneOf(["left", "right"]).isRequired,
+    vertical: PropTypes.oneOf(["bottom", "top"]).isRequired
+  }),
+  /**
+   * The content rendered within the badge.
+   */
+  badgeContent: PropTypes.node,
+  /**
+   * The badge will be added relative to this node.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'default'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["default", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Badge: PropTypes.elementType,
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    badge: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * If `true`, the badge is invisible.
+   * @default false
+   */
+  invisible: PropTypes.bool,
+  /**
+   * Max count to show.
+   * @default 99
+   */
+  max: PropTypes.number,
+  /**
+   * Wrapped shape the badge should overlap.
+   * @default 'rectangular'
+   */
+  overlap: PropTypes.oneOf(["circular", "rectangular"]),
+  /**
+   * Controls whether the badge is hidden when `badgeContent` is zero.
+   * @default false
+   */
+  showZero: PropTypes.bool,
+  /**
+   * The props used for each slot inside the Badge.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    badge: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside the Badge.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    badge: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   * @default 'standard'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["dot", "standard"]), PropTypes.string])
+} : void 0;
+const _excluded$19 = ["className"];
+const useUtilityClasses$T = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -5240,10 +12955,10 @@ const useUtilityClasses$o = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridIconButtonContainerRoot = styled("div", {
+const GridIconButtonContainerRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "IconButtonContainer",
-  overridesResolver: (props, styles) => styles.iconButtonContainer
+  overridesResolver: (props, styles2) => styles2.iconButtonContainer
 })(() => ({
   display: "flex",
   visibility: "hidden",
@@ -5252,16 +12967,16 @@ const GridIconButtonContainerRoot = styled("div", {
 const GridIconButtonContainer = /* @__PURE__ */ React.forwardRef(function GridIconButtonContainer2(props, ref) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$D);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$19);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$o(rootProps);
+  const classes = useUtilityClasses$T(rootProps);
   return /* @__PURE__ */ jsx(GridIconButtonContainerRoot, _extends$1({
     ref,
     className: clsx(classes.root, className),
     ownerState: rootProps
   }, other));
 });
-const useUtilityClasses$n = (ownerState) => {
+const useUtilityClasses$S = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -5298,7 +13013,7 @@ function GridColumnHeaderSortIconRaw(props) {
   const ownerState = _extends$1({}, props, {
     classes: rootProps.classes
   });
-  const classes = useUtilityClasses$n(ownerState);
+  const classes = useUtilityClasses$S(ownerState);
   const iconElement = getIcon(rootProps.slots, direction, classes.icon, sortingOrder);
   if (!iconElement) {
     return null;
@@ -5329,7 +13044,7 @@ process.env.NODE_ENV !== "production" ? GridColumnHeaderSortIconRaw.propTypes = 
   index: PropTypes.number,
   sortingOrder: PropTypes.arrayOf(PropTypes.oneOf(["asc", "desc"])).isRequired
 } : void 0;
-const useUtilityClasses$m = (ownerState) => {
+const useUtilityClasses$R = (ownerState) => {
   const {
     classes,
     open
@@ -5354,7 +13069,7 @@ const ColumnHeaderMenuIcon = /* @__PURE__ */ React.memo((props) => {
   const ownerState = _extends$1({}, props, {
     classes: rootProps.classes
   });
-  const classes = useUtilityClasses$m(ownerState);
+  const classes = useUtilityClasses$R(ownerState);
   const handleMenuIconClick = React.useCallback((event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -5438,8 +13153,8 @@ process.env.NODE_ENV !== "production" ? GridColumnHeaderMenu.propTypes = {
   open: PropTypes.bool.isRequired,
   target: HTMLElementType
 } : void 0;
-const _excluded$C = ["className"];
-const useUtilityClasses$l = (ownerState) => {
+const _excluded$18 = ["className"];
+const useUtilityClasses$Q = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -5448,10 +13163,10 @@ const useUtilityClasses$l = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridColumnHeaderTitleRoot = styled("div", {
+const GridColumnHeaderTitleRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "ColumnHeaderTitle",
-  overridesResolver: (props, styles) => styles.columnHeaderTitle
+  overridesResolver: (props, styles2) => styles2.columnHeaderTitle
 })({
   textOverflow: "ellipsis",
   overflow: "hidden",
@@ -5461,9 +13176,9 @@ const GridColumnHeaderTitleRoot = styled("div", {
 const ColumnHeaderInnerTitle = /* @__PURE__ */ React.forwardRef(function ColumnHeaderInnerTitle2(props, ref) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$C);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$18);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$l(rootProps);
+  const classes = useUtilityClasses$Q(rootProps);
   return /* @__PURE__ */ jsx(GridColumnHeaderTitleRoot, _extends$1({
     ref,
     className: clsx(classes.root, className),
@@ -5508,13 +13223,13 @@ process.env.NODE_ENV !== "production" ? GridColumnHeaderTitle.propTypes = {
   description: PropTypes.node,
   label: PropTypes.string.isRequired
 } : void 0;
-const _excluded$B = ["resizable", "resizing", "height", "side"];
+const _excluded$17 = ["resizable", "resizing", "height", "side"];
 var GridColumnHeaderSeparatorSides = /* @__PURE__ */ function(GridColumnHeaderSeparatorSides2) {
   GridColumnHeaderSeparatorSides2["Left"] = "left";
   GridColumnHeaderSeparatorSides2["Right"] = "right";
   return GridColumnHeaderSeparatorSides2;
 }(GridColumnHeaderSeparatorSides || {});
-const useUtilityClasses$k = (ownerState) => {
+const useUtilityClasses$P = (ownerState) => {
   const {
     resizable,
     resizing,
@@ -5529,15 +13244,15 @@ const useUtilityClasses$k = (ownerState) => {
 };
 function GridColumnHeaderSeparatorRaw(props) {
   const {
-    height,
+    height: height2,
     side = GridColumnHeaderSeparatorSides.Right
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$B);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$17);
   const rootProps = useGridRootProps();
   const ownerState = _extends$1({}, props, {
     side,
     classes: rootProps.classes
   });
-  const classes = useUtilityClasses$k(ownerState);
+  const classes = useUtilityClasses$P(ownerState);
   const stopClick = React.useCallback((event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -5547,7 +13262,7 @@ function GridColumnHeaderSeparatorRaw(props) {
     /* @__PURE__ */ jsx("div", _extends$1({
       className: classes.root,
       style: {
-        minHeight: height,
+        minHeight: height2,
         opacity: rootProps.showColumnVerticalBorder ? 0 : 1
       }
     }, other, {
@@ -5569,13 +13284,13 @@ process.env.NODE_ENV !== "production" ? GridColumnHeaderSeparatorRaw.propTypes =
   resizing: PropTypes.bool.isRequired,
   side: PropTypes.oneOf(["left", "right"])
 } : void 0;
-const _excluded$A = ["classes", "columnMenuOpen", "colIndex", "height", "isResizing", "sortDirection", "hasFocus", "tabIndex", "separatorSide", "isDraggable", "headerComponent", "description", "elementId", "width", "columnMenuIconButton", "columnMenu", "columnTitleIconButtons", "headerClassName", "label", "resizable", "draggableContainerProps", "columnHeaderSeparatorProps"];
+const _excluded$16 = ["classes", "columnMenuOpen", "colIndex", "height", "isResizing", "sortDirection", "hasFocus", "tabIndex", "separatorSide", "isDraggable", "headerComponent", "description", "elementId", "width", "columnMenuIconButton", "columnMenu", "columnTitleIconButtons", "headerClassName", "label", "resizable", "draggableContainerProps", "columnHeaderSeparatorProps"];
 const GridGenericColumnHeaderItem = /* @__PURE__ */ React.forwardRef(function GridGenericColumnHeaderItem2(props, ref) {
   const {
     classes,
     columnMenuOpen,
     colIndex,
-    height,
+    height: height2,
     isResizing,
     sortDirection,
     hasFocus,
@@ -5584,7 +13299,7 @@ const GridGenericColumnHeaderItem = /* @__PURE__ */ React.forwardRef(function Gr
     isDraggable,
     headerComponent,
     description,
-    width,
+    width: width2,
     columnMenuIconButton = null,
     columnMenu = null,
     columnTitleIconButtons = null,
@@ -5593,7 +13308,7 @@ const GridGenericColumnHeaderItem = /* @__PURE__ */ React.forwardRef(function Gr
     resizable,
     draggableContainerProps,
     columnHeaderSeparatorProps
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$A);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$16);
   const apiRef = useGridPrivateApiContext();
   const rootProps = useGridRootProps();
   const headerCellRef = React.useRef(null);
@@ -5621,10 +13336,10 @@ const GridGenericColumnHeaderItem = /* @__PURE__ */ React.forwardRef(function Gr
     ref: handleRef,
     className: clsx(classes.root, headerClassName),
     style: {
-      height,
-      width,
-      minWidth: width,
-      maxWidth: width
+      height: height2,
+      width: width2,
+      minWidth: width2,
+      maxWidth: width2
     },
     role: "columnheader",
     tabIndex,
@@ -5645,19 +13360,19 @@ const GridGenericColumnHeaderItem = /* @__PURE__ */ React.forwardRef(function Gr
           children: headerComponent !== void 0 ? headerComponent : /* @__PURE__ */ jsx(GridColumnHeaderTitle, {
             label,
             description,
-            columnWidth: width
+            columnWidth: width2
           })
         }), columnTitleIconButtons]
       }), columnMenuIconButton]
     })), /* @__PURE__ */ jsx(GridColumnHeaderSeparator, _extends$1({
       resizable: !rootProps.disableColumnResize && !!resizable,
       resizing: isResizing,
-      height,
+      height: height2,
       side: separatorSide
     }, columnHeaderSeparatorProps)), columnMenu]
   }));
 });
-const useUtilityClasses$j = (ownerState) => {
+const useUtilityClasses$O = (ownerState) => {
   const {
     colDef,
     classes,
@@ -5709,7 +13424,7 @@ function GridColumnHeaderItem(props) {
     classes: rootProps.classes,
     showRightBorder: rootProps.showColumnVerticalBorder
   });
-  const classes = useUtilityClasses$j(ownerState);
+  const classes = useUtilityClasses$O(ownerState);
   const publish = React.useCallback((eventName) => (event) => {
     if (isEventTargetInPortal(event)) {
       return;
@@ -6162,9 +13877,9 @@ const useFirstRender = (callback) => {
 };
 const MAX_PAGE_SIZE = 100;
 const defaultPageSize = (autoPageSize) => autoPageSize ? 0 : 100;
-const getPageCount = (rowCount, pageSize) => {
-  if (pageSize > 0 && rowCount > 0) {
-    return Math.ceil(rowCount / pageSize);
+const getPageCount = (rowCount, pageSize2) => {
+  if (pageSize2 > 0 && rowCount > 0) {
+    return Math.ceil(rowCount / pageSize2);
   }
   return 0;
 };
@@ -6179,8 +13894,8 @@ const getValidPage = (page, pageCount = 0) => {
   }
   return Math.max(Math.min(page, pageCount - 1), 0);
 };
-const throwIfPageSizeExceedsTheLimit = (pageSize, signatureProp) => {
-  if (signatureProp === GridSignature.DataGrid && pageSize > MAX_PAGE_SIZE) {
+const throwIfPageSizeExceedsTheLimit = (pageSize2, signatureProp) => {
+  if (signatureProp === GridSignature.DataGrid && pageSize2 > MAX_PAGE_SIZE) {
     throw new Error(["MUI: `pageSize` cannot exceed 100 in the MIT version of the DataGrid.", "You need to upgrade to DataGridPro or DataGridPremium component to unlock this feature."].join("\n"));
   }
 };
@@ -6189,7 +13904,7 @@ const gridPaginationModelSelector = createSelector(gridPaginationSelector, (pagi
 const gridPaginationRowCountSelector = createSelector(gridPaginationSelector, (pagination) => pagination.rowCount);
 const gridPageSelector = createSelector(gridPaginationModelSelector, (paginationModel) => paginationModel.page);
 const gridPageSizeSelector = createSelector(gridPaginationModelSelector, (paginationModel) => paginationModel.pageSize);
-const gridPageCountSelector = createSelector(gridPageSizeSelector, gridPaginationRowCountSelector, (pageSize, rowCount) => getPageCount(rowCount, pageSize));
+const gridPageCountSelector = createSelector(gridPageSizeSelector, gridPaginationRowCountSelector, (pageSize2, rowCount) => getPageCount(rowCount, pageSize2));
 const gridPaginationRowRangeSelector = createSelectorMemoized(gridPaginationModelSelector, gridRowTreeSelector, gridRowMaximumTreeDepthSelector, gridExpandedSortedRowEntriesSelector, gridFilteredSortedTopLevelRowEntriesSelector, (paginationModel, rowTree, rowTreeDepth, visibleSortedRowEntries, visibleSortedTopLevelRowEntries) => {
   const visibleTopLevelRowCount = visibleSortedTopLevelRowEntries.length;
   const topLevelFirstRowIndex = Math.min(paginationModel.pageSize * paginationModel.page, visibleTopLevelRowCount - 1);
@@ -6396,7 +14111,7 @@ function useGridVirtualization(apiRef, props) {
 const gridVirtualizationSelector = (state) => state.virtualization;
 const gridVirtualizationEnabledSelector = createSelector(gridVirtualizationSelector, (state) => state.enabled);
 const gridVirtualizationColumnEnabledSelector = createSelector(gridVirtualizationSelector, (state) => state.enabledForColumns);
-const useUtilityClasses$i = (ownerState) => {
+const useUtilityClasses$N = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -6417,7 +14132,7 @@ function GridColumnHeaderFilterIconButton(props) {
   const ownerState = _extends$1({}, props, {
     classes: rootProps.classes
   });
-  const classes = useUtilityClasses$i(ownerState);
+  const classes = useUtilityClasses$N(ownerState);
   const preferencePanel = useGridSelector(apiRef, gridPreferencePanelStateSelector);
   const labelId = unstable_useId();
   const panelId = unstable_useId();
@@ -6479,8 +14194,8 @@ process.env.NODE_ENV !== "production" ? GridColumnHeaderFilterIconButton.propTyp
   field: PropTypes.string.isRequired,
   onClick: PropTypes.func
 } : void 0;
-const _excluded$z = ["field", "id", "value", "formattedValue", "row", "rowNode", "colDef", "isEditable", "cellMode", "hasFocus", "tabIndex", "api"];
-const useUtilityClasses$h = (ownerState) => {
+const _excluded$15 = ["field", "id", "value", "formattedValue", "row", "rowNode", "colDef", "isEditable", "cellMode", "hasFocus", "tabIndex", "api"];
+const useUtilityClasses$M = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -6498,13 +14213,13 @@ const GridCellCheckboxForwardRef = /* @__PURE__ */ React.forwardRef(function Gri
     rowNode,
     hasFocus,
     tabIndex
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$z);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$15);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const ownerState = {
     classes: rootProps.classes
   };
-  const classes = useUtilityClasses$h(ownerState);
+  const classes = useUtilityClasses$M(ownerState);
   const checkboxElement = React.useRef(null);
   const rippleRef = React.useRef(null);
   const handleRef = unstable_useForkRef(checkboxElement, ref);
@@ -6622,8 +14337,8 @@ process.env.NODE_ENV !== "production" ? GridCellCheckboxForwardRef.propTypes = {
   value: PropTypes.any
 } : void 0;
 const GridCellCheckboxRenderer2 = GridCellCheckboxForwardRef;
-const _excluded$y = ["field", "colDef"];
-const useUtilityClasses$g = (ownerState) => {
+const _excluded$14 = ["field", "colDef"];
+const useUtilityClasses$L = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -6634,14 +14349,14 @@ const useUtilityClasses$g = (ownerState) => {
 };
 const GridHeaderCheckbox = /* @__PURE__ */ React.forwardRef(function GridHeaderCheckbox2(props, ref) {
   var _rootProps$slotProps;
-  const other = _objectWithoutPropertiesLoose$1(props, _excluded$y);
+  const other = _objectWithoutPropertiesLoose$1(props, _excluded$14);
   const [, forceUpdate] = React.useState(false);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const ownerState = {
     classes: rootProps.classes
   };
-  const classes = useUtilityClasses$g(ownerState);
+  const classes = useUtilityClasses$L(ownerState);
   const tabIndexState = useGridSelector(apiRef, gridTabIndexColumnHeaderSelector);
   const selection = useGridSelector(apiRef, gridRowSelectionStateSelector);
   const visibleRowIds = useGridSelector(apiRef, gridExpandedSortedRowIdsSelector);
@@ -6721,6 +14436,196 @@ process.env.NODE_ENV !== "production" ? GridHeaderCheckbox.propTypes = {
    */
   field: PropTypes.string.isRequired
 } : void 0;
+function getSvgIconUtilityClass(slot) {
+  return generateUtilityClass("MuiSvgIcon", slot);
+}
+generateUtilityClasses("MuiSvgIcon", ["root", "colorPrimary", "colorSecondary", "colorAction", "colorError", "colorDisabled", "fontSizeInherit", "fontSizeSmall", "fontSizeMedium", "fontSizeLarge"]);
+const _excluded$13 = ["children", "className", "color", "component", "fontSize", "htmlColor", "inheritViewBox", "titleAccess", "viewBox"];
+const useUtilityClasses$K = (ownerState) => {
+  const {
+    color: color2,
+    fontSize,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", color2 !== "inherit" && `color${capitalize(color2)}`, `fontSize${capitalize(fontSize)}`]
+  };
+  return composeClasses(slots, getSvgIconUtilityClass, classes);
+};
+const SvgIconRoot = styled("svg", {
+  name: "MuiSvgIcon",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.color !== "inherit" && styles2[`color${capitalize(ownerState.color)}`], styles2[`fontSize${capitalize(ownerState.fontSize)}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  var _theme$transitions, _theme$transitions$cr, _theme$transitions2, _theme$typography, _theme$typography$pxT, _theme$typography2, _theme$typography2$px, _theme$typography3, _theme$typography3$px, _palette$ownerState$c, _palette, _palette2, _palette3;
+  return {
+    userSelect: "none",
+    width: "1em",
+    height: "1em",
+    display: "inline-block",
+    // the <svg> will define the property that has `currentColor`
+    // for example heroicons uses fill="none" and stroke="currentColor"
+    fill: ownerState.hasSvgAsChild ? void 0 : "currentColor",
+    flexShrink: 0,
+    transition: (_theme$transitions = theme.transitions) == null || (_theme$transitions$cr = _theme$transitions.create) == null ? void 0 : _theme$transitions$cr.call(_theme$transitions, "fill", {
+      duration: (_theme$transitions2 = theme.transitions) == null || (_theme$transitions2 = _theme$transitions2.duration) == null ? void 0 : _theme$transitions2.shorter
+    }),
+    fontSize: {
+      inherit: "inherit",
+      small: ((_theme$typography = theme.typography) == null || (_theme$typography$pxT = _theme$typography.pxToRem) == null ? void 0 : _theme$typography$pxT.call(_theme$typography, 20)) || "1.25rem",
+      medium: ((_theme$typography2 = theme.typography) == null || (_theme$typography2$px = _theme$typography2.pxToRem) == null ? void 0 : _theme$typography2$px.call(_theme$typography2, 24)) || "1.5rem",
+      large: ((_theme$typography3 = theme.typography) == null || (_theme$typography3$px = _theme$typography3.pxToRem) == null ? void 0 : _theme$typography3$px.call(_theme$typography3, 35)) || "2.1875rem"
+    }[ownerState.fontSize],
+    // TODO v5 deprecate, v6 remove for sx
+    color: (_palette$ownerState$c = (_palette = (theme.vars || theme).palette) == null || (_palette = _palette[ownerState.color]) == null ? void 0 : _palette.main) != null ? _palette$ownerState$c : {
+      action: (_palette2 = (theme.vars || theme).palette) == null || (_palette2 = _palette2.action) == null ? void 0 : _palette2.active,
+      disabled: (_palette3 = (theme.vars || theme).palette) == null || (_palette3 = _palette3.action) == null ? void 0 : _palette3.disabled,
+      inherit: void 0
+    }[ownerState.color]
+  };
+});
+const SvgIcon = /* @__PURE__ */ React.forwardRef(function SvgIcon2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiSvgIcon"
+  });
+  const {
+    children,
+    className,
+    color: color2 = "inherit",
+    component = "svg",
+    fontSize = "medium",
+    htmlColor,
+    inheritViewBox = false,
+    titleAccess,
+    viewBox = "0 0 24 24"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$13);
+  const hasSvgAsChild = /* @__PURE__ */ React.isValidElement(children) && children.type === "svg";
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    component,
+    fontSize,
+    instanceFontSize: inProps.fontSize,
+    inheritViewBox,
+    viewBox,
+    hasSvgAsChild
+  });
+  const more = {};
+  if (!inheritViewBox) {
+    more.viewBox = viewBox;
+  }
+  const classes = useUtilityClasses$K(ownerState);
+  return /* @__PURE__ */ jsxs(SvgIconRoot, _extends$1({
+    as: component,
+    className: clsx(classes.root, className),
+    focusable: "false",
+    color: htmlColor,
+    "aria-hidden": titleAccess ? void 0 : true,
+    role: titleAccess ? "img" : void 0,
+    ref
+  }, more, other, hasSvgAsChild && children.props, {
+    ownerState,
+    children: [hasSvgAsChild ? children.props.children : children, titleAccess ? /* @__PURE__ */ jsx("title", {
+      children: titleAccess
+    }) : null]
+  }));
+});
+process.env.NODE_ENV !== "production" ? SvgIcon.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Node passed into the SVG element.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * You can use the `htmlColor` prop to apply a color attribute to the SVG element.
+   * @default 'inherit'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["inherit", "action", "disabled", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * The fontSize applied to the icon. Defaults to 24px, but can be configure to inherit font size.
+   * @default 'medium'
+   */
+  fontSize: PropTypes.oneOfType([PropTypes.oneOf(["inherit", "large", "medium", "small"]), PropTypes.string]),
+  /**
+   * Applies a color attribute to the SVG element.
+   */
+  htmlColor: PropTypes.string,
+  /**
+   * If `true`, the root node will inherit the custom `component`'s viewBox and the `viewBox`
+   * prop will be ignored.
+   * Useful when you want to reference a custom `component` and have `SvgIcon` pass that
+   * `component`'s viewBox to the root node.
+   * @default false
+   */
+  inheritViewBox: PropTypes.bool,
+  /**
+   * The shape-rendering attribute. The behavior of the different options is described on the
+   * [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering).
+   * If you are having issues with blurry icons you should investigate this prop.
+   */
+  shapeRendering: PropTypes.string,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Provides a human-readable title for the element that contains it.
+   * https://www.w3.org/TR/SVG-access/#Equivalent
+   */
+  titleAccess: PropTypes.string,
+  /**
+   * Allows you to redefine what the coordinates without units mean inside an SVG element.
+   * For example, if the SVG element is 500 (width) by 200 (height),
+   * and you pass viewBox="0 0 50 20",
+   * this means that the coordinates inside the SVG will go from the top left corner (0,0)
+   * to bottom right (50,20) and each unit will be worth 10px.
+   * @default '0 0 24 24'
+   */
+  viewBox: PropTypes.string
+} : void 0;
+SvgIcon.muiName = "SvgIcon";
+function createSvgIcon(path, displayName) {
+  function Component2(props, ref) {
+    return /* @__PURE__ */ jsx(SvgIcon, _extends$1({
+      "data-testid": `${displayName}Icon`,
+      ref
+    }, props, {
+      children: path
+    }));
+  }
+  if (process.env.NODE_ENV !== "production") {
+    Component2.displayName = `${displayName}Icon`;
+  }
+  Component2.muiName = SvgIcon.muiName;
+  return /* @__PURE__ */ React.memo(/* @__PURE__ */ React.forwardRef(Component2));
+}
 const GridArrowUpwardIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
   d: "M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
 }), "ArrowUpward");
@@ -6807,8 +14712,8 @@ createSvgIcon(/* @__PURE__ */ jsx("path", {
 const GridDeleteForeverIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
   d: "M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zm2.46-7.12l1.41-1.41L12 12.59l2.12-2.12 1.41 1.41L13.41 14l2.12 2.12-1.41 1.41L12 15.41l-2.12 2.12-1.41-1.41L10.59 14l-2.13-2.12zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"
 }), "Delete");
-const _excluded$x = ["hideMenu", "colDef", "id", "labelledby", "className", "children", "open"];
-const StyledMenuList = styled$1(MenuList)(() => ({
+const _excluded$12 = ["hideMenu", "colDef", "id", "labelledby", "className", "children", "open"];
+const StyledMenuList = styled(MenuList)(() => ({
   minWidth: 248
 }));
 const GridColumnMenuContainer = /* @__PURE__ */ React.forwardRef(function GridColumnMenuContainer2(props, ref) {
@@ -6819,7 +14724,7 @@ const GridColumnMenuContainer = /* @__PURE__ */ React.forwardRef(function GridCo
     className,
     children,
     open
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$x);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$12);
   const handleListKeyDown = React.useCallback((event) => {
     if (isTabKey(event.key)) {
       event.preventDefault();
@@ -6850,7 +14755,7 @@ process.env.NODE_ENV !== "production" ? GridColumnMenuContainer.propTypes = {
   labelledby: PropTypes.string,
   open: PropTypes.bool.isRequired
 } : void 0;
-const _excluded$w = ["displayOrder"];
+const _excluded$11 = ["displayOrder"];
 const useGridColumnMenuSlots = (props) => {
   const apiRef = useGridPrivateApiContext();
   const {
@@ -6895,7 +14800,7 @@ const useGridColumnMenuSlots = (props) => {
       };
       const processedComponentProps = processedSlotProps[key];
       if (processedComponentProps) {
-        const customProps = _objectWithoutPropertiesLoose$1(processedComponentProps, _excluded$w);
+        const customProps = _objectWithoutPropertiesLoose$1(processedComponentProps, _excluded$11);
         itemProps = _extends$1({}, itemProps, customProps);
       }
       return addDividers && index2 !== sorted.length - 1 ? [...acc, [processedComponents[key], itemProps], [Divider, {}]] : [...acc, [processedComponents[key], itemProps]];
@@ -7089,7 +14994,7 @@ process.env.NODE_ENV !== "production" ? GridColumnMenuSortItem.propTypes = {
   colDef: PropTypes.object.isRequired,
   onClick: PropTypes.func.isRequired
 } : void 0;
-const _excluded$v = ["defaultSlots", "defaultSlotProps", "slots", "slotProps"];
+const _excluded$10 = ["defaultSlots", "defaultSlotProps", "slots", "slotProps"];
 const GRID_COLUMN_MENU_SLOTS = {
   columnMenuSortItem: GridColumnMenuSortItem,
   columnMenuFilterItem: GridColumnMenuFilterItem,
@@ -7112,7 +15017,7 @@ const GridGenericColumnMenu = /* @__PURE__ */ React.forwardRef(function GridGene
     defaultSlotProps,
     slots,
     slotProps
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$v);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$10);
   const orderedSlots = useGridColumnMenuSlots(_extends$1({}, other, {
     defaultSlots: defaultSlots2,
     defaultSlotProps,
@@ -7154,8 +15059,1289 @@ process.env.NODE_ENV !== "production" ? GridColumnMenu.propTypes = {
    */
   slots: PropTypes.object
 } : void 0;
-const _excluded$u = ["className"];
-const useUtilityClasses$f = (ownerState) => {
+function getIconButtonUtilityClass(slot) {
+  return generateUtilityClass("MuiIconButton", slot);
+}
+const iconButtonClasses = generateUtilityClasses("MuiIconButton", ["root", "disabled", "colorInherit", "colorPrimary", "colorSecondary", "colorError", "colorInfo", "colorSuccess", "colorWarning", "edgeStart", "edgeEnd", "sizeSmall", "sizeMedium", "sizeLarge"]);
+const _excluded$$ = ["edge", "children", "className", "color", "disabled", "disableFocusRipple", "size"];
+const useUtilityClasses$J = (ownerState) => {
+  const {
+    classes,
+    disabled,
+    color: color2,
+    edge,
+    size
+  } = ownerState;
+  const slots = {
+    root: ["root", disabled && "disabled", color2 !== "default" && `color${capitalize(color2)}`, edge && `edge${capitalize(edge)}`, `size${capitalize(size)}`]
+  };
+  return composeClasses(slots, getIconButtonUtilityClass, classes);
+};
+const IconButtonRoot = styled(ButtonBase, {
+  name: "MuiIconButton",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.color !== "default" && styles2[`color${capitalize(ownerState.color)}`], ownerState.edge && styles2[`edge${capitalize(ownerState.edge)}`], styles2[`size${capitalize(ownerState.size)}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  textAlign: "center",
+  flex: "0 0 auto",
+  fontSize: theme.typography.pxToRem(24),
+  padding: 8,
+  borderRadius: "50%",
+  overflow: "visible",
+  // Explicitly set the default value to solve a bug on IE11.
+  color: (theme.vars || theme).palette.action.active,
+  transition: theme.transitions.create("background-color", {
+    duration: theme.transitions.duration.shortest
+  })
+}, !ownerState.disableRipple && {
+  "&:hover": {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette.action.active, theme.palette.action.hoverOpacity),
+    // Reset on touch devices, it doesn't add specificity
+    "@media (hover: none)": {
+      backgroundColor: "transparent"
+    }
+  }
+}, ownerState.edge === "start" && {
+  marginLeft: ownerState.size === "small" ? -3 : -12
+}, ownerState.edge === "end" && {
+  marginRight: ownerState.size === "small" ? -3 : -12
+}), ({
+  theme,
+  ownerState
+}) => {
+  var _palette;
+  const palette = (_palette = (theme.vars || theme).palette) == null ? void 0 : _palette[ownerState.color];
+  return _extends$1({}, ownerState.color === "inherit" && {
+    color: "inherit"
+  }, ownerState.color !== "inherit" && ownerState.color !== "default" && _extends$1({
+    color: palette == null ? void 0 : palette.main
+  }, !ownerState.disableRipple && {
+    "&:hover": _extends$1({}, palette && {
+      backgroundColor: theme.vars ? `rgba(${palette.mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(palette.main, theme.palette.action.hoverOpacity)
+    }, {
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: "transparent"
+      }
+    })
+  }), ownerState.size === "small" && {
+    padding: 5,
+    fontSize: theme.typography.pxToRem(18)
+  }, ownerState.size === "large" && {
+    padding: 12,
+    fontSize: theme.typography.pxToRem(28)
+  }, {
+    [`&.${iconButtonClasses.disabled}`]: {
+      backgroundColor: "transparent",
+      color: (theme.vars || theme).palette.action.disabled
+    }
+  });
+});
+const IconButton = /* @__PURE__ */ React.forwardRef(function IconButton2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiIconButton"
+  });
+  const {
+    edge = false,
+    children,
+    className,
+    color: color2 = "default",
+    disabled = false,
+    disableFocusRipple = false,
+    size = "medium"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$$);
+  const ownerState = _extends$1({}, props, {
+    edge,
+    color: color2,
+    disabled,
+    disableFocusRipple,
+    size
+  });
+  const classes = useUtilityClasses$J(ownerState);
+  return /* @__PURE__ */ jsx(IconButtonRoot, _extends$1({
+    className: clsx(classes.root, className),
+    centerRipple: true,
+    focusRipple: !disableFocusRipple,
+    disabled,
+    ref
+  }, other, {
+    ownerState,
+    children
+  }));
+});
+process.env.NODE_ENV !== "production" ? IconButton.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The icon to display.
+   */
+  children: chainPropTypes(PropTypes.node, (props) => {
+    const found = React.Children.toArray(props.children).some((child) => /* @__PURE__ */ React.isValidElement(child) && child.props.onClick);
+    if (found) {
+      return new Error(["MUI: You are providing an onClick event listener to a child of a button element.", "Prefer applying it to the IconButton directly.", "This guarantees that the whole <button> will be responsive to click events."].join("\n"));
+    }
+    return null;
+  }),
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'default'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["inherit", "default", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the  keyboard focus ripple is disabled.
+   * @default false
+   */
+  disableFocusRipple: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   *
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * If given, uses a negative margin to counteract the padding on one
+   * side (this is often helpful for aligning the left or right
+   * side of the icon with content above or below, without ruining the border
+   * size and shape).
+   * @default false
+   */
+  edge: PropTypes.oneOf(["end", "start", false]),
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense button styling.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["small", "medium", "large"]), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+function getSwitchBaseUtilityClass(slot) {
+  return generateUtilityClass("PrivateSwitchBase", slot);
+}
+generateUtilityClasses("PrivateSwitchBase", ["root", "checked", "disabled", "input", "edgeStart", "edgeEnd"]);
+const _excluded$_ = ["autoFocus", "checked", "checkedIcon", "className", "defaultChecked", "disabled", "disableFocusRipple", "edge", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "readOnly", "required", "tabIndex", "type", "value"];
+const useUtilityClasses$I = (ownerState) => {
+  const {
+    classes,
+    checked,
+    disabled,
+    edge
+  } = ownerState;
+  const slots = {
+    root: ["root", checked && "checked", disabled && "disabled", edge && `edge${capitalize(edge)}`],
+    input: ["input"]
+  };
+  return composeClasses(slots, getSwitchBaseUtilityClass, classes);
+};
+const SwitchBaseRoot = styled(ButtonBase)(({
+  ownerState
+}) => _extends$1({
+  padding: 9,
+  borderRadius: "50%"
+}, ownerState.edge === "start" && {
+  marginLeft: ownerState.size === "small" ? -3 : -12
+}, ownerState.edge === "end" && {
+  marginRight: ownerState.size === "small" ? -3 : -12
+}));
+const SwitchBaseInput = styled("input", {
+  shouldForwardProp: rootShouldForwardProp
+})({
+  cursor: "inherit",
+  position: "absolute",
+  opacity: 0,
+  width: "100%",
+  height: "100%",
+  top: 0,
+  left: 0,
+  margin: 0,
+  padding: 0,
+  zIndex: 1
+});
+const SwitchBase = /* @__PURE__ */ React.forwardRef(function SwitchBase2(props, ref) {
+  const {
+    autoFocus,
+    checked: checkedProp,
+    checkedIcon,
+    className,
+    defaultChecked,
+    disabled: disabledProp,
+    disableFocusRipple = false,
+    edge = false,
+    icon,
+    id,
+    inputProps,
+    inputRef,
+    name,
+    onBlur,
+    onChange,
+    onFocus,
+    readOnly,
+    required = false,
+    tabIndex,
+    type,
+    value
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$_);
+  const [checked, setCheckedState] = useControlled({
+    controlled: checkedProp,
+    default: Boolean(defaultChecked),
+    name: "SwitchBase",
+    state: "checked"
+  });
+  const muiFormControl = useFormControl();
+  const handleFocus = (event) => {
+    if (onFocus) {
+      onFocus(event);
+    }
+    if (muiFormControl && muiFormControl.onFocus) {
+      muiFormControl.onFocus(event);
+    }
+  };
+  const handleBlur = (event) => {
+    if (onBlur) {
+      onBlur(event);
+    }
+    if (muiFormControl && muiFormControl.onBlur) {
+      muiFormControl.onBlur(event);
+    }
+  };
+  const handleInputChange = (event) => {
+    if (event.nativeEvent.defaultPrevented) {
+      return;
+    }
+    const newChecked = event.target.checked;
+    setCheckedState(newChecked);
+    if (onChange) {
+      onChange(event, newChecked);
+    }
+  };
+  let disabled = disabledProp;
+  if (muiFormControl) {
+    if (typeof disabled === "undefined") {
+      disabled = muiFormControl.disabled;
+    }
+  }
+  const hasLabelFor = type === "checkbox" || type === "radio";
+  const ownerState = _extends$1({}, props, {
+    checked,
+    disabled,
+    disableFocusRipple,
+    edge
+  });
+  const classes = useUtilityClasses$I(ownerState);
+  return /* @__PURE__ */ jsxs(SwitchBaseRoot, _extends$1({
+    component: "span",
+    className: clsx(classes.root, className),
+    centerRipple: true,
+    focusRipple: !disableFocusRipple,
+    disabled,
+    tabIndex: null,
+    role: void 0,
+    onFocus: handleFocus,
+    onBlur: handleBlur,
+    ownerState,
+    ref
+  }, other, {
+    children: [/* @__PURE__ */ jsx(SwitchBaseInput, _extends$1({
+      autoFocus,
+      checked: checkedProp,
+      defaultChecked,
+      className: classes.input,
+      disabled,
+      id: hasLabelFor ? id : void 0,
+      name,
+      onChange: handleInputChange,
+      readOnly,
+      ref: inputRef,
+      required,
+      ownerState,
+      tabIndex,
+      type
+    }, type === "checkbox" && value === void 0 ? {} : {
+      value
+    }, inputProps)), checked ? checkedIcon : icon]
+  }));
+});
+process.env.NODE_ENV !== "production" ? SwitchBase.propTypes = {
+  /**
+   * If `true`, the `input` element is focused during the first mount.
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * If `true`, the component is checked.
+   */
+  checked: PropTypes.bool,
+  /**
+   * The icon to display when the component is checked.
+   */
+  checkedIcon: PropTypes.node.isRequired,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * @ignore
+   */
+  defaultChecked: PropTypes.bool,
+  /**
+   * If `true`, the component is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the  keyboard focus ripple is disabled.
+   * @default false
+   */
+  disableFocusRipple: PropTypes.bool,
+  /**
+   * If given, uses a negative margin to counteract the padding on one
+   * side (this is often helpful for aligning the left or right
+   * side of the icon with content above or below, without ruining the border
+   * size and shape).
+   * @default false
+   */
+  edge: PropTypes.oneOf(["end", "start", false]),
+  /**
+   * The icon to display when the component is unchecked.
+   */
+  icon: PropTypes.node.isRequired,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /*
+   * @ignore
+   */
+  name: PropTypes.string,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new checked state by accessing `event.target.checked` (boolean).
+   */
+  onChange: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
+  /**
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * If `true`, the `input` element is required.
+   */
+  required: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.object,
+  /**
+   * @ignore
+   */
+  tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * The input component prop `type`.
+   */
+  type: PropTypes.string.isRequired,
+  /**
+   * The value of the component.
+   */
+  value: PropTypes.any
+} : void 0;
+function getSwitchUtilityClass(slot) {
+  return generateUtilityClass("MuiSwitch", slot);
+}
+const switchClasses = generateUtilityClasses("MuiSwitch", ["root", "edgeStart", "edgeEnd", "switchBase", "colorPrimary", "colorSecondary", "sizeSmall", "sizeMedium", "checked", "disabled", "input", "thumb", "track"]);
+const _excluded$Z = ["className", "color", "edge", "size", "sx"];
+const useUtilityClasses$H = (ownerState) => {
+  const {
+    classes,
+    edge,
+    size,
+    color: color2,
+    checked,
+    disabled
+  } = ownerState;
+  const slots = {
+    root: ["root", edge && `edge${capitalize(edge)}`, `size${capitalize(size)}`],
+    switchBase: ["switchBase", `color${capitalize(color2)}`, checked && "checked", disabled && "disabled"],
+    thumb: ["thumb"],
+    track: ["track"],
+    input: ["input"]
+  };
+  const composedClasses = composeClasses(slots, getSwitchUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const SwitchRoot = styled("span", {
+  name: "MuiSwitch",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.edge && styles2[`edge${capitalize(ownerState.edge)}`], styles2[`size${capitalize(ownerState.size)}`]];
+  }
+})({
+  display: "inline-flex",
+  width: 34 + 12 * 2,
+  height: 14 + 12 * 2,
+  overflow: "hidden",
+  padding: 12,
+  boxSizing: "border-box",
+  position: "relative",
+  flexShrink: 0,
+  zIndex: 0,
+  // Reset the stacking context.
+  verticalAlign: "middle",
+  // For correct alignment with the text.
+  "@media print": {
+    colorAdjust: "exact"
+  },
+  variants: [{
+    props: {
+      edge: "start"
+    },
+    style: {
+      marginLeft: -8
+    }
+  }, {
+    props: {
+      edge: "end"
+    },
+    style: {
+      marginRight: -8
+    }
+  }, {
+    props: {
+      size: "small"
+    },
+    style: {
+      width: 40,
+      height: 24,
+      padding: 7,
+      [`& .${switchClasses.thumb}`]: {
+        width: 16,
+        height: 16
+      },
+      [`& .${switchClasses.switchBase}`]: {
+        padding: 4,
+        [`&.${switchClasses.checked}`]: {
+          transform: "translateX(16px)"
+        }
+      }
+    }
+  }]
+});
+const SwitchSwitchBase = styled(SwitchBase, {
+  name: "MuiSwitch",
+  slot: "SwitchBase",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.switchBase, {
+      [`& .${switchClasses.input}`]: styles2.input
+    }, ownerState.color !== "default" && styles2[`color${capitalize(ownerState.color)}`]];
+  }
+})(({
+  theme
+}) => ({
+  position: "absolute",
+  top: 0,
+  left: 0,
+  zIndex: 1,
+  // Render above the focus ripple.
+  color: theme.vars ? theme.vars.palette.Switch.defaultColor : `${theme.palette.mode === "light" ? theme.palette.common.white : theme.palette.grey[300]}`,
+  transition: theme.transitions.create(["left", "transform"], {
+    duration: theme.transitions.duration.shortest
+  }),
+  [`&.${switchClasses.checked}`]: {
+    transform: "translateX(20px)"
+  },
+  [`&.${switchClasses.disabled}`]: {
+    color: theme.vars ? theme.vars.palette.Switch.defaultDisabledColor : `${theme.palette.mode === "light" ? theme.palette.grey[100] : theme.palette.grey[600]}`
+  },
+  [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
+    opacity: 0.5
+  },
+  [`&.${switchClasses.disabled} + .${switchClasses.track}`]: {
+    opacity: theme.vars ? theme.vars.opacity.switchTrackDisabled : `${theme.palette.mode === "light" ? 0.12 : 0.2}`
+  },
+  [`& .${switchClasses.input}`]: {
+    left: "-100%",
+    width: "300%"
+  }
+}), ({
+  theme
+}) => ({
+  "&:hover": {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.activeChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette.action.active, theme.palette.action.hoverOpacity),
+    // Reset on touch devices, it doesn't add specificity
+    "@media (hover: none)": {
+      backgroundColor: "transparent"
+    }
+  },
+  variants: [...Object.entries(theme.palette).filter(([, value]) => value.main && value.light).map(([color2]) => ({
+    props: {
+      color: color2
+    },
+    style: {
+      [`&.${switchClasses.checked}`]: {
+        color: (theme.vars || theme).palette[color2].main,
+        "&:hover": {
+          backgroundColor: theme.vars ? `rgba(${theme.vars.palette[color2].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette[color2].main, theme.palette.action.hoverOpacity),
+          "@media (hover: none)": {
+            backgroundColor: "transparent"
+          }
+        },
+        [`&.${switchClasses.disabled}`]: {
+          color: theme.vars ? theme.vars.palette.Switch[`${color2}DisabledColor`] : `${theme.palette.mode === "light" ? colorManipulatorExports.lighten(theme.palette[color2].main, 0.62) : colorManipulatorExports.darken(theme.palette[color2].main, 0.55)}`
+        }
+      },
+      [`&.${switchClasses.checked} + .${switchClasses.track}`]: {
+        backgroundColor: (theme.vars || theme).palette[color2].main
+      }
+    }
+  }))]
+}));
+const SwitchTrack = styled("span", {
+  name: "MuiSwitch",
+  slot: "Track",
+  overridesResolver: (props, styles2) => styles2.track
+})(({
+  theme
+}) => ({
+  height: "100%",
+  width: "100%",
+  borderRadius: 14 / 2,
+  zIndex: -1,
+  transition: theme.transitions.create(["opacity", "background-color"], {
+    duration: theme.transitions.duration.shortest
+  }),
+  backgroundColor: theme.vars ? theme.vars.palette.common.onBackground : `${theme.palette.mode === "light" ? theme.palette.common.black : theme.palette.common.white}`,
+  opacity: theme.vars ? theme.vars.opacity.switchTrack : `${theme.palette.mode === "light" ? 0.38 : 0.3}`
+}));
+const SwitchThumb = styled("span", {
+  name: "MuiSwitch",
+  slot: "Thumb",
+  overridesResolver: (props, styles2) => styles2.thumb
+})(({
+  theme
+}) => ({
+  boxShadow: (theme.vars || theme).shadows[1],
+  backgroundColor: "currentColor",
+  width: 20,
+  height: 20,
+  borderRadius: "50%"
+}));
+const Switch = /* @__PURE__ */ React.forwardRef(function Switch2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiSwitch"
+  });
+  const {
+    className,
+    color: color2 = "primary",
+    edge = false,
+    size = "medium",
+    sx
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$Z);
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    edge,
+    size
+  });
+  const classes = useUtilityClasses$H(ownerState);
+  const icon = /* @__PURE__ */ jsx(SwitchThumb, {
+    className: classes.thumb,
+    ownerState
+  });
+  return /* @__PURE__ */ jsxs(SwitchRoot, {
+    className: clsx(classes.root, className),
+    sx,
+    ownerState,
+    children: [/* @__PURE__ */ jsx(SwitchSwitchBase, _extends$1({
+      type: "checkbox",
+      icon,
+      checkedIcon: icon,
+      ref,
+      ownerState
+    }, other, {
+      classes: _extends$1({}, classes, {
+        root: classes.switchBase
+      })
+    })), /* @__PURE__ */ jsx(SwitchTrack, {
+      className: classes.track,
+      ownerState
+    })]
+  });
+});
+process.env.NODE_ENV !== "production" ? Switch.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the component is checked.
+   */
+  checked: PropTypes.bool,
+  /**
+   * The icon to display when the component is checked.
+   */
+  checkedIcon: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["default", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The default checked state. Use when the component is not controlled.
+   */
+  defaultChecked: PropTypes.bool,
+  /**
+   * If `true`, the component is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * If given, uses a negative margin to counteract the padding on one
+   * side (this is often helpful for aligning the left or right
+   * side of the icon with content above or below, without ruining the border
+   * size and shape).
+   * @default false
+   */
+  edge: PropTypes.oneOf(["end", "start", false]),
+  /**
+   * The icon to display when the component is unchecked.
+   */
+  icon: PropTypes.node,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   * You can pull out the new checked state by accessing `event.target.checked` (boolean).
+   */
+  onChange: PropTypes.func,
+  /**
+   * If `true`, the `input` element is required.
+   * @default false
+   */
+  required: PropTypes.bool,
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense switch styling.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The value of the component. The DOM API casts this to a string.
+   * The browser uses "on" as the default value.
+   */
+  value: PropTypes.any
+} : void 0;
+function getFormControlUtilityClasses(slot) {
+  return generateUtilityClass("MuiFormControl", slot);
+}
+generateUtilityClasses("MuiFormControl", ["root", "marginNone", "marginNormal", "marginDense", "fullWidth", "disabled"]);
+const _excluded$Y = ["children", "className", "color", "component", "disabled", "error", "focused", "fullWidth", "hiddenLabel", "margin", "required", "size", "variant"];
+const useUtilityClasses$G = (ownerState) => {
+  const {
+    classes,
+    margin: margin2,
+    fullWidth
+  } = ownerState;
+  const slots = {
+    root: ["root", margin2 !== "none" && `margin${capitalize(margin2)}`, fullWidth && "fullWidth"]
+  };
+  return composeClasses(slots, getFormControlUtilityClasses, classes);
+};
+const FormControlRoot = styled("div", {
+  name: "MuiFormControl",
+  slot: "Root",
+  overridesResolver: ({
+    ownerState
+  }, styles2) => {
+    return _extends$1({}, styles2.root, styles2[`margin${capitalize(ownerState.margin)}`], ownerState.fullWidth && styles2.fullWidth);
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  display: "inline-flex",
+  flexDirection: "column",
+  position: "relative",
+  // Reset fieldset default style.
+  minWidth: 0,
+  padding: 0,
+  margin: 0,
+  border: 0,
+  verticalAlign: "top"
+}, ownerState.margin === "normal" && {
+  marginTop: 16,
+  marginBottom: 8
+}, ownerState.margin === "dense" && {
+  marginTop: 8,
+  marginBottom: 4
+}, ownerState.fullWidth && {
+  width: "100%"
+}));
+const FormControl = /* @__PURE__ */ React.forwardRef(function FormControl2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiFormControl"
+  });
+  const {
+    children,
+    className,
+    color: color2 = "primary",
+    component = "div",
+    disabled = false,
+    error = false,
+    focused: visuallyFocused,
+    fullWidth = false,
+    hiddenLabel = false,
+    margin: margin2 = "none",
+    required = false,
+    size = "medium",
+    variant = "outlined"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$Y);
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    component,
+    disabled,
+    error,
+    fullWidth,
+    hiddenLabel,
+    margin: margin2,
+    required,
+    size,
+    variant
+  });
+  const classes = useUtilityClasses$G(ownerState);
+  const [adornedStart, setAdornedStart] = React.useState(() => {
+    let initialAdornedStart = false;
+    if (children) {
+      React.Children.forEach(children, (child) => {
+        if (!isMuiElement(child, ["Input", "Select"])) {
+          return;
+        }
+        const input = isMuiElement(child, ["Select"]) ? child.props.input : child;
+        if (input && isAdornedStart(input.props)) {
+          initialAdornedStart = true;
+        }
+      });
+    }
+    return initialAdornedStart;
+  });
+  const [filled, setFilled] = React.useState(() => {
+    let initialFilled = false;
+    if (children) {
+      React.Children.forEach(children, (child) => {
+        if (!isMuiElement(child, ["Input", "Select"])) {
+          return;
+        }
+        if (isFilled(child.props, true) || isFilled(child.props.inputProps, true)) {
+          initialFilled = true;
+        }
+      });
+    }
+    return initialFilled;
+  });
+  const [focusedState, setFocused] = React.useState(false);
+  if (disabled && focusedState) {
+    setFocused(false);
+  }
+  const focused = visuallyFocused !== void 0 && !disabled ? visuallyFocused : focusedState;
+  let registerEffect;
+  if (process.env.NODE_ENV !== "production") {
+    const registeredInput = React.useRef(false);
+    registerEffect = () => {
+      if (registeredInput.current) {
+        console.error(["MUI: There are multiple `InputBase` components inside a FormControl.", "This creates visual inconsistencies, only use one `InputBase`."].join("\n"));
+      }
+      registeredInput.current = true;
+      return () => {
+        registeredInput.current = false;
+      };
+    };
+  }
+  const childContext = React.useMemo(() => {
+    return {
+      adornedStart,
+      setAdornedStart,
+      color: color2,
+      disabled,
+      error,
+      filled,
+      focused,
+      fullWidth,
+      hiddenLabel,
+      size,
+      onBlur: () => {
+        setFocused(false);
+      },
+      onEmpty: () => {
+        setFilled(false);
+      },
+      onFilled: () => {
+        setFilled(true);
+      },
+      onFocus: () => {
+        setFocused(true);
+      },
+      registerEffect,
+      required,
+      variant
+    };
+  }, [adornedStart, color2, disabled, error, filled, focused, fullWidth, hiddenLabel, registerEffect, required, size, variant]);
+  return /* @__PURE__ */ jsx(FormControlContext.Provider, {
+    value: childContext,
+    children: /* @__PURE__ */ jsx(FormControlRoot, _extends$1({
+      as: component,
+      ownerState,
+      className: clsx(classes.root, className),
+      ref
+    }, other, {
+      children
+    }))
+  });
+});
+process.env.NODE_ENV !== "production" ? FormControl.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the label, input and helper text should be displayed in a disabled state.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label is displayed in an error state.
+   * @default false
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the component is displayed in focused state.
+   */
+  focused: PropTypes.bool,
+  /**
+   * If `true`, the component will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * If `true`, the label is hidden.
+   * This is used to increase density for a `FilledInput`.
+   * Be sure to add `aria-label` to the `input` element.
+   * @default false
+   */
+  hiddenLabel: PropTypes.bool,
+  /**
+   * If `dense` or `normal`, will adjust vertical spacing of this and contained components.
+   * @default 'none'
+   */
+  margin: PropTypes.oneOf(["dense", "none", "normal"]),
+  /**
+   * If `true`, the label will indicate that the `input` is required.
+   * @default false
+   */
+  required: PropTypes.bool,
+  /**
+   * The size of the component.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   * @default 'outlined'
+   */
+  variant: PropTypes.oneOf(["filled", "outlined", "standard"])
+} : void 0;
+const Stack = createStack({
+  createStyledComponent: styled("div", {
+    name: "MuiStack",
+    slot: "Root",
+    overridesResolver: (props, styles2) => styles2.root
+  }),
+  useThemeProps: (inProps) => useDefaultProps({
+    props: inProps,
+    name: "MuiStack"
+  })
+});
+process.env.NODE_ENV !== "production" ? Stack.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Defines the `flex-direction` style property.
+   * It is applied for all screen sizes.
+   * @default 'column'
+   */
+  direction: PropTypes.oneOfType([PropTypes.oneOf(["column-reverse", "column", "row-reverse", "row"]), PropTypes.arrayOf(PropTypes.oneOf(["column-reverse", "column", "row-reverse", "row"])), PropTypes.object]),
+  /**
+   * Add an element between each child.
+   */
+  divider: PropTypes.node,
+  /**
+   * Defines the space between immediate children.
+   * @default 0
+   */
+  spacing: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.string])), PropTypes.number, PropTypes.object, PropTypes.string]),
+  /**
+   * The system prop, which allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * If `true`, the CSS flexbox `gap` is used instead of applying `margin` to children.
+   *
+   * While CSS `gap` removes the [known limitations](https://mui.com/joy-ui/react-stack/#limitations),
+   * it is not fully supported in some browsers. We recommend checking https://caniuse.com/?search=flex%20gap before using this flag.
+   *
+   * To enable this flag globally, follow the [theme's default props](https://mui.com/material-ui/customization/theme-components/#default-props) configuration.
+   * @default false
+   */
+  useFlexGap: PropTypes.bool
+} : void 0;
+function getFormControlLabelUtilityClasses(slot) {
+  return generateUtilityClass("MuiFormControlLabel", slot);
+}
+const formControlLabelClasses = generateUtilityClasses("MuiFormControlLabel", ["root", "labelPlacementStart", "labelPlacementTop", "labelPlacementBottom", "disabled", "label", "error", "required", "asterisk"]);
+const _excluded$X = ["checked", "className", "componentsProps", "control", "disabled", "disableTypography", "inputRef", "label", "labelPlacement", "name", "onChange", "required", "slotProps", "value"];
+const useUtilityClasses$F = (ownerState) => {
+  const {
+    classes,
+    disabled,
+    labelPlacement,
+    error,
+    required
+  } = ownerState;
+  const slots = {
+    root: ["root", disabled && "disabled", `labelPlacement${capitalize(labelPlacement)}`, error && "error", required && "required"],
+    label: ["label", disabled && "disabled"],
+    asterisk: ["asterisk", error && "error"]
+  };
+  return composeClasses(slots, getFormControlLabelUtilityClasses, classes);
+};
+const FormControlLabelRoot = styled("label", {
+  name: "MuiFormControlLabel",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [{
+      [`& .${formControlLabelClasses.label}`]: styles2.label
+    }, styles2.root, styles2[`labelPlacement${capitalize(ownerState.labelPlacement)}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  display: "inline-flex",
+  alignItems: "center",
+  cursor: "pointer",
+  // For correct alignment with the text.
+  verticalAlign: "middle",
+  WebkitTapHighlightColor: "transparent",
+  marginLeft: -11,
+  marginRight: 16,
+  // used for row presentation of radio/checkbox
+  [`&.${formControlLabelClasses.disabled}`]: {
+    cursor: "default"
+  }
+}, ownerState.labelPlacement === "start" && {
+  flexDirection: "row-reverse",
+  marginLeft: 16,
+  // used for row presentation of radio/checkbox
+  marginRight: -11
+}, ownerState.labelPlacement === "top" && {
+  flexDirection: "column-reverse",
+  marginLeft: 16
+}, ownerState.labelPlacement === "bottom" && {
+  flexDirection: "column",
+  marginLeft: 16
+}, {
+  [`& .${formControlLabelClasses.label}`]: {
+    [`&.${formControlLabelClasses.disabled}`]: {
+      color: (theme.vars || theme).palette.text.disabled
+    }
+  }
+}));
+const AsteriskComponent$1 = styled("span", {
+  name: "MuiFormControlLabel",
+  slot: "Asterisk",
+  overridesResolver: (props, styles2) => styles2.asterisk
+})(({
+  theme
+}) => ({
+  [`&.${formControlLabelClasses.error}`]: {
+    color: (theme.vars || theme).palette.error.main
+  }
+}));
+const FormControlLabel = /* @__PURE__ */ React.forwardRef(function FormControlLabel2(inProps, ref) {
+  var _ref, _slotProps$typography;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiFormControlLabel"
+  });
+  const {
+    className,
+    componentsProps = {},
+    control,
+    disabled: disabledProp,
+    disableTypography,
+    label: labelProp,
+    labelPlacement = "end",
+    required: requiredProp,
+    slotProps = {}
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$X);
+  const muiFormControl = useFormControl();
+  const disabled = (_ref = disabledProp != null ? disabledProp : control.props.disabled) != null ? _ref : muiFormControl == null ? void 0 : muiFormControl.disabled;
+  const required = requiredProp != null ? requiredProp : control.props.required;
+  const controlProps = {
+    disabled,
+    required
+  };
+  ["checked", "name", "onChange", "value", "inputRef"].forEach((key) => {
+    if (typeof control.props[key] === "undefined" && typeof props[key] !== "undefined") {
+      controlProps[key] = props[key];
+    }
+  });
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["error"]
+  });
+  const ownerState = _extends$1({}, props, {
+    disabled,
+    labelPlacement,
+    required,
+    error: fcs.error
+  });
+  const classes = useUtilityClasses$F(ownerState);
+  const typographySlotProps = (_slotProps$typography = slotProps.typography) != null ? _slotProps$typography : componentsProps.typography;
+  let label = labelProp;
+  if (label != null && label.type !== Typography && !disableTypography) {
+    label = /* @__PURE__ */ jsx(Typography, _extends$1({
+      component: "span"
+    }, typographySlotProps, {
+      className: clsx(classes.label, typographySlotProps == null ? void 0 : typographySlotProps.className),
+      children: label
+    }));
+  }
+  return /* @__PURE__ */ jsxs(FormControlLabelRoot, _extends$1({
+    className: clsx(classes.root, className),
+    ownerState,
+    ref
+  }, other, {
+    children: [/* @__PURE__ */ React.cloneElement(control, controlProps), required ? /* @__PURE__ */ jsxs(Stack, {
+      display: "block",
+      children: [label, /* @__PURE__ */ jsxs(AsteriskComponent$1, {
+        ownerState,
+        "aria-hidden": true,
+        className: classes.asterisk,
+        children: [" ", "*"]
+      })]
+    }) : label]
+  }));
+});
+process.env.NODE_ENV !== "production" ? FormControlLabel.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the component appears selected.
+   */
+  checked: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    typography: PropTypes.object
+  }),
+  /**
+   * A control element. For instance, it can be a `Radio`, a `Switch` or a `Checkbox`.
+   */
+  control: PropTypes.element.isRequired,
+  /**
+   * If `true`, the control is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label is rendered as it is passed without an additional typography node.
+   */
+  disableTypography: PropTypes.bool,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * A text or an element to be used in an enclosing label element.
+   */
+  label: PropTypes.node,
+  /**
+   * The position of the label.
+   * @default 'end'
+   */
+  labelPlacement: PropTypes.oneOf(["bottom", "end", "start", "top"]),
+  /**
+   * @ignore
+   */
+  name: PropTypes.string,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   * You can pull out the new checked state by accessing `event.target.checked` (boolean).
+   */
+  onChange: PropTypes.func,
+  /**
+   * If `true`, the label will indicate that the `input` is required.
+   */
+  required: PropTypes.bool,
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    typography: PropTypes.object
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The value of the component.
+   */
+  value: PropTypes.any
+} : void 0;
+const _excluded$W = ["className"];
+const useUtilityClasses$E = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -7164,10 +16350,10 @@ const useUtilityClasses$f = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridPanelContentRoot = styled("div", {
+const GridPanelContentRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "PanelContent",
-  overridesResolver: (props, styles) => styles.panelContent
+  overridesResolver: (props, styles2) => styles2.panelContent
 })({
   display: "flex",
   flexDirection: "column",
@@ -7178,9 +16364,9 @@ const GridPanelContentRoot = styled("div", {
 function GridPanelContent(props) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$u);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$W);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$f(rootProps);
+  const classes = useUtilityClasses$E(rootProps);
   return /* @__PURE__ */ jsx(GridPanelContentRoot, _extends$1({
     className: clsx(className, classes.root),
     ownerState: rootProps
@@ -7193,8 +16379,8 @@ process.env.NODE_ENV !== "production" ? GridPanelContent.propTypes = {
   // ----------------------------------------------------------------------
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$t = ["className"];
-const useUtilityClasses$e = (ownerState) => {
+const _excluded$V = ["className"];
+const useUtilityClasses$D = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -7203,10 +16389,10 @@ const useUtilityClasses$e = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridPanelFooterRoot = styled("div", {
+const GridPanelFooterRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "PanelFooter",
-  overridesResolver: (props, styles) => styles.panelFooter
+  overridesResolver: (props, styles2) => styles2.panelFooter
 })(({
   theme
 }) => ({
@@ -7217,9 +16403,9 @@ const GridPanelFooterRoot = styled("div", {
 function GridPanelFooter(props) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$t);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$V);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$e(rootProps);
+  const classes = useUtilityClasses$D(rootProps);
   return /* @__PURE__ */ jsx(GridPanelFooterRoot, _extends$1({
     className: clsx(className, classes.root),
     ownerState: rootProps
@@ -7232,8 +16418,8 @@ process.env.NODE_ENV !== "production" ? GridPanelFooter.propTypes = {
   // ----------------------------------------------------------------------
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$s = ["className"];
-const useUtilityClasses$d = (ownerState) => {
+const _excluded$U = ["className"];
+const useUtilityClasses$C = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -7242,10 +16428,10 @@ const useUtilityClasses$d = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridPanelHeaderRoot = styled("div", {
+const GridPanelHeaderRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "PanelHeader",
-  overridesResolver: (props, styles) => styles.panelHeader
+  overridesResolver: (props, styles2) => styles2.panelHeader
 })(({
   theme
 }) => ({
@@ -7254,9 +16440,9 @@ const GridPanelHeaderRoot = styled("div", {
 function GridPanelHeader(props) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$s);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$U);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$d(rootProps);
+  const classes = useUtilityClasses$C(rootProps);
   return /* @__PURE__ */ jsx(GridPanelHeaderRoot, _extends$1({
     className: clsx(className, classes.root),
     ownerState: rootProps
@@ -7269,8 +16455,277 @@ process.env.NODE_ENV !== "production" ? GridPanelHeader.propTypes = {
   // ----------------------------------------------------------------------
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$r = ["className", "slotProps"];
-const useUtilityClasses$c = (ownerState) => {
+const candidatesSelector = ["input", "select", "textarea", "a[href]", "button", "[tabindex]", "audio[controls]", "video[controls]", '[contenteditable]:not([contenteditable="false"])'].join(",");
+function getTabIndex(node) {
+  const tabindexAttr = parseInt(node.getAttribute("tabindex") || "", 10);
+  if (!Number.isNaN(tabindexAttr)) {
+    return tabindexAttr;
+  }
+  if (node.contentEditable === "true" || (node.nodeName === "AUDIO" || node.nodeName === "VIDEO" || node.nodeName === "DETAILS") && node.getAttribute("tabindex") === null) {
+    return 0;
+  }
+  return node.tabIndex;
+}
+function isNonTabbableRadio(node) {
+  if (node.tagName !== "INPUT" || node.type !== "radio") {
+    return false;
+  }
+  if (!node.name) {
+    return false;
+  }
+  const getRadio = (selector) => node.ownerDocument.querySelector(`input[type="radio"]${selector}`);
+  let roving = getRadio(`[name="${node.name}"]:checked`);
+  if (!roving) {
+    roving = getRadio(`[name="${node.name}"]`);
+  }
+  return roving !== node;
+}
+function isNodeMatchingSelectorFocusable(node) {
+  if (node.disabled || node.tagName === "INPUT" && node.type === "hidden" || isNonTabbableRadio(node)) {
+    return false;
+  }
+  return true;
+}
+function defaultGetTabbable(root) {
+  const regularTabNodes = [];
+  const orderedTabNodes = [];
+  Array.from(root.querySelectorAll(candidatesSelector)).forEach((node, i2) => {
+    const nodeTabIndex = getTabIndex(node);
+    if (nodeTabIndex === -1 || !isNodeMatchingSelectorFocusable(node)) {
+      return;
+    }
+    if (nodeTabIndex === 0) {
+      regularTabNodes.push(node);
+    } else {
+      orderedTabNodes.push({
+        documentOrder: i2,
+        tabIndex: nodeTabIndex,
+        node
+      });
+    }
+  });
+  return orderedTabNodes.sort((a, b) => a.tabIndex === b.tabIndex ? a.documentOrder - b.documentOrder : a.tabIndex - b.tabIndex).map((a) => a.node).concat(regularTabNodes);
+}
+function defaultIsEnabled() {
+  return true;
+}
+function FocusTrap(props) {
+  const {
+    children,
+    disableAutoFocus = false,
+    disableEnforceFocus = false,
+    disableRestoreFocus = false,
+    getTabbable = defaultGetTabbable,
+    isEnabled: isEnabled2 = defaultIsEnabled,
+    open
+  } = props;
+  const ignoreNextEnforceFocus = React.useRef(false);
+  const sentinelStart = React.useRef(null);
+  const sentinelEnd = React.useRef(null);
+  const nodeToRestore = React.useRef(null);
+  const reactFocusEventTarget = React.useRef(null);
+  const activated = React.useRef(false);
+  const rootRef = React.useRef(null);
+  const handleRef = unstable_useForkRef(unstable_getReactElementRef(children), rootRef);
+  const lastKeydown = React.useRef(null);
+  React.useEffect(() => {
+    if (!open || !rootRef.current) {
+      return;
+    }
+    activated.current = !disableAutoFocus;
+  }, [disableAutoFocus, open]);
+  React.useEffect(() => {
+    if (!open || !rootRef.current) {
+      return;
+    }
+    const doc = unstable_ownerDocument(rootRef.current);
+    if (!rootRef.current.contains(doc.activeElement)) {
+      if (!rootRef.current.hasAttribute("tabIndex")) {
+        if (process.env.NODE_ENV !== "production") {
+          console.error(["MUI: The modal content node does not accept focus.", 'For the benefit of assistive technologies, the tabIndex of the node is being set to "-1".'].join("\n"));
+        }
+        rootRef.current.setAttribute("tabIndex", "-1");
+      }
+      if (activated.current) {
+        rootRef.current.focus();
+      }
+    }
+    return () => {
+      if (!disableRestoreFocus) {
+        if (nodeToRestore.current && nodeToRestore.current.focus) {
+          ignoreNextEnforceFocus.current = true;
+          nodeToRestore.current.focus();
+        }
+        nodeToRestore.current = null;
+      }
+    };
+  }, [open]);
+  React.useEffect(() => {
+    if (!open || !rootRef.current) {
+      return;
+    }
+    const doc = unstable_ownerDocument(rootRef.current);
+    const loopFocus = (nativeEvent) => {
+      lastKeydown.current = nativeEvent;
+      if (disableEnforceFocus || !isEnabled2() || nativeEvent.key !== "Tab") {
+        return;
+      }
+      if (doc.activeElement === rootRef.current && nativeEvent.shiftKey) {
+        ignoreNextEnforceFocus.current = true;
+        if (sentinelEnd.current) {
+          sentinelEnd.current.focus();
+        }
+      }
+    };
+    const contain = () => {
+      const rootElement = rootRef.current;
+      if (rootElement === null) {
+        return;
+      }
+      if (!doc.hasFocus() || !isEnabled2() || ignoreNextEnforceFocus.current) {
+        ignoreNextEnforceFocus.current = false;
+        return;
+      }
+      if (rootElement.contains(doc.activeElement)) {
+        return;
+      }
+      if (disableEnforceFocus && doc.activeElement !== sentinelStart.current && doc.activeElement !== sentinelEnd.current) {
+        return;
+      }
+      if (doc.activeElement !== reactFocusEventTarget.current) {
+        reactFocusEventTarget.current = null;
+      } else if (reactFocusEventTarget.current !== null) {
+        return;
+      }
+      if (!activated.current) {
+        return;
+      }
+      let tabbable = [];
+      if (doc.activeElement === sentinelStart.current || doc.activeElement === sentinelEnd.current) {
+        tabbable = getTabbable(rootRef.current);
+      }
+      if (tabbable.length > 0) {
+        var _lastKeydown$current, _lastKeydown$current2;
+        const isShiftTab = Boolean(((_lastKeydown$current = lastKeydown.current) == null ? void 0 : _lastKeydown$current.shiftKey) && ((_lastKeydown$current2 = lastKeydown.current) == null ? void 0 : _lastKeydown$current2.key) === "Tab");
+        const focusNext = tabbable[0];
+        const focusPrevious = tabbable[tabbable.length - 1];
+        if (typeof focusNext !== "string" && typeof focusPrevious !== "string") {
+          if (isShiftTab) {
+            focusPrevious.focus();
+          } else {
+            focusNext.focus();
+          }
+        }
+      } else {
+        rootElement.focus();
+      }
+    };
+    doc.addEventListener("focusin", contain);
+    doc.addEventListener("keydown", loopFocus, true);
+    const interval = setInterval(() => {
+      if (doc.activeElement && doc.activeElement.tagName === "BODY") {
+        contain();
+      }
+    }, 50);
+    return () => {
+      clearInterval(interval);
+      doc.removeEventListener("focusin", contain);
+      doc.removeEventListener("keydown", loopFocus, true);
+    };
+  }, [disableAutoFocus, disableEnforceFocus, disableRestoreFocus, isEnabled2, open, getTabbable]);
+  const onFocus = (event) => {
+    if (nodeToRestore.current === null) {
+      nodeToRestore.current = event.relatedTarget;
+    }
+    activated.current = true;
+    reactFocusEventTarget.current = event.target;
+    const childrenPropsHandler = children.props.onFocus;
+    if (childrenPropsHandler) {
+      childrenPropsHandler(event);
+    }
+  };
+  const handleFocusSentinel = (event) => {
+    if (nodeToRestore.current === null) {
+      nodeToRestore.current = event.relatedTarget;
+    }
+    activated.current = true;
+  };
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [/* @__PURE__ */ jsx("div", {
+      tabIndex: open ? 0 : -1,
+      onFocus: handleFocusSentinel,
+      ref: sentinelStart,
+      "data-testid": "sentinelStart"
+    }), /* @__PURE__ */ React.cloneElement(children, {
+      ref: handleRef,
+      onFocus
+    }), /* @__PURE__ */ jsx("div", {
+      tabIndex: open ? 0 : -1,
+      onFocus: handleFocusSentinel,
+      ref: sentinelEnd,
+      "data-testid": "sentinelEnd"
+    })]
+  });
+}
+process.env.NODE_ENV !== "production" ? FocusTrap.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │ To update them, edit the TypeScript types and run `pnpm proptypes`. │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * A single child content element.
+   */
+  children: elementAcceptingRef,
+  /**
+   * If `true`, the focus trap will not automatically shift focus to itself when it opens, and
+   * replace it to the last focused element when it closes.
+   * This also works correctly with any focus trap children that have the `disableAutoFocus` prop.
+   *
+   * Generally this should never be set to `true` as it makes the focus trap less
+   * accessible to assistive technologies, like screen readers.
+   * @default false
+   */
+  disableAutoFocus: PropTypes.bool,
+  /**
+   * If `true`, the focus trap will not prevent focus from leaving the focus trap while open.
+   *
+   * Generally this should never be set to `true` as it makes the focus trap less
+   * accessible to assistive technologies, like screen readers.
+   * @default false
+   */
+  disableEnforceFocus: PropTypes.bool,
+  /**
+   * If `true`, the focus trap will not restore focus to previously focused element once
+   * focus trap is hidden or unmounted.
+   * @default false
+   */
+  disableRestoreFocus: PropTypes.bool,
+  /**
+   * Returns an array of ordered tabbable nodes (i.e. in tab order) within the root.
+   * For instance, you can provide the "tabbable" npm dependency.
+   * @param {HTMLElement} root
+   */
+  getTabbable: PropTypes.func,
+  /**
+   * This prop extends the `open` prop.
+   * It allows to toggle the open state without having to wait for a rerender when changing the `open` prop.
+   * This prop should be memoized.
+   * It can be used to support multiple focus trap mounted at the same time.
+   * @default function defaultIsEnabled(): boolean {
+   *   return true;
+   * }
+   */
+  isEnabled: PropTypes.func,
+  /**
+   * If `true`, focus is locked.
+   */
+  open: PropTypes.bool.isRequired
+} : void 0;
+if (process.env.NODE_ENV !== "production") {
+  FocusTrap["propTypes"] = exactProp(FocusTrap.propTypes);
+}
+const _excluded$T = ["className", "slotProps"];
+const useUtilityClasses$B = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -7279,10 +16734,10 @@ const useUtilityClasses$c = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridPanelWrapperRoot = styled$1("div", {
+const GridPanelWrapperRoot = styled("div", {
   name: "MuiDataGrid",
   slot: "PanelWrapper",
-  overridesResolver: (props, styles) => styles.panelWrapper
+  overridesResolver: (props, styles2) => styles2.panelWrapper
 })({
   display: "flex",
   flexDirection: "column",
@@ -7296,9 +16751,9 @@ const GridPanelWrapper = /* @__PURE__ */ React.forwardRef(function GridPanelWrap
   const {
     className,
     slotProps = {}
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$r);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$T);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$c(rootProps);
+  const classes = useUtilityClasses$B(rootProps);
   return /* @__PURE__ */ jsx(FocusTrap, _extends$1({
     open: true,
     disableEnforceFocus: true,
@@ -7320,8 +16775,8 @@ process.env.NODE_ENV !== "production" ? GridPanelWrapper.propTypes = {
   slotProps: PropTypes.object
 } : void 0;
 const GRID_EXPERIMENTAL_ENABLED = false;
-const _excluded$q = ["sort", "searchPredicate", "autoFocusSearchField", "disableHideAllButton", "disableShowAllButton", "getTogglableColumns"];
-const useUtilityClasses$b = (ownerState) => {
+const _excluded$S = ["sort", "searchPredicate", "autoFocusSearchField", "disableHideAllButton", "disableShowAllButton", "getTogglableColumns"];
+const useUtilityClasses$A = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -7331,17 +16786,17 @@ const useUtilityClasses$b = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridColumnsPanelRoot = styled$1("div", {
+const GridColumnsPanelRoot = styled("div", {
   name: "MuiDataGrid",
   slot: "ColumnsPanel",
-  overridesResolver: (props, styles) => styles.columnsPanel
+  overridesResolver: (props, styles2) => styles2.columnsPanel
 })({
   padding: "8px 0px 8px 8px"
 });
-const GridColumnsPanelRowRoot = styled$1("div", {
+const GridColumnsPanelRowRoot = styled("div", {
   name: "MuiDataGrid",
   slot: "ColumnsPanelRow",
-  overridesResolver: (props, styles) => styles.columnsPanelRow
+  overridesResolver: (props, styles2) => styles2.columnsPanelRow
 })(({
   theme
 }) => ({
@@ -7352,7 +16807,7 @@ const GridColumnsPanelRowRoot = styled$1("div", {
     marginRight: theme.spacing(0.5)
   }
 }));
-styled$1(IconButton)({
+styled(IconButton)({
   justifyContent: "flex-end"
 });
 const collator$1 = new Intl.Collator();
@@ -7367,7 +16822,7 @@ function GridColumnsPanel(props) {
   const columnVisibilityModel = useGridSelector(apiRef, gridColumnVisibilityModelSelector);
   const rootProps = useGridRootProps();
   const [searchValue, setSearchValue] = React.useState("");
-  const classes = useUtilityClasses$b(rootProps);
+  const classes = useUtilityClasses$A(rootProps);
   const {
     sort,
     searchPredicate = defaultSearchPredicate,
@@ -7375,7 +16830,7 @@ function GridColumnsPanel(props) {
     disableHideAllButton = false,
     disableShowAllButton = false,
     getTogglableColumns
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$q);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$S);
   const sortedColumns = React.useMemo(() => {
     switch (sort) {
       case "asc":
@@ -7519,21 +16974,21 @@ process.env.NODE_ENV !== "production" ? GridColumnsPanel.propTypes = {
   slotProps: PropTypes.object,
   sort: PropTypes.oneOf(["asc", "desc"])
 } : void 0;
-const _excluded$p = ["children", "className", "classes"];
+const _excluded$R = ["children", "className", "classes"];
 const gridPanelClasses = unstable_generateUtilityClasses("MuiDataGrid", ["panel", "paper"]);
-const GridPanelRoot = styled$1(Popper, {
+const GridPanelRoot = styled(Popper2, {
   name: "MuiDataGrid",
   slot: "Panel",
-  overridesResolver: (props, styles) => styles.panel
+  overridesResolver: (props, styles2) => styles2.panel
 })(({
   theme
 }) => ({
   zIndex: theme.zIndex.modal
 }));
-const GridPaperRoot = styled$1(Paper, {
+const GridPaperRoot = styled(Paper, {
   name: "MuiDataGrid",
   slot: "Paper",
-  overridesResolver: (props, styles) => styles.paper
+  overridesResolver: (props, styles2) => styles2.paper
 })(({
   theme
 }) => ({
@@ -7546,7 +17001,7 @@ const GridPanel = /* @__PURE__ */ React.forwardRef((props, ref) => {
   const {
     children,
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$p);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$R);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const classes = gridPanelClasses;
@@ -7644,8 +17099,8 @@ const GridPreferencesPanel = /* @__PURE__ */ React.forwardRef(function GridPrefe
     children: panelContent
   }));
 });
-const _excluded$o = ["item", "hasMultipleFilters", "deleteFilter", "applyFilterChanges", "multiFilterOperator", "showMultiFilterOperators", "disableMultiFilterOperator", "applyMultiFilterOperatorChanges", "focusElementRef", "logicOperators", "columnsSort", "filterColumns", "deleteIconProps", "logicOperatorInputProps", "operatorInputProps", "columnInputProps", "valueInputProps", "children"], _excluded2$4 = ["InputComponentProps"];
-const useUtilityClasses$a = (ownerState) => {
+const _excluded$Q = ["item", "hasMultipleFilters", "deleteFilter", "applyFilterChanges", "multiFilterOperator", "showMultiFilterOperators", "disableMultiFilterOperator", "applyMultiFilterOperatorChanges", "focusElementRef", "logicOperators", "columnsSort", "filterColumns", "deleteIconProps", "logicOperatorInputProps", "operatorInputProps", "columnInputProps", "valueInputProps", "children"], _excluded2$8 = ["InputComponentProps"];
+const useUtilityClasses$z = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -7659,20 +17114,20 @@ const useUtilityClasses$a = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridFilterFormRoot = styled$1("div", {
+const GridFilterFormRoot = styled("div", {
   name: "MuiDataGrid",
   slot: "FilterForm",
-  overridesResolver: (props, styles) => styles.filterForm
+  overridesResolver: (props, styles2) => styles2.filterForm
 })(({
   theme
 }) => ({
   display: "flex",
   padding: theme.spacing(1)
 }));
-const FilterFormDeleteIcon = styled$1("div", {
+const FilterFormDeleteIcon = styled("div", {
   name: "MuiDataGrid",
   slot: "FilterFormDeleteIcon",
-  overridesResolver: (_, styles) => styles.filterFormDeleteIcon
+  overridesResolver: (_2, styles2) => styles2.filterFormDeleteIcon
 })(({
   theme
 }) => ({
@@ -7681,33 +17136,33 @@ const FilterFormDeleteIcon = styled$1("div", {
   marginRight: theme.spacing(0.5),
   marginBottom: theme.spacing(0.2)
 }));
-const FilterFormLogicOperatorInput = styled$1("div", {
+const FilterFormLogicOperatorInput = styled("div", {
   name: "MuiDataGrid",
   slot: "FilterFormLogicOperatorInput",
-  overridesResolver: (_, styles) => styles.filterFormLogicOperatorInput
+  overridesResolver: (_2, styles2) => styles2.filterFormLogicOperatorInput
 })({
   minWidth: 55,
   marginRight: 5,
   justifyContent: "end"
 });
-const FilterFormColumnInput = styled$1("div", {
+const FilterFormColumnInput = styled("div", {
   name: "MuiDataGrid",
   slot: "FilterFormColumnInput",
-  overridesResolver: (_, styles) => styles.filterFormColumnInput
+  overridesResolver: (_2, styles2) => styles2.filterFormColumnInput
 })({
   width: 150
 });
-const FilterFormOperatorInput = styled$1("div", {
+const FilterFormOperatorInput = styled("div", {
   name: "MuiDataGrid",
   slot: "FilterFormOperatorInput",
-  overridesResolver: (_, styles) => styles.filterFormOperatorInput
+  overridesResolver: (_2, styles2) => styles2.filterFormOperatorInput
 })({
   width: 120
 });
-const FilterFormValueInput = styled$1("div", {
+const FilterFormValueInput = styled("div", {
   name: "MuiDataGrid",
   slot: "FilterFormValueInput",
-  overridesResolver: (_, styles) => styles.filterFormValueInput
+  overridesResolver: (_2, styles2) => styles2.filterFormValueInput
 })({
   width: 190
 });
@@ -7743,7 +17198,7 @@ const GridFilterForm = /* @__PURE__ */ React.forwardRef(function GridFilterForm2
     operatorInputProps = {},
     columnInputProps = {},
     valueInputProps = {}
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$o);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$Q);
   const apiRef = useGridApiContext();
   const filterableColumns = useGridSelector(apiRef, gridFilterableColumnDefinitionsSelector);
   const filterModel = useGridSelector(apiRef, gridFilterModelSelector);
@@ -7752,7 +17207,7 @@ const GridFilterForm = /* @__PURE__ */ React.forwardRef(function GridFilterForm2
   const operatorSelectId = unstable_useId();
   const operatorSelectLabelId = unstable_useId();
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$a(rootProps);
+  const classes = useUtilityClasses$z(rootProps);
   const valueRef = React.useRef(null);
   const filterSelectorRef = React.useRef(null);
   const hasLogicOperatorColumn = hasMultipleFilters && logicOperators.length > 0;
@@ -7763,7 +17218,7 @@ const GridFilterForm = /* @__PURE__ */ React.forwardRef(function GridFilterForm2
   const baseSelectOptionProps = ((_rootProps$slotProps4 = rootProps.slotProps) == null ? void 0 : _rootProps$slotProps4.baseSelectOption) || {};
   const {
     InputComponentProps
-  } = valueInputProps, valueInputPropsOther = _objectWithoutPropertiesLoose$1(valueInputProps, _excluded2$4);
+  } = valueInputProps, valueInputPropsOther = _objectWithoutPropertiesLoose$1(valueInputProps, _excluded2$8);
   const filteredColumns = React.useMemo(() => {
     if (filterColumns === void 0 || typeof filterColumns !== "function") {
       return filterableColumns;
@@ -8077,7 +17532,7 @@ function useTimeout() {
   useOnMount(timeout.disposeEffect);
   return timeout;
 }
-const _excluded$n = ["item", "applyValue", "type", "apiRef", "focusElementRef", "tabIndex", "disabled", "isFilterActive", "clearButton", "InputProps", "variant"];
+const _excluded$P = ["item", "applyValue", "type", "apiRef", "focusElementRef", "tabIndex", "disabled", "isFilterActive", "clearButton", "InputProps", "variant"];
 function GridFilterInputValue(props) {
   var _item$value, _rootProps$slotProps;
   const {
@@ -8091,7 +17546,7 @@ function GridFilterInputValue(props) {
     clearButton,
     InputProps,
     variant = "standard"
-  } = props, others = _objectWithoutPropertiesLoose$1(props, _excluded$n);
+  } = props, others = _objectWithoutPropertiesLoose$1(props, _excluded$P);
   const filterTimeout = useTimeout();
   const [filterValueState, setFilterValueState] = React.useState((_item$value = item.value) != null ? _item$value : "");
   const [applying, setIsApplying] = React.useState(false);
@@ -8168,7 +17623,7 @@ process.env.NODE_ENV !== "production" ? GridFilterInputValue.propTypes = {
     value: PropTypes.any
   }).isRequired
 } : void 0;
-const _excluded$m = ["item", "applyValue", "type", "apiRef", "focusElementRef", "InputProps", "isFilterActive", "clearButton", "tabIndex", "disabled"];
+const _excluded$O = ["item", "applyValue", "type", "apiRef", "focusElementRef", "InputProps", "isFilterActive", "clearButton", "tabIndex", "disabled"];
 function GridFilterInputDate(props) {
   var _item$value, _rootProps$slotProps;
   const {
@@ -8181,7 +17636,7 @@ function GridFilterInputDate(props) {
     clearButton,
     tabIndex,
     disabled
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$m);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$O);
   const filterTimeout = useTimeout();
   const [filterValueState, setFilterValueState] = React.useState((_item$value = item.value) != null ? _item$value : "");
   const [applying, setIsApplying] = React.useState(false);
@@ -8254,7 +17709,7 @@ process.env.NODE_ENV !== "production" ? GridFilterInputDate.propTypes = {
     value: PropTypes.any
   }).isRequired
 } : void 0;
-const _excluded$l = ["item", "applyValue", "type", "apiRef", "focusElementRef", "getOptionLabel", "getOptionValue", "placeholder", "tabIndex", "label", "variant", "isFilterActive", "clearButton", "InputLabelProps"];
+const _excluded$N = ["item", "applyValue", "type", "apiRef", "focusElementRef", "getOptionLabel", "getOptionValue", "placeholder", "tabIndex", "label", "variant", "isFilterActive", "clearButton", "InputLabelProps"];
 const renderSingleSelectOptions = ({
   column: {
     valueOptions,
@@ -8279,7 +17734,7 @@ const renderSingleSelectOptions = ({
     }), label);
   });
 };
-const SingleSelectOperatorContainer = styled$1("div")({
+const SingleSelectOperatorContainer = styled("div")({
   display: "flex",
   alignItems: "flex-end",
   width: "100%",
@@ -8302,7 +17757,7 @@ function GridFilterInputSingleSelect(props) {
     label: labelProp,
     variant = "standard",
     clearButton
-  } = props, others = _objectWithoutPropertiesLoose$1(props, _excluded$l);
+  } = props, others = _objectWithoutPropertiesLoose$1(props, _excluded$N);
   const [filterValueState, setFilterValueState] = React.useState((_item$value = item.value) != null ? _item$value : "");
   const id = unstable_useId();
   const labelId = unstable_useId();
@@ -8428,8 +17883,8 @@ process.env.NODE_ENV !== "production" ? GridFilterInputSingleSelect.propTypes = 
     value: PropTypes.any
   }).isRequired
 } : void 0;
-const _excluded$k = ["item", "applyValue", "apiRef", "focusElementRef", "isFilterActive", "clearButton", "tabIndex", "label", "variant", "InputLabelProps"];
-const BooleanOperatorContainer = styled$1("div")({
+const _excluded$M = ["item", "applyValue", "apiRef", "focusElementRef", "isFilterActive", "clearButton", "tabIndex", "label", "variant", "InputLabelProps"];
+const BooleanOperatorContainer = styled("div")({
   display: "flex",
   alignItems: "center",
   width: "100%",
@@ -8448,7 +17903,7 @@ function GridFilterInputBoolean(props) {
     tabIndex,
     label: labelProp,
     variant = "standard"
-  } = props, others = _objectWithoutPropertiesLoose$1(props, _excluded$k);
+  } = props, others = _objectWithoutPropertiesLoose$1(props, _excluded$M);
   const [filterValueState, setFilterValueState] = React.useState(item.value || "");
   const rootProps = useGridRootProps();
   const labelId = unstable_useId();
@@ -8517,7 +17972,7 @@ process.env.NODE_ENV !== "production" ? GridFilterInputBoolean.propTypes = {
   }).isRequired,
   applyValue: PropTypes.func.isRequired,
   clearButton: PropTypes.node,
-  focusElementRef: refType,
+  focusElementRef: refType$1,
   /**
    * It is `true` if the filter either has a value or an operator with no value
    * required is selected (e.g. `isEmpty`)
@@ -8530,7 +17985,7 @@ process.env.NODE_ENV !== "production" ? GridFilterInputBoolean.propTypes = {
     value: PropTypes.any
   }).isRequired
 } : void 0;
-const _excluded$j = ["logicOperators", "columnsSort", "filterFormProps", "getColumnForNewFilter", "children", "disableAddFilterButton", "disableRemoveAllButton"];
+const _excluded$L = ["logicOperators", "columnsSort", "filterFormProps", "getColumnForNewFilter", "children", "disableAddFilterButton", "disableRemoveAllButton"];
 const getGridFilter = (col) => ({
   field: col.field,
   operator: col.filterOperators[0].value,
@@ -8551,7 +18006,7 @@ const GridFilterPanel = /* @__PURE__ */ React.forwardRef(function GridFilterPane
     getColumnForNewFilter,
     disableAddFilterButton = false,
     disableRemoveAllButton = false
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$j);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$L);
   const applyFilter = apiRef.current.upsertFilterItem;
   const applyFilterLogicOperator = React.useCallback((operator) => {
     apiRef.current.setFilterLogicOperator(operator);
@@ -8727,7 +18182,2637 @@ process.env.NODE_ENV !== "production" ? GridFilterPanel.propTypes = {
    */
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const _excluded$i = ["item", "applyValue", "type", "apiRef", "focusElementRef", "color", "error", "helperText", "size", "variant"];
+function stripDiacritics(string) {
+  return typeof string.normalize !== "undefined" ? string.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : string;
+}
+function createFilterOptions(config = {}) {
+  const {
+    ignoreAccents = true,
+    ignoreCase = true,
+    limit,
+    matchFrom = "any",
+    stringify: stringify2,
+    trim = false
+  } = config;
+  return (options, {
+    inputValue,
+    getOptionLabel
+  }) => {
+    let input = trim ? inputValue.trim() : inputValue;
+    if (ignoreCase) {
+      input = input.toLowerCase();
+    }
+    if (ignoreAccents) {
+      input = stripDiacritics(input);
+    }
+    const filteredOptions = !input ? options : options.filter((option) => {
+      let candidate = (stringify2 || getOptionLabel)(option);
+      if (ignoreCase) {
+        candidate = candidate.toLowerCase();
+      }
+      if (ignoreAccents) {
+        candidate = stripDiacritics(candidate);
+      }
+      return matchFrom === "start" ? candidate.indexOf(input) === 0 : candidate.indexOf(input) > -1;
+    });
+    return typeof limit === "number" ? filteredOptions.slice(0, limit) : filteredOptions;
+  };
+}
+function findIndex(array, comp) {
+  for (let i2 = 0; i2 < array.length; i2 += 1) {
+    if (comp(array[i2])) {
+      return i2;
+    }
+  }
+  return -1;
+}
+const defaultFilterOptions = createFilterOptions();
+const pageSize = 5;
+const defaultIsActiveElementInListbox = (listboxRef) => {
+  var _listboxRef$current$p;
+  return listboxRef.current !== null && ((_listboxRef$current$p = listboxRef.current.parentElement) == null ? void 0 : _listboxRef$current$p.contains(document.activeElement));
+};
+const MULTIPLE_DEFAULT_VALUE = [];
+function useAutocomplete(props) {
+  const {
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    unstable_isActiveElementInListbox = defaultIsActiveElementInListbox,
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    unstable_classNamePrefix = "Mui",
+    autoComplete = false,
+    autoHighlight = false,
+    autoSelect = false,
+    blurOnSelect = false,
+    clearOnBlur = !props.freeSolo,
+    clearOnEscape = false,
+    componentName = "useAutocomplete",
+    defaultValue = props.multiple ? MULTIPLE_DEFAULT_VALUE : null,
+    disableClearable = false,
+    disableCloseOnSelect = false,
+    disabled: disabledProp,
+    disabledItemsFocusable = false,
+    disableListWrap = false,
+    filterOptions = defaultFilterOptions,
+    filterSelectedOptions = false,
+    freeSolo = false,
+    getOptionDisabled,
+    getOptionKey,
+    getOptionLabel: getOptionLabelProp = (option) => {
+      var _option$label;
+      return (_option$label = option.label) != null ? _option$label : option;
+    },
+    groupBy,
+    handleHomeEndKeys = !props.freeSolo,
+    id: idProp,
+    includeInputInList = false,
+    inputValue: inputValueProp,
+    isOptionEqualToValue = (option, value2) => option === value2,
+    multiple = false,
+    onChange,
+    onClose,
+    onHighlightChange,
+    onInputChange,
+    onOpen,
+    open: openProp,
+    openOnFocus = false,
+    options,
+    readOnly = false,
+    selectOnFocus = !props.freeSolo,
+    value: valueProp
+  } = props;
+  const id = unstable_useId(idProp);
+  let getOptionLabel = getOptionLabelProp;
+  getOptionLabel = (option) => {
+    const optionLabel = getOptionLabelProp(option);
+    if (typeof optionLabel !== "string") {
+      if (process.env.NODE_ENV !== "production") {
+        const erroneousReturn = optionLabel === void 0 ? "undefined" : `${typeof optionLabel} (${optionLabel})`;
+        console.error(`MUI: The \`getOptionLabel\` method of ${componentName} returned ${erroneousReturn} instead of a string for ${JSON.stringify(option)}.`);
+      }
+      return String(optionLabel);
+    }
+    return optionLabel;
+  };
+  const ignoreFocus = React.useRef(false);
+  const firstFocus = React.useRef(true);
+  const inputRef = React.useRef(null);
+  const listboxRef = React.useRef(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [focusedTag, setFocusedTag] = React.useState(-1);
+  const defaultHighlighted = autoHighlight ? 0 : -1;
+  const highlightedIndexRef = React.useRef(defaultHighlighted);
+  const [value, setValueState] = unstable_useControlled({
+    controlled: valueProp,
+    default: defaultValue,
+    name: componentName
+  });
+  const [inputValue, setInputValueState] = unstable_useControlled({
+    controlled: inputValueProp,
+    default: "",
+    name: componentName,
+    state: "inputValue"
+  });
+  const [focused, setFocused] = React.useState(false);
+  const resetInputValue = React.useCallback((event, newValue) => {
+    const isOptionSelected = multiple ? value.length < newValue.length : newValue !== null;
+    if (!isOptionSelected && !clearOnBlur) {
+      return;
+    }
+    let newInputValue;
+    if (multiple) {
+      newInputValue = "";
+    } else if (newValue == null) {
+      newInputValue = "";
+    } else {
+      const optionLabel = getOptionLabel(newValue);
+      newInputValue = typeof optionLabel === "string" ? optionLabel : "";
+    }
+    if (inputValue === newInputValue) {
+      return;
+    }
+    setInputValueState(newInputValue);
+    if (onInputChange) {
+      onInputChange(event, newInputValue, "reset");
+    }
+  }, [getOptionLabel, inputValue, multiple, onInputChange, setInputValueState, clearOnBlur, value]);
+  const [open, setOpenState] = unstable_useControlled({
+    controlled: openProp,
+    default: false,
+    name: componentName,
+    state: "open"
+  });
+  const [inputPristine, setInputPristine] = React.useState(true);
+  const inputValueIsSelectedValue = !multiple && value != null && inputValue === getOptionLabel(value);
+  const popupOpen = open && !readOnly;
+  const filteredOptions = popupOpen ? filterOptions(
+    options.filter((option) => {
+      if (filterSelectedOptions && (multiple ? value : [value]).some((value2) => value2 !== null && isOptionEqualToValue(option, value2))) {
+        return false;
+      }
+      return true;
+    }),
+    // we use the empty string to manipulate `filterOptions` to not filter any options
+    // i.e. the filter predicate always returns true
+    {
+      inputValue: inputValueIsSelectedValue && inputPristine ? "" : inputValue,
+      getOptionLabel
+    }
+  ) : [];
+  const previousProps = usePreviousProps({
+    filteredOptions,
+    value,
+    inputValue
+  });
+  React.useEffect(() => {
+    const valueChange = value !== previousProps.value;
+    if (focused && !valueChange) {
+      return;
+    }
+    if (freeSolo && !valueChange) {
+      return;
+    }
+    resetInputValue(null, value);
+  }, [value, resetInputValue, focused, previousProps.value, freeSolo]);
+  const listboxAvailable = open && filteredOptions.length > 0 && !readOnly;
+  if (process.env.NODE_ENV !== "production") {
+    if (value !== null && !freeSolo && options.length > 0) {
+      const missingValue = (multiple ? value : [value]).filter((value2) => !options.some((option) => isOptionEqualToValue(option, value2)));
+      if (missingValue.length > 0) {
+        console.warn([`MUI: The value provided to ${componentName} is invalid.`, `None of the options match with \`${missingValue.length > 1 ? JSON.stringify(missingValue) : JSON.stringify(missingValue[0])}\`.`, "You can use the `isOptionEqualToValue` prop to customize the equality test."].join("\n"));
+      }
+    }
+  }
+  const focusTag = unstable_useEventCallback((tagToFocus) => {
+    if (tagToFocus === -1) {
+      inputRef.current.focus();
+    } else {
+      anchorEl.querySelector(`[data-tag-index="${tagToFocus}"]`).focus();
+    }
+  });
+  React.useEffect(() => {
+    if (multiple && focusedTag > value.length - 1) {
+      setFocusedTag(-1);
+      focusTag(-1);
+    }
+  }, [value, multiple, focusedTag, focusTag]);
+  function validOptionIndex(index2, direction) {
+    if (!listboxRef.current || index2 < 0 || index2 >= filteredOptions.length) {
+      return -1;
+    }
+    let nextFocus = index2;
+    while (true) {
+      const option = listboxRef.current.querySelector(`[data-option-index="${nextFocus}"]`);
+      const nextFocusDisabled = disabledItemsFocusable ? false : !option || option.disabled || option.getAttribute("aria-disabled") === "true";
+      if (option && option.hasAttribute("tabindex") && !nextFocusDisabled) {
+        return nextFocus;
+      }
+      if (direction === "next") {
+        nextFocus = (nextFocus + 1) % filteredOptions.length;
+      } else {
+        nextFocus = (nextFocus - 1 + filteredOptions.length) % filteredOptions.length;
+      }
+      if (nextFocus === index2) {
+        return -1;
+      }
+    }
+  }
+  const setHighlightedIndex = unstable_useEventCallback(({
+    event,
+    index: index2,
+    reason = "auto"
+  }) => {
+    highlightedIndexRef.current = index2;
+    if (index2 === -1) {
+      inputRef.current.removeAttribute("aria-activedescendant");
+    } else {
+      inputRef.current.setAttribute("aria-activedescendant", `${id}-option-${index2}`);
+    }
+    if (onHighlightChange) {
+      onHighlightChange(event, index2 === -1 ? null : filteredOptions[index2], reason);
+    }
+    if (!listboxRef.current) {
+      return;
+    }
+    const prev = listboxRef.current.querySelector(`[role="option"].${unstable_classNamePrefix}-focused`);
+    if (prev) {
+      prev.classList.remove(`${unstable_classNamePrefix}-focused`);
+      prev.classList.remove(`${unstable_classNamePrefix}-focusVisible`);
+    }
+    let listboxNode = listboxRef.current;
+    if (listboxRef.current.getAttribute("role") !== "listbox") {
+      listboxNode = listboxRef.current.parentElement.querySelector('[role="listbox"]');
+    }
+    if (!listboxNode) {
+      return;
+    }
+    if (index2 === -1) {
+      listboxNode.scrollTop = 0;
+      return;
+    }
+    const option = listboxRef.current.querySelector(`[data-option-index="${index2}"]`);
+    if (!option) {
+      return;
+    }
+    option.classList.add(`${unstable_classNamePrefix}-focused`);
+    if (reason === "keyboard") {
+      option.classList.add(`${unstable_classNamePrefix}-focusVisible`);
+    }
+    if (listboxNode.scrollHeight > listboxNode.clientHeight && reason !== "mouse" && reason !== "touch") {
+      const element = option;
+      const scrollBottom = listboxNode.clientHeight + listboxNode.scrollTop;
+      const elementBottom = element.offsetTop + element.offsetHeight;
+      if (elementBottom > scrollBottom) {
+        listboxNode.scrollTop = elementBottom - listboxNode.clientHeight;
+      } else if (element.offsetTop - element.offsetHeight * (groupBy ? 1.3 : 0) < listboxNode.scrollTop) {
+        listboxNode.scrollTop = element.offsetTop - element.offsetHeight * (groupBy ? 1.3 : 0);
+      }
+    }
+  });
+  const changeHighlightedIndex = unstable_useEventCallback(({
+    event,
+    diff,
+    direction = "next",
+    reason = "auto"
+  }) => {
+    if (!popupOpen) {
+      return;
+    }
+    const getNextIndex = () => {
+      const maxIndex = filteredOptions.length - 1;
+      if (diff === "reset") {
+        return defaultHighlighted;
+      }
+      if (diff === "start") {
+        return 0;
+      }
+      if (diff === "end") {
+        return maxIndex;
+      }
+      const newIndex = highlightedIndexRef.current + diff;
+      if (newIndex < 0) {
+        if (newIndex === -1 && includeInputInList) {
+          return -1;
+        }
+        if (disableListWrap && highlightedIndexRef.current !== -1 || Math.abs(diff) > 1) {
+          return 0;
+        }
+        return maxIndex;
+      }
+      if (newIndex > maxIndex) {
+        if (newIndex === maxIndex + 1 && includeInputInList) {
+          return -1;
+        }
+        if (disableListWrap || Math.abs(diff) > 1) {
+          return maxIndex;
+        }
+        return 0;
+      }
+      return newIndex;
+    };
+    const nextIndex = validOptionIndex(getNextIndex(), direction);
+    setHighlightedIndex({
+      index: nextIndex,
+      reason,
+      event
+    });
+    if (autoComplete && diff !== "reset") {
+      if (nextIndex === -1) {
+        inputRef.current.value = inputValue;
+      } else {
+        const option = getOptionLabel(filteredOptions[nextIndex]);
+        inputRef.current.value = option;
+        const index2 = option.toLowerCase().indexOf(inputValue.toLowerCase());
+        if (index2 === 0 && inputValue.length > 0) {
+          inputRef.current.setSelectionRange(inputValue.length, option.length);
+        }
+      }
+    }
+  });
+  const getPreviousHighlightedOptionIndex = () => {
+    const isSameValue = (value1, value2) => {
+      const label1 = value1 ? getOptionLabel(value1) : "";
+      const label2 = value2 ? getOptionLabel(value2) : "";
+      return label1 === label2;
+    };
+    if (highlightedIndexRef.current !== -1 && previousProps.filteredOptions && previousProps.filteredOptions.length !== filteredOptions.length && previousProps.inputValue === inputValue && (multiple ? value.length === previousProps.value.length && previousProps.value.every((val, i2) => getOptionLabel(value[i2]) === getOptionLabel(val)) : isSameValue(previousProps.value, value))) {
+      const previousHighlightedOption = previousProps.filteredOptions[highlightedIndexRef.current];
+      if (previousHighlightedOption) {
+        return findIndex(filteredOptions, (option) => {
+          return getOptionLabel(option) === getOptionLabel(previousHighlightedOption);
+        });
+      }
+    }
+    return -1;
+  };
+  const syncHighlightedIndex = React.useCallback(() => {
+    if (!popupOpen) {
+      return;
+    }
+    const previousHighlightedOptionIndex = getPreviousHighlightedOptionIndex();
+    if (previousHighlightedOptionIndex !== -1) {
+      highlightedIndexRef.current = previousHighlightedOptionIndex;
+      return;
+    }
+    const valueItem = multiple ? value[0] : value;
+    if (filteredOptions.length === 0 || valueItem == null) {
+      changeHighlightedIndex({
+        diff: "reset"
+      });
+      return;
+    }
+    if (!listboxRef.current) {
+      return;
+    }
+    if (valueItem != null) {
+      const currentOption = filteredOptions[highlightedIndexRef.current];
+      if (multiple && currentOption && findIndex(value, (val) => isOptionEqualToValue(currentOption, val)) !== -1) {
+        return;
+      }
+      const itemIndex = findIndex(filteredOptions, (optionItem) => isOptionEqualToValue(optionItem, valueItem));
+      if (itemIndex === -1) {
+        changeHighlightedIndex({
+          diff: "reset"
+        });
+      } else {
+        setHighlightedIndex({
+          index: itemIndex
+        });
+      }
+      return;
+    }
+    if (highlightedIndexRef.current >= filteredOptions.length - 1) {
+      setHighlightedIndex({
+        index: filteredOptions.length - 1
+      });
+      return;
+    }
+    setHighlightedIndex({
+      index: highlightedIndexRef.current
+    });
+  }, [
+    // Only sync the highlighted index when the option switch between empty and not
+    filteredOptions.length,
+    // Don't sync the highlighted index with the value when multiple
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    multiple ? false : value,
+    filterSelectedOptions,
+    changeHighlightedIndex,
+    setHighlightedIndex,
+    popupOpen,
+    inputValue,
+    multiple
+  ]);
+  const handleListboxRef = unstable_useEventCallback((node) => {
+    unstable_setRef(listboxRef, node);
+    if (!node) {
+      return;
+    }
+    syncHighlightedIndex();
+  });
+  if (process.env.NODE_ENV !== "production") {
+    React.useEffect(() => {
+      if (!inputRef.current || inputRef.current.nodeName !== "INPUT") {
+        if (inputRef.current && inputRef.current.nodeName === "TEXTAREA") {
+          console.warn([`A textarea element was provided to ${componentName} where input was expected.`, `This is not a supported scenario but it may work under certain conditions.`, `A textarea keyboard navigation may conflict with Autocomplete controls (for example enter and arrow keys).`, `Make sure to test keyboard navigation and add custom event handlers if necessary.`].join("\n"));
+        } else {
+          console.error([`MUI: Unable to find the input element. It was resolved to ${inputRef.current} while an HTMLInputElement was expected.`, `Instead, ${componentName} expects an input element.`, "", componentName === "useAutocomplete" ? "Make sure you have bound getInputProps correctly and that the normal ref/effect resolutions order is guaranteed." : "Make sure you have customized the input component correctly."].join("\n"));
+        }
+      }
+    }, [componentName]);
+  }
+  React.useEffect(() => {
+    syncHighlightedIndex();
+  }, [syncHighlightedIndex]);
+  const handleOpen = (event) => {
+    if (open) {
+      return;
+    }
+    setOpenState(true);
+    setInputPristine(true);
+    if (onOpen) {
+      onOpen(event);
+    }
+  };
+  const handleClose = (event, reason) => {
+    if (!open) {
+      return;
+    }
+    setOpenState(false);
+    if (onClose) {
+      onClose(event, reason);
+    }
+  };
+  const handleValue = (event, newValue, reason, details) => {
+    if (multiple) {
+      if (value.length === newValue.length && value.every((val, i2) => val === newValue[i2])) {
+        return;
+      }
+    } else if (value === newValue) {
+      return;
+    }
+    if (onChange) {
+      onChange(event, newValue, reason, details);
+    }
+    setValueState(newValue);
+  };
+  const isTouch = React.useRef(false);
+  const selectNewValue = (event, option, reasonProp = "selectOption", origin = "options") => {
+    let reason = reasonProp;
+    let newValue = option;
+    if (multiple) {
+      newValue = Array.isArray(value) ? value.slice() : [];
+      if (process.env.NODE_ENV !== "production") {
+        const matches = newValue.filter((val) => isOptionEqualToValue(option, val));
+        if (matches.length > 1) {
+          console.error([`MUI: The \`isOptionEqualToValue\` method of ${componentName} does not handle the arguments correctly.`, `The component expects a single value to match a given option but found ${matches.length} matches.`].join("\n"));
+        }
+      }
+      const itemIndex = findIndex(newValue, (valueItem) => isOptionEqualToValue(option, valueItem));
+      if (itemIndex === -1) {
+        newValue.push(option);
+      } else if (origin !== "freeSolo") {
+        newValue.splice(itemIndex, 1);
+        reason = "removeOption";
+      }
+    }
+    resetInputValue(event, newValue);
+    handleValue(event, newValue, reason, {
+      option
+    });
+    if (!disableCloseOnSelect && (!event || !event.ctrlKey && !event.metaKey)) {
+      handleClose(event, reason);
+    }
+    if (blurOnSelect === true || blurOnSelect === "touch" && isTouch.current || blurOnSelect === "mouse" && !isTouch.current) {
+      inputRef.current.blur();
+    }
+  };
+  function validTagIndex(index2, direction) {
+    if (index2 === -1) {
+      return -1;
+    }
+    let nextFocus = index2;
+    while (true) {
+      if (direction === "next" && nextFocus === value.length || direction === "previous" && nextFocus === -1) {
+        return -1;
+      }
+      const option = anchorEl.querySelector(`[data-tag-index="${nextFocus}"]`);
+      if (!option || !option.hasAttribute("tabindex") || option.disabled || option.getAttribute("aria-disabled") === "true") {
+        nextFocus += direction === "next" ? 1 : -1;
+      } else {
+        return nextFocus;
+      }
+    }
+  }
+  const handleFocusTag = (event, direction) => {
+    if (!multiple) {
+      return;
+    }
+    if (inputValue === "") {
+      handleClose(event, "toggleInput");
+    }
+    let nextTag = focusedTag;
+    if (focusedTag === -1) {
+      if (inputValue === "" && direction === "previous") {
+        nextTag = value.length - 1;
+      }
+    } else {
+      nextTag += direction === "next" ? 1 : -1;
+      if (nextTag < 0) {
+        nextTag = 0;
+      }
+      if (nextTag === value.length) {
+        nextTag = -1;
+      }
+    }
+    nextTag = validTagIndex(nextTag, direction);
+    setFocusedTag(nextTag);
+    focusTag(nextTag);
+  };
+  const handleClear = (event) => {
+    ignoreFocus.current = true;
+    setInputValueState("");
+    if (onInputChange) {
+      onInputChange(event, "", "clear");
+    }
+    handleValue(event, multiple ? [] : null, "clear");
+  };
+  const handleKeyDown = (other) => (event) => {
+    if (other.onKeyDown) {
+      other.onKeyDown(event);
+    }
+    if (event.defaultMuiPrevented) {
+      return;
+    }
+    if (focusedTag !== -1 && ["ArrowLeft", "ArrowRight"].indexOf(event.key) === -1) {
+      setFocusedTag(-1);
+      focusTag(-1);
+    }
+    if (event.which !== 229) {
+      switch (event.key) {
+        case "Home":
+          if (popupOpen && handleHomeEndKeys) {
+            event.preventDefault();
+            changeHighlightedIndex({
+              diff: "start",
+              direction: "next",
+              reason: "keyboard",
+              event
+            });
+          }
+          break;
+        case "End":
+          if (popupOpen && handleHomeEndKeys) {
+            event.preventDefault();
+            changeHighlightedIndex({
+              diff: "end",
+              direction: "previous",
+              reason: "keyboard",
+              event
+            });
+          }
+          break;
+        case "PageUp":
+          event.preventDefault();
+          changeHighlightedIndex({
+            diff: -pageSize,
+            direction: "previous",
+            reason: "keyboard",
+            event
+          });
+          handleOpen(event);
+          break;
+        case "PageDown":
+          event.preventDefault();
+          changeHighlightedIndex({
+            diff: pageSize,
+            direction: "next",
+            reason: "keyboard",
+            event
+          });
+          handleOpen(event);
+          break;
+        case "ArrowDown":
+          event.preventDefault();
+          changeHighlightedIndex({
+            diff: 1,
+            direction: "next",
+            reason: "keyboard",
+            event
+          });
+          handleOpen(event);
+          break;
+        case "ArrowUp":
+          event.preventDefault();
+          changeHighlightedIndex({
+            diff: -1,
+            direction: "previous",
+            reason: "keyboard",
+            event
+          });
+          handleOpen(event);
+          break;
+        case "ArrowLeft":
+          handleFocusTag(event, "previous");
+          break;
+        case "ArrowRight":
+          handleFocusTag(event, "next");
+          break;
+        case "Enter":
+          if (highlightedIndexRef.current !== -1 && popupOpen) {
+            const option = filteredOptions[highlightedIndexRef.current];
+            const disabled = getOptionDisabled ? getOptionDisabled(option) : false;
+            event.preventDefault();
+            if (disabled) {
+              return;
+            }
+            selectNewValue(event, option, "selectOption");
+            if (autoComplete) {
+              inputRef.current.setSelectionRange(inputRef.current.value.length, inputRef.current.value.length);
+            }
+          } else if (freeSolo && inputValue !== "" && inputValueIsSelectedValue === false) {
+            if (multiple) {
+              event.preventDefault();
+            }
+            selectNewValue(event, inputValue, "createOption", "freeSolo");
+          }
+          break;
+        case "Escape":
+          if (popupOpen) {
+            event.preventDefault();
+            event.stopPropagation();
+            handleClose(event, "escape");
+          } else if (clearOnEscape && (inputValue !== "" || multiple && value.length > 0)) {
+            event.preventDefault();
+            event.stopPropagation();
+            handleClear(event);
+          }
+          break;
+        case "Backspace":
+          if (multiple && !readOnly && inputValue === "" && value.length > 0) {
+            const index2 = focusedTag === -1 ? value.length - 1 : focusedTag;
+            const newValue = value.slice();
+            newValue.splice(index2, 1);
+            handleValue(event, newValue, "removeOption", {
+              option: value[index2]
+            });
+          }
+          break;
+        case "Delete":
+          if (multiple && !readOnly && inputValue === "" && value.length > 0 && focusedTag !== -1) {
+            const index2 = focusedTag;
+            const newValue = value.slice();
+            newValue.splice(index2, 1);
+            handleValue(event, newValue, "removeOption", {
+              option: value[index2]
+            });
+          }
+          break;
+      }
+    }
+  };
+  const handleFocus = (event) => {
+    setFocused(true);
+    if (openOnFocus && !ignoreFocus.current) {
+      handleOpen(event);
+    }
+  };
+  const handleBlur = (event) => {
+    if (unstable_isActiveElementInListbox(listboxRef)) {
+      inputRef.current.focus();
+      return;
+    }
+    setFocused(false);
+    firstFocus.current = true;
+    ignoreFocus.current = false;
+    if (autoSelect && highlightedIndexRef.current !== -1 && popupOpen) {
+      selectNewValue(event, filteredOptions[highlightedIndexRef.current], "blur");
+    } else if (autoSelect && freeSolo && inputValue !== "") {
+      selectNewValue(event, inputValue, "blur", "freeSolo");
+    } else if (clearOnBlur) {
+      resetInputValue(event, value);
+    }
+    handleClose(event, "blur");
+  };
+  const handleInputChange = (event) => {
+    const newValue = event.target.value;
+    if (inputValue !== newValue) {
+      setInputValueState(newValue);
+      setInputPristine(false);
+      if (onInputChange) {
+        onInputChange(event, newValue, "input");
+      }
+    }
+    if (newValue === "") {
+      if (!disableClearable && !multiple) {
+        handleValue(event, null, "clear");
+      }
+    } else {
+      handleOpen(event);
+    }
+  };
+  const handleOptionMouseMove = (event) => {
+    const index2 = Number(event.currentTarget.getAttribute("data-option-index"));
+    if (highlightedIndexRef.current !== index2) {
+      setHighlightedIndex({
+        event,
+        index: index2,
+        reason: "mouse"
+      });
+    }
+  };
+  const handleOptionTouchStart = (event) => {
+    setHighlightedIndex({
+      event,
+      index: Number(event.currentTarget.getAttribute("data-option-index")),
+      reason: "touch"
+    });
+    isTouch.current = true;
+  };
+  const handleOptionClick = (event) => {
+    const index2 = Number(event.currentTarget.getAttribute("data-option-index"));
+    selectNewValue(event, filteredOptions[index2], "selectOption");
+    isTouch.current = false;
+  };
+  const handleTagDelete = (index2) => (event) => {
+    const newValue = value.slice();
+    newValue.splice(index2, 1);
+    handleValue(event, newValue, "removeOption", {
+      option: value[index2]
+    });
+  };
+  const handlePopupIndicator = (event) => {
+    if (open) {
+      handleClose(event, "toggleInput");
+    } else {
+      handleOpen(event);
+    }
+  };
+  const handleMouseDown = (event) => {
+    if (!event.currentTarget.contains(event.target)) {
+      return;
+    }
+    if (event.target.getAttribute("id") !== id) {
+      event.preventDefault();
+    }
+  };
+  const handleClick = (event) => {
+    if (!event.currentTarget.contains(event.target)) {
+      return;
+    }
+    inputRef.current.focus();
+    if (selectOnFocus && firstFocus.current && inputRef.current.selectionEnd - inputRef.current.selectionStart === 0) {
+      inputRef.current.select();
+    }
+    firstFocus.current = false;
+  };
+  const handleInputMouseDown = (event) => {
+    if (!disabledProp && (inputValue === "" || !open)) {
+      handlePopupIndicator(event);
+    }
+  };
+  let dirty = freeSolo && inputValue.length > 0;
+  dirty = dirty || (multiple ? value.length > 0 : value !== null);
+  let groupedOptions = filteredOptions;
+  if (groupBy) {
+    const indexBy = /* @__PURE__ */ new Map();
+    let warn = false;
+    groupedOptions = filteredOptions.reduce((acc, option, index2) => {
+      const group = groupBy(option);
+      if (acc.length > 0 && acc[acc.length - 1].group === group) {
+        acc[acc.length - 1].options.push(option);
+      } else {
+        if (process.env.NODE_ENV !== "production") {
+          if (indexBy.get(group) && !warn) {
+            console.warn(`MUI: The options provided combined with the \`groupBy\` method of ${componentName} returns duplicated headers.`, "You can solve the issue by sorting the options with the output of `groupBy`.");
+            warn = true;
+          }
+          indexBy.set(group, true);
+        }
+        acc.push({
+          key: index2,
+          index: index2,
+          group,
+          options: [option]
+        });
+      }
+      return acc;
+    }, []);
+  }
+  if (disabledProp && focused) {
+    handleBlur();
+  }
+  return {
+    getRootProps: (other = {}) => _extends$1({
+      "aria-owns": listboxAvailable ? `${id}-listbox` : null
+    }, other, {
+      onKeyDown: handleKeyDown(other),
+      onMouseDown: handleMouseDown,
+      onClick: handleClick
+    }),
+    getInputLabelProps: () => ({
+      id: `${id}-label`,
+      htmlFor: id
+    }),
+    getInputProps: () => ({
+      id,
+      value: inputValue,
+      onBlur: handleBlur,
+      onFocus: handleFocus,
+      onChange: handleInputChange,
+      onMouseDown: handleInputMouseDown,
+      // if open then this is handled imperatively so don't let react override
+      // only have an opinion about this when closed
+      "aria-activedescendant": popupOpen ? "" : null,
+      "aria-autocomplete": autoComplete ? "both" : "list",
+      "aria-controls": listboxAvailable ? `${id}-listbox` : void 0,
+      "aria-expanded": listboxAvailable,
+      // Disable browser's suggestion that might overlap with the popup.
+      // Handle autocomplete but not autofill.
+      autoComplete: "off",
+      ref: inputRef,
+      autoCapitalize: "none",
+      spellCheck: "false",
+      role: "combobox",
+      disabled: disabledProp
+    }),
+    getClearProps: () => ({
+      tabIndex: -1,
+      type: "button",
+      onClick: handleClear
+    }),
+    getPopupIndicatorProps: () => ({
+      tabIndex: -1,
+      type: "button",
+      onClick: handlePopupIndicator
+    }),
+    getTagProps: ({
+      index: index2
+    }) => _extends$1({
+      key: index2,
+      "data-tag-index": index2,
+      tabIndex: -1
+    }, !readOnly && {
+      onDelete: handleTagDelete(index2)
+    }),
+    getListboxProps: () => ({
+      role: "listbox",
+      id: `${id}-listbox`,
+      "aria-labelledby": `${id}-label`,
+      ref: handleListboxRef,
+      onMouseDown: (event) => {
+        event.preventDefault();
+      }
+    }),
+    getOptionProps: ({
+      index: index2,
+      option
+    }) => {
+      var _getOptionKey;
+      const selected = (multiple ? value : [value]).some((value2) => value2 != null && isOptionEqualToValue(option, value2));
+      const disabled = getOptionDisabled ? getOptionDisabled(option) : false;
+      return {
+        key: (_getOptionKey = getOptionKey == null ? void 0 : getOptionKey(option)) != null ? _getOptionKey : getOptionLabel(option),
+        tabIndex: -1,
+        role: "option",
+        id: `${id}-option-${index2}`,
+        onMouseMove: handleOptionMouseMove,
+        onClick: handleOptionClick,
+        onTouchStart: handleOptionTouchStart,
+        "data-option-index": index2,
+        "aria-disabled": disabled,
+        "aria-selected": selected
+      };
+    },
+    id,
+    inputValue,
+    value,
+    dirty,
+    expanded: popupOpen && anchorEl,
+    popupOpen,
+    focused: focused || focusedTag !== -1,
+    anchorEl,
+    setAnchorEl,
+    focusedTag,
+    groupedOptions
+  };
+}
+function getListSubheaderUtilityClass(slot) {
+  return generateUtilityClass("MuiListSubheader", slot);
+}
+generateUtilityClasses("MuiListSubheader", ["root", "colorPrimary", "colorInherit", "gutters", "inset", "sticky"]);
+const _excluded$K = ["className", "color", "component", "disableGutters", "disableSticky", "inset"];
+const useUtilityClasses$y = (ownerState) => {
+  const {
+    classes,
+    color: color2,
+    disableGutters,
+    inset,
+    disableSticky
+  } = ownerState;
+  const slots = {
+    root: ["root", color2 !== "default" && `color${capitalize(color2)}`, !disableGutters && "gutters", inset && "inset", !disableSticky && "sticky"]
+  };
+  return composeClasses(slots, getListSubheaderUtilityClass, classes);
+};
+const ListSubheaderRoot = styled("li", {
+  name: "MuiListSubheader",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.color !== "default" && styles2[`color${capitalize(ownerState.color)}`], !ownerState.disableGutters && styles2.gutters, ownerState.inset && styles2.inset, !ownerState.disableSticky && styles2.sticky];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  boxSizing: "border-box",
+  lineHeight: "48px",
+  listStyle: "none",
+  color: (theme.vars || theme).palette.text.secondary,
+  fontFamily: theme.typography.fontFamily,
+  fontWeight: theme.typography.fontWeightMedium,
+  fontSize: theme.typography.pxToRem(14)
+}, ownerState.color === "primary" && {
+  color: (theme.vars || theme).palette.primary.main
+}, ownerState.color === "inherit" && {
+  color: "inherit"
+}, !ownerState.disableGutters && {
+  paddingLeft: 16,
+  paddingRight: 16
+}, ownerState.inset && {
+  paddingLeft: 72
+}, !ownerState.disableSticky && {
+  position: "sticky",
+  top: 0,
+  zIndex: 1,
+  backgroundColor: (theme.vars || theme).palette.background.paper
+}));
+const ListSubheader = /* @__PURE__ */ React.forwardRef(function ListSubheader2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiListSubheader"
+  });
+  const {
+    className,
+    color: color2 = "default",
+    component = "li",
+    disableGutters = false,
+    disableSticky = false,
+    inset = false
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$K);
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    component,
+    disableGutters,
+    disableSticky,
+    inset
+  });
+  const classes = useUtilityClasses$y(ownerState);
+  return /* @__PURE__ */ jsx(ListSubheaderRoot, _extends$1({
+    as: component,
+    className: clsx(classes.root, className),
+    ref,
+    ownerState
+  }, other));
+});
+ListSubheader.muiSkipListHighlight = true;
+process.env.NODE_ENV !== "production" ? ListSubheader.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   * @default 'default'
+   */
+  color: PropTypes.oneOf(["default", "inherit", "primary"]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the List Subheader will not have gutters.
+   * @default false
+   */
+  disableGutters: PropTypes.bool,
+  /**
+   * If `true`, the List Subheader will not stick to the top during scroll.
+   * @default false
+   */
+  disableSticky: PropTypes.bool,
+  /**
+   * If `true`, the List Subheader is indented.
+   * @default false
+   */
+  inset: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+const CancelIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+}), "Cancel");
+function getChipUtilityClass(slot) {
+  return generateUtilityClass("MuiChip", slot);
+}
+const chipClasses = generateUtilityClasses("MuiChip", ["root", "sizeSmall", "sizeMedium", "colorError", "colorInfo", "colorPrimary", "colorSecondary", "colorSuccess", "colorWarning", "disabled", "clickable", "clickableColorPrimary", "clickableColorSecondary", "deletable", "deletableColorPrimary", "deletableColorSecondary", "outlined", "filled", "outlinedPrimary", "outlinedSecondary", "filledPrimary", "filledSecondary", "avatar", "avatarSmall", "avatarMedium", "avatarColorPrimary", "avatarColorSecondary", "icon", "iconSmall", "iconMedium", "iconColorPrimary", "iconColorSecondary", "label", "labelSmall", "labelMedium", "deleteIcon", "deleteIconSmall", "deleteIconMedium", "deleteIconColorPrimary", "deleteIconColorSecondary", "deleteIconOutlinedColorPrimary", "deleteIconOutlinedColorSecondary", "deleteIconFilledColorPrimary", "deleteIconFilledColorSecondary", "focusVisible"]);
+const _excluded$J = ["avatar", "className", "clickable", "color", "component", "deleteIcon", "disabled", "icon", "label", "onClick", "onDelete", "onKeyDown", "onKeyUp", "size", "variant", "tabIndex", "skipFocusWhenDisabled"];
+const useUtilityClasses$x = (ownerState) => {
+  const {
+    classes,
+    disabled,
+    size,
+    color: color2,
+    iconColor,
+    onDelete,
+    clickable,
+    variant
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, disabled && "disabled", `size${capitalize(size)}`, `color${capitalize(color2)}`, clickable && "clickable", clickable && `clickableColor${capitalize(color2)}`, onDelete && "deletable", onDelete && `deletableColor${capitalize(color2)}`, `${variant}${capitalize(color2)}`],
+    label: ["label", `label${capitalize(size)}`],
+    avatar: ["avatar", `avatar${capitalize(size)}`, `avatarColor${capitalize(color2)}`],
+    icon: ["icon", `icon${capitalize(size)}`, `iconColor${capitalize(iconColor)}`],
+    deleteIcon: ["deleteIcon", `deleteIcon${capitalize(size)}`, `deleteIconColor${capitalize(color2)}`, `deleteIcon${capitalize(variant)}Color${capitalize(color2)}`]
+  };
+  return composeClasses(slots, getChipUtilityClass, classes);
+};
+const ChipRoot = styled("div", {
+  name: "MuiChip",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    const {
+      color: color2,
+      iconColor,
+      clickable,
+      onDelete,
+      size,
+      variant
+    } = ownerState;
+    return [{
+      [`& .${chipClasses.avatar}`]: styles2.avatar
+    }, {
+      [`& .${chipClasses.avatar}`]: styles2[`avatar${capitalize(size)}`]
+    }, {
+      [`& .${chipClasses.avatar}`]: styles2[`avatarColor${capitalize(color2)}`]
+    }, {
+      [`& .${chipClasses.icon}`]: styles2.icon
+    }, {
+      [`& .${chipClasses.icon}`]: styles2[`icon${capitalize(size)}`]
+    }, {
+      [`& .${chipClasses.icon}`]: styles2[`iconColor${capitalize(iconColor)}`]
+    }, {
+      [`& .${chipClasses.deleteIcon}`]: styles2.deleteIcon
+    }, {
+      [`& .${chipClasses.deleteIcon}`]: styles2[`deleteIcon${capitalize(size)}`]
+    }, {
+      [`& .${chipClasses.deleteIcon}`]: styles2[`deleteIconColor${capitalize(color2)}`]
+    }, {
+      [`& .${chipClasses.deleteIcon}`]: styles2[`deleteIcon${capitalize(variant)}Color${capitalize(color2)}`]
+    }, styles2.root, styles2[`size${capitalize(size)}`], styles2[`color${capitalize(color2)}`], clickable && styles2.clickable, clickable && color2 !== "default" && styles2[`clickableColor${capitalize(color2)})`], onDelete && styles2.deletable, onDelete && color2 !== "default" && styles2[`deletableColor${capitalize(color2)}`], styles2[variant], styles2[`${variant}${capitalize(color2)}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  const textColor = theme.palette.mode === "light" ? theme.palette.grey[700] : theme.palette.grey[300];
+  return _extends$1({
+    maxWidth: "100%",
+    fontFamily: theme.typography.fontFamily,
+    fontSize: theme.typography.pxToRem(13),
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 32,
+    color: (theme.vars || theme).palette.text.primary,
+    backgroundColor: (theme.vars || theme).palette.action.selected,
+    borderRadius: 32 / 2,
+    whiteSpace: "nowrap",
+    transition: theme.transitions.create(["background-color", "box-shadow"]),
+    // reset cursor explicitly in case ButtonBase is used
+    cursor: "unset",
+    // We disable the focus ring for mouse, touch and keyboard users.
+    outline: 0,
+    textDecoration: "none",
+    border: 0,
+    // Remove `button` border
+    padding: 0,
+    // Remove `button` padding
+    verticalAlign: "middle",
+    boxSizing: "border-box",
+    [`&.${chipClasses.disabled}`]: {
+      opacity: (theme.vars || theme).palette.action.disabledOpacity,
+      pointerEvents: "none"
+    },
+    [`& .${chipClasses.avatar}`]: {
+      marginLeft: 5,
+      marginRight: -6,
+      width: 24,
+      height: 24,
+      color: theme.vars ? theme.vars.palette.Chip.defaultAvatarColor : textColor,
+      fontSize: theme.typography.pxToRem(12)
+    },
+    [`& .${chipClasses.avatarColorPrimary}`]: {
+      color: (theme.vars || theme).palette.primary.contrastText,
+      backgroundColor: (theme.vars || theme).palette.primary.dark
+    },
+    [`& .${chipClasses.avatarColorSecondary}`]: {
+      color: (theme.vars || theme).palette.secondary.contrastText,
+      backgroundColor: (theme.vars || theme).palette.secondary.dark
+    },
+    [`& .${chipClasses.avatarSmall}`]: {
+      marginLeft: 4,
+      marginRight: -4,
+      width: 18,
+      height: 18,
+      fontSize: theme.typography.pxToRem(10)
+    },
+    [`& .${chipClasses.icon}`]: _extends$1({
+      marginLeft: 5,
+      marginRight: -6
+    }, ownerState.size === "small" && {
+      fontSize: 18,
+      marginLeft: 4,
+      marginRight: -4
+    }, ownerState.iconColor === ownerState.color && _extends$1({
+      color: theme.vars ? theme.vars.palette.Chip.defaultIconColor : textColor
+    }, ownerState.color !== "default" && {
+      color: "inherit"
+    })),
+    [`& .${chipClasses.deleteIcon}`]: _extends$1({
+      WebkitTapHighlightColor: "transparent",
+      color: theme.vars ? `rgba(${theme.vars.palette.text.primaryChannel} / 0.26)` : colorManipulatorExports.alpha(theme.palette.text.primary, 0.26),
+      fontSize: 22,
+      cursor: "pointer",
+      margin: "0 5px 0 -6px",
+      "&:hover": {
+        color: theme.vars ? `rgba(${theme.vars.palette.text.primaryChannel} / 0.4)` : colorManipulatorExports.alpha(theme.palette.text.primary, 0.4)
+      }
+    }, ownerState.size === "small" && {
+      fontSize: 16,
+      marginRight: 4,
+      marginLeft: -4
+    }, ownerState.color !== "default" && {
+      color: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].contrastTextChannel} / 0.7)` : colorManipulatorExports.alpha(theme.palette[ownerState.color].contrastText, 0.7),
+      "&:hover, &:active": {
+        color: (theme.vars || theme).palette[ownerState.color].contrastText
+      }
+    })
+  }, ownerState.size === "small" && {
+    height: 24
+  }, ownerState.color !== "default" && {
+    backgroundColor: (theme.vars || theme).palette[ownerState.color].main,
+    color: (theme.vars || theme).palette[ownerState.color].contrastText
+  }, ownerState.onDelete && {
+    [`&.${chipClasses.focusVisible}`]: {
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.selectedChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.focusOpacity}))` : colorManipulatorExports.alpha(theme.palette.action.selected, theme.palette.action.selectedOpacity + theme.palette.action.focusOpacity)
+    }
+  }, ownerState.onDelete && ownerState.color !== "default" && {
+    [`&.${chipClasses.focusVisible}`]: {
+      backgroundColor: (theme.vars || theme).palette[ownerState.color].dark
+    }
+  });
+}, ({
+  theme,
+  ownerState
+}) => _extends$1({}, ownerState.clickable && {
+  userSelect: "none",
+  WebkitTapHighlightColor: "transparent",
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.selectedChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.hoverOpacity}))` : colorManipulatorExports.alpha(theme.palette.action.selected, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity)
+  },
+  [`&.${chipClasses.focusVisible}`]: {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette.action.selectedChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.focusOpacity}))` : colorManipulatorExports.alpha(theme.palette.action.selected, theme.palette.action.selectedOpacity + theme.palette.action.focusOpacity)
+  },
+  "&:active": {
+    boxShadow: (theme.vars || theme).shadows[1]
+  }
+}, ownerState.clickable && ownerState.color !== "default" && {
+  [`&:hover, &.${chipClasses.focusVisible}`]: {
+    backgroundColor: (theme.vars || theme).palette[ownerState.color].dark
+  }
+}), ({
+  theme,
+  ownerState
+}) => _extends$1({}, ownerState.variant === "outlined" && {
+  backgroundColor: "transparent",
+  border: theme.vars ? `1px solid ${theme.vars.palette.Chip.defaultBorder}` : `1px solid ${theme.palette.mode === "light" ? theme.palette.grey[400] : theme.palette.grey[700]}`,
+  [`&.${chipClasses.clickable}:hover`]: {
+    backgroundColor: (theme.vars || theme).palette.action.hover
+  },
+  [`&.${chipClasses.focusVisible}`]: {
+    backgroundColor: (theme.vars || theme).palette.action.focus
+  },
+  [`& .${chipClasses.avatar}`]: {
+    marginLeft: 4
+  },
+  [`& .${chipClasses.avatarSmall}`]: {
+    marginLeft: 2
+  },
+  [`& .${chipClasses.icon}`]: {
+    marginLeft: 4
+  },
+  [`& .${chipClasses.iconSmall}`]: {
+    marginLeft: 2
+  },
+  [`& .${chipClasses.deleteIcon}`]: {
+    marginRight: 5
+  },
+  [`& .${chipClasses.deleteIconSmall}`]: {
+    marginRight: 3
+  }
+}, ownerState.variant === "outlined" && ownerState.color !== "default" && {
+  color: (theme.vars || theme).palette[ownerState.color].main,
+  border: `1px solid ${theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / 0.7)` : colorManipulatorExports.alpha(theme.palette[ownerState.color].main, 0.7)}`,
+  [`&.${chipClasses.clickable}:hover`]: {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity)
+  },
+  [`&.${chipClasses.focusVisible}`]: {
+    backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.focusOpacity})` : colorManipulatorExports.alpha(theme.palette[ownerState.color].main, theme.palette.action.focusOpacity)
+  },
+  [`& .${chipClasses.deleteIcon}`]: {
+    color: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / 0.7)` : colorManipulatorExports.alpha(theme.palette[ownerState.color].main, 0.7),
+    "&:hover, &:active": {
+      color: (theme.vars || theme).palette[ownerState.color].main
+    }
+  }
+}));
+const ChipLabel = styled("span", {
+  name: "MuiChip",
+  slot: "Label",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    const {
+      size
+    } = ownerState;
+    return [styles2.label, styles2[`label${capitalize(size)}`]];
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  paddingLeft: 12,
+  paddingRight: 12,
+  whiteSpace: "nowrap"
+}, ownerState.variant === "outlined" && {
+  paddingLeft: 11,
+  paddingRight: 11
+}, ownerState.size === "small" && {
+  paddingLeft: 8,
+  paddingRight: 8
+}, ownerState.size === "small" && ownerState.variant === "outlined" && {
+  paddingLeft: 7,
+  paddingRight: 7
+}));
+function isDeleteKeyboardEvent(keyboardEvent) {
+  return keyboardEvent.key === "Backspace" || keyboardEvent.key === "Delete";
+}
+const Chip = /* @__PURE__ */ React.forwardRef(function Chip2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiChip"
+  });
+  const {
+    avatar: avatarProp,
+    className,
+    clickable: clickableProp,
+    color: color2 = "default",
+    component: ComponentProp,
+    deleteIcon: deleteIconProp,
+    disabled = false,
+    icon: iconProp,
+    label,
+    onClick,
+    onDelete,
+    onKeyDown,
+    onKeyUp,
+    size = "medium",
+    variant = "filled",
+    tabIndex,
+    skipFocusWhenDisabled = false
+    // TODO v6: Rename to `focusableWhenDisabled`.
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$J);
+  const chipRef = React.useRef(null);
+  const handleRef = useForkRef(chipRef, ref);
+  const handleDeleteIconClick = (event) => {
+    event.stopPropagation();
+    if (onDelete) {
+      onDelete(event);
+    }
+  };
+  const handleKeyDown = (event) => {
+    if (event.currentTarget === event.target && isDeleteKeyboardEvent(event)) {
+      event.preventDefault();
+    }
+    if (onKeyDown) {
+      onKeyDown(event);
+    }
+  };
+  const handleKeyUp = (event) => {
+    if (event.currentTarget === event.target) {
+      if (onDelete && isDeleteKeyboardEvent(event)) {
+        onDelete(event);
+      } else if (event.key === "Escape" && chipRef.current) {
+        chipRef.current.blur();
+      }
+    }
+    if (onKeyUp) {
+      onKeyUp(event);
+    }
+  };
+  const clickable = clickableProp !== false && onClick ? true : clickableProp;
+  const component = clickable || onDelete ? ButtonBase : ComponentProp || "div";
+  const ownerState = _extends$1({}, props, {
+    component,
+    disabled,
+    size,
+    color: color2,
+    iconColor: /* @__PURE__ */ React.isValidElement(iconProp) ? iconProp.props.color || color2 : color2,
+    onDelete: !!onDelete,
+    clickable,
+    variant
+  });
+  const classes = useUtilityClasses$x(ownerState);
+  const moreProps = component === ButtonBase ? _extends$1({
+    component: ComponentProp || "div",
+    focusVisibleClassName: classes.focusVisible
+  }, onDelete && {
+    disableRipple: true
+  }) : {};
+  let deleteIcon = null;
+  if (onDelete) {
+    deleteIcon = deleteIconProp && /* @__PURE__ */ React.isValidElement(deleteIconProp) ? /* @__PURE__ */ React.cloneElement(deleteIconProp, {
+      className: clsx(deleteIconProp.props.className, classes.deleteIcon),
+      onClick: handleDeleteIconClick
+    }) : /* @__PURE__ */ jsx(CancelIcon, {
+      className: clsx(classes.deleteIcon),
+      onClick: handleDeleteIconClick
+    });
+  }
+  let avatar = null;
+  if (avatarProp && /* @__PURE__ */ React.isValidElement(avatarProp)) {
+    avatar = /* @__PURE__ */ React.cloneElement(avatarProp, {
+      className: clsx(classes.avatar, avatarProp.props.className)
+    });
+  }
+  let icon = null;
+  if (iconProp && /* @__PURE__ */ React.isValidElement(iconProp)) {
+    icon = /* @__PURE__ */ React.cloneElement(iconProp, {
+      className: clsx(classes.icon, iconProp.props.className)
+    });
+  }
+  if (process.env.NODE_ENV !== "production") {
+    if (avatar && icon) {
+      console.error("MUI: The Chip component can not handle the avatar and the icon prop at the same time. Pick one.");
+    }
+  }
+  return /* @__PURE__ */ jsxs(ChipRoot, _extends$1({
+    as: component,
+    className: clsx(classes.root, className),
+    disabled: clickable && disabled ? true : void 0,
+    onClick,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    ref: handleRef,
+    tabIndex: skipFocusWhenDisabled && disabled ? -1 : tabIndex,
+    ownerState
+  }, moreProps, other, {
+    children: [avatar || icon, /* @__PURE__ */ jsx(ChipLabel, {
+      className: clsx(classes.label),
+      ownerState,
+      children: label
+    }), deleteIcon]
+  }));
+});
+process.env.NODE_ENV !== "production" ? Chip.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The Avatar element to display.
+   */
+  avatar: PropTypes.element,
+  /**
+   * This prop isn't supported.
+   * Use the `component` prop if you need to change the children structure.
+   */
+  children: unsupportedProp,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * If `true`, the chip will appear clickable, and will raise when pressed,
+   * even if the onClick prop is not defined.
+   * If `false`, the chip will not appear clickable, even if onClick prop is defined.
+   * This can be used, for example,
+   * along with the component prop to indicate an anchor Chip is clickable.
+   * Note: this controls the UI and does not affect the onClick event.
+   */
+  clickable: PropTypes.bool,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'default'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["default", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Override the default delete icon element. Shown only if `onDelete` is set.
+   */
+  deleteIcon: PropTypes.element,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Icon element.
+   */
+  icon: PropTypes.element,
+  /**
+   * The content of the component.
+   */
+  label: PropTypes.node,
+  /**
+   * @ignore
+   */
+  onClick: PropTypes.func,
+  /**
+   * Callback fired when the delete icon is clicked.
+   * If set, the delete icon will be shown.
+   */
+  onDelete: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyDown: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyUp: PropTypes.func,
+  /**
+   * The size of the component.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * If `true`, allows the disabled chip to escape focus.
+   * If `false`, allows the disabled chip to receive focus.
+   * @default false
+   */
+  skipFocusWhenDisabled: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * @ignore
+   */
+  tabIndex: PropTypes.number,
+  /**
+   * The variant to use.
+   * @default 'filled'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["filled", "outlined"]), PropTypes.string])
+} : void 0;
+function getInputUtilityClass(slot) {
+  return generateUtilityClass("MuiInput", slot);
+}
+const inputClasses = _extends$1({}, inputBaseClasses, generateUtilityClasses("MuiInput", ["root", "underline", "input"]));
+function getOutlinedInputUtilityClass(slot) {
+  return generateUtilityClass("MuiOutlinedInput", slot);
+}
+const outlinedInputClasses = _extends$1({}, inputBaseClasses, generateUtilityClasses("MuiOutlinedInput", ["root", "notchedOutline", "input"]));
+function getFilledInputUtilityClass(slot) {
+  return generateUtilityClass("MuiFilledInput", slot);
+}
+const filledInputClasses = _extends$1({}, inputBaseClasses, generateUtilityClasses("MuiFilledInput", ["root", "underline", "input"]));
+const ClearIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+}), "Close");
+const ArrowDropDownIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M7 10l5 5 5-5z"
+}), "ArrowDropDown");
+function getAutocompleteUtilityClass(slot) {
+  return generateUtilityClass("MuiAutocomplete", slot);
+}
+const autocompleteClasses = generateUtilityClasses("MuiAutocomplete", ["root", "expanded", "fullWidth", "focused", "focusVisible", "tag", "tagSizeSmall", "tagSizeMedium", "hasPopupIcon", "hasClearIcon", "inputRoot", "input", "inputFocused", "endAdornment", "clearIndicator", "popupIndicator", "popupIndicatorOpen", "popper", "popperDisablePortal", "paper", "listbox", "loading", "noOptions", "option", "groupLabel", "groupUl"]);
+var _ClearIcon, _ArrowDropDownIcon;
+const _excluded$I = ["autoComplete", "autoHighlight", "autoSelect", "blurOnSelect", "ChipProps", "className", "clearIcon", "clearOnBlur", "clearOnEscape", "clearText", "closeText", "componentsProps", "defaultValue", "disableClearable", "disableCloseOnSelect", "disabled", "disabledItemsFocusable", "disableListWrap", "disablePortal", "filterOptions", "filterSelectedOptions", "forcePopupIcon", "freeSolo", "fullWidth", "getLimitTagsText", "getOptionDisabled", "getOptionKey", "getOptionLabel", "isOptionEqualToValue", "groupBy", "handleHomeEndKeys", "id", "includeInputInList", "inputValue", "limitTags", "ListboxComponent", "ListboxProps", "loading", "loadingText", "multiple", "noOptionsText", "onChange", "onClose", "onHighlightChange", "onInputChange", "onOpen", "open", "openOnFocus", "openText", "options", "PaperComponent", "PopperComponent", "popupIcon", "readOnly", "renderGroup", "renderInput", "renderOption", "renderTags", "selectOnFocus", "size", "slotProps", "value"], _excluded2$7 = ["ref"], _excluded3$2 = ["key"], _excluded4 = ["key"];
+const useUtilityClasses$w = (ownerState) => {
+  const {
+    classes,
+    disablePortal,
+    expanded,
+    focused,
+    fullWidth,
+    hasClearIcon,
+    hasPopupIcon,
+    inputFocused,
+    popupOpen,
+    size
+  } = ownerState;
+  const slots = {
+    root: ["root", expanded && "expanded", focused && "focused", fullWidth && "fullWidth", hasClearIcon && "hasClearIcon", hasPopupIcon && "hasPopupIcon"],
+    inputRoot: ["inputRoot"],
+    input: ["input", inputFocused && "inputFocused"],
+    tag: ["tag", `tagSize${capitalize(size)}`],
+    endAdornment: ["endAdornment"],
+    clearIndicator: ["clearIndicator"],
+    popupIndicator: ["popupIndicator", popupOpen && "popupIndicatorOpen"],
+    popper: ["popper", disablePortal && "popperDisablePortal"],
+    paper: ["paper"],
+    listbox: ["listbox"],
+    loading: ["loading"],
+    noOptions: ["noOptions"],
+    option: ["option"],
+    groupLabel: ["groupLabel"],
+    groupUl: ["groupUl"]
+  };
+  return composeClasses(slots, getAutocompleteUtilityClass, classes);
+};
+const AutocompleteRoot = styled("div", {
+  name: "MuiAutocomplete",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    const {
+      fullWidth,
+      hasClearIcon,
+      hasPopupIcon,
+      inputFocused,
+      size
+    } = ownerState;
+    return [{
+      [`& .${autocompleteClasses.tag}`]: styles2.tag
+    }, {
+      [`& .${autocompleteClasses.tag}`]: styles2[`tagSize${capitalize(size)}`]
+    }, {
+      [`& .${autocompleteClasses.inputRoot}`]: styles2.inputRoot
+    }, {
+      [`& .${autocompleteClasses.input}`]: styles2.input
+    }, {
+      [`& .${autocompleteClasses.input}`]: inputFocused && styles2.inputFocused
+    }, styles2.root, fullWidth && styles2.fullWidth, hasPopupIcon && styles2.hasPopupIcon, hasClearIcon && styles2.hasClearIcon];
+  }
+})({
+  [`&.${autocompleteClasses.focused} .${autocompleteClasses.clearIndicator}`]: {
+    visibility: "visible"
+  },
+  /* Avoid double tap issue on iOS */
+  "@media (pointer: fine)": {
+    [`&:hover .${autocompleteClasses.clearIndicator}`]: {
+      visibility: "visible"
+    }
+  },
+  [`& .${autocompleteClasses.tag}`]: {
+    margin: 3,
+    maxWidth: "calc(100% - 6px)"
+  },
+  [`& .${autocompleteClasses.inputRoot}`]: {
+    [`.${autocompleteClasses.hasPopupIcon}&, .${autocompleteClasses.hasClearIcon}&`]: {
+      paddingRight: 26 + 4
+    },
+    [`.${autocompleteClasses.hasPopupIcon}.${autocompleteClasses.hasClearIcon}&`]: {
+      paddingRight: 52 + 4
+    },
+    [`& .${autocompleteClasses.input}`]: {
+      width: 0,
+      minWidth: 30
+    }
+  },
+  [`& .${inputClasses.root}`]: {
+    paddingBottom: 1,
+    "& .MuiInput-input": {
+      padding: "4px 4px 4px 0px"
+    }
+  },
+  [`& .${inputClasses.root}.${inputBaseClasses.sizeSmall}`]: {
+    [`& .${inputClasses.input}`]: {
+      padding: "2px 4px 3px 0"
+    }
+  },
+  [`& .${outlinedInputClasses.root}`]: {
+    padding: 9,
+    [`.${autocompleteClasses.hasPopupIcon}&, .${autocompleteClasses.hasClearIcon}&`]: {
+      paddingRight: 26 + 4 + 9
+    },
+    [`.${autocompleteClasses.hasPopupIcon}.${autocompleteClasses.hasClearIcon}&`]: {
+      paddingRight: 52 + 4 + 9
+    },
+    [`& .${autocompleteClasses.input}`]: {
+      padding: "7.5px 4px 7.5px 5px"
+    },
+    [`& .${autocompleteClasses.endAdornment}`]: {
+      right: 9
+    }
+  },
+  [`& .${outlinedInputClasses.root}.${inputBaseClasses.sizeSmall}`]: {
+    // Don't specify paddingRight, as it overrides the default value set when there is only
+    // one of the popup or clear icon as the specificity is equal so the latter one wins
+    paddingTop: 6,
+    paddingBottom: 6,
+    paddingLeft: 6,
+    [`& .${autocompleteClasses.input}`]: {
+      padding: "2.5px 4px 2.5px 8px"
+    }
+  },
+  [`& .${filledInputClasses.root}`]: {
+    paddingTop: 19,
+    paddingLeft: 8,
+    [`.${autocompleteClasses.hasPopupIcon}&, .${autocompleteClasses.hasClearIcon}&`]: {
+      paddingRight: 26 + 4 + 9
+    },
+    [`.${autocompleteClasses.hasPopupIcon}.${autocompleteClasses.hasClearIcon}&`]: {
+      paddingRight: 52 + 4 + 9
+    },
+    [`& .${filledInputClasses.input}`]: {
+      padding: "7px 4px"
+    },
+    [`& .${autocompleteClasses.endAdornment}`]: {
+      right: 9
+    }
+  },
+  [`& .${filledInputClasses.root}.${inputBaseClasses.sizeSmall}`]: {
+    paddingBottom: 1,
+    [`& .${filledInputClasses.input}`]: {
+      padding: "2.5px 4px"
+    }
+  },
+  [`& .${inputBaseClasses.hiddenLabel}`]: {
+    paddingTop: 8
+  },
+  [`& .${filledInputClasses.root}.${inputBaseClasses.hiddenLabel}`]: {
+    paddingTop: 0,
+    paddingBottom: 0,
+    [`& .${autocompleteClasses.input}`]: {
+      paddingTop: 16,
+      paddingBottom: 17
+    }
+  },
+  [`& .${filledInputClasses.root}.${inputBaseClasses.hiddenLabel}.${inputBaseClasses.sizeSmall}`]: {
+    [`& .${autocompleteClasses.input}`]: {
+      paddingTop: 8,
+      paddingBottom: 9
+    }
+  },
+  [`& .${autocompleteClasses.input}`]: {
+    flexGrow: 1,
+    textOverflow: "ellipsis",
+    opacity: 0
+  },
+  variants: [{
+    props: {
+      fullWidth: true
+    },
+    style: {
+      width: "100%"
+    }
+  }, {
+    props: {
+      size: "small"
+    },
+    style: {
+      [`& .${autocompleteClasses.tag}`]: {
+        margin: 2,
+        maxWidth: "calc(100% - 4px)"
+      }
+    }
+  }, {
+    props: {
+      inputFocused: true
+    },
+    style: {
+      [`& .${autocompleteClasses.input}`]: {
+        opacity: 1
+      }
+    }
+  }, {
+    props: {
+      multiple: true
+    },
+    style: {
+      [`& .${autocompleteClasses.inputRoot}`]: {
+        flexWrap: "wrap"
+      }
+    }
+  }]
+});
+const AutocompleteEndAdornment = styled("div", {
+  name: "MuiAutocomplete",
+  slot: "EndAdornment",
+  overridesResolver: (props, styles2) => styles2.endAdornment
+})({
+  // We use a position absolute to support wrapping tags.
+  position: "absolute",
+  right: 0,
+  top: "50%",
+  transform: "translate(0, -50%)"
+});
+const AutocompleteClearIndicator = styled(IconButton, {
+  name: "MuiAutocomplete",
+  slot: "ClearIndicator",
+  overridesResolver: (props, styles2) => styles2.clearIndicator
+})({
+  marginRight: -2,
+  padding: 4,
+  visibility: "hidden"
+});
+const AutocompletePopupIndicator = styled(IconButton, {
+  name: "MuiAutocomplete",
+  slot: "PopupIndicator",
+  overridesResolver: ({
+    ownerState
+  }, styles2) => _extends$1({}, styles2.popupIndicator, ownerState.popupOpen && styles2.popupIndicatorOpen)
+})({
+  padding: 2,
+  marginRight: -2,
+  variants: [{
+    props: {
+      popupOpen: true
+    },
+    style: {
+      transform: "rotate(180deg)"
+    }
+  }]
+});
+const AutocompletePopper = styled(Popper2, {
+  name: "MuiAutocomplete",
+  slot: "Popper",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [{
+      [`& .${autocompleteClasses.option}`]: styles2.option
+    }, styles2.popper, ownerState.disablePortal && styles2.popperDisablePortal];
+  }
+})(({
+  theme
+}) => ({
+  zIndex: (theme.vars || theme).zIndex.modal,
+  variants: [{
+    props: {
+      disablePortal: true
+    },
+    style: {
+      position: "absolute"
+    }
+  }]
+}));
+const AutocompletePaper = styled(Paper, {
+  name: "MuiAutocomplete",
+  slot: "Paper",
+  overridesResolver: (props, styles2) => styles2.paper
+})(({
+  theme
+}) => _extends$1({}, theme.typography.body1, {
+  overflow: "auto"
+}));
+const AutocompleteLoading = styled("div", {
+  name: "MuiAutocomplete",
+  slot: "Loading",
+  overridesResolver: (props, styles2) => styles2.loading
+})(({
+  theme
+}) => ({
+  color: (theme.vars || theme).palette.text.secondary,
+  padding: "14px 16px"
+}));
+const AutocompleteNoOptions = styled("div", {
+  name: "MuiAutocomplete",
+  slot: "NoOptions",
+  overridesResolver: (props, styles2) => styles2.noOptions
+})(({
+  theme
+}) => ({
+  color: (theme.vars || theme).palette.text.secondary,
+  padding: "14px 16px"
+}));
+const AutocompleteListbox = styled("div", {
+  name: "MuiAutocomplete",
+  slot: "Listbox",
+  overridesResolver: (props, styles2) => styles2.listbox
+})(({
+  theme
+}) => ({
+  listStyle: "none",
+  margin: 0,
+  padding: "8px 0",
+  maxHeight: "40vh",
+  overflow: "auto",
+  position: "relative",
+  [`& .${autocompleteClasses.option}`]: {
+    minHeight: 48,
+    display: "flex",
+    overflow: "hidden",
+    justifyContent: "flex-start",
+    alignItems: "center",
+    cursor: "pointer",
+    paddingTop: 6,
+    boxSizing: "border-box",
+    outline: "0",
+    WebkitTapHighlightColor: "transparent",
+    paddingBottom: 6,
+    paddingLeft: 16,
+    paddingRight: 16,
+    [theme.breakpoints.up("sm")]: {
+      minHeight: "auto"
+    },
+    [`&.${autocompleteClasses.focused}`]: {
+      backgroundColor: (theme.vars || theme).palette.action.hover,
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: "transparent"
+      }
+    },
+    '&[aria-disabled="true"]': {
+      opacity: (theme.vars || theme).palette.action.disabledOpacity,
+      pointerEvents: "none"
+    },
+    [`&.${autocompleteClasses.focusVisible}`]: {
+      backgroundColor: (theme.vars || theme).palette.action.focus
+    },
+    '&[aria-selected="true"]': {
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / ${theme.vars.palette.action.selectedOpacity})` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+      [`&.${autocompleteClasses.focused}`]: {
+        backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.hoverOpacity}))` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.hoverOpacity),
+        // Reset on touch devices, it doesn't add specificity
+        "@media (hover: none)": {
+          backgroundColor: (theme.vars || theme).palette.action.selected
+        }
+      },
+      [`&.${autocompleteClasses.focusVisible}`]: {
+        backgroundColor: theme.vars ? `rgba(${theme.vars.palette.primary.mainChannel} / calc(${theme.vars.palette.action.selectedOpacity} + ${theme.vars.palette.action.focusOpacity}))` : colorManipulatorExports.alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity + theme.palette.action.focusOpacity)
+      }
+    }
+  }
+}));
+const AutocompleteGroupLabel = styled(ListSubheader, {
+  name: "MuiAutocomplete",
+  slot: "GroupLabel",
+  overridesResolver: (props, styles2) => styles2.groupLabel
+})(({
+  theme
+}) => ({
+  backgroundColor: (theme.vars || theme).palette.background.paper,
+  top: -8
+}));
+const AutocompleteGroupUl = styled("ul", {
+  name: "MuiAutocomplete",
+  slot: "GroupUl",
+  overridesResolver: (props, styles2) => styles2.groupUl
+})({
+  padding: 0,
+  [`& .${autocompleteClasses.option}`]: {
+    paddingLeft: 24
+  }
+});
+const Autocomplete = /* @__PURE__ */ React.forwardRef(function Autocomplete2(inProps, ref) {
+  var _slotProps$clearIndic, _slotProps$paper, _slotProps$popper, _slotProps$popupIndic;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiAutocomplete"
+  });
+  const {
+    autoComplete = false,
+    autoHighlight = false,
+    autoSelect = false,
+    blurOnSelect = false,
+    ChipProps,
+    className,
+    clearIcon = _ClearIcon || (_ClearIcon = /* @__PURE__ */ jsx(ClearIcon, {
+      fontSize: "small"
+    })),
+    clearOnBlur = !props.freeSolo,
+    clearOnEscape = false,
+    clearText = "Clear",
+    closeText = "Close",
+    componentsProps = {},
+    defaultValue = props.multiple ? [] : null,
+    disableClearable = false,
+    disableCloseOnSelect = false,
+    disabled = false,
+    disabledItemsFocusable = false,
+    disableListWrap = false,
+    disablePortal = false,
+    filterSelectedOptions = false,
+    forcePopupIcon = "auto",
+    freeSolo = false,
+    fullWidth = false,
+    getLimitTagsText = (more) => `+${more}`,
+    getOptionLabel: getOptionLabelProp,
+    groupBy,
+    handleHomeEndKeys = !props.freeSolo,
+    includeInputInList = false,
+    limitTags = -1,
+    ListboxComponent = "ul",
+    ListboxProps,
+    loading = false,
+    loadingText = "Loading…",
+    multiple = false,
+    noOptionsText = "No options",
+    openOnFocus = false,
+    openText = "Open",
+    PaperComponent = Paper,
+    PopperComponent = Popper2,
+    popupIcon = _ArrowDropDownIcon || (_ArrowDropDownIcon = /* @__PURE__ */ jsx(ArrowDropDownIcon, {})),
+    readOnly = false,
+    renderGroup: renderGroupProp,
+    renderInput,
+    renderOption: renderOptionProp,
+    renderTags,
+    selectOnFocus = !props.freeSolo,
+    size = "medium",
+    slotProps = {}
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$I);
+  const {
+    getRootProps,
+    getInputProps,
+    getInputLabelProps,
+    getPopupIndicatorProps,
+    getClearProps,
+    getTagProps,
+    getListboxProps,
+    getOptionProps,
+    value,
+    dirty,
+    expanded,
+    id,
+    popupOpen,
+    focused,
+    focusedTag,
+    anchorEl,
+    setAnchorEl,
+    inputValue,
+    groupedOptions
+  } = useAutocomplete(_extends$1({}, props, {
+    componentName: "Autocomplete"
+  }));
+  const hasClearIcon = !disableClearable && !disabled && dirty && !readOnly;
+  const hasPopupIcon = (!freeSolo || forcePopupIcon === true) && forcePopupIcon !== false;
+  const {
+    onMouseDown: handleInputMouseDown
+  } = getInputProps();
+  const {
+    ref: externalListboxRef
+  } = ListboxProps != null ? ListboxProps : {};
+  const _getListboxProps = getListboxProps(), {
+    ref: listboxRef
+  } = _getListboxProps, otherListboxProps = _objectWithoutPropertiesLoose$1(_getListboxProps, _excluded2$7);
+  const combinedListboxRef = useForkRef(listboxRef, externalListboxRef);
+  const defaultGetOptionLabel2 = (option) => {
+    var _option$label;
+    return (_option$label = option.label) != null ? _option$label : option;
+  };
+  const getOptionLabel = getOptionLabelProp || defaultGetOptionLabel2;
+  const ownerState = _extends$1({}, props, {
+    disablePortal,
+    expanded,
+    focused,
+    fullWidth,
+    getOptionLabel,
+    hasClearIcon,
+    hasPopupIcon,
+    inputFocused: focusedTag === -1,
+    popupOpen,
+    size
+  });
+  const classes = useUtilityClasses$w(ownerState);
+  let startAdornment;
+  if (multiple && value.length > 0) {
+    const getCustomizedTagProps = (params) => _extends$1({
+      className: classes.tag,
+      disabled
+    }, getTagProps(params));
+    if (renderTags) {
+      startAdornment = renderTags(value, getCustomizedTagProps, ownerState);
+    } else {
+      startAdornment = value.map((option, index2) => {
+        const _getCustomizedTagProp = getCustomizedTagProps({
+          index: index2
+        }), {
+          key
+        } = _getCustomizedTagProp, customTagProps = _objectWithoutPropertiesLoose$1(_getCustomizedTagProp, _excluded3$2);
+        return /* @__PURE__ */ jsx(Chip, _extends$1({
+          label: getOptionLabel(option),
+          size
+        }, customTagProps, ChipProps), key);
+      });
+    }
+  }
+  if (limitTags > -1 && Array.isArray(startAdornment)) {
+    const more = startAdornment.length - limitTags;
+    if (!focused && more > 0) {
+      startAdornment = startAdornment.splice(0, limitTags);
+      startAdornment.push(/* @__PURE__ */ jsx("span", {
+        className: classes.tag,
+        children: getLimitTagsText(more)
+      }, startAdornment.length));
+    }
+  }
+  const defaultRenderGroup = (params) => /* @__PURE__ */ jsxs("li", {
+    children: [/* @__PURE__ */ jsx(AutocompleteGroupLabel, {
+      className: classes.groupLabel,
+      ownerState,
+      component: "div",
+      children: params.group
+    }), /* @__PURE__ */ jsx(AutocompleteGroupUl, {
+      className: classes.groupUl,
+      ownerState,
+      children: params.children
+    })]
+  }, params.key);
+  const renderGroup = renderGroupProp || defaultRenderGroup;
+  const defaultRenderOption = (props2, option) => {
+    const {
+      key
+    } = props2, otherProps = _objectWithoutPropertiesLoose$1(props2, _excluded4);
+    return /* @__PURE__ */ jsx("li", _extends$1({}, otherProps, {
+      children: getOptionLabel(option)
+    }), key);
+  };
+  const renderOption = renderOptionProp || defaultRenderOption;
+  const renderListOption = (option, index2) => {
+    const optionProps = getOptionProps({
+      option,
+      index: index2
+    });
+    return renderOption(_extends$1({}, optionProps, {
+      className: classes.option
+    }), option, {
+      selected: optionProps["aria-selected"],
+      index: index2,
+      inputValue
+    }, ownerState);
+  };
+  const clearIndicatorSlotProps = (_slotProps$clearIndic = slotProps.clearIndicator) != null ? _slotProps$clearIndic : componentsProps.clearIndicator;
+  const paperSlotProps = (_slotProps$paper = slotProps.paper) != null ? _slotProps$paper : componentsProps.paper;
+  const popperSlotProps = (_slotProps$popper = slotProps.popper) != null ? _slotProps$popper : componentsProps.popper;
+  const popupIndicatorSlotProps = (_slotProps$popupIndic = slotProps.popupIndicator) != null ? _slotProps$popupIndic : componentsProps.popupIndicator;
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [/* @__PURE__ */ jsx(AutocompleteRoot, _extends$1({
+      ref,
+      className: clsx(classes.root, className),
+      ownerState
+    }, getRootProps(other), {
+      children: renderInput({
+        id,
+        disabled,
+        fullWidth: true,
+        size: size === "small" ? "small" : void 0,
+        InputLabelProps: getInputLabelProps(),
+        InputProps: _extends$1({
+          ref: setAnchorEl,
+          className: classes.inputRoot,
+          startAdornment,
+          onClick: (event) => {
+            if (event.target === event.currentTarget) {
+              handleInputMouseDown(event);
+            }
+          }
+        }, (hasClearIcon || hasPopupIcon) && {
+          endAdornment: /* @__PURE__ */ jsxs(AutocompleteEndAdornment, {
+            className: classes.endAdornment,
+            ownerState,
+            children: [hasClearIcon ? /* @__PURE__ */ jsx(AutocompleteClearIndicator, _extends$1({}, getClearProps(), {
+              "aria-label": clearText,
+              title: clearText,
+              ownerState
+            }, clearIndicatorSlotProps, {
+              className: clsx(classes.clearIndicator, clearIndicatorSlotProps == null ? void 0 : clearIndicatorSlotProps.className),
+              children: clearIcon
+            })) : null, hasPopupIcon ? /* @__PURE__ */ jsx(AutocompletePopupIndicator, _extends$1({}, getPopupIndicatorProps(), {
+              disabled,
+              "aria-label": popupOpen ? closeText : openText,
+              title: popupOpen ? closeText : openText,
+              ownerState
+            }, popupIndicatorSlotProps, {
+              className: clsx(classes.popupIndicator, popupIndicatorSlotProps == null ? void 0 : popupIndicatorSlotProps.className),
+              children: popupIcon
+            })) : null]
+          })
+        }),
+        inputProps: _extends$1({
+          className: classes.input,
+          disabled,
+          readOnly
+        }, getInputProps())
+      })
+    })), anchorEl ? /* @__PURE__ */ jsx(AutocompletePopper, _extends$1({
+      as: PopperComponent,
+      disablePortal,
+      style: {
+        width: anchorEl ? anchorEl.clientWidth : null
+      },
+      ownerState,
+      role: "presentation",
+      anchorEl,
+      open: popupOpen
+    }, popperSlotProps, {
+      className: clsx(classes.popper, popperSlotProps == null ? void 0 : popperSlotProps.className),
+      children: /* @__PURE__ */ jsxs(AutocompletePaper, _extends$1({
+        ownerState,
+        as: PaperComponent
+      }, paperSlotProps, {
+        className: clsx(classes.paper, paperSlotProps == null ? void 0 : paperSlotProps.className),
+        children: [loading && groupedOptions.length === 0 ? /* @__PURE__ */ jsx(AutocompleteLoading, {
+          className: classes.loading,
+          ownerState,
+          children: loadingText
+        }) : null, groupedOptions.length === 0 && !freeSolo && !loading ? /* @__PURE__ */ jsx(AutocompleteNoOptions, {
+          className: classes.noOptions,
+          ownerState,
+          role: "presentation",
+          onMouseDown: (event) => {
+            event.preventDefault();
+          },
+          children: noOptionsText
+        }) : null, groupedOptions.length > 0 ? /* @__PURE__ */ jsx(AutocompleteListbox, _extends$1({
+          as: ListboxComponent,
+          className: classes.listbox,
+          ownerState
+        }, otherListboxProps, ListboxProps, {
+          ref: combinedListboxRef,
+          children: groupedOptions.map((option, index2) => {
+            if (groupBy) {
+              return renderGroup({
+                key: option.key,
+                group: option.group,
+                children: option.options.map((option2, index22) => renderListOption(option2, option.index + index22))
+              });
+            }
+            return renderListOption(option, index2);
+          })
+        })) : null]
+      }))
+    })) : null]
+  });
+});
+process.env.NODE_ENV !== "production" ? Autocomplete.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the portion of the selected suggestion that the user hasn't typed,
+   * known as the completion string, appears inline after the input cursor in the textbox.
+   * The inline completion string is visually highlighted and has a selected state.
+   * @default false
+   */
+  autoComplete: PropTypes.bool,
+  /**
+   * If `true`, the first option is automatically highlighted.
+   * @default false
+   */
+  autoHighlight: PropTypes.bool,
+  /**
+   * If `true`, the selected option becomes the value of the input
+   * when the Autocomplete loses focus unless the user chooses
+   * a different option or changes the character string in the input.
+   *
+   * When using the `freeSolo` mode, the typed value will be the input value
+   * if the Autocomplete loses focus without highlighting an option.
+   * @default false
+   */
+  autoSelect: PropTypes.bool,
+  /**
+   * Control if the input should be blurred when an option is selected:
+   *
+   * - `false` the input is not blurred.
+   * - `true` the input is always blurred.
+   * - `touch` the input is blurred after a touch event.
+   * - `mouse` the input is blurred after a mouse event.
+   * @default false
+   */
+  blurOnSelect: PropTypes.oneOfType([PropTypes.oneOf(["mouse", "touch"]), PropTypes.bool]),
+  /**
+   * Props applied to the [`Chip`](/material-ui/api/chip/) element.
+   */
+  ChipProps: PropTypes.object,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The icon to display in place of the default clear icon.
+   * @default <ClearIcon fontSize="small" />
+   */
+  clearIcon: PropTypes.node,
+  /**
+   * If `true`, the input's text is cleared on blur if no value is selected.
+   *
+   * Set it to `true` if you want to help the user enter a new value.
+   * Set it to `false` if you want to help the user resume their search.
+   * @default !props.freeSolo
+   */
+  clearOnBlur: PropTypes.bool,
+  /**
+   * If `true`, clear all values when the user presses escape and the popup is closed.
+   * @default false
+   */
+  clearOnEscape: PropTypes.bool,
+  /**
+   * Override the default text for the *clear* icon button.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default 'Clear'
+   */
+  clearText: PropTypes.string,
+  /**
+   * Override the default text for the *close popup* icon button.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default 'Close'
+   */
+  closeText: PropTypes.string,
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    clearIndicator: PropTypes.object,
+    paper: PropTypes.object,
+    popper: PropTypes.object,
+    popupIndicator: PropTypes.object
+  }),
+  /**
+   * The default value. Use when the component is not controlled.
+   * @default props.multiple ? [] : null
+   */
+  defaultValue: chainPropTypes(PropTypes.any, (props) => {
+    if (props.multiple && props.defaultValue !== void 0 && !Array.isArray(props.defaultValue)) {
+      return new Error(["MUI: The Autocomplete expects the `defaultValue` prop to be an array when `multiple={true}` or undefined.", `However, ${props.defaultValue} was provided.`].join("\n"));
+    }
+    return null;
+  }),
+  /**
+   * If `true`, the input can't be cleared.
+   * @default false
+   */
+  disableClearable: PropTypes.bool,
+  /**
+   * If `true`, the popup won't close when a value is selected.
+   * @default false
+   */
+  disableCloseOnSelect: PropTypes.bool,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, will allow focus on disabled items.
+   * @default false
+   */
+  disabledItemsFocusable: PropTypes.bool,
+  /**
+   * If `true`, the list box in the popup will not wrap focus.
+   * @default false
+   */
+  disableListWrap: PropTypes.bool,
+  /**
+   * If `true`, the `Popper` content will be under the DOM hierarchy of the parent component.
+   * @default false
+   */
+  disablePortal: PropTypes.bool,
+  /**
+   * A function that determines the filtered options to be rendered on search.
+   *
+   * @default createFilterOptions()
+   * @param {Value[]} options The options to render.
+   * @param {object} state The state of the component.
+   * @returns {Value[]}
+   */
+  filterOptions: PropTypes.func,
+  /**
+   * If `true`, hide the selected options from the list box.
+   * @default false
+   */
+  filterSelectedOptions: PropTypes.bool,
+  /**
+   * Force the visibility display of the popup icon.
+   * @default 'auto'
+   */
+  forcePopupIcon: PropTypes.oneOfType([PropTypes.oneOf(["auto"]), PropTypes.bool]),
+  /**
+   * If `true`, the Autocomplete is free solo, meaning that the user input is not bound to provided options.
+   * @default false
+   */
+  freeSolo: PropTypes.bool,
+  /**
+   * If `true`, the input will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The label to display when the tags are truncated (`limitTags`).
+   *
+   * @param {number} more The number of truncated tags.
+   * @returns {ReactNode}
+   * @default (more) => `+${more}`
+   */
+  getLimitTagsText: PropTypes.func,
+  /**
+   * Used to determine the disabled state for a given option.
+   *
+   * @param {Value} option The option to test.
+   * @returns {boolean}
+   */
+  getOptionDisabled: PropTypes.func,
+  /**
+   * Used to determine the key for a given option.
+   * This can be useful when the labels of options are not unique (since labels are used as keys by default).
+   *
+   * @param {Value} option The option to get the key for.
+   * @returns {string | number}
+   */
+  getOptionKey: PropTypes.func,
+  /**
+   * Used to determine the string value for a given option.
+   * It's used to fill the input (and the list box options if `renderOption` is not provided).
+   *
+   * If used in free solo mode, it must accept both the type of the options and a string.
+   *
+   * @param {Value} option
+   * @returns {string}
+   * @default (option) => option.label ?? option
+   */
+  getOptionLabel: PropTypes.func,
+  /**
+   * If provided, the options will be grouped under the returned string.
+   * The groupBy value is also used as the text for group headings when `renderGroup` is not provided.
+   *
+   * @param {Value} options The options to group.
+   * @returns {string}
+   */
+  groupBy: PropTypes.func,
+  /**
+   * If `true`, the component handles the "Home" and "End" keys when the popup is open.
+   * It should move focus to the first option and last option, respectively.
+   * @default !props.freeSolo
+   */
+  handleHomeEndKeys: PropTypes.bool,
+  /**
+   * This prop is used to help implement the accessibility logic.
+   * If you don't provide an id it will fall back to a randomly generated one.
+   */
+  id: PropTypes.string,
+  /**
+   * If `true`, the highlight can move to the input.
+   * @default false
+   */
+  includeInputInList: PropTypes.bool,
+  /**
+   * The input value.
+   */
+  inputValue: PropTypes.string,
+  /**
+   * Used to determine if the option represents the given value.
+   * Uses strict equality by default.
+   * ⚠️ Both arguments need to be handled, an option can only match with one value.
+   *
+   * @param {Value} option The option to test.
+   * @param {Value} value The value to test against.
+   * @returns {boolean}
+   */
+  isOptionEqualToValue: PropTypes.func,
+  /**
+   * The maximum number of tags that will be visible when not focused.
+   * Set `-1` to disable the limit.
+   * @default -1
+   */
+  limitTags: integerPropType,
+  /**
+   * The component used to render the listbox.
+   * @default 'ul'
+   */
+  ListboxComponent: PropTypes.elementType,
+  /**
+   * Props applied to the Listbox element.
+   */
+  ListboxProps: PropTypes.object,
+  /**
+   * If `true`, the component is in a loading state.
+   * This shows the `loadingText` in place of suggestions (only if there are no suggestions to show, for example `options` are empty).
+   * @default false
+   */
+  loading: PropTypes.bool,
+  /**
+   * Text to display when in a loading state.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default 'Loading…'
+   */
+  loadingText: PropTypes.node,
+  /**
+   * If `true`, `value` must be an array and the menu will support multiple selections.
+   * @default false
+   */
+  multiple: PropTypes.bool,
+  /**
+   * Text to display when there are no options.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default 'No options'
+   */
+  noOptionsText: PropTypes.node,
+  /**
+   * Callback fired when the value changes.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   * @param {Value|Value[]} value The new value of the component.
+   * @param {string} reason One of "createOption", "selectOption", "removeOption", "blur" or "clear".
+   * @param {string} [details]
+   */
+  onChange: PropTypes.func,
+  /**
+   * Callback fired when the popup requests to be closed.
+   * Use in controlled mode (see open).
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   * @param {string} reason Can be: `"toggleInput"`, `"escape"`, `"selectOption"`, `"removeOption"`, `"blur"`.
+   */
+  onClose: PropTypes.func,
+  /**
+   * Callback fired when the highlight option changes.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   * @param {Value} option The highlighted option.
+   * @param {string} reason Can be: `"keyboard"`, `"auto"`, `"mouse"`, `"touch"`.
+   */
+  onHighlightChange: PropTypes.func,
+  /**
+   * Callback fired when the input value changes.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   * @param {string} value The new value of the text input.
+   * @param {string} reason Can be: `"input"` (user input), `"reset"` (programmatic change), `"clear"`.
+   */
+  onInputChange: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onKeyDown: PropTypes.func,
+  /**
+   * Callback fired when the popup requests to be opened.
+   * Use in controlled mode (see open).
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   */
+  onOpen: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool,
+  /**
+   * If `true`, the popup will open on input focus.
+   * @default false
+   */
+  openOnFocus: PropTypes.bool,
+  /**
+   * Override the default text for the *open popup* icon button.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default 'Open'
+   */
+  openText: PropTypes.string,
+  /**
+   * Array of options.
+   */
+  options: PropTypes.array.isRequired,
+  /**
+   * The component used to render the body of the popup.
+   * @default Paper
+   */
+  PaperComponent: PropTypes.elementType,
+  /**
+   * The component used to position the popup.
+   * @default Popper
+   */
+  PopperComponent: PropTypes.elementType,
+  /**
+   * The icon to display in place of the default popup icon.
+   * @default <ArrowDropDownIcon />
+   */
+  popupIcon: PropTypes.node,
+  /**
+   * If `true`, the component becomes readonly. It is also supported for multiple tags where the tag cannot be deleted.
+   * @default false
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * Render the group.
+   *
+   * @param {AutocompleteRenderGroupParams} params The group to render.
+   * @returns {ReactNode}
+   */
+  renderGroup: PropTypes.func,
+  /**
+   * Render the input.
+   *
+   * @param {object} params
+   * @returns {ReactNode}
+   */
+  renderInput: PropTypes.func.isRequired,
+  /**
+   * Render the option, use `getOptionLabel` by default.
+   *
+   * @param {object} props The props to apply on the li element.
+   * @param {Value} option The option to render.
+   * @param {object} state The state of each option.
+   * @param {object} ownerState The state of the Autocomplete component.
+   * @returns {ReactNode}
+   */
+  renderOption: PropTypes.func,
+  /**
+   * Render the selected value.
+   *
+   * @param {Value[]} value The `value` provided to the component.
+   * @param {function} getTagProps A tag props getter.
+   * @param {object} ownerState The state of the Autocomplete component.
+   * @returns {ReactNode}
+   */
+  renderTags: PropTypes.func,
+  /**
+   * If `true`, the input's text is selected on focus.
+   * It helps the user clear the selected value.
+   * @default !props.freeSolo
+   */
+  selectOnFocus: PropTypes.bool,
+  /**
+   * The size of the component.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["small", "medium"]), PropTypes.string]),
+  /**
+   * The props used for each slot inside.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    clearIndicator: PropTypes.object,
+    paper: PropTypes.object,
+    popper: PropTypes.object,
+    popupIndicator: PropTypes.object
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The value of the autocomplete.
+   *
+   * The value must have reference equality with the option in order to be selected.
+   * You can customize the equality behavior with the `isOptionEqualToValue` prop.
+   */
+  value: chainPropTypes(PropTypes.any, (props) => {
+    if (props.multiple && props.value !== void 0 && !Array.isArray(props.value)) {
+      return new Error(["MUI: The Autocomplete expects the `value` prop to be an array when `multiple={true}` or undefined.", `However, ${props.value} was provided.`].join("\n"));
+    }
+    return null;
+  })
+} : void 0;
+const _excluded$H = ["item", "applyValue", "type", "apiRef", "focusElementRef", "color", "error", "helperText", "size", "variant"];
 function GridFilterInputMultipleValue(props) {
   const {
     item,
@@ -8735,14 +20820,14 @@ function GridFilterInputMultipleValue(props) {
     type,
     apiRef,
     focusElementRef,
-    color,
+    color: color2,
     error,
     helperText,
     size,
     variant
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$i);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$H);
   const TextFieldProps = {
-    color,
+    color: color2,
     error,
     helperText,
     size,
@@ -8814,7 +20899,7 @@ process.env.NODE_ENV !== "production" ? GridFilterInputMultipleValue.propTypes =
   }).isRequired,
   type: PropTypes.oneOf(["number", "text"])
 } : void 0;
-const _excluded$h = ["item", "applyValue", "type", "apiRef", "focusElementRef", "color", "error", "helperText", "size", "variant", "getOptionLabel", "getOptionValue"];
+const _excluded$G = ["item", "applyValue", "type", "apiRef", "focusElementRef", "color", "error", "helperText", "size", "variant", "getOptionLabel", "getOptionValue"];
 const filter = createFilterOptions();
 function GridFilterInputMultipleSingleSelect(props) {
   var _resolvedColumn, _resolvedColumn2;
@@ -8823,16 +20908,16 @@ function GridFilterInputMultipleSingleSelect(props) {
     applyValue,
     apiRef,
     focusElementRef,
-    color,
+    color: color2,
     error,
     helperText,
     size,
     variant = "standard",
     getOptionLabel: getOptionLabelProp,
     getOptionValue: getOptionValueProp
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$h);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$G);
   const TextFieldProps = {
-    color,
+    color: color2,
     error,
     helperText,
     size,
@@ -8949,13 +21034,13 @@ process.env.NODE_ENV !== "production" ? GridFilterInputMultipleSingleSelect.prop
   }).isRequired,
   type: PropTypes.oneOf(["singleSelect"])
 } : void 0;
-const _excluded$g = ["children", "onClick"];
+const _excluded$F = ["children", "onClick"];
 const GridToolbarExportContainer = /* @__PURE__ */ React.forwardRef(function GridToolbarExportContainer2(props, ref) {
   var _rootProps$slotProps;
   const {
     children,
     onClick
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$g);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$F);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const exportButtonId = unstable_useId();
@@ -9016,13 +21101,13 @@ const GridToolbarExportContainer = /* @__PURE__ */ React.forwardRef(function Gri
     })]
   });
 });
-const _excluded$f = ["hideMenu", "options"], _excluded2$3 = ["hideMenu", "options"], _excluded3 = ["csvOptions", "printOptions", "excelOptions"];
+const _excluded$E = ["hideMenu", "options"], _excluded2$6 = ["hideMenu", "options"], _excluded3$1 = ["csvOptions", "printOptions", "excelOptions"];
 function GridCsvExportMenuItem(props) {
   const apiRef = useGridApiContext();
   const {
     hideMenu,
     options
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$f);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$E);
   return /* @__PURE__ */ jsx(MenuItem, _extends$1({
     onClick: () => {
       apiRef.current.exportDataAsCsv(options);
@@ -9037,7 +21122,7 @@ function GridPrintExportMenuItem(props) {
   const {
     hideMenu,
     options
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded2$3);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded2$6);
   return /* @__PURE__ */ jsx(MenuItem, _extends$1({
     onClick: () => {
       apiRef.current.exportDataAsPrint(options);
@@ -9052,7 +21137,7 @@ const GridToolbarExport = /* @__PURE__ */ React.forwardRef(function GridToolbarE
     csvOptions = {},
     printOptions = {},
     excelOptions
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded3);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded3$1);
   const apiRef = useGridApiContext();
   const preProcessedButtons = apiRef.current.unstable_applyPipeProcessors("exportMenu", [], {
     excelOptions,
@@ -9077,8 +21162,4921 @@ process.env.NODE_ENV !== "production" ? GridToolbarExport.propTypes = {
   csvOptions: PropTypes.object,
   printOptions: PropTypes.object
 } : void 0;
-const _excluded$e = ["className", "selectedRowCount"];
-const useUtilityClasses$9 = (ownerState) => {
+const _excluded$D = ["disableUnderline", "components", "componentsProps", "fullWidth", "inputComponent", "multiline", "slotProps", "slots", "type"];
+const useUtilityClasses$v = (ownerState) => {
+  const {
+    classes,
+    disableUnderline
+  } = ownerState;
+  const slots = {
+    root: ["root", !disableUnderline && "underline"],
+    input: ["input"]
+  };
+  const composedClasses = composeClasses(slots, getInputUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const InputRoot = styled(InputBaseRoot, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiInput",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [...rootOverridesResolver(props, styles2), !ownerState.disableUnderline && styles2.underline];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  const light2 = theme.palette.mode === "light";
+  let bottomLineColor = light2 ? "rgba(0, 0, 0, 0.42)" : "rgba(255, 255, 255, 0.7)";
+  if (theme.vars) {
+    bottomLineColor = `rgba(${theme.vars.palette.common.onBackgroundChannel} / ${theme.vars.opacity.inputUnderline})`;
+  }
+  return _extends$1({
+    position: "relative"
+  }, ownerState.formControl && {
+    "label + &": {
+      marginTop: 16
+    }
+  }, !ownerState.disableUnderline && {
+    "&::after": {
+      borderBottom: `2px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
+      left: 0,
+      bottom: 0,
+      // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
+      content: '""',
+      position: "absolute",
+      right: 0,
+      transform: "scaleX(0)",
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut
+      }),
+      pointerEvents: "none"
+      // Transparent to the hover style.
+    },
+    [`&.${inputClasses.focused}:after`]: {
+      // translateX(0) is a workaround for Safari transform scale bug
+      // See https://github.com/mui/material-ui/issues/31766
+      transform: "scaleX(1) translateX(0)"
+    },
+    [`&.${inputClasses.error}`]: {
+      "&::before, &::after": {
+        borderBottomColor: (theme.vars || theme).palette.error.main
+      }
+    },
+    "&::before": {
+      borderBottom: `1px solid ${bottomLineColor}`,
+      left: 0,
+      bottom: 0,
+      // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
+      content: '"\\00a0"',
+      position: "absolute",
+      right: 0,
+      transition: theme.transitions.create("border-bottom-color", {
+        duration: theme.transitions.duration.shorter
+      }),
+      pointerEvents: "none"
+      // Transparent to the hover style.
+    },
+    [`&:hover:not(.${inputClasses.disabled}, .${inputClasses.error}):before`]: {
+      borderBottom: `2px solid ${(theme.vars || theme).palette.text.primary}`,
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        borderBottom: `1px solid ${bottomLineColor}`
+      }
+    },
+    [`&.${inputClasses.disabled}:before`]: {
+      borderBottomStyle: "dotted"
+    }
+  });
+});
+const InputInput = styled(InputBaseComponent, {
+  name: "MuiInput",
+  slot: "Input",
+  overridesResolver: inputOverridesResolver
+})({});
+const Input$1 = /* @__PURE__ */ React.forwardRef(function Input(inProps, ref) {
+  var _ref, _slots$root, _ref2, _slots$input;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiInput"
+  });
+  const {
+    disableUnderline,
+    components = {},
+    componentsProps: componentsPropsProp,
+    fullWidth = false,
+    inputComponent = "input",
+    multiline = false,
+    slotProps,
+    slots = {},
+    type = "text"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$D);
+  const classes = useUtilityClasses$v(props);
+  const ownerState = {
+    disableUnderline
+  };
+  const inputComponentsProps = {
+    root: {
+      ownerState
+    }
+  };
+  const componentsProps = (slotProps != null ? slotProps : componentsPropsProp) ? deepmerge(slotProps != null ? slotProps : componentsPropsProp, inputComponentsProps) : inputComponentsProps;
+  const RootSlot = (_ref = (_slots$root = slots.root) != null ? _slots$root : components.Root) != null ? _ref : InputRoot;
+  const InputSlot = (_ref2 = (_slots$input = slots.input) != null ? _slots$input : components.Input) != null ? _ref2 : InputInput;
+  return /* @__PURE__ */ jsx(InputBase, _extends$1({
+    slots: {
+      root: RootSlot,
+      input: InputSlot
+    },
+    slotProps: componentsProps,
+    fullWidth,
+    inputComponent,
+    multiline,
+    ref,
+    type
+  }, other, {
+    classes
+  }));
+});
+process.env.NODE_ENV !== "production" ? Input$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * This prop helps users to fill forms faster, especially on mobile devices.
+   * The name can be confusing, as it's more like an autofill.
+   * You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
+   */
+  autoComplete: PropTypes.string,
+  /**
+   * If `true`, the `input` element is focused during the first mount.
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["primary", "secondary"]), PropTypes.string]),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Input: PropTypes.elementType,
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    input: PropTypes.object,
+    root: PropTypes.object
+  }),
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, the component is disabled.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the `input` will not have an underline.
+   */
+  disableUnderline: PropTypes.bool,
+  /**
+   * End `InputAdornment` for this component.
+   */
+  endAdornment: PropTypes.node,
+  /**
+   * If `true`, the `input` will indicate an error.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the `input` will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * The component used for the `input` element.
+   * Either a string to use a HTML element or a component.
+   * @default 'input'
+   */
+  inputComponent: PropTypes.elementType,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @default {}
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   * The prop defaults to the value (`'none'`) inherited from the parent FormControl component.
+   */
+  margin: PropTypes.oneOf(["dense", "none"]),
+  /**
+   * Maximum number of rows to display when multiline option is set to true.
+   */
+  maxRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Minimum number of rows to display when multiline option is set to true.
+   */
+  minRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * If `true`, a [TextareaAutosize](/material-ui/react-textarea-autosize/) element is rendered.
+   * @default false
+   */
+  multiline: PropTypes.bool,
+  /**
+   * Name attribute of the `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * Callback fired when the value is changed.
+   *
+   * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: PropTypes.func,
+  /**
+   * The short hint displayed in the `input` before the user enters a value.
+   */
+  placeholder: PropTypes.string,
+  /**
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * If `true`, the `input` element is required.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  required: PropTypes.bool,
+  /**
+   * Number of rows to display when multiline option is set to true.
+   */
+  rows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    input: PropTypes.object,
+    root: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `components` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    input: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * Start `InputAdornment` for this component.
+   */
+  startAdornment: PropTypes.node,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+   * @default 'text'
+   */
+  type: PropTypes.string,
+  /**
+   * The value of the `input` element, required for a controlled component.
+   */
+  value: PropTypes.any
+} : void 0;
+Input$1.muiName = "Input";
+const _excluded$C = ["disableUnderline", "components", "componentsProps", "fullWidth", "hiddenLabel", "inputComponent", "multiline", "slotProps", "slots", "type"];
+const useUtilityClasses$u = (ownerState) => {
+  const {
+    classes,
+    disableUnderline
+  } = ownerState;
+  const slots = {
+    root: ["root", !disableUnderline && "underline"],
+    input: ["input"]
+  };
+  const composedClasses = composeClasses(slots, getFilledInputUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const FilledInputRoot = styled(InputBaseRoot, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiFilledInput",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [...rootOverridesResolver(props, styles2), !ownerState.disableUnderline && styles2.underline];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  var _palette;
+  const light2 = theme.palette.mode === "light";
+  const bottomLineColor = light2 ? "rgba(0, 0, 0, 0.42)" : "rgba(255, 255, 255, 0.7)";
+  const backgroundColor2 = light2 ? "rgba(0, 0, 0, 0.06)" : "rgba(255, 255, 255, 0.09)";
+  const hoverBackground = light2 ? "rgba(0, 0, 0, 0.09)" : "rgba(255, 255, 255, 0.13)";
+  const disabledBackground = light2 ? "rgba(0, 0, 0, 0.12)" : "rgba(255, 255, 255, 0.12)";
+  return _extends$1({
+    position: "relative",
+    backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2,
+    borderTopLeftRadius: (theme.vars || theme).shape.borderRadius,
+    borderTopRightRadius: (theme.vars || theme).shape.borderRadius,
+    transition: theme.transitions.create("background-color", {
+      duration: theme.transitions.duration.shorter,
+      easing: theme.transitions.easing.easeOut
+    }),
+    "&:hover": {
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.hoverBg : hoverBackground,
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
+      }
+    },
+    [`&.${filledInputClasses.focused}`]: {
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.bg : backgroundColor2
+    },
+    [`&.${filledInputClasses.disabled}`]: {
+      backgroundColor: theme.vars ? theme.vars.palette.FilledInput.disabledBg : disabledBackground
+    }
+  }, !ownerState.disableUnderline && {
+    "&::after": {
+      borderBottom: `2px solid ${(_palette = (theme.vars || theme).palette[ownerState.color || "primary"]) == null ? void 0 : _palette.main}`,
+      left: 0,
+      bottom: 0,
+      // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
+      content: '""',
+      position: "absolute",
+      right: 0,
+      transform: "scaleX(0)",
+      transition: theme.transitions.create("transform", {
+        duration: theme.transitions.duration.shorter,
+        easing: theme.transitions.easing.easeOut
+      }),
+      pointerEvents: "none"
+      // Transparent to the hover style.
+    },
+    [`&.${filledInputClasses.focused}:after`]: {
+      // translateX(0) is a workaround for Safari transform scale bug
+      // See https://github.com/mui/material-ui/issues/31766
+      transform: "scaleX(1) translateX(0)"
+    },
+    [`&.${filledInputClasses.error}`]: {
+      "&::before, &::after": {
+        borderBottomColor: (theme.vars || theme).palette.error.main
+      }
+    },
+    "&::before": {
+      borderBottom: `1px solid ${theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / ${theme.vars.opacity.inputUnderline})` : bottomLineColor}`,
+      left: 0,
+      bottom: 0,
+      // Doing the other way around crash on IE11 "''" https://github.com/cssinjs/jss/issues/242
+      content: '"\\00a0"',
+      position: "absolute",
+      right: 0,
+      transition: theme.transitions.create("border-bottom-color", {
+        duration: theme.transitions.duration.shorter
+      }),
+      pointerEvents: "none"
+      // Transparent to the hover style.
+    },
+    [`&:hover:not(.${filledInputClasses.disabled}, .${filledInputClasses.error}):before`]: {
+      borderBottom: `1px solid ${(theme.vars || theme).palette.text.primary}`
+    },
+    [`&.${filledInputClasses.disabled}:before`]: {
+      borderBottomStyle: "dotted"
+    }
+  }, ownerState.startAdornment && {
+    paddingLeft: 12
+  }, ownerState.endAdornment && {
+    paddingRight: 12
+  }, ownerState.multiline && _extends$1({
+    padding: "25px 12px 8px"
+  }, ownerState.size === "small" && {
+    paddingTop: 21,
+    paddingBottom: 4
+  }, ownerState.hiddenLabel && {
+    paddingTop: 16,
+    paddingBottom: 17
+  }, ownerState.hiddenLabel && ownerState.size === "small" && {
+    paddingTop: 8,
+    paddingBottom: 9
+  }));
+});
+const FilledInputInput = styled(InputBaseComponent, {
+  name: "MuiFilledInput",
+  slot: "Input",
+  overridesResolver: inputOverridesResolver
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  paddingTop: 25,
+  paddingRight: 12,
+  paddingBottom: 8,
+  paddingLeft: 12
+}, !theme.vars && {
+  "&:-webkit-autofill": {
+    WebkitBoxShadow: theme.palette.mode === "light" ? null : "0 0 0 100px #266798 inset",
+    WebkitTextFillColor: theme.palette.mode === "light" ? null : "#fff",
+    caretColor: theme.palette.mode === "light" ? null : "#fff",
+    borderTopLeftRadius: "inherit",
+    borderTopRightRadius: "inherit"
+  }
+}, theme.vars && {
+  "&:-webkit-autofill": {
+    borderTopLeftRadius: "inherit",
+    borderTopRightRadius: "inherit"
+  },
+  [theme.getColorSchemeSelector("dark")]: {
+    "&:-webkit-autofill": {
+      WebkitBoxShadow: "0 0 0 100px #266798 inset",
+      WebkitTextFillColor: "#fff",
+      caretColor: "#fff"
+    }
+  }
+}, ownerState.size === "small" && {
+  paddingTop: 21,
+  paddingBottom: 4
+}, ownerState.hiddenLabel && {
+  paddingTop: 16,
+  paddingBottom: 17
+}, ownerState.startAdornment && {
+  paddingLeft: 0
+}, ownerState.endAdornment && {
+  paddingRight: 0
+}, ownerState.hiddenLabel && ownerState.size === "small" && {
+  paddingTop: 8,
+  paddingBottom: 9
+}, ownerState.multiline && {
+  paddingTop: 0,
+  paddingBottom: 0,
+  paddingLeft: 0,
+  paddingRight: 0
+}));
+const FilledInput = /* @__PURE__ */ React.forwardRef(function FilledInput2(inProps, ref) {
+  var _ref, _slots$root, _ref2, _slots$input;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiFilledInput"
+  });
+  const {
+    components = {},
+    componentsProps: componentsPropsProp,
+    fullWidth = false,
+    // declare here to prevent spreading to DOM
+    inputComponent = "input",
+    multiline = false,
+    slotProps,
+    slots = {},
+    type = "text"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$C);
+  const ownerState = _extends$1({}, props, {
+    fullWidth,
+    inputComponent,
+    multiline,
+    type
+  });
+  const classes = useUtilityClasses$u(props);
+  const filledInputComponentsProps = {
+    root: {
+      ownerState
+    },
+    input: {
+      ownerState
+    }
+  };
+  const componentsProps = (slotProps != null ? slotProps : componentsPropsProp) ? deepmerge(filledInputComponentsProps, slotProps != null ? slotProps : componentsPropsProp) : filledInputComponentsProps;
+  const RootSlot = (_ref = (_slots$root = slots.root) != null ? _slots$root : components.Root) != null ? _ref : FilledInputRoot;
+  const InputSlot = (_ref2 = (_slots$input = slots.input) != null ? _slots$input : components.Input) != null ? _ref2 : FilledInputInput;
+  return /* @__PURE__ */ jsx(InputBase, _extends$1({
+    slots: {
+      root: RootSlot,
+      input: InputSlot
+    },
+    componentsProps,
+    fullWidth,
+    inputComponent,
+    multiline,
+    ref,
+    type
+  }, other, {
+    classes
+  }));
+});
+process.env.NODE_ENV !== "production" ? FilledInput.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * This prop helps users to fill forms faster, especially on mobile devices.
+   * The name can be confusing, as it's more like an autofill.
+   * You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
+   */
+  autoComplete: PropTypes.string,
+  /**
+   * If `true`, the `input` element is focused during the first mount.
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["primary", "secondary"]), PropTypes.string]),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Input: PropTypes.elementType,
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    input: PropTypes.object,
+    root: PropTypes.object
+  }),
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, the component is disabled.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the input will not have an underline.
+   */
+  disableUnderline: PropTypes.bool,
+  /**
+   * End `InputAdornment` for this component.
+   */
+  endAdornment: PropTypes.node,
+  /**
+   * If `true`, the `input` will indicate an error.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the `input` will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * If `true`, the label is hidden.
+   * This is used to increase density for a `FilledInput`.
+   * Be sure to add `aria-label` to the `input` element.
+   * @default false
+   */
+  hiddenLabel: PropTypes.bool,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * The component used for the `input` element.
+   * Either a string to use a HTML element or a component.
+   * @default 'input'
+   */
+  inputComponent: PropTypes.elementType,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @default {}
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   * The prop defaults to the value (`'none'`) inherited from the parent FormControl component.
+   */
+  margin: PropTypes.oneOf(["dense", "none"]),
+  /**
+   * Maximum number of rows to display when multiline option is set to true.
+   */
+  maxRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Minimum number of rows to display when multiline option is set to true.
+   */
+  minRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * If `true`, a [TextareaAutosize](/material-ui/react-textarea-autosize/) element is rendered.
+   * @default false
+   */
+  multiline: PropTypes.bool,
+  /**
+   * Name attribute of the `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * Callback fired when the value is changed.
+   *
+   * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: PropTypes.func,
+  /**
+   * The short hint displayed in the `input` before the user enters a value.
+   */
+  placeholder: PropTypes.string,
+  /**
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * If `true`, the `input` element is required.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  required: PropTypes.bool,
+  /**
+   * Number of rows to display when multiline option is set to true.
+   */
+  rows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    input: PropTypes.object,
+    root: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `components` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    input: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * Start `InputAdornment` for this component.
+   */
+  startAdornment: PropTypes.node,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+   * @default 'text'
+   */
+  type: PropTypes.string,
+  /**
+   * The value of the `input` element, required for a controlled component.
+   */
+  value: PropTypes.any
+} : void 0;
+FilledInput.muiName = "Input";
+var _span$3;
+const _excluded$B = ["children", "classes", "className", "label", "notched"];
+const NotchedOutlineRoot$1 = styled("fieldset", {
+  shouldForwardProp: rootShouldForwardProp
+})({
+  textAlign: "left",
+  position: "absolute",
+  bottom: 0,
+  right: 0,
+  top: -5,
+  left: 0,
+  margin: 0,
+  padding: "0 8px",
+  pointerEvents: "none",
+  borderRadius: "inherit",
+  borderStyle: "solid",
+  borderWidth: 1,
+  overflow: "hidden",
+  minWidth: "0%"
+});
+const NotchedOutlineLegend = styled("legend", {
+  shouldForwardProp: rootShouldForwardProp
+})(({
+  ownerState,
+  theme
+}) => _extends$1({
+  float: "unset",
+  // Fix conflict with bootstrap
+  width: "auto",
+  // Fix conflict with bootstrap
+  overflow: "hidden"
+}, !ownerState.withLabel && {
+  padding: 0,
+  lineHeight: "11px",
+  // sync with `height` in `legend` styles
+  transition: theme.transitions.create("width", {
+    duration: 150,
+    easing: theme.transitions.easing.easeOut
+  })
+}, ownerState.withLabel && _extends$1({
+  display: "block",
+  // Fix conflict with normalize.css and sanitize.css
+  padding: 0,
+  height: 11,
+  // sync with `lineHeight` in `legend` styles
+  fontSize: "0.75em",
+  visibility: "hidden",
+  maxWidth: 0.01,
+  transition: theme.transitions.create("max-width", {
+    duration: 50,
+    easing: theme.transitions.easing.easeOut
+  }),
+  whiteSpace: "nowrap",
+  "& > span": {
+    paddingLeft: 5,
+    paddingRight: 5,
+    display: "inline-block",
+    opacity: 0,
+    visibility: "visible"
+  }
+}, ownerState.notched && {
+  maxWidth: "100%",
+  transition: theme.transitions.create("max-width", {
+    duration: 100,
+    easing: theme.transitions.easing.easeOut,
+    delay: 50
+  })
+})));
+function NotchedOutline(props) {
+  const {
+    className,
+    label,
+    notched
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$B);
+  const withLabel = label != null && label !== "";
+  const ownerState = _extends$1({}, props, {
+    notched,
+    withLabel
+  });
+  return /* @__PURE__ */ jsx(NotchedOutlineRoot$1, _extends$1({
+    "aria-hidden": true,
+    className,
+    ownerState
+  }, other, {
+    children: /* @__PURE__ */ jsx(NotchedOutlineLegend, {
+      ownerState,
+      children: withLabel ? /* @__PURE__ */ jsx("span", {
+        children: label
+      }) : (
+        // notranslate needed while Google Translate will not fix zero-width space issue
+        _span$3 || (_span$3 = /* @__PURE__ */ jsx("span", {
+          className: "notranslate",
+          children: "​"
+        }))
+      )
+    })
+  }));
+}
+process.env.NODE_ENV !== "production" ? NotchedOutline.propTypes = {
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The label.
+   */
+  label: PropTypes.node,
+  /**
+   * If `true`, the outline is notched to accommodate the label.
+   */
+  notched: PropTypes.bool.isRequired,
+  /**
+   * @ignore
+   */
+  style: PropTypes.object
+} : void 0;
+const _excluded$A = ["components", "fullWidth", "inputComponent", "label", "multiline", "notched", "slots", "type"];
+const useUtilityClasses$t = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root"],
+    notchedOutline: ["notchedOutline"],
+    input: ["input"]
+  };
+  const composedClasses = composeClasses(slots, getOutlinedInputUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const OutlinedInputRoot = styled(InputBaseRoot, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiOutlinedInput",
+  slot: "Root",
+  overridesResolver: rootOverridesResolver
+})(({
+  theme,
+  ownerState
+}) => {
+  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  return _extends$1({
+    position: "relative",
+    borderRadius: (theme.vars || theme).shape.borderRadius,
+    [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
+      borderColor: (theme.vars || theme).palette.text.primary
+    },
+    // Reset on touch devices, it doesn't add specificity
+    "@media (hover: none)": {
+      [`&:hover .${outlinedInputClasses.notchedOutline}`]: {
+        borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+      }
+    },
+    [`&.${outlinedInputClasses.focused} .${outlinedInputClasses.notchedOutline}`]: {
+      borderColor: (theme.vars || theme).palette[ownerState.color].main,
+      borderWidth: 2
+    },
+    [`&.${outlinedInputClasses.error} .${outlinedInputClasses.notchedOutline}`]: {
+      borderColor: (theme.vars || theme).palette.error.main
+    },
+    [`&.${outlinedInputClasses.disabled} .${outlinedInputClasses.notchedOutline}`]: {
+      borderColor: (theme.vars || theme).palette.action.disabled
+    }
+  }, ownerState.startAdornment && {
+    paddingLeft: 14
+  }, ownerState.endAdornment && {
+    paddingRight: 14
+  }, ownerState.multiline && _extends$1({
+    padding: "16.5px 14px"
+  }, ownerState.size === "small" && {
+    padding: "8.5px 14px"
+  }));
+});
+const NotchedOutlineRoot = styled(NotchedOutline, {
+  name: "MuiOutlinedInput",
+  slot: "NotchedOutline",
+  overridesResolver: (props, styles2) => styles2.notchedOutline
+})(({
+  theme
+}) => {
+  const borderColor2 = theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.23)" : "rgba(255, 255, 255, 0.23)";
+  return {
+    borderColor: theme.vars ? `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.23)` : borderColor2
+  };
+});
+const OutlinedInputInput = styled(InputBaseComponent, {
+  name: "MuiOutlinedInput",
+  slot: "Input",
+  overridesResolver: inputOverridesResolver
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  padding: "16.5px 14px"
+}, !theme.vars && {
+  "&:-webkit-autofill": {
+    WebkitBoxShadow: theme.palette.mode === "light" ? null : "0 0 0 100px #266798 inset",
+    WebkitTextFillColor: theme.palette.mode === "light" ? null : "#fff",
+    caretColor: theme.palette.mode === "light" ? null : "#fff",
+    borderRadius: "inherit"
+  }
+}, theme.vars && {
+  "&:-webkit-autofill": {
+    borderRadius: "inherit"
+  },
+  [theme.getColorSchemeSelector("dark")]: {
+    "&:-webkit-autofill": {
+      WebkitBoxShadow: "0 0 0 100px #266798 inset",
+      WebkitTextFillColor: "#fff",
+      caretColor: "#fff"
+    }
+  }
+}, ownerState.size === "small" && {
+  padding: "8.5px 14px"
+}, ownerState.multiline && {
+  padding: 0
+}, ownerState.startAdornment && {
+  paddingLeft: 0
+}, ownerState.endAdornment && {
+  paddingRight: 0
+}));
+const OutlinedInput = /* @__PURE__ */ React.forwardRef(function OutlinedInput2(inProps, ref) {
+  var _ref, _slots$root, _ref2, _slots$input, _React$Fragment;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiOutlinedInput"
+  });
+  const {
+    components = {},
+    fullWidth = false,
+    inputComponent = "input",
+    label,
+    multiline = false,
+    notched,
+    slots = {},
+    type = "text"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$A);
+  const classes = useUtilityClasses$t(props);
+  const muiFormControl = useFormControl();
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["color", "disabled", "error", "focused", "hiddenLabel", "size", "required"]
+  });
+  const ownerState = _extends$1({}, props, {
+    color: fcs.color || "primary",
+    disabled: fcs.disabled,
+    error: fcs.error,
+    focused: fcs.focused,
+    formControl: muiFormControl,
+    fullWidth,
+    hiddenLabel: fcs.hiddenLabel,
+    multiline,
+    size: fcs.size,
+    type
+  });
+  const RootSlot = (_ref = (_slots$root = slots.root) != null ? _slots$root : components.Root) != null ? _ref : OutlinedInputRoot;
+  const InputSlot = (_ref2 = (_slots$input = slots.input) != null ? _slots$input : components.Input) != null ? _ref2 : OutlinedInputInput;
+  return /* @__PURE__ */ jsx(InputBase, _extends$1({
+    slots: {
+      root: RootSlot,
+      input: InputSlot
+    },
+    renderSuffix: (state) => /* @__PURE__ */ jsx(NotchedOutlineRoot, {
+      ownerState,
+      className: classes.notchedOutline,
+      label: label != null && label !== "" && fcs.required ? _React$Fragment || (_React$Fragment = /* @__PURE__ */ jsxs(React.Fragment, {
+        children: [label, " ", "*"]
+      })) : label,
+      notched: typeof notched !== "undefined" ? notched : Boolean(state.startAdornment || state.filled || state.focused)
+    }),
+    fullWidth,
+    inputComponent,
+    multiline,
+    ref,
+    type
+  }, other, {
+    classes: _extends$1({}, classes, {
+      notchedOutline: null
+    })
+  }));
+});
+process.env.NODE_ENV !== "production" ? OutlinedInput.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * This prop helps users to fill forms faster, especially on mobile devices.
+   * The name can be confusing, as it's more like an autofill.
+   * You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
+   */
+  autoComplete: PropTypes.string,
+  /**
+   * If `true`, the `input` element is focused during the first mount.
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * The prop defaults to the value (`'primary'`) inherited from the parent FormControl component.
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["primary", "secondary"]), PropTypes.string]),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Input: PropTypes.elementType,
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, the component is disabled.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * End `InputAdornment` for this component.
+   */
+  endAdornment: PropTypes.node,
+  /**
+   * If `true`, the `input` will indicate an error.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the `input` will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * The component used for the `input` element.
+   * Either a string to use a HTML element or a component.
+   * @default 'input'
+   */
+  inputComponent: PropTypes.elementType,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * @default {}
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * The label of the `input`. It is only used for layout. The actual labelling
+   * is handled by `InputLabel`.
+   */
+  label: PropTypes.node,
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   * The prop defaults to the value (`'none'`) inherited from the parent FormControl component.
+   */
+  margin: PropTypes.oneOf(["dense", "none"]),
+  /**
+   * Maximum number of rows to display when multiline option is set to true.
+   */
+  maxRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Minimum number of rows to display when multiline option is set to true.
+   */
+  minRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * If `true`, a [TextareaAutosize](/material-ui/react-textarea-autosize/) element is rendered.
+   * @default false
+   */
+  multiline: PropTypes.bool,
+  /**
+   * Name attribute of the `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * If `true`, the outline is notched to accommodate the label.
+   */
+  notched: PropTypes.bool,
+  /**
+   * Callback fired when the value is changed.
+   *
+   * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: PropTypes.func,
+  /**
+   * The short hint displayed in the `input` before the user enters a value.
+   */
+  placeholder: PropTypes.string,
+  /**
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * If `true`, the `input` element is required.
+   * The prop defaults to the value (`false`) inherited from the parent FormControl component.
+   */
+  required: PropTypes.bool,
+  /**
+   * Number of rows to display when multiline option is set to true.
+   */
+  rows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `components` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    input: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * Start `InputAdornment` for this component.
+   */
+  startAdornment: PropTypes.node,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+   * @default 'text'
+   */
+  type: PropTypes.string,
+  /**
+   * The value of the `input` element, required for a controlled component.
+   */
+  value: PropTypes.any
+} : void 0;
+OutlinedInput.muiName = "Input";
+function getFormLabelUtilityClasses(slot) {
+  return generateUtilityClass("MuiFormLabel", slot);
+}
+const formLabelClasses = generateUtilityClasses("MuiFormLabel", ["root", "colorSecondary", "focused", "disabled", "error", "filled", "required", "asterisk"]);
+const _excluded$z = ["children", "className", "color", "component", "disabled", "error", "filled", "focused", "required"];
+const useUtilityClasses$s = (ownerState) => {
+  const {
+    classes,
+    color: color2,
+    focused,
+    disabled,
+    error,
+    filled,
+    required
+  } = ownerState;
+  const slots = {
+    root: ["root", `color${capitalize(color2)}`, disabled && "disabled", error && "error", filled && "filled", focused && "focused", required && "required"],
+    asterisk: ["asterisk", error && "error"]
+  };
+  return composeClasses(slots, getFormLabelUtilityClasses, classes);
+};
+const FormLabelRoot = styled("label", {
+  name: "MuiFormLabel",
+  slot: "Root",
+  overridesResolver: ({
+    ownerState
+  }, styles2) => {
+    return _extends$1({}, styles2.root, ownerState.color === "secondary" && styles2.colorSecondary, ownerState.filled && styles2.filled);
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  color: (theme.vars || theme).palette.text.secondary
+}, theme.typography.body1, {
+  lineHeight: "1.4375em",
+  padding: 0,
+  position: "relative",
+  [`&.${formLabelClasses.focused}`]: {
+    color: (theme.vars || theme).palette[ownerState.color].main
+  },
+  [`&.${formLabelClasses.disabled}`]: {
+    color: (theme.vars || theme).palette.text.disabled
+  },
+  [`&.${formLabelClasses.error}`]: {
+    color: (theme.vars || theme).palette.error.main
+  }
+}));
+const AsteriskComponent = styled("span", {
+  name: "MuiFormLabel",
+  slot: "Asterisk",
+  overridesResolver: (props, styles2) => styles2.asterisk
+})(({
+  theme
+}) => ({
+  [`&.${formLabelClasses.error}`]: {
+    color: (theme.vars || theme).palette.error.main
+  }
+}));
+const FormLabel = /* @__PURE__ */ React.forwardRef(function FormLabel2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiFormLabel"
+  });
+  const {
+    children,
+    className,
+    component = "label"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$z);
+  const muiFormControl = useFormControl();
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["color", "required", "focused", "disabled", "error", "filled"]
+  });
+  const ownerState = _extends$1({}, props, {
+    color: fcs.color || "primary",
+    component,
+    disabled: fcs.disabled,
+    error: fcs.error,
+    filled: fcs.filled,
+    focused: fcs.focused,
+    required: fcs.required
+  });
+  const classes = useUtilityClasses$s(ownerState);
+  return /* @__PURE__ */ jsxs(FormLabelRoot, _extends$1({
+    as: component,
+    ownerState,
+    className: clsx(classes.root, className),
+    ref
+  }, other, {
+    children: [children, fcs.required && /* @__PURE__ */ jsxs(AsteriskComponent, {
+      ownerState,
+      "aria-hidden": true,
+      className: classes.asterisk,
+      children: [" ", "*"]
+    })]
+  }));
+});
+process.env.NODE_ENV !== "production" ? FormLabel.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["error", "info", "primary", "secondary", "success", "warning"]), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the label should be displayed in a disabled state.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label is displayed in an error state.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the label should use filled classes key.
+   */
+  filled: PropTypes.bool,
+  /**
+   * If `true`, the input of this label is focused (used by `FormGroup` components).
+   */
+  focused: PropTypes.bool,
+  /**
+   * If `true`, the label will indicate that the `input` is required.
+   */
+  required: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+function getInputLabelUtilityClasses(slot) {
+  return generateUtilityClass("MuiInputLabel", slot);
+}
+generateUtilityClasses("MuiInputLabel", ["root", "focused", "disabled", "error", "required", "asterisk", "formControl", "sizeSmall", "shrink", "animated", "standard", "filled", "outlined"]);
+const _excluded$y = ["disableAnimation", "margin", "shrink", "variant", "className"];
+const useUtilityClasses$r = (ownerState) => {
+  const {
+    classes,
+    formControl,
+    size,
+    shrink,
+    disableAnimation,
+    variant,
+    required
+  } = ownerState;
+  const slots = {
+    root: ["root", formControl && "formControl", !disableAnimation && "animated", shrink && "shrink", size && size !== "normal" && `size${capitalize(size)}`, variant],
+    asterisk: [required && "asterisk"]
+  };
+  const composedClasses = composeClasses(slots, getInputLabelUtilityClasses, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const InputLabelRoot = styled(FormLabel, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiInputLabel",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [{
+      [`& .${formLabelClasses.asterisk}`]: styles2.asterisk
+    }, styles2.root, ownerState.formControl && styles2.formControl, ownerState.size === "small" && styles2.sizeSmall, ownerState.shrink && styles2.shrink, !ownerState.disableAnimation && styles2.animated, ownerState.focused && styles2.focused, styles2[ownerState.variant]];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  display: "block",
+  transformOrigin: "top left",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  maxWidth: "100%"
+}, ownerState.formControl && {
+  position: "absolute",
+  left: 0,
+  top: 0,
+  // slight alteration to spec spacing to match visual spec result
+  transform: "translate(0, 20px) scale(1)"
+}, ownerState.size === "small" && {
+  // Compensation for the `Input.inputSizeSmall` style.
+  transform: "translate(0, 17px) scale(1)"
+}, ownerState.shrink && {
+  transform: "translate(0, -1.5px) scale(0.75)",
+  transformOrigin: "top left",
+  maxWidth: "133%"
+}, !ownerState.disableAnimation && {
+  transition: theme.transitions.create(["color", "transform", "max-width"], {
+    duration: theme.transitions.duration.shorter,
+    easing: theme.transitions.easing.easeOut
+  })
+}, ownerState.variant === "filled" && _extends$1({
+  // Chrome's autofill feature gives the input field a yellow background.
+  // Since the input field is behind the label in the HTML tree,
+  // the input field is drawn last and hides the label with an opaque background color.
+  // zIndex: 1 will raise the label above opaque background-colors of input.
+  zIndex: 1,
+  pointerEvents: "none",
+  transform: "translate(12px, 16px) scale(1)",
+  maxWidth: "calc(100% - 24px)"
+}, ownerState.size === "small" && {
+  transform: "translate(12px, 13px) scale(1)"
+}, ownerState.shrink && _extends$1({
+  userSelect: "none",
+  pointerEvents: "auto",
+  transform: "translate(12px, 7px) scale(0.75)",
+  maxWidth: "calc(133% - 24px)"
+}, ownerState.size === "small" && {
+  transform: "translate(12px, 4px) scale(0.75)"
+})), ownerState.variant === "outlined" && _extends$1({
+  // see comment above on filled.zIndex
+  zIndex: 1,
+  pointerEvents: "none",
+  transform: "translate(14px, 16px) scale(1)",
+  maxWidth: "calc(100% - 24px)"
+}, ownerState.size === "small" && {
+  transform: "translate(14px, 9px) scale(1)"
+}, ownerState.shrink && {
+  userSelect: "none",
+  pointerEvents: "auto",
+  // Theoretically, we should have (8+5)*2/0.75 = 34px
+  // but it feels a better when it bleeds a bit on the left, so 32px.
+  maxWidth: "calc(133% - 32px)",
+  transform: "translate(14px, -9px) scale(0.75)"
+})));
+const InputLabel$1 = /* @__PURE__ */ React.forwardRef(function InputLabel(inProps, ref) {
+  const props = useDefaultProps({
+    name: "MuiInputLabel",
+    props: inProps
+  });
+  const {
+    disableAnimation = false,
+    shrink: shrinkProp,
+    className
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$y);
+  const muiFormControl = useFormControl();
+  let shrink = shrinkProp;
+  if (typeof shrink === "undefined" && muiFormControl) {
+    shrink = muiFormControl.filled || muiFormControl.focused || muiFormControl.adornedStart;
+  }
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["size", "variant", "required", "focused"]
+  });
+  const ownerState = _extends$1({}, props, {
+    disableAnimation,
+    formControl: muiFormControl,
+    shrink,
+    size: fcs.size,
+    variant: fcs.variant,
+    required: fcs.required,
+    focused: fcs.focused
+  });
+  const classes = useUtilityClasses$r(ownerState);
+  return /* @__PURE__ */ jsx(InputLabelRoot, _extends$1({
+    "data-shrink": shrink,
+    ownerState,
+    ref,
+    className: clsx(classes.root, className)
+  }, other, {
+    classes
+  }));
+});
+process.env.NODE_ENV !== "production" ? InputLabel$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["error", "info", "primary", "secondary", "success", "warning"]), PropTypes.string]),
+  /**
+   * If `true`, the transition animation is disabled.
+   * @default false
+   */
+  disableAnimation: PropTypes.bool,
+  /**
+   * If `true`, the component is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label is displayed in an error state.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the `input` of this label is focused.
+   */
+  focused: PropTypes.bool,
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   */
+  margin: PropTypes.oneOf(["dense"]),
+  /**
+   * if `true`, the label will indicate that the `input` is required.
+   */
+  required: PropTypes.bool,
+  /**
+   * If `true`, the label is shrunk.
+   */
+  shrink: PropTypes.bool,
+  /**
+   * The size of the component.
+   * @default 'normal'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["normal", "small"]), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   */
+  variant: PropTypes.oneOf(["filled", "outlined", "standard"])
+} : void 0;
+function getFormHelperTextUtilityClasses(slot) {
+  return generateUtilityClass("MuiFormHelperText", slot);
+}
+const formHelperTextClasses = generateUtilityClasses("MuiFormHelperText", ["root", "error", "disabled", "sizeSmall", "sizeMedium", "contained", "focused", "filled", "required"]);
+var _span$2;
+const _excluded$x = ["children", "className", "component", "disabled", "error", "filled", "focused", "margin", "required", "variant"];
+const useUtilityClasses$q = (ownerState) => {
+  const {
+    classes,
+    contained,
+    size,
+    disabled,
+    error,
+    filled,
+    focused,
+    required
+  } = ownerState;
+  const slots = {
+    root: ["root", disabled && "disabled", error && "error", size && `size${capitalize(size)}`, contained && "contained", focused && "focused", filled && "filled", required && "required"]
+  };
+  return composeClasses(slots, getFormHelperTextUtilityClasses, classes);
+};
+const FormHelperTextRoot = styled("p", {
+  name: "MuiFormHelperText",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.size && styles2[`size${capitalize(ownerState.size)}`], ownerState.contained && styles2.contained, ownerState.filled && styles2.filled];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  color: (theme.vars || theme).palette.text.secondary
+}, theme.typography.caption, {
+  textAlign: "left",
+  marginTop: 3,
+  marginRight: 0,
+  marginBottom: 0,
+  marginLeft: 0,
+  [`&.${formHelperTextClasses.disabled}`]: {
+    color: (theme.vars || theme).palette.text.disabled
+  },
+  [`&.${formHelperTextClasses.error}`]: {
+    color: (theme.vars || theme).palette.error.main
+  }
+}, ownerState.size === "small" && {
+  marginTop: 4
+}, ownerState.contained && {
+  marginLeft: 14,
+  marginRight: 14
+}));
+const FormHelperText = /* @__PURE__ */ React.forwardRef(function FormHelperText2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiFormHelperText"
+  });
+  const {
+    children,
+    className,
+    component = "p"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$x);
+  const muiFormControl = useFormControl();
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["variant", "size", "disabled", "error", "filled", "focused", "required"]
+  });
+  const ownerState = _extends$1({}, props, {
+    component,
+    contained: fcs.variant === "filled" || fcs.variant === "outlined",
+    variant: fcs.variant,
+    size: fcs.size,
+    disabled: fcs.disabled,
+    error: fcs.error,
+    filled: fcs.filled,
+    focused: fcs.focused,
+    required: fcs.required
+  });
+  const classes = useUtilityClasses$q(ownerState);
+  return /* @__PURE__ */ jsx(FormHelperTextRoot, _extends$1({
+    as: component,
+    ownerState,
+    className: clsx(classes.root, className),
+    ref
+  }, other, {
+    children: children === " " ? (
+      // notranslate needed while Google Translate will not fix zero-width space issue
+      _span$2 || (_span$2 = /* @__PURE__ */ jsx("span", {
+        className: "notranslate",
+        children: "​"
+      }))
+    ) : children
+  }));
+});
+process.env.NODE_ENV !== "production" ? FormHelperText.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   *
+   * If `' '` is provided, the component reserves one line height for displaying a future message.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the helper text should be displayed in a disabled state.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, helper text should be displayed in an error state.
+   */
+  error: PropTypes.bool,
+  /**
+   * If `true`, the helper text should use filled classes key.
+   */
+  filled: PropTypes.bool,
+  /**
+   * If `true`, the helper text should use focused classes key.
+   */
+  focused: PropTypes.bool,
+  /**
+   * If `dense`, will adjust vertical spacing. This is normally obtained via context from
+   * FormControl.
+   */
+  margin: PropTypes.oneOf(["dense"]),
+  /**
+   * If `true`, the helper text should use required classes key.
+   */
+  required: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["filled", "outlined", "standard"]), PropTypes.string])
+} : void 0;
+function isOverflowing(container) {
+  const doc = unstable_ownerDocument(container);
+  if (doc.body === container) {
+    return unstable_ownerWindow(container).innerWidth > doc.documentElement.clientWidth;
+  }
+  return container.scrollHeight > container.clientHeight;
+}
+function ariaHidden(element, show) {
+  if (show) {
+    element.setAttribute("aria-hidden", "true");
+  } else {
+    element.removeAttribute("aria-hidden");
+  }
+}
+function getPaddingRight(element) {
+  return parseInt(unstable_ownerWindow(element).getComputedStyle(element).paddingRight, 10) || 0;
+}
+function isAriaHiddenForbiddenOnElement(element) {
+  const forbiddenTagNames = ["TEMPLATE", "SCRIPT", "STYLE", "LINK", "MAP", "META", "NOSCRIPT", "PICTURE", "COL", "COLGROUP", "PARAM", "SLOT", "SOURCE", "TRACK"];
+  const isForbiddenTagName = forbiddenTagNames.indexOf(element.tagName) !== -1;
+  const isInputHidden = element.tagName === "INPUT" && element.getAttribute("type") === "hidden";
+  return isForbiddenTagName || isInputHidden;
+}
+function ariaHiddenSiblings(container, mountElement, currentElement, elementsToExclude, show) {
+  const blacklist = [mountElement, currentElement, ...elementsToExclude];
+  [].forEach.call(container.children, (element) => {
+    const isNotExcludedElement = blacklist.indexOf(element) === -1;
+    const isNotForbiddenElement = !isAriaHiddenForbiddenOnElement(element);
+    if (isNotExcludedElement && isNotForbiddenElement) {
+      ariaHidden(element, show);
+    }
+  });
+}
+function findIndexOf(items, callback) {
+  let idx = -1;
+  items.some((item, index2) => {
+    if (callback(item)) {
+      idx = index2;
+      return true;
+    }
+    return false;
+  });
+  return idx;
+}
+function handleContainer(containerInfo, props) {
+  const restoreStyle = [];
+  const container = containerInfo.container;
+  if (!props.disableScrollLock) {
+    if (isOverflowing(container)) {
+      const scrollbarSize = unstable_getScrollbarSize(unstable_ownerDocument(container));
+      restoreStyle.push({
+        value: container.style.paddingRight,
+        property: "padding-right",
+        el: container
+      });
+      container.style.paddingRight = `${getPaddingRight(container) + scrollbarSize}px`;
+      const fixedElements = unstable_ownerDocument(container).querySelectorAll(".mui-fixed");
+      [].forEach.call(fixedElements, (element) => {
+        restoreStyle.push({
+          value: element.style.paddingRight,
+          property: "padding-right",
+          el: element
+        });
+        element.style.paddingRight = `${getPaddingRight(element) + scrollbarSize}px`;
+      });
+    }
+    let scrollContainer;
+    if (container.parentNode instanceof DocumentFragment) {
+      scrollContainer = unstable_ownerDocument(container).body;
+    } else {
+      const parent = container.parentElement;
+      const containerWindow = unstable_ownerWindow(container);
+      scrollContainer = (parent == null ? void 0 : parent.nodeName) === "HTML" && containerWindow.getComputedStyle(parent).overflowY === "scroll" ? parent : container;
+    }
+    restoreStyle.push({
+      value: scrollContainer.style.overflow,
+      property: "overflow",
+      el: scrollContainer
+    }, {
+      value: scrollContainer.style.overflowX,
+      property: "overflow-x",
+      el: scrollContainer
+    }, {
+      value: scrollContainer.style.overflowY,
+      property: "overflow-y",
+      el: scrollContainer
+    });
+    scrollContainer.style.overflow = "hidden";
+  }
+  const restore = () => {
+    restoreStyle.forEach(({
+      value,
+      el,
+      property
+    }) => {
+      if (value) {
+        el.style.setProperty(property, value);
+      } else {
+        el.style.removeProperty(property);
+      }
+    });
+  };
+  return restore;
+}
+function getHiddenSiblings(container) {
+  const hiddenSiblings = [];
+  [].forEach.call(container.children, (element) => {
+    if (element.getAttribute("aria-hidden") === "true") {
+      hiddenSiblings.push(element);
+    }
+  });
+  return hiddenSiblings;
+}
+class ModalManager {
+  constructor() {
+    this.containers = void 0;
+    this.modals = void 0;
+    this.modals = [];
+    this.containers = [];
+  }
+  add(modal, container) {
+    let modalIndex = this.modals.indexOf(modal);
+    if (modalIndex !== -1) {
+      return modalIndex;
+    }
+    modalIndex = this.modals.length;
+    this.modals.push(modal);
+    if (modal.modalRef) {
+      ariaHidden(modal.modalRef, false);
+    }
+    const hiddenSiblings = getHiddenSiblings(container);
+    ariaHiddenSiblings(container, modal.mount, modal.modalRef, hiddenSiblings, true);
+    const containerIndex = findIndexOf(this.containers, (item) => item.container === container);
+    if (containerIndex !== -1) {
+      this.containers[containerIndex].modals.push(modal);
+      return modalIndex;
+    }
+    this.containers.push({
+      modals: [modal],
+      container,
+      restore: null,
+      hiddenSiblings
+    });
+    return modalIndex;
+  }
+  mount(modal, props) {
+    const containerIndex = findIndexOf(this.containers, (item) => item.modals.indexOf(modal) !== -1);
+    const containerInfo = this.containers[containerIndex];
+    if (!containerInfo.restore) {
+      containerInfo.restore = handleContainer(containerInfo, props);
+    }
+  }
+  remove(modal, ariaHiddenState = true) {
+    const modalIndex = this.modals.indexOf(modal);
+    if (modalIndex === -1) {
+      return modalIndex;
+    }
+    const containerIndex = findIndexOf(this.containers, (item) => item.modals.indexOf(modal) !== -1);
+    const containerInfo = this.containers[containerIndex];
+    containerInfo.modals.splice(containerInfo.modals.indexOf(modal), 1);
+    this.modals.splice(modalIndex, 1);
+    if (containerInfo.modals.length === 0) {
+      if (containerInfo.restore) {
+        containerInfo.restore();
+      }
+      if (modal.modalRef) {
+        ariaHidden(modal.modalRef, ariaHiddenState);
+      }
+      ariaHiddenSiblings(containerInfo.container, modal.mount, modal.modalRef, containerInfo.hiddenSiblings, false);
+      this.containers.splice(containerIndex, 1);
+    } else {
+      const nextTop = containerInfo.modals[containerInfo.modals.length - 1];
+      if (nextTop.modalRef) {
+        ariaHidden(nextTop.modalRef, false);
+      }
+    }
+    return modalIndex;
+  }
+  isTopModal(modal) {
+    return this.modals.length > 0 && this.modals[this.modals.length - 1] === modal;
+  }
+}
+const _excluded$w = ["addEndListener", "appear", "children", "easing", "in", "onEnter", "onEntered", "onEntering", "onExit", "onExited", "onExiting", "style", "timeout", "TransitionComponent"];
+const styles = {
+  entering: {
+    opacity: 1
+  },
+  entered: {
+    opacity: 1
+  }
+};
+const Fade = /* @__PURE__ */ React.forwardRef(function Fade2(props, ref) {
+  const theme = useTheme$1();
+  const defaultTimeout = {
+    enter: theme.transitions.duration.enteringScreen,
+    exit: theme.transitions.duration.leavingScreen
+  };
+  const {
+    addEndListener,
+    appear = true,
+    children,
+    easing: easing2,
+    in: inProp,
+    onEnter,
+    onEntered,
+    onEntering,
+    onExit,
+    onExited,
+    onExiting,
+    style: style2,
+    timeout = defaultTimeout,
+    // eslint-disable-next-line react/prop-types
+    TransitionComponent = Transition
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$w);
+  const nodeRef = React.useRef(null);
+  const handleRef = useForkRef(nodeRef, getReactElementRef(children), ref);
+  const normalizedTransitionCallback = (callback) => (maybeIsAppearing) => {
+    if (callback) {
+      const node = nodeRef.current;
+      if (maybeIsAppearing === void 0) {
+        callback(node);
+      } else {
+        callback(node, maybeIsAppearing);
+      }
+    }
+  };
+  const handleEntering = normalizedTransitionCallback(onEntering);
+  const handleEnter = normalizedTransitionCallback((node, isAppearing) => {
+    reflow(node);
+    const transitionProps = getTransitionProps({
+      style: style2,
+      timeout,
+      easing: easing2
+    }, {
+      mode: "enter"
+    });
+    node.style.webkitTransition = theme.transitions.create("opacity", transitionProps);
+    node.style.transition = theme.transitions.create("opacity", transitionProps);
+    if (onEnter) {
+      onEnter(node, isAppearing);
+    }
+  });
+  const handleEntered = normalizedTransitionCallback(onEntered);
+  const handleExiting = normalizedTransitionCallback(onExiting);
+  const handleExit = normalizedTransitionCallback((node) => {
+    const transitionProps = getTransitionProps({
+      style: style2,
+      timeout,
+      easing: easing2
+    }, {
+      mode: "exit"
+    });
+    node.style.webkitTransition = theme.transitions.create("opacity", transitionProps);
+    node.style.transition = theme.transitions.create("opacity", transitionProps);
+    if (onExit) {
+      onExit(node);
+    }
+  });
+  const handleExited = normalizedTransitionCallback(onExited);
+  const handleAddEndListener = (next) => {
+    if (addEndListener) {
+      addEndListener(nodeRef.current, next);
+    }
+  };
+  return /* @__PURE__ */ jsx(TransitionComponent, _extends$1({
+    appear,
+    in: inProp,
+    nodeRef,
+    onEnter: handleEnter,
+    onEntered: handleEntered,
+    onEntering: handleEntering,
+    onExit: handleExit,
+    onExited: handleExited,
+    onExiting: handleExiting,
+    addEndListener: handleAddEndListener,
+    timeout
+  }, other, {
+    children: (state, childProps) => {
+      return /* @__PURE__ */ React.cloneElement(children, _extends$1({
+        style: _extends$1({
+          opacity: 0,
+          visibility: state === "exited" && !inProp ? "hidden" : void 0
+        }, styles[state], style2, children.props.style),
+        ref: handleRef
+      }, childProps));
+    }
+  }));
+});
+process.env.NODE_ENV !== "production" ? Fade.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Add a custom transition end trigger. Called with the transitioning DOM
+   * node and a done callback. Allows for more fine grained transition end
+   * logic. Note: Timeouts are still used as a fallback if provided.
+   */
+  addEndListener: PropTypes.func,
+  /**
+   * Perform the enter transition when it first mounts if `in` is also `true`.
+   * Set this to `false` to disable this behavior.
+   * @default true
+   */
+  appear: PropTypes.bool,
+  /**
+   * A single child content element.
+   */
+  children: elementAcceptingRef$1.isRequired,
+  /**
+   * The transition timing function.
+   * You may specify a single easing or a object containing enter and exit values.
+   */
+  easing: PropTypes.oneOfType([PropTypes.shape({
+    enter: PropTypes.string,
+    exit: PropTypes.string
+  }), PropTypes.string]),
+  /**
+   * If `true`, the component will transition in.
+   */
+  in: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  onEnter: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onEntered: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onEntering: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onExit: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onExited: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onExiting: PropTypes.func,
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   * @default {
+   *   enter: theme.transitions.duration.enteringScreen,
+   *   exit: theme.transitions.duration.leavingScreen,
+   * }
+   */
+  timeout: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
+    appear: PropTypes.number,
+    enter: PropTypes.number,
+    exit: PropTypes.number
+  })])
+} : void 0;
+function getBackdropUtilityClass(slot) {
+  return generateUtilityClass("MuiBackdrop", slot);
+}
+generateUtilityClasses("MuiBackdrop", ["root", "invisible"]);
+const _excluded$v = ["children", "className", "component", "components", "componentsProps", "invisible", "open", "slotProps", "slots", "TransitionComponent", "transitionDuration"];
+const useUtilityClasses$p = (ownerState) => {
+  const {
+    classes,
+    invisible
+  } = ownerState;
+  const slots = {
+    root: ["root", invisible && "invisible"]
+  };
+  return composeClasses(slots, getBackdropUtilityClass, classes);
+};
+const BackdropRoot = styled("div", {
+  name: "MuiBackdrop",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.invisible && styles2.invisible];
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  position: "fixed",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  right: 0,
+  bottom: 0,
+  top: 0,
+  left: 0,
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  WebkitTapHighlightColor: "transparent"
+}, ownerState.invisible && {
+  backgroundColor: "transparent"
+}));
+const Backdrop = /* @__PURE__ */ React.forwardRef(function Backdrop2(inProps, ref) {
+  var _slotProps$root, _ref, _slots$root;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiBackdrop"
+  });
+  const {
+    children,
+    className,
+    component = "div",
+    components = {},
+    componentsProps = {},
+    invisible = false,
+    open,
+    slotProps = {},
+    slots = {},
+    TransitionComponent = Fade,
+    transitionDuration
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$v);
+  const ownerState = _extends$1({}, props, {
+    component,
+    invisible
+  });
+  const classes = useUtilityClasses$p(ownerState);
+  const rootSlotProps = (_slotProps$root = slotProps.root) != null ? _slotProps$root : componentsProps.root;
+  return /* @__PURE__ */ jsx(TransitionComponent, _extends$1({
+    in: open,
+    timeout: transitionDuration
+  }, other, {
+    children: /* @__PURE__ */ jsx(BackdropRoot, _extends$1({
+      "aria-hidden": true
+    }, rootSlotProps, {
+      as: (_ref = (_slots$root = slots.root) != null ? _slots$root : components.Root) != null ? _ref : component,
+      className: clsx(classes.root, className, rootSlotProps == null ? void 0 : rootSlotProps.className),
+      ownerState: _extends$1({}, ownerState, rootSlotProps == null ? void 0 : rootSlotProps.ownerState),
+      classes,
+      ref,
+      children
+    }))
+  }));
+});
+process.env.NODE_ENV !== "production" ? Backdrop.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    root: PropTypes.object
+  }),
+  /**
+   * If `true`, the backdrop is invisible.
+   * It can be used when rendering a popover or a custom select component.
+   * @default false
+   */
+  invisible: PropTypes.bool,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool.isRequired,
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    root: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `components` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    root: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The component used for the transition.
+   * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+   * @default Fade
+   */
+  TransitionComponent: PropTypes.elementType,
+  /**
+   * The duration for the transition, in milliseconds.
+   * You may specify a single timeout for all transitions, or individually with an object.
+   */
+  transitionDuration: PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
+    appear: PropTypes.number,
+    enter: PropTypes.number,
+    exit: PropTypes.number
+  })])
+} : void 0;
+function getContainer(container) {
+  return typeof container === "function" ? container() : container;
+}
+function getHasTransition(children) {
+  return children ? children.props.hasOwnProperty("in") : false;
+}
+const defaultManager = new ModalManager();
+function useModal(parameters) {
+  const {
+    container,
+    disableEscapeKeyDown = false,
+    disableScrollLock = false,
+    // @ts-ignore internal logic - Base UI supports the manager as a prop too
+    manager = defaultManager,
+    closeAfterTransition = false,
+    onTransitionEnter,
+    onTransitionExited,
+    children,
+    onClose,
+    open,
+    rootRef
+  } = parameters;
+  const modal = React.useRef({});
+  const mountNodeRef = React.useRef(null);
+  const modalRef = React.useRef(null);
+  const handleRef = unstable_useForkRef(modalRef, rootRef);
+  const [exited, setExited] = React.useState(!open);
+  const hasTransition = getHasTransition(children);
+  let ariaHiddenProp = true;
+  if (parameters["aria-hidden"] === "false" || parameters["aria-hidden"] === false) {
+    ariaHiddenProp = false;
+  }
+  const getDoc = () => unstable_ownerDocument(mountNodeRef.current);
+  const getModal = () => {
+    modal.current.modalRef = modalRef.current;
+    modal.current.mount = mountNodeRef.current;
+    return modal.current;
+  };
+  const handleMounted = () => {
+    manager.mount(getModal(), {
+      disableScrollLock
+    });
+    if (modalRef.current) {
+      modalRef.current.scrollTop = 0;
+    }
+  };
+  const handleOpen = unstable_useEventCallback(() => {
+    const resolvedContainer = getContainer(container) || getDoc().body;
+    manager.add(getModal(), resolvedContainer);
+    if (modalRef.current) {
+      handleMounted();
+    }
+  });
+  const isTopModal = React.useCallback(() => manager.isTopModal(getModal()), [manager]);
+  const handlePortalRef = unstable_useEventCallback((node) => {
+    mountNodeRef.current = node;
+    if (!node) {
+      return;
+    }
+    if (open && isTopModal()) {
+      handleMounted();
+    } else if (modalRef.current) {
+      ariaHidden(modalRef.current, ariaHiddenProp);
+    }
+  });
+  const handleClose = React.useCallback(() => {
+    manager.remove(getModal(), ariaHiddenProp);
+  }, [ariaHiddenProp, manager]);
+  React.useEffect(() => {
+    return () => {
+      handleClose();
+    };
+  }, [handleClose]);
+  React.useEffect(() => {
+    if (open) {
+      handleOpen();
+    } else if (!hasTransition || !closeAfterTransition) {
+      handleClose();
+    }
+  }, [open, handleClose, hasTransition, closeAfterTransition, handleOpen]);
+  const createHandleKeyDown = (otherHandlers) => (event) => {
+    var _otherHandlers$onKeyD;
+    (_otherHandlers$onKeyD = otherHandlers.onKeyDown) == null || _otherHandlers$onKeyD.call(otherHandlers, event);
+    if (event.key !== "Escape" || event.which === 229 || // Wait until IME is settled.
+    !isTopModal()) {
+      return;
+    }
+    if (!disableEscapeKeyDown) {
+      event.stopPropagation();
+      if (onClose) {
+        onClose(event, "escapeKeyDown");
+      }
+    }
+  };
+  const createHandleBackdropClick = (otherHandlers) => (event) => {
+    var _otherHandlers$onClic;
+    (_otherHandlers$onClic = otherHandlers.onClick) == null || _otherHandlers$onClic.call(otherHandlers, event);
+    if (event.target !== event.currentTarget) {
+      return;
+    }
+    if (onClose) {
+      onClose(event, "backdropClick");
+    }
+  };
+  const getRootProps = (otherHandlers = {}) => {
+    const propsEventHandlers = extractEventHandlers(parameters);
+    delete propsEventHandlers.onTransitionEnter;
+    delete propsEventHandlers.onTransitionExited;
+    const externalEventHandlers = _extends$1({}, propsEventHandlers, otherHandlers);
+    return _extends$1({
+      role: "presentation"
+    }, externalEventHandlers, {
+      onKeyDown: createHandleKeyDown(externalEventHandlers),
+      ref: handleRef
+    });
+  };
+  const getBackdropProps = (otherHandlers = {}) => {
+    const externalEventHandlers = otherHandlers;
+    return _extends$1({
+      "aria-hidden": true
+    }, externalEventHandlers, {
+      onClick: createHandleBackdropClick(externalEventHandlers),
+      open
+    });
+  };
+  const getTransitionProps2 = () => {
+    const handleEnter = () => {
+      setExited(false);
+      if (onTransitionEnter) {
+        onTransitionEnter();
+      }
+    };
+    const handleExited = () => {
+      setExited(true);
+      if (onTransitionExited) {
+        onTransitionExited();
+      }
+      if (closeAfterTransition) {
+        handleClose();
+      }
+    };
+    return {
+      onEnter: unstable_createChainedFunction(handleEnter, children == null ? void 0 : children.props.onEnter),
+      onExited: unstable_createChainedFunction(handleExited, children == null ? void 0 : children.props.onExited)
+    };
+  };
+  return {
+    getRootProps,
+    getBackdropProps,
+    getTransitionProps: getTransitionProps2,
+    rootRef: handleRef,
+    portalRef: handlePortalRef,
+    isTopModal,
+    exited,
+    hasTransition
+  };
+}
+function getModalUtilityClass(slot) {
+  return generateUtilityClass("MuiModal", slot);
+}
+generateUtilityClasses("MuiModal", ["root", "hidden", "backdrop"]);
+const _excluded$u = ["BackdropComponent", "BackdropProps", "classes", "className", "closeAfterTransition", "children", "container", "component", "components", "componentsProps", "disableAutoFocus", "disableEnforceFocus", "disableEscapeKeyDown", "disablePortal", "disableRestoreFocus", "disableScrollLock", "hideBackdrop", "keepMounted", "onBackdropClick", "onClose", "onTransitionEnter", "onTransitionExited", "open", "slotProps", "slots", "theme"];
+const useUtilityClasses$o = (ownerState) => {
+  const {
+    open,
+    exited,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", !open && exited && "hidden"],
+    backdrop: ["backdrop"]
+  };
+  return composeClasses(slots, getModalUtilityClass, classes);
+};
+const ModalRoot = styled("div", {
+  name: "MuiModal",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, !ownerState.open && ownerState.exited && styles2.hidden];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  position: "fixed",
+  zIndex: (theme.vars || theme).zIndex.modal,
+  right: 0,
+  bottom: 0,
+  top: 0,
+  left: 0
+}, !ownerState.open && ownerState.exited && {
+  visibility: "hidden"
+}));
+const ModalBackdrop = styled(Backdrop, {
+  name: "MuiModal",
+  slot: "Backdrop",
+  overridesResolver: (props, styles2) => {
+    return styles2.backdrop;
+  }
+})({
+  zIndex: -1
+});
+const Modal$1 = /* @__PURE__ */ React.forwardRef(function Modal(inProps, ref) {
+  var _ref, _slots$root, _ref2, _slots$backdrop, _slotProps$root, _slotProps$backdrop;
+  const props = useDefaultProps({
+    name: "MuiModal",
+    props: inProps
+  });
+  const {
+    BackdropComponent = ModalBackdrop,
+    BackdropProps,
+    className,
+    closeAfterTransition = false,
+    children,
+    container,
+    component,
+    components = {},
+    componentsProps = {},
+    disableAutoFocus = false,
+    disableEnforceFocus = false,
+    disableEscapeKeyDown = false,
+    disablePortal = false,
+    disableRestoreFocus = false,
+    disableScrollLock = false,
+    hideBackdrop = false,
+    keepMounted = false,
+    onBackdropClick,
+    open,
+    slotProps,
+    slots
+    // eslint-disable-next-line react/prop-types
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$u);
+  const propsWithDefaults = _extends$1({}, props, {
+    closeAfterTransition,
+    disableAutoFocus,
+    disableEnforceFocus,
+    disableEscapeKeyDown,
+    disablePortal,
+    disableRestoreFocus,
+    disableScrollLock,
+    hideBackdrop,
+    keepMounted
+  });
+  const {
+    getRootProps,
+    getBackdropProps,
+    getTransitionProps: getTransitionProps2,
+    portalRef,
+    isTopModal,
+    exited,
+    hasTransition
+  } = useModal(_extends$1({}, propsWithDefaults, {
+    rootRef: ref
+  }));
+  const ownerState = _extends$1({}, propsWithDefaults, {
+    exited
+  });
+  const classes = useUtilityClasses$o(ownerState);
+  const childProps = {};
+  if (children.props.tabIndex === void 0) {
+    childProps.tabIndex = "-1";
+  }
+  if (hasTransition) {
+    const {
+      onEnter,
+      onExited
+    } = getTransitionProps2();
+    childProps.onEnter = onEnter;
+    childProps.onExited = onExited;
+  }
+  const RootSlot = (_ref = (_slots$root = slots == null ? void 0 : slots.root) != null ? _slots$root : components.Root) != null ? _ref : ModalRoot;
+  const BackdropSlot = (_ref2 = (_slots$backdrop = slots == null ? void 0 : slots.backdrop) != null ? _slots$backdrop : components.Backdrop) != null ? _ref2 : BackdropComponent;
+  const rootSlotProps = (_slotProps$root = slotProps == null ? void 0 : slotProps.root) != null ? _slotProps$root : componentsProps.root;
+  const backdropSlotProps = (_slotProps$backdrop = slotProps == null ? void 0 : slotProps.backdrop) != null ? _slotProps$backdrop : componentsProps.backdrop;
+  const rootProps = useSlotProps({
+    elementType: RootSlot,
+    externalSlotProps: rootSlotProps,
+    externalForwardedProps: other,
+    getSlotProps: getRootProps,
+    additionalProps: {
+      ref,
+      as: component
+    },
+    ownerState,
+    className: clsx(className, rootSlotProps == null ? void 0 : rootSlotProps.className, classes == null ? void 0 : classes.root, !ownerState.open && ownerState.exited && (classes == null ? void 0 : classes.hidden))
+  });
+  const backdropProps = useSlotProps({
+    elementType: BackdropSlot,
+    externalSlotProps: backdropSlotProps,
+    additionalProps: BackdropProps,
+    getSlotProps: (otherHandlers) => {
+      return getBackdropProps(_extends$1({}, otherHandlers, {
+        onClick: (e2) => {
+          if (onBackdropClick) {
+            onBackdropClick(e2);
+          }
+          if (otherHandlers != null && otherHandlers.onClick) {
+            otherHandlers.onClick(e2);
+          }
+        }
+      }));
+    },
+    className: clsx(backdropSlotProps == null ? void 0 : backdropSlotProps.className, BackdropProps == null ? void 0 : BackdropProps.className, classes == null ? void 0 : classes.backdrop),
+    ownerState
+  });
+  if (!keepMounted && !open && (!hasTransition || exited)) {
+    return null;
+  }
+  return /* @__PURE__ */ jsx(Portal, {
+    ref: portalRef,
+    container,
+    disablePortal,
+    children: /* @__PURE__ */ jsxs(RootSlot, _extends$1({}, rootProps, {
+      children: [!hideBackdrop && BackdropComponent ? /* @__PURE__ */ jsx(BackdropSlot, _extends$1({}, backdropProps)) : null, /* @__PURE__ */ jsx(FocusTrap, {
+        disableEnforceFocus,
+        disableAutoFocus,
+        disableRestoreFocus,
+        isEnabled: isTopModal,
+        open,
+        children: /* @__PURE__ */ React.cloneElement(children, childProps)
+      })]
+    }))
+  });
+});
+process.env.NODE_ENV !== "production" ? Modal$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * A backdrop component. This prop enables custom backdrop rendering.
+   * @deprecated Use `slots.backdrop` instead. While this prop currently works, it will be removed in the next major version.
+   * Use the `slots.backdrop` prop to make your application ready for the next version of Material UI.
+   * @default styled(Backdrop, {
+   *   name: 'MuiModal',
+   *   slot: 'Backdrop',
+   *   overridesResolver: (props, styles) => {
+   *     return styles.backdrop;
+   *   },
+   * })({
+   *   zIndex: -1,
+   * })
+   */
+  BackdropComponent: PropTypes.elementType,
+  /**
+   * Props applied to the [`Backdrop`](/material-ui/api/backdrop/) element.
+   * @deprecated Use `slotProps.backdrop` instead.
+   */
+  BackdropProps: PropTypes.object,
+  /**
+   * A single child content element.
+   */
+  children: elementAcceptingRef$1.isRequired,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * When set to true the Modal waits until a nested Transition is completed before closing.
+   * @default false
+   */
+  closeAfterTransition: PropTypes.bool,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Backdrop: PropTypes.elementType,
+    Root: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    backdrop: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * An HTML element or function that returns one.
+   * The `container` will have the portal children appended to it.
+   *
+   * You can also provide a callback, which is called in a React layout effect.
+   * This lets you set the container from a ref, and also makes server-side rendering possible.
+   *
+   * By default, it uses the body of the top-level document object,
+   * so it's simply `document.body` most of the time.
+   */
+  container: PropTypes.oneOfType([HTMLElementType$1, PropTypes.func]),
+  /**
+   * If `true`, the modal will not automatically shift focus to itself when it opens, and
+   * replace it to the last focused element when it closes.
+   * This also works correctly with any modal children that have the `disableAutoFocus` prop.
+   *
+   * Generally this should never be set to `true` as it makes the modal less
+   * accessible to assistive technologies, like screen readers.
+   * @default false
+   */
+  disableAutoFocus: PropTypes.bool,
+  /**
+   * If `true`, the modal will not prevent focus from leaving the modal while open.
+   *
+   * Generally this should never be set to `true` as it makes the modal less
+   * accessible to assistive technologies, like screen readers.
+   * @default false
+   */
+  disableEnforceFocus: PropTypes.bool,
+  /**
+   * If `true`, hitting escape will not fire the `onClose` callback.
+   * @default false
+   */
+  disableEscapeKeyDown: PropTypes.bool,
+  /**
+   * The `children` will be under the DOM hierarchy of the parent component.
+   * @default false
+   */
+  disablePortal: PropTypes.bool,
+  /**
+   * If `true`, the modal will not restore focus to previously focused element once
+   * modal is hidden or unmounted.
+   * @default false
+   */
+  disableRestoreFocus: PropTypes.bool,
+  /**
+   * Disable the scroll lock behavior.
+   * @default false
+   */
+  disableScrollLock: PropTypes.bool,
+  /**
+   * If `true`, the backdrop is not rendered.
+   * @default false
+   */
+  hideBackdrop: PropTypes.bool,
+  /**
+   * Always keep the children in the DOM.
+   * This prop can be useful in SEO situation or
+   * when you want to maximize the responsiveness of the Modal.
+   * @default false
+   */
+  keepMounted: PropTypes.bool,
+  /**
+   * Callback fired when the backdrop is clicked.
+   * @deprecated Use the `onClose` prop with the `reason` argument to handle the `backdropClick` events.
+   */
+  onBackdropClick: PropTypes.func,
+  /**
+   * Callback fired when the component requests to be closed.
+   * The `reason` parameter can optionally be used to control the response to `onClose`.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`.
+   */
+  onClose: PropTypes.func,
+  /**
+   * A function called when a transition enters.
+   */
+  onTransitionEnter: PropTypes.func,
+  /**
+   * A function called when a transition has exited.
+   */
+  onTransitionExited: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool.isRequired,
+  /**
+   * The props used for each slot inside the Modal.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    backdrop: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside the Modal.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    backdrop: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+function getPopoverUtilityClass(slot) {
+  return generateUtilityClass("MuiPopover", slot);
+}
+generateUtilityClasses("MuiPopover", ["root", "paper"]);
+const _excluded$t = ["onEntering"], _excluded2$5 = ["action", "anchorEl", "anchorOrigin", "anchorPosition", "anchorReference", "children", "className", "container", "elevation", "marginThreshold", "open", "PaperProps", "slots", "slotProps", "transformOrigin", "TransitionComponent", "transitionDuration", "TransitionProps", "disableScrollLock"], _excluded3 = ["slotProps"];
+function getOffsetTop(rect, vertical) {
+  let offset = 0;
+  if (typeof vertical === "number") {
+    offset = vertical;
+  } else if (vertical === "center") {
+    offset = rect.height / 2;
+  } else if (vertical === "bottom") {
+    offset = rect.height;
+  }
+  return offset;
+}
+function getOffsetLeft(rect, horizontal) {
+  let offset = 0;
+  if (typeof horizontal === "number") {
+    offset = horizontal;
+  } else if (horizontal === "center") {
+    offset = rect.width / 2;
+  } else if (horizontal === "right") {
+    offset = rect.width;
+  }
+  return offset;
+}
+function getTransformOriginValue(transformOrigin2) {
+  return [transformOrigin2.horizontal, transformOrigin2.vertical].map((n2) => typeof n2 === "number" ? `${n2}px` : n2).join(" ");
+}
+function resolveAnchorEl(anchorEl) {
+  return typeof anchorEl === "function" ? anchorEl() : anchorEl;
+}
+const useUtilityClasses$n = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root"],
+    paper: ["paper"]
+  };
+  return composeClasses(slots, getPopoverUtilityClass, classes);
+};
+const PopoverRoot = styled(Modal$1, {
+  name: "MuiPopover",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})({});
+const PopoverPaper = styled(Paper, {
+  name: "MuiPopover",
+  slot: "Paper",
+  overridesResolver: (props, styles2) => styles2.paper
+})({
+  position: "absolute",
+  overflowY: "auto",
+  overflowX: "hidden",
+  // So we see the popover when it's empty.
+  // It's most likely on issue on userland.
+  minWidth: 16,
+  minHeight: 16,
+  maxWidth: "calc(100% - 32px)",
+  maxHeight: "calc(100% - 32px)",
+  // We disable the focus ring for mouse, touch and keyboard users.
+  outline: 0
+});
+const Popover$1 = /* @__PURE__ */ React.forwardRef(function Popover(inProps, ref) {
+  var _slotProps$paper, _slots$root, _slots$paper;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiPopover"
+  });
+  const {
+    action,
+    anchorEl,
+    anchorOrigin = {
+      vertical: "top",
+      horizontal: "left"
+    },
+    anchorPosition,
+    anchorReference = "anchorEl",
+    children,
+    className,
+    container: containerProp,
+    elevation = 8,
+    marginThreshold = 16,
+    open,
+    PaperProps: PaperPropsProp = {},
+    slots,
+    slotProps,
+    transformOrigin: transformOrigin2 = {
+      vertical: "top",
+      horizontal: "left"
+    },
+    TransitionComponent = Grow,
+    transitionDuration: transitionDurationProp = "auto",
+    TransitionProps: {
+      onEntering
+    } = {},
+    disableScrollLock = false
+  } = props, TransitionProps = _objectWithoutPropertiesLoose$1(props.TransitionProps, _excluded$t), other = _objectWithoutPropertiesLoose$1(props, _excluded2$5);
+  const externalPaperSlotProps = (_slotProps$paper = slotProps == null ? void 0 : slotProps.paper) != null ? _slotProps$paper : PaperPropsProp;
+  const paperRef = React.useRef();
+  const handlePaperRef = useForkRef(paperRef, externalPaperSlotProps.ref);
+  const ownerState = _extends$1({}, props, {
+    anchorOrigin,
+    anchorReference,
+    elevation,
+    marginThreshold,
+    externalPaperSlotProps,
+    transformOrigin: transformOrigin2,
+    TransitionComponent,
+    transitionDuration: transitionDurationProp,
+    TransitionProps
+  });
+  const classes = useUtilityClasses$n(ownerState);
+  const getAnchorOffset = React.useCallback(() => {
+    if (anchorReference === "anchorPosition") {
+      if (process.env.NODE_ENV !== "production") {
+        if (!anchorPosition) {
+          console.error('MUI: You need to provide a `anchorPosition` prop when using <Popover anchorReference="anchorPosition" />.');
+        }
+      }
+      return anchorPosition;
+    }
+    const resolvedAnchorEl = resolveAnchorEl(anchorEl);
+    const anchorElement = resolvedAnchorEl && resolvedAnchorEl.nodeType === 1 ? resolvedAnchorEl : ownerDocument(paperRef.current).body;
+    const anchorRect = anchorElement.getBoundingClientRect();
+    if (process.env.NODE_ENV !== "production") {
+      const box = anchorElement.getBoundingClientRect();
+      if (process.env.NODE_ENV !== "test" && box.top === 0 && box.left === 0 && box.right === 0 && box.bottom === 0) {
+        console.warn(["MUI: The `anchorEl` prop provided to the component is invalid.", "The anchor element should be part of the document layout.", "Make sure the element is present in the document or that it's not display none."].join("\n"));
+      }
+    }
+    return {
+      top: anchorRect.top + getOffsetTop(anchorRect, anchorOrigin.vertical),
+      left: anchorRect.left + getOffsetLeft(anchorRect, anchorOrigin.horizontal)
+    };
+  }, [anchorEl, anchorOrigin.horizontal, anchorOrigin.vertical, anchorPosition, anchorReference]);
+  const getTransformOrigin = React.useCallback((elemRect) => {
+    return {
+      vertical: getOffsetTop(elemRect, transformOrigin2.vertical),
+      horizontal: getOffsetLeft(elemRect, transformOrigin2.horizontal)
+    };
+  }, [transformOrigin2.horizontal, transformOrigin2.vertical]);
+  const getPositioningStyle = React.useCallback((element) => {
+    const elemRect = {
+      width: element.offsetWidth,
+      height: element.offsetHeight
+    };
+    const elemTransformOrigin = getTransformOrigin(elemRect);
+    if (anchorReference === "none") {
+      return {
+        top: null,
+        left: null,
+        transformOrigin: getTransformOriginValue(elemTransformOrigin)
+      };
+    }
+    const anchorOffset = getAnchorOffset();
+    let top = anchorOffset.top - elemTransformOrigin.vertical;
+    let left = anchorOffset.left - elemTransformOrigin.horizontal;
+    const bottom = top + elemRect.height;
+    const right = left + elemRect.width;
+    const containerWindow = ownerWindow(resolveAnchorEl(anchorEl));
+    const heightThreshold = containerWindow.innerHeight - marginThreshold;
+    const widthThreshold = containerWindow.innerWidth - marginThreshold;
+    if (marginThreshold !== null && top < marginThreshold) {
+      const diff = top - marginThreshold;
+      top -= diff;
+      elemTransformOrigin.vertical += diff;
+    } else if (marginThreshold !== null && bottom > heightThreshold) {
+      const diff = bottom - heightThreshold;
+      top -= diff;
+      elemTransformOrigin.vertical += diff;
+    }
+    if (process.env.NODE_ENV !== "production") {
+      if (elemRect.height > heightThreshold && elemRect.height && heightThreshold) {
+        console.error(["MUI: The popover component is too tall.", `Some part of it can not be seen on the screen (${elemRect.height - heightThreshold}px).`, "Please consider adding a `max-height` to improve the user-experience."].join("\n"));
+      }
+    }
+    if (marginThreshold !== null && left < marginThreshold) {
+      const diff = left - marginThreshold;
+      left -= diff;
+      elemTransformOrigin.horizontal += diff;
+    } else if (right > widthThreshold) {
+      const diff = right - widthThreshold;
+      left -= diff;
+      elemTransformOrigin.horizontal += diff;
+    }
+    return {
+      top: `${Math.round(top)}px`,
+      left: `${Math.round(left)}px`,
+      transformOrigin: getTransformOriginValue(elemTransformOrigin)
+    };
+  }, [anchorEl, anchorReference, getAnchorOffset, getTransformOrigin, marginThreshold]);
+  const [isPositioned, setIsPositioned] = React.useState(open);
+  const setPositioningStyles = React.useCallback(() => {
+    const element = paperRef.current;
+    if (!element) {
+      return;
+    }
+    const positioning = getPositioningStyle(element);
+    if (positioning.top !== null) {
+      element.style.top = positioning.top;
+    }
+    if (positioning.left !== null) {
+      element.style.left = positioning.left;
+    }
+    element.style.transformOrigin = positioning.transformOrigin;
+    setIsPositioned(true);
+  }, [getPositioningStyle]);
+  React.useEffect(() => {
+    if (disableScrollLock) {
+      window.addEventListener("scroll", setPositioningStyles);
+    }
+    return () => window.removeEventListener("scroll", setPositioningStyles);
+  }, [anchorEl, disableScrollLock, setPositioningStyles]);
+  const handleEntering = (element, isAppearing) => {
+    if (onEntering) {
+      onEntering(element, isAppearing);
+    }
+    setPositioningStyles();
+  };
+  const handleExited = () => {
+    setIsPositioned(false);
+  };
+  React.useEffect(() => {
+    if (open) {
+      setPositioningStyles();
+    }
+  });
+  React.useImperativeHandle(action, () => open ? {
+    updatePosition: () => {
+      setPositioningStyles();
+    }
+  } : null, [open, setPositioningStyles]);
+  React.useEffect(() => {
+    if (!open) {
+      return void 0;
+    }
+    const handleResize = debounce(() => {
+      setPositioningStyles();
+    });
+    const containerWindow = ownerWindow(anchorEl);
+    containerWindow.addEventListener("resize", handleResize);
+    return () => {
+      handleResize.clear();
+      containerWindow.removeEventListener("resize", handleResize);
+    };
+  }, [anchorEl, open, setPositioningStyles]);
+  let transitionDuration = transitionDurationProp;
+  if (transitionDurationProp === "auto" && !TransitionComponent.muiSupportAuto) {
+    transitionDuration = void 0;
+  }
+  const container = containerProp || (anchorEl ? ownerDocument(resolveAnchorEl(anchorEl)).body : void 0);
+  const RootSlot = (_slots$root = slots == null ? void 0 : slots.root) != null ? _slots$root : PopoverRoot;
+  const PaperSlot = (_slots$paper = slots == null ? void 0 : slots.paper) != null ? _slots$paper : PopoverPaper;
+  const paperProps = useSlotProps({
+    elementType: PaperSlot,
+    externalSlotProps: _extends$1({}, externalPaperSlotProps, {
+      style: isPositioned ? externalPaperSlotProps.style : _extends$1({}, externalPaperSlotProps.style, {
+        opacity: 0
+      })
+    }),
+    additionalProps: {
+      elevation,
+      ref: handlePaperRef
+    },
+    ownerState,
+    className: clsx(classes.paper, externalPaperSlotProps == null ? void 0 : externalPaperSlotProps.className)
+  });
+  const _useSlotProps = useSlotProps({
+    elementType: RootSlot,
+    externalSlotProps: (slotProps == null ? void 0 : slotProps.root) || {},
+    externalForwardedProps: other,
+    additionalProps: {
+      ref,
+      slotProps: {
+        backdrop: {
+          invisible: true
+        }
+      },
+      container,
+      open
+    },
+    ownerState,
+    className: clsx(classes.root, className)
+  }), {
+    slotProps: rootSlotPropsProp
+  } = _useSlotProps, rootProps = _objectWithoutPropertiesLoose$1(_useSlotProps, _excluded3);
+  return /* @__PURE__ */ jsx(RootSlot, _extends$1({}, rootProps, !isHostComponent(RootSlot) && {
+    slotProps: rootSlotPropsProp,
+    disableScrollLock
+  }, {
+    children: /* @__PURE__ */ jsx(TransitionComponent, _extends$1({
+      appear: true,
+      in: open,
+      onEntering: handleEntering,
+      onExited: handleExited,
+      timeout: transitionDuration
+    }, TransitionProps, {
+      children: /* @__PURE__ */ jsx(PaperSlot, _extends$1({}, paperProps, {
+        children
+      }))
+    }))
+  }));
+});
+process.env.NODE_ENV !== "production" ? Popover$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * A ref for imperative actions.
+   * It currently only supports updatePosition() action.
+   */
+  action: refType,
+  /**
+   * An HTML element, [PopoverVirtualElement](/material-ui/react-popover/#virtual-element),
+   * or a function that returns either.
+   * It's used to set the position of the popover.
+   */
+  anchorEl: chainPropTypes(PropTypes.oneOfType([HTMLElementType$1, PropTypes.func]), (props) => {
+    if (props.open && (!props.anchorReference || props.anchorReference === "anchorEl")) {
+      const resolvedAnchorEl = resolveAnchorEl(props.anchorEl);
+      if (resolvedAnchorEl && resolvedAnchorEl.nodeType === 1) {
+        const box = resolvedAnchorEl.getBoundingClientRect();
+        if (process.env.NODE_ENV !== "test" && box.top === 0 && box.left === 0 && box.right === 0 && box.bottom === 0) {
+          return new Error(["MUI: The `anchorEl` prop provided to the component is invalid.", "The anchor element should be part of the document layout.", "Make sure the element is present in the document or that it's not display none."].join("\n"));
+        }
+      } else {
+        return new Error(["MUI: The `anchorEl` prop provided to the component is invalid.", `It should be an Element or PopoverVirtualElement instance but it's \`${resolvedAnchorEl}\` instead.`].join("\n"));
+      }
+    }
+    return null;
+  }),
+  /**
+   * This is the point on the anchor where the popover's
+   * `anchorEl` will attach to. This is not used when the
+   * anchorReference is 'anchorPosition'.
+   *
+   * Options:
+   * vertical: [top, center, bottom];
+   * horizontal: [left, center, right].
+   * @default {
+   *   vertical: 'top',
+   *   horizontal: 'left',
+   * }
+   */
+  anchorOrigin: PropTypes.shape({
+    horizontal: PropTypes.oneOfType([PropTypes.oneOf(["center", "left", "right"]), PropTypes.number]).isRequired,
+    vertical: PropTypes.oneOfType([PropTypes.oneOf(["bottom", "center", "top"]), PropTypes.number]).isRequired
+  }),
+  /**
+   * This is the position that may be used to set the position of the popover.
+   * The coordinates are relative to the application's client area.
+   */
+  anchorPosition: PropTypes.shape({
+    left: PropTypes.number.isRequired,
+    top: PropTypes.number.isRequired
+  }),
+  /**
+   * This determines which anchor prop to refer to when setting
+   * the position of the popover.
+   * @default 'anchorEl'
+   */
+  anchorReference: PropTypes.oneOf(["anchorEl", "anchorPosition", "none"]),
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * An HTML element, component instance, or function that returns either.
+   * The `container` will passed to the Modal component.
+   *
+   * By default, it uses the body of the anchorEl's top-level document object,
+   * so it's simply `document.body` most of the time.
+   */
+  container: PropTypes.oneOfType([HTMLElementType$1, PropTypes.func]),
+  /**
+   * Disable the scroll lock behavior.
+   * @default false
+   */
+  disableScrollLock: PropTypes.bool,
+  /**
+   * The elevation of the popover.
+   * @default 8
+   */
+  elevation: integerPropType,
+  /**
+   * Specifies how close to the edge of the window the popover can appear.
+   * If null, the popover will not be constrained by the window.
+   * @default 16
+   */
+  marginThreshold: PropTypes.number,
+  /**
+   * Callback fired when the component requests to be closed.
+   * The `reason` parameter can optionally be used to control the response to `onClose`.
+   */
+  onClose: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool.isRequired,
+  /**
+   * Props applied to the [`Paper`](/material-ui/api/paper/) element.
+   *
+   * This prop is an alias for `slotProps.paper` and will be overriden by it if both are used.
+   * @deprecated Use `slotProps.paper` instead.
+   *
+   * @default {}
+   */
+  PaperProps: PropTypes.shape({
+    component: elementTypeAcceptingRef
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    paper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    paper: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * This is the point on the popover which
+   * will attach to the anchor's origin.
+   *
+   * Options:
+   * vertical: [top, center, bottom, x(px)];
+   * horizontal: [left, center, right, x(px)].
+   * @default {
+   *   vertical: 'top',
+   *   horizontal: 'left',
+   * }
+   */
+  transformOrigin: PropTypes.shape({
+    horizontal: PropTypes.oneOfType([PropTypes.oneOf(["center", "left", "right"]), PropTypes.number]).isRequired,
+    vertical: PropTypes.oneOfType([PropTypes.oneOf(["bottom", "center", "top"]), PropTypes.number]).isRequired
+  }),
+  /**
+   * The component used for the transition.
+   * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+   * @default Grow
+   */
+  TransitionComponent: PropTypes.elementType,
+  /**
+   * Set to 'auto' to automatically calculate transition time based on height.
+   * @default 'auto'
+   */
+  transitionDuration: PropTypes.oneOfType([PropTypes.oneOf(["auto"]), PropTypes.number, PropTypes.shape({
+    appear: PropTypes.number,
+    enter: PropTypes.number,
+    exit: PropTypes.number
+  })]),
+  /**
+   * Props applied to the transition element.
+   * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   * @default {}
+   */
+  TransitionProps: PropTypes.object
+} : void 0;
+function getMenuUtilityClass(slot) {
+  return generateUtilityClass("MuiMenu", slot);
+}
+generateUtilityClasses("MuiMenu", ["root", "paper", "list"]);
+const _excluded$s = ["onEntering"], _excluded2$4 = ["autoFocus", "children", "className", "disableAutoFocusItem", "MenuListProps", "onClose", "open", "PaperProps", "PopoverClasses", "transitionDuration", "TransitionProps", "variant", "slots", "slotProps"];
+const RTL_ORIGIN = {
+  vertical: "top",
+  horizontal: "right"
+};
+const LTR_ORIGIN = {
+  vertical: "top",
+  horizontal: "left"
+};
+const useUtilityClasses$m = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root"],
+    paper: ["paper"],
+    list: ["list"]
+  };
+  return composeClasses(slots, getMenuUtilityClass, classes);
+};
+const MenuRoot = styled(Popover$1, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiMenu",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})({});
+const MenuPaper = styled(PopoverPaper, {
+  name: "MuiMenu",
+  slot: "Paper",
+  overridesResolver: (props, styles2) => styles2.paper
+})({
+  // specZ: The maximum height of a simple menu should be one or more rows less than the view
+  // height. This ensures a tappable area outside of the simple menu with which to dismiss
+  // the menu.
+  maxHeight: "calc(100% - 96px)",
+  // Add iOS momentum scrolling for iOS < 13.0
+  WebkitOverflowScrolling: "touch"
+});
+const MenuMenuList = styled(MenuList, {
+  name: "MuiMenu",
+  slot: "List",
+  overridesResolver: (props, styles2) => styles2.list
+})({
+  // We disable the focus ring for mouse, touch and keyboard users.
+  outline: 0
+});
+const Menu = /* @__PURE__ */ React.forwardRef(function Menu2(inProps, ref) {
+  var _slots$paper, _slotProps$paper;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiMenu"
+  });
+  const {
+    autoFocus = true,
+    children,
+    className,
+    disableAutoFocusItem = false,
+    MenuListProps = {},
+    onClose,
+    open,
+    PaperProps = {},
+    PopoverClasses,
+    transitionDuration = "auto",
+    TransitionProps: {
+      onEntering
+    } = {},
+    variant = "selectedMenu",
+    slots = {},
+    slotProps = {}
+  } = props, TransitionProps = _objectWithoutPropertiesLoose$1(props.TransitionProps, _excluded$s), other = _objectWithoutPropertiesLoose$1(props, _excluded2$4);
+  const isRtl = useRtl();
+  const ownerState = _extends$1({}, props, {
+    autoFocus,
+    disableAutoFocusItem,
+    MenuListProps,
+    onEntering,
+    PaperProps,
+    transitionDuration,
+    TransitionProps,
+    variant
+  });
+  const classes = useUtilityClasses$m(ownerState);
+  const autoFocusItem = autoFocus && !disableAutoFocusItem && open;
+  const menuListActionsRef = React.useRef(null);
+  const handleEntering = (element, isAppearing) => {
+    if (menuListActionsRef.current) {
+      menuListActionsRef.current.adjustStyleForScrollbar(element, {
+        direction: isRtl ? "rtl" : "ltr"
+      });
+    }
+    if (onEntering) {
+      onEntering(element, isAppearing);
+    }
+  };
+  const handleListKeyDown = (event) => {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      if (onClose) {
+        onClose(event, "tabKeyDown");
+      }
+    }
+  };
+  let activeItemIndex = -1;
+  React.Children.map(children, (child, index2) => {
+    if (!/* @__PURE__ */ React.isValidElement(child)) {
+      return;
+    }
+    if (process.env.NODE_ENV !== "production") {
+      if (isFragment(child)) {
+        console.error(["MUI: The Menu component doesn't accept a Fragment as a child.", "Consider providing an array instead."].join("\n"));
+      }
+    }
+    if (!child.props.disabled) {
+      if (variant === "selectedMenu" && child.props.selected) {
+        activeItemIndex = index2;
+      } else if (activeItemIndex === -1) {
+        activeItemIndex = index2;
+      }
+    }
+  });
+  const PaperSlot = (_slots$paper = slots.paper) != null ? _slots$paper : MenuPaper;
+  const paperExternalSlotProps = (_slotProps$paper = slotProps.paper) != null ? _slotProps$paper : PaperProps;
+  const rootSlotProps = useSlotProps({
+    elementType: slots.root,
+    externalSlotProps: slotProps.root,
+    ownerState,
+    className: [classes.root, className]
+  });
+  const paperSlotProps = useSlotProps({
+    elementType: PaperSlot,
+    externalSlotProps: paperExternalSlotProps,
+    ownerState,
+    className: classes.paper
+  });
+  return /* @__PURE__ */ jsx(MenuRoot, _extends$1({
+    onClose,
+    anchorOrigin: {
+      vertical: "bottom",
+      horizontal: isRtl ? "right" : "left"
+    },
+    transformOrigin: isRtl ? RTL_ORIGIN : LTR_ORIGIN,
+    slots: {
+      paper: PaperSlot,
+      root: slots.root
+    },
+    slotProps: {
+      root: rootSlotProps,
+      paper: paperSlotProps
+    },
+    open,
+    ref,
+    transitionDuration,
+    TransitionProps: _extends$1({
+      onEntering: handleEntering
+    }, TransitionProps),
+    ownerState
+  }, other, {
+    classes: PopoverClasses,
+    children: /* @__PURE__ */ jsx(MenuMenuList, _extends$1({
+      onKeyDown: handleListKeyDown,
+      actions: menuListActionsRef,
+      autoFocus: autoFocus && (activeItemIndex === -1 || disableAutoFocusItem),
+      autoFocusItem,
+      variant
+    }, MenuListProps, {
+      className: clsx(classes.list, MenuListProps.className),
+      children
+    }))
+  }));
+});
+process.env.NODE_ENV !== "production" ? Menu.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * An HTML element, or a function that returns one.
+   * It's used to set the position of the menu.
+   */
+  anchorEl: PropTypes.oneOfType([HTMLElementType$1, PropTypes.func]),
+  /**
+   * If `true` (Default) will focus the `[role="menu"]` if no focusable child is found. Disabled
+   * children are not focusable. If you set this prop to `false` focus will be placed
+   * on the parent modal container. This has severe accessibility implications
+   * and should only be considered if you manage focus otherwise.
+   * @default true
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * Menu contents, normally `MenuItem`s.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * When opening the menu will not focus the active item but the `[role="menu"]`
+   * unless `autoFocus` is also set to `false`. Not using the default means not
+   * following WAI-ARIA authoring practices. Please be considerate about possible
+   * accessibility implications.
+   * @default false
+   */
+  disableAutoFocusItem: PropTypes.bool,
+  /**
+   * Props applied to the [`MenuList`](/material-ui/api/menu-list/) element.
+   * @default {}
+   */
+  MenuListProps: PropTypes.object,
+  /**
+   * Callback fired when the component requests to be closed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {string} reason Can be: `"escapeKeyDown"`, `"backdropClick"`, `"tabKeyDown"`.
+   */
+  onClose: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool.isRequired,
+  /**
+   * @ignore
+   */
+  PaperProps: PropTypes.object,
+  /**
+   * `classes` prop applied to the [`Popover`](/material-ui/api/popover/) element.
+   */
+  PopoverClasses: PropTypes.object,
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    paper: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
+    root: PropTypes.oneOfType([PropTypes.func, PropTypes.object])
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    paper: PropTypes.elementType,
+    root: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The length of the transition in `ms`, or 'auto'
+   * @default 'auto'
+   */
+  transitionDuration: PropTypes.oneOfType([PropTypes.oneOf(["auto"]), PropTypes.number, PropTypes.shape({
+    appear: PropTypes.number,
+    enter: PropTypes.number,
+    exit: PropTypes.number
+  })]),
+  /**
+   * Props applied to the transition element.
+   * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   * @default {}
+   */
+  TransitionProps: PropTypes.object,
+  /**
+   * The variant to use. Use `menu` to prevent selected items from impacting the initial focus.
+   * @default 'selectedMenu'
+   */
+  variant: PropTypes.oneOf(["menu", "selectedMenu"])
+} : void 0;
+function getNativeSelectUtilityClasses(slot) {
+  return generateUtilityClass("MuiNativeSelect", slot);
+}
+const nativeSelectClasses = generateUtilityClasses("MuiNativeSelect", ["root", "select", "multiple", "filled", "outlined", "standard", "disabled", "icon", "iconOpen", "iconFilled", "iconOutlined", "iconStandard", "nativeInput", "error"]);
+const _excluded$r = ["className", "disabled", "error", "IconComponent", "inputRef", "variant"];
+const useUtilityClasses$l = (ownerState) => {
+  const {
+    classes,
+    variant,
+    disabled,
+    multiple,
+    open,
+    error
+  } = ownerState;
+  const slots = {
+    select: ["select", variant, disabled && "disabled", multiple && "multiple", error && "error"],
+    icon: ["icon", `icon${capitalize(variant)}`, open && "iconOpen", disabled && "disabled"]
+  };
+  return composeClasses(slots, getNativeSelectUtilityClasses, classes);
+};
+const nativeSelectSelectStyles = ({
+  ownerState,
+  theme
+}) => _extends$1({
+  MozAppearance: "none",
+  // Reset
+  WebkitAppearance: "none",
+  // Reset
+  // When interacting quickly, the text can end up selected.
+  // Native select can't be selected either.
+  userSelect: "none",
+  borderRadius: 0,
+  // Reset
+  cursor: "pointer",
+  "&:focus": _extends$1({}, theme.vars ? {
+    backgroundColor: `rgba(${theme.vars.palette.common.onBackgroundChannel} / 0.05)`
+  } : {
+    backgroundColor: theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.05)" : "rgba(255, 255, 255, 0.05)"
+  }, {
+    borderRadius: 0
+    // Reset Chrome style
+  }),
+  // Remove IE11 arrow
+  "&::-ms-expand": {
+    display: "none"
+  },
+  [`&.${nativeSelectClasses.disabled}`]: {
+    cursor: "default"
+  },
+  "&[multiple]": {
+    height: "auto"
+  },
+  "&:not([multiple]) option, &:not([multiple]) optgroup": {
+    backgroundColor: (theme.vars || theme).palette.background.paper
+  },
+  // Bump specificity to allow extending custom inputs
+  "&&&": {
+    paddingRight: 24,
+    minWidth: 16
+    // So it doesn't collapse.
+  }
+}, ownerState.variant === "filled" && {
+  "&&&": {
+    paddingRight: 32
+  }
+}, ownerState.variant === "outlined" && {
+  borderRadius: (theme.vars || theme).shape.borderRadius,
+  "&:focus": {
+    borderRadius: (theme.vars || theme).shape.borderRadius
+    // Reset the reset for Chrome style
+  },
+  "&&&": {
+    paddingRight: 32
+  }
+});
+const NativeSelectSelect = styled("select", {
+  name: "MuiNativeSelect",
+  slot: "Select",
+  shouldForwardProp: rootShouldForwardProp,
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.select, styles2[ownerState.variant], ownerState.error && styles2.error, {
+      [`&.${nativeSelectClasses.multiple}`]: styles2.multiple
+    }];
+  }
+})(nativeSelectSelectStyles);
+const nativeSelectIconStyles = ({
+  ownerState,
+  theme
+}) => _extends$1({
+  // We use a position absolute over a flexbox in order to forward the pointer events
+  // to the input and to support wrapping tags..
+  position: "absolute",
+  right: 0,
+  top: "calc(50% - .5em)",
+  // Center vertically, height is 1em
+  pointerEvents: "none",
+  // Don't block pointer events on the select under the icon.
+  color: (theme.vars || theme).palette.action.active,
+  [`&.${nativeSelectClasses.disabled}`]: {
+    color: (theme.vars || theme).palette.action.disabled
+  }
+}, ownerState.open && {
+  transform: "rotate(180deg)"
+}, ownerState.variant === "filled" && {
+  right: 7
+}, ownerState.variant === "outlined" && {
+  right: 7
+});
+const NativeSelectIcon = styled("svg", {
+  name: "MuiNativeSelect",
+  slot: "Icon",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.icon, ownerState.variant && styles2[`icon${capitalize(ownerState.variant)}`], ownerState.open && styles2.iconOpen];
+  }
+})(nativeSelectIconStyles);
+const NativeSelectInput = /* @__PURE__ */ React.forwardRef(function NativeSelectInput2(props, ref) {
+  const {
+    className,
+    disabled,
+    error,
+    IconComponent,
+    inputRef,
+    variant = "standard"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$r);
+  const ownerState = _extends$1({}, props, {
+    disabled,
+    variant,
+    error
+  });
+  const classes = useUtilityClasses$l(ownerState);
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [/* @__PURE__ */ jsx(NativeSelectSelect, _extends$1({
+      ownerState,
+      className: clsx(classes.select, className),
+      disabled,
+      ref: inputRef || ref
+    }, other)), props.multiple ? null : /* @__PURE__ */ jsx(NativeSelectIcon, {
+      as: IconComponent,
+      ownerState,
+      className: classes.icon
+    })]
+  });
+});
+process.env.NODE_ENV !== "production" ? NativeSelectInput.propTypes = {
+  /**
+   * The option elements to populate the select with.
+   * Can be some `<option>` elements.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * The CSS class name of the select element.
+   */
+  className: PropTypes.string,
+  /**
+   * If `true`, the select is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the `select input` will indicate an error.
+   */
+  error: PropTypes.bool,
+  /**
+   * The icon that displays the arrow.
+   */
+  IconComponent: PropTypes.elementType.isRequired,
+  /**
+   * Use that prop to pass a ref to the native select element.
+   * @deprecated
+   */
+  inputRef: refType,
+  /**
+   * @ignore
+   */
+  multiple: PropTypes.bool,
+  /**
+   * Name attribute of the `select` or hidden `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * Callback fired when a menu item is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: PropTypes.func,
+  /**
+   * The input value.
+   */
+  value: PropTypes.any,
+  /**
+   * The variant to use.
+   */
+  variant: PropTypes.oneOf(["standard", "outlined", "filled"])
+} : void 0;
+function getSelectUtilityClasses(slot) {
+  return generateUtilityClass("MuiSelect", slot);
+}
+const selectClasses = generateUtilityClasses("MuiSelect", ["root", "select", "multiple", "filled", "outlined", "standard", "disabled", "focused", "icon", "iconOpen", "iconFilled", "iconOutlined", "iconStandard", "nativeInput", "error"]);
+var _span$1;
+const _excluded$q = ["aria-describedby", "aria-label", "autoFocus", "autoWidth", "children", "className", "defaultOpen", "defaultValue", "disabled", "displayEmpty", "error", "IconComponent", "inputRef", "labelId", "MenuProps", "multiple", "name", "onBlur", "onChange", "onClose", "onFocus", "onOpen", "open", "readOnly", "renderValue", "SelectDisplayProps", "tabIndex", "type", "value", "variant"];
+const SelectSelect = styled("div", {
+  name: "MuiSelect",
+  slot: "Select",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [
+      // Win specificity over the input base
+      {
+        [`&.${selectClasses.select}`]: styles2.select
+      },
+      {
+        [`&.${selectClasses.select}`]: styles2[ownerState.variant]
+      },
+      {
+        [`&.${selectClasses.error}`]: styles2.error
+      },
+      {
+        [`&.${selectClasses.multiple}`]: styles2.multiple
+      }
+    ];
+  }
+})(nativeSelectSelectStyles, {
+  // Win specificity over the input base
+  [`&.${selectClasses.select}`]: {
+    height: "auto",
+    // Resets for multiple select with chips
+    minHeight: "1.4375em",
+    // Required for select\text-field height consistency
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden"
+  }
+});
+const SelectIcon = styled("svg", {
+  name: "MuiSelect",
+  slot: "Icon",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.icon, ownerState.variant && styles2[`icon${capitalize(ownerState.variant)}`], ownerState.open && styles2.iconOpen];
+  }
+})(nativeSelectIconStyles);
+const SelectNativeInput = styled("input", {
+  shouldForwardProp: (prop) => slotShouldForwardProp(prop) && prop !== "classes",
+  name: "MuiSelect",
+  slot: "NativeInput",
+  overridesResolver: (props, styles2) => styles2.nativeInput
+})({
+  bottom: 0,
+  left: 0,
+  position: "absolute",
+  opacity: 0,
+  pointerEvents: "none",
+  width: "100%",
+  boxSizing: "border-box"
+});
+function areEqualValues(a, b) {
+  if (typeof b === "object" && b !== null) {
+    return a === b;
+  }
+  return String(a) === String(b);
+}
+function isEmpty(display) {
+  return display == null || typeof display === "string" && !display.trim();
+}
+const useUtilityClasses$k = (ownerState) => {
+  const {
+    classes,
+    variant,
+    disabled,
+    multiple,
+    open,
+    error
+  } = ownerState;
+  const slots = {
+    select: ["select", variant, disabled && "disabled", multiple && "multiple", error && "error"],
+    icon: ["icon", `icon${capitalize(variant)}`, open && "iconOpen", disabled && "disabled"],
+    nativeInput: ["nativeInput"]
+  };
+  return composeClasses(slots, getSelectUtilityClasses, classes);
+};
+const SelectInput = /* @__PURE__ */ React.forwardRef(function SelectInput2(props, ref) {
+  var _MenuProps$slotProps;
+  const {
+    "aria-describedby": ariaDescribedby,
+    "aria-label": ariaLabel,
+    autoFocus,
+    autoWidth,
+    children,
+    className,
+    defaultOpen,
+    defaultValue,
+    disabled,
+    displayEmpty,
+    error = false,
+    IconComponent,
+    inputRef: inputRefProp,
+    labelId,
+    MenuProps = {},
+    multiple,
+    name,
+    onBlur,
+    onChange,
+    onClose,
+    onFocus,
+    onOpen,
+    open: openProp,
+    readOnly,
+    renderValue,
+    SelectDisplayProps = {},
+    tabIndex: tabIndexProp,
+    value: valueProp,
+    variant = "standard"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$q);
+  const [value, setValueState] = useControlled({
+    controlled: valueProp,
+    default: defaultValue,
+    name: "Select"
+  });
+  const [openState, setOpenState] = useControlled({
+    controlled: openProp,
+    default: defaultOpen,
+    name: "Select"
+  });
+  const inputRef = React.useRef(null);
+  const displayRef = React.useRef(null);
+  const [displayNode, setDisplayNode] = React.useState(null);
+  const {
+    current: isOpenControlled
+  } = React.useRef(openProp != null);
+  const [menuMinWidthState, setMenuMinWidthState] = React.useState();
+  const handleRef = useForkRef(ref, inputRefProp);
+  const handleDisplayRef = React.useCallback((node) => {
+    displayRef.current = node;
+    if (node) {
+      setDisplayNode(node);
+    }
+  }, []);
+  const anchorElement = displayNode == null ? void 0 : displayNode.parentNode;
+  React.useImperativeHandle(handleRef, () => ({
+    focus: () => {
+      displayRef.current.focus();
+    },
+    node: inputRef.current,
+    value
+  }), [value]);
+  React.useEffect(() => {
+    if (defaultOpen && openState && displayNode && !isOpenControlled) {
+      setMenuMinWidthState(autoWidth ? null : anchorElement.clientWidth);
+      displayRef.current.focus();
+    }
+  }, [displayNode, autoWidth]);
+  React.useEffect(() => {
+    if (autoFocus) {
+      displayRef.current.focus();
+    }
+  }, [autoFocus]);
+  React.useEffect(() => {
+    if (!labelId) {
+      return void 0;
+    }
+    const label = ownerDocument(displayRef.current).getElementById(labelId);
+    if (label) {
+      const handler = () => {
+        if (getSelection().isCollapsed) {
+          displayRef.current.focus();
+        }
+      };
+      label.addEventListener("click", handler);
+      return () => {
+        label.removeEventListener("click", handler);
+      };
+    }
+    return void 0;
+  }, [labelId]);
+  const update = (open2, event) => {
+    if (open2) {
+      if (onOpen) {
+        onOpen(event);
+      }
+    } else if (onClose) {
+      onClose(event);
+    }
+    if (!isOpenControlled) {
+      setMenuMinWidthState(autoWidth ? null : anchorElement.clientWidth);
+      setOpenState(open2);
+    }
+  };
+  const handleMouseDown = (event) => {
+    if (event.button !== 0) {
+      return;
+    }
+    event.preventDefault();
+    displayRef.current.focus();
+    update(true, event);
+  };
+  const handleClose = (event) => {
+    update(false, event);
+  };
+  const childrenArray = React.Children.toArray(children);
+  const handleChange = (event) => {
+    const child = childrenArray.find((childItem) => childItem.props.value === event.target.value);
+    if (child === void 0) {
+      return;
+    }
+    setValueState(child.props.value);
+    if (onChange) {
+      onChange(event, child);
+    }
+  };
+  const handleItemClick = (child) => (event) => {
+    let newValue;
+    if (!event.currentTarget.hasAttribute("tabindex")) {
+      return;
+    }
+    if (multiple) {
+      newValue = Array.isArray(value) ? value.slice() : [];
+      const itemIndex = value.indexOf(child.props.value);
+      if (itemIndex === -1) {
+        newValue.push(child.props.value);
+      } else {
+        newValue.splice(itemIndex, 1);
+      }
+    } else {
+      newValue = child.props.value;
+    }
+    if (child.props.onClick) {
+      child.props.onClick(event);
+    }
+    if (value !== newValue) {
+      setValueState(newValue);
+      if (onChange) {
+        const nativeEvent = event.nativeEvent || event;
+        const clonedEvent = new nativeEvent.constructor(nativeEvent.type, nativeEvent);
+        Object.defineProperty(clonedEvent, "target", {
+          writable: true,
+          value: {
+            value: newValue,
+            name
+          }
+        });
+        onChange(clonedEvent, child);
+      }
+    }
+    if (!multiple) {
+      update(false, event);
+    }
+  };
+  const handleKeyDown = (event) => {
+    if (!readOnly) {
+      const validKeys = [
+        " ",
+        "ArrowUp",
+        "ArrowDown",
+        // The native select doesn't respond to enter on macOS, but it's recommended by
+        // https://www.w3.org/WAI/ARIA/apg/patterns/combobox/examples/combobox-select-only/
+        "Enter"
+      ];
+      if (validKeys.indexOf(event.key) !== -1) {
+        event.preventDefault();
+        update(true, event);
+      }
+    }
+  };
+  const open = displayNode !== null && openState;
+  const handleBlur = (event) => {
+    if (!open && onBlur) {
+      Object.defineProperty(event, "target", {
+        writable: true,
+        value: {
+          value,
+          name
+        }
+      });
+      onBlur(event);
+    }
+  };
+  delete other["aria-invalid"];
+  let display;
+  let displaySingle;
+  const displayMultiple = [];
+  let computeDisplay = false;
+  let foundMatch = false;
+  if (isFilled({
+    value
+  }) || displayEmpty) {
+    if (renderValue) {
+      display = renderValue(value);
+    } else {
+      computeDisplay = true;
+    }
+  }
+  const items = childrenArray.map((child) => {
+    if (!/* @__PURE__ */ React.isValidElement(child)) {
+      return null;
+    }
+    if (process.env.NODE_ENV !== "production") {
+      if (isFragment(child)) {
+        console.error(["MUI: The Select component doesn't accept a Fragment as a child.", "Consider providing an array instead."].join("\n"));
+      }
+    }
+    let selected;
+    if (multiple) {
+      if (!Array.isArray(value)) {
+        throw new Error(process.env.NODE_ENV !== "production" ? `MUI: The \`value\` prop must be an array when using the \`Select\` component with \`multiple\`.` : _formatMuiErrorMessage(2));
+      }
+      selected = value.some((v) => areEqualValues(v, child.props.value));
+      if (selected && computeDisplay) {
+        displayMultiple.push(child.props.children);
+      }
+    } else {
+      selected = areEqualValues(value, child.props.value);
+      if (selected && computeDisplay) {
+        displaySingle = child.props.children;
+      }
+    }
+    if (selected) {
+      foundMatch = true;
+    }
+    return /* @__PURE__ */ React.cloneElement(child, {
+      "aria-selected": selected ? "true" : "false",
+      onClick: handleItemClick(child),
+      onKeyUp: (event) => {
+        if (event.key === " ") {
+          event.preventDefault();
+        }
+        if (child.props.onKeyUp) {
+          child.props.onKeyUp(event);
+        }
+      },
+      role: "option",
+      selected,
+      value: void 0,
+      // The value is most likely not a valid HTML attribute.
+      "data-value": child.props.value
+      // Instead, we provide it as a data attribute.
+    });
+  });
+  if (process.env.NODE_ENV !== "production") {
+    React.useEffect(() => {
+      if (!foundMatch && !multiple && value !== "") {
+        const values2 = childrenArray.map((child) => child.props.value);
+        console.warn([`MUI: You have provided an out-of-range value \`${value}\` for the select ${name ? `(name="${name}") ` : ""}component.`, "Consider providing a value that matches one of the available options or ''.", `The available values are ${values2.filter((x) => x != null).map((x) => `\`${x}\``).join(", ") || '""'}.`].join("\n"));
+      }
+    }, [foundMatch, childrenArray, multiple, name, value]);
+  }
+  if (computeDisplay) {
+    if (multiple) {
+      if (displayMultiple.length === 0) {
+        display = null;
+      } else {
+        display = displayMultiple.reduce((output, child, index2) => {
+          output.push(child);
+          if (index2 < displayMultiple.length - 1) {
+            output.push(", ");
+          }
+          return output;
+        }, []);
+      }
+    } else {
+      display = displaySingle;
+    }
+  }
+  let menuMinWidth = menuMinWidthState;
+  if (!autoWidth && isOpenControlled && displayNode) {
+    menuMinWidth = anchorElement.clientWidth;
+  }
+  let tabIndex;
+  if (typeof tabIndexProp !== "undefined") {
+    tabIndex = tabIndexProp;
+  } else {
+    tabIndex = disabled ? null : 0;
+  }
+  const buttonId = SelectDisplayProps.id || (name ? `mui-component-select-${name}` : void 0);
+  const ownerState = _extends$1({}, props, {
+    variant,
+    value,
+    open,
+    error
+  });
+  const classes = useUtilityClasses$k(ownerState);
+  const paperProps = _extends$1({}, MenuProps.PaperProps, (_MenuProps$slotProps = MenuProps.slotProps) == null ? void 0 : _MenuProps$slotProps.paper);
+  const listboxId = useId();
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [/* @__PURE__ */ jsx(SelectSelect, _extends$1({
+      ref: handleDisplayRef,
+      tabIndex,
+      role: "combobox",
+      "aria-controls": listboxId,
+      "aria-disabled": disabled ? "true" : void 0,
+      "aria-expanded": open ? "true" : "false",
+      "aria-haspopup": "listbox",
+      "aria-label": ariaLabel,
+      "aria-labelledby": [labelId, buttonId].filter(Boolean).join(" ") || void 0,
+      "aria-describedby": ariaDescribedby,
+      onKeyDown: handleKeyDown,
+      onMouseDown: disabled || readOnly ? null : handleMouseDown,
+      onBlur: handleBlur,
+      onFocus
+    }, SelectDisplayProps, {
+      ownerState,
+      className: clsx(SelectDisplayProps.className, classes.select, className),
+      id: buttonId,
+      children: isEmpty(display) ? (
+        // notranslate needed while Google Translate will not fix zero-width space issue
+        _span$1 || (_span$1 = /* @__PURE__ */ jsx("span", {
+          className: "notranslate",
+          children: "​"
+        }))
+      ) : display
+    })), /* @__PURE__ */ jsx(SelectNativeInput, _extends$1({
+      "aria-invalid": error,
+      value: Array.isArray(value) ? value.join(",") : value,
+      name,
+      ref: inputRef,
+      "aria-hidden": true,
+      onChange: handleChange,
+      tabIndex: -1,
+      disabled,
+      className: classes.nativeInput,
+      autoFocus,
+      ownerState
+    }, other)), /* @__PURE__ */ jsx(SelectIcon, {
+      as: IconComponent,
+      className: classes.icon,
+      ownerState
+    }), /* @__PURE__ */ jsx(Menu, _extends$1({
+      id: `menu-${name || ""}`,
+      anchorEl: anchorElement,
+      open,
+      onClose: handleClose,
+      anchorOrigin: {
+        vertical: "bottom",
+        horizontal: "center"
+      },
+      transformOrigin: {
+        vertical: "top",
+        horizontal: "center"
+      }
+    }, MenuProps, {
+      MenuListProps: _extends$1({
+        "aria-labelledby": labelId,
+        role: "listbox",
+        "aria-multiselectable": multiple ? "true" : void 0,
+        disableListWrap: true,
+        id: listboxId
+      }, MenuProps.MenuListProps),
+      slotProps: _extends$1({}, MenuProps.slotProps, {
+        paper: _extends$1({}, paperProps, {
+          style: _extends$1({
+            minWidth: menuMinWidth
+          }, paperProps != null ? paperProps.style : null)
+        })
+      }),
+      children: items
+    }))]
+  });
+});
+process.env.NODE_ENV !== "production" ? SelectInput.propTypes = {
+  /**
+   * @ignore
+   */
+  "aria-describedby": PropTypes.string,
+  /**
+   * @ignore
+   */
+  "aria-label": PropTypes.string,
+  /**
+   * @ignore
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * If `true`, the width of the popover will automatically be set according to the items inside the
+   * menu, otherwise it will be at least the width of the select input.
+   */
+  autoWidth: PropTypes.bool,
+  /**
+   * The option elements to populate the select with.
+   * Can be some `<MenuItem>` elements.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * The CSS class name of the select element.
+   */
+  className: PropTypes.string,
+  /**
+   * If `true`, the component is toggled on mount. Use when the component open state is not controlled.
+   * You can only use it when the `native` prop is `false` (default).
+   */
+  defaultOpen: PropTypes.bool,
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, the select is disabled.
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the selected item is displayed even if its value is empty.
+   */
+  displayEmpty: PropTypes.bool,
+  /**
+   * If `true`, the `select input` will indicate an error.
+   */
+  error: PropTypes.bool,
+  /**
+   * The icon that displays the arrow.
+   */
+  IconComponent: PropTypes.elementType.isRequired,
+  /**
+   * Imperative handle implementing `{ value: T, node: HTMLElement, focus(): void }`
+   * Equivalent to `ref`
+   */
+  inputRef: refType,
+  /**
+   * The ID of an element that acts as an additional label. The Select will
+   * be labelled by the additional label and the selected value.
+   */
+  labelId: PropTypes.string,
+  /**
+   * Props applied to the [`Menu`](/material-ui/api/menu/) element.
+   */
+  MenuProps: PropTypes.object,
+  /**
+   * If `true`, `value` must be an array and the menu will support multiple selections.
+   */
+  multiple: PropTypes.bool,
+  /**
+   * Name attribute of the `select` or hidden `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
+  /**
+   * Callback fired when a menu item is selected.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (any).
+   * @param {object} [child] The react element that was selected.
+   */
+  onChange: PropTypes.func,
+  /**
+   * Callback fired when the component requests to be closed.
+   * Use in controlled mode (see open).
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onClose: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
+  /**
+   * Callback fired when the component requests to be opened.
+   * Use in controlled mode (see open).
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onOpen: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  readOnly: PropTypes.bool,
+  /**
+   * Render the selected value.
+   *
+   * @param {any} value The `value` provided to the component.
+   * @returns {ReactNode}
+   */
+  renderValue: PropTypes.func,
+  /**
+   * Props applied to the clickable div element.
+   */
+  SelectDisplayProps: PropTypes.object,
+  /**
+   * @ignore
+   */
+  tabIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * @ignore
+   */
+  type: PropTypes.any,
+  /**
+   * The input value.
+   */
+  value: PropTypes.any,
+  /**
+   * The variant to use.
+   */
+  variant: PropTypes.oneOf(["standard", "outlined", "filled"])
+} : void 0;
+const _excluded$p = ["autoWidth", "children", "classes", "className", "defaultOpen", "displayEmpty", "IconComponent", "id", "input", "inputProps", "label", "labelId", "MenuProps", "multiple", "native", "onClose", "onOpen", "open", "renderValue", "SelectDisplayProps", "variant"], _excluded2$3 = ["root"];
+const useUtilityClasses$j = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  return classes;
+};
+const styledRootConfig = {
+  name: "MuiSelect",
+  overridesResolver: (props, styles2) => styles2.root,
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) && prop !== "variant",
+  slot: "Root"
+};
+const StyledInput = styled(Input$1, styledRootConfig)("");
+const StyledOutlinedInput = styled(OutlinedInput, styledRootConfig)("");
+const StyledFilledInput = styled(FilledInput, styledRootConfig)("");
+const Select = /* @__PURE__ */ React.forwardRef(function Select2(inProps, ref) {
+  const props = useDefaultProps({
+    name: "MuiSelect",
+    props: inProps
+  });
+  const {
+    autoWidth = false,
+    children,
+    classes: classesProp = {},
+    className,
+    defaultOpen = false,
+    displayEmpty = false,
+    IconComponent = ArrowDropDownIcon,
+    id,
+    input,
+    inputProps,
+    label,
+    labelId,
+    MenuProps,
+    multiple = false,
+    native = false,
+    onClose,
+    onOpen,
+    open,
+    renderValue,
+    SelectDisplayProps,
+    variant: variantProp = "outlined"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$p);
+  const inputComponent = native ? NativeSelectInput : SelectInput;
+  const muiFormControl = useFormControl();
+  const fcs = formControlState({
+    props,
+    muiFormControl,
+    states: ["variant", "error"]
+  });
+  const variant = fcs.variant || variantProp;
+  const ownerState = _extends$1({}, props, {
+    variant,
+    classes: classesProp
+  });
+  const classes = useUtilityClasses$j(ownerState);
+  const restOfClasses = _objectWithoutPropertiesLoose$1(classes, _excluded2$3);
+  const InputComponent = input || {
+    standard: /* @__PURE__ */ jsx(StyledInput, {
+      ownerState
+    }),
+    outlined: /* @__PURE__ */ jsx(StyledOutlinedInput, {
+      label,
+      ownerState
+    }),
+    filled: /* @__PURE__ */ jsx(StyledFilledInput, {
+      ownerState
+    })
+  }[variant];
+  const inputComponentRef = useForkRef(ref, getReactElementRef(InputComponent));
+  return /* @__PURE__ */ jsx(React.Fragment, {
+    children: /* @__PURE__ */ React.cloneElement(InputComponent, _extends$1({
+      // Most of the logic is implemented in `SelectInput`.
+      // The `Select` component is a simple API wrapper to expose something better to play with.
+      inputComponent,
+      inputProps: _extends$1({
+        children,
+        error: fcs.error,
+        IconComponent,
+        variant,
+        type: void 0,
+        // We render a select. We can ignore the type provided by the `Input`.
+        multiple
+      }, native ? {
+        id
+      } : {
+        autoWidth,
+        defaultOpen,
+        displayEmpty,
+        labelId,
+        MenuProps,
+        onClose,
+        onOpen,
+        open,
+        renderValue,
+        SelectDisplayProps: _extends$1({
+          id
+        }, SelectDisplayProps)
+      }, inputProps, {
+        classes: inputProps ? deepmerge(restOfClasses, inputProps.classes) : restOfClasses
+      }, input ? input.props.inputProps : {})
+    }, (multiple && native || displayEmpty) && variant === "outlined" ? {
+      notched: true
+    } : {}, {
+      ref: inputComponentRef,
+      className: clsx(InputComponent.props.className, className, classes.root)
+    }, !input && {
+      variant
+    }, other))
+  });
+});
+process.env.NODE_ENV !== "production" ? Select.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the width of the popover will automatically be set according to the items inside the
+   * menu, otherwise it will be at least the width of the select input.
+   * @default false
+   */
+  autoWidth: PropTypes.bool,
+  /**
+   * The option elements to populate the select with.
+   * Can be some `MenuItem` when `native` is false and `option` when `native` is true.
+   *
+   * ⚠️The `MenuItem` elements **must** be direct descendants when `native` is false.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   * @default {}
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * If `true`, the component is initially open. Use when the component open state is not controlled (i.e. the `open` prop is not defined).
+   * You can only use it when the `native` prop is `false` (default).
+   * @default false
+   */
+  defaultOpen: PropTypes.bool,
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, a value is displayed even if no items are selected.
+   *
+   * In order to display a meaningful value, a function can be passed to the `renderValue` prop which
+   * returns the value to be displayed when no items are selected.
+   *
+   * ⚠️ When using this prop, make sure the label doesn't overlap with the empty displayed value.
+   * The label should either be hidden or forced to a shrunk state.
+   * @default false
+   */
+  displayEmpty: PropTypes.bool,
+  /**
+   * The icon that displays the arrow.
+   * @default ArrowDropDownIcon
+   */
+  IconComponent: PropTypes.elementType,
+  /**
+   * The `id` of the wrapper element or the `select` element when `native`.
+   */
+  id: PropTypes.string,
+  /**
+   * An `Input` element; does not have to be a material-ui specific `Input`.
+   */
+  input: PropTypes.element,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   * When `native` is `true`, the attributes are applied on the `select` element.
+   */
+  inputProps: PropTypes.object,
+  /**
+   * See [OutlinedInput#label](/material-ui/api/outlined-input/#props)
+   */
+  label: PropTypes.node,
+  /**
+   * The ID of an element that acts as an additional label. The Select will
+   * be labelled by the additional label and the selected value.
+   */
+  labelId: PropTypes.string,
+  /**
+   * Props applied to the [`Menu`](/material-ui/api/menu/) element.
+   */
+  MenuProps: PropTypes.object,
+  /**
+   * If `true`, `value` must be an array and the menu will support multiple selections.
+   * @default false
+   */
+  multiple: PropTypes.bool,
+  /**
+   * If `true`, the component uses a native `select` element.
+   * @default false
+   */
+  native: PropTypes.bool,
+  /**
+   * Callback fired when a menu item is selected.
+   *
+   * @param {SelectChangeEvent<Value>} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (any).
+   * **Warning**: This is a generic event, not a change event, unless the change event is caused by browser autofill.
+   * @param {object} [child] The react element that was selected when `native` is `false` (default).
+   */
+  onChange: PropTypes.func,
+  /**
+   * Callback fired when the component requests to be closed.
+   * Use it in either controlled (see the `open` prop), or uncontrolled mode (to detect when the Select collapses).
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onClose: PropTypes.func,
+  /**
+   * Callback fired when the component requests to be opened.
+   * Use it in either controlled (see the `open` prop), or uncontrolled mode (to detect when the Select expands).
+   *
+   * @param {object} event The event source of the callback.
+   */
+  onOpen: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   * You can only use it when the `native` prop is `false` (default).
+   */
+  open: PropTypes.bool,
+  /**
+   * Render the selected value.
+   * You can only use it when the `native` prop is `false` (default).
+   *
+   * @param {any} value The `value` provided to the component.
+   * @returns {ReactNode}
+   */
+  renderValue: PropTypes.func,
+  /**
+   * Props applied to the clickable div element.
+   */
+  SelectDisplayProps: PropTypes.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The `input` value. Providing an empty string will select no options.
+   * Set to an empty string `''` if you don't want any of the available options to be selected.
+   *
+   * If the value is an object it must have reference equality with the option in order to be selected.
+   * If the value is not an object, the string representation must match with the string representation of the option in order to be selected.
+   */
+  value: PropTypes.oneOfType([PropTypes.oneOf([""]), PropTypes.any]),
+  /**
+   * The variant to use.
+   * @default 'outlined'
+   */
+  variant: PropTypes.oneOf(["filled", "outlined", "standard"])
+} : void 0;
+Select.muiName = "Select";
+function getTextFieldUtilityClass(slot) {
+  return generateUtilityClass("MuiTextField", slot);
+}
+generateUtilityClasses("MuiTextField", ["root"]);
+const _excluded$o = ["autoComplete", "autoFocus", "children", "className", "color", "defaultValue", "disabled", "error", "FormHelperTextProps", "fullWidth", "helperText", "id", "InputLabelProps", "inputProps", "InputProps", "inputRef", "label", "maxRows", "minRows", "multiline", "name", "onBlur", "onChange", "onFocus", "placeholder", "required", "rows", "select", "SelectProps", "type", "value", "variant"];
+const variantComponent = {
+  standard: Input$1,
+  filled: FilledInput,
+  outlined: OutlinedInput
+};
+const useUtilityClasses$i = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root"]
+  };
+  return composeClasses(slots, getTextFieldUtilityClass, classes);
+};
+const TextFieldRoot = styled(FormControl, {
+  name: "MuiTextField",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})({});
+const TextField = /* @__PURE__ */ React.forwardRef(function TextField2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiTextField"
+  });
+  const {
+    autoComplete,
+    autoFocus = false,
+    children,
+    className,
+    color: color2 = "primary",
+    defaultValue,
+    disabled = false,
+    error = false,
+    FormHelperTextProps,
+    fullWidth = false,
+    helperText,
+    id: idOverride,
+    InputLabelProps,
+    inputProps,
+    InputProps,
+    inputRef,
+    label,
+    maxRows,
+    minRows,
+    multiline = false,
+    name,
+    onBlur,
+    onChange,
+    onFocus,
+    placeholder,
+    required = false,
+    rows,
+    select = false,
+    SelectProps,
+    type,
+    value,
+    variant = "outlined"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$o);
+  const ownerState = _extends$1({}, props, {
+    autoFocus,
+    color: color2,
+    disabled,
+    error,
+    fullWidth,
+    multiline,
+    required,
+    select,
+    variant
+  });
+  const classes = useUtilityClasses$i(ownerState);
+  if (process.env.NODE_ENV !== "production") {
+    if (select && !children) {
+      console.error("MUI: `children` must be passed when using the `TextField` component with `select`.");
+    }
+  }
+  const InputMore = {};
+  if (variant === "outlined") {
+    if (InputLabelProps && typeof InputLabelProps.shrink !== "undefined") {
+      InputMore.notched = InputLabelProps.shrink;
+    }
+    InputMore.label = label;
+  }
+  if (select) {
+    if (!SelectProps || !SelectProps.native) {
+      InputMore.id = void 0;
+    }
+    InputMore["aria-describedby"] = void 0;
+  }
+  const id = useId(idOverride);
+  const helperTextId = helperText && id ? `${id}-helper-text` : void 0;
+  const inputLabelId = label && id ? `${id}-label` : void 0;
+  const InputComponent = variantComponent[variant];
+  const InputElement = /* @__PURE__ */ jsx(InputComponent, _extends$1({
+    "aria-describedby": helperTextId,
+    autoComplete,
+    autoFocus,
+    defaultValue,
+    fullWidth,
+    multiline,
+    name,
+    rows,
+    maxRows,
+    minRows,
+    type,
+    value,
+    id,
+    inputRef,
+    onBlur,
+    onChange,
+    onFocus,
+    placeholder,
+    inputProps
+  }, InputMore, InputProps));
+  return /* @__PURE__ */ jsxs(TextFieldRoot, _extends$1({
+    className: clsx(classes.root, className),
+    disabled,
+    error,
+    fullWidth,
+    ref,
+    required,
+    color: color2,
+    variant,
+    ownerState
+  }, other, {
+    children: [label != null && label !== "" && /* @__PURE__ */ jsx(InputLabel$1, _extends$1({
+      htmlFor: id,
+      id: inputLabelId
+    }, InputLabelProps, {
+      children: label
+    })), select ? /* @__PURE__ */ jsx(Select, _extends$1({
+      "aria-describedby": helperTextId,
+      id,
+      labelId: inputLabelId,
+      value,
+      input: InputElement
+    }, SelectProps, {
+      children
+    })) : InputElement, helperText && /* @__PURE__ */ jsx(FormHelperText, _extends$1({
+      id: helperTextId
+    }, FormHelperTextProps, {
+      children: helperText
+    }))]
+  }));
+});
+process.env.NODE_ENV !== "production" ? TextField.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * This prop helps users to fill forms faster, especially on mobile devices.
+   * The name can be confusing, as it's more like an autofill.
+   * You can learn more about it [following the specification](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill).
+   */
+  autoComplete: PropTypes.string,
+  /**
+   * If `true`, the `input` element is focused during the first mount.
+   * @default false
+   */
+  autoFocus: PropTypes.bool,
+  /**
+   * @ignore
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The default value. Use when the component is not controlled.
+   */
+  defaultValue: PropTypes.any,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the label is displayed in an error state.
+   * @default false
+   */
+  error: PropTypes.bool,
+  /**
+   * Props applied to the [`FormHelperText`](/material-ui/api/form-helper-text/) element.
+   */
+  FormHelperTextProps: PropTypes.object,
+  /**
+   * If `true`, the input will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The helper text content.
+   */
+  helperText: PropTypes.node,
+  /**
+   * The id of the `input` element.
+   * Use this prop to make `label` and `helperText` accessible for screen readers.
+   */
+  id: PropTypes.string,
+  /**
+   * Props applied to the [`InputLabel`](/material-ui/api/input-label/) element.
+   * Pointer events like `onClick` are enabled if and only if `shrink` is `true`.
+   */
+  InputLabelProps: PropTypes.object,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Props applied to the Input element.
+   * It will be a [`FilledInput`](/material-ui/api/filled-input/),
+   * [`OutlinedInput`](/material-ui/api/outlined-input/) or [`Input`](/material-ui/api/input/)
+   * component depending on the `variant` prop value.
+   */
+  InputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * The label content.
+   */
+  label: PropTypes.node,
+  /**
+   * If `dense` or `normal`, will adjust vertical spacing of this and contained components.
+   * @default 'none'
+   */
+  margin: PropTypes.oneOf(["dense", "none", "normal"]),
+  /**
+   * Maximum number of rows to display when multiline option is set to true.
+   */
+  maxRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Minimum number of rows to display when multiline option is set to true.
+   */
+  minRows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * If `true`, a `textarea` element is rendered instead of an input.
+   * @default false
+   */
+  multiline: PropTypes.bool,
+  /**
+   * Name attribute of the `input` element.
+   */
+  name: PropTypes.string,
+  /**
+   * @ignore
+   */
+  onBlur: PropTypes.func,
+  /**
+   * Callback fired when the value is changed.
+   *
+   * @param {object} event The event source of the callback.
+   * You can pull out the new value by accessing `event.target.value` (string).
+   */
+  onChange: PropTypes.func,
+  /**
+   * @ignore
+   */
+  onFocus: PropTypes.func,
+  /**
+   * The short hint displayed in the `input` before the user enters a value.
+   */
+  placeholder: PropTypes.string,
+  /**
+   * If `true`, the label is displayed as required and the `input` element is required.
+   * @default false
+   */
+  required: PropTypes.bool,
+  /**
+   * Number of rows to display when multiline option is set to true.
+   */
+  rows: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * Render a [`Select`](/material-ui/api/select/) element while passing the Input element to `Select` as `input` parameter.
+   * If this option is set you must pass the options of the select as children.
+   * @default false
+   */
+  select: PropTypes.bool,
+  /**
+   * Props applied to the [`Select`](/material-ui/api/select/) element.
+   */
+  SelectProps: PropTypes.object,
+  /**
+   * The size of the component.
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
+   */
+  type: PropTypes.string,
+  /**
+   * The value of the `input` element, required for a controlled component.
+   */
+  value: PropTypes.any,
+  /**
+   * The variant to use.
+   * @default 'outlined'
+   */
+  variant: PropTypes.oneOf(["filled", "outlined", "standard"])
+} : void 0;
+const _excluded$n = ["className", "selectedRowCount"];
+const useUtilityClasses$h = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -9087,10 +26085,10 @@ const useUtilityClasses$9 = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridSelectedRowCountRoot = styled("div", {
+const GridSelectedRowCountRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "SelectedRowCount",
-  overridesResolver: (props, styles) => styles.selectedRowCount
+  overridesResolver: (props, styles2) => styles2.selectedRowCount
 })(({
   theme
 }) => ({
@@ -9110,10 +26108,10 @@ const GridSelectedRowCount = /* @__PURE__ */ React.forwardRef(function GridSelec
   const {
     className,
     selectedRowCount
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$e);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$n);
   const apiRef = useGridApiContext();
   const ownerState = useGridRootProps();
-  const classes = useUtilityClasses$9(ownerState);
+  const classes = useUtilityClasses$h(ownerState);
   const rowSelectedText = apiRef.current.getLocaleText("footerRowSelected")(selectedRowCount);
   return /* @__PURE__ */ jsx(GridSelectedRowCountRoot, _extends$1({
     ref,
@@ -9166,6 +26164,234 @@ function GridHeader() {
     children: [/* @__PURE__ */ jsx(rootProps.slots.preferencesPanel, _extends$1({}, (_rootProps$slotProps = rootProps.slotProps) == null ? void 0 : _rootProps$slotProps.preferencesPanel)), rootProps.slots.toolbar && /* @__PURE__ */ jsx(rootProps.slots.toolbar, _extends$1({}, (_rootProps$slotProps2 = rootProps.slotProps) == null ? void 0 : _rootProps$slotProps2.toolbar))]
   });
 }
+function getCircularProgressUtilityClass(slot) {
+  return generateUtilityClass("MuiCircularProgress", slot);
+}
+generateUtilityClasses("MuiCircularProgress", ["root", "determinate", "indeterminate", "colorPrimary", "colorSecondary", "svg", "circle", "circleDeterminate", "circleIndeterminate", "circleDisableShrink"]);
+const _excluded$m = ["className", "color", "disableShrink", "size", "style", "thickness", "value", "variant"];
+let _ = (t) => t, _t, _t2, _t3, _t4;
+const SIZE = 44;
+const circularRotateKeyframe = keyframes(_t || (_t = _`
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+`));
+const circularDashKeyframe = keyframes(_t2 || (_t2 = _`
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+`));
+const useUtilityClasses$g = (ownerState) => {
+  const {
+    classes,
+    variant,
+    color: color2,
+    disableShrink
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, `color${capitalize(color2)}`],
+    svg: ["svg"],
+    circle: ["circle", `circle${capitalize(variant)}`, disableShrink && "circleDisableShrink"]
+  };
+  return composeClasses(slots, getCircularProgressUtilityClass, classes);
+};
+const CircularProgressRoot = styled("span", {
+  name: "MuiCircularProgress",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, styles2[ownerState.variant], styles2[`color${capitalize(ownerState.color)}`]];
+  }
+})(({
+  ownerState,
+  theme
+}) => _extends$1({
+  display: "inline-block"
+}, ownerState.variant === "determinate" && {
+  transition: theme.transitions.create("transform")
+}, ownerState.color !== "inherit" && {
+  color: (theme.vars || theme).palette[ownerState.color].main
+}), ({
+  ownerState
+}) => ownerState.variant === "indeterminate" && css(_t3 || (_t3 = _`
+      animation: ${0} 1.4s linear infinite;
+    `), circularRotateKeyframe));
+const CircularProgressSVG = styled("svg", {
+  name: "MuiCircularProgress",
+  slot: "Svg",
+  overridesResolver: (props, styles2) => styles2.svg
+})({
+  display: "block"
+  // Keeps the progress centered
+});
+const CircularProgressCircle = styled("circle", {
+  name: "MuiCircularProgress",
+  slot: "Circle",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.circle, styles2[`circle${capitalize(ownerState.variant)}`], ownerState.disableShrink && styles2.circleDisableShrink];
+  }
+})(({
+  ownerState,
+  theme
+}) => _extends$1({
+  stroke: "currentColor"
+}, ownerState.variant === "determinate" && {
+  transition: theme.transitions.create("stroke-dashoffset")
+}, ownerState.variant === "indeterminate" && {
+  // Some default value that looks fine waiting for the animation to kicks in.
+  strokeDasharray: "80px, 200px",
+  strokeDashoffset: 0
+  // Add the unit to fix a Edge 16 and below bug.
+}), ({
+  ownerState
+}) => ownerState.variant === "indeterminate" && !ownerState.disableShrink && css(_t4 || (_t4 = _`
+      animation: ${0} 1.4s ease-in-out infinite;
+    `), circularDashKeyframe));
+const CircularProgress = /* @__PURE__ */ React.forwardRef(function CircularProgress2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiCircularProgress"
+  });
+  const {
+    className,
+    color: color2 = "primary",
+    disableShrink = false,
+    size = 40,
+    style: style2,
+    thickness = 3.6,
+    value = 0,
+    variant = "indeterminate"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$m);
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    disableShrink,
+    size,
+    thickness,
+    value,
+    variant
+  });
+  const classes = useUtilityClasses$g(ownerState);
+  const circleStyle = {};
+  const rootStyle = {};
+  const rootProps = {};
+  if (variant === "determinate") {
+    const circumference = 2 * Math.PI * ((SIZE - thickness) / 2);
+    circleStyle.strokeDasharray = circumference.toFixed(3);
+    rootProps["aria-valuenow"] = Math.round(value);
+    circleStyle.strokeDashoffset = `${((100 - value) / 100 * circumference).toFixed(3)}px`;
+    rootStyle.transform = "rotate(-90deg)";
+  }
+  return /* @__PURE__ */ jsx(CircularProgressRoot, _extends$1({
+    className: clsx(classes.root, className),
+    style: _extends$1({
+      width: size,
+      height: size
+    }, rootStyle, style2),
+    ownerState,
+    ref,
+    role: "progressbar"
+  }, rootProps, other, {
+    children: /* @__PURE__ */ jsx(CircularProgressSVG, {
+      className: classes.svg,
+      ownerState,
+      viewBox: `${SIZE / 2} ${SIZE / 2} ${SIZE} ${SIZE}`,
+      children: /* @__PURE__ */ jsx(CircularProgressCircle, {
+        className: classes.circle,
+        style: circleStyle,
+        ownerState,
+        cx: SIZE,
+        cy: SIZE,
+        r: (SIZE - thickness) / 2,
+        fill: "none",
+        strokeWidth: thickness
+      })
+    })
+  }));
+});
+process.env.NODE_ENV !== "production" ? CircularProgress.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["inherit", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * If `true`, the shrink animation is disabled.
+   * This only works if variant is `indeterminate`.
+   * @default false
+   */
+  disableShrink: chainPropTypes(PropTypes.bool, (props) => {
+    if (props.disableShrink && props.variant && props.variant !== "indeterminate") {
+      return new Error("MUI: You have provided the `disableShrink` prop with a variant other than `indeterminate`. This will have no effect.");
+    }
+    return null;
+  }),
+  /**
+   * The size of the component.
+   * If using a number, the pixel unit is assumed.
+   * If using a string, you need to provide the CSS unit, for example '3rem'.
+   * @default 40
+   */
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  /**
+   * @ignore
+   */
+  style: PropTypes.object,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The thickness of the circle.
+   * @default 3.6
+   */
+  thickness: PropTypes.number,
+  /**
+   * The value of the progress indicator for the determinate variant.
+   * Value between 0 and 100.
+   * @default 0
+   */
+  value: PropTypes.number,
+  /**
+   * The variant to use.
+   * Use indeterminate when there is no progress value.
+   * @default 'indeterminate'
+   */
+  variant: PropTypes.oneOf(["determinate", "indeterminate"])
+} : void 0;
 const GridLoadingOverlay = /* @__PURE__ */ React.forwardRef(function GridLoadingOverlay2(props, ref) {
   return /* @__PURE__ */ jsx(GridOverlay, _extends$1({
     ref
@@ -9196,7 +26422,911 @@ process.env.NODE_ENV !== "production" ? GridNoRowsOverlay.propTypes = {
   // ----------------------------------------------------------------------
   sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
 } : void 0;
-const GridPaginationRoot = styled$1(TablePagination)(({
+const TableContext = /* @__PURE__ */ React.createContext();
+if (process.env.NODE_ENV !== "production") {
+  TableContext.displayName = "TableContext";
+}
+const Tablelvl2Context = /* @__PURE__ */ React.createContext();
+if (process.env.NODE_ENV !== "production") {
+  Tablelvl2Context.displayName = "Tablelvl2Context";
+}
+function getTableCellUtilityClass(slot) {
+  return generateUtilityClass("MuiTableCell", slot);
+}
+const tableCellClasses = generateUtilityClasses("MuiTableCell", ["root", "head", "body", "footer", "sizeSmall", "sizeMedium", "paddingCheckbox", "paddingNone", "alignLeft", "alignCenter", "alignRight", "alignJustify", "stickyHeader"]);
+const _excluded$l = ["align", "className", "component", "padding", "scope", "size", "sortDirection", "variant"];
+const useUtilityClasses$f = (ownerState) => {
+  const {
+    classes,
+    variant,
+    align,
+    padding: padding2,
+    size,
+    stickyHeader
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, stickyHeader && "stickyHeader", align !== "inherit" && `align${capitalize(align)}`, padding2 !== "normal" && `padding${capitalize(padding2)}`, `size${capitalize(size)}`]
+  };
+  return composeClasses(slots, getTableCellUtilityClass, classes);
+};
+const TableCellRoot = styled("td", {
+  name: "MuiTableCell",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, styles2[ownerState.variant], styles2[`size${capitalize(ownerState.size)}`], ownerState.padding !== "normal" && styles2[`padding${capitalize(ownerState.padding)}`], ownerState.align !== "inherit" && styles2[`align${capitalize(ownerState.align)}`], ownerState.stickyHeader && styles2.stickyHeader];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({}, theme.typography.body2, {
+  display: "table-cell",
+  verticalAlign: "inherit",
+  // Workaround for a rendering bug with spanned columns in Chrome 62.0.
+  // Removes the alpha (sets it to 1), and lightens or darkens the theme color.
+  borderBottom: theme.vars ? `1px solid ${theme.vars.palette.TableCell.border}` : `1px solid
+    ${theme.palette.mode === "light" ? colorManipulatorExports.lighten(colorManipulatorExports.alpha(theme.palette.divider, 1), 0.88) : colorManipulatorExports.darken(colorManipulatorExports.alpha(theme.palette.divider, 1), 0.68)}`,
+  textAlign: "left",
+  padding: 16
+}, ownerState.variant === "head" && {
+  color: (theme.vars || theme).palette.text.primary,
+  lineHeight: theme.typography.pxToRem(24),
+  fontWeight: theme.typography.fontWeightMedium
+}, ownerState.variant === "body" && {
+  color: (theme.vars || theme).palette.text.primary
+}, ownerState.variant === "footer" && {
+  color: (theme.vars || theme).palette.text.secondary,
+  lineHeight: theme.typography.pxToRem(21),
+  fontSize: theme.typography.pxToRem(12)
+}, ownerState.size === "small" && {
+  padding: "6px 16px",
+  [`&.${tableCellClasses.paddingCheckbox}`]: {
+    width: 24,
+    // prevent the checkbox column from growing
+    padding: "0 12px 0 16px",
+    "& > *": {
+      padding: 0
+    }
+  }
+}, ownerState.padding === "checkbox" && {
+  width: 48,
+  // prevent the checkbox column from growing
+  padding: "0 0 0 4px"
+}, ownerState.padding === "none" && {
+  padding: 0
+}, ownerState.align === "left" && {
+  textAlign: "left"
+}, ownerState.align === "center" && {
+  textAlign: "center"
+}, ownerState.align === "right" && {
+  textAlign: "right",
+  flexDirection: "row-reverse"
+}, ownerState.align === "justify" && {
+  textAlign: "justify"
+}, ownerState.stickyHeader && {
+  position: "sticky",
+  top: 0,
+  zIndex: 2,
+  backgroundColor: (theme.vars || theme).palette.background.default
+}));
+const TableCell$1 = /* @__PURE__ */ React.forwardRef(function TableCell(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiTableCell"
+  });
+  const {
+    align = "inherit",
+    className,
+    component: componentProp,
+    padding: paddingProp,
+    scope: scopeProp,
+    size: sizeProp,
+    sortDirection,
+    variant: variantProp
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$l);
+  const table = React.useContext(TableContext);
+  const tablelvl2 = React.useContext(Tablelvl2Context);
+  const isHeadCell = tablelvl2 && tablelvl2.variant === "head";
+  let component;
+  if (componentProp) {
+    component = componentProp;
+  } else {
+    component = isHeadCell ? "th" : "td";
+  }
+  let scope = scopeProp;
+  if (component === "td") {
+    scope = void 0;
+  } else if (!scope && isHeadCell) {
+    scope = "col";
+  }
+  const variant = variantProp || tablelvl2 && tablelvl2.variant;
+  const ownerState = _extends$1({}, props, {
+    align,
+    component,
+    padding: paddingProp || (table && table.padding ? table.padding : "normal"),
+    size: sizeProp || (table && table.size ? table.size : "medium"),
+    sortDirection,
+    stickyHeader: variant === "head" && table && table.stickyHeader,
+    variant
+  });
+  const classes = useUtilityClasses$f(ownerState);
+  let ariaSort = null;
+  if (sortDirection) {
+    ariaSort = sortDirection === "asc" ? "ascending" : "descending";
+  }
+  return /* @__PURE__ */ jsx(TableCellRoot, _extends$1({
+    as: component,
+    ref,
+    className: clsx(classes.root, className),
+    "aria-sort": ariaSort,
+    scope,
+    ownerState
+  }, other));
+});
+process.env.NODE_ENV !== "production" ? TableCell$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * Set the text-align on the table cell content.
+   *
+   * Monetary or generally number fields **should be right aligned** as that allows
+   * you to add them up quickly in your head without having to worry about decimals.
+   * @default 'inherit'
+   */
+  align: PropTypes.oneOf(["center", "inherit", "justify", "left", "right"]),
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Sets the padding applied to the cell.
+   * The prop defaults to the value (`'default'`) inherited from the parent Table component.
+   */
+  padding: PropTypes.oneOf(["checkbox", "none", "normal"]),
+  /**
+   * Set scope attribute.
+   */
+  scope: PropTypes.string,
+  /**
+   * Specify the size of the cell.
+   * The prop defaults to the value (`'medium'`) inherited from the parent Table component.
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * Set aria-sort direction.
+   */
+  sortDirection: PropTypes.oneOf(["asc", "desc", false]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Specify the cell type.
+   * The prop defaults to the value inherited from the parent TableHead, TableBody, or TableFooter components.
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["body", "footer", "head"]), PropTypes.string])
+} : void 0;
+function getToolbarUtilityClass(slot) {
+  return generateUtilityClass("MuiToolbar", slot);
+}
+generateUtilityClasses("MuiToolbar", ["root", "gutters", "regular", "dense"]);
+const _excluded$k = ["className", "component", "disableGutters", "variant"];
+const useUtilityClasses$e = (ownerState) => {
+  const {
+    classes,
+    disableGutters,
+    variant
+  } = ownerState;
+  const slots = {
+    root: ["root", !disableGutters && "gutters", variant]
+  };
+  return composeClasses(slots, getToolbarUtilityClass, classes);
+};
+const ToolbarRoot = styled("div", {
+  name: "MuiToolbar",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, !ownerState.disableGutters && styles2.gutters, styles2[ownerState.variant]];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  position: "relative",
+  display: "flex",
+  alignItems: "center"
+}, !ownerState.disableGutters && {
+  paddingLeft: theme.spacing(2),
+  paddingRight: theme.spacing(2),
+  [theme.breakpoints.up("sm")]: {
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3)
+  }
+}, ownerState.variant === "dense" && {
+  minHeight: 48
+}), ({
+  theme,
+  ownerState
+}) => ownerState.variant === "regular" && theme.mixins.toolbar);
+const Toolbar$1 = /* @__PURE__ */ React.forwardRef(function Toolbar(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiToolbar"
+  });
+  const {
+    className,
+    component = "div",
+    disableGutters = false,
+    variant = "regular"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$k);
+  const ownerState = _extends$1({}, props, {
+    component,
+    disableGutters,
+    variant
+  });
+  const classes = useUtilityClasses$e(ownerState);
+  return /* @__PURE__ */ jsx(ToolbarRoot, _extends$1({
+    as: component,
+    className: clsx(classes.root, className),
+    ref,
+    ownerState
+  }, other));
+});
+process.env.NODE_ENV !== "production" ? Toolbar$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The Toolbar children, usually a mixture of `IconButton`, `Button` and `Typography`.
+   * The Toolbar is a flex container, allowing flex item properties to be used to lay out the children.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, disables gutter padding.
+   * @default false
+   */
+  disableGutters: PropTypes.bool,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   * @default 'regular'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["dense", "regular"]), PropTypes.string])
+} : void 0;
+const KeyboardArrowLeft = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z"
+}), "KeyboardArrowLeft");
+const KeyboardArrowRight = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+}), "KeyboardArrowRight");
+const LastPageIconDefault = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M5.59 7.41L10.18 12l-4.59 4.59L7 18l6-6-6-6zM16 6h2v12h-2z"
+}), "LastPage");
+const FirstPageIconDefault = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M18.41 16.59L13.82 12l4.59-4.59L17 6l-6 6 6 6zM6 6h2v12H6z"
+}), "FirstPage");
+const _excluded$j = ["backIconButtonProps", "count", "disabled", "getItemAriaLabel", "nextIconButtonProps", "onPageChange", "page", "rowsPerPage", "showFirstButton", "showLastButton", "slots", "slotProps"];
+const TablePaginationActions = /* @__PURE__ */ React.forwardRef(function TablePaginationActions2(props, ref) {
+  var _slots$firstButton, _slots$lastButton, _slots$nextButton, _slots$previousButton, _slots$firstButtonIco, _slots$lastButtonIcon, _slots$nextButtonIcon, _slots$previousButton2;
+  const {
+    backIconButtonProps,
+    count,
+    disabled = false,
+    getItemAriaLabel,
+    nextIconButtonProps,
+    onPageChange,
+    page,
+    rowsPerPage,
+    showFirstButton,
+    showLastButton,
+    slots = {},
+    slotProps = {}
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$j);
+  const isRtl = useRtl();
+  const handleFirstPageButtonClick = (event) => {
+    onPageChange(event, 0);
+  };
+  const handleBackButtonClick = (event) => {
+    onPageChange(event, page - 1);
+  };
+  const handleNextButtonClick = (event) => {
+    onPageChange(event, page + 1);
+  };
+  const handleLastPageButtonClick = (event) => {
+    onPageChange(event, Math.max(0, Math.ceil(count / rowsPerPage) - 1));
+  };
+  const FirstButton = (_slots$firstButton = slots.firstButton) != null ? _slots$firstButton : IconButton;
+  const LastButton = (_slots$lastButton = slots.lastButton) != null ? _slots$lastButton : IconButton;
+  const NextButton = (_slots$nextButton = slots.nextButton) != null ? _slots$nextButton : IconButton;
+  const PreviousButton = (_slots$previousButton = slots.previousButton) != null ? _slots$previousButton : IconButton;
+  const FirstButtonIcon = (_slots$firstButtonIco = slots.firstButtonIcon) != null ? _slots$firstButtonIco : FirstPageIconDefault;
+  const LastButtonIcon = (_slots$lastButtonIcon = slots.lastButtonIcon) != null ? _slots$lastButtonIcon : LastPageIconDefault;
+  const NextButtonIcon = (_slots$nextButtonIcon = slots.nextButtonIcon) != null ? _slots$nextButtonIcon : KeyboardArrowRight;
+  const PreviousButtonIcon = (_slots$previousButton2 = slots.previousButtonIcon) != null ? _slots$previousButton2 : KeyboardArrowLeft;
+  const FirstButtonSlot = isRtl ? LastButton : FirstButton;
+  const PreviousButtonSlot = isRtl ? NextButton : PreviousButton;
+  const NextButtonSlot = isRtl ? PreviousButton : NextButton;
+  const LastButtonSlot = isRtl ? FirstButton : LastButton;
+  const firstButtonSlotProps = isRtl ? slotProps.lastButton : slotProps.firstButton;
+  const previousButtonSlotProps = isRtl ? slotProps.nextButton : slotProps.previousButton;
+  const nextButtonSlotProps = isRtl ? slotProps.previousButton : slotProps.nextButton;
+  const lastButtonSlotProps = isRtl ? slotProps.firstButton : slotProps.lastButton;
+  return /* @__PURE__ */ jsxs("div", _extends$1({
+    ref
+  }, other, {
+    children: [showFirstButton && /* @__PURE__ */ jsx(FirstButtonSlot, _extends$1({
+      onClick: handleFirstPageButtonClick,
+      disabled: disabled || page === 0,
+      "aria-label": getItemAriaLabel("first", page),
+      title: getItemAriaLabel("first", page)
+    }, firstButtonSlotProps, {
+      children: isRtl ? /* @__PURE__ */ jsx(LastButtonIcon, _extends$1({}, slotProps.lastButtonIcon)) : /* @__PURE__ */ jsx(FirstButtonIcon, _extends$1({}, slotProps.firstButtonIcon))
+    })), /* @__PURE__ */ jsx(PreviousButtonSlot, _extends$1({
+      onClick: handleBackButtonClick,
+      disabled: disabled || page === 0,
+      color: "inherit",
+      "aria-label": getItemAriaLabel("previous", page),
+      title: getItemAriaLabel("previous", page)
+    }, previousButtonSlotProps != null ? previousButtonSlotProps : backIconButtonProps, {
+      children: isRtl ? /* @__PURE__ */ jsx(NextButtonIcon, _extends$1({}, slotProps.nextButtonIcon)) : /* @__PURE__ */ jsx(PreviousButtonIcon, _extends$1({}, slotProps.previousButtonIcon))
+    })), /* @__PURE__ */ jsx(NextButtonSlot, _extends$1({
+      onClick: handleNextButtonClick,
+      disabled: disabled || (count !== -1 ? page >= Math.ceil(count / rowsPerPage) - 1 : false),
+      color: "inherit",
+      "aria-label": getItemAriaLabel("next", page),
+      title: getItemAriaLabel("next", page)
+    }, nextButtonSlotProps != null ? nextButtonSlotProps : nextIconButtonProps, {
+      children: isRtl ? /* @__PURE__ */ jsx(PreviousButtonIcon, _extends$1({}, slotProps.previousButtonIcon)) : /* @__PURE__ */ jsx(NextButtonIcon, _extends$1({}, slotProps.nextButtonIcon))
+    })), showLastButton && /* @__PURE__ */ jsx(LastButtonSlot, _extends$1({
+      onClick: handleLastPageButtonClick,
+      disabled: disabled || page >= Math.ceil(count / rowsPerPage) - 1,
+      "aria-label": getItemAriaLabel("last", page),
+      title: getItemAriaLabel("last", page)
+    }, lastButtonSlotProps, {
+      children: isRtl ? /* @__PURE__ */ jsx(FirstButtonIcon, _extends$1({}, slotProps.firstButtonIcon)) : /* @__PURE__ */ jsx(LastButtonIcon, _extends$1({}, slotProps.lastButtonIcon))
+    }))]
+  }));
+});
+process.env.NODE_ENV !== "production" ? TablePaginationActions.propTypes = {
+  /**
+   * Props applied to the back arrow [`IconButton`](/material-ui/api/icon-button/) element.
+   */
+  backIconButtonProps: PropTypes.object,
+  /**
+   * The total number of rows.
+   */
+  count: PropTypes.number.isRequired,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Accepts a function which returns a string value that provides a user-friendly name for the current page.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   *
+   * @param {string} type The link or button type to format ('page' | 'first' | 'last' | 'next' | 'previous'). Defaults to 'page'.
+   * @param {number} page The page number to format.
+   * @returns {string}
+   */
+  getItemAriaLabel: PropTypes.func.isRequired,
+  /**
+   * Props applied to the next arrow [`IconButton`](/material-ui/api/icon-button/) element.
+   */
+  nextIconButtonProps: PropTypes.object,
+  /**
+   * Callback fired when the page is changed.
+   *
+   * @param {object} event The event source of the callback.
+   * @param {number} page The page selected.
+   */
+  onPageChange: PropTypes.func.isRequired,
+  /**
+   * The zero-based index of the current page.
+   */
+  page: PropTypes.number.isRequired,
+  /**
+   * The number of rows per page.
+   */
+  rowsPerPage: PropTypes.number.isRequired,
+  /**
+   * If `true`, show the first-page button.
+   */
+  showFirstButton: PropTypes.bool.isRequired,
+  /**
+   * If `true`, show the last-page button.
+   */
+  showLastButton: PropTypes.bool.isRequired,
+  /**
+   * The props used for each slot inside the TablePaginationActions.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    firstButton: PropTypes.object,
+    firstButtonIcon: PropTypes.object,
+    lastButton: PropTypes.object,
+    lastButtonIcon: PropTypes.object,
+    nextButton: PropTypes.object,
+    nextButtonIcon: PropTypes.object,
+    previousButton: PropTypes.object,
+    previousButtonIcon: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside the TablePaginationActions.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    firstButton: PropTypes.elementType,
+    firstButtonIcon: PropTypes.elementType,
+    lastButton: PropTypes.elementType,
+    lastButtonIcon: PropTypes.elementType,
+    nextButton: PropTypes.elementType,
+    nextButtonIcon: PropTypes.elementType,
+    previousButton: PropTypes.elementType,
+    previousButtonIcon: PropTypes.elementType
+  })
+} : void 0;
+function getTablePaginationUtilityClass(slot) {
+  return generateUtilityClass("MuiTablePagination", slot);
+}
+const tablePaginationClasses = generateUtilityClasses("MuiTablePagination", ["root", "toolbar", "spacer", "selectLabel", "selectRoot", "select", "selectIcon", "input", "menuItem", "displayedRows", "actions"]);
+var _InputBase;
+const _excluded$i = ["ActionsComponent", "backIconButtonProps", "className", "colSpan", "component", "count", "disabled", "getItemAriaLabel", "labelDisplayedRows", "labelRowsPerPage", "nextIconButtonProps", "onPageChange", "onRowsPerPageChange", "page", "rowsPerPage", "rowsPerPageOptions", "SelectProps", "showFirstButton", "showLastButton", "slotProps", "slots"];
+const TablePaginationRoot = styled(TableCell$1, {
+  name: "MuiTablePagination",
+  slot: "Root",
+  overridesResolver: (props, styles2) => styles2.root
+})(({
+  theme
+}) => ({
+  overflow: "auto",
+  color: (theme.vars || theme).palette.text.primary,
+  fontSize: theme.typography.pxToRem(14),
+  // Increase the specificity to override TableCell.
+  "&:last-child": {
+    padding: 0
+  }
+}));
+const TablePaginationToolbar = styled(Toolbar$1, {
+  name: "MuiTablePagination",
+  slot: "Toolbar",
+  overridesResolver: (props, styles2) => _extends$1({
+    [`& .${tablePaginationClasses.actions}`]: styles2.actions
+  }, styles2.toolbar)
+})(({
+  theme
+}) => ({
+  minHeight: 52,
+  paddingRight: 2,
+  [`${theme.breakpoints.up("xs")} and (orientation: landscape)`]: {
+    minHeight: 52
+  },
+  [theme.breakpoints.up("sm")]: {
+    minHeight: 52,
+    paddingRight: 2
+  },
+  [`& .${tablePaginationClasses.actions}`]: {
+    flexShrink: 0,
+    marginLeft: 20
+  }
+}));
+const TablePaginationSpacer = styled("div", {
+  name: "MuiTablePagination",
+  slot: "Spacer",
+  overridesResolver: (props, styles2) => styles2.spacer
+})({
+  flex: "1 1 100%"
+});
+const TablePaginationSelectLabel = styled("p", {
+  name: "MuiTablePagination",
+  slot: "SelectLabel",
+  overridesResolver: (props, styles2) => styles2.selectLabel
+})(({
+  theme
+}) => _extends$1({}, theme.typography.body2, {
+  flexShrink: 0
+}));
+const TablePaginationSelect = styled(Select, {
+  name: "MuiTablePagination",
+  slot: "Select",
+  overridesResolver: (props, styles2) => _extends$1({
+    [`& .${tablePaginationClasses.selectIcon}`]: styles2.selectIcon,
+    [`& .${tablePaginationClasses.select}`]: styles2.select
+  }, styles2.input, styles2.selectRoot)
+})({
+  color: "inherit",
+  fontSize: "inherit",
+  flexShrink: 0,
+  marginRight: 32,
+  marginLeft: 8,
+  [`& .${tablePaginationClasses.select}`]: {
+    paddingLeft: 8,
+    paddingRight: 24,
+    textAlign: "right",
+    textAlignLast: "right"
+    // Align <select> on Chrome.
+  }
+});
+const TablePaginationMenuItem = styled(MenuItem, {
+  name: "MuiTablePagination",
+  slot: "MenuItem",
+  overridesResolver: (props, styles2) => styles2.menuItem
+})({});
+const TablePaginationDisplayedRows = styled("p", {
+  name: "MuiTablePagination",
+  slot: "DisplayedRows",
+  overridesResolver: (props, styles2) => styles2.displayedRows
+})(({
+  theme
+}) => _extends$1({}, theme.typography.body2, {
+  flexShrink: 0
+}));
+function defaultLabelDisplayedRows({
+  from,
+  to,
+  count
+}) {
+  return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
+}
+function defaultGetAriaLabel(type) {
+  return `Go to ${type} page`;
+}
+const useUtilityClasses$d = (ownerState) => {
+  const {
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root"],
+    toolbar: ["toolbar"],
+    spacer: ["spacer"],
+    selectLabel: ["selectLabel"],
+    select: ["select"],
+    input: ["input"],
+    selectIcon: ["selectIcon"],
+    menuItem: ["menuItem"],
+    displayedRows: ["displayedRows"],
+    actions: ["actions"]
+  };
+  return composeClasses(slots, getTablePaginationUtilityClass, classes);
+};
+const TablePagination = /* @__PURE__ */ React.forwardRef(function TablePagination2(inProps, ref) {
+  var _slotProps$select;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiTablePagination"
+  });
+  const {
+    ActionsComponent = TablePaginationActions,
+    backIconButtonProps,
+    className,
+    colSpan: colSpanProp,
+    component = TableCell$1,
+    count,
+    disabled = false,
+    getItemAriaLabel = defaultGetAriaLabel,
+    labelDisplayedRows = defaultLabelDisplayedRows,
+    labelRowsPerPage = "Rows per page:",
+    nextIconButtonProps,
+    onPageChange,
+    onRowsPerPageChange,
+    page,
+    rowsPerPage,
+    rowsPerPageOptions = [10, 25, 50, 100],
+    SelectProps = {},
+    showFirstButton = false,
+    showLastButton = false,
+    slotProps = {},
+    slots = {}
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$i);
+  const ownerState = props;
+  const classes = useUtilityClasses$d(ownerState);
+  const selectProps = (_slotProps$select = slotProps == null ? void 0 : slotProps.select) != null ? _slotProps$select : SelectProps;
+  const MenuItemComponent = selectProps.native ? "option" : TablePaginationMenuItem;
+  let colSpan;
+  if (component === TableCell$1 || component === "td") {
+    colSpan = colSpanProp || 1e3;
+  }
+  const selectId = useId(selectProps.id);
+  const labelId = useId(selectProps.labelId);
+  const getLabelDisplayedRowsTo = () => {
+    if (count === -1) {
+      return (page + 1) * rowsPerPage;
+    }
+    return rowsPerPage === -1 ? count : Math.min(count, (page + 1) * rowsPerPage);
+  };
+  return /* @__PURE__ */ jsx(TablePaginationRoot, _extends$1({
+    colSpan,
+    ref,
+    as: component,
+    ownerState,
+    className: clsx(classes.root, className)
+  }, other, {
+    children: /* @__PURE__ */ jsxs(TablePaginationToolbar, {
+      className: classes.toolbar,
+      children: [/* @__PURE__ */ jsx(TablePaginationSpacer, {
+        className: classes.spacer
+      }), rowsPerPageOptions.length > 1 && /* @__PURE__ */ jsx(TablePaginationSelectLabel, {
+        className: classes.selectLabel,
+        id: labelId,
+        children: labelRowsPerPage
+      }), rowsPerPageOptions.length > 1 && /* @__PURE__ */ jsx(TablePaginationSelect, _extends$1({
+        variant: "standard"
+      }, !selectProps.variant && {
+        input: _InputBase || (_InputBase = /* @__PURE__ */ jsx(InputBase, {}))
+      }, {
+        value: rowsPerPage,
+        onChange: onRowsPerPageChange,
+        id: selectId,
+        labelId
+      }, selectProps, {
+        classes: _extends$1({}, selectProps.classes, {
+          // TODO v5 remove `classes.input`
+          root: clsx(classes.input, classes.selectRoot, (selectProps.classes || {}).root),
+          select: clsx(classes.select, (selectProps.classes || {}).select),
+          // TODO v5 remove `selectIcon`
+          icon: clsx(classes.selectIcon, (selectProps.classes || {}).icon)
+        }),
+        disabled,
+        children: rowsPerPageOptions.map((rowsPerPageOption) => /* @__PURE__ */ createElement(MenuItemComponent, _extends$1({}, !isHostComponent(MenuItemComponent) && {
+          ownerState
+        }, {
+          className: classes.menuItem,
+          key: rowsPerPageOption.label ? rowsPerPageOption.label : rowsPerPageOption,
+          value: rowsPerPageOption.value ? rowsPerPageOption.value : rowsPerPageOption
+        }), rowsPerPageOption.label ? rowsPerPageOption.label : rowsPerPageOption))
+      })), /* @__PURE__ */ jsx(TablePaginationDisplayedRows, {
+        className: classes.displayedRows,
+        children: labelDisplayedRows({
+          from: count === 0 ? 0 : page * rowsPerPage + 1,
+          to: getLabelDisplayedRowsTo(),
+          count: count === -1 ? -1 : count,
+          page
+        })
+      }), /* @__PURE__ */ jsx(ActionsComponent, {
+        className: classes.actions,
+        backIconButtonProps,
+        count,
+        nextIconButtonProps,
+        onPageChange,
+        page,
+        rowsPerPage,
+        showFirstButton,
+        showLastButton,
+        slotProps: slotProps.actions,
+        slots: slots.actions,
+        getItemAriaLabel,
+        disabled
+      })]
+    })
+  }));
+});
+process.env.NODE_ENV !== "production" ? TablePagination.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The component used for displaying the actions.
+   * Either a string to use a HTML element or a component.
+   * @default TablePaginationActions
+   */
+  ActionsComponent: PropTypes.elementType,
+  /**
+   * Props applied to the back arrow [`IconButton`](/material-ui/api/icon-button/) component.
+   *
+   * This prop is an alias for `slotProps.actions.previousButton` and will be overriden by it if both are used.
+   * @deprecated Use `slotProps.actions.previousButton` instead.
+   */
+  backIconButtonProps: PropTypes.object,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * @ignore
+   */
+  colSpan: PropTypes.number,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * The total number of rows.
+   *
+   * To enable server side pagination for an unknown number of items, provide -1.
+   */
+  count: integerPropType.isRequired,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * Accepts a function which returns a string value that provides a user-friendly name for the current page.
+   * This is important for screen reader users.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @param {string} type The link or button type to format ('first' | 'last' | 'next' | 'previous').
+   * @returns {string}
+   * @default function defaultGetAriaLabel(type) {
+   *   return `Go to ${type} page`;
+   * }
+   */
+  getItemAriaLabel: PropTypes.func,
+  /**
+   * Customize the displayed rows label. Invoked with a `{ from, to, count, page }`
+   * object.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default function defaultLabelDisplayedRows({ from, to, count }) {
+   *   return `${from}–${to} of ${count !== -1 ? count : `more than ${to}`}`;
+   * }
+   */
+  labelDisplayedRows: PropTypes.func,
+  /**
+   * Customize the rows per page label.
+   *
+   * For localization purposes, you can use the provided [translations](/material-ui/guides/localization/).
+   * @default 'Rows per page:'
+   */
+  labelRowsPerPage: PropTypes.node,
+  /**
+   * Props applied to the next arrow [`IconButton`](/material-ui/api/icon-button/) element.
+   *
+   * This prop is an alias for `slotProps.actions.nextButton` and will be overriden by it if both are used.
+   * @deprecated Use `slotProps.actions.nextButton` instead.
+   */
+  nextIconButtonProps: PropTypes.object,
+  /**
+   * Callback fired when the page is changed.
+   *
+   * @param {React.MouseEvent<HTMLButtonElement> | null} event The event source of the callback.
+   * @param {number} page The page selected.
+   */
+  onPageChange: PropTypes.func.isRequired,
+  /**
+   * Callback fired when the number of rows per page is changed.
+   *
+   * @param {React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>} event The event source of the callback.
+   */
+  onRowsPerPageChange: PropTypes.func,
+  /**
+   * The zero-based index of the current page.
+   */
+  page: chainPropTypes(integerPropType.isRequired, (props) => {
+    const {
+      count,
+      page,
+      rowsPerPage
+    } = props;
+    if (count === -1) {
+      return null;
+    }
+    const newLastPage = Math.max(0, Math.ceil(count / rowsPerPage) - 1);
+    if (page < 0 || page > newLastPage) {
+      return new Error(`MUI: The page prop of a TablePagination is out of range (0 to ${newLastPage}, but page is ${page}).`);
+    }
+    return null;
+  }),
+  /**
+   * The number of rows per page.
+   *
+   * Set -1 to display all the rows.
+   */
+  rowsPerPage: integerPropType.isRequired,
+  /**
+   * Customizes the options of the rows per page select field. If less than two options are
+   * available, no select field will be displayed.
+   * Use -1 for the value with a custom label to show all the rows.
+   * @default [10, 25, 50, 100]
+   */
+  rowsPerPageOptions: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.number, PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    value: PropTypes.number.isRequired
+  })]).isRequired),
+  /**
+   * Props applied to the rows per page [`Select`](/material-ui/api/select/) element.
+   *
+   * This prop is an alias for `slotProps.select` and will be overriden by it if both are used.
+   * @deprecated Use `slotProps.select` instead.
+   *
+   * @default {}
+   */
+  SelectProps: PropTypes.object,
+  /**
+   * If `true`, show the first-page button.
+   * @default false
+   */
+  showFirstButton: PropTypes.bool,
+  /**
+   * If `true`, show the last-page button.
+   * @default false
+   */
+  showLastButton: PropTypes.bool,
+  /**
+   * The props used for each slot inside the TablePagination.
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    actions: PropTypes.shape({
+      firstButton: PropTypes.object,
+      firstButtonIcon: PropTypes.object,
+      lastButton: PropTypes.object,
+      lastButtonIcon: PropTypes.object,
+      nextButton: PropTypes.object,
+      nextButtonIcon: PropTypes.object,
+      previousButton: PropTypes.object,
+      previousButtonIcon: PropTypes.object
+    }),
+    select: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside the TablePagination.
+   * Either a string to use a HTML element or a component.
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    actions: PropTypes.shape({
+      firstButton: PropTypes.elementType,
+      firstButtonIcon: PropTypes.elementType,
+      lastButton: PropTypes.elementType,
+      lastButtonIcon: PropTypes.elementType,
+      nextButton: PropTypes.elementType,
+      nextButtonIcon: PropTypes.elementType,
+      previousButton: PropTypes.elementType,
+      previousButtonIcon: PropTypes.elementType
+    })
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object])
+} : void 0;
+const GridPaginationRoot = styled(TablePagination)(({
   theme
 }) => ({
   [`& .${tablePaginationClasses.selectLabel}`]: {
@@ -9219,20 +27349,20 @@ const GridPagination = /* @__PURE__ */ React.forwardRef(function GridPagination2
   const rowCount = useGridSelector(apiRef, gridPaginationRowCountSelector);
   const lastPage = React.useMemo(() => Math.floor(rowCount / (paginationModel.pageSize || 1)), [rowCount, paginationModel.pageSize]);
   const handlePageSizeChange = React.useCallback((event) => {
-    const pageSize = Number(event.target.value);
-    apiRef.current.setPageSize(pageSize);
+    const pageSize2 = Number(event.target.value);
+    apiRef.current.setPageSize(pageSize2);
   }, [apiRef]);
-  const handlePageChange = React.useCallback((_, page) => {
+  const handlePageChange = React.useCallback((_2, page) => {
     apiRef.current.setPage(page);
   }, [apiRef]);
-  const isPageSizeIncludedInPageSizeOptions = (pageSize) => {
+  const isPageSizeIncludedInPageSizeOptions = (pageSize2) => {
     for (let i2 = 0; i2 < rootProps.pageSizeOptions.length; i2 += 1) {
       const option = rootProps.pageSizeOptions[i2];
       if (typeof option === "number") {
-        if (option === pageSize) {
+        if (option === pageSize2) {
           return true;
         }
-      } else if (option.value === pageSize) {
+      } else if (option.value === pageSize2) {
         return true;
       }
     }
@@ -9241,8 +27371,8 @@ const GridPagination = /* @__PURE__ */ React.forwardRef(function GridPagination2
   if (process.env.NODE_ENV !== "production") {
     var _rootProps$pagination, _rootProps$pagination2;
     const warnedOnceMissingInPageSizeOptions = React.useRef(false);
-    const pageSize = (_rootProps$pagination = (_rootProps$pagination2 = rootProps.paginationModel) == null ? void 0 : _rootProps$pagination2.pageSize) != null ? _rootProps$pagination : paginationModel.pageSize;
-    if (!warnedOnceMissingInPageSizeOptions.current && !rootProps.autoPageSize && !isPageSizeIncludedInPageSizeOptions(pageSize)) {
+    const pageSize2 = (_rootProps$pagination = (_rootProps$pagination2 = rootProps.paginationModel) == null ? void 0 : _rootProps$pagination2.pageSize) != null ? _rootProps$pagination : paginationModel.pageSize;
+    if (!warnedOnceMissingInPageSizeOptions.current && !rootProps.autoPageSize && !isPageSizeIncludedInPageSizeOptions(pageSize2)) {
       console.warn([`MUI X: The page size \`${paginationModel.pageSize}\` is not preset in the \`pageSizeOptions\`.`, `Add it to show the pagination select.`].join("\n"));
       warnedOnceMissingInPageSizeOptions.current = true;
     }
@@ -9266,8 +27396,8 @@ process.env.NODE_ENV !== "production" ? GridPagination.propTypes = {
   // ----------------------------------------------------------------------
   component: PropTypes.elementType
 } : void 0;
-const _excluded$d = ["className", "rowCount", "visibleRowCount"];
-const useUtilityClasses$8 = (ownerState) => {
+const _excluded$h = ["className", "rowCount", "visibleRowCount"];
+const useUtilityClasses$c = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -9276,10 +27406,10 @@ const useUtilityClasses$8 = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridRowCountRoot = styled("div", {
+const GridRowCountRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "RowCount",
-  overridesResolver: (props, styles) => styles.rowCount
+  overridesResolver: (props, styles2) => styles2.rowCount
 })(({
   theme
 }) => ({
@@ -9292,10 +27422,10 @@ const GridRowCount = /* @__PURE__ */ React.forwardRef(function GridRowCount2(pro
     className,
     rowCount,
     visibleRowCount
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$d);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$h);
   const apiRef = useGridApiContext();
   const ownerState = useGridRootProps();
-  const classes = useUtilityClasses$8(ownerState);
+  const classes = useUtilityClasses$c(ownerState);
   if (rowCount === 0) {
     return null;
   }
@@ -9398,7 +27528,7 @@ function getHasEval() {
   }
   try {
     hasEval = new Function("return true")();
-  } catch (_) {
+  } catch (_2) {
     hasEval = false;
   }
   return hasEval;
@@ -9717,7 +27847,7 @@ const getGridStringQuickFilterFn = tagInternalFilter((value) => {
     return null;
   }
   const filterRegex = new RegExp(escapeRegExp(value), "i");
-  return (_, row, column, apiRef) => {
+  return (_2, row, column, apiRef) => {
     let columnValue = apiRef.current.getRowFormattedValue(row, column);
     if (apiRef.current.ignoreDiacritics) {
       columnValue = removeDiacritics(columnValue);
@@ -9925,8 +28055,8 @@ const GRID_ACTIONS_COL_DEF = _extends$1({}, GRID_STRING_COL_DEF, {
 });
 const GRID_DETAIL_PANEL_TOGGLE_FIELD = "__detail_panel_toggle__";
 const gridEditRowsStateSelector = (state) => state.editRows;
-const _excluded$c = ["selected", "hovered", "rowId", "row", "index", "style", "position", "rowHeight", "className", "visibleColumns", "renderedColumns", "containerWidth", "firstColumnToRender", "lastColumnToRender", "isLastVisible", "focusedCellColumnIndexNotInRange", "isNotVisible", "focusedCell", "tabbableCell", "onClick", "onDoubleClick", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver"];
-const useUtilityClasses$7 = (ownerState) => {
+const _excluded$g = ["selected", "hovered", "rowId", "row", "index", "style", "position", "rowHeight", "className", "visibleColumns", "renderedColumns", "containerWidth", "firstColumnToRender", "lastColumnToRender", "isLastVisible", "focusedCellColumnIndexNotInRange", "isNotVisible", "focusedCell", "tabbableCell", "onClick", "onDoubleClick", "onMouseEnter", "onMouseLeave", "onMouseOut", "onMouseOver"];
+const useUtilityClasses$b = (ownerState) => {
   const {
     editable,
     editing,
@@ -9941,17 +28071,17 @@ const useUtilityClasses$7 = (ownerState) => {
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
 function EmptyCell({
-  width
+  width: width2
 }) {
-  if (!width) {
+  if (!width2) {
     return null;
   }
-  const style = {
-    width
+  const style2 = {
+    width: width2
   };
   return /* @__PURE__ */ jsx("div", {
     className: `${gridClasses.cell} ${gridClasses.withBorderColor}`,
-    style
+    style: style2
   });
 }
 const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refProp) {
@@ -9979,7 +28109,7 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
     onMouseLeave,
     onMouseOut,
     onMouseOver
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$c);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$g);
   const apiRef = useGridApiContext();
   const ref = React.useRef(null);
   const rootProps = useGridRootProps();
@@ -9999,7 +28129,7 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
     editable: rootProps.editMode === GridEditModes.Row,
     rowHeight
   };
-  const classes = useUtilityClasses$7(ownerState);
+  const classes = useUtilityClasses$b(ownerState);
   React.useLayoutEffect(() => {
     if (rowHeight === "auto" && ref.current && typeof ResizeObserver === "undefined") {
       apiRef.current.unstable_storeRowHeightMeasurement(rowId, ref.current.clientHeight, position);
@@ -10019,8 +28149,8 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
     }
     const resizeObserver = new ResizeObserver((entries) => {
       const [entry] = entries;
-      const height = entry.borderBoxSize && entry.borderBoxSize.length > 0 ? entry.borderBoxSize[0].blockSize : entry.contentRect.height;
-      apiRef.current.unstable_storeRowHeightMeasurement(rowId, height, position);
+      const height2 = entry.borderBoxSize && entry.borderBoxSize.length > 0 ? entry.borderBoxSize[0].blockSize : entry.contentRect.height;
+      apiRef.current.unstable_storeRowHeightMeasurement(rowId, height2, position);
     });
     resizeObserver.observe(rootElement);
     return () => resizeObserver.disconnect();
@@ -10090,8 +28220,8 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
     }, slotProps == null ? void 0 : slotProps.cell), column.field);
   };
   const sizes = useGridSelector(apiRef, () => _extends$1({}, apiRef.current.unstable_getRowInternalSizes(rowId)), objectShallowCompare);
-  let minHeight = rowHeight;
-  if (minHeight === "auto" && sizes) {
+  let minHeight2 = rowHeight;
+  if (minHeight2 === "auto" && sizes) {
     let numberOfBaseSizes = 0;
     const maximumSize = Object.entries(sizes).reduce((acc, [key, size]) => {
       const isBaseHeight = /^base[A-Z]/.test(key);
@@ -10105,10 +28235,10 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
       return acc;
     }, 0);
     if (maximumSize > 0 && numberOfBaseSizes > 1) {
-      minHeight = maximumSize;
+      minHeight2 = maximumSize;
     }
   }
-  const style = React.useMemo(() => {
+  const style2 = React.useMemo(() => {
     if (isNotVisible) {
       return {
         opacity: 0,
@@ -10119,7 +28249,7 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
     const rowStyle = _extends$1({}, styleProp, {
       maxHeight: rowHeight === "auto" ? "none" : rowHeight,
       // max-height doesn't support "auto"
-      minHeight
+      minHeight: minHeight2
     });
     if (sizes != null && sizes.spacingTop) {
       const property = rootProps.rowSpacingType === "border" ? "borderTopWidth" : "marginTop";
@@ -10135,7 +28265,7 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
       rowStyle[property] = propertyValue;
     }
     return rowStyle;
-  }, [isNotVisible, rowHeight, styleProp, minHeight, sizes, rootProps.rowSpacingType]);
+  }, [isNotVisible, rowHeight, styleProp, minHeight2, sizes, rootProps.rowSpacingType]);
   const rowClassNames = apiRef.current.unstable_applyPipeProcessors("rowClassName", [], rowId);
   if (typeof rootProps.getRowClassName === "function") {
     var _currentPage$range;
@@ -10169,10 +28299,10 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
       if (rowType !== "skeletonRow") {
         const {
           colSpan,
-          width
+          width: width2
         } = cellColSpanInfo.cellProps;
         const cellProps = {
-          width,
+          width: width2,
           colSpan,
           showRightBorder: rootProps.showCellVerticalBorder,
           indexRelativeToAllColumns
@@ -10180,11 +28310,11 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
         cells.push(getCell(column, cellProps));
       } else {
         const {
-          width
+          width: width2
         } = cellColSpanInfo.cellProps;
         const contentWidth = Math.round(randomNumber());
         cells.push(/* @__PURE__ */ jsx(slots.skeletonCell, {
-          width,
+          width: width2,
           contentWidth,
           field: column.field,
           align: column.align
@@ -10209,7 +28339,7 @@ const GridRow = /* @__PURE__ */ React.forwardRef(function GridRow2(props, refPro
     className: clsx(...rowClassNames, classes.root, className, hovered && "Mui-hovered"),
     "aria-rowindex": ariaRowIndex,
     "aria-selected": selected,
-    style
+    style: style2
   }, eventHandlers, other, {
     children: [cells, emptyCellWidth > 0 && /* @__PURE__ */ jsx(EmptyCell, {
       width: emptyCellWidth
@@ -11941,13 +30071,13 @@ function useGridColumns(apiRef, props) {
     };
     apiRef.current.publishEvent("columnIndexChange", params);
   }, [apiRef, logger, setGridColumnsState, getColumnIndexRelativeToVisibleColumns]);
-  const setColumnWidth = React.useCallback((field, width) => {
+  const setColumnWidth = React.useCallback((field, width2) => {
     var _apiRef$current$getRo, _apiRef$current$getRo2;
-    logger.debug(`Updating column ${field} width to ${width}`);
+    logger.debug(`Updating column ${field} width to ${width2}`);
     const columnsState = gridColumnsStateSelector(apiRef.current.state);
     const column = columnsState.lookup[field];
     const newColumn = _extends$1({}, column, {
-      width,
+      width: width2,
       hasBeenResized: true
     });
     setGridColumnsState(hydrateColumnsWidth(_extends$1({}, columnsState, {
@@ -11958,7 +30088,7 @@ function useGridColumns(apiRef, props) {
     apiRef.current.publishEvent("columnWidthChange", {
       element: apiRef.current.getColumnHeaderElement(field),
       colDef: newColumn,
-      width
+      width: width2
     });
   }, [apiRef, logger, setGridColumnsState]);
   const columnApi = {
@@ -12253,8 +30383,8 @@ const getDerivedPaginationModel = (paginationState, signature, paginationModelPr
   var _paginationModelProp$;
   let paginationModel = paginationState.paginationModel;
   const rowCount = paginationState.rowCount;
-  const pageSize = (_paginationModelProp$ = paginationModelProp == null ? void 0 : paginationModelProp.pageSize) != null ? _paginationModelProp$ : paginationModel.pageSize;
-  const pageCount = getPageCount(rowCount, pageSize);
+  const pageSize2 = (_paginationModelProp$ = paginationModelProp == null ? void 0 : paginationModelProp.pageSize) != null ? _paginationModelProp$ : paginationModel.pageSize;
+  const pageCount = getPageCount(rowCount, pageSize2);
   if (paginationModelProp && ((paginationModelProp == null ? void 0 : paginationModelProp.page) !== paginationModel.page || (paginationModelProp == null ? void 0 : paginationModelProp.pageSize) !== paginationModel.pageSize)) {
     paginationModel = paginationModelProp;
   }
@@ -12290,14 +30420,14 @@ const useGridPaginationModel = (apiRef, props) => {
       pageSize: currentModel.pageSize
     });
   }, [apiRef, logger]);
-  const setPageSize = React.useCallback((pageSize) => {
+  const setPageSize = React.useCallback((pageSize2) => {
     const currentModel = gridPaginationModelSelector(apiRef);
-    if (pageSize === currentModel.pageSize) {
+    if (pageSize2 === currentModel.pageSize) {
       return;
     }
-    logger.debug(`Setting page size to ${pageSize}`);
+    logger.debug(`Setting page size to ${pageSize2}`);
     apiRef.current.setPaginationModel({
-      pageSize,
+      pageSize: pageSize2,
       page: currentModel.page
     });
   }, [apiRef, logger]);
@@ -12778,13 +30908,13 @@ const useGridFilter = (apiRef, props) => {
       logicOperator
     }), "changeLogicOperator");
   }, [apiRef]);
-  const setQuickFilterValues = React.useCallback((values) => {
+  const setQuickFilterValues = React.useCallback((values2) => {
     const filterModel = gridFilterModelSelector(apiRef);
-    if (isDeepEqual(filterModel.quickFilterValues, values)) {
+    if (isDeepEqual(filterModel.quickFilterValues, values2)) {
       return;
     }
     apiRef.current.setFilterModel(_extends$1({}, filterModel, {
-      quickFilterValues: [...values]
+      quickFilterValues: [...values2]
     }));
   }, [apiRef]);
   const setFilterModel = React.useCallback((model, reason) => {
@@ -13155,7 +31285,7 @@ const useGridFocus = (apiRef, props) => {
     }
     apiRef.current.setColumnGroupHeaderFocus(fields[0], depth, event);
   }, [apiRef]);
-  const handleBlur = React.useCallback((_, event) => {
+  const handleBlur = React.useCallback((_2, event) => {
     var _event$relatedTarget;
     if ((_event$relatedTarget = event.relatedTarget) != null && _event$relatedTarget.className.includes(gridClasses.columnHeader)) {
       return;
@@ -13332,7 +31462,7 @@ const getRightColumnIndex = ({
 const useGridKeyboardNavigation = (apiRef, props) => {
   const logger = useGridLogger(apiRef, "useGridKeyboardNavigation");
   const initialCurrentPageRows = useGridVisibleRows(apiRef, props).rows;
-  const theme = useTheme();
+  const theme = useTheme$1();
   const currentPageRows = React.useMemo(() => enrichPageRowsWithPinnedRows(apiRef, initialCurrentPageRows), [apiRef, initialCurrentPageRows]);
   const headerFilteringEnabled = (
     // @ts-expect-error // TODO move relevant code to the `DataGridPro`
@@ -13957,7 +32087,7 @@ const useGridPreferencesPanel = (apiRef, props) => {
     };
   }, []);
 };
-const _excluded$b = ["id", "field"], _excluded2$2 = ["id", "field"];
+const _excluded$f = ["id", "field"], _excluded2$2 = ["id", "field"];
 const missingOnProcessRowUpdateErrorWarning$1 = buildWarning(["MUI: A call to `processRowUpdate` threw an error which was not handled because `onProcessRowUpdateError` is missing.", "To handle the error pass a callback to the `onProcessRowUpdateError` prop, e.g. `<DataGrid onProcessRowUpdateError={(error) => ...} />`.", "For more detail, see http://mui.com/components/data-grid/editing/#server-side-persistence."], "error");
 const useGridCellEditing = (apiRef, props) => {
   const [cellModesModel, setCellModesModel] = React.useState({});
@@ -14157,7 +32287,7 @@ const useGridCellEditing = (apiRef, props) => {
     const {
       id,
       field
-    } = params, other = _objectWithoutPropertiesLoose$1(params, _excluded$b);
+    } = params, other = _objectWithoutPropertiesLoose$1(params, _excluded$f);
     throwIfNotEditable(id, field);
     throwIfNotInMode(id, field, GridCellModes.View);
     updateFieldInCellModesModel(id, field, _extends$1({
@@ -14356,7 +32486,7 @@ const useGridCellEditing = (apiRef, props) => {
     });
   }, [apiRef, cellModesModel, updateStateToStartCellEditMode, updateStateToStopCellEditMode]);
 };
-const _excluded$a = ["id"], _excluded2$1 = ["id"];
+const _excluded$e = ["id"], _excluded2$1 = ["id"];
 const missingOnProcessRowUpdateErrorWarning = buildWarning(["MUI: A call to `processRowUpdate` threw an error which was not handled because `onProcessRowUpdateError` is missing.", "To handle the error pass a callback to the `onProcessRowUpdateError` prop, e.g. `<DataGrid onProcessRowUpdateError={(error) => ...} />`.", "For more detail, see http://mui.com/components/data-grid/editing/#server-side-persistence."], "error");
 const useGridRowEditing = (apiRef, props) => {
   const [rowModesModel, setRowModesModel] = React.useState({});
@@ -14614,7 +32744,7 @@ const useGridRowEditing = (apiRef, props) => {
   const startRowEditMode = React.useCallback((params) => {
     const {
       id
-    } = params, other = _objectWithoutPropertiesLoose$1(params, _excluded$a);
+    } = params, other = _objectWithoutPropertiesLoose$1(params, _excluded$e);
     throwIfNotInMode(id, GridRowModes.View);
     updateRowInRowModesModel(id, _extends$1({
       mode: GridRowModes.Edit
@@ -15939,7 +34069,7 @@ const GRID_DEFAULT_LOCALE_TEXT = {
   aggregationFunctionLabelMax: "max",
   aggregationFunctionLabelSize: "size"
 };
-const useUtilityClasses$6 = (ownerState) => {
+const useUtilityClasses$a = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -15955,7 +34085,7 @@ const useGridRowSelectionPreProcessors = (apiRef, props) => {
   const ownerState = {
     classes: props.classes
   };
-  const classes = useUtilityClasses$6(ownerState);
+  const classes = useUtilityClasses$a(ownerState);
   const updateSelectionColumn = React.useCallback((columnsState) => {
     const selectionColumn = _extends$1({}, GRID_CHECKBOX_SELECTION_COL_DEF, {
       cellClassName: classes.cellCheckbox,
@@ -16206,7 +34336,7 @@ function scrollIntoView(dimensions) {
   return void 0;
 }
 const useGridScroll = (apiRef, props) => {
-  const theme = useTheme();
+  const theme = useTheme$1();
   const logger = useGridLogger(apiRef, "useGridScroll");
   const colRef = apiRef.current.columnHeadersElementRef;
   const virtualScrollerRef = apiRef.current.virtualScrollerRef;
@@ -16245,8 +34375,8 @@ const useGridScroll = (apiRef, props) => {
       var _querySelector, _querySelector2;
       const rowsMeta = gridRowsMetaSelector(apiRef.current.state);
       const page = gridPageSelector(apiRef);
-      const pageSize = gridPageSizeSelector(apiRef);
-      const elementIndex = !props.pagination ? params.rowIndex : params.rowIndex - page * pageSize;
+      const pageSize2 = gridPageSizeSelector(apiRef);
+      const elementIndex = !props.pagination ? params.rowIndex : params.rowIndex - page * pageSize2;
       const targetOffsetHeight = rowsMeta.positions[elementIndex + 1] ? rowsMeta.positions[elementIndex + 1] - rowsMeta.positions[elementIndex] : rowsMeta.currentPageTotalHeight - rowsMeta.positions[elementIndex];
       const topPinnedRowsHeight = ((_querySelector = virtualScrollerRef.current.querySelector(`.${gridClasses["pinnedRows--top"]}`)) == null ? void 0 : _querySelector.clientHeight) || 0;
       const bottomPinnedRowsHeight = ((_querySelector2 = virtualScrollerRef.current.querySelector(`.${gridClasses["pinnedRows--bottom"]}`)) == null ? void 0 : _querySelector2.clientHeight) || 0;
@@ -16454,14 +34584,14 @@ function useGridDimensions(apiRef, props) {
     }
     const win = unstable_ownerWindow(mainEl);
     const computedStyle = win.getComputedStyle(mainEl);
-    const height = parseFloat(computedStyle.height) || 0;
-    const width = parseFloat(computedStyle.width) || 0;
-    const hasHeightChanged = height !== ((_previousSize$current = previousSize.current) == null ? void 0 : _previousSize$current.height);
-    const hasWidthChanged = width !== ((_previousSize$current2 = previousSize.current) == null ? void 0 : _previousSize$current2.width);
+    const height2 = parseFloat(computedStyle.height) || 0;
+    const width2 = parseFloat(computedStyle.width) || 0;
+    const hasHeightChanged = height2 !== ((_previousSize$current = previousSize.current) == null ? void 0 : _previousSize$current.height);
+    const hasWidthChanged = width2 !== ((_previousSize$current2 = previousSize.current) == null ? void 0 : _previousSize$current2.width);
     if (!previousSize.current || hasHeightChanged || hasWidthChanged) {
       const size = {
-        width,
-        height
+        width: width2,
+        height: height2
       };
       apiRef.current.publishEvent("resize", size);
       previousSize.current = size;
@@ -16509,7 +34639,7 @@ function useGridDimensions(apiRef, props) {
   useGridApiEventHandler(apiRef, "resize", handleResize);
   useGridApiOptionHandler(apiRef, "debouncedResize", props.onResize);
 }
-const _excluded$9 = ["style"], _excluded2 = ["style"];
+const _excluded$d = ["style"], _excluded2 = ["style"];
 function binarySearch$1(offset, positions, sliceStart = 0, sliceEnd = positions.length) {
   if (positions.length <= 0) {
     return -1;
@@ -16560,7 +34690,7 @@ const useGridVirtualScroller = (props) => {
     renderZoneMaxColumnIndex = visibleColumns.length,
     getRowProps
   } = props;
-  const theme = useTheme();
+  const theme = useTheme$1();
   const columnPositions = useGridSelector(apiRef, gridColumnPositionsSelector);
   const columnsTotalWidth = useGridSelector(apiRef, gridColumnsTotalWidthSelector);
   const cellFocus = useGridSelector(apiRef, gridFocusCellSelector);
@@ -16899,7 +35029,7 @@ const useGridVirtualScroller = (props) => {
     } = getRenderedColumnsRef.current(visibleColumns, firstColumnToRender, lastColumnToRender, minFirstColumn, maxLastColumn, isColumnWihFocusedCellNotInRange ? indexOfColumnWithFocusedCell : -1);
     const _ref = ((_rootProps$slotProps = rootProps.slotProps) == null ? void 0 : _rootProps$slotProps.row) || {}, {
       style: rootRowStyle
-    } = _ref, rootRowProps = _objectWithoutPropertiesLoose$1(_ref, _excluded$9);
+    } = _ref, rootRowProps = _objectWithoutPropertiesLoose$1(_ref, _excluded$d);
     const invalidatesCachedRowStyle = prevGetRowProps.current !== getRowProps || prevRootRowStyle.current !== rootRowStyle;
     if (invalidatesCachedRowStyle) {
       rowStyleCache.current = /* @__PURE__ */ Object.create(null);
@@ -16936,8 +35066,8 @@ const useGridVirtualScroller = (props) => {
         style: rowStyle
       } = _ref2, rowProps = _objectWithoutPropertiesLoose$1(_ref2, _excluded2);
       if (!rowStyleCache.current[id]) {
-        const style = _extends$1({}, rowStyle, rootRowStyle);
-        rowStyleCache.current[id] = style;
+        const style2 = _extends$1({}, rowStyle, rootRowStyle);
+        rowStyleCache.current[id] = style2;
       }
       let index2 = rowIndexOffset + ((currentPage == null || (_currentPage$range = currentPage.range) == null ? void 0 : _currentPage$range.firstRowIndex) || 0) + firstRowToRender + i2;
       if (isRowWithFocusedCellNotInRange && (cellFocus == null ? void 0 : cellFocus.id) === id) {
@@ -16974,14 +35104,14 @@ const useGridVirtualScroller = (props) => {
   };
   const needsHorizontalScrollbar = containerDimensions.width && columnsTotalWidth >= containerDimensions.width;
   const contentSize = React.useMemo(() => {
-    const height = Math.max(rowsMeta.currentPageTotalHeight, 1);
+    const height2 = Math.max(rowsMeta.currentPageTotalHeight, 1);
     let shouldExtendContent = false;
-    if (rootRef != null && rootRef.current && height <= (rootRef == null ? void 0 : rootRef.current.clientHeight)) {
+    if (rootRef != null && rootRef.current && height2 <= (rootRef == null ? void 0 : rootRef.current.clientHeight)) {
       shouldExtendContent = true;
     }
     const size = {
       width: needsHorizontalScrollbar ? columnsTotalWidth : "auto",
-      height,
+      height: height2,
       minHeight: shouldExtendContent ? "100%" : "auto"
     };
     if (rootProps.autoHeight && currentPage.rows.length === 0) {
@@ -16993,14 +35123,14 @@ const useGridVirtualScroller = (props) => {
     apiRef.current.publishEvent("virtualScrollerContentSizeChange");
   }, [apiRef, contentSize]);
   const rootStyle = React.useMemo(() => {
-    const style = {};
+    const style2 = {};
     if (!needsHorizontalScrollbar) {
-      style.overflowX = "hidden";
+      style2.overflowX = "hidden";
     }
     if (rootProps.autoHeight) {
-      style.overflowY = "hidden";
+      style2.overflowY = "hidden";
     }
-    return style;
+    return style2;
   }, [needsHorizontalScrollbar, rootProps.autoHeight]);
   apiRef.current.register("private", {
     getRenderContext
@@ -17019,9 +35149,9 @@ const useGridVirtualScroller = (props) => {
       role: "presentation"
     }),
     getContentProps: ({
-      style
+      style: style2
     } = {}) => ({
-      style: style ? _extends$1({}, style, contentSize) : contentSize,
+      style: style2 ? _extends$1({}, style2, contentSize) : contentSize,
       role: "presentation"
     }),
     getRenderZoneProps: () => ({
@@ -17043,7 +35173,7 @@ function getNearestIndexToRender(apiRef, currentPage, rowsMeta, offset) {
   }
   return exponentialSearch(offset, rowsMeta.positions, lastMeasuredIndexRelativeToCurrentPage);
 }
-const useUtilityClasses$5 = (ownerState) => {
+const useUtilityClasses$9 = (ownerState) => {
   const {
     classes,
     headerAlign,
@@ -17063,11 +35193,11 @@ function GridColumnGroupHeader(props) {
   var _columnGroupsLookup$g;
   const {
     groupId,
-    width,
+    width: width2,
     depth,
     maxDepth,
     fields,
-    height,
+    height: height2,
     colIndex,
     hasFocus,
     tabIndex,
@@ -17109,7 +35239,7 @@ function GridColumnGroupHeader(props) {
   const label = headerName != null ? headerName : groupId;
   const id = unstable_useId();
   const elementId = groupId === null ? `empty-group-cell-${id}` : groupId;
-  const classes = useUtilityClasses$5(ownerState);
+  const classes = useUtilityClasses$9(ownerState);
   React.useLayoutEffect(() => {
     if (hasFocus) {
       const focusableElement = headerCellRef.current.querySelector('[tabindex="0"]');
@@ -17139,7 +35269,7 @@ function GridColumnGroupHeader(props) {
     classes,
     columnMenuOpen: false,
     colIndex,
-    height,
+    height: height2,
     isResizing: false,
     sortDirection: null,
     hasFocus: false,
@@ -17149,7 +35279,7 @@ function GridColumnGroupHeader(props) {
     headerClassName,
     description,
     elementId,
-    width,
+    width: width2,
     columnMenuIconButton: null,
     columnTitleIconButtons: null,
     resizable: false,
@@ -17158,10 +35288,10 @@ function GridColumnGroupHeader(props) {
     "data-fields": `|-${fields.join("-|-")}-|`
   }, mouseEventsHandlers));
 }
-const GridColumnHeaderRow = styled$1("div", {
+const GridColumnHeaderRow = styled("div", {
   name: "MuiDataGrid",
   slot: "ColumnHeaderRow",
-  overridesResolver: (props, styles) => styles.columnHeaderRow
+  overridesResolver: (props, styles2) => styles2.columnHeaderRow
 })(() => ({
   display: "flex"
 }));
@@ -17187,7 +35317,7 @@ const useGridColumnHeaders = (props) => {
     columnGroupsHeaderStructure,
     hasOtherElementInTabSequence
   } = props;
-  const theme = useTheme();
+  const theme = useTheme$1();
   const [dragCol, setDragCol] = React.useState("");
   const [resizeCol, setResizeCol] = React.useState("");
   const apiRef = useGridPrivateApiContext();
@@ -17427,7 +35557,7 @@ const useGridColumnHeaders = (props) => {
         ownerState: rootProps,
         children: depthInfo.elements.map(({
           groupId,
-          width,
+          width: width2,
           fields,
           colIndex,
           hasFocus,
@@ -17435,7 +35565,7 @@ const useGridColumnHeaders = (props) => {
         }, groupIndex) => {
           return /* @__PURE__ */ jsx(GridColumnGroupHeader, {
             groupId,
-            width,
+            width: width2,
             fields,
             colIndex,
             depth: depthIndex,
@@ -17471,8 +35601,8 @@ const useGridColumnHeaders = (props) => {
     headerHeight
   };
 };
-const _excluded$8 = ["className"];
-const useUtilityClasses$4 = (ownerState) => {
+const _excluded$c = ["className"];
+const useUtilityClasses$8 = (ownerState) => {
   const {
     classes
   } = ownerState;
@@ -17481,10 +35611,10 @@ const useUtilityClasses$4 = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridColumnHeadersRoot = styled("div", {
+const GridColumnHeadersRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "ColumnHeaders",
-  overridesResolver: (props, styles) => styles.columnHeaders
+  overridesResolver: (props, styles2) => styles2.columnHeaders
 })({
   position: "relative",
   overflow: "hidden",
@@ -17498,9 +35628,9 @@ const GridColumnHeadersRoot = styled("div", {
 const GridBaseColumnHeaders = /* @__PURE__ */ React.forwardRef(function GridColumnHeaders(props, ref) {
   const {
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$8);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$c);
   const rootProps = useGridRootProps();
-  const classes = useUtilityClasses$4(rootProps);
+  const classes = useUtilityClasses$8(rootProps);
   return /* @__PURE__ */ jsx(GridColumnHeadersRoot, _extends$1({
     ref,
     className: clsx(className, classes.root),
@@ -17509,8 +35639,8 @@ const GridBaseColumnHeaders = /* @__PURE__ */ React.forwardRef(function GridColu
     role: "presentation"
   }));
 });
-const _excluded$7 = ["isDragging", "className"];
-const useUtilityClasses$3 = (ownerState) => {
+const _excluded$b = ["isDragging", "className"];
+const useUtilityClasses$7 = (ownerState) => {
   const {
     isDragging,
     hasScrollX,
@@ -17521,12 +35651,12 @@ const useUtilityClasses$3 = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const GridColumnHeadersInnerRoot = styled("div", {
+const GridColumnHeadersInnerRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "columnHeadersInner",
-  overridesResolver: (props, styles) => [{
-    [`&.${gridClasses.columnHeaderDropZone}`]: styles.columnHeaderDropZone
-  }, styles.columnHeadersInner]
+  overridesResolver: (props, styles2) => [{
+    [`&.${gridClasses.columnHeaderDropZone}`]: styles2.columnHeaderDropZone
+  }, styles2.columnHeadersInner]
 })(() => ({
   display: "flex",
   alignItems: "flex-start",
@@ -17543,21 +35673,21 @@ const GridColumnHeadersInner = /* @__PURE__ */ React.forwardRef(function GridCol
   const {
     isDragging,
     className
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$7);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$b);
   const apiRef = useGridApiContext();
   const rootProps = useGridRootProps();
   const ownerState = _extends$1({}, rootProps, {
     isDragging,
     hasScrollX: (_apiRef$current$getRo = (_apiRef$current$getRo2 = apiRef.current.getRootDimensions()) == null ? void 0 : _apiRef$current$getRo2.hasScrollX) != null ? _apiRef$current$getRo : false
   });
-  const classes = useUtilityClasses$3(ownerState);
+  const classes = useUtilityClasses$7(ownerState);
   return /* @__PURE__ */ jsx(GridColumnHeadersInnerRoot, _extends$1({
     ref,
     className: clsx(className, classes.root),
     ownerState
   }, other));
 });
-const _excluded$6 = ["innerRef", "className", "visibleColumns", "sortColumnLookup", "filterColumnLookup", "columnPositions", "columnHeaderTabIndexState", "columnGroupHeaderTabIndexState", "columnHeaderFocus", "columnGroupHeaderFocus", "densityFactor", "headerGroupingMaxDepth", "columnMenuState", "columnVisibility", "columnGroupsHeaderStructure", "hasOtherElementInTabSequence"];
+const _excluded$a = ["innerRef", "className", "visibleColumns", "sortColumnLookup", "filterColumnLookup", "columnPositions", "columnHeaderTabIndexState", "columnGroupHeaderTabIndexState", "columnHeaderFocus", "columnGroupHeaderFocus", "densityFactor", "headerGroupingMaxDepth", "columnMenuState", "columnVisibility", "columnGroupsHeaderStructure", "hasOtherElementInTabSequence"];
 const GridColumnHeaders2 = /* @__PURE__ */ React.forwardRef(function GridColumnsHeaders(props, ref) {
   const {
     innerRef,
@@ -17575,7 +35705,7 @@ const GridColumnHeaders2 = /* @__PURE__ */ React.forwardRef(function GridColumns
     columnVisibility,
     columnGroupsHeaderStructure,
     hasOtherElementInTabSequence
-  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$6);
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$a);
   const {
     isDragging,
     getRootProps,
@@ -17642,7 +35772,7 @@ process.env.NODE_ENV !== "production" ? GridColumnHeaders2.propTypes = {
   filterColumnLookup: PropTypes.object.isRequired,
   hasOtherElementInTabSequence: PropTypes.bool.isRequired,
   headerGroupingMaxDepth: PropTypes.number.isRequired,
-  innerRef: refType,
+  innerRef: refType$1,
   minColumnIndex: PropTypes.number,
   sortColumnLookup: PropTypes.object.isRequired,
   visibleColumns: PropTypes.arrayOf(PropTypes.object).isRequired
@@ -17657,6 +35787,1454 @@ const GridNoResultsOverlay = /* @__PURE__ */ React.forwardRef(function GridNoRes
     children: noResultsOverlayLabel
   }));
 });
+const CheckBoxOutlineBlankIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+}), "CheckBoxOutlineBlank");
+const CheckBoxIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+}), "CheckBox");
+const IndeterminateCheckBoxIcon = createSvgIcon(/* @__PURE__ */ jsx("path", {
+  d: "M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2z"
+}), "IndeterminateCheckBox");
+function getCheckboxUtilityClass(slot) {
+  return generateUtilityClass("MuiCheckbox", slot);
+}
+const checkboxClasses = generateUtilityClasses("MuiCheckbox", ["root", "checked", "disabled", "indeterminate", "colorPrimary", "colorSecondary", "sizeSmall", "sizeMedium"]);
+const _excluded$9 = ["checkedIcon", "color", "icon", "indeterminate", "indeterminateIcon", "inputProps", "size", "className"];
+const useUtilityClasses$6 = (ownerState) => {
+  const {
+    classes,
+    indeterminate,
+    color: color2,
+    size
+  } = ownerState;
+  const slots = {
+    root: ["root", indeterminate && "indeterminate", `color${capitalize(color2)}`, `size${capitalize(size)}`]
+  };
+  const composedClasses = composeClasses(slots, getCheckboxUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const CheckboxRoot = styled(SwitchBase, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiCheckbox",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, ownerState.indeterminate && styles2.indeterminate, styles2[`size${capitalize(ownerState.size)}`], ownerState.color !== "default" && styles2[`color${capitalize(ownerState.color)}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  color: (theme.vars || theme).palette.text.secondary
+}, !ownerState.disableRipple && {
+  "&:hover": {
+    backgroundColor: theme.vars ? `rgba(${ownerState.color === "default" ? theme.vars.palette.action.activeChannel : theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(ownerState.color === "default" ? theme.palette.action.active : theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
+    // Reset on touch devices, it doesn't add specificity
+    "@media (hover: none)": {
+      backgroundColor: "transparent"
+    }
+  }
+}, ownerState.color !== "default" && {
+  [`&.${checkboxClasses.checked}, &.${checkboxClasses.indeterminate}`]: {
+    color: (theme.vars || theme).palette[ownerState.color].main
+  },
+  [`&.${checkboxClasses.disabled}`]: {
+    color: (theme.vars || theme).palette.action.disabled
+  }
+}));
+const defaultCheckedIcon = /* @__PURE__ */ jsx(CheckBoxIcon, {});
+const defaultIcon = /* @__PURE__ */ jsx(CheckBoxOutlineBlankIcon, {});
+const defaultIndeterminateIcon = /* @__PURE__ */ jsx(IndeterminateCheckBoxIcon, {});
+const Checkbox$2 = /* @__PURE__ */ React.forwardRef(function Checkbox(inProps, ref) {
+  var _icon$props$fontSize, _indeterminateIcon$pr;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiCheckbox"
+  });
+  const {
+    checkedIcon = defaultCheckedIcon,
+    color: color2 = "primary",
+    icon: iconProp = defaultIcon,
+    indeterminate = false,
+    indeterminateIcon: indeterminateIconProp = defaultIndeterminateIcon,
+    inputProps,
+    size = "medium",
+    className
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$9);
+  const icon = indeterminate ? indeterminateIconProp : iconProp;
+  const indeterminateIcon = indeterminate ? indeterminateIconProp : checkedIcon;
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    indeterminate,
+    size
+  });
+  const classes = useUtilityClasses$6(ownerState);
+  return /* @__PURE__ */ jsx(CheckboxRoot, _extends$1({
+    type: "checkbox",
+    inputProps: _extends$1({
+      "data-indeterminate": indeterminate
+    }, inputProps),
+    icon: /* @__PURE__ */ React.cloneElement(icon, {
+      fontSize: (_icon$props$fontSize = icon.props.fontSize) != null ? _icon$props$fontSize : size
+    }),
+    checkedIcon: /* @__PURE__ */ React.cloneElement(indeterminateIcon, {
+      fontSize: (_indeterminateIcon$pr = indeterminateIcon.props.fontSize) != null ? _indeterminateIcon$pr : size
+    }),
+    ownerState,
+    ref,
+    className: clsx(classes.root, className)
+  }, other, {
+    classes
+  }));
+});
+process.env.NODE_ENV !== "production" ? Checkbox$2.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, the component is checked.
+   */
+  checked: PropTypes.bool,
+  /**
+   * The icon to display when the component is checked.
+   * @default <CheckBoxIcon />
+   */
+  checkedIcon: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["default", "primary", "secondary", "error", "info", "success", "warning"]), PropTypes.string]),
+  /**
+   * The default checked state. Use when the component is not controlled.
+   */
+  defaultChecked: PropTypes.bool,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * The icon to display when the component is unchecked.
+   * @default <CheckBoxOutlineBlankIcon />
+   */
+  icon: PropTypes.node,
+  /**
+   * The id of the `input` element.
+   */
+  id: PropTypes.string,
+  /**
+   * If `true`, the component appears indeterminate.
+   * This does not set the native input element to indeterminate due
+   * to inconsistent behavior across browsers.
+   * However, we set a `data-indeterminate` attribute on the `input`.
+   * @default false
+   */
+  indeterminate: PropTypes.bool,
+  /**
+   * The icon to display when the component is indeterminate.
+   * @default <IndeterminateCheckBoxIcon />
+   */
+  indeterminateIcon: PropTypes.node,
+  /**
+   * [Attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Attributes) applied to the `input` element.
+   */
+  inputProps: PropTypes.object,
+  /**
+   * Pass a ref to the `input` element.
+   */
+  inputRef: refType,
+  /**
+   * Callback fired when the state is changed.
+   *
+   * @param {React.ChangeEvent<HTMLInputElement>} event The event source of the callback.
+   * You can pull out the new checked state by accessing `event.target.checked` (boolean).
+   */
+  onChange: PropTypes.func,
+  /**
+   * If `true`, the `input` element is required.
+   * @default false
+   */
+  required: PropTypes.bool,
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense checkbox styling.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["medium", "small"]), PropTypes.string]),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The value of the component. The DOM API casts this to a string.
+   * The browser uses "on" as the default value.
+   */
+  value: PropTypes.any
+} : void 0;
+function getButtonUtilityClass(slot) {
+  return generateUtilityClass("MuiButton", slot);
+}
+const buttonClasses = generateUtilityClasses("MuiButton", ["root", "text", "textInherit", "textPrimary", "textSecondary", "textSuccess", "textError", "textInfo", "textWarning", "outlined", "outlinedInherit", "outlinedPrimary", "outlinedSecondary", "outlinedSuccess", "outlinedError", "outlinedInfo", "outlinedWarning", "contained", "containedInherit", "containedPrimary", "containedSecondary", "containedSuccess", "containedError", "containedInfo", "containedWarning", "disableElevation", "focusVisible", "disabled", "colorInherit", "colorPrimary", "colorSecondary", "colorSuccess", "colorError", "colorInfo", "colorWarning", "textSizeSmall", "textSizeMedium", "textSizeLarge", "outlinedSizeSmall", "outlinedSizeMedium", "outlinedSizeLarge", "containedSizeSmall", "containedSizeMedium", "containedSizeLarge", "sizeMedium", "sizeSmall", "sizeLarge", "fullWidth", "startIcon", "endIcon", "icon", "iconSizeSmall", "iconSizeMedium", "iconSizeLarge"]);
+const ButtonGroupContext = /* @__PURE__ */ React.createContext({});
+if (process.env.NODE_ENV !== "production") {
+  ButtonGroupContext.displayName = "ButtonGroupContext";
+}
+const ButtonGroupButtonContext = /* @__PURE__ */ React.createContext(void 0);
+if (process.env.NODE_ENV !== "production") {
+  ButtonGroupButtonContext.displayName = "ButtonGroupButtonContext";
+}
+const _excluded$8 = ["children", "color", "component", "className", "disabled", "disableElevation", "disableFocusRipple", "endIcon", "focusVisibleClassName", "fullWidth", "size", "startIcon", "type", "variant"];
+const useUtilityClasses$5 = (ownerState) => {
+  const {
+    color: color2,
+    disableElevation,
+    fullWidth,
+    size,
+    variant,
+    classes
+  } = ownerState;
+  const slots = {
+    root: ["root", variant, `${variant}${capitalize(color2)}`, `size${capitalize(size)}`, `${variant}Size${capitalize(size)}`, `color${capitalize(color2)}`, disableElevation && "disableElevation", fullWidth && "fullWidth"],
+    label: ["label"],
+    startIcon: ["icon", "startIcon", `iconSize${capitalize(size)}`],
+    endIcon: ["icon", "endIcon", `iconSize${capitalize(size)}`]
+  };
+  const composedClasses = composeClasses(slots, getButtonUtilityClass, classes);
+  return _extends$1({}, classes, composedClasses);
+};
+const commonIconStyles = (ownerState) => _extends$1({}, ownerState.size === "small" && {
+  "& > *:nth-of-type(1)": {
+    fontSize: 18
+  }
+}, ownerState.size === "medium" && {
+  "& > *:nth-of-type(1)": {
+    fontSize: 20
+  }
+}, ownerState.size === "large" && {
+  "& > *:nth-of-type(1)": {
+    fontSize: 22
+  }
+});
+const ButtonRoot = styled(ButtonBase, {
+  shouldForwardProp: (prop) => rootShouldForwardProp(prop) || prop === "classes",
+  name: "MuiButton",
+  slot: "Root",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.root, styles2[ownerState.variant], styles2[`${ownerState.variant}${capitalize(ownerState.color)}`], styles2[`size${capitalize(ownerState.size)}`], styles2[`${ownerState.variant}Size${capitalize(ownerState.size)}`], ownerState.color === "inherit" && styles2.colorInherit, ownerState.disableElevation && styles2.disableElevation, ownerState.fullWidth && styles2.fullWidth];
+  }
+})(({
+  theme,
+  ownerState
+}) => {
+  var _theme$palette$getCon, _theme$palette;
+  const inheritContainedBackgroundColor = theme.palette.mode === "light" ? theme.palette.grey[300] : theme.palette.grey[800];
+  const inheritContainedHoverBackgroundColor = theme.palette.mode === "light" ? theme.palette.grey.A100 : theme.palette.grey[700];
+  return _extends$1({}, theme.typography.button, {
+    minWidth: 64,
+    padding: "6px 16px",
+    borderRadius: (theme.vars || theme).shape.borderRadius,
+    transition: theme.transitions.create(["background-color", "box-shadow", "border-color", "color"], {
+      duration: theme.transitions.duration.short
+    }),
+    "&:hover": _extends$1({
+      textDecoration: "none",
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette.text.primaryChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette.text.primary, theme.palette.action.hoverOpacity),
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: "transparent"
+      }
+    }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: "transparent"
+      }
+    }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
+      border: `1px solid ${(theme.vars || theme).palette[ownerState.color].main}`,
+      backgroundColor: theme.vars ? `rgba(${theme.vars.palette[ownerState.color].mainChannel} / ${theme.vars.palette.action.hoverOpacity})` : colorManipulatorExports.alpha(theme.palette[ownerState.color].main, theme.palette.action.hoverOpacity),
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: "transparent"
+      }
+    }, ownerState.variant === "contained" && {
+      backgroundColor: theme.vars ? theme.vars.palette.Button.inheritContainedHoverBg : inheritContainedHoverBackgroundColor,
+      boxShadow: (theme.vars || theme).shadows[4],
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        boxShadow: (theme.vars || theme).shadows[2],
+        backgroundColor: (theme.vars || theme).palette.grey[300]
+      }
+    }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
+      backgroundColor: (theme.vars || theme).palette[ownerState.color].dark,
+      // Reset on touch devices, it doesn't add specificity
+      "@media (hover: none)": {
+        backgroundColor: (theme.vars || theme).palette[ownerState.color].main
+      }
+    }),
+    "&:active": _extends$1({}, ownerState.variant === "contained" && {
+      boxShadow: (theme.vars || theme).shadows[8]
+    }),
+    [`&.${buttonClasses.focusVisible}`]: _extends$1({}, ownerState.variant === "contained" && {
+      boxShadow: (theme.vars || theme).shadows[6]
+    }),
+    [`&.${buttonClasses.disabled}`]: _extends$1({
+      color: (theme.vars || theme).palette.action.disabled
+    }, ownerState.variant === "outlined" && {
+      border: `1px solid ${(theme.vars || theme).palette.action.disabledBackground}`
+    }, ownerState.variant === "contained" && {
+      color: (theme.vars || theme).palette.action.disabled,
+      boxShadow: (theme.vars || theme).shadows[0],
+      backgroundColor: (theme.vars || theme).palette.action.disabledBackground
+    })
+  }, ownerState.variant === "text" && {
+    padding: "6px 8px"
+  }, ownerState.variant === "text" && ownerState.color !== "inherit" && {
+    color: (theme.vars || theme).palette[ownerState.color].main
+  }, ownerState.variant === "outlined" && {
+    padding: "5px 15px",
+    border: "1px solid currentColor"
+  }, ownerState.variant === "outlined" && ownerState.color !== "inherit" && {
+    color: (theme.vars || theme).palette[ownerState.color].main,
+    border: theme.vars ? `1px solid rgba(${theme.vars.palette[ownerState.color].mainChannel} / 0.5)` : `1px solid ${colorManipulatorExports.alpha(theme.palette[ownerState.color].main, 0.5)}`
+  }, ownerState.variant === "contained" && {
+    color: theme.vars ? (
+      // this is safe because grey does not change between default light/dark mode
+      theme.vars.palette.text.primary
+    ) : (_theme$palette$getCon = (_theme$palette = theme.palette).getContrastText) == null ? void 0 : _theme$palette$getCon.call(_theme$palette, theme.palette.grey[300]),
+    backgroundColor: theme.vars ? theme.vars.palette.Button.inheritContainedBg : inheritContainedBackgroundColor,
+    boxShadow: (theme.vars || theme).shadows[2]
+  }, ownerState.variant === "contained" && ownerState.color !== "inherit" && {
+    color: (theme.vars || theme).palette[ownerState.color].contrastText,
+    backgroundColor: (theme.vars || theme).palette[ownerState.color].main
+  }, ownerState.color === "inherit" && {
+    color: "inherit",
+    borderColor: "currentColor"
+  }, ownerState.size === "small" && ownerState.variant === "text" && {
+    padding: "4px 5px",
+    fontSize: theme.typography.pxToRem(13)
+  }, ownerState.size === "large" && ownerState.variant === "text" && {
+    padding: "8px 11px",
+    fontSize: theme.typography.pxToRem(15)
+  }, ownerState.size === "small" && ownerState.variant === "outlined" && {
+    padding: "3px 9px",
+    fontSize: theme.typography.pxToRem(13)
+  }, ownerState.size === "large" && ownerState.variant === "outlined" && {
+    padding: "7px 21px",
+    fontSize: theme.typography.pxToRem(15)
+  }, ownerState.size === "small" && ownerState.variant === "contained" && {
+    padding: "4px 10px",
+    fontSize: theme.typography.pxToRem(13)
+  }, ownerState.size === "large" && ownerState.variant === "contained" && {
+    padding: "8px 22px",
+    fontSize: theme.typography.pxToRem(15)
+  }, ownerState.fullWidth && {
+    width: "100%"
+  });
+}, ({
+  ownerState
+}) => ownerState.disableElevation && {
+  boxShadow: "none",
+  "&:hover": {
+    boxShadow: "none"
+  },
+  [`&.${buttonClasses.focusVisible}`]: {
+    boxShadow: "none"
+  },
+  "&:active": {
+    boxShadow: "none"
+  },
+  [`&.${buttonClasses.disabled}`]: {
+    boxShadow: "none"
+  }
+});
+const ButtonStartIcon = styled("span", {
+  name: "MuiButton",
+  slot: "StartIcon",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.startIcon, styles2[`iconSize${capitalize(ownerState.size)}`]];
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  display: "inherit",
+  marginRight: 8,
+  marginLeft: -4
+}, ownerState.size === "small" && {
+  marginLeft: -2
+}, commonIconStyles(ownerState)));
+const ButtonEndIcon = styled("span", {
+  name: "MuiButton",
+  slot: "EndIcon",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.endIcon, styles2[`iconSize${capitalize(ownerState.size)}`]];
+  }
+})(({
+  ownerState
+}) => _extends$1({
+  display: "inherit",
+  marginRight: -4,
+  marginLeft: 8
+}, ownerState.size === "small" && {
+  marginRight: -2
+}, commonIconStyles(ownerState)));
+const Button$1 = /* @__PURE__ */ React.forwardRef(function Button(inProps, ref) {
+  const contextProps = React.useContext(ButtonGroupContext);
+  const buttonGroupButtonContextPositionClassName = React.useContext(ButtonGroupButtonContext);
+  const resolvedProps = resolveProps(contextProps, inProps);
+  const props = useDefaultProps({
+    props: resolvedProps,
+    name: "MuiButton"
+  });
+  const {
+    children,
+    color: color2 = "primary",
+    component = "button",
+    className,
+    disabled = false,
+    disableElevation = false,
+    disableFocusRipple = false,
+    endIcon: endIconProp,
+    focusVisibleClassName,
+    fullWidth = false,
+    size = "medium",
+    startIcon: startIconProp,
+    type,
+    variant = "text"
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$8);
+  const ownerState = _extends$1({}, props, {
+    color: color2,
+    component,
+    disabled,
+    disableElevation,
+    disableFocusRipple,
+    fullWidth,
+    size,
+    type,
+    variant
+  });
+  const classes = useUtilityClasses$5(ownerState);
+  const startIcon = startIconProp && /* @__PURE__ */ jsx(ButtonStartIcon, {
+    className: classes.startIcon,
+    ownerState,
+    children: startIconProp
+  });
+  const endIcon = endIconProp && /* @__PURE__ */ jsx(ButtonEndIcon, {
+    className: classes.endIcon,
+    ownerState,
+    children: endIconProp
+  });
+  const positionClassName = buttonGroupButtonContextPositionClassName || "";
+  return /* @__PURE__ */ jsxs(ButtonRoot, _extends$1({
+    ownerState,
+    className: clsx(contextProps.className, classes.root, className, positionClassName),
+    component,
+    disabled,
+    focusRipple: !disableFocusRipple,
+    focusVisibleClassName: clsx(classes.focusVisible, focusVisibleClassName),
+    ref,
+    type
+  }, other, {
+    classes,
+    children: [startIcon, children, endIcon]
+  }));
+});
+process.env.NODE_ENV !== "production" ? Button$1.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The color of the component.
+   * It supports both default and custom theme colors, which can be added as shown in the
+   * [palette customization guide](https://mui.com/material-ui/customization/palette/#custom-colors).
+   * @default 'primary'
+   */
+  color: PropTypes.oneOfType([PropTypes.oneOf(["inherit", "primary", "secondary", "success", "error", "info", "warning"]), PropTypes.string]),
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * If `true`, the component is disabled.
+   * @default false
+   */
+  disabled: PropTypes.bool,
+  /**
+   * If `true`, no elevation is used.
+   * @default false
+   */
+  disableElevation: PropTypes.bool,
+  /**
+   * If `true`, the  keyboard focus ripple is disabled.
+   * @default false
+   */
+  disableFocusRipple: PropTypes.bool,
+  /**
+   * If `true`, the ripple effect is disabled.
+   *
+   * ⚠️ Without a ripple there is no styling for :focus-visible by default. Be sure
+   * to highlight the element by applying separate styles with the `.Mui-focusVisible` class.
+   * @default false
+   */
+  disableRipple: PropTypes.bool,
+  /**
+   * Element placed after the children.
+   */
+  endIcon: PropTypes.node,
+  /**
+   * @ignore
+   */
+  focusVisibleClassName: PropTypes.string,
+  /**
+   * If `true`, the button will take up the full width of its container.
+   * @default false
+   */
+  fullWidth: PropTypes.bool,
+  /**
+   * The URL to link to when the button is clicked.
+   * If defined, an `a` element will be used as the root node.
+   */
+  href: PropTypes.string,
+  /**
+   * The size of the component.
+   * `small` is equivalent to the dense button styling.
+   * @default 'medium'
+   */
+  size: PropTypes.oneOfType([PropTypes.oneOf(["small", "medium", "large"]), PropTypes.string]),
+  /**
+   * Element placed before the children.
+   */
+  startIcon: PropTypes.node,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * @ignore
+   */
+  type: PropTypes.oneOfType([PropTypes.oneOf(["button", "reset", "submit"]), PropTypes.string]),
+  /**
+   * The variant to use.
+   * @default 'text'
+   */
+  variant: PropTypes.oneOfType([PropTypes.oneOf(["contained", "outlined", "text"]), PropTypes.string])
+} : void 0;
+function getInputAdornmentUtilityClass(slot) {
+  return generateUtilityClass("MuiInputAdornment", slot);
+}
+const inputAdornmentClasses = generateUtilityClasses("MuiInputAdornment", ["root", "filled", "standard", "outlined", "positionStart", "positionEnd", "disablePointerEvents", "hiddenLabel", "sizeSmall"]);
+var _span;
+const _excluded$7 = ["children", "className", "component", "disablePointerEvents", "disableTypography", "position", "variant"];
+const overridesResolver = (props, styles2) => {
+  const {
+    ownerState
+  } = props;
+  return [styles2.root, styles2[`position${capitalize(ownerState.position)}`], ownerState.disablePointerEvents === true && styles2.disablePointerEvents, styles2[ownerState.variant]];
+};
+const useUtilityClasses$4 = (ownerState) => {
+  const {
+    classes,
+    disablePointerEvents,
+    hiddenLabel,
+    position,
+    size,
+    variant
+  } = ownerState;
+  const slots = {
+    root: ["root", disablePointerEvents && "disablePointerEvents", position && `position${capitalize(position)}`, variant, hiddenLabel && "hiddenLabel", size && `size${capitalize(size)}`]
+  };
+  return composeClasses(slots, getInputAdornmentUtilityClass, classes);
+};
+const InputAdornmentRoot = styled("div", {
+  name: "MuiInputAdornment",
+  slot: "Root",
+  overridesResolver
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  display: "flex",
+  height: "0.01em",
+  // Fix IE11 flexbox alignment. To remove at some point.
+  maxHeight: "2em",
+  alignItems: "center",
+  whiteSpace: "nowrap",
+  color: (theme.vars || theme).palette.action.active
+}, ownerState.variant === "filled" && {
+  // Styles applied to the root element if `variant="filled"`.
+  [`&.${inputAdornmentClasses.positionStart}&:not(.${inputAdornmentClasses.hiddenLabel})`]: {
+    marginTop: 16
+  }
+}, ownerState.position === "start" && {
+  // Styles applied to the root element if `position="start"`.
+  marginRight: 8
+}, ownerState.position === "end" && {
+  // Styles applied to the root element if `position="end"`.
+  marginLeft: 8
+}, ownerState.disablePointerEvents === true && {
+  // Styles applied to the root element if `disablePointerEvents={true}`.
+  pointerEvents: "none"
+}));
+const InputAdornment = /* @__PURE__ */ React.forwardRef(function InputAdornment2(inProps, ref) {
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiInputAdornment"
+  });
+  const {
+    children,
+    className,
+    component = "div",
+    disablePointerEvents = false,
+    disableTypography = false,
+    position,
+    variant: variantProp
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$7);
+  const muiFormControl = useFormControl() || {};
+  let variant = variantProp;
+  if (variantProp && muiFormControl.variant) {
+    if (process.env.NODE_ENV !== "production") {
+      if (variantProp === muiFormControl.variant) {
+        console.error("MUI: The `InputAdornment` variant infers the variant prop you do not have to provide one.");
+      }
+    }
+  }
+  if (muiFormControl && !variant) {
+    variant = muiFormControl.variant;
+  }
+  const ownerState = _extends$1({}, props, {
+    hiddenLabel: muiFormControl.hiddenLabel,
+    size: muiFormControl.size,
+    disablePointerEvents,
+    position,
+    variant
+  });
+  const classes = useUtilityClasses$4(ownerState);
+  return /* @__PURE__ */ jsx(FormControlContext.Provider, {
+    value: null,
+    children: /* @__PURE__ */ jsx(InputAdornmentRoot, _extends$1({
+      as: component,
+      ownerState,
+      className: clsx(classes.root, className),
+      ref
+    }, other, {
+      children: typeof children === "string" && !disableTypography ? /* @__PURE__ */ jsx(Typography, {
+        color: "text.secondary",
+        children
+      }) : /* @__PURE__ */ jsxs(React.Fragment, {
+        children: [position === "start" ? (
+          /* notranslate needed while Google Translate will not fix zero-width space issue */
+          _span || (_span = /* @__PURE__ */ jsx("span", {
+            className: "notranslate",
+            children: "​"
+          }))
+        ) : null, children]
+      })
+    }))
+  });
+});
+process.env.NODE_ENV !== "production" ? InputAdornment.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * The content of the component, normally an `IconButton` or string.
+   */
+  children: PropTypes.node,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: PropTypes.elementType,
+  /**
+   * Disable pointer events on the root.
+   * This allows for the content of the adornment to focus the `input` on click.
+   * @default false
+   */
+  disablePointerEvents: PropTypes.bool,
+  /**
+   * If children is a string then disable wrapping in a Typography component.
+   * @default false
+   */
+  disableTypography: PropTypes.bool,
+  /**
+   * The position this adornment should appear relative to the `Input`.
+   */
+  position: PropTypes.oneOf(["end", "start"]).isRequired,
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * The variant to use.
+   * Note: If you are using the `TextField` component or the `FormControl` component
+   * you do not have to set this manually.
+   */
+  variant: PropTypes.oneOf(["filled", "outlined", "standard"])
+} : void 0;
+function getTooltipUtilityClass(slot) {
+  return generateUtilityClass("MuiTooltip", slot);
+}
+const tooltipClasses = generateUtilityClasses("MuiTooltip", ["popper", "popperInteractive", "popperArrow", "popperClose", "tooltip", "tooltipArrow", "touch", "tooltipPlacementLeft", "tooltipPlacementRight", "tooltipPlacementTop", "tooltipPlacementBottom", "arrow"]);
+const _excluded$6 = ["arrow", "children", "classes", "components", "componentsProps", "describeChild", "disableFocusListener", "disableHoverListener", "disableInteractive", "disableTouchListener", "enterDelay", "enterNextDelay", "enterTouchDelay", "followCursor", "id", "leaveDelay", "leaveTouchDelay", "onClose", "onOpen", "open", "placement", "PopperComponent", "PopperProps", "slotProps", "slots", "title", "TransitionComponent", "TransitionProps"];
+function round(value) {
+  return Math.round(value * 1e5) / 1e5;
+}
+const useUtilityClasses$3 = (ownerState) => {
+  const {
+    classes,
+    disableInteractive,
+    arrow,
+    touch,
+    placement
+  } = ownerState;
+  const slots = {
+    popper: ["popper", !disableInteractive && "popperInteractive", arrow && "popperArrow"],
+    tooltip: ["tooltip", arrow && "tooltipArrow", touch && "touch", `tooltipPlacement${capitalize(placement.split("-")[0])}`],
+    arrow: ["arrow"]
+  };
+  return composeClasses(slots, getTooltipUtilityClass, classes);
+};
+const TooltipPopper = styled(Popper2, {
+  name: "MuiTooltip",
+  slot: "Popper",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.popper, !ownerState.disableInteractive && styles2.popperInteractive, ownerState.arrow && styles2.popperArrow, !ownerState.open && styles2.popperClose];
+  }
+})(({
+  theme,
+  ownerState,
+  open
+}) => _extends$1({
+  zIndex: (theme.vars || theme).zIndex.tooltip,
+  pointerEvents: "none"
+}, !ownerState.disableInteractive && {
+  pointerEvents: "auto"
+}, !open && {
+  pointerEvents: "none"
+}, ownerState.arrow && {
+  [`&[data-popper-placement*="bottom"] .${tooltipClasses.arrow}`]: {
+    top: 0,
+    marginTop: "-0.71em",
+    "&::before": {
+      transformOrigin: "0 100%"
+    }
+  },
+  [`&[data-popper-placement*="top"] .${tooltipClasses.arrow}`]: {
+    bottom: 0,
+    marginBottom: "-0.71em",
+    "&::before": {
+      transformOrigin: "100% 0"
+    }
+  },
+  [`&[data-popper-placement*="right"] .${tooltipClasses.arrow}`]: _extends$1({}, !ownerState.isRtl ? {
+    left: 0,
+    marginLeft: "-0.71em"
+  } : {
+    right: 0,
+    marginRight: "-0.71em"
+  }, {
+    height: "1em",
+    width: "0.71em",
+    "&::before": {
+      transformOrigin: "100% 100%"
+    }
+  }),
+  [`&[data-popper-placement*="left"] .${tooltipClasses.arrow}`]: _extends$1({}, !ownerState.isRtl ? {
+    right: 0,
+    marginRight: "-0.71em"
+  } : {
+    left: 0,
+    marginLeft: "-0.71em"
+  }, {
+    height: "1em",
+    width: "0.71em",
+    "&::before": {
+      transformOrigin: "0 0"
+    }
+  })
+}));
+const TooltipTooltip = styled("div", {
+  name: "MuiTooltip",
+  slot: "Tooltip",
+  overridesResolver: (props, styles2) => {
+    const {
+      ownerState
+    } = props;
+    return [styles2.tooltip, ownerState.touch && styles2.touch, ownerState.arrow && styles2.tooltipArrow, styles2[`tooltipPlacement${capitalize(ownerState.placement.split("-")[0])}`]];
+  }
+})(({
+  theme,
+  ownerState
+}) => _extends$1({
+  backgroundColor: theme.vars ? theme.vars.palette.Tooltip.bg : colorManipulatorExports.alpha(theme.palette.grey[700], 0.92),
+  borderRadius: (theme.vars || theme).shape.borderRadius,
+  color: (theme.vars || theme).palette.common.white,
+  fontFamily: theme.typography.fontFamily,
+  padding: "4px 8px",
+  fontSize: theme.typography.pxToRem(11),
+  maxWidth: 300,
+  margin: 2,
+  wordWrap: "break-word",
+  fontWeight: theme.typography.fontWeightMedium
+}, ownerState.arrow && {
+  position: "relative",
+  margin: 0
+}, ownerState.touch && {
+  padding: "8px 16px",
+  fontSize: theme.typography.pxToRem(14),
+  lineHeight: `${round(16 / 14)}em`,
+  fontWeight: theme.typography.fontWeightRegular
+}, {
+  [`.${tooltipClasses.popper}[data-popper-placement*="left"] &`]: _extends$1({
+    transformOrigin: "right center"
+  }, !ownerState.isRtl ? _extends$1({
+    marginRight: "14px"
+  }, ownerState.touch && {
+    marginRight: "24px"
+  }) : _extends$1({
+    marginLeft: "14px"
+  }, ownerState.touch && {
+    marginLeft: "24px"
+  })),
+  [`.${tooltipClasses.popper}[data-popper-placement*="right"] &`]: _extends$1({
+    transformOrigin: "left center"
+  }, !ownerState.isRtl ? _extends$1({
+    marginLeft: "14px"
+  }, ownerState.touch && {
+    marginLeft: "24px"
+  }) : _extends$1({
+    marginRight: "14px"
+  }, ownerState.touch && {
+    marginRight: "24px"
+  })),
+  [`.${tooltipClasses.popper}[data-popper-placement*="top"] &`]: _extends$1({
+    transformOrigin: "center bottom",
+    marginBottom: "14px"
+  }, ownerState.touch && {
+    marginBottom: "24px"
+  }),
+  [`.${tooltipClasses.popper}[data-popper-placement*="bottom"] &`]: _extends$1({
+    transformOrigin: "center top",
+    marginTop: "14px"
+  }, ownerState.touch && {
+    marginTop: "24px"
+  })
+}));
+const TooltipArrow = styled("span", {
+  name: "MuiTooltip",
+  slot: "Arrow",
+  overridesResolver: (props, styles2) => styles2.arrow
+})(({
+  theme
+}) => ({
+  overflow: "hidden",
+  position: "absolute",
+  width: "1em",
+  height: "0.71em",
+  boxSizing: "border-box",
+  color: theme.vars ? theme.vars.palette.Tooltip.bg : colorManipulatorExports.alpha(theme.palette.grey[700], 0.9),
+  "&::before": {
+    content: '""',
+    margin: "auto",
+    display: "block",
+    width: "100%",
+    height: "100%",
+    backgroundColor: "currentColor",
+    transform: "rotate(45deg)"
+  }
+}));
+let hystersisOpen = false;
+const hystersisTimer = new Timeout$1();
+let cursorPosition = {
+  x: 0,
+  y: 0
+};
+function composeEventHandler(handler, eventHandler) {
+  return (event, ...params) => {
+    if (eventHandler) {
+      eventHandler(event, ...params);
+    }
+    handler(event, ...params);
+  };
+}
+const Tooltip = /* @__PURE__ */ React.forwardRef(function Tooltip2(inProps, ref) {
+  var _ref, _slots$popper, _ref2, _ref3, _slots$transition, _ref4, _slots$tooltip, _ref5, _slots$arrow, _slotProps$popper, _ref6, _slotProps$popper2, _slotProps$transition, _slotProps$tooltip, _ref7, _slotProps$tooltip2, _slotProps$arrow, _ref8, _slotProps$arrow2;
+  const props = useDefaultProps({
+    props: inProps,
+    name: "MuiTooltip"
+  });
+  const {
+    arrow = false,
+    children: childrenProp,
+    components = {},
+    componentsProps = {},
+    describeChild = false,
+    disableFocusListener = false,
+    disableHoverListener = false,
+    disableInteractive: disableInteractiveProp = false,
+    disableTouchListener = false,
+    enterDelay = 100,
+    enterNextDelay = 0,
+    enterTouchDelay = 700,
+    followCursor = false,
+    id: idProp,
+    leaveDelay = 0,
+    leaveTouchDelay = 1500,
+    onClose,
+    onOpen,
+    open: openProp,
+    placement = "bottom",
+    PopperComponent: PopperComponentProp,
+    PopperProps = {},
+    slotProps = {},
+    slots = {},
+    title,
+    TransitionComponent: TransitionComponentProp = Grow,
+    TransitionProps
+  } = props, other = _objectWithoutPropertiesLoose$1(props, _excluded$6);
+  const children = /* @__PURE__ */ React.isValidElement(childrenProp) ? childrenProp : /* @__PURE__ */ jsx("span", {
+    children: childrenProp
+  });
+  const theme = useTheme$1();
+  const isRtl = useRtl();
+  const [childNode, setChildNode] = React.useState();
+  const [arrowRef, setArrowRef] = React.useState(null);
+  const ignoreNonTouchEvents = React.useRef(false);
+  const disableInteractive = disableInteractiveProp || followCursor;
+  const closeTimer = useTimeout$1();
+  const enterTimer = useTimeout$1();
+  const leaveTimer = useTimeout$1();
+  const touchTimer = useTimeout$1();
+  const [openState, setOpenState] = useControlled({
+    controlled: openProp,
+    default: false,
+    name: "Tooltip",
+    state: "open"
+  });
+  let open = openState;
+  if (process.env.NODE_ENV !== "production") {
+    const {
+      current: isControlled
+    } = React.useRef(openProp !== void 0);
+    React.useEffect(() => {
+      if (childNode && childNode.disabled && !isControlled && title !== "" && childNode.tagName.toLowerCase() === "button") {
+        console.error(["MUI: You are providing a disabled `button` child to the Tooltip component.", "A disabled element does not fire events.", "Tooltip needs to listen to the child element's events to display the title.", "", "Add a simple wrapper element, such as a `span`."].join("\n"));
+      }
+    }, [title, childNode, isControlled]);
+  }
+  const id = useId(idProp);
+  const prevUserSelect = React.useRef();
+  const stopTouchInteraction = useEventCallback(() => {
+    if (prevUserSelect.current !== void 0) {
+      document.body.style.WebkitUserSelect = prevUserSelect.current;
+      prevUserSelect.current = void 0;
+    }
+    touchTimer.clear();
+  });
+  React.useEffect(() => stopTouchInteraction, [stopTouchInteraction]);
+  const handleOpen = (event) => {
+    hystersisTimer.clear();
+    hystersisOpen = true;
+    setOpenState(true);
+    if (onOpen && !open) {
+      onOpen(event);
+    }
+  };
+  const handleClose = useEventCallback(
+    /**
+     * @param {React.SyntheticEvent | Event} event
+     */
+    (event) => {
+      hystersisTimer.start(800 + leaveDelay, () => {
+        hystersisOpen = false;
+      });
+      setOpenState(false);
+      if (onClose && open) {
+        onClose(event);
+      }
+      closeTimer.start(theme.transitions.duration.shortest, () => {
+        ignoreNonTouchEvents.current = false;
+      });
+    }
+  );
+  const handleMouseOver = (event) => {
+    if (ignoreNonTouchEvents.current && event.type !== "touchstart") {
+      return;
+    }
+    if (childNode) {
+      childNode.removeAttribute("title");
+    }
+    enterTimer.clear();
+    leaveTimer.clear();
+    if (enterDelay || hystersisOpen && enterNextDelay) {
+      enterTimer.start(hystersisOpen ? enterNextDelay : enterDelay, () => {
+        handleOpen(event);
+      });
+    } else {
+      handleOpen(event);
+    }
+  };
+  const handleMouseLeave = (event) => {
+    enterTimer.clear();
+    leaveTimer.start(leaveDelay, () => {
+      handleClose(event);
+    });
+  };
+  const {
+    isFocusVisibleRef,
+    onBlur: handleBlurVisible,
+    onFocus: handleFocusVisible,
+    ref: focusVisibleRef
+  } = useIsFocusVisible();
+  const [, setChildIsFocusVisible] = React.useState(false);
+  const handleBlur = (event) => {
+    handleBlurVisible(event);
+    if (isFocusVisibleRef.current === false) {
+      setChildIsFocusVisible(false);
+      handleMouseLeave(event);
+    }
+  };
+  const handleFocus = (event) => {
+    if (!childNode) {
+      setChildNode(event.currentTarget);
+    }
+    handleFocusVisible(event);
+    if (isFocusVisibleRef.current === true) {
+      setChildIsFocusVisible(true);
+      handleMouseOver(event);
+    }
+  };
+  const detectTouchStart = (event) => {
+    ignoreNonTouchEvents.current = true;
+    const childrenProps2 = children.props;
+    if (childrenProps2.onTouchStart) {
+      childrenProps2.onTouchStart(event);
+    }
+  };
+  const handleTouchStart = (event) => {
+    detectTouchStart(event);
+    leaveTimer.clear();
+    closeTimer.clear();
+    stopTouchInteraction();
+    prevUserSelect.current = document.body.style.WebkitUserSelect;
+    document.body.style.WebkitUserSelect = "none";
+    touchTimer.start(enterTouchDelay, () => {
+      document.body.style.WebkitUserSelect = prevUserSelect.current;
+      handleMouseOver(event);
+    });
+  };
+  const handleTouchEnd = (event) => {
+    if (children.props.onTouchEnd) {
+      children.props.onTouchEnd(event);
+    }
+    stopTouchInteraction();
+    leaveTimer.start(leaveTouchDelay, () => {
+      handleClose(event);
+    });
+  };
+  React.useEffect(() => {
+    if (!open) {
+      return void 0;
+    }
+    function handleKeyDown(nativeEvent) {
+      if (nativeEvent.key === "Escape" || nativeEvent.key === "Esc") {
+        handleClose(nativeEvent);
+      }
+    }
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [handleClose, open]);
+  const handleRef = useForkRef(getReactElementRef(children), focusVisibleRef, setChildNode, ref);
+  if (!title && title !== 0) {
+    open = false;
+  }
+  const popperRef = React.useRef();
+  const handleMouseMove = (event) => {
+    const childrenProps2 = children.props;
+    if (childrenProps2.onMouseMove) {
+      childrenProps2.onMouseMove(event);
+    }
+    cursorPosition = {
+      x: event.clientX,
+      y: event.clientY
+    };
+    if (popperRef.current) {
+      popperRef.current.update();
+    }
+  };
+  const nameOrDescProps = {};
+  const titleIsString = typeof title === "string";
+  if (describeChild) {
+    nameOrDescProps.title = !open && titleIsString && !disableHoverListener ? title : null;
+    nameOrDescProps["aria-describedby"] = open ? id : null;
+  } else {
+    nameOrDescProps["aria-label"] = titleIsString ? title : null;
+    nameOrDescProps["aria-labelledby"] = open && !titleIsString ? id : null;
+  }
+  const childrenProps = _extends$1({}, nameOrDescProps, other, children.props, {
+    className: clsx(other.className, children.props.className),
+    onTouchStart: detectTouchStart,
+    ref: handleRef
+  }, followCursor ? {
+    onMouseMove: handleMouseMove
+  } : {});
+  if (process.env.NODE_ENV !== "production") {
+    childrenProps["data-mui-internal-clone-element"] = true;
+    React.useEffect(() => {
+      if (childNode && !childNode.getAttribute("data-mui-internal-clone-element")) {
+        console.error(["MUI: The `children` component of the Tooltip is not forwarding its props correctly.", "Please make sure that props are spread on the same element that the ref is applied to."].join("\n"));
+      }
+    }, [childNode]);
+  }
+  const interactiveWrapperListeners = {};
+  if (!disableTouchListener) {
+    childrenProps.onTouchStart = handleTouchStart;
+    childrenProps.onTouchEnd = handleTouchEnd;
+  }
+  if (!disableHoverListener) {
+    childrenProps.onMouseOver = composeEventHandler(handleMouseOver, childrenProps.onMouseOver);
+    childrenProps.onMouseLeave = composeEventHandler(handleMouseLeave, childrenProps.onMouseLeave);
+    if (!disableInteractive) {
+      interactiveWrapperListeners.onMouseOver = handleMouseOver;
+      interactiveWrapperListeners.onMouseLeave = handleMouseLeave;
+    }
+  }
+  if (!disableFocusListener) {
+    childrenProps.onFocus = composeEventHandler(handleFocus, childrenProps.onFocus);
+    childrenProps.onBlur = composeEventHandler(handleBlur, childrenProps.onBlur);
+    if (!disableInteractive) {
+      interactiveWrapperListeners.onFocus = handleFocus;
+      interactiveWrapperListeners.onBlur = handleBlur;
+    }
+  }
+  if (process.env.NODE_ENV !== "production") {
+    if (children.props.title) {
+      console.error(["MUI: You have provided a `title` prop to the child of <Tooltip />.", `Remove this title prop \`${children.props.title}\` or the Tooltip component.`].join("\n"));
+    }
+  }
+  const popperOptions = React.useMemo(() => {
+    var _PopperProps$popperOp;
+    let tooltipModifiers = [{
+      name: "arrow",
+      enabled: Boolean(arrowRef),
+      options: {
+        element: arrowRef,
+        padding: 4
+      }
+    }];
+    if ((_PopperProps$popperOp = PopperProps.popperOptions) != null && _PopperProps$popperOp.modifiers) {
+      tooltipModifiers = tooltipModifiers.concat(PopperProps.popperOptions.modifiers);
+    }
+    return _extends$1({}, PopperProps.popperOptions, {
+      modifiers: tooltipModifiers
+    });
+  }, [arrowRef, PopperProps]);
+  const ownerState = _extends$1({}, props, {
+    isRtl,
+    arrow,
+    disableInteractive,
+    placement,
+    PopperComponentProp,
+    touch: ignoreNonTouchEvents.current
+  });
+  const classes = useUtilityClasses$3(ownerState);
+  const PopperComponent = (_ref = (_slots$popper = slots.popper) != null ? _slots$popper : components.Popper) != null ? _ref : TooltipPopper;
+  const TransitionComponent = (_ref2 = (_ref3 = (_slots$transition = slots.transition) != null ? _slots$transition : components.Transition) != null ? _ref3 : TransitionComponentProp) != null ? _ref2 : Grow;
+  const TooltipComponent = (_ref4 = (_slots$tooltip = slots.tooltip) != null ? _slots$tooltip : components.Tooltip) != null ? _ref4 : TooltipTooltip;
+  const ArrowComponent = (_ref5 = (_slots$arrow = slots.arrow) != null ? _slots$arrow : components.Arrow) != null ? _ref5 : TooltipArrow;
+  const popperProps = appendOwnerState(PopperComponent, _extends$1({}, PopperProps, (_slotProps$popper = slotProps.popper) != null ? _slotProps$popper : componentsProps.popper, {
+    className: clsx(classes.popper, PopperProps == null ? void 0 : PopperProps.className, (_ref6 = (_slotProps$popper2 = slotProps.popper) != null ? _slotProps$popper2 : componentsProps.popper) == null ? void 0 : _ref6.className)
+  }), ownerState);
+  const transitionProps = appendOwnerState(TransitionComponent, _extends$1({}, TransitionProps, (_slotProps$transition = slotProps.transition) != null ? _slotProps$transition : componentsProps.transition), ownerState);
+  const tooltipProps = appendOwnerState(TooltipComponent, _extends$1({}, (_slotProps$tooltip = slotProps.tooltip) != null ? _slotProps$tooltip : componentsProps.tooltip, {
+    className: clsx(classes.tooltip, (_ref7 = (_slotProps$tooltip2 = slotProps.tooltip) != null ? _slotProps$tooltip2 : componentsProps.tooltip) == null ? void 0 : _ref7.className)
+  }), ownerState);
+  const tooltipArrowProps = appendOwnerState(ArrowComponent, _extends$1({}, (_slotProps$arrow = slotProps.arrow) != null ? _slotProps$arrow : componentsProps.arrow, {
+    className: clsx(classes.arrow, (_ref8 = (_slotProps$arrow2 = slotProps.arrow) != null ? _slotProps$arrow2 : componentsProps.arrow) == null ? void 0 : _ref8.className)
+  }), ownerState);
+  return /* @__PURE__ */ jsxs(React.Fragment, {
+    children: [/* @__PURE__ */ React.cloneElement(children, childrenProps), /* @__PURE__ */ jsx(PopperComponent, _extends$1({
+      as: PopperComponentProp != null ? PopperComponentProp : Popper2,
+      placement,
+      anchorEl: followCursor ? {
+        getBoundingClientRect: () => ({
+          top: cursorPosition.y,
+          left: cursorPosition.x,
+          right: cursorPosition.x,
+          bottom: cursorPosition.y,
+          width: 0,
+          height: 0
+        })
+      } : childNode,
+      popperRef,
+      open: childNode ? open : false,
+      id,
+      transition: true
+    }, interactiveWrapperListeners, popperProps, {
+      popperOptions,
+      children: ({
+        TransitionProps: TransitionPropsInner
+      }) => /* @__PURE__ */ jsx(TransitionComponent, _extends$1({
+        timeout: theme.transitions.duration.shorter
+      }, TransitionPropsInner, transitionProps, {
+        children: /* @__PURE__ */ jsxs(TooltipComponent, _extends$1({}, tooltipProps, {
+          children: [title, arrow ? /* @__PURE__ */ jsx(ArrowComponent, _extends$1({}, tooltipArrowProps, {
+            ref: setArrowRef
+          })) : null]
+        }))
+      }))
+    }))]
+  });
+});
+process.env.NODE_ENV !== "production" ? Tooltip.propTypes = {
+  // ┌────────────────────────────── Warning ──────────────────────────────┐
+  // │ These PropTypes are generated from the TypeScript type definitions. │
+  // │    To update them, edit the d.ts file and run `pnpm proptypes`.     │
+  // └─────────────────────────────────────────────────────────────────────┘
+  /**
+   * If `true`, adds an arrow to the tooltip.
+   * @default false
+   */
+  arrow: PropTypes.bool,
+  /**
+   * Tooltip reference element.
+   */
+  children: elementAcceptingRef$1.isRequired,
+  /**
+   * Override or extend the styles applied to the component.
+   */
+  classes: PropTypes.object,
+  /**
+   * @ignore
+   */
+  className: PropTypes.string,
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `slots` prop.
+   * It's recommended to use the `slots` prop instead.
+   *
+   * @default {}
+   */
+  components: PropTypes.shape({
+    Arrow: PropTypes.elementType,
+    Popper: PropTypes.elementType,
+    Tooltip: PropTypes.elementType,
+    Transition: PropTypes.elementType
+  }),
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `slotProps` prop.
+   * It's recommended to use the `slotProps` prop instead, as `componentsProps` will be deprecated in the future.
+   *
+   * @default {}
+   */
+  componentsProps: PropTypes.shape({
+    arrow: PropTypes.object,
+    popper: PropTypes.object,
+    tooltip: PropTypes.object,
+    transition: PropTypes.object
+  }),
+  /**
+   * Set to `true` if the `title` acts as an accessible description.
+   * By default the `title` acts as an accessible label for the child.
+   * @default false
+   */
+  describeChild: PropTypes.bool,
+  /**
+   * Do not respond to focus-visible events.
+   * @default false
+   */
+  disableFocusListener: PropTypes.bool,
+  /**
+   * Do not respond to hover events.
+   * @default false
+   */
+  disableHoverListener: PropTypes.bool,
+  /**
+   * Makes a tooltip not interactive, i.e. it will close when the user
+   * hovers over the tooltip before the `leaveDelay` is expired.
+   * @default false
+   */
+  disableInteractive: PropTypes.bool,
+  /**
+   * Do not respond to long press touch events.
+   * @default false
+   */
+  disableTouchListener: PropTypes.bool,
+  /**
+   * The number of milliseconds to wait before showing the tooltip.
+   * This prop won't impact the enter touch delay (`enterTouchDelay`).
+   * @default 100
+   */
+  enterDelay: PropTypes.number,
+  /**
+   * The number of milliseconds to wait before showing the tooltip when one was already recently opened.
+   * @default 0
+   */
+  enterNextDelay: PropTypes.number,
+  /**
+   * The number of milliseconds a user must touch the element before showing the tooltip.
+   * @default 700
+   */
+  enterTouchDelay: PropTypes.number,
+  /**
+   * If `true`, the tooltip follow the cursor over the wrapped element.
+   * @default false
+   */
+  followCursor: PropTypes.bool,
+  /**
+   * This prop is used to help implement the accessibility logic.
+   * If you don't provide this prop. It falls back to a randomly generated id.
+   */
+  id: PropTypes.string,
+  /**
+   * The number of milliseconds to wait before hiding the tooltip.
+   * This prop won't impact the leave touch delay (`leaveTouchDelay`).
+   * @default 0
+   */
+  leaveDelay: PropTypes.number,
+  /**
+   * The number of milliseconds after the user stops touching an element before hiding the tooltip.
+   * @default 1500
+   */
+  leaveTouchDelay: PropTypes.number,
+  /**
+   * Callback fired when the component requests to be closed.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   */
+  onClose: PropTypes.func,
+  /**
+   * Callback fired when the component requests to be open.
+   *
+   * @param {React.SyntheticEvent} event The event source of the callback.
+   */
+  onOpen: PropTypes.func,
+  /**
+   * If `true`, the component is shown.
+   */
+  open: PropTypes.bool,
+  /**
+   * Tooltip placement.
+   * @default 'bottom'
+   */
+  placement: PropTypes.oneOf(["bottom-end", "bottom-start", "bottom", "left-end", "left-start", "left", "right-end", "right-start", "right", "top-end", "top-start", "top"]),
+  /**
+   * The component used for the popper.
+   * @default Popper
+   */
+  PopperComponent: PropTypes.elementType,
+  /**
+   * Props applied to the [`Popper`](/material-ui/api/popper/) element.
+   * @default {}
+   */
+  PopperProps: PropTypes.object,
+  /**
+   * The extra props for the slot components.
+   * You can override the existing props or add new ones.
+   *
+   * This prop is an alias for the `componentsProps` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slotProps: PropTypes.shape({
+    arrow: PropTypes.object,
+    popper: PropTypes.object,
+    tooltip: PropTypes.object,
+    transition: PropTypes.object
+  }),
+  /**
+   * The components used for each slot inside.
+   *
+   * This prop is an alias for the `components` prop, which will be deprecated in the future.
+   *
+   * @default {}
+   */
+  slots: PropTypes.shape({
+    arrow: PropTypes.elementType,
+    popper: PropTypes.elementType,
+    tooltip: PropTypes.elementType,
+    transition: PropTypes.elementType
+  }),
+  /**
+   * The system prop that allows defining system overrides as well as additional CSS styles.
+   */
+  sx: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.bool])), PropTypes.func, PropTypes.object]),
+  /**
+   * Tooltip title. Zero-length titles string, undefined, null and false are never displayed.
+   */
+  title: PropTypes.node,
+  /**
+   * The component used for the transition.
+   * [Follow this guide](/material-ui/transitions/#transitioncomponent-prop) to learn more about the requirements for this component.
+   * @default Grow
+   */
+  TransitionComponent: PropTypes.elementType,
+  /**
+   * Props applied to the transition element.
+   * By default, the element is based on this [`Transition`](https://reactcommunity.org/react-transition-group/transition/) component.
+   */
+  TransitionProps: PropTypes.object
+} : void 0;
 const _excluded$5 = ["sortingOrder"];
 const GridColumnUnsortedIcon = /* @__PURE__ */ React.memo(function GridColumnHeaderSortIcon2(props) {
   const {
@@ -17715,19 +37293,19 @@ const iconSlots = {
   ColumnReorderIcon: GridDragIcon
 };
 const materialSlots = _extends$1({}, iconSlots, {
-  BaseCheckbox: MUICheckbox,
+  BaseCheckbox: Checkbox$2,
   BaseTextField: TextField,
-  BaseFormControl: MUIFormControl,
-  BaseSelect: MUISelect,
-  BaseSwitch: MUISwitch,
-  BaseButton: MUIButton,
+  BaseFormControl: FormControl,
+  BaseSelect: Select,
+  BaseSwitch: Switch,
+  BaseButton: Button$1,
   BaseIconButton: IconButton,
-  BaseInputAdornment: MUIInputAdornment,
-  BaseTooltip: MUITooltip,
-  BasePopper: Popper,
-  BaseInputLabel: MUIInputLabel,
+  BaseInputAdornment: InputAdornment,
+  BaseTooltip: Tooltip,
+  BasePopper: Popper2,
+  BaseInputLabel: InputLabel$1,
   BaseSelectOption: MUISelectOption,
-  BaseChip: MUIChip
+  BaseChip: Chip
 });
 const DATA_GRID_DEFAULT_SLOTS_COMPONENTS = _extends$1({}, materialSlots, {
   Cell: MemoizedGridCellV7,
@@ -18028,27 +37606,27 @@ const useGridRowsMeta = (apiRef, props) => {
     apiRef.current.forceUpdate();
   }, [apiRef, currentPage.rows, rowHeight, getRowHeightProp, getRowSpacing, getEstimatedRowHeight, pinnedRows, densityFactor]);
   const getRowHeight = React.useCallback((rowId) => {
-    const height = rowsHeightLookup.current[rowId];
-    return height ? height.sizes.baseCenter : rowHeight;
+    const height2 = rowsHeightLookup.current[rowId];
+    return height2 ? height2.sizes.baseCenter : rowHeight;
   }, [rowHeight]);
   const getRowInternalSizes = (rowId) => {
     var _rowsHeightLookup$cur;
     return (_rowsHeightLookup$cur = rowsHeightLookup.current[rowId]) == null ? void 0 : _rowsHeightLookup$cur.sizes;
   };
-  const setRowHeight = React.useCallback((id, height) => {
-    rowsHeightLookup.current[id].sizes.baseCenter = height;
+  const setRowHeight = React.useCallback((id, height2) => {
+    rowsHeightLookup.current[id].sizes.baseCenter = height2;
     rowsHeightLookup.current[id].isResized = true;
     rowsHeightLookup.current[id].needsFirstMeasurement = false;
     hydrateRowsMeta();
   }, [hydrateRowsMeta]);
   const debouncedHydrateRowsMeta = React.useMemo(() => unstable_debounce(hydrateRowsMeta, props.rowPositionsDebounceMs), [hydrateRowsMeta, props.rowPositionsDebounceMs]);
-  const storeMeasuredRowHeight = React.useCallback((id, height, position) => {
+  const storeMeasuredRowHeight = React.useCallback((id, height2, position) => {
     if (!rowsHeightLookup.current[id] || !rowsHeightLookup.current[id].autoHeight) {
       return;
     }
-    const needsHydration = rowsHeightLookup.current[id].sizes[`base${unstable_capitalize(position)}`] !== height;
+    const needsHydration = rowsHeightLookup.current[id].sizes[`base${unstable_capitalize(position)}`] !== height2;
     rowsHeightLookup.current[id].needsFirstMeasurement = false;
-    rowsHeightLookup.current[id].sizes[`base${unstable_capitalize(position)}`] = height;
+    rowsHeightLookup.current[id].sizes[`base${unstable_capitalize(position)}`] = height2;
     if (needsHydration) {
       debouncedHydrateRowsMeta();
     }
@@ -18146,12 +37724,12 @@ const useGridColumnSpanning = (apiRef) => {
         colSpan: 1
       };
     }
-    let width = column.computedWidth;
+    let width2 = column.computedWidth;
     for (let j = 1; j < colSpan; j += 1) {
       const nextColumnIndex = columnIndex + j;
       if (nextColumnIndex >= minFirstColumnIndex && nextColumnIndex < maxLastColumnIndex) {
         const nextColumn = columns[nextColumnIndex];
-        width += nextColumn.computedWidth;
+        width2 += nextColumn.computedWidth;
         setCellColSpanInfo(rowId, columnIndex + j, {
           spannedByColSpan: true,
           rightVisibleCellIndex: Math.min(columnIndex + colSpan, columnsLength - 1),
@@ -18162,7 +37740,7 @@ const useGridColumnSpanning = (apiRef) => {
         spannedByColSpan: false,
         cellProps: {
           colSpan,
-          width
+          width: width2
         }
       });
     }
@@ -18453,10 +38031,10 @@ const useUtilityClasses$2 = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const VirtualScrollerRoot = styled("div", {
+const VirtualScrollerRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "VirtualScroller",
-  overridesResolver: (props, styles) => styles.virtualScroller
+  overridesResolver: (props, styles2) => styles2.virtualScroller
 })({
   overflow: "auto",
   height: "100%",
@@ -18487,10 +38065,10 @@ const useUtilityClasses$1 = (props, overflowedContent) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const VirtualScrollerContentRoot = styled("div", {
+const VirtualScrollerContentRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "VirtualScrollerContent",
-  overridesResolver: (props, styles) => styles.virtualScrollerContent
+  overridesResolver: (props, styles2) => styles2.virtualScrollerContent
 })({});
 const GridVirtualScrollerContent = /* @__PURE__ */ React.forwardRef(function GridVirtualScrollerContent2(props, ref) {
   var _props$style;
@@ -18514,10 +38092,10 @@ const useUtilityClasses = (ownerState) => {
   };
   return unstable_composeClasses(slots, getDataGridUtilityClass, classes);
 };
-const VirtualScrollerRenderZoneRoot = styled("div", {
+const VirtualScrollerRenderZoneRoot = styled$1("div", {
   name: "MuiDataGrid",
   slot: "VirtualScrollerRenderZone",
-  overridesResolver: (props, styles) => styles.virtualScrollerRenderZone
+  overridesResolver: (props, styles2) => styles2.virtualScrollerRenderZone
 })({
   position: "absolute",
   display: "flex",
@@ -18641,7 +38219,7 @@ DataGridRaw.propTypes = {
   /**
    * Set of columns of type [[GridColDef[]]].
    */
-  columns: chainPropTypes(PropTypes.array.isRequired, (props) => {
+  columns: chainPropTypes$1(PropTypes.array.isRequired, (props) => {
     if (props.columns && props.columns.some((column) => column.resizable)) {
       return new Error([`MUI: \`column.resizable = true\` is not a valid prop.`, "Column resizing is not available in the MIT version.", "", "You need to upgrade to DataGridPro or DataGridPremium component to unlock this feature."].join("\n"));
     }
@@ -19292,7 +38870,7 @@ const DataTable = ({
     Inertia$1.visit(url);
   };
   const getStatusBadge2 = (status) => {
-    const styles = {
+    const styles2 = {
       PENDING: "bg-amber-50 text-amber-700 border-amber-200",
       APPROVED: "bg-green-50 text-green-700 border-green-200",
       REJECTED: "bg-red-50 text-red-700 border-red-200"
@@ -19310,7 +38888,7 @@ const DataTable = ({
     return /* @__PURE__ */ jsxs(
       "span",
       {
-        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles[status]}`,
+        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles2[status]}`,
         children: [
           icons[status],
           statusLabels[status] ?? status
@@ -19320,10 +38898,10 @@ const DataTable = ({
   };
   const getPaymentBadge = (isPaid) => {
     const paid = isPaid === true || isPaid === "true" || isPaid === "1";
-    const styles = paid ? "bg-green-50 text-green-700 border-green-200" : "bg-red-50 text-red-700 border-red-200";
+    const styles2 = paid ? "bg-green-50 text-green-700 border-green-200" : "bg-red-50 text-red-700 border-red-200";
     const icon = paid ? /* @__PURE__ */ jsx(CheckIcon, { className: "w-4 h-4 mr-1.5" }) : /* @__PURE__ */ jsx(XMarkIcon, { className: "w-4 h-4 mr-1.5" });
     const label = paid ? "Payé" : "Non payé";
-    return /* @__PURE__ */ jsxs("span", { className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles}`, children: [
+    return /* @__PURE__ */ jsxs("span", { className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles2}`, children: [
       icon,
       label
     ] });
@@ -19710,9 +39288,9 @@ function Index$4({ annonces, auth }) {
             ] })
           ] }) })
         ] }),
-        /* @__PURE__ */ jsx(Transition, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: () => !isProcessing && setIsModalOpen(false), children: [
+        /* @__PURE__ */ jsx(Transition$1, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: () => !isProcessing && setIsModalOpen(false), children: [
           /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -19725,7 +39303,7 @@ function Index$4({ annonces, auth }) {
             }
           ),
           /* @__PURE__ */ jsx("div", { className: "fixed inset-0 overflow-y-auto", children: /* @__PURE__ */ jsx("div", { className: "flex min-h-full items-center justify-center p-4 text-center", children: /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -20470,7 +40048,7 @@ const buttonVariants = cva(
     }
   }
 );
-const Button = React.forwardRef(
+const Button2 = React.forwardRef(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return /* @__PURE__ */ jsx(
@@ -20483,7 +40061,7 @@ const Button = React.forwardRef(
     );
   }
 );
-Button.displayName = "Button";
+Button2.displayName = "Button";
 const badgeVariants = cva(
   "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
   {
@@ -20500,7 +40078,7 @@ const badgeVariants = cva(
     }
   }
 );
-function Badge({ className, variant, ...props }) {
+function Badge2({ className, variant, ...props }) {
   return /* @__PURE__ */ jsx("div", { className: cn(badgeVariants({ variant }), className), ...props });
 }
 const Index$3 = ({
@@ -20565,7 +40143,7 @@ const Index$3 = ({
           /* @__PURE__ */ jsx("h2", { className: "text-2xl font-bold leading-tight text-gray-800 dark:text-gray-200", children: "Annonces à livrer (Papier + Digital)" })
         ] }),
         /* @__PURE__ */ jsxs(
-          Button,
+          Button2,
           {
             onClick: handleExport,
             className: "bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 rounded-xl px-6 py-3 font-semibold",
@@ -20578,7 +40156,7 @@ const Index$3 = ({
       ] }),
       children: /* @__PURE__ */ jsx("div", { className: "bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden", children: /* @__PURE__ */ jsxs("div", { className: "p-6", children: [
         /* @__PURE__ */ jsx("div", { className: "mb-6", children: /* @__PURE__ */ jsx("div", { className: "flex flex-wrap gap-2", children: tabs.map((tab) => /* @__PURE__ */ jsxs(
-          Button,
+          Button2,
           {
             onClick: () => handleTabClick(tab.value),
             variant: tab.value === null && selectedDays === null || tab.value === selectedDays ? "default" : "outline",
@@ -20627,9 +40205,9 @@ const Index$3 = ({
               ] }) }),
               /* @__PURE__ */ jsx("td", { className: "px-6 py-4", children: /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-900 dark:text-gray-100 max-w-xs truncate", children: ((_d = annonce.user) == null ? void 0 : _d.address) || "N/A" }) }),
               /* @__PURE__ */ jsx("td", { className: "px-6 py-4 whitespace-nowrap", children: /* @__PURE__ */ jsx("div", { className: "text-sm text-gray-900 dark:text-gray-100", children: formatDate2(annonce.created_at) }) }),
-              /* @__PURE__ */ jsx("td", { className: "px-6 py-4 whitespace-nowrap", children: /* @__PURE__ */ jsx(Badge, { variant: "outline", className: "font-semibold", children: annoncesParUser[((_e = annonce.user) == null ? void 0 : _e.id) || 0] || 0 }) }),
+              /* @__PURE__ */ jsx("td", { className: "px-6 py-4 whitespace-nowrap", children: /* @__PURE__ */ jsx(Badge2, { variant: "outline", className: "font-semibold", children: annoncesParUser[((_e = annonce.user) == null ? void 0 : _e.id) || 0] || 0 }) }),
               /* @__PURE__ */ jsx("td", { className: "px-6 py-4 whitespace-nowrap", children: /* @__PURE__ */ jsx(
-                Badge,
+                Badge2,
                 {
                   className: `font-medium ${annonce.is_sent_to_delivery ? "bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border-green-200" : "bg-gradient-to-r from-amber-100 to-orange-100 text-amber-800 border-amber-200"}`,
                   children: annonce.is_sent_to_delivery ? /* @__PURE__ */ jsxs(Fragment, { children: [
@@ -20639,7 +40217,7 @@ const Index$3 = ({
                 }
               ) }),
               /* @__PURE__ */ jsx("td", { className: "px-6 py-4 whitespace-nowrap", children: !annonce.is_sent_to_delivery && /* @__PURE__ */ jsx(
-                Button,
+                Button2,
                 {
                   onClick: () => handleMarkAsSent(annonce.id),
                   disabled: isProcessing === annonce.id,
@@ -21280,7 +40858,7 @@ function TicketsIndex({
                   tickets.links.prev && /* @__PURE__ */ jsx(Link, { href: tickets.links.prev, children: "Précédent" }),
                   tickets.links.next && /* @__PURE__ */ jsx(Link, { href: tickets.links.next, children: "Suivant" })
                 ] }),
-                /* @__PURE__ */ jsx("div", { className: "flex space-x-2 justify-center p-4", children: tickets.meta && Array.from({ length: tickets.meta.last_page }, (_, i2) => /* @__PURE__ */ jsx(
+                /* @__PURE__ */ jsx("div", { className: "flex space-x-2 justify-center p-4", children: tickets.meta && Array.from({ length: tickets.meta.last_page }, (_2, i2) => /* @__PURE__ */ jsx(
                   Link,
                   {
                     href: `?page=${i2 + 1}`,
@@ -22404,7 +41982,7 @@ function TableauDeBord() {
     }, 1e3);
   };
   const getStatusBadge2 = (status) => {
-    const styles = {
+    const styles2 = {
       PENDING: "bg-amber-50 text-amber-700 border-amber-200",
       APPROVED: "bg-green-50 text-green-700 border-green-200",
       REJECTED: "bg-red-50 text-red-700 border-red-200"
@@ -22422,7 +42000,7 @@ function TableauDeBord() {
     return /* @__PURE__ */ jsxs(
       "span",
       {
-        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles[status]}`,
+        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles2[status]}`,
         children: [
           icons[status],
           statusLabels[status] ?? status
@@ -22779,9 +42357,9 @@ function TableauDeBord() {
             ] }) }) }) })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(Transition, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: closeModal, children: [
+        /* @__PURE__ */ jsx(Transition$1, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: closeModal, children: [
           /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -22794,7 +42372,7 @@ function TableauDeBord() {
             }
           ),
           /* @__PURE__ */ jsx("div", { className: "fixed inset-0 overflow-y-auto", children: /* @__PURE__ */ jsx("div", { className: "flex min-h-full items-center justify-center p-4 text-center", children: /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -23031,7 +42609,7 @@ function AppelsOffresIndex({
     });
   };
   const getStatusBadge2 = (status) => {
-    const styles = {
+    const styles2 = {
       PENDING: "bg-amber-50 text-amber-700 border-amber-200",
       APPROVED: "bg-green-50 text-green-700 border-green-200",
       REJECTED: "bg-red-50 text-red-700 border-red-200"
@@ -23049,7 +42627,7 @@ function AppelsOffresIndex({
     return /* @__PURE__ */ jsxs(
       "span",
       {
-        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles[status]}`,
+        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles2[status]}`,
         children: [
           icons[status],
           statusLabels[status] ?? status
@@ -23472,7 +43050,7 @@ function AppelsOffresIndex({
                       children: /* @__PURE__ */ jsx(ChevronLeftIcon, { className: "h-5 w-5" })
                     }
                   ),
-                  Array.from({ length: Math.min(5, totalPages) }, (_, i2) => {
+                  Array.from({ length: Math.min(5, totalPages) }, (_2, i2) => {
                     let pageNum;
                     if (totalPages <= 5) {
                       pageNum = i2 + 1;
@@ -23507,9 +43085,9 @@ function AppelsOffresIndex({
             ] })
           ] })
         ] }),
-        /* @__PURE__ */ jsx(Transition, { appear: true, show: isConfirmDeleteOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: cancelDelete, children: [
+        /* @__PURE__ */ jsx(Transition$1, { appear: true, show: isConfirmDeleteOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: cancelDelete, children: [
           /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -23522,7 +43100,7 @@ function AppelsOffresIndex({
             }
           ),
           /* @__PURE__ */ jsx("div", { className: "fixed inset-0 overflow-y-auto", children: /* @__PURE__ */ jsx("div", { className: "flex min-h-full items-center justify-center p-4 text-center", children: /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -23559,9 +43137,9 @@ function AppelsOffresIndex({
             }
           ) }) })
         ] }) }),
-        /* @__PURE__ */ jsx(Transition, { appear: true, show: isDetailModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: () => setIsDetailModalOpen(false), children: [
+        /* @__PURE__ */ jsx(Transition$1, { appear: true, show: isDetailModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: () => setIsDetailModalOpen(false), children: [
           /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -23574,7 +43152,7 @@ function AppelsOffresIndex({
             }
           ),
           /* @__PURE__ */ jsx("div", { className: "fixed inset-0 overflow-y-auto", children: /* @__PURE__ */ jsx("div", { className: "flex min-h-full items-center justify-center p-4 text-center", children: /* @__PURE__ */ jsx(
-            Transition.Child,
+            Transition$1.Child,
             {
               as: Fragment$1,
               enter: "ease-out duration-300",
@@ -25194,7 +44772,7 @@ function InputError({
     }
   ) : null;
 }
-function InputLabel({
+function InputLabel2({
   value,
   className = "",
   children,
@@ -25271,7 +44849,7 @@ function ConfirmPassword() {
     /* @__PURE__ */ jsx("div", { className: "mb-4 text-sm text-gray-600 dark:text-gray-400", children: "This is a secure area of the application. Please confirm your password before continuing." }),
     /* @__PURE__ */ jsxs("form", { onSubmit: submit, children: [
       /* @__PURE__ */ jsxs("div", { className: "mt-4", children: [
-        /* @__PURE__ */ jsx(InputLabel, { htmlFor: "password", value: "Password" }),
+        /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "password", value: "Password" }),
         /* @__PURE__ */ jsx(
           TextInput,
           {
@@ -25681,7 +45259,7 @@ function Header({ auth }) {
             className: "lg:hidden text-gray-700 ml-auto md:ml-3 p-2 rounded-full hover:bg-gray-100 transition-colors duration-300",
             onClick: () => setMenuOpen(!menuOpen),
             "aria-label": menuOpen ? "Close menu" : "Open menu",
-            children: menuOpen ? /* @__PURE__ */ jsx(X, { size: 22, className: "stroke-[1.5px]" }) : /* @__PURE__ */ jsx(Menu, { size: 22, className: "stroke-[1.5px]" })
+            children: menuOpen ? /* @__PURE__ */ jsx(X, { size: 22, className: "stroke-[1.5px]" }) : /* @__PURE__ */ jsx(Menu$1, { size: 22, className: "stroke-[1.5px]" })
           }
         ),
         /* @__PURE__ */ jsx(
@@ -26165,7 +45743,7 @@ function EmailConfirmed() {
               /* @__PURE__ */ jsx("div", { className: "text-lg text-gray-600 text-center mb-8 leading-relaxed max-w-md mx-auto", children: "Félicitations ! Votre adresse e-mail a été vérifiée avec succès. Vous pouvez maintenant accéder à toutes les fonctionnalités de notre plateforme." }),
               /* @__PURE__ */ jsxs("div", { className: "space-y-4", children: [
                 /* @__PURE__ */ jsx(
-                  Button,
+                  Button2,
                   {
                     asChild: true,
                     className: "w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-4 px-8 rounded-xl text-lg font-semibold shadow-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl flex items-center justify-center gap-3",
@@ -26177,7 +45755,7 @@ function EmailConfirmed() {
                   }
                 ),
                 /* @__PURE__ */ jsx(
-                  Button,
+                  Button2,
                   {
                     asChild: true,
                     variant: "outline",
@@ -27280,7 +46858,7 @@ const __vite_glob_0_22 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   default: Register
 }, Symbol.toStringTag, { value: "Module" }));
-const Input = React.forwardRef(
+const Input2 = React.forwardRef(
   ({ className, type, ...props }, ref) => {
     return /* @__PURE__ */ jsx(
       "input",
@@ -27296,7 +46874,7 @@ const Input = React.forwardRef(
     );
   }
 );
-Input.displayName = "Input";
+Input2.displayName = "Input";
 const labelVariants = cva(
   "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 );
@@ -27424,7 +47002,7 @@ function ResetPassword({
             /* @__PURE__ */ jsxs("div", { children: [
               /* @__PURE__ */ jsx(Label, { htmlFor: "email", className: "block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3", children: "Adresse e-mail" }),
               /* @__PURE__ */ jsx(
-                Input,
+                Input2,
                 {
                   id: "email",
                   type: "email",
@@ -27439,7 +47017,7 @@ function ResetPassword({
               /* @__PURE__ */ jsx(Label, { htmlFor: "password", className: "block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3", children: "Nouveau mot de passe" }),
               /* @__PURE__ */ jsxs("div", { className: "relative", children: [
                 /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     id: "password",
                     type: showPassword ? "text" : "password",
@@ -27493,7 +47071,7 @@ function ResetPassword({
               ),
               /* @__PURE__ */ jsxs("div", { className: "relative", children: [
                 /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     id: "password_confirmation",
                     type: showConfirmPassword ? "text" : "password",
@@ -27518,7 +47096,7 @@ function ResetPassword({
               errors.password_confirmation && /* @__PURE__ */ jsx("p", { className: "mt-2 text-sm text-red-600 dark:text-red-400", children: errors.password_confirmation })
             ] }),
             /* @__PURE__ */ jsx(motion.div, { whileHover: { scale: 1.01 }, whileTap: { scale: 0.99 }, className: "pt-4", children: /* @__PURE__ */ jsx(
-              Button,
+              Button2,
               {
                 type: "submit",
                 className: `w-full justify-center py-4 px-6 bg-rose-600 hover:bg-rose-700 focus:bg-rose-700 active:bg-rose-800 transition-all duration-200 rounded-xl font-semibold text-base shadow-lg ${processing || !data.password || !data.password_confirmation ? "opacity-70 cursor-not-allowed" : ""}`,
@@ -27650,7 +47228,7 @@ function VerifyEmail({ status }) {
                 /* @__PURE__ */ jsx("p", { className: "text-green-800 font-medium", children: "Un nouveau lien de vérification a été envoyé à votre adresse e-mail." })
               ] }),
               /* @__PURE__ */ jsx("form", { onSubmit: submit, className: "space-y-6", children: /* @__PURE__ */ jsxs(
-                Button,
+                Button2,
                 {
                   type: "submit",
                   disabled: processing,
@@ -28134,7 +47712,7 @@ function parseString(s2) {
   return null;
 }
 function parseObject(obj) {
-  let duration = {
+  let duration2 = {
     years: obj.years || obj.year || 0,
     months: obj.months || obj.month || 0,
     days: obj.days || obj.day || 0,
@@ -28146,10 +47724,10 @@ function parseObject(obj) {
   };
   let weeks = obj.weeks || obj.week;
   if (weeks) {
-    duration.days += weeks * 7;
-    duration.specifiedWeeks = true;
+    duration2.days += weeks * 7;
+    duration2.specifiedWeeks = true;
   }
-  return duration;
+  return duration2;
 }
 function durationsEqual(d0, d1) {
   return d0.years === d1.years && d0.months === d1.months && d0.days === d1.days && d0.milliseconds === d1.milliseconds;
@@ -30224,25 +49802,25 @@ class DateProfileGenerator {
   // Guaranteed to have `range` and `unit` properties. `duration` is optional.
   buildCurrentRangeInfo(date, direction) {
     let { props } = this;
-    let duration = null;
+    let duration2 = null;
     let unit = null;
     let range = null;
     let dayCount;
     if (props.duration) {
-      duration = props.duration;
+      duration2 = props.duration;
       unit = props.durationUnit;
-      range = this.buildRangeFromDuration(date, direction, duration, unit);
+      range = this.buildRangeFromDuration(date, direction, duration2, unit);
     } else if (dayCount = this.props.dayCount) {
       unit = "day";
       range = this.buildRangeFromDayCount(date, direction, dayCount);
     } else if (range = this.buildCustomVisibleRange(date)) {
       unit = props.dateEnv.greatestWholeUnit(range.start, range.end).unit;
     } else {
-      duration = this.getFallbackDuration();
-      unit = greatestDurationDenominator(duration).unit;
-      range = this.buildRangeFromDuration(date, direction, duration, unit);
+      duration2 = this.getFallbackDuration();
+      unit = greatestDurationDenominator(duration2).unit;
+      range = this.buildRangeFromDuration(date, direction, duration2, unit);
     }
-    return { duration, unit, range };
+    return { duration: duration2, unit, range };
   }
   getFallbackDuration() {
     return createDuration({ day: 1 });
@@ -30267,7 +49845,7 @@ class DateProfileGenerator {
   }
   // Builds the "current" range when it is specified as an explicit duration.
   // `unit` is the already-computed greatestDurationDenominator unit of duration.
-  buildRangeFromDuration(date, direction, duration, unit) {
+  buildRangeFromDuration(date, direction, duration2, unit) {
     let { dateEnv, dateAlignment } = this.props;
     let start;
     let end;
@@ -30275,7 +49853,7 @@ class DateProfileGenerator {
     if (!dateAlignment) {
       let { dateIncrement } = this.props;
       if (dateIncrement) {
-        if (asRoughMs(dateIncrement) < asRoughMs(duration)) {
+        if (asRoughMs(dateIncrement) < asRoughMs(duration2)) {
           dateAlignment = greatestDurationDenominator(dateIncrement).unit;
         } else {
           dateAlignment = unit;
@@ -30284,7 +49862,7 @@ class DateProfileGenerator {
         dateAlignment = unit;
       }
     }
-    if (asRoughDays(duration) <= 1) {
+    if (asRoughDays(duration2) <= 1) {
       if (this.isHiddenDay(start)) {
         start = this.skipHiddenDays(start, direction);
         start = startOfDay(start);
@@ -30292,7 +49870,7 @@ class DateProfileGenerator {
     }
     function computeRes() {
       start = dateEnv.startOf(date, dateAlignment);
-      end = dateEnv.add(start, duration);
+      end = dateEnv.add(start, duration2);
       res = { start, end };
     }
     computeRes();
@@ -30462,15 +50040,15 @@ function expandRecurring(eventStore, framingRange, context) {
   for (let defId in defs) {
     let def = defs[defId];
     if (def.recurringDef) {
-      let { duration } = def.recurringDef;
-      if (!duration) {
-        duration = def.allDay ? options.defaultAllDayEventDuration : options.defaultTimedEventDuration;
+      let { duration: duration2 } = def.recurringDef;
+      if (!duration2) {
+        duration2 = def.allDay ? options.defaultAllDayEventDuration : options.defaultTimedEventDuration;
       }
-      let starts = expandRecurringRanges(def, duration, framingRange, dateEnv, pluginHooks.recurringTypes);
+      let starts = expandRecurringRanges(def, duration2, framingRange, dateEnv, pluginHooks.recurringTypes);
       for (let start of starts) {
         let instance = createEventInstance(defId, {
           start,
-          end: dateEnv.add(start, duration)
+          end: dateEnv.add(start, duration2)
         });
         instances[instance.instanceId] = instance;
       }
@@ -30478,10 +50056,10 @@ function expandRecurring(eventStore, framingRange, context) {
   }
   return { defs, instances };
 }
-function expandRecurringRanges(eventDef, duration, framingRange, dateEnv, recurringTypes) {
+function expandRecurringRanges(eventDef, duration2, framingRange, dateEnv, recurringTypes) {
   let typeDef = recurringTypes[eventDef.recurringDef.typeId];
   let markers = typeDef.expand(eventDef.recurringDef.typeData, {
-    start: dateEnv.subtract(framingRange.start, duration),
+    start: dateEnv.subtract(framingRange.start, duration2),
     end: framingRange.end
   }, dateEnv);
   if (eventDef.allDay) {
@@ -31930,7 +51508,7 @@ class CalendarRoot extends BaseComponent {
     let { options } = props;
     let { forPrint } = this.state;
     let isHeightAuto = forPrint || options.height === "auto" || options.contentHeight === "auto";
-    let height = !isHeightAuto && options.height != null ? options.height : "";
+    let height2 = !isHeightAuto && options.height != null ? options.height : "";
     let classNames = [
       "fc",
       forPrint ? "fc-media-print" : "fc-media-screen",
@@ -31940,7 +51518,7 @@ class CalendarRoot extends BaseComponent {
     if (!getCanVGrowWithinCell()) {
       classNames.push("fc-liquid-hack");
     }
-    return props.children(classNames, height, isHeightAuto, forPrint);
+    return props.children(classNames, height2, isHeightAuto, forPrint);
   }
   componentDidMount() {
     let { emitter } = this.props;
@@ -32369,13 +51947,13 @@ class Splitter {
     let eventStores = this.splitEventStore(props.eventStore, defKeys);
     let eventDrags = this.splitEventDrag(props.eventDrag);
     let eventResizes = this.splitEventResize(props.eventResize);
-    let splitProps = {};
+    let splitProps2 = {};
     this.eventUiBuilders = mapHash(keyInfos, (info, key) => this.eventUiBuilders[key] || memoize(buildEventUiForKey));
     for (let key in keyInfos) {
       let keyInfo = keyInfos[key];
       let eventStore = eventStores[key] || EMPTY_EVENT_STORE;
       let buildEventUi = this.eventUiBuilders[key];
-      splitProps[key] = {
+      splitProps2[key] = {
         businessHours: keyInfo.businessHours || props.businessHours,
         dateSelection: dateSelections[key] || null,
         eventStore,
@@ -32385,7 +51963,7 @@ class Splitter {
         eventResize: eventResizes[key] || null
       };
     }
-    return splitProps;
+    return splitProps2;
   }
   _splitDateSpan(dateSpan) {
     let dateSpans = {};
@@ -32852,14 +52430,14 @@ function groupIntersectingEntries(entries) {
       span: entry.span,
       entries: [entry]
     };
-    for (let merge of merges) {
-      if (intersectSpans(merge.span, hungryMerge.span)) {
+    for (let merge2 of merges) {
+      if (intersectSpans(merge2.span, hungryMerge.span)) {
         hungryMerge = {
-          entries: merge.entries.concat(hungryMerge.entries),
-          span: joinSpans(merge.span, hungryMerge.span)
+          entries: merge2.entries.concat(hungryMerge.entries),
+          span: joinSpans(merge2.span, hungryMerge.span)
         };
       } else {
-        filteredMerges.push(merge);
+        filteredMerges.push(merge2);
       }
     }
     filteredMerges.push(hungryMerge);
@@ -33829,7 +53407,7 @@ function renderInner(innerProps) {
   return innerProps.text;
 }
 const PADDING_FROM_VIEWPORT = 10;
-class Popover extends BaseComponent {
+class Popover2 extends BaseComponent {
   constructor() {
     super(...arguments);
     this.state = {
@@ -33928,7 +53506,7 @@ class MorePopover extends DateComponent {
     let { startDate, todayRange, dateProfile } = props;
     let title = dateEnv.format(startDate, options.dayPopoverFormat);
     return createElement$1(DayCellContainer, { elRef: this.handleRootEl, date: startDate, dateProfile, todayRange }, (InnerContent, renderProps, elAttrs) => createElement$1(
-      Popover,
+      Popover2,
       { elRef: elAttrs.ref, id: props.id, title, extraClassNames: ["fc-more-popover"].concat(elAttrs.className || []), extraAttrs: elAttrs, parentEl: props.parentEl, alignmentEl: props.alignmentEl, alignGridTop: props.alignGridTop, onClose: props.onClose },
       hasCustomDayCellContent(options) && createElement$1(InnerContent, { elTag: "div", elClasses: ["fc-more-popover-misc"] }),
       props.children
@@ -34461,14 +54039,14 @@ function buildViewSpecs(defaultInputs, optionOverrides, dynamicOptionOverrides, 
 }
 function buildViewSpec(viewDef, overrideConfigs, optionOverrides, dynamicOptionOverrides, localeDefaults) {
   let durationInput = viewDef.overrides.duration || viewDef.defaults.duration || dynamicOptionOverrides.duration || optionOverrides.duration;
-  let duration = null;
+  let duration2 = null;
   let durationUnit = "";
   let singleUnit = "";
   let singleUnitOverrides = {};
   if (durationInput) {
-    duration = createDurationCached(durationInput);
-    if (duration) {
-      let denom = greatestDurationDenominator(duration);
+    duration2 = createDurationCached(durationInput);
+    if (duration2) {
+      let denom = greatestDurationDenominator(duration2);
       durationUnit = denom.unit;
       if (denom.value === 1) {
         singleUnit = durationUnit;
@@ -34507,7 +54085,7 @@ function buildViewSpec(viewDef, overrideConfigs, optionOverrides, dynamicOptionO
   return {
     type: viewDef.type,
     component: viewDef.component,
-    duration,
+    duration: duration2,
     durationUnit,
     singleUnit,
     optionDefaults: viewDef.defaults,
@@ -35011,16 +54589,16 @@ let recurring = {
         startRecur: refined.startRecur ? dateEnv.createMarker(refined.startRecur) : null,
         endRecur: refined.endRecur ? dateEnv.createMarker(refined.endRecur) : null
       };
-      let duration;
+      let duration2;
       if (refined.duration) {
-        duration = refined.duration;
+        duration2 = refined.duration;
       }
-      if (!duration && refined.startTime && refined.endTime) {
-        duration = subtractDurations(refined.endTime, refined.startTime);
+      if (!duration2 && refined.startTime && refined.endTime) {
+        duration2 = subtractDurations(refined.endTime, refined.startTime);
       }
       return {
         allDayGuess: Boolean(!refined.startTime && !refined.endTime),
-        duration,
+        duration: duration2,
         typeData: recurringData
         // doesn't need endTime anymore but oh well
       };
@@ -35628,11 +55206,11 @@ class ToolbarSection extends BaseComponent {
       } else {
         let isPressed = buttonName === props.activeButton;
         let isDisabled = !props.isTodayEnabled && buttonName === "today" || !props.isPrevEnabled && buttonName === "prev" || !props.isNextEnabled && buttonName === "next";
-        let buttonClasses = [`fc-${buttonName}-button`, theme.getClass("button")];
+        let buttonClasses2 = [`fc-${buttonName}-button`, theme.getClass("button")];
         if (isPressed) {
-          buttonClasses.push(theme.getClass("buttonActive"));
+          buttonClasses2.push(theme.getClass("buttonActive"));
         }
-        children.push(createElement$1("button", { type: "button", title: typeof buttonHint === "function" ? buttonHint(props.navUnit) : buttonHint, disabled: isDisabled, "aria-pressed": isPressed, className: buttonClasses.join(" "), onClick: buttonClick }, buttonText || (buttonIcon ? createElement$1("span", { className: buttonIcon, role: "img" }) : "")));
+        children.push(createElement$1("button", { type: "button", title: typeof buttonHint === "function" ? buttonHint(props.navUnit) : buttonHint, disabled: isDisabled, "aria-pressed": isPressed, className: buttonClasses2.join(" "), onClick: buttonClick }, buttonText || (buttonIcon ? createElement$1("span", { className: buttonIcon, role: "img" }) : "")));
       }
     }
     if (children.length > 1) {
@@ -35642,7 +55220,7 @@ class ToolbarSection extends BaseComponent {
     return children[0];
   }
 }
-class Toolbar extends BaseComponent {
+class Toolbar2 extends BaseComponent {
   render() {
     let { model, extraClassName } = this.props;
     let forceLtr = false;
@@ -35703,18 +55281,18 @@ class ViewHarness extends BaseComponent {
       aspectRatio || props.liquid || props.height ? "fc-view-harness-active" : "fc-view-harness-passive"
       // let the view do the height
     ];
-    let height = "";
+    let height2 = "";
     let paddingBottom = "";
     if (aspectRatio) {
       if (state.availableWidth !== null) {
-        height = state.availableWidth / aspectRatio;
+        height2 = state.availableWidth / aspectRatio;
       } else {
         paddingBottom = `${1 / aspectRatio * 100}%`;
       }
     } else {
-      height = props.height || "";
+      height2 = props.height || "";
     }
-    return createElement$1("div", { "aria-labelledby": props.labeledById, ref: this.handleEl, className: classNames.join(" "), style: { height, paddingBottom } }, props.children);
+    return createElement$1("div", { "aria-labelledby": props.labeledById, ref: this.handleEl, className: classNames.join(" "), style: { height: height2, paddingBottom } }, props.children);
   }
   componentDidMount() {
     this.context.addResizeHandler(this.handleResize);
@@ -35881,14 +55459,14 @@ class CalendarContent extends PureComponent {
     return createElement$1(
       ViewContextType.Provider,
       { value: viewContext },
-      toolbarConfig.header && createElement$1(Toolbar, Object.assign({ ref: this.headerRef, extraClassName: "fc-header-toolbar", model: toolbarConfig.header, titleId: viewLabelId }, toolbarProps)),
+      toolbarConfig.header && createElement$1(Toolbar2, Object.assign({ ref: this.headerRef, extraClassName: "fc-header-toolbar", model: toolbarConfig.header, titleId: viewLabelId }, toolbarProps)),
       createElement$1(
         ViewHarness,
         { liquid: viewVGrow, height: viewHeight, aspectRatio: viewAspectRatio, labeledById: viewLabelId },
         this.renderView(props),
         this.buildAppendContent()
       ),
-      toolbarConfig.footer && createElement$1(Toolbar, Object.assign({ ref: this.footerRef, extraClassName: "fc-footer-toolbar", model: toolbarConfig.footer, titleId: "" }, toolbarProps))
+      toolbarConfig.footer && createElement$1(Toolbar2, Object.assign({ ref: this.footerRef, extraClassName: "fc-footer-toolbar", model: toolbarConfig.footer, titleId: "" }, toolbarProps))
     );
   }
   componentDidMount() {
@@ -35984,9 +55562,9 @@ let Calendar$1 = class Calendar extends CalendarImpl {
         this.isRendered = true;
         let { currentData } = this;
         flushSync(() => {
-          render(createElement$1(CalendarRoot, { options: currentData.calendarOptions, theme: currentData.theme, emitter: currentData.emitter }, (classNames, height, isHeightAuto, forPrint) => {
+          render(createElement$1(CalendarRoot, { options: currentData.calendarOptions, theme: currentData.theme, emitter: currentData.emitter }, (classNames, height2, isHeightAuto, forPrint) => {
             this.setClassNames(classNames);
-            this.setHeight(height);
+            this.setHeight(height2);
             return createElement$1(
               RenderId.Provider,
               { value: this.customContentRenderId },
@@ -36060,8 +55638,8 @@ let Calendar$1 = class Calendar extends CalendarImpl {
       this.currentClassNames = classNames;
     }
   }
-  setHeight(height) {
-    applyStyleProp(this.el, "height", height);
+  setHeight(height2) {
+    applyStyleProp(this.el, "height", height2);
   }
 };
 function formatDate$3(dateInput, options = {}) {
@@ -36364,7 +55942,7 @@ function compileSegs(singlePlacements) {
   return { allSegs, invisibleSegs };
 }
 const DEFAULT_WEEK_NUM_FORMAT$1 = createFormatter({ week: "narrow" });
-class TableCell extends DateComponent {
+class TableCell2 extends DateComponent {
   constructor() {
     super(...arguments);
     this.rootElRef = createRef();
@@ -36689,7 +56267,7 @@ class TableRow extends DateComponent {
       props.cells.map((cell, col) => {
         let normalFgNodes = this.renderFgSegs(col, props.forPrint ? singleColPlacements[col] : multiColPlacements[col], props.todayRange, isForcedInvisible);
         let mirrorFgNodes = this.renderFgSegs(col, buildMirrorPlacements(mirrorSegsByCol[col], multiColPlacements), props.todayRange, {}, Boolean(props.eventDrag), Boolean(props.eventResize), false);
-        return createElement$1(TableCell, { key: cell.key, elRef: this.cellElRefs.createRef(cell.key), innerElRef: this.frameElRefs.createRef(cell.key), dateProfile: props.dateProfile, date: cell.date, showDayNumber: props.showDayNumbers, showWeekNumber: props.showWeekNumbers && col === 0, forceDayTop: props.showWeekNumbers, todayRange: props.todayRange, eventSelection: props.eventSelection, eventDrag: props.eventDrag, eventResize: props.eventResize, extraRenderProps: cell.extraRenderProps, extraDataAttrs: cell.extraDataAttrs, extraClassNames: cell.extraClassNames, extraDateSpan: cell.extraDateSpan, moreCnt: moreCnts[col], moreMarginTop: moreMarginTops[col], singlePlacements: singleColPlacements[col], fgContentElRef: this.fgElRefs.createRef(cell.key), fgContent: (
+        return createElement$1(TableCell2, { key: cell.key, elRef: this.cellElRefs.createRef(cell.key), innerElRef: this.frameElRefs.createRef(cell.key), dateProfile: props.dateProfile, date: cell.date, showDayNumber: props.showDayNumbers, showWeekNumber: props.showWeekNumbers && col === 0, forceDayTop: props.showWeekNumbers, todayRange: props.todayRange, eventSelection: props.eventSelection, eventDrag: props.eventDrag, eventResize: props.eventResize, extraRenderProps: cell.extraRenderProps, extraDataAttrs: cell.extraDataAttrs, extraClassNames: cell.extraClassNames, extraDateSpan: cell.extraDateSpan, moreCnt: moreCnts[col], moreMarginTop: moreMarginTops[col], singlePlacements: singleColPlacements[col], fgContentElRef: this.fgElRefs.createRef(cell.key), fgContent: (
           // Fragment scopes the keys
           createElement$1(
             Fragment$2,
@@ -36835,8 +56413,8 @@ class TableRow extends DateComponent {
     let segElMap = this.segHarnessRefs.currentMap;
     let segHeights = {};
     for (let segUid in segElMap) {
-      let height = Math.round(segElMap[segUid].getBoundingClientRect().height);
-      segHeights[segUid] = Math.max(segHeights[segUid] || 0, height);
+      let height2 = Math.round(segElMap[segUid].getBoundingClientRect().height);
+      segHeights[segUid] = Math.max(segHeights[segUid] || 0, height2);
     }
     return segHeights;
   }
@@ -37567,10 +57145,10 @@ class TimeColsSlatsCoords {
   // Computes the top coordinate, relative to the bounds of the grid, of the given time (a Duration).
   // This is a makeshify way to compute the time-top. Assumes all slatMetas dates are uniform.
   // Eventually allow computation with arbirary slat dates.
-  computeTimeTop(duration) {
+  computeTimeTop(duration2) {
     let { positions, dateProfile } = this;
     let len = positions.els.length;
-    let slatCoverage = (duration.milliseconds - asRoughMs(dateProfile.slotMinTime)) / asRoughMs(this.slotDuration);
+    let slatCoverage = (duration2.milliseconds - asRoughMs(dateProfile.slotMinTime)) / asRoughMs(this.slotDuration);
     let slatIndex;
     let slatRemainder;
     slatCoverage = Math.max(0, slatCoverage);
@@ -38336,14 +57914,14 @@ class DayTimeColsView extends TimeColsView {
     let { props } = this;
     let { dateProfile } = props;
     let dayTableModel = this.buildTimeColsModel(dateProfile, dateProfileGenerator);
-    let splitProps = this.allDaySplitter.splitProps(props);
+    let splitProps2 = this.allDaySplitter.splitProps(props);
     let slatMetas = this.buildSlatMetas(dateProfile.slotMinTime, dateProfile.slotMaxTime, options.slotLabelInterval, options.slotDuration, dateEnv);
     let { dayMinWidth } = options;
     let hasAttachedAxis = !dayMinWidth;
     let hasDetachedAxis = dayMinWidth;
     let headerContent = options.dayHeaders && createElement$1(DayHeader, { dates: dayTableModel.headerDates, dateProfile, datesRepDistinctDays: true, renderIntro: hasAttachedAxis ? this.renderHeadAxis : null });
-    let allDayContent = options.allDaySlot !== false && ((contentArg) => createElement$1(DayTable, Object.assign({}, splitProps.allDay, { dateProfile, dayTableModel, nextDayThreshold: options.nextDayThreshold, tableMinWidth: contentArg.tableMinWidth, colGroupNode: contentArg.tableColGroupNode, renderRowIntro: hasAttachedAxis ? this.renderTableRowAxis : null, showWeekNumbers: false, expandRows: false, headerAlignElRef: this.headerElRef, clientWidth: contentArg.clientWidth, clientHeight: contentArg.clientHeight, forPrint: props.forPrint }, this.getAllDayMaxEventProps())));
-    let timeGridContent = (contentArg) => createElement$1(DayTimeCols, Object.assign({}, splitProps.timed, { dayTableModel, dateProfile, axis: hasAttachedAxis, slotDuration: options.slotDuration, slatMetas, forPrint: props.forPrint, tableColGroupNode: contentArg.tableColGroupNode, tableMinWidth: contentArg.tableMinWidth, clientWidth: contentArg.clientWidth, clientHeight: contentArg.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: contentArg.expandRows, onScrollTopRequest: this.handleScrollTopRequest }));
+    let allDayContent = options.allDaySlot !== false && ((contentArg) => createElement$1(DayTable, Object.assign({}, splitProps2.allDay, { dateProfile, dayTableModel, nextDayThreshold: options.nextDayThreshold, tableMinWidth: contentArg.tableMinWidth, colGroupNode: contentArg.tableColGroupNode, renderRowIntro: hasAttachedAxis ? this.renderTableRowAxis : null, showWeekNumbers: false, expandRows: false, headerAlignElRef: this.headerElRef, clientWidth: contentArg.clientWidth, clientHeight: contentArg.clientHeight, forPrint: props.forPrint }, this.getAllDayMaxEventProps())));
+    let timeGridContent = (contentArg) => createElement$1(DayTimeCols, Object.assign({}, splitProps2.timed, { dayTableModel, dateProfile, axis: hasAttachedAxis, slotDuration: options.slotDuration, slatMetas, forPrint: props.forPrint, tableColGroupNode: contentArg.tableColGroupNode, tableMinWidth: contentArg.tableMinWidth, clientWidth: contentArg.clientWidth, clientHeight: contentArg.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: contentArg.expandRows, onScrollTopRequest: this.handleScrollTopRequest }));
     return hasDetachedAxis ? this.renderHScrollLayout(headerContent, allDayContent, timeGridContent, dayTableModel.colCnt, dayMinWidth, slatMetas, this.state.slatCoords) : this.renderSimpleLayout(headerContent, allDayContent, timeGridContent);
   }
 }
@@ -38869,7 +58447,7 @@ const TestimonialsCarousel = () => {
     });
   };
   const renderStars = (rating) => {
-    return Array.from({ length: 5 }, (_, index2) => /* @__PURE__ */ jsx(
+    return Array.from({ length: 5 }, (_2, index2) => /* @__PURE__ */ jsx(
       Star,
       {
         className: `w-3 h-3 md:w-4 md:h-4 transition-colors ${index2 < rating ? "text-yellow-400 fill-current" : "text-gray-300"}`
@@ -38917,7 +58495,7 @@ const TestimonialsCarousel = () => {
                 children: /* @__PURE__ */ jsx(ChevronLeft, { className: "h-4 w-4 md:h-5 md:w-5 text-gray-600 group-hover:text-red-600 transition-colors" })
               }
             ),
-            /* @__PURE__ */ jsx("div", { className: "flex space-x-1.5 md:space-x-2", children: Array.from({ length: testimonials.length - 3 }, (_, index2) => /* @__PURE__ */ jsx(
+            /* @__PURE__ */ jsx("div", { className: "flex space-x-1.5 md:space-x-2", children: Array.from({ length: testimonials.length - 3 }, (_2, index2) => /* @__PURE__ */ jsx(
               "button",
               {
                 onClick: () => setCurrentSlide(index2),
@@ -39023,12 +58601,12 @@ function Acceuil({ auth, seo }) {
               ] })
             ] }),
             /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 md:gap-4", children: [
-              /* @__PURE__ */ jsx("a", { href: createUrl, className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button, { className: "w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 group", children: [
+              /* @__PURE__ */ jsx("a", { href: createUrl, className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 group", children: [
                 "Publier une annonce",
                 /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" })
               ] }) }),
               /* @__PURE__ */ jsx("a", { href: "/contact", className: "w-full sm:w-auto", children: /* @__PURE__ */ jsx(
-                Button,
+                Button2,
                 {
                   variant: "outline",
                   className: "w-full sm:w-auto border-white/20 text-white hover:bg-white hover:text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium transition-all duration-300 bg-transparent backdrop-blur-sm",
@@ -39094,7 +58672,7 @@ function Acceuil({ auth, seo }) {
               /* @__PURE__ */ jsx("p", { children: "Notre plateforme digitale vous permet de publier vos annonces en quelques clics, avec la garantie d'une conformité totale aux exigences légales marocaines." })
             ] })
           ] }),
-          /* @__PURE__ */ jsx("a", { href: indexUrl, className: "inline-block", children: /* @__PURE__ */ jsxs(Button, { className: "w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium shadow-lg shadow-red-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 group", children: [
+          /* @__PURE__ */ jsx("a", { href: indexUrl, className: "inline-block", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium shadow-lg shadow-red-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 group", children: [
             "En savoir plus",
             /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" })
           ] }) })
@@ -39197,7 +58775,7 @@ function Acceuil({ auth, seo }) {
               "."
             ] }),
             /* @__PURE__ */ jsx("p", { className: "text-base md:text-lg lg:text-xl text-gray-300 leading-relaxed max-w-3xl", children: "Publiez votre annonce légale en ligne rapidement et en toute conformité, où que vous soyez au Maroc. Notre journal d'annonces légales vous simplifie la vie." }),
-            /* @__PURE__ */ jsx("a", { href: indexUrl, className: "inline-block", children: /* @__PURE__ */ jsxs(Button, { className: "w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium shadow-lg shadow-red-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 group", children: [
+            /* @__PURE__ */ jsx("a", { href: indexUrl, className: "inline-block", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white px-6 md:px-8 py-3 md:py-4 rounded-lg text-base md:text-lg font-medium shadow-lg shadow-red-500/25 transition-all duration-300 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 group", children: [
               "Commencer maintenant",
               /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-x-1 transition-transform" })
             ] }) })
@@ -39549,12 +59127,12 @@ function WepressEcoLanding({ auth }) {
           ] }),
           /* @__PURE__ */ jsx("p", { className: "text-xl text-gray-300 leading-relaxed", children: "Besoin de publier une annonce légale ? Faites-le en ligne, où que vous soyez au Maroc, en quelques clics seulement. C'est simple, rapide, 100% conforme, et vous recevez votre attestation officielle pour seulement 100 DH TTC. Que ce soit pour créer, modifier ou liquider une société, ou pour toute autre démarche légale, on s'occupe de tout, sans prise de tête." }),
           /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-4 pt-6", children: [
-            /* @__PURE__ */ jsxs(Button, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-6 px-8 rounded-xl text-lg font-semibold shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect", children: [
+            /* @__PURE__ */ jsxs(Button2, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-6 px-8 rounded-xl text-lg font-semibold shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect", children: [
               "Publier une annonce",
               /* @__PURE__ */ jsx(ArrowRight, { className: "h-5 w-5 ml-1 animate-pulse" })
             ] }),
             /* @__PURE__ */ jsx(
-              Button,
+              Button2,
               {
                 variant: "outline",
                 className: "btn-3d pressable border-white text-white hover:bg-white hover:text-slate-800 py-6 px-8 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105",
@@ -39624,7 +59202,7 @@ function WepressEcoLanding({ auth }) {
             /* @__PURE__ */ jsx("p", { children: "que ce soit pour la création d'une société, sa modification, sa dissolution, ou tout autre acte juridique nécessitant une publication officielle. Notre plateforme digitale vous permet de publier vos annonces en quelques clics, avec la garantie d'une conformité totale aux exigences légales." }),
             /* @__PURE__ */ jsx("p", { children: "Avec Wepress Eco, fini les déplacements et les longues attentes. Tout se fait en ligne, rapidement et en toute sécurité, pour que vous puissiez vous concentrer sur l'essentiel : votre activité." })
           ] }),
-          /* @__PURE__ */ jsx("div", { className: "pt-6", children: /* @__PURE__ */ jsxs(Button, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 px-8 rounded-xl text-lg font-semibold shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 layered-shadow shine-effect", children: [
+          /* @__PURE__ */ jsx("div", { className: "pt-6", children: /* @__PURE__ */ jsxs(Button2, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 px-8 rounded-xl text-lg font-semibold shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 layered-shadow shine-effect", children: [
             "En savoir plus",
             /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-5 w-5" })
           ] }) })
@@ -39673,7 +59251,7 @@ function WepressEcoLanding({ auth }) {
                   /* @__PURE__ */ jsx("span", { className: "text-gray-700", children: "Groupement d'Intérêt Économique (GIE)" })
                 ] })
               ] }),
-              /* @__PURE__ */ jsxs(Button, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 px-6 rounded-xl font-medium shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect w-full", children: [
+              /* @__PURE__ */ jsxs(Button2, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 px-6 rounded-xl font-medium shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect w-full", children: [
                 "Publier une annonce",
                 /* @__PURE__ */ jsx(ArrowRight, { className: "h-5 w-5" })
               ] })
@@ -39711,7 +59289,7 @@ function WepressEcoLanding({ auth }) {
                   /* @__PURE__ */ jsx("span", { className: "text-gray-700", children: "Changement d'objet social" })
                 ] })
               ] }),
-              /* @__PURE__ */ jsxs(Button, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 px-6 rounded-xl font-medium shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect w-full", children: [
+              /* @__PURE__ */ jsxs(Button2, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 px-6 rounded-xl font-medium shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect w-full", children: [
                 "Publier une annonce",
                 /* @__PURE__ */ jsx(ArrowRight, { className: "h-5 w-5" })
               ] })
@@ -39753,7 +59331,7 @@ function WepressEcoLanding({ auth }) {
                   /* @__PURE__ */ jsx("span", { className: "text-gray-700", children: "Avis administratif" })
                 ] })
               ] }),
-              /* @__PURE__ */ jsxs(Button, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 px-6 rounded-xl font-medium shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect w-full", children: [
+              /* @__PURE__ */ jsxs(Button2, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 px-6 rounded-xl font-medium shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect w-full", children: [
                 "Publier une annonce",
                 /* @__PURE__ */ jsx(ArrowRight, { className: "h-5 w-5" })
               ] })
@@ -39811,7 +59389,7 @@ function WepressEcoLanding({ auth }) {
               /* @__PURE__ */ jsx("span", { className: "font-semibold text-white", children: "publier une annonce légale" }),
               " en toute simplicité."
             ] }),
-            /* @__PURE__ */ jsx("div", { className: "pt-6", children: /* @__PURE__ */ jsxs(Button, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-6 px-10 rounded-xl text-lg font-semibold shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect", children: [
+            /* @__PURE__ */ jsx("div", { className: "pt-6", children: /* @__PURE__ */ jsxs(Button2, { className: "btn-3d pressable bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-6 px-10 rounded-xl text-lg font-semibold shadow-lg shadow-red-500/20 transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-red-500/30 flex items-center justify-center gap-2 shine-effect", children: [
               "Commencer maintenant",
               /* @__PURE__ */ jsx(ArrowRight, { className: "h-5 w-5 ml-1 animate-pulse" })
             ] }) })
@@ -40140,7 +59718,7 @@ function ProfileSection({ user, setUser }) {
         ] })
       ] }),
       /* @__PURE__ */ jsx("div", { className: "flex mt-4", children: /* @__PURE__ */ jsx(Link, { href: "/profile", className: "w-full", children: /* @__PURE__ */ jsxs(
-        Button,
+        Button2,
         {
           variant: "outline",
           className: "h-12 rounded-md bg-white/10 border-white/20 hover:bg-white/20 text-white flex items-center justify-center font-medium w-full",
@@ -40159,7 +59737,7 @@ function ProfileSection({ user, setUser }) {
           /* @__PURE__ */ jsx("p", { className: "text-white/80 text-base mt-1", children: "Notre équipe est prête à vous aider avec vos questions" })
         ] })
       ] }),
-      /* @__PURE__ */ jsx("div", { className: "flex justify-center mt-4", children: /* @__PURE__ */ jsx(Link, { href: "/client/ticket/create", className: "w-3/4", children: /* @__PURE__ */ jsxs(Button, { className: "h-12 bg-[#457B9D] hover:bg-[#3D6E8C] text-white font-medium rounded-md flex items-center justify-center gap-2 px-4 w-full transition-all duration-200 shadow-md hover:shadow-xl", children: [
+      /* @__PURE__ */ jsx("div", { className: "flex justify-center mt-4", children: /* @__PURE__ */ jsx(Link, { href: "/client/ticket/create", className: "w-3/4", children: /* @__PURE__ */ jsxs(Button2, { className: "h-12 bg-[#457B9D] hover:bg-[#3D6E8C] text-white font-medium rounded-md flex items-center justify-center gap-2 px-4 w-full transition-all duration-200 shadow-md hover:shadow-xl", children: [
         /* @__PURE__ */ jsx(Send, { className: "w-5 h-5" }),
         /* @__PURE__ */ jsx("span", { className: "inline", children: "Envoyer un Ticket" })
       ] }) }) })
@@ -40723,7 +60301,7 @@ const Textarea = React.forwardRef(({ className, ...props }, ref) => {
   );
 });
 Textarea.displayName = "Textarea";
-const Checkbox = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
+const Checkbox2 = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ jsx(
   CheckboxPrimitive.Root,
   {
     ref,
@@ -40741,7 +60319,7 @@ const Checkbox = React.forwardRef(({ className, ...props }, ref) => /* @__PURE__
     )
   }
 ));
-Checkbox.displayName = CheckboxPrimitive.Root.displayName;
+Checkbox2.displayName = CheckboxPrimitive.Root.displayName;
 const alertVariants = cva(
   "relative w-full rounded-lg border p-4 [&>svg~*]:pl-7 [&>svg+div]:translate-y-[-3px] [&>svg]:absolute [&>svg]:left-4 [&>svg]:top-4 [&>svg]:text-foreground",
   {
@@ -41107,7 +60685,7 @@ function WePressContactPage({ auth, seo }) {
             /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
               /* @__PURE__ */ jsxs("div", { className: "flex items-start space-x-4 p-4 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-colors duration-200", children: [
                 /* @__PURE__ */ jsx(
-                  Checkbox,
+                  Checkbox2,
                   {
                     id: "terms",
                     checked: formData.acceptTerms,
@@ -41153,7 +60731,7 @@ function WePressContactPage({ auth, seo }) {
               ] })
             ] }),
             /* @__PURE__ */ jsx(
-              Button,
+              Button2,
               {
                 type: "submit",
                 disabled: isSubmitting,
@@ -41272,7 +60850,7 @@ function BankInfoPage({ auth }) {
                 "Détails du compte"
               ] }),
               /* @__PURE__ */ jsx(
-                Button,
+                Button2,
                 {
                   onClick: copyAllBankDetails,
                   variant: "outline",
@@ -41302,7 +60880,7 @@ function BankInfoPage({ auth }) {
                       /* @__PURE__ */ jsx("p", { className: "font-bold text-gray-900 text-lg break-all pl-11", children: detail.value })
                     ] }),
                     /* @__PURE__ */ jsx(
-                      Button,
+                      Button2,
                       {
                         onClick: () => copyToClipboard2(detail.value, detail.label),
                         variant: "ghost",
@@ -41344,7 +60922,7 @@ function BankInfoPage({ auth }) {
               ] })
             ] }),
             /* @__PURE__ */ jsx("div", { className: "mt-10 pt-8 border-t border-gray-200", children: /* @__PURE__ */ jsx("a", { href: route("client.ticket.index"), children: /* @__PURE__ */ jsxs(
-              Button,
+              Button2,
               {
                 className: "w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]",
                 children: [
@@ -43287,7 +62865,7 @@ const PaiementConfirmation = ({ annonce, auth }) => {
                 onClick: handleRetourAnnonces,
                 className: "w-full sm:w-auto flex items-center justify-center px-6 py-3 bg-[#0F172A] text-white font-medium rounded-lg hover:bg-[#0F172A]/90 transition-colors duration-200",
                 children: [
-                  /* @__PURE__ */ jsx(List, { className: "h-4 w-4 mr-2" }),
+                  /* @__PURE__ */ jsx(List$1, { className: "h-4 w-4 mr-2" }),
                   "Mes annonces"
                 ]
               }
@@ -43587,7 +63165,7 @@ function UserAnnoncesPage({ annonces, auth }) {
           /* @__PURE__ */ jsx("h2", { className: "text-xl sm:text-2xl md:text-3xl font-bold text-black mb-1 sm:mb-2", children: "Mes annonces légales" }),
           /* @__PURE__ */ jsx("p", { className: "text-black/80 max-w-2xl text-xs sm:text-sm", children: "Gérez vos annonces légales, suivez leur statut et téléchargez les documents associés." })
         ] }),
-        /* @__PURE__ */ jsx(Link, { href: "#", className: "block shrink-0", children: /* @__PURE__ */ jsxs(Button, { className: "bg-red-600 hover:bg-red-700 text-white py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto justify-center", children: [
+        /* @__PURE__ */ jsx(Link, { href: "#", className: "block shrink-0", children: /* @__PURE__ */ jsxs(Button2, { className: "bg-red-600 hover:bg-red-700 text-white py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto justify-center", children: [
           /* @__PURE__ */ jsx("span", { children: "Publier une annonce légale" }),
           /* @__PURE__ */ jsx(ArrowUpRight, { className: "w-3.5 h-3.5 sm:w-4 sm:h-4" })
         ] }) })
@@ -43603,7 +63181,7 @@ function UserAnnoncesPage({ annonces, auth }) {
             /* @__PURE__ */ jsxs("div", { className: "relative md:col-span-6", children: [
               /* @__PURE__ */ jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-3.5 w-3.5 sm:h-4 sm:w-4" }),
               /* @__PURE__ */ jsx(
-                Input,
+                Input2,
                 {
                   type: "text",
                   placeholder: "Rechercher par titre, RC ou catégorie...",
@@ -43850,7 +63428,7 @@ function UserAnnoncesPage({ annonces, auth }) {
                   ]
                 }
               ),
-              /* @__PURE__ */ jsx("div", { className: "hidden sm:flex space-x-1", children: Array.from({ length: annonces.last_page }, (_, i2) => i2 + 1).map((page) => {
+              /* @__PURE__ */ jsx("div", { className: "hidden sm:flex space-x-1", children: Array.from({ length: annonces.last_page }, (_2, i2) => i2 + 1).map((page) => {
                 if (page === 1 || page === annonces.last_page || page >= annonces.current_page - 1 && page <= annonces.current_page + 1) {
                   return /* @__PURE__ */ jsx(
                     Link,
@@ -43910,7 +63488,7 @@ function UserAnnoncesPage({ annonces, auth }) {
             /* @__PURE__ */ jsx("p", { className: "text-gray-500 max-w-md mx-auto mb-6 sm:mb-8 text-sm sm:text-base", children: "Nous n'avons trouvé aucune annonce légale correspondant à vos critères de recherche. Essayez d'ajuster vos filtres ou créez une nouvelle annonce légale." }),
             /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center", children: [
               /* @__PURE__ */ jsxs(
-                Button,
+                Button2,
                 {
                   onClick: clearSearch,
                   className: "bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm justify-center",
@@ -43920,7 +63498,7 @@ function UserAnnoncesPage({ annonces, auth }) {
                   ]
                 }
               ),
-              /* @__PURE__ */ jsx(Link, { href: "#", className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#1a2a4b] hover:bg-[#08203f] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm w-full justify-center", children: [
+              /* @__PURE__ */ jsx(Link, { href: "#", className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button2, { className: "bg-[#1a2a4b] hover:bg-[#08203f] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm w-full justify-center", children: [
                 /* @__PURE__ */ jsx("span", { children: "Créer une nouvelle annonce légale" }),
                 /* @__PURE__ */ jsx(ChevronRight, { className: "h-3.5 w-3.5 sm:h-4 sm:w-4" })
               ] }) })
@@ -44036,7 +63614,7 @@ function SuccessPopupDetailed({
                 ]
               }
             ),
-            /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("a", { href: redirectUrl, className: "block w-full", children: /* @__PURE__ */ jsxs(Button, { className: "w-full py-3 bg-green-600 hover:bg-[#1a2a4b] text-white rounded-lg flex items-center justify-center transition-colors", children: [
+            /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsx("a", { href: redirectUrl, className: "block w-full", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full py-3 bg-green-600 hover:bg-[#1a2a4b] text-white rounded-lg flex items-center justify-center transition-colors", children: [
               redirectLabel,
               /* @__PURE__ */ jsx(ArrowRight, { className: "ml-2 h-4 w-4" })
             ] }) }) }),
@@ -44164,7 +63742,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
               /* @__PURE__ */ jsxs("div", { children: [
                 /* @__PURE__ */ jsx("label", { className: "block text-[#1a2a4b] font-medium mb-1 sm:mb-2 text-sm sm:text-base", children: "Titre" }),
                 /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     type: "text",
                     value: data.title,
@@ -44184,7 +63762,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
                     "Nom de l'entreprise"
                   ] }),
                   /* @__PURE__ */ jsx(
-                    Input,
+                    Input2,
                     {
                       type: "text",
                       value: data.nameSociete,
@@ -44200,7 +63778,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
                     "RC"
                   ] }),
                   /* @__PURE__ */ jsx(
-                    Input,
+                    Input2,
                     {
                       type: "text",
                       value: data.RC,
@@ -44255,7 +63833,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
                     "Date de parution"
                   ] }),
                   /* @__PURE__ */ jsx(
-                    Input,
+                    Input2,
                     {
                       type: "date",
                       value: data.date,
@@ -44357,7 +63935,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
               ] }),
               /* @__PURE__ */ jsxs("div", { className: "mt-4 sm:mt-6 space-y-2 sm:space-y-3", children: [
                 /* @__PURE__ */ jsxs(
-                  Button,
+                  Button2,
                   {
                     type: "submit",
                     className: "w-full py-2 sm:py-3 bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors text-xs sm:text-sm",
@@ -44369,7 +63947,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
                   }
                 ),
                 /* @__PURE__ */ jsx(Link, { href: "/mes-annonces-legales", className: "block", children: /* @__PURE__ */ jsxs(
-                  Button,
+                  Button2,
                   {
                     type: "button",
                     variant: "outline",
@@ -44386,7 +63964,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 flex gap-2 lg:hidden z-10", children: [
           /* @__PURE__ */ jsxs(
-            Button,
+            Button2,
             {
               type: "submit",
               className: "flex-1 py-2 bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors text-xs",
@@ -44398,7 +63976,7 @@ function ModifierAnnoncePage({ annonce, auth }) {
             }
           ),
           /* @__PURE__ */ jsx(Link, { href: "/mes-annonces-legales", className: "flex-1", children: /* @__PURE__ */ jsx(
-            Button,
+            Button2,
             {
               type: "button",
               variant: "outline",
@@ -44630,7 +64208,7 @@ function AnnoncesPage({ annonces, auth, seo }) {
           /* @__PURE__ */ jsxs("div", { className: "relative w-full sm:w-1/3", children: [
             /* @__PURE__ */ jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" }),
             /* @__PURE__ */ jsx(
-              Input,
+              Input2,
               {
                 type: "text",
                 placeholder: "Rechercher par titre ou ville...",
@@ -44660,7 +64238,7 @@ function AnnoncesPage({ annonces, auth, seo }) {
             ),
             /* @__PURE__ */ jsx("div", { className: "absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none", children: /* @__PURE__ */ jsx("svg", { className: "h-4 w-4 text-gray-400", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }) }) })
           ] }),
-          /* @__PURE__ */ jsx("div", { className: "w-full sm:w-1/3", children: /* @__PURE__ */ jsx(Link, { href: route("client.annonces.create"), className: "block", children: /* @__PURE__ */ jsxs(Button, { className: "w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2", children: [
+          /* @__PURE__ */ jsx("div", { className: "w-full sm:w-1/3", children: /* @__PURE__ */ jsx(Link, { href: route("client.annonces.create"), className: "block", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg transition-colors flex items-center justify-center gap-2", children: [
             /* @__PURE__ */ jsx("span", { children: "Publier une annonce légale" }),
             /* @__PURE__ */ jsx(
               "svg",
@@ -44723,7 +64301,7 @@ function AnnoncesPage({ annonces, auth, seo }) {
                       annonce.date
                     ] })
                   ] }),
-                  /* @__PURE__ */ jsx(Link, { href: route("annonces.single", annonce.slug), children: /* @__PURE__ */ jsxs(Button, { className: "bg-white border border-[#e63946] hover:bg-red-600 hover:text-white text-red rounded-full flex items-center gap-1.5 transition-all duration-200 px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm hover:shadow group", children: [
+                  /* @__PURE__ */ jsx(Link, { href: route("annonces.single", annonce.slug), children: /* @__PURE__ */ jsxs(Button2, { className: "bg-white border border-[#e63946] hover:bg-red-600 hover:text-white text-red rounded-full flex items-center gap-1.5 transition-all duration-200 px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm hover:shadow group", children: [
                     /* @__PURE__ */ jsx("span", { children: "Consulter" }),
                     /* @__PURE__ */ jsx(ArrowRight, { className: "h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" })
                   ] }) })
@@ -44755,7 +64333,7 @@ function AnnoncesPage({ annonces, auth, seo }) {
           /* @__PURE__ */ jsx("h2", { className: "text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-700", children: "Aucune annonce légale trouvée" }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-500 mb-4 sm:mb-6 text-xs sm:text-sm", children: "Aucune annonce ne correspond à vos critères de recherche. Essayez de modifier vos filtres ou effectuez une nouvelle recherche." }),
           /* @__PURE__ */ jsx(
-            Button,
+            Button2,
             {
               onClick: () => {
                 setSearch("");
@@ -45052,15 +64630,15 @@ const __vite_glob_0_45 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   default: PaymentPage$1
 }, Symbol.toStringTag, { value: "Module" }));
-function SimpleToast({ message, type = "error", isVisible, onClose, duration = 4e3 }) {
+function SimpleToast({ message, type = "error", isVisible, onClose, duration: duration2 = 4e3 }) {
   useEffect(() => {
-    if (isVisible && duration > 0) {
+    if (isVisible && duration2 > 0) {
       const timer = setTimeout(() => {
         onClose();
-      }, duration);
+      }, duration2);
       return () => clearTimeout(timer);
     }
-  }, [isVisible, duration, onClose]);
+  }, [isVisible, duration2, onClose]);
   if (!isVisible) return null;
   const getTypeStyles = () => {
     switch (type) {
@@ -45222,7 +64800,7 @@ function PublierAnnoncePage({
                   "Nom de la société"
                 ] }),
                 /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     type: "text",
                     placeholder: "Entrez le nom de la société",
@@ -45239,7 +64817,7 @@ function PublierAnnoncePage({
                   "RC"
                 ] }),
                 /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     type: "text",
                     placeholder: "Entrez le numéro RC",
@@ -45300,7 +64878,7 @@ function PublierAnnoncePage({
                 "Date de parution"
               ] }),
               /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                Input,
+                Input2,
                 {
                   type: "date",
                   value: data.date,
@@ -45689,7 +65267,7 @@ function SingleAnnonce({ annonce, relatedAnnonces, auth, seo }) {
               ] }),
               /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap items-center gap-2 sm:gap-3", children: [
                 /* @__PURE__ */ jsxs(
-                  Button,
+                  Button2,
                   {
                     variant: "outline",
                     size: "sm",
@@ -45702,7 +65280,7 @@ function SingleAnnonce({ annonce, relatedAnnonces, auth, seo }) {
                   }
                 ),
                 /* @__PURE__ */ jsxs(
-                  Button,
+                  Button2,
                   {
                     variant: "outline",
                     size: "sm",
@@ -45730,7 +65308,7 @@ function SingleAnnonce({ annonce, relatedAnnonces, auth, seo }) {
           ] }) }),
           /* @__PURE__ */ jsx("div", { className: "w-full lg:w-1/3 mt-4 lg:mt-0", children: /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-xl shadow-lg border border-[#0F172A]/10 overflow-hidden lg:sticky lg:top-28", children: [
             /* @__PURE__ */ jsxs("div", { className: "p-4 sm:p-5 bg-[#0F172A] text-white", children: [
-              /* @__PURE__ */ jsx(Link, { href: route("client.annonces.create"), className: "block", children: /* @__PURE__ */ jsxs(Button, { className: "w-full bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors py-3 sm:py-3.5", children: [
+              /* @__PURE__ */ jsx(Link, { href: route("client.annonces.create"), className: "block", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors py-3 sm:py-3.5", children: [
                 /* @__PURE__ */ jsx(PlusCircle, { className: "mr-2 h-4 w-4 sm:h-5 sm:w-5" }),
                 /* @__PURE__ */ jsx("span", { className: "font-medium", children: "Publier une annonce legale" })
               ] }) }),
@@ -45775,7 +65353,7 @@ function SingleAnnonce({ annonce, relatedAnnonces, auth, seo }) {
               ] })
             ] }) }),
             filteredRelatedAnnonces.length > 0 && /* @__PURE__ */ jsx("div", { className: "p-3 sm:p-4 bg-gray-50 border-t border-gray-100", children: /* @__PURE__ */ jsx(Link, { href: `/annonces-legales?category=${annonce.category}`, children: /* @__PURE__ */ jsxs(
-              Button,
+              Button2,
               {
                 variant: "outline",
                 size: "sm",
@@ -46008,7 +65586,7 @@ function AppelsOffresPage({ appelsOffres, auth, seo }) {
           /* @__PURE__ */ jsxs("div", { className: "relative sm:col-span-5", children: [
             /* @__PURE__ */ jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-4 w-4" }),
             /* @__PURE__ */ jsx(
-              Input,
+              Input2,
               {
                 type: "text",
                 placeholder: "Rechercher par titre, ville ou date...",
@@ -46043,7 +65621,7 @@ function AppelsOffresPage({ appelsOffres, auth, seo }) {
             ),
             /* @__PURE__ */ jsx("div", { className: "absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none", children: /* @__PURE__ */ jsx("svg", { className: "h-4 w-4 text-gray-400", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", children: /* @__PURE__ */ jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M19 9l-7 7-7-7" }) }) })
           ] }),
-          /* @__PURE__ */ jsx("div", { className: "sm:col-span-4", children: /* @__PURE__ */ jsx(Link, { href: route("client.appel-offre.create"), className: "block", children: /* @__PURE__ */ jsxs(Button, { className: "w-full bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 font-medium", children: [
+          /* @__PURE__ */ jsx("div", { className: "sm:col-span-4", children: /* @__PURE__ */ jsx(Link, { href: route("client.appel-offre.create"), className: "block", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 font-medium", children: [
             /* @__PURE__ */ jsx("span", { children: "Publier un appel d'offre" }),
             /* @__PURE__ */ jsx(
               "svg",
@@ -46120,7 +65698,7 @@ function AppelsOffresPage({ appelsOffres, auth, seo }) {
                     Link,
                     {
                       href: route("client.appel-offre.show", appelOffre.slug),
-                      children: /* @__PURE__ */ jsxs(Button, { className: "bg-white border border-[#e63946] hover:bg-red-600 hover:text-white text-red-600 rounded-full flex items-center gap-1.5 transition-all duration-200 px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm hover:shadow group", children: [
+                      children: /* @__PURE__ */ jsxs(Button2, { className: "bg-white border border-[#e63946] hover:bg-red-600 hover:text-white text-red-600 rounded-full flex items-center gap-1.5 transition-all duration-200 px-3 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-medium shadow-sm hover:shadow group", children: [
                         /* @__PURE__ */ jsx("span", { children: "Consulter" }),
                         /* @__PURE__ */ jsx(ArrowRight, { className: "h-3 w-3 sm:h-3.5 sm:w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" })
                       ] })
@@ -46154,7 +65732,7 @@ function AppelsOffresPage({ appelsOffres, auth, seo }) {
           /* @__PURE__ */ jsx("h3", { className: "text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-gray-700", children: "Aucun appel d'offre trouvé" }),
           /* @__PURE__ */ jsx("p", { className: "text-gray-500 mb-4 sm:mb-6 text-xs sm:text-sm", children: "Aucun appel d'offre ne correspond à vos critères de recherche. Essayez de modifier vos filtres ou effectuez une nouvelle recherche." }),
           /* @__PURE__ */ jsx(
-            Button,
+            Button2,
             {
               onClick: () => {
                 setSearch("");
@@ -46363,7 +65941,7 @@ function AppelOffrePage({
             /* @__PURE__ */ jsxs("div", { className: "group", children: [
               /* @__PURE__ */ jsx("label", { className: "block text-[#0F172A] font-medium mb-1 sm:mb-2 text-sm sm:text-base", children: "Titre de l'appel d'offre" }),
               /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                Input,
+                Input2,
                 {
                   type: "text",
                   placeholder: "Entrez le titre",
@@ -46384,7 +65962,7 @@ function AppelOffrePage({
                   "ICE"
                 ] }),
                 /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     type: "text",
                     placeholder: "Entrez le numéro ICE",
@@ -46418,7 +65996,7 @@ function AppelOffrePage({
             data.type === "Autres" && /* @__PURE__ */ jsxs("div", { className: "group", children: [
               /* @__PURE__ */ jsx("label", { className: "block text-[#0F172A] font-medium mb-1 sm:mb-2 text-sm sm:text-base", children: "Précisez le type" }),
               /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                Input,
+                Input2,
                 {
                   type: "text",
                   placeholder: "Entrez le type personnalisé",
@@ -46436,7 +66014,7 @@ function AppelOffrePage({
                   "Date limite"
                 ] }),
                 /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     type: "date",
                     value: data.date,
@@ -46825,7 +66403,7 @@ function SuccessPopup({
               }
             ),
             /* @__PURE__ */ jsx("div", { children: /* @__PURE__ */ jsxs(
-              Button,
+              Button2,
               {
                 onClick: onClose,
                 className: "w-full py-3 bg-green-600 hover:bg-[#1a2a4b] text-white rounded-lg flex items-center justify-center transition-colors",
@@ -46974,7 +66552,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
               /* @__PURE__ */ jsxs("div", { children: [
                 /* @__PURE__ */ jsx("label", { className: "block text-[#1a2a4b] font-medium mb-1 sm:mb-2 text-sm sm:text-base", children: "Titre" }),
                 /* @__PURE__ */ jsx(
-                  Input,
+                  Input2,
                   {
                     type: "text",
                     value: data.titre,
@@ -46994,7 +66572,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
                     "ICE"
                   ] }),
                   /* @__PURE__ */ jsx(
-                    Input,
+                    Input2,
                     {
                       type: "text",
                       value: data.ICE,
@@ -47031,7 +66609,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
                     "Date limite"
                   ] }),
                   /* @__PURE__ */ jsx(
-                    Input,
+                    Input2,
                     {
                       type: "date",
                       value: data.date,
@@ -47150,7 +66728,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
               ] }),
               /* @__PURE__ */ jsxs("div", { className: "mt-4 sm:mt-6 space-y-2 sm:space-y-3", children: [
                 /* @__PURE__ */ jsxs(
-                  Button,
+                  Button2,
                   {
                     type: "submit",
                     className: "w-full py-2 sm:py-3 bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors text-xs sm:text-sm",
@@ -47162,7 +66740,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
                   }
                 ),
                 /* @__PURE__ */ jsx(Link, { href: "/mes-appels-offres", className: "block", children: /* @__PURE__ */ jsxs(
-                  Button,
+                  Button2,
                   {
                     type: "button",
                     variant: "outline",
@@ -47179,7 +66757,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
         ] }),
         /* @__PURE__ */ jsxs("div", { className: "fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 flex gap-2 lg:hidden z-10", children: [
           /* @__PURE__ */ jsxs(
-            Button,
+            Button2,
             {
               type: "submit",
               className: "flex-1 py-2 bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors text-xs",
@@ -47191,7 +66769,7 @@ function ModifierAppelOffrePage({ appelOffre, auth }) {
             }
           ),
           /* @__PURE__ */ jsx(Link, { href: "/mes-appels-offres", className: "flex-1", children: /* @__PURE__ */ jsx(
-            Button,
+            Button2,
             {
               type: "button",
               variant: "outline",
@@ -47382,7 +66960,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
           /* @__PURE__ */ jsx("h2", { className: "text-xl sm:text-2xl md:text-3xl font-bold text-black mb-1 sm:mb-2", children: "Mes appels d'offres" }),
           /* @__PURE__ */ jsx("p", { className: "text-black/80 max-w-2xl text-xs sm:text-sm", children: "Gérez vos appels d'offres, suivez leur statut et téléchargez les documents associés." })
         ] }),
-        /* @__PURE__ */ jsx(Link, { href: route$3("client.appel-offre.create").toString(), className: "block shrink-0", children: /* @__PURE__ */ jsxs(Button, { className: "bg-red-600 hover:bg-red-700 text-white py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto justify-center", children: [
+        /* @__PURE__ */ jsx(Link, { href: route$3("client.appel-offre.create").toString(), className: "block shrink-0", children: /* @__PURE__ */ jsxs(Button2, { className: "bg-red-600 hover:bg-red-700 text-white py-2 sm:py-2.5 px-3 sm:px-5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 flex items-center gap-1 sm:gap-2 text-xs sm:text-sm w-full sm:w-auto justify-center", children: [
           /* @__PURE__ */ jsx("span", { children: "Publier un appel d'offre" }),
           /* @__PURE__ */ jsx(ArrowUpRight, { className: "w-3.5 h-3.5 sm:w-4 sm:h-4" })
         ] }) })
@@ -47398,7 +66976,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
             /* @__PURE__ */ jsxs("div", { className: "relative md:col-span-6", children: [
               /* @__PURE__ */ jsx(Search, { className: "absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-3.5 w-3.5 sm:h-4 sm:w-4" }),
               /* @__PURE__ */ jsx(
-                Input,
+                Input2,
                 {
                   type: "text",
                   placeholder: "Rechercher par titre, ICE, type ou secteur...",
@@ -47753,7 +67331,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
             ] }),
             /* @__PURE__ */ jsxs("div", { className: "flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center", children: [
               /* @__PURE__ */ jsxs(
-                Button,
+                Button2,
                 {
                   onClick: clearSearch,
                   className: "bg-gray-100 hover:bg-gray-200 text-gray-700 px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm justify-center",
@@ -47763,7 +67341,7 @@ function UserAppelsOffresPage({ appelsOffres, auth }) {
                   ]
                 }
               ),
-              /* @__PURE__ */ jsx(Link, { href: route$3("client.appel-offre.create").toString(), className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button, { className: "bg-[#1a2a4b] hover:bg-[#08203f] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm w-full justify-center", children: [
+              /* @__PURE__ */ jsx(Link, { href: route$3("client.appel-offre.create").toString(), className: "w-full sm:w-auto", children: /* @__PURE__ */ jsxs(Button2, { className: "bg-[#1a2a4b] hover:bg-[#08203f] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors flex items-center gap-2 text-xs sm:text-sm w-full justify-center", children: [
                 /* @__PURE__ */ jsx("span", { children: "Créer un nouvel appel d'offre" }),
                 /* @__PURE__ */ jsx(ChevronRight, { className: "h-3.5 w-3.5 sm:h-4 sm:w-4" })
               ] }) })
@@ -48289,7 +67867,7 @@ function SingleAppelOffre({ appelOffre, relatedAppelsOffres, auth }) {
             ] }),
             /* @__PURE__ */ jsxs("div", { className: "flex flex-wrap items-center gap-2 sm:gap-3", children: [
               /* @__PURE__ */ jsxs(
-                Button,
+                Button2,
                 {
                   variant: "outline",
                   size: "sm",
@@ -48302,7 +67880,7 @@ function SingleAppelOffre({ appelOffre, relatedAppelsOffres, auth }) {
                 }
               ),
               /* @__PURE__ */ jsxs(
-                Button,
+                Button2,
                 {
                   variant: "outline",
                   size: "sm",
@@ -48330,7 +67908,7 @@ function SingleAppelOffre({ appelOffre, relatedAppelsOffres, auth }) {
         ] }) }),
         /* @__PURE__ */ jsx("div", { className: "w-full lg:w-1/3 mt-4 lg:mt-0", children: /* @__PURE__ */ jsxs("div", { className: "bg-white rounded-xl shadow-lg border border-[#0F172A]/10 overflow-hidden lg:sticky lg:top-28", children: [
           /* @__PURE__ */ jsxs("div", { className: "p-4 sm:p-5 bg-[#0F172A] text-white", children: [
-            /* @__PURE__ */ jsx(Link, { href: route$1("client.appel-offre.create"), className: "block", children: /* @__PURE__ */ jsxs(Button, { className: "w-full bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors py-3 sm:py-3.5", children: [
+            /* @__PURE__ */ jsx(Link, { href: route$1("client.appel-offre.create"), className: "block", children: /* @__PURE__ */ jsxs(Button2, { className: "w-full bg-[#e63946] hover:bg-[#e63946]/90 text-white rounded-lg flex items-center justify-center transition-colors py-3 sm:py-3.5", children: [
               /* @__PURE__ */ jsx(PlusCircle, { className: "mr-2 h-4 w-4 sm:h-5 sm:w-5" }),
               /* @__PURE__ */ jsx("span", { className: "font-medium", children: "Publier un appel d'offre" })
             ] }) }),
@@ -48375,7 +67953,7 @@ function SingleAppelOffre({ appelOffre, relatedAppelsOffres, auth }) {
             ] })
           ] }) }),
           filteredRelatedAppelsOffres.length > 0 && /* @__PURE__ */ jsx("div", { className: "p-3 sm:p-4 bg-gray-50 border-t border-gray-100", children: /* @__PURE__ */ jsx(Link, { href: route$1("appels-offres", { type: appelOffre.type }), children: /* @__PURE__ */ jsxs(
-            Button,
+            Button2,
             {
               variant: "outline",
               size: "sm",
@@ -49686,7 +69264,7 @@ function ResponsiveTable({
   };
   const FavoriteIndicator2 = () => /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx("div", { className: "absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-amber-400 to-yellow-400 rounded-full flex items-center justify-center shadow-lg border-2 border-white", children: /* @__PURE__ */ jsx(StarIcon, { className: "w-2.5 h-2.5 text-white" }) }) });
   const getStatusBadge2 = (status) => {
-    const styles = {
+    const styles2 = {
       PENDING: "bg-amber-50 text-amber-700 border-amber-200",
       APPROVED: "bg-green-50 text-green-700 border-green-200",
       REJECTED: "bg-red-50 text-red-700 border-red-200"
@@ -49704,7 +69282,7 @@ function ResponsiveTable({
     return /* @__PURE__ */ jsxs(
       "span",
       {
-        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles[status]}`,
+        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles2[status]}`,
         children: [
           icons[status],
           statusLabels[status] ?? status
@@ -49936,9 +69514,9 @@ function ResponsiveTable({
         /* @__PURE__ */ jsx("div", { className: "text-sm", children: "Essayez de modifier vos critères de recherche ou de filtrage." })
       ] }) }) })
     ] }) }),
-    /* @__PURE__ */ jsx(Transition, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: closeModal, children: [
+    /* @__PURE__ */ jsx(Transition$1, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: closeModal, children: [
       /* @__PURE__ */ jsx(
-        Transition.Child,
+        Transition$1.Child,
         {
           as: Fragment$1,
           enter: "ease-out duration-300",
@@ -49951,7 +69529,7 @@ function ResponsiveTable({
         }
       ),
       /* @__PURE__ */ jsx("div", { className: "fixed inset-0 overflow-y-auto", children: /* @__PURE__ */ jsx("div", { className: "flex min-h-full items-center justify-center p-4 text-center", children: /* @__PURE__ */ jsx(
-        Transition.Child,
+        Transition$1.Child,
         {
           as: Fragment$1,
           enter: "ease-out duration-300",
@@ -50165,7 +69743,7 @@ function AppelsOffresTable({
     });
   };
   const getStatusBadge2 = (status) => {
-    const styles = {
+    const styles2 = {
       PENDING: "bg-amber-50 text-amber-700 border-amber-200",
       APPROVED: "bg-green-50 text-green-700 border-green-200",
       REJECTED: "bg-red-50 text-red-700 border-red-200"
@@ -50183,7 +69761,7 @@ function AppelsOffresTable({
     return /* @__PURE__ */ jsxs(
       "span",
       {
-        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles[status]}`,
+        className: `inline-flex items-center px-3 py-1 text-sm font-medium rounded-full border ${styles2[status]}`,
         children: [
           icons[status],
           statusLabels[status] ?? status
@@ -50382,9 +69960,9 @@ function AppelsOffresTable({
         /* @__PURE__ */ jsx("div", { className: "text-sm", children: "Essayez de modifier vos critères de recherche ou de filtrage." })
       ] }) }) })
     ] }) }),
-    /* @__PURE__ */ jsx(Transition, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: closeModal, children: [
+    /* @__PURE__ */ jsx(Transition$1, { appear: true, show: isModalOpen, as: Fragment$1, children: /* @__PURE__ */ jsxs(Dialog, { as: "div", className: "relative z-50", onClose: closeModal, children: [
       /* @__PURE__ */ jsx(
-        Transition.Child,
+        Transition$1.Child,
         {
           as: Fragment$1,
           enter: "ease-out duration-300",
@@ -50397,7 +69975,7 @@ function AppelsOffresTable({
         }
       ),
       /* @__PURE__ */ jsx("div", { className: "fixed inset-0 overflow-y-auto", children: /* @__PURE__ */ jsx("div", { className: "flex min-h-full items-center justify-center p-4 text-center", children: /* @__PURE__ */ jsx(
-        Transition.Child,
+        Transition$1.Child,
         {
           as: Fragment$1,
           enter: "ease-out duration-300",
@@ -52026,7 +71604,7 @@ const Product = () => {
         isLoading ? /* @__PURE__ */ jsx("div", { className: "w-full min-h-[300px] skeleton dark:bg-neutral" }) : isSuccess ? /* @__PURE__ */ jsx("div", { className: "w-full min-h-[300px]", children: /* @__PURE__ */ jsx(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxs(LineChart, { data: dataLine, children: [
           /* @__PURE__ */ jsx(XAxis, { dataKey: "name" }),
           /* @__PURE__ */ jsx(YAxis, {}),
-          /* @__PURE__ */ jsx(Tooltip, {}),
+          /* @__PURE__ */ jsx(Tooltip$1, {}),
           /* @__PURE__ */ jsx(Legend, {}),
           /* @__PURE__ */ jsx(
             Line,
@@ -52132,7 +71710,7 @@ const AddData = ({
   const [isVerified, setIsVerified] = React__default.useState("");
   const [formUserIsEmpty, setFormUserIsEmpty] = React__default.useState(true);
   const [title, setTitle] = React__default.useState("");
-  const [color, setColor] = React__default.useState("");
+  const [color2, setColor] = React__default.useState("");
   const [producer, setProducer] = React__default.useState("");
   const [price, setPrice] = React__default.useState("");
   const [inStock, setInStock] = React__default.useState("");
@@ -52160,13 +71738,13 @@ const AddData = ({
     }
   }, [email, file, firstName, isVerified, lastName, phone]);
   React__default.useEffect(() => {
-    if (title === "" || color === "" || producer === "" || price === "" || inStock === "" || file === null) {
+    if (title === "" || color2 === "" || producer === "" || price === "" || inStock === "" || file === null) {
       setFormProductIsEmpty(true);
     }
-    if (title !== "" && color !== "" && producer !== "" && price !== "" && inStock !== "" && file !== null) {
+    if (title !== "" && color2 !== "" && producer !== "" && price !== "" && inStock !== "" && file !== null) {
       setFormProductIsEmpty(false);
     }
-  }, [color, file, inStock, price, producer, title]);
+  }, [color2, file, inStock, price, producer, title]);
   if (slug === "user") {
     return /* @__PURE__ */ jsx("div", { className: "w-screen h-screen fixed top-0 left-0 flex justify-center items-center bg-black/75 z-[99]", children: /* @__PURE__ */ jsxs(
       "div",
@@ -52759,10 +72337,10 @@ const __vite_glob_0_73 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.de
   __proto__: null,
   default: Profile
 }, Symbol.toStringTag, { value: "Module" }));
-function Modal({
+function Modal2({
   children,
   show = false,
-  maxWidth = "2xl",
+  maxWidth: maxWidth2 = "2xl",
   closeable = true,
   onClose = () => {
   }
@@ -52778,8 +72356,8 @@ function Modal({
     lg: "sm:max-w-lg",
     xl: "sm:max-w-xl",
     "2xl": "sm:max-w-2xl"
-  }[maxWidth];
-  return /* @__PURE__ */ jsx(Transition, { show, leave: "duration-200", children: /* @__PURE__ */ jsxs(
+  }[maxWidth2];
+  return /* @__PURE__ */ jsx(Transition$1, { show, leave: "duration-200", children: /* @__PURE__ */ jsxs(
     Dialog,
     {
       as: "div",
@@ -52895,7 +72473,7 @@ function DeleteUserForm({
         ] })
       ] })
     ] }) }),
-    /* @__PURE__ */ jsx(Modal, { show: confirmingUserDeletion, onClose: closeModal, maxWidth: "lg", children: /* @__PURE__ */ jsxs("div", { className: "p-8", children: [
+    /* @__PURE__ */ jsx(Modal2, { show: confirmingUserDeletion, onClose: closeModal, maxWidth: "lg", children: /* @__PURE__ */ jsxs("div", { className: "p-8", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex items-center justify-between mb-8", children: [
         /* @__PURE__ */ jsxs("div", { className: "flex items-center", children: [
           /* @__PURE__ */ jsx("div", { className: "p-3 bg-red-100 rounded-xl mr-4", children: /* @__PURE__ */ jsx(AlertTriangle, { className: "h-8 w-8 text-red-600" }) }),
@@ -52923,7 +72501,7 @@ function DeleteUserForm({
       /* @__PURE__ */ jsxs("form", { onSubmit: deleteUser, className: "space-y-6", children: [
         /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
           /* @__PURE__ */ jsx(
-            InputLabel,
+            InputLabel2,
             {
               htmlFor: "password",
               value: "Confirmez avec votre mot de passe",
@@ -53026,7 +72604,7 @@ function UpdatePasswordForm({
           /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
             /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-gray-100 rounded-lg", children: /* @__PURE__ */ jsx(Lock, { className: "w-4 h-4 text-gray-600" }) }),
             /* @__PURE__ */ jsx(
-              InputLabel,
+              InputLabel2,
               {
                 htmlFor: "current_password",
                 value: "Mot de passe actuel",
@@ -53063,7 +72641,7 @@ function UpdatePasswordForm({
         /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
           /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
             /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-green-100 rounded-lg", children: /* @__PURE__ */ jsx(Lock, { className: "w-4 h-4 text-green-600" }) }),
-            /* @__PURE__ */ jsx(InputLabel, { htmlFor: "password", value: "Nouveau mot de passe", className: "text-gray-800 font-semibold" })
+            /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "password", value: "Nouveau mot de passe", className: "text-gray-800 font-semibold" })
           ] }),
           /* @__PURE__ */ jsxs("div", { className: "relative", children: [
             /* @__PURE__ */ jsx(
@@ -53095,7 +72673,7 @@ function UpdatePasswordForm({
           /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
             /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-blue-100 rounded-lg", children: /* @__PURE__ */ jsx(Lock, { className: "w-4 h-4 text-blue-600" }) }),
             /* @__PURE__ */ jsx(
-              InputLabel,
+              InputLabel2,
               {
                 htmlFor: "password_confirmation",
                 value: "Confirmer le nouveau mot de passe",
@@ -53143,7 +72721,7 @@ function UpdatePasswordForm({
           }
         ),
         /* @__PURE__ */ jsx(
-          Transition,
+          Transition$1,
           {
             show: recentlySuccessful,
             enter: "transition ease-in-out duration-300",
@@ -53187,7 +72765,7 @@ function UpdateProfileInformation({
       /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
         /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-blue-100 rounded-lg", children: /* @__PURE__ */ jsx(User$1, { className: "w-4 h-4 text-blue-600" }) }),
-          /* @__PURE__ */ jsx(InputLabel, { htmlFor: "name", value: "Nom complet", className: "text-gray-800 font-semibold" })
+          /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "name", value: "Nom complet", className: "text-gray-800 font-semibold" })
         ] }),
         /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
           TextInput,
@@ -53207,7 +72785,7 @@ function UpdateProfileInformation({
       /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
         /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-gray-100 rounded-lg", children: /* @__PURE__ */ jsx(Mail, { className: "w-4 h-4 text-gray-500" }) }),
-          /* @__PURE__ */ jsx(InputLabel, { htmlFor: "email", value: "Adresse email", className: "text-gray-800 font-semibold" }),
+          /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "email", value: "Adresse email", className: "text-gray-800 font-semibold" }),
           /* @__PURE__ */ jsx("span", { className: "text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full", children: "Non modifiable" })
         ] }),
         /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
@@ -53228,7 +72806,7 @@ function UpdateProfileInformation({
       /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
         /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-green-100 rounded-lg", children: /* @__PURE__ */ jsx(Phone, { className: "w-4 h-4 text-green-600" }) }),
-          /* @__PURE__ */ jsx(InputLabel, { htmlFor: "phone", value: "Numéro de téléphone", className: "text-gray-800 font-semibold" })
+          /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "phone", value: "Numéro de téléphone", className: "text-gray-800 font-semibold" })
         ] }),
         /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
           TextInput,
@@ -53248,7 +72826,7 @@ function UpdateProfileInformation({
       /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
         /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-purple-100 rounded-lg", children: /* @__PURE__ */ jsx(Building, { className: "w-4 h-4 text-purple-600" }) }),
-          /* @__PURE__ */ jsx(InputLabel, { htmlFor: "nom_societe", value: "Nom de la société", className: "text-gray-800 font-semibold" }),
+          /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "nom_societe", value: "Nom de la société", className: "text-gray-800 font-semibold" }),
           /* @__PURE__ */ jsx("span", { className: "text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded-full", children: "Optionnel" })
         ] }),
         /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
@@ -53269,7 +72847,7 @@ function UpdateProfileInformation({
     /* @__PURE__ */ jsxs("div", { className: "space-y-3", children: [
       /* @__PURE__ */ jsxs("div", { className: "flex items-center space-x-2", children: [
         /* @__PURE__ */ jsx("div", { className: "p-1.5 bg-orange-100 rounded-lg", children: /* @__PURE__ */ jsx(MapPin, { className: "w-4 h-4 text-orange-600" }) }),
-        /* @__PURE__ */ jsx(InputLabel, { htmlFor: "address", value: "Adresse de lxivraison", className: "text-gray-800 font-semibold" })
+        /* @__PURE__ */ jsx(InputLabel2, { htmlFor: "address", value: "Adresse de lxivraison", className: "text-gray-800 font-semibold" })
       ] }),
       /* @__PURE__ */ jsx("div", { className: "relative", children: /* @__PURE__ */ jsx(
         TextInput,
@@ -53316,7 +72894,7 @@ function UpdateProfileInformation({
         }
       ),
       /* @__PURE__ */ jsx(
-        Transition,
+        Transition$1,
         {
           show: recentlySuccessful,
           enter: "transition ease-in-out duration-300",
@@ -53749,7 +73327,7 @@ function SitemapPage({ auth }) {
             children: /* @__PURE__ */ jsx(ChevronLeft, { className: "w-5 h-5" })
           }
         ),
-        /* @__PURE__ */ jsx("div", { className: "hidden sm:flex space-x-1", children: Array.from({ length: Math.min(5, totalPages) }, (_, i2) => {
+        /* @__PURE__ */ jsx("div", { className: "hidden sm:flex space-x-1", children: Array.from({ length: Math.min(5, totalPages) }, (_2, i2) => {
           let pageNum = currentPage;
           if (currentPage <= 3) {
             pageNum = i2 + 1;
@@ -54233,7 +73811,7 @@ const User = () => {
         isLoading ? /* @__PURE__ */ jsx("div", { className: "w-full min-h-[300px] skeleton dark:bg-neutral" }) : isSuccess ? /* @__PURE__ */ jsx("div", { className: "w-full min-h-[300px]", children: /* @__PURE__ */ jsx(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ jsxs(LineChart, { data: dataLine, children: [
           /* @__PURE__ */ jsx(XAxis, { dataKey: "name" }),
           /* @__PURE__ */ jsx(YAxis, {}),
-          /* @__PURE__ */ jsx(Tooltip, {}),
+          /* @__PURE__ */ jsx(Tooltip$1, {}),
           /* @__PURE__ */ jsx(Legend, {}),
           /* @__PURE__ */ jsx(
             Line,
@@ -54381,7 +73959,7 @@ function Create() {
             /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
               /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
                 /* @__PURE__ */ jsxs(
-                  InputLabel,
+                  InputLabel2,
                   {
                     htmlFor: "name",
                     value: "Nom complet",
@@ -54406,7 +73984,7 @@ function Create() {
               ] }),
               /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
                 /* @__PURE__ */ jsxs(
-                  InputLabel,
+                  InputLabel2,
                   {
                     htmlFor: "email",
                     value: "Addresse e-mail",
@@ -54434,7 +74012,7 @@ function Create() {
             /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
               /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
                 /* @__PURE__ */ jsxs(
-                  InputLabel,
+                  InputLabel2,
                   {
                     htmlFor: "password",
                     value: "Mot de passe",
@@ -54460,7 +74038,7 @@ function Create() {
               ] }),
               /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
                 /* @__PURE__ */ jsxs(
-                  InputLabel,
+                  InputLabel2,
                   {
                     htmlFor: "password_confirmation",
                     value: "Confirmer le mot de passe",
@@ -54487,7 +74065,7 @@ function Create() {
             ] }),
             /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
               /* @__PURE__ */ jsxs(
-                InputLabel,
+                InputLabel2,
                 {
                   htmlFor: "roles",
                   value: "Roles de l'utilisateur",
@@ -54615,7 +74193,7 @@ function Show({ user }) {
             /* @__PURE__ */ jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
               /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
                 /* @__PURE__ */ jsxs(
-                  InputLabel,
+                  InputLabel2,
                   {
                     htmlFor: "name",
                     value: "Full Name",
@@ -54640,7 +74218,7 @@ function Show({ user }) {
               ] }),
               /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
                 /* @__PURE__ */ jsxs(
-                  InputLabel,
+                  InputLabel2,
                   {
                     htmlFor: "email",
                     value: "Adresse e-mail",
@@ -54667,7 +74245,7 @@ function Show({ user }) {
             ] }),
             /* @__PURE__ */ jsxs("div", { className: "space-y-2", children: [
               /* @__PURE__ */ jsxs(
-                InputLabel,
+                InputLabel2,
                 {
                   htmlFor: "roles",
                   value: "Rôles de l'utilisateur",
