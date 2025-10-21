@@ -1,25 +1,30 @@
 import express from "express";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const SSR_FILE = path.join(__dirname, "ssr.mjs");
+
+let render;
+(async () => {
+  const mod = await import(SSR_FILE);
+  render = mod.default;
+  console.log("✅ Inertia SSR loaded!");
+})();
 
 const app = express();
-const port = process.env.PORT || 8080;
-
-// path to the compiled SSR renderer
-const ssrFile = path.resolve("./bootstrap/ssr/ssr.mjs");
-
-app.use(express.json());
+app.use(express.json({ limit: "10mb" }));
 
 app.post("/", async (req, res) => {
   try {
-    const { default: render } = await import(`file://${ssrFile}`);
-    const page = await render(req.body);
-    res.send(page);
-  } catch (err) {
-    console.error("❌ SSR render error:", err);
-    res.status(500).send(err.message);
+    if (!render) throw new Error("SSR not ready");
+    const html = await render(req.body.page);
+    res.json(html);
+  } catch (e) {
+    console.error("SSR error:", e);
+    res.status(500).json({ error: e.message });
   }
 });
 
-app.listen(port, () => {
-  console.log(`✅ Inertia SSR server running on port ${port}`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`🚀 SSR running on port ${PORT}`));
