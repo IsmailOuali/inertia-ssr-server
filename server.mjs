@@ -1,4 +1,4 @@
-// 👇 MUST be the first lines — before *any* other import
+// 👇 MUST be first — before express, before anything
 import { createRequire } from "module";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -6,17 +6,18 @@ import { fileURLToPath } from "url";
 const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ⚡ Patch deepmerge import globally (MUI fix)
+// ⚡ Deepmerge override (fixes MUI SSR crash)
 const Module = require("module");
 const originalResolveFilename = Module._resolveFilename;
 Module._resolveFilename = function (request, parent, isMain, options) {
   if (request === "deepmerge") {
+    console.log("🔁 Using deepmerge-shim.mjs instead of node_modules");
     return path.resolve(__dirname, "deepmerge-shim.mjs");
   }
   return originalResolveFilename.call(this, request, parent, isMain, options);
 };
 
-// ✅ Standard SSR server
+// ✅ Now import express AFTER the override
 import express from "express";
 
 const SSR_FILE = path.join(__dirname, "ssr.mjs");
