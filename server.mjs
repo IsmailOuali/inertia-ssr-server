@@ -1,8 +1,24 @@
+// 👇 MUST be the first line
+import { createRequire } from 'module'
+
+
+const require = createRequire(import.meta.url)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+// ⚡ Redirect all 'deepmerge' imports to our shim
+const Module = require('module')
+const originalResolveFilename = Module._resolveFilename
+Module._resolveFilename = function (request, parent, isMain, options) {
+  if (request === 'deepmerge') {
+    return path.resolve(__dirname, 'deepmerge-shim.mjs')
+  }
+  return originalResolveFilename.call(this, request, parent, isMain, options)
+}
+
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SSR_FILE = path.join(__dirname, "ssr.mjs");
 
 let render;
