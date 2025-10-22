@@ -23,7 +23,6 @@ import isPropValid from "@emotion/is-prop-valid";
 import createCache from "@emotion/cache";
 import "@emotion/weak-memoize";
 import "hoist-non-react-statics";
-import deepmerge, { isPlainObject } from "@mui/utils/deepmerge";
 import capitalize from "@mui/utils/capitalize";
 import getDisplayName from "@mui/utils/getDisplayName";
 import _formatMuiErrorMessage from "@mui/utils/formatMuiErrorMessage";
@@ -84,6 +83,18 @@ import { useNavigate, useParams } from "react-router-dom";
 import createServer from "@inertiajs/react/server";
 import { renderToString } from "react-dom/server";
 import pretty from "pretty";
+const deepmergeShim = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  get deepmerge() {
+    return baseMerge;
+  },
+  get default() {
+    return baseMerge;
+  },
+  get isPlainObject() {
+    return isPlainObject;
+  }
+}, Symbol.toStringTag, { value: "Module" }));
 var DefaultContext = {
   color: void 0,
   size: void 0,
@@ -2299,6 +2310,9 @@ const styledEngine = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.define
   internal_processStyles,
   keyframes
 }, Symbol.toStringTag, { value: "Module" }));
+const baseMerge = typeof baseMerge === "function" ? baseMerge : typeof deepmergeShim === "function" ? deepmergeShim : (a, b) => ({ ...a, ...b });
+const isPlainObject = (obj) => obj !== null && typeof obj === "object" && Object.prototype.toString.call(obj) === "[object Object]";
+baseMerge.isPlainObject = isPlainObject;
 const _excluded$1L = ["values", "unit", "step"];
 const sortBreakpointsValues = (values2) => {
   const breakpointsAsArray = Object.keys(values2).map((key) => ({
@@ -2380,7 +2394,7 @@ function merge(acc, item) {
   if (!item) {
     return acc;
   }
-  return deepmerge(acc, item, {
+  return baseMerge(acc, item, {
     clone: false
     // No need to clone deep, it's way faster.
   });
@@ -2449,7 +2463,7 @@ function removeUnusedBreakpoints(breakpointKeys, style2) {
 }
 function mergeBreakpointsInOrder(breakpointsInput, ...styles2) {
   const emptyBreakpoints = createEmptyBreakpointObject(breakpointsInput);
-  const mergedOutput = [emptyBreakpoints, ...styles2].reduce((prev, next) => deepmerge(prev, next), {});
+  const mergedOutput = [emptyBreakpoints, ...styles2].reduce((prev, next) => baseMerge(prev, next), {});
   return removeUnusedBreakpoints(Object.keys(emptyBreakpoints), mergedOutput);
 }
 function computeBreakpointsBase(breakpointValues, themeBreakpoints) {
@@ -3352,7 +3366,7 @@ function createTheme$2(options = {}, ...args) {
   } = options, other = _objectWithoutPropertiesLoose$1(options, _excluded$1K);
   const breakpoints = createBreakpoints(breakpointsInput);
   const spacing = createSpacing(spacingInput);
-  let muiTheme = deepmerge({
+  let muiTheme = baseMerge({
     breakpoints,
     direction: "ltr",
     components: {},
@@ -3364,7 +3378,7 @@ function createTheme$2(options = {}, ...args) {
     shape: _extends$1({}, shape, shapeInput)
   }, other);
   muiTheme.applyStyles = applyStyles;
-  muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
+  muiTheme = args.reduce((acc, argument) => baseMerge(acc, argument), muiTheme);
   muiTheme.unstable_sxConfig = _extends$1({}, defaultSxConfig, other == null ? void 0 : other.unstable_sxConfig);
   muiTheme.unstable_sx = function sx(props) {
     return styleFunctionSx$1({
@@ -3968,7 +3982,7 @@ const style = ({
         }
       };
     };
-    styles2 = deepmerge(styles2, handleBreakpoints({
+    styles2 = baseMerge(styles2, handleBreakpoints({
       theme
     }, spacingValues, styleFromPropValue));
   }
@@ -6283,6 +6297,7 @@ function getAugmentedNamespace(n2) {
 }
 var createStyled$1 = {};
 const require$$1 = /* @__PURE__ */ getAugmentedNamespace(styledEngine);
+const require$$4 = /* @__PURE__ */ getAugmentedNamespace(deepmergeShim);
 const require$$7 = /* @__PURE__ */ getAugmentedNamespace(createTheme$1);
 const require$$8 = /* @__PURE__ */ getAugmentedNamespace(styleFunctionSx);
 var hasRequiredCreateStyled;
@@ -6299,7 +6314,7 @@ function requireCreateStyled() {
   var _extends2 = _interopRequireDefault(require$$1$1);
   var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require$$2);
   var _styledEngine = _interopRequireWildcard(require$$1);
-  var _deepmerge = deepmerge;
+  var _deepmerge = require$$4;
   var _capitalize = _interopRequireDefault(capitalize);
   var _getDisplayName = _interopRequireDefault(getDisplayName);
   var _createTheme = _interopRequireDefault(require$$7);
@@ -7112,7 +7127,7 @@ const theme2 = createTheme({ palette: {
       console.error(`MUI: The palette mode \`${mode}\` is not supported.`);
     }
   }
-  const paletteOutput = deepmerge(_extends$1({
+  const paletteOutput = baseMerge(_extends$1({
     // A collection of common colors.
     common: _extends$1({}, common),
     // prevent mutable object.
@@ -7234,7 +7249,7 @@ function createTypography(palette, typography) {
       letterSpacing: "inherit"
     }
   };
-  return deepmerge(_extends$1({
+  return baseMerge(_extends$1({
     htmlFontSize,
     pxToRem,
     fontFamily,
@@ -7355,7 +7370,7 @@ Please use another name.` : _formatMuiErrorMessage(18));
   }
   const palette = createPalette(paletteInput);
   const systemTheme = createTheme$2(options);
-  let muiTheme = deepmerge(systemTheme, {
+  let muiTheme = baseMerge(systemTheme, {
     mixins: createMixins(systemTheme.breakpoints, mixinsInput),
     palette,
     // Don't use [...shadows] until you've verified its transpiled code is not invoking the iterator protocol.
@@ -7364,8 +7379,8 @@ Please use another name.` : _formatMuiErrorMessage(18));
     transitions: createTransitions(transitionsInput),
     zIndex: _extends$1({}, zIndex)
   });
-  muiTheme = deepmerge(muiTheme, other);
-  muiTheme = args.reduce((acc, argument) => deepmerge(acc, argument), muiTheme);
+  muiTheme = baseMerge(muiTheme, other);
+  muiTheme = args.reduce((acc, argument) => baseMerge(acc, argument), muiTheme);
   if (process.env.NODE_ENV !== "production") {
     const stateClasses = ["active", "checked", "completed", "disabled", "error", "expanded", "focused", "focusVisible", "required", "selected"];
     const traverse = (node, component) => {
@@ -22031,7 +22046,7 @@ const Input$1 = /* @__PURE__ */ React.forwardRef(function Input(inProps, ref) {
       ownerState
     }
   };
-  const componentsProps = (slotProps != null ? slotProps : componentsPropsProp) ? deepmerge(slotProps != null ? slotProps : componentsPropsProp, inputComponentsProps) : inputComponentsProps;
+  const componentsProps = (slotProps != null ? slotProps : componentsPropsProp) ? baseMerge(slotProps != null ? slotProps : componentsPropsProp, inputComponentsProps) : inputComponentsProps;
   const RootSlot = (_ref = (_slots$root = slots.root) != null ? _slots$root : components.Root) != null ? _ref : InputRoot;
   const InputSlot = (_ref2 = (_slots$input = slots.input) != null ? _slots$input : components.Input) != null ? _ref2 : InputInput;
   return /* @__PURE__ */ jsx$1(InputBase, _extends$1({
@@ -22438,7 +22453,7 @@ const FilledInput = /* @__PURE__ */ React.forwardRef(function FilledInput2(inPro
       ownerState
     }
   };
-  const componentsProps = (slotProps != null ? slotProps : componentsPropsProp) ? deepmerge(filledInputComponentsProps, slotProps != null ? slotProps : componentsPropsProp) : filledInputComponentsProps;
+  const componentsProps = (slotProps != null ? slotProps : componentsPropsProp) ? baseMerge(filledInputComponentsProps, slotProps != null ? slotProps : componentsPropsProp) : filledInputComponentsProps;
   const RootSlot = (_ref = (_slots$root = slots.root) != null ? _slots$root : components.Root) != null ? _ref : FilledInputRoot;
   const InputSlot = (_ref2 = (_slots$input = slots.input) != null ? _slots$input : components.Input) != null ? _ref2 : FilledInputInput;
   return /* @__PURE__ */ jsx$1(InputBase, _extends$1({
@@ -26340,7 +26355,7 @@ const Select = /* @__PURE__ */ React.forwardRef(function Select2(inProps, ref) {
           id
         }, SelectDisplayProps)
       }, inputProps, {
-        classes: inputProps ? deepmerge(restOfClasses, inputProps.classes) : restOfClasses
+        classes: inputProps ? baseMerge(restOfClasses, inputProps.classes) : restOfClasses
       }, input ? input.props.inputProps : {})
     }, (multiple && native || displayEmpty) && variant === "outlined" ? {
       notched: true
