@@ -55,7 +55,7 @@ import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiReact } from "react-icons/di/index.js";
 import { renderToString } from "react-dom/server";
-import createServer from "@inertiajs/core/server";
+import { createServer } from '@inertiajs/core'
 import pretty from "pretty";
 function AdminLayout({ children, title, titleIcon }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -77175,3 +77175,7 @@ createServer(
   })
   // 👈 satisfy TypeScript overloads
 );
+// ✅ Start the SSR server properly
+import * as ssr from './dist/ssr/ssr.mjs'
+const render = ssr.default || ssr.render || ssr
+createServer((page) => render(page))
