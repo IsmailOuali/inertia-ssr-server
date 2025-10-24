@@ -55,6 +55,7 @@ import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { useNavigate, useParams } from "react-router-dom";
 import { DiReact } from "react-icons/di/index.js";
 import { renderToString } from "react-dom/server";
+import render from './dist/ssr/ssr.mjs'
 import createServer from "@inertiajs/server";
 import pretty from "pretty";
 function AdminLayout({ children, title, titleIcon }) {
