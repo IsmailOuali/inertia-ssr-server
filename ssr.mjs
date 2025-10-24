@@ -77176,6 +77176,16 @@ createServer(
   // 👈 satisfy TypeScript overloads
 );
 // ✅ Start the SSR server properly
-import * as ssr from './dist/ssr/ssr.mjs'
-const render = ssr.default || ssr.render || ssr
-createServer((page) => render(page))
+let renderer = globalThis.render || (typeof render !== 'undefined' ? render : null)
+
+if (!renderer) {
+  try {
+    const ssr = await import('./dist/ssr/ssr.mjs')
+    renderer = ssr.default || ssr.render || ssr
+  } catch (e) {
+    console.error('❌ Failed to import SSR module:', e)
+  }
+}
+
+// ✅ Start the SSR server
+createServer((page) => renderer(page))
