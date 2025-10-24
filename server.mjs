@@ -44,9 +44,16 @@ app.post("/", async (req, res) => {
     // 🔁 Always reload fresh SSR bundle to avoid stale cache
     const { default: render } = await import(ssrFile + `?t=${Date.now()}`);
 
-    const html = await render(req.body.page);
-    res.setHeader("Content-Type", "application/json");
-    res.send(html);
+    const result = await render(req.body.page);
+
+    // If your render() already returns { head, body }, keep it.
+    // If it returns raw HTML, wrap it manually.
+    const payload =
+      typeof result === "object" && result.body
+        ? result
+        : { head: [], body: result };
+
+    res.json(payload);
   } catch (error) {
     console.error("❌ Failed to load SSR module:", error);
     res.status(500).json({
