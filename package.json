@@ -16,7 +16,7 @@
     "@fullcalendar/timegrid": "^6.1.11",
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.1.5",
-    "@inertiajs/core": "^2.2.10",
+    "@inertiajs/core": "^1.0.0-beta.3",
     "@inertiajs/inertia": "^0.11.1",
     "@inertiajs/inertia-react": "^0.8.1",
     "@inertiajs/react": "^2.2.10",
