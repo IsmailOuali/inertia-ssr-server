@@ -16,14 +16,9 @@ app.post("/", async (req, res) => {
     const mod = await import(ssrFile + `?t=${Date.now()}`);
 
     // ⚡ Detect default export or named export
-    const render =
-      typeof mod.default === "function"
-        ? mod.default
-        : typeof mod.render === "function"
-        ? mod.render
-        : null;
+    const renderFunction = mod.render || mod.default?.render;
 
-    if (!render) {
+    if (!renderFunction) {
       throw new Error(
         `SSR module does not export a render function. Found exports: ${Object.keys(
           mod
@@ -31,9 +26,20 @@ app.post("/", async (req, res) => {
       );
     }
 
-    const html = await render(req.body.page);
+    const result = await renderFunction(req.body.page);
 
-    res.json({ head: [], body: html });
+    // Handle both string and object responses
+    let head = [];
+    let body = '';
+    
+    if (typeof result === 'object' && result.head && result.body) {
+      head = result.head;
+      body = result.body;
+    } else {
+      body = result;
+    }
+
+    res.json({ head, body });
   } catch (error) {
     console.error("❌ SSR failed:", error);
     res.status(500).json({ error: "SSR render failed", message: error.message });
