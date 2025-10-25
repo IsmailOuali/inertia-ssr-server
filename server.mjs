@@ -1,5 +1,9 @@
 import express from "express";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -7,8 +11,8 @@ const PORT = process.env.PORT || 8080;
 // Middleware
 app.use(express.json({ limit: "10mb" }));
 
-// Point to your actual SSR source file
-const ssrFile = path.resolve("./bootstrap/ssr/ssr.mjs");
+// ✅ Absolute path to SSR source
+const ssrFile = path.resolve(__dirname, "./bootstrap/ssr/ssr.mjs");
 
 app.post("/", async (req, res) => {
   try {
@@ -21,7 +25,11 @@ app.post("/", async (req, res) => {
     res.json({ head: [], body: html });
   } catch (error) {
     console.error("❌ SSR failed:", error);
-    res.status(500).json({ error: "SSR render failed", message: error.message });
+    res.status(500).json({
+      error: "SSR render failed",
+      message: error.message,
+      stack: process.env.NODE_ENV === "development" ? error.stack : undefined,
+    });
   }
 });
 
