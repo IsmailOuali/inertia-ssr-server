@@ -17,10 +17,19 @@ app.post("/", async (req, res) => {
     const { head, body } = await renderFunction(req.body.page);
     res.json({ head, body });
   } catch (error) {
-    console.error("❌ SSR failed:", error);
-    res.status(500).json({ error: "SSR render failed", message: error.message });
+    // 🔍 log complete error for debugging
+    console.error("❌ SSR failed:");
+    console.error(error.stack || error);
+
+    // ✅ always return 200 with empty body so Laravel can fallback gracefully
+    res.status(200).json({
+      head: [],
+      body: "",
+      error: error.message,
+    });
   }
 });
+
 
 app.get("/", (_, res) => res.json({ status: "OK", message: "SSR server running" }));
 
